@@ -1,4 +1,20 @@
 {
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDEACMODES/Default.json"
+  } ],
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
@@ -10,9 +26,6 @@
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDELOGICS/UpdateLasted.json"
       },
-      "cloneParam" : false,
-      "enableBackend" : true,
-      "ignoreException" : false,
       "internalLogic" : true
     } ],
     "codeName" : "Create",
@@ -21,14 +34,16 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
-      "codeName" : "CreateInput",
-      "name" : "输入对象",
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateResult",
-      "name" : "返回对象",
+      "name" : "CreateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -41,14 +56,16 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateInput",
-      "name" : "输入对象",
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateResult",
-      "name" : "返回对象",
+      "name" : "UpdateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -62,13 +79,15 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "SYS_UPDATE_LOGID",
+        "codeName" : "SysUpdateLogId"
+      },
+      "name" : "RemoveInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveResult",
-      "name" : "返回对象",
+      "name" : "RemoveResult",
       "type" : "VOID"
     },
     "batchAction" : true,
@@ -82,13 +101,19 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
-      "codeName" : "GetInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "SYS_UPDATE_LOGID",
+        "codeName" : "SysUpdateLogId"
+      },
+      "name" : "GetInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetResult",
-      "name" : "返回对象",
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -101,13 +126,19 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftInput",
-      "name" : "输入对象",
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftResult",
-      "name" : "返回对象",
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -119,13 +150,15 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
-      "codeName" : "CheckKeyInput",
-      "name" : "输入对象",
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CheckKeyResult",
-      "name" : "返回对象",
+      "name" : "CheckKeyResult",
       "stdDataType" : 9,
       "type" : "SIMPLE"
     },
@@ -138,13 +171,19 @@
     "logicName" : "获取最新更新信息",
     "name" : "getLastUpdateInfo",
     "getPSDEActionInput" : {
-      "codeName" : "GetLastUpdateInfoInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "SYS_UPDATE_LOGID",
+        "codeName" : "SysUpdateLogId"
+      },
+      "name" : "GetLastUpdateInfoInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetLastUpdateInfoResult",
-      "name" : "返回对象",
+      "name" : "GetLastUpdateInfoResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
       "type" : "DTO"
     }
   }, {
@@ -155,21 +194,72 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
-      "codeName" : "SaveInput",
-      "name" : "输入对象",
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "SaveResult",
-      "name" : "返回对象",
+      "name" : "SaveResult",
       "type" : "VOID"
     },
     "builtinAction" : true
   } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`T_SYS_UPDATE_LOG`",
+    "tableName" : "T_SYS_UPDATE_LOG",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }, {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }, {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    }, {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    }, {
+      "name" : "SYS_UPDATE_LOGID",
+      "codeName" : "SysUpdateLogId"
+    }, {
+      "name" : "UPDATEBRANCH",
+      "codeName" : "Updatebranch"
+    }, {
+      "name" : "UPDESC",
+      "codeName" : "Updesc"
+    }, {
+      "name" : "SYS_UPDATE_LOGNAME",
+      "codeName" : "SysUpdateLogName"
+    }, {
+      "name" : "LATESTUPDATE",
+      "codeName" : "Latestupdate"
+    }, {
+      "name" : "UPDATE",
+      "codeName" : "Update"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json",
+    "name" : "T_SYS_UPDATE_LOG",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "T_SYS_UPDATE_LOG"
+    },
+    "tableType" : "MAIN"
+  } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
@@ -182,11 +272,27 @@
       "joinType" : "MAIN",
       "name" : "SYS_UPDATE_LOG"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
+      "type" : "DTOS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
@@ -198,7 +304,24 @@
       },
       "joinType" : "MAIN",
       "name" : "SYS_UPDATE_LOG"
-    }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -214,13 +337,19 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultInput",
-      "name" : "输入对象",
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultResult",
-      "name" : "返回对象",
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "SysUpdateLogDTO"
+      },
       "type" : "PAGE"
     },
     "defaultMode" : true,
@@ -235,6 +364,33 @@
       "queryCodeExp" : "t1.`UPDATEDATE`",
       "standardColumnName" : "`UPDATEDATE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[UPDATEDATE][更新时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEDATE][更新时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -242,10 +398,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEDATE",
-        "codeName" : "UpdateDate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -260,6 +412,14 @@
     "length" : 8,
     "logicName" : "更新时间",
     "name" : "UPDATEDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEDATE"
+    },
     "predefinedType" : "UPDATEDATE",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
@@ -272,6 +432,33 @@
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
       "standardColumnName" : "`UPDATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEMAN][更新人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEMAN][更新人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -292,10 +479,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
       },
-      "getPSDEField" : {
-        "name" : "UPDATEMAN",
-        "codeName" : "UpdateMan"
-      },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -313,6 +496,14 @@
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEMAN"
+    },
     "predefinedType" : "UPDATEMAN",
     "stdDataType" : 25,
     "stringLength" : 60,
@@ -326,6 +517,33 @@
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
       "standardColumnName" : "`CREATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEMAN][建立人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CREATEMAN][建立人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -346,10 +564,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
       },
-      "getPSDEField" : {
-        "name" : "CREATEMAN",
-        "codeName" : "CreateMan"
-      },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -367,6 +581,14 @@
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEMAN"
+    },
     "predefinedType" : "CREATEMAN",
     "stdDataType" : 25,
     "stringLength" : 60,
@@ -381,6 +603,33 @@
       "queryCodeExp" : "t1.`CREATEDATE`",
       "standardColumnName" : "`CREATEDATE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEDATE][建立时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CREATEDATE][建立时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -388,10 +637,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CREATEDATE",
-        "codeName" : "CreateDate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -406,6 +651,14 @@
     "length" : 8,
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEDATE"
+    },
     "predefinedType" : "CREATEDATE",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
@@ -424,6 +677,33 @@
       "name" : "N_SYS_UPDATE_LOGID_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[SYS_UPDATE_LOGID][系统更新日志标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[SYS_UPDATE_LOGID][系统更新日志标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[SYS_UPDATE_LOGID][系统更新日志标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[SYS_UPDATE_LOGID][系统更新日志标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -444,10 +724,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "SYS_UPDATE_LOGID",
-        "codeName" : "SysUpdateLogId"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -461,6 +737,14 @@
     "length" : 100,
     "logicName" : "系统更新日志标识",
     "name" : "SYS_UPDATE_LOGID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "SYS_UPDATE_LOGID"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
@@ -482,6 +766,33 @@
       "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEBRANCH][更新平台]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[UPDATEBRANCH][更新平台]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEBRANCH][更新平台]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[UPDATEBRANCH][更新平台]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -501,10 +812,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
       },
-      "getPSDEField" : {
-        "name" : "UPDATEBRANCH",
-        "codeName" : "Updatebranch"
-      },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -523,6 +830,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/SYS_UPDATE_BRANCH.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEBRANCH"
+    },
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s"
@@ -533,6 +848,31 @@
       "name" : "UPDESC",
       "queryCodeExp" : "t1.`UPDESC`",
       "standardColumnName" : "`UPDESC`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[UPDESC][描述]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "HTMLEDITOR",
+        "name" : "[UPDESC][描述]",
+        "stringLength" : 1048576,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDESC][描述]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "HTMLEDITOR",
+        "name" : "[UPDESC][描述]移动端默认",
+        "stringLength" : 1048576,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -553,10 +893,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[1048576]"
       },
-      "getPSDEField" : {
-        "name" : "UPDESC",
-        "codeName" : "Updesc"
-      },
       "ruleInfo" : "内容长度必须小于等于[1048576]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -570,6 +906,14 @@
     "length" : 1048576,
     "logicName" : "更新说明",
     "name" : "UPDESC",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDESC"
+    },
     "stdDataType" : 21,
     "stringLength" : 1048576,
     "valueFormat" : "%1$s",
@@ -587,6 +931,31 @@
       "name" : "N_SYS_UPDATE_LOGNAME_LIKE",
       "stdDataType" : 25,
       "valueOP" : "LIKE"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SYS_UPDATE_LOGNAME][系统更新日志名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SYS_UPDATE_LOGNAME][系统更新日志名称]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SYS_UPDATE_LOGNAME][系统更新日志名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SYS_UPDATE_LOGNAME][系统更新日志名称]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -607,10 +976,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "SYS_UPDATE_LOGNAME",
-        "codeName" : "SysUpdateLogName"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -624,6 +989,14 @@
     "length" : 200,
     "logicName" : "更新名称",
     "name" : "SYS_UPDATE_LOGNAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "SYS_UPDATE_LOGNAME"
+    },
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
@@ -644,6 +1017,31 @@
       "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[LATESTUPDATE][最新更新]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[LATESTUPDATE][最新更新]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[LATESTUPDATE][最新更新]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[LATESTUPDATE][最新更新]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -651,10 +1049,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "LATESTUPDATE",
-        "codeName" : "Latestupdate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -673,6 +1067,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "LATESTUPDATE"
+    },
     "stdDataType" : 9,
     "valueFormat" : "%1$s"
   }, {
@@ -683,6 +1085,31 @@
       "queryCodeExp" : "t1.`UPDATE`",
       "standardColumnName" : "`UPDATE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATE][更新日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[UPDATE][更新日期]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATE][更新日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[UPDATE][更新日期]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -690,10 +1117,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATE",
-        "codeName" : "Update"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -707,6 +1130,14 @@
     "importOrder" : 1000,
     "logicName" : "更新日期",
     "name" : "UPDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td"
   } ],
@@ -729,8 +1160,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
+        }
       } ],
       "parallelOutput" : true
     }, {
@@ -775,12 +1205,14 @@
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -788,6 +1220,197 @@
     },
     "enableBackend" : true,
     "enableFront" : false
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "SysUpdateLogDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "defaultValue" : "1",
+      "logicName" : "最新更新",
+      "name" : "Latestupdate",
+      "getPSDEField" : {
+        "name" : "LATESTUPDATE",
+        "codeName" : "Latestupdate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "系统更新日志标识",
+      "name" : "SysUpdateLogId",
+      "getPSDEField" : {
+        "name" : "SYS_UPDATE_LOGID",
+        "codeName" : "SysUpdateLogId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "更新名称",
+      "name" : "SysUpdateLogName",
+      "getPSDEField" : {
+        "name" : "SYS_UPDATE_LOGNAME",
+        "codeName" : "SysUpdateLogName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新日期",
+      "name" : "Update",
+      "getPSDEField" : {
+        "name" : "UPDATE",
+        "codeName" : "Update"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "defaultValue" : "MOB",
+      "logicName" : "更新平台",
+      "name" : "Updatebranch",
+      "getPSDEField" : {
+        "name" : "UPDATEBRANCH",
+        "codeName" : "Updatebranch"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新说明",
+      "name" : "Updesc",
+      "getPSDEField" : {
+        "name" : "UPDESC",
+        "codeName" : "Updesc"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "stringLength" : 1048576,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "SysUpdateLogFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "defaultValue" : "1",
+      "logicName" : "最新更新",
+      "name" : "N_LATESTUPDATE_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_LATESTUPDATE_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "LATESTUPDATE",
+        "codeName" : "Latestupdate"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "系统更新日志标识",
+      "name" : "N_SYS_UPDATE_LOGID_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_SYS_UPDATE_LOGID_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "SYS_UPDATE_LOGID",
+        "codeName" : "SysUpdateLogId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新名称",
+      "name" : "N_SYS_UPDATE_LOGNAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_SYS_UPDATE_LOGNAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "SYS_UPDATE_LOGNAME",
+        "codeName" : "SysUpdateLogName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "MOB",
+      "logicName" : "更新平台",
+      "name" : "N_UPDATEBRANCH_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_UPDATEBRANCH_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEBRANCH",
+        "codeName" : "Updatebranch"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -852,6 +1475,140 @@
     "roleTag" : "SYS_UPDATE_LOG_READ_ALL",
     "userDRAction" : "READ"
   } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "RedirectView",
+    "logicName" : "系统更新日志实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "系统更新日志实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "LastTabExpView",
+    "logicName" : "系统更新日志实体分页导航视图（最近更新）",
+    "name" : "系统更新日志实体分页导航视图（最近更新）",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "系统更新日志实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "系统更新日志实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "系统更新日志实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "系统更新日志实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "系统更新日志实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "系统更新日志实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "InfoEditView",
+    "logicName" : "系统更新日志实体编辑视图（信息表单）",
+    "name" : "系统更新日志实体编辑视图（信息表单）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "系统更新日志实体编辑视图（左右关系）",
+    "name" : "系统更新日志实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "LastGridView",
+    "logicName" : "系统更新日志实体表格视图（最近更新）",
+    "name" : "系统更新日志实体表格视图（最近更新）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "系统更新日志实体移动端选择多数据视图（部件视图）",
+    "name" : "系统更新日志实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "系统更新日志实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "系统更新日志实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "系统更新日志实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "系统更新日志实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "系统更新日志实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "系统更新日志实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "系统更新日志实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "系统更新日志实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "系统更新日志实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "系统更新日志实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TabExpView",
+    "logicName" : "系统更新日志实体分页导航视图",
+    "name" : "系统更新日志实体分页导航视图",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "系统更新日志实体选择表格视图（部件视图）",
+    "name" : "系统更新日志实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainL",
+    "logicName" : "查看",
+    "modelTag2" : "0",
+    "name" : "查看",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "系统更新日志实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "系统更新日志实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  } ],
   "codeName" : "SysUpdateLog",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
@@ -869,7 +1626,15 @@
   "enableUIActions" : 15,
   "enableViewLevel" : 0,
   "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "SYS_UPDATE_LOGID",
+    "codeName" : "SysUpdateLogId"
+  },
   "logicName" : "更新日志",
+  "getMajorPSDEField" : {
+    "name" : "SYS_UPDATE_LOGNAME",
+    "codeName" : "SysUpdateLogName"
+  },
   "getMajorPSDERs" : [ {
     "codeName" : "SysUpdateLog",
     "dERType" : "DER1N",
@@ -900,6 +1665,14 @@
     "removeOrder" : 0
   } ],
   "name" : "SYS_UPDATE_LOG",
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Auto1.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
@@ -908,7 +1681,6 @@
   "storageMode" : 1,
   "systemTag" : "iBizPMS",
   "tableName" : "T_SYS_UPDATE_LOG",
-  "virtualMode" : 0,
   "enableAPIStorage" : false,
   "enableCreate" : true,
   "enableDataVer" : false,

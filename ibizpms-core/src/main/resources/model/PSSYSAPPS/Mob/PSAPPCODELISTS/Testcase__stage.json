@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Testcase__stage",
   "codeListType" : "STATIC",
   "codeName" : "Testcase__stage",
   "dynaInstMode" : 1,
@@ -12,33 +13,27 @@
   "getPSCodeItems" : [ {
     "codeName" : "Unittest",
     "text" : "单元测试阶段",
-    "value" : "unittest",
-    "includeBeginValue" : true
+    "value" : "unittest"
   }, {
     "codeName" : "Feature",
     "text" : "功能测试阶段",
-    "value" : "feature",
-    "includeBeginValue" : true
+    "value" : "feature"
   }, {
     "codeName" : "Intergrate",
     "text" : "集成测试阶段",
-    "value" : "intergrate",
-    "includeBeginValue" : true
+    "value" : "intergrate"
   }, {
     "codeName" : "System",
     "text" : "系统测试阶段",
-    "value" : "system",
-    "includeBeginValue" : true
+    "value" : "system"
   }, {
     "codeName" : "Smoke",
     "text" : "冒烟测试阶段",
-    "value" : "smoke",
-    "includeBeginValue" : true
+    "value" : "smoke"
   }, {
     "codeName" : "Bvt",
     "text" : "版本验证阶段",
-    "value" : "bvt",
-    "includeBeginValue" : true
+    "value" : "bvt"
   } ],
   "enableCache" : true
 }

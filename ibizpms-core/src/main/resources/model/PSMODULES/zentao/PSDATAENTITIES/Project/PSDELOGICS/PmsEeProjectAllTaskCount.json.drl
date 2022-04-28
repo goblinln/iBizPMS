@@ -12,52 +12,11 @@ package cn.ibizlab.pms.zentao.logic.projectlogic.pmseeprojectalltaskcount;
 
     no-loop
 
-            //逻辑处理节点[获取计划任务]
-            rule "rawsqlcall3"
-            ruleflow-group "projectpmseeprojectalltaskcountrawsqlcall3"
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "projectpmseeprojectalltaskcountbegin"
             when
             then
-    Map param =new HashMap();
-        param.put("param0",projectpmseeprojectalltaskcountdefault.get("srfcurproject"));
-        param.put("param1",curuser.getSessionParams().get("srfloginname"));
-        param.put("param2",curuser.getSessionParams().get("srfloginname"));
-        param.put("param3",curuser.getSessionParams().get("srfloginname"));
-        param.put("param4",curuser.getSessionParams().get("srfloginname"));
-        param.put("param5",curuser.getSessionParams().get("srfloginname"));
-        param.put("param6",curuser.getSessionParams().get("srfloginname"));
-    String strSql="select count(*) as plan from zt_task t1 where t1.deleted = '0' and  t1.project in (#{et.param0}) and t1.taskspecies = 'plan' and ( t1.assignedTo = #{et.param1} or t1.openedBy = #{et.param2}  or FIND_IN_SET(#{et.param3}, t1.finishedList) or t1.closedBy =#{et.param4} or t1.finishedBy = #{et.param5} or t1.canceledBy = #{et.param6} )";
-                        java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
-                            if(entities.size()>0){
-                            JSONObject entity=entities.get(0);
-                                    for (Map.Entry entry : entity.entrySet()) {
-                                    projectpmseeprojectalltaskcountdefault.set(String.valueOf(entry.getKey()),entry.getValue());
-                                    }
-                            }
-                        update(projectpmseeprojectalltaskcountdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[获取临时任务]
-            rule "rawsqlcall1"
-            ruleflow-group "projectpmseeprojectalltaskcountrawsqlcall1"
-            when
-            then
-    Map param =new HashMap();
-        param.put("param0",projectpmseeprojectalltaskcountdefault.get("srfcurproject"));
-        param.put("param1",curuser.getSessionParams().get("srfloginname"));
-        param.put("param2",curuser.getSessionParams().get("srfloginname"));
-        param.put("param3",curuser.getSessionParams().get("srfloginname"));
-        param.put("param4",curuser.getSessionParams().get("srfloginname"));
-        param.put("param5",curuser.getSessionParams().get("srfloginname"));
-        param.put("param6",curuser.getSessionParams().get("srfloginname"));
-    String strSql="select count(*) as temp  from zt_task t1 where t1.deleted = '0' and t1.project in (#{et.param0}) and taskspecies = 'temp' and ( t1.assignedTo = #{et.param1} or t1.openedBy = #{et.param2}  or FIND_IN_SET(#{et.param3}, t1.finishedList) or t1.closedBy =#{et.param4} or t1.finishedBy = #{et.param5} or t1.canceledBy = #{et.param6} )";
-                        java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
-                            if(entities.size()>0){
-                            JSONObject entity=entities.get(0);
-                                    for (Map.Entry entry : entity.entrySet()) {
-                                    projectpmseeprojectalltaskcountdefault.set(String.valueOf(entry.getKey()),entry.getValue());
-                                    }
-                            }
-                        update(projectpmseeprojectalltaskcountdefault);//更新fact中变量值
             end
 
             //逻辑处理节点[获取所有任务]
@@ -108,9 +67,50 @@ package cn.ibizlab.pms.zentao.logic.projectlogic.pmseeprojectalltaskcount;
                         update(projectpmseeprojectalltaskcountdefault);//更新fact中变量值
             end
 
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "projectpmseeprojectalltaskcountbegin"
+            //逻辑处理节点[获取临时任务]
+            rule "rawsqlcall1"
+            ruleflow-group "projectpmseeprojectalltaskcountrawsqlcall1"
             when
             then
+    Map param =new HashMap();
+        param.put("param0",projectpmseeprojectalltaskcountdefault.get("srfcurproject"));
+        param.put("param1",curuser.getSessionParams().get("srfloginname"));
+        param.put("param2",curuser.getSessionParams().get("srfloginname"));
+        param.put("param3",curuser.getSessionParams().get("srfloginname"));
+        param.put("param4",curuser.getSessionParams().get("srfloginname"));
+        param.put("param5",curuser.getSessionParams().get("srfloginname"));
+        param.put("param6",curuser.getSessionParams().get("srfloginname"));
+    String strSql="select count(*) as temp  from zt_task t1 where t1.deleted = '0' and t1.project in (#{et.param0}) and taskspecies = 'temp' and ( t1.assignedTo = #{et.param1} or t1.openedBy = #{et.param2}  or FIND_IN_SET(#{et.param3}, t1.finishedList) or t1.closedBy =#{et.param4} or t1.finishedBy = #{et.param5} or t1.canceledBy = #{et.param6} )";
+                        java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+                            if(entities.size()>0){
+                            JSONObject entity=entities.get(0);
+                                    for (Map.Entry entry : entity.entrySet()) {
+                                    projectpmseeprojectalltaskcountdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+                                    }
+                            }
+                        update(projectpmseeprojectalltaskcountdefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[获取计划任务]
+            rule "rawsqlcall3"
+            ruleflow-group "projectpmseeprojectalltaskcountrawsqlcall3"
+            when
+            then
+    Map param =new HashMap();
+        param.put("param0",projectpmseeprojectalltaskcountdefault.get("srfcurproject"));
+        param.put("param1",curuser.getSessionParams().get("srfloginname"));
+        param.put("param2",curuser.getSessionParams().get("srfloginname"));
+        param.put("param3",curuser.getSessionParams().get("srfloginname"));
+        param.put("param4",curuser.getSessionParams().get("srfloginname"));
+        param.put("param5",curuser.getSessionParams().get("srfloginname"));
+        param.put("param6",curuser.getSessionParams().get("srfloginname"));
+    String strSql="select count(*) as plan from zt_task t1 where t1.deleted = '0' and  t1.project in (#{et.param0}) and t1.taskspecies = 'plan' and ( t1.assignedTo = #{et.param1} or t1.openedBy = #{et.param2}  or FIND_IN_SET(#{et.param3}, t1.finishedList) or t1.closedBy =#{et.param4} or t1.finishedBy = #{et.param5} or t1.canceledBy = #{et.param6} )";
+                        java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+                            if(entities.size()>0){
+                            JSONObject entity=entities.get(0);
+                                    for (Map.Entry entry : entity.entrySet()) {
+                                    projectpmseeprojectalltaskcountdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+                                    }
+                            }
+                        update(projectpmseeprojectalltaskcountdefault);//更新fact中变量值
             end

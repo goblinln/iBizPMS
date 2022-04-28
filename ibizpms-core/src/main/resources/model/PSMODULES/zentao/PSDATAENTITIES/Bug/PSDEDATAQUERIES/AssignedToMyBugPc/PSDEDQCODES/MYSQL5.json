@@ -1,0 +1,23 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`ASSIGNEDTO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ASSIGNEDTO\",\"dename\":\"ZT_BUG\"}')} )",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deadline is not null and t1.deadline <> '0000-00-00'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.assigneddate is not null and t1.assigneddate <> '0000-00-00 00:00:00'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACTIVATEDCOUNT`,\nt1.`ACTIVATEDDATE`,\nt1.`ASSIGNEDDATE`,\nt1.`ASSIGNEDTO`,\nt1.`BRANCH`,\nt61.`NAME` AS `BRANCHNAME`,\nt1.`BROWSER`,\nt1.`CASE`,\nt1.`CASEVERSION`,\nt1.`CLOSEDBY`,\nt1.`CLOSEDDATE`,\nt1.`COLOR`,\nt1.`CONFIRMED`,\nt1.`DEADLINE`,\nt1.`DELETED`,\nt1.`DUPLICATEBUG`,\nt1.`ENTRY`,\nt1.`FOUND`,\nt1.`HARDWARE`,\nt1.`ID`,\n(select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'bug' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`,\nt1.`KEYWORDS`,\nt1.`LASTEDITEDBY`,\nt1.`LASTEDITEDDATE`,\nt1.`LINES`,\nt1.`LINKBUG`,\nt1.`MAILTO`,\nt1.`MODULE`,\nt51.`NAME` AS `MODULENAME`,\n(SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' )  FROM zt_module tt WHERE FIND_IN_SET( tt.id, t51.path ) and tt.deleted = '0'  AND tt.type = 'story'  GROUP BY tt.root ) AS `MODULENAME1`,\nt1.`OPENEDBUILD`,\nt1.`OPENEDBY`,\nt1.`OPENEDDATE`,\nt1.`OS`,\nt1.`PLAN`,\nt1.`PRI`,\nt1.`PRODUCT`,\nt11.`NAME` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt21.`NAME` AS `PROJECTNAME`,\nt1.`REPO`,\nt1.`REPOTYPE`,\nt1.`RESOLUTION`,\nt1.`RESOLVEDBUILD`,\nt1.`RESOLVEDBY`,\nt1.`RESOLVEDDATE`,\nt1.`RESULT`,\nt1.`SEVERITY`,\nt1.`STATUS`,\nt1.`STORY`,\nt31.`TITLE` AS `STORYNAME`,\nt1.`STORYVERSION`,\nt1.`SUBSTATUS`,\nt1.`TASK`,\nt41.`NAME` AS `TASKNAME`,\nt1.`TESTTASK`,\nt1.`TITLE`,\nt1.`TOSTORY`,\nt1.`TOTASK`,\nt1.`TYPE`,\nt1.`V1`,\nt1.`V2`,\n(case when t1.DEADLINE = '0000-00-00' then 0 else datediff(t1.deadline, now() ) end) as overduebugs ,\n\tt1.BUGSN\nFROM\n\t`zt_bug` t1\n\tLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.id\n\tLEFT JOIN zt_project t21 ON t1.PROJECT = t21.id\n\tLEFT JOIN zt_story t31 ON t1.STORY = t31.id\n\tLEFT JOIN zt_task t41 ON t1.TASK = t41.id\n\tLEFT JOIN zt_module t51 ON t1.MODULE = t51.id\n\tLEFT JOIN zt_branch t61 ON t1.BRANCH = t61.id",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEDATAQUERIES/AssignedToMyBugPc/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,12 @@
+{
+  "codeName" : "Presenter",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSUSERROLES/Presenter.json",
+  "name" : "演示用户",
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
+  "roleTag" : "Presenter",
+  "roleType" : "CUSTOM",
+  "globalRole" : true
+}

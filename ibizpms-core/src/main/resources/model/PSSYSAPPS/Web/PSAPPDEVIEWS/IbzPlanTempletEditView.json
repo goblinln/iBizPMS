@@ -95,6 +95,7 @@
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
+        "predefinedType" : "EDITVIEW_SAVEANDEXITACTION",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
@@ -140,13 +141,13 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "UpdateTempMajor",
+        "actionName" : "GetDraftTempMajor",
         "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "UpdateTempMajor"
+          "id" : "GetDraftTempMajor"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -157,32 +158,6 @@
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraftfrom",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
-        }
-      }, {
-        "actionName" : "RemoveTempMajor",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "RemoveTempMajor"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
-        }
-      }, {
-        "actionName" : "GetDraftTempMajor",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraftTempMajor"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
@@ -208,6 +183,32 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "CreateTempMajor"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        }
+      }, {
+        "actionName" : "UpdateTempMajor",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "UpdateTempMajor"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        }
+      }, {
+        "actionName" : "RemoveTempMajor",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "RemoveTempMajor"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -525,10 +526,15 @@
                 "dataAccessAction" : "CREATE",
                 "fullCodeName" : "NewRow",
                 "name" : "表格界面_新建行",
+                "getPSDEOPPriv" : {
+                  "modelref" : true,
+                  "id" : "CREATE"
+                },
                 "getPSSysImage" : {
                   "glyph" : "xf067@FontAwesome",
                   "cssClass" : "fa fa-plus"
                 },
+                "predefinedType" : "GRIDVIEW_NEWROWACTION",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "NewRow",
@@ -601,6 +607,32 @@
             },
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
+                "actionName" : "GetTemp",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "READ",
+                "name" : "load",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "GetTemp"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+                }
+              }, {
+                "actionName" : "CreateTemp",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "CREATE",
+                "name" : "create",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "CreateTemp"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+                }
+              }, {
                 "actionName" : "UpdateTemp",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "UPDATE",
@@ -608,17 +640,6 @@
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "UpdateTemp"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
-                }
-              }, {
-                "actionType" : "DEDATASET",
-                "name" : "fetch",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "FetchTempDefault"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -638,19 +659,6 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
                 }
               }, {
-                "actionName" : "GetTemp",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "READ",
-                "name" : "load",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "GetTemp"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
-                }
-              }, {
                 "actionName" : "GetDraftTemp",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "CREATE",
@@ -664,13 +672,11 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
                 }
               }, {
-                "actionName" : "CreateTemp",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "CREATE",
-                "name" : "create",
+                "actionType" : "DEDATASET",
+                "name" : "fetch",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "CreateTemp"
+                  "id" : "FetchTempDefault"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1022,10 +1028,14 @@
             "actionRSMode" : 1,
             "codeName" : "PlanTempletDetails",
             "dataRSMode" : 0,
+            "majorDECodeName" : "IbzPlanTemplet",
+            "majorDEName" : "IBZ_PLANTEMPLET",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
             },
+            "minorDECodeName" : "PlanTempletDetail",
+            "minorDEName" : "IBZPLANTEMPLETDETAIL",
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"

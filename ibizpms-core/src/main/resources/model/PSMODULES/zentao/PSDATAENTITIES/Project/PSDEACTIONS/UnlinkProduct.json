@@ -6,13 +6,15 @@
   "logicName" : "解除关联产品",
   "name" : "UnlinkProduct",
   "getPSDEActionInput" : {
-    "codeName" : "UnlinkProductInput",
-    "name" : "输入对象",
+    "name" : "UnlinkProductInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UnlinkProductResult",
-    "name" : "返回对象",
+    "name" : "UnlinkProductResult",
     "type" : "VOID"
   }
 }

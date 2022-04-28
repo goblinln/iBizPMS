@@ -22,6 +22,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "ProductBugcnt_QA",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchProductBugcnt_QA"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {

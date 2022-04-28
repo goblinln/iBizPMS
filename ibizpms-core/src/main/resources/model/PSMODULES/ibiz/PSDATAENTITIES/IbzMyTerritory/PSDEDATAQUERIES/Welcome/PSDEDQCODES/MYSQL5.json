@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "select CONCAT(t1.REALNAME,'，',t1.NICKNAME,'!') as realname, t1.ACCOUNT from (SELECT\n\tt1.`ACCOUNT`,\n\t(case when DATE_FORMAT(now(),'%H') < 11 AND DATE_FORMAT(now(),'%H') >= 5   then '早上好' when DATE_FORMAT(now(),'%H') < 14 AND DATE_FORMAT(now(),'%H') >= 11 then '中午好' when DATE_FORMAT(now(),'%H') < 19 AND DATE_FORMAT(now(),'%H') >= 14 then '下午好' when (DATE_FORMAT(now(),'%H') >= 19 || DATE_FORMAT(now(),'%H') < 5) then '晚上好' end) AS `NICKNAME`,\n\tt1.`REALNAME`\nFROM\n\t`zt_user` t1) t1",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEDATAQUERIES/Welcome/PSDEDQCODES/MYSQL5.json"
+}

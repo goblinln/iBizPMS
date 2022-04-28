@@ -6,13 +6,15 @@
   "logicName" : "EE激活计划",
   "name" : "EeActivePlan",
   "getPSDEActionInput" : {
-    "codeName" : "EeActivePlanInput",
-    "name" : "输入对象",
+    "name" : "EeActivePlanInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "EeActivePlanResult",
-    "name" : "返回对象",
+    "name" : "EeActivePlanResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

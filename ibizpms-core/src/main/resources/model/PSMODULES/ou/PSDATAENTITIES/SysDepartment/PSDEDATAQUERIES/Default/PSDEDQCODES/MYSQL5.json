@@ -1,0 +1,69 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.ENABLE = 1",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BCODE`",
+    "name" : "BCODE"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DEPTCODE`",
+    "name" : "DEPTCODE"
+  }, {
+    "expression" : "t1.`DEPTID`",
+    "name" : "DEPTID"
+  }, {
+    "expression" : "t1.`DEPTLEVEL`",
+    "name" : "DEPTLEVEL"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`DOMAINS`",
+    "name" : "DOMAINS"
+  }, {
+    "expression" : "t1.`ENABLE`",
+    "name" : "ENABLE"
+  }, {
+    "expression" : "t1.`LEADERID`",
+    "name" : "LEADERID"
+  }, {
+    "expression" : "t1.`LEADERNAME`",
+    "name" : "LEADERNAME"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t11.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PDEPTID`",
+    "name" : "PDEPTID"
+  }, {
+    "expression" : "t21.`DEPTNAME`",
+    "name" : "PDEPTNAME"
+  }, {
+    "expression" : "t1.`SHORTNAME`",
+    "name" : "SHORTNAME"
+  }, {
+    "expression" : "t1.`SHOWORDER`",
+    "name" : "SHOWORDER"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`BCODE`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DEPTCODE`,\nt1.`DEPTID`,\nt1.`DEPTLEVEL`,\nt1.`DEPTNAME`,\nt1.`DOMAINS`,\nt1.`ENABLE`,\nt1.`LEADERID`,\nt1.`LEADERNAME`,\nt1.`ORGID`,\nt11.`ORGNAME`,\nt1.`PDEPTID`,\nt21.`DEPTNAME` AS `PDEPTNAME`,\nt1.`SHORTNAME`,\nt1.`SHOWORDER`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_SYS_DEPT` t1 \nLEFT JOIN `T_SYS_ORG` t11 ON t1.`ORGID` = t11.`ORGID` \nLEFT JOIN `T_SYS_DEPT` t21 ON t1.`PDEPTID` = t21.`DEPTID` \n",
+  "id" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

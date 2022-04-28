@@ -535,7 +535,27 @@
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  } ],
+  "getAllPSAppDEDataImports" : [ {
+    "batchSize" : 1000,
+    "codeName" : "DataImport",
+    "createDataAccessAction" : "CREATE",
+    "getCreatePSAppDEAction" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "name" : "数据导入",
+    "updateDataAccessAction" : "UPDATE",
+    "getUpdatePSAppDEAction" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "enableBackend" : true,
+    "enableFront" : true,
+    "ignoreError" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
@@ -1359,6 +1379,22 @@
     "logicName" : "获取联系人",
     "name" : "获取联系人",
     "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接5583",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
       "name" : "准备参数",
@@ -1378,32 +1414,17 @@
         "srcValueType" : "SRCDLPARAM"
       } ],
       "parallelOutput" : true
-    }, {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Prepareparam1"
-        },
-        "name" : "连接5583",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      } ],
-      "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -7079,12 +7100,27 @@
     "name" : "XQCHANGE"
   } ],
   "codeName" : "SubTask",
+  "dEAPITag" : "IBZ_SUBTASK",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubTask.json",
   "enableUIActions" : 15,
   "logicName" : "子任务",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS1",
+    "codeName" : "Status1"
+  }, {
+    "name" : "ISFAVORITES",
+    "codeName" : "Isfavorites"
+  }, {
+    "name" : "TASKTYPE",
+    "codeName" : "Tasktype"
+  } ],
   "name" : "IBZ_SUBTASK",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_TASK",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
@@ -7098,7 +7134,9 @@
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : false,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableTempData" : true,
   "enableUICreate" : true,

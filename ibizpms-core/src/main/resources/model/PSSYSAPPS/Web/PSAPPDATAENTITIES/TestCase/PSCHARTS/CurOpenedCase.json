@@ -23,6 +23,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "CurOpenedCase",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchCurOpenedCase"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {

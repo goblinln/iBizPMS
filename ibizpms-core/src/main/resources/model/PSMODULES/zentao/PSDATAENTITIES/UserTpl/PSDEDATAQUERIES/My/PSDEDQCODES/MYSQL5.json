@@ -1,0 +1,48 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USERTPL\"}')} )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`CONTENT`",
+    "name" : "CONTENT"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PUBLIC`",
+    "name" : "PUBLIC"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  }, {
+    "expression" : "t1.`USERTPLSN`",
+    "name" : "USERTPLSN"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`CONTENT`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`ID`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PUBLIC`,\nt1.`TITLE`,\nt1.`TYPE`,\nt1.`UPDATEBY`,\nt1.`USERTPLSN`\nFROM `zt_usertpl` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEDATAQUERIES/My/PSDEDQCODES/MYSQL5.json"
+}

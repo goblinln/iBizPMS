@@ -1,4 +1,20 @@
 {
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDEACMODES/Default.json"
+  } ],
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
@@ -8,14 +24,16 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
-      "codeName" : "CreateInput",
-      "name" : "输入对象",
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateResult",
-      "name" : "返回对象",
+      "name" : "CreateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -28,14 +46,16 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateInput",
-      "name" : "输入对象",
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateResult",
-      "name" : "返回对象",
+      "name" : "UpdateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -49,13 +69,15 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "DYNADASHBOARDID",
+        "codeName" : "DynaDashboardId"
+      },
+      "name" : "RemoveInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveResult",
-      "name" : "返回对象",
+      "name" : "RemoveResult",
       "type" : "VOID"
     },
     "batchAction" : true,
@@ -69,13 +91,19 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
-      "codeName" : "GetInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "DYNADASHBOARDID",
+        "codeName" : "DynaDashboardId"
+      },
+      "name" : "GetInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetResult",
-      "name" : "返回对象",
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -88,13 +116,19 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftInput",
-      "name" : "输入对象",
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftResult",
-      "name" : "返回对象",
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -106,13 +140,15 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
-      "codeName" : "CheckKeyInput",
-      "name" : "输入对象",
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CheckKeyResult",
-      "name" : "返回对象",
+      "name" : "CheckKeyResult",
       "stdDataType" : 9,
       "type" : "SIMPLE"
     },
@@ -125,21 +161,72 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
-      "codeName" : "SaveInput",
-      "name" : "输入对象",
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "SaveResult",
-      "name" : "返回对象",
+      "name" : "SaveResult",
       "type" : "VOID"
     },
     "builtinAction" : true
   } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`T_DYNADASHBOARD`",
+    "tableName" : "T_DYNADASHBOARD",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    }, {
+      "name" : "DYNADASHBOARDID",
+      "codeName" : "DynaDashboardId"
+    }, {
+      "name" : "DYNADASHBOARDNAME",
+      "codeName" : "DynaDashboardName"
+    }, {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    }, {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }, {
+      "name" : "MODELID",
+      "codeName" : "ModelId"
+    }, {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }, {
+      "name" : "APPID",
+      "codeName" : "AppId"
+    }, {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    }, {
+      "name" : "MODEL",
+      "codeName" : "Model"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json",
+    "name" : "T_DYNADASHBOARD",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "T_DYNADASHBOARD"
+    },
+    "tableType" : "MAIN"
+  } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
@@ -152,11 +239,27 @@
       "joinType" : "MAIN",
       "name" : "DYNADASHBOARD"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardDTO"
+      },
+      "type" : "DTOS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
@@ -168,7 +271,24 @@
       },
       "joinType" : "MAIN",
       "name" : "DYNADASHBOARD"
-    }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -179,13 +299,19 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultInput",
-      "name" : "输入对象",
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultResult",
-      "name" : "返回对象",
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaDashboardDTO"
+      },
       "type" : "PAGE"
     },
     "defaultMode" : true,
@@ -199,6 +325,31 @@
       "name" : "USERID",
       "queryCodeExp" : "t1.`USERID`",
       "standardColumnName" : "`USERID`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[USERID][用户标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[USERID][用户标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[USERID][用户标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[USERID][用户标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -219,10 +370,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "USERID",
-        "codeName" : "UserId"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -236,6 +383,14 @@
     "length" : 100,
     "logicName" : "用户标识",
     "name" : "USERID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "USERID"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
@@ -252,6 +407,33 @@
       "name" : "N_DYNADASHBOARDID_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DYNADASHBOARDID][动态数据看板标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[DYNADASHBOARDID][动态数据看板标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DYNADASHBOARDID][动态数据看板标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[DYNADASHBOARDID][动态数据看板标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -272,10 +454,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "DYNADASHBOARDID",
-        "codeName" : "DynaDashboardId"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -289,6 +467,14 @@
     "length" : 100,
     "logicName" : "动态数据看板标识",
     "name" : "DYNADASHBOARDID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DYNADASHBOARDID"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
@@ -309,6 +495,31 @@
       "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DYNADASHBOARDNAME][动态数据看板名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DYNADASHBOARDNAME][动态数据看板名称]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DYNADASHBOARDNAME][动态数据看板名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DYNADASHBOARDNAME][动态数据看板名称]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -328,10 +539,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "DYNADASHBOARDNAME",
-        "codeName" : "DynaDashboardName"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -345,6 +552,14 @@
     "length" : 200,
     "logicName" : "动态数据看板名称",
     "name" : "DYNADASHBOARDNAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DYNADASHBOARDNAME"
+    },
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
@@ -357,6 +572,33 @@
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
       "standardColumnName" : "`CREATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CREATEMAN][建立人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEMAN][建立人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -377,10 +619,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
       },
-      "getPSDEField" : {
-        "name" : "CREATEMAN",
-        "codeName" : "CreateMan"
-      },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -398,6 +636,14 @@
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEMAN"
+    },
     "predefinedType" : "CREATEMAN",
     "stdDataType" : 25,
     "stringLength" : 60,
@@ -411,6 +657,33 @@
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
       "standardColumnName" : "`UPDATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[UPDATEMAN][更新人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEMAN][更新人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -431,10 +704,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
       },
-      "getPSDEField" : {
-        "name" : "UPDATEMAN",
-        "codeName" : "UpdateMan"
-      },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -452,6 +721,14 @@
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEMAN"
+    },
     "predefinedType" : "UPDATEMAN",
     "stdDataType" : 25,
     "stringLength" : 60,
@@ -465,6 +742,31 @@
       "name" : "MODELID",
       "queryCodeExp" : "t1.`MODELID`",
       "standardColumnName" : "`MODELID`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[MODELID][模型标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[MODELID][模型标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[MODELID][模型标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[MODELID][模型标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -485,10 +787,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "MODELID",
-        "codeName" : "ModelId"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -502,6 +800,14 @@
     "length" : 100,
     "logicName" : "模型标识",
     "name" : "MODELID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "MODELID"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
@@ -513,6 +819,33 @@
       "queryCodeExp" : "t1.`UPDATEDATE`",
       "standardColumnName" : "`UPDATEDATE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEDATE][更新时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEDATE][更新时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -520,10 +853,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEDATE",
-        "codeName" : "UpdateDate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -538,6 +867,14 @@
     "length" : 8,
     "logicName" : "更新时间",
     "name" : "UPDATEDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEDATE"
+    },
     "predefinedType" : "UPDATEDATE",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
@@ -550,6 +887,31 @@
       "name" : "APPID",
       "queryCodeExp" : "t1.`APPID`",
       "standardColumnName" : "`APPID`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[APPID][应用标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[APPID][应用标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[APPID][应用标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[APPID][应用标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -570,10 +932,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "APPID",
-        "codeName" : "AppId"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -587,6 +945,14 @@
     "length" : 100,
     "logicName" : "应用标识",
     "name" : "APPID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "APPID"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
@@ -598,6 +964,33 @@
       "queryCodeExp" : "t1.`CREATEDATE`",
       "standardColumnName" : "`CREATEDATE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CREATEDATE][建立时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEDATE][建立时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -605,10 +998,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CREATEDATE",
-        "codeName" : "CreateDate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -623,6 +1012,14 @@
     "length" : 8,
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEDATE"
+    },
     "predefinedType" : "CREATEDATE",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
@@ -635,6 +1032,31 @@
       "name" : "MODEL",
       "queryCodeExp" : "t1.`MODEL`",
       "standardColumnName" : "`MODEL`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[MODEL][模型]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXTAREA",
+        "name" : "[MODEL][模型]移动端默认",
+        "stringLength" : 1048576,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[MODEL][模型]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[MODEL][模型]",
+        "stringLength" : 1048576,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -655,10 +1077,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[1048576]"
       },
-      "getPSDEField" : {
-        "name" : "MODEL",
-        "codeName" : "Model"
-      },
       "ruleInfo" : "内容长度必须小于等于[1048576]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -672,10 +1090,178 @@
     "length" : 1048576,
     "logicName" : "模型",
     "name" : "MODEL",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "MODEL"
+    },
     "stdDataType" : 21,
     "stringLength" : 1048576,
     "valueFormat" : "%1$s",
     "queryColumn" : false
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "DynaDashboardDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "应用标识",
+      "name" : "AppId",
+      "getPSDEField" : {
+        "name" : "APPID",
+        "codeName" : "AppId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "动态数据看板标识",
+      "name" : "DynaDashboardId",
+      "getPSDEField" : {
+        "name" : "DYNADASHBOARDID",
+        "codeName" : "DynaDashboardId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "动态数据看板名称",
+      "name" : "DynaDashboardName",
+      "getPSDEField" : {
+        "name" : "DYNADASHBOARDNAME",
+        "codeName" : "DynaDashboardName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "模型",
+      "name" : "Model",
+      "getPSDEField" : {
+        "name" : "MODEL",
+        "codeName" : "Model"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "stringLength" : 1048576,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "模型标识",
+      "name" : "ModelId",
+      "getPSDEField" : {
+        "name" : "MODELID",
+        "codeName" : "ModelId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "用户标识",
+      "name" : "UserId",
+      "getPSDEField" : {
+        "name" : "USERID",
+        "codeName" : "UserId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "DynaDashboardFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "动态数据看板标识",
+      "name" : "N_DYNADASHBOARDID_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_DYNADASHBOARDID_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "DYNADASHBOARDID",
+        "codeName" : "DynaDashboardId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "动态数据看板名称",
+      "name" : "N_DYNADASHBOARDNAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_DYNADASHBOARDNAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "DYNADASHBOARDNAME",
+        "codeName" : "DynaDashboardName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -689,6 +1275,61 @@
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "EditView",
+    "logicName" : "动态数据看板实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "动态数据看板实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "动态数据看板实体编辑视图（左右关系）",
+    "name" : "动态数据看板实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "动态数据看板实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "动态数据看板实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "动态数据看板实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "动态数据看板实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "动态数据看板实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "动态数据看板实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "动态数据看板实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "动态数据看板实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "动态数据看板实体选择表格视图（部件视图）",
+    "name" : "动态数据看板实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "DynaDashboard",
   "dEType" : 1,
@@ -707,8 +1348,32 @@
   "enableUIActions" : 15,
   "enableViewLevel" : 0,
   "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "DYNADASHBOARDID",
+    "codeName" : "DynaDashboardId"
+  },
   "logicName" : "动态数据看板",
+  "getMajorPSDEField" : {
+    "name" : "DYNADASHBOARDNAME",
+    "codeName" : "DynaDashboardName"
+  },
   "name" : "DYNADASHBOARD",
+  "getPSSubSysServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSUBSYSSERVICEAPIS/r7rt_dyna.json"
+  },
+  "getPSSubSysServiceAPIDE" : {
+    "modelref" : true,
+    "id" : "DynaDashboard"
+  },
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Auto1.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
@@ -718,7 +1383,6 @@
   "storageMode" : 1,
   "systemTag" : "iBizPMS",
   "tableName" : "T_DYNADASHBOARD",
-  "virtualMode" : 0,
   "enableAPIStorage" : false,
   "enableCreate" : true,
   "enableDataVer" : false,

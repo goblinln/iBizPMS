@@ -1,0 +1,19 @@
+{
+  "getAllPSSysSearchDocs" : [ {
+    "codeName" : "ibizproindex",
+    "name" : "ibizproindex",
+    "replicas" : 1,
+    "shards" : 1
+  }, {
+    "codeName" : "IbizproIndex",
+    "name" : "IBIZPRO_INDEX",
+    "replicas" : 1,
+    "shards" : 5
+  } ],
+  "codeName" : "GlobalSearch",
+  "defaultDocReplicas" : 1,
+  "defaultDocShards" : 5,
+  "dynaModelFilePath" : "PSSYSSEARCHSCHEMES/GlobalSearch.json",
+  "name" : "全文检索",
+  "searchEngineType" : "ELASTICSEARCH"
+}

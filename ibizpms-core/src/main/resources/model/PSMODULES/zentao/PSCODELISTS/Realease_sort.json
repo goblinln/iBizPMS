@@ -1,35 +1,41 @@
 {
+  "codeListTag" : "zentao__Realease_sort",
   "codeListType" : "STATIC",
   "codeName" : "Realease_sort",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Realease_sort.json",
   "emptyText" : "未定义",
+  "name" : "发布快速分组",
   "getPSCodeItems" : [ {
     "codeName" : "All",
     "data" : "{}",
     "text" : "所有",
-    "value" : "all",
-    "includeBeginValue" : true
+    "value" : "all"
   }, {
     "codeName" : "Normal",
     "color" : "rgba(13, 255, 0, 1)",
     "data" : "{\"n_status_eq\":\"normal\"}",
     "text" : "正常",
     "value" : "normal",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Terminate",
     "data" : "{\"n_status_eq\":\"terminate\"}",
     "text" : "停止维护",
-    "value" : "terminate",
-    "includeBeginValue" : true
+    "value" : "terminate"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

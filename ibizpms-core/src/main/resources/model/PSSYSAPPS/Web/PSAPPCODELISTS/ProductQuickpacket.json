@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__ProductQuickpacket",
   "codeListType" : "STATIC",
   "codeName" : "ProductQuickpacket",
   "dynaInstMode" : 1,
@@ -14,20 +15,17 @@
     "data" : "{}",
     "text" : "所有",
     "value" : "All",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Normal",
     "data" : "{\"n_status_eq\":\"normal\"}",
     "text" : "未关闭",
-    "value" : "normal",
-    "includeBeginValue" : true
+    "value" : "normal"
   }, {
     "codeName" : "Closed",
     "data" : "{\"n_status_eq\":\"closed\"}",
     "text" : "已关闭",
-    "value" : "closed",
-    "includeBeginValue" : true
+    "value" : "closed"
   } ],
   "enableCache" : true
 }

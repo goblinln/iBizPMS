@@ -126,7 +126,7 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/testcaselibs/${_context.testcaselib}/testcaselibmodules`, _data);
+            const res = await this.http.post(`/testcaselibs/${encodeURIComponent(_context.testcaselib)}/testcaselibmodules`, _data);
             return res;
         }
     this.log.warn([`[TestCaseLibModule]>>>[Create函数]异常`]);
@@ -146,7 +146,7 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.testcaselib && _context.testcaselibmodule) {
-            const res = await this.http.get(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/${_context.testcaselibmodule}`);
+            const res = await this.http.get(`/testcaselibs/${encodeURIComponent(_context.testcaselib)}/testcaselibmodules/${encodeURIComponent(_context.testcaselibmodule)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -169,7 +169,7 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
         if (_context.testcaselib && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/getdraft`, _data);
+            const res = await this.http.get(`/testcaselibs/${encodeURIComponent(_context.testcaselib)}/testcaselibmodules/getdraft`, _data);
             return res;
         }
     this.log.warn([`[TestCaseLibModule]>>>[GetDraft函数]异常`]);
@@ -189,7 +189,7 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.testcaselib && _context.testcaselibmodule) {
-            const res = await this.http.delete(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/${_context.testcaselibmodule}`);
+            const res = await this.http.delete(`/testcaselibs/${encodeURIComponent(_context.testcaselib)}/testcaselibmodules/${encodeURIComponent(_context.testcaselibmodule)}`);
             return res;
         }
     this.log.warn([`[TestCaseLibModule]>>>[Remove函数]异常`]);
@@ -211,7 +211,7 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
         if (_context.testcaselib && _context.testcaselibmodule) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/${_context.testcaselibmodule}`, _data);
+            const res = await this.http.put(`/testcaselibs/${encodeURIComponent(_context.testcaselib)}/testcaselibmodules/${encodeURIComponent(_context.testcaselibmodule)}`, _data);
             return res;
         }
     this.log.warn([`[TestCaseLibModule]>>>[Update函数]异常`]);
@@ -231,7 +231,7 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.testcaselib && true) {
-            const res = await this.http.post(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/fetchdefault`, _data);
+            const res = await this.http.post(`/testcaselibs/${encodeURIComponent(_context.testcaselib)}/testcaselibmodules/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
@@ -240,5 +240,24 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
             } catch (error) {
                 return this.handleResponseError(error);
             }
+    }
+
+    /**
+     * SaveBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestCaseLibModuleServiceBase
+     */
+    public async SaveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.testcaselib && true){
+        _data = await this.obtainMinor(_context, _data);
+            const res = await this.http.post(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/savebatch`,_data);
+            return res;
+        }
+        this.log.warn([`[TestCaseLibModule]>>>[SaveBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

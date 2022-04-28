@@ -1,4 +1,20 @@
 {
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACMODES/Default.json"
+  } ],
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
@@ -8,14 +24,16 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
-      "codeName" : "CreateInput",
-      "name" : "输入对象",
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateResult",
-      "name" : "返回对象",
+      "name" : "CreateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -28,14 +46,16 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateInput",
-      "name" : "输入对象",
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateResult",
-      "name" : "返回对象",
+      "name" : "UpdateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -49,13 +69,15 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveResult",
-      "name" : "返回对象",
+      "name" : "RemoveResult",
       "type" : "VOID"
     },
     "batchAction" : true,
@@ -69,13 +91,19 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
-      "codeName" : "GetInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetResult",
-      "name" : "返回对象",
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -88,13 +116,19 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftInput",
-      "name" : "输入对象",
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftResult",
-      "name" : "返回对象",
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -106,13 +140,15 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
-      "codeName" : "CheckKeyInput",
-      "name" : "输入对象",
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CheckKeyResult",
-      "name" : "返回对象",
+      "name" : "CheckKeyResult",
       "stdDataType" : 9,
       "type" : "SIMPLE"
     },
@@ -125,30 +161,51 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
-      "codeName" : "SaveInput",
-      "name" : "输入对象",
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "SaveResult",
-      "name" : "返回对象",
+      "name" : "SaveResult",
       "type" : "VOID"
     },
     "builtinAction" : true
   } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`zt_taskestimate`",
+    "tableName" : "zt_taskestimate",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "EVALUATIONCOST",
+      "codeName" : "Evaluationcost"
+    }, {
+      "name" : "DATE",
+      "codeName" : "Date"
+    }, {
+      "name" : "INPUTCOST",
+      "codeName" : "Inputcost"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDETABLES/Table.json",
+    "name" : "ZT_TASKESTIMATE",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "zt_taskestimate"
+    },
+    "tableType" : "MAIN"
+  } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.account =#{srf.webcontext.account}",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.`MONTH`=#{srf.webcontext.month}",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEDATAQUERIES/AccountDetail/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "AccountDetail",
     "logicName" : "用户月工时详情",
@@ -161,16 +218,27 @@
       "joinType" : "MAIN",
       "name" : "PROJECTTASKESTIMATE"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "AccountDetailInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "AccountDetailResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.project =#{srf.webcontext.project}",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
@@ -183,12 +251,28 @@
       "joinType" : "MAIN",
       "name" : "PROJECTTASKESTIMATE"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true,
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
@@ -200,7 +284,24 @@
       },
       "joinType" : "MAIN",
       "name" : "PROJECTTASKESTIMATE"
-    }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "AccountDetail",
@@ -211,13 +312,19 @@
       "id" : "AccountDetail"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "AccountDetailInput",
-      "name" : "输入对象",
+      "name" : "AccountDetailInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "AccountDetailResult",
-      "name" : "返回对象",
+      "name" : "AccountDetailResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -231,13 +338,19 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultInput",
-      "name" : "输入对象",
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultResult",
-      "name" : "返回对象",
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectTaskestimateDTO"
+      },
       "type" : "PAGE"
     },
     "defaultMode" : true,
@@ -245,6 +358,29 @@
     "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYFIVEEVALUATIONTIME][二十五号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYFIVEEVALUATIONTIME][二十五号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYFIVEEVALUATIONTIME][二十五号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYFIVEEVALUATIONTIME][二十五号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -252,10 +388,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYFIVEEVALUATIONTIME",
-        "codeName" : "TwentyfiveEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -272,9 +404,33 @@
     "name" : "TWENTYFIVEEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SEVENTEENCONSUMED][十七号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SEVENTEENCONSUMED][十七号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SEVENTEENCONSUMED][十七号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SEVENTEENCONSUMED][十七号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -282,10 +438,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SEVENTEENCONSUMED",
-        "codeName" : "Seventeenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -302,6 +454,7 @@
     "name" : "SEVENTEENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -311,6 +464,29 @@
       "stdDataType" : 1,
       "valueOP" : "IN"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PROJECT][项目标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PROJECT][项目标识]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PROJECT][项目标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PROJECT][项目标识]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -318,10 +494,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -337,9 +509,33 @@
     "name" : "PROJECT",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[FIFTEENEVALUATIONTIME][十五号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FIFTEENEVALUATIONTIME][十五号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[FIFTEENEVALUATIONTIME][十五号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FIFTEENEVALUATIONTIME][十五号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -347,10 +543,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FIFTEENEVALUATIONTIME",
-        "codeName" : "FifteenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -367,9 +559,33 @@
     "name" : "FIFTEENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[OTHERCONSUMED][其他项目工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[OTHERCONSUMED][其他项目工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[OTHERCONSUMED][其他项目工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[OTHERCONSUMED][其他项目工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -377,10 +593,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "OTHERCONSUMED",
-        "codeName" : "Otherconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -397,9 +609,33 @@
     "name" : "OTHERCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[THIRTEENEVALUATIONCOST][十三号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THIRTEENEVALUATIONCOST][十三号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[THIRTEENEVALUATIONCOST][十三号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THIRTEENEVALUATIONCOST][十三号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -407,10 +643,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THIRTEENEVALUATIONCOST",
-        "codeName" : "ThirteenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -427,9 +659,33 @@
     "name" : "THIRTEENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[THIRTYEVALUATIONCOST][三十号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THIRTYEVALUATIONCOST][三十号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[THIRTYEVALUATIONCOST][三十号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THIRTYEVALUATIONCOST][三十号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -437,10 +693,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THIRTYEVALUATIONCOST",
-        "codeName" : "ThirtyEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -457,6 +709,7 @@
     "name" : "THIRTYEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -466,6 +719,29 @@
       "name" : "EVALUATIONCOST",
       "standardColumnName" : "`EVALUATIONCOST`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[EVALUATIONCOST][评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EVALUATIONCOST][评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[EVALUATIONCOST][评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EVALUATIONCOST][评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -473,10 +749,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "EVALUATIONCOST",
-        "codeName" : "Evaluationcost"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -491,9 +763,40 @@
     "length" : 2,
     "logicName" : "评估成本",
     "name" : "EVALUATIONCOST",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "EVALUATIONCOST"
+    },
     "stdDataType" : 7,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYSIXEVALUATIONCOST][二十六号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYSIXEVALUATIONCOST][二十六号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYSIXEVALUATIONCOST][二十六号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYSIXEVALUATIONCOST][二十六号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -501,10 +804,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYSIXEVALUATIONCOST",
-        "codeName" : "TwentysixEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -521,9 +820,33 @@
     "name" : "TWENTYSIXEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWOEVALUATIONTIME][二号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWOEVALUATIONTIME][二号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWOEVALUATIONTIME][二号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWOEVALUATIONTIME][二号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -531,10 +854,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWOEVALUATIONTIME",
-        "codeName" : "TwoEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -551,9 +870,33 @@
     "name" : "TWOEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[THIRTYEVALUATIONTIME][三十号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THIRTYEVALUATIONTIME][三十号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[THIRTYEVALUATIONTIME][三十号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THIRTYEVALUATIONTIME][三十号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -561,10 +904,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THIRTYEVALUATIONTIME",
-        "codeName" : "ThirtyEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -581,9 +920,33 @@
     "name" : "THIRTYEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYSIXCONSUMED][二十六号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYSIXCONSUMED][二十六号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYSIXCONSUMED][二十六号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYSIXCONSUMED][二十六号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -591,10 +954,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYSIXCONSUMED",
-        "codeName" : "Twentysixconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -611,9 +970,33 @@
     "name" : "TWENTYSIXCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[NINETEENEVALUATIONTIME][十九号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[NINETEENEVALUATIONTIME][十九号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[NINETEENEVALUATIONTIME][十九号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[NINETEENEVALUATIONTIME][十九号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -621,10 +1004,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "NINETEENEVALUATIONTIME",
-        "codeName" : "NineteenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -641,9 +1020,33 @@
     "name" : "NINETEENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYONECONSUMED][二十一号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYONECONSUMED][二十一号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYONECONSUMED][二十一号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYONECONSUMED][二十一号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -651,10 +1054,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYONECONSUMED",
-        "codeName" : "Twentyoneconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -671,9 +1070,33 @@
     "name" : "TWENTYONECONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[EVALUATIONTIME][评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EVALUATIONTIME][评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[EVALUATIONTIME][评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EVALUATIONTIME][评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -681,10 +1104,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "EVALUATIONTIME",
-        "codeName" : "Evaluationtime"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -701,9 +1120,33 @@
     "name" : "EVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYFOUREVALUATIONCOST][二十四号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYFOUREVALUATIONCOST][二十四号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYFOUREVALUATIONCOST][二十四号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYFOUREVALUATIONCOST][二十四号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -711,10 +1154,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYFOUREVALUATIONCOST",
-        "codeName" : "TwentyfourEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -731,9 +1170,33 @@
     "name" : "TWENTYFOUREVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[THREEEVALUATIONCOST][三号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THREEEVALUATIONCOST][三号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[THREEEVALUATIONCOST][三号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THREEEVALUATIONCOST][三号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -741,10 +1204,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THREEEVALUATIONCOST",
-        "codeName" : "ThreeEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -761,9 +1220,33 @@
     "name" : "THREEEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[THIRTYONEEVALUATIONCOST][三十一号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THIRTYONEEVALUATIONCOST][三十一号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[THIRTYONEEVALUATIONCOST][三十一号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THIRTYONEEVALUATIONCOST][三十一号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -771,10 +1254,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THIRTYONEEVALUATIONCOST",
-        "codeName" : "ThirtyoneEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -791,9 +1270,33 @@
     "name" : "THIRTYONEEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SIXEVALUATIONCOST][六号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SIXEVALUATIONCOST][六号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SIXEVALUATIONCOST][六号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SIXEVALUATIONCOST][六号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -801,10 +1304,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SIXEVALUATIONCOST",
-        "codeName" : "SixEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -821,9 +1320,33 @@
     "name" : "SIXEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[EIGHTEENEVALUATIONTIME][十八号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EIGHTEENEVALUATIONTIME][十八号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[EIGHTEENEVALUATIONTIME][十八号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EIGHTEENEVALUATIONTIME][十八号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -831,10 +1354,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "EIGHTEENEVALUATIONTIME",
-        "codeName" : "EighteenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -851,9 +1370,33 @@
     "name" : "EIGHTEENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[THIRTEENEVALUATIONTIME][十三号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THIRTEENEVALUATIONTIME][十三号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[THIRTEENEVALUATIONTIME][十三号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THIRTEENEVALUATIONTIME][十三号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -861,10 +1404,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THIRTEENEVALUATIONTIME",
-        "codeName" : "ThirteenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -881,9 +1420,33 @@
     "name" : "THIRTEENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYNINEEVALUATIONCOST][二十九号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYNINEEVALUATIONCOST][二十九号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYNINEEVALUATIONCOST][二十九号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYNINEEVALUATIONCOST][二十九号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -891,10 +1454,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYNINEEVALUATIONCOST",
-        "codeName" : "TwentynineEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -911,9 +1470,33 @@
     "name" : "TWENTYNINEEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYEVALUATIONTIME][二十号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYEVALUATIONTIME][二十号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYEVALUATIONTIME][二十号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYEVALUATIONTIME][二十号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -921,10 +1504,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYEVALUATIONTIME",
-        "codeName" : "TwentyEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -941,9 +1520,33 @@
     "name" : "TWENTYEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYTWOEVALUATIONTIME][二十二号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYTWOEVALUATIONTIME][二十二号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYTWOEVALUATIONTIME][二十二号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYTWOEVALUATIONTIME][二十二号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -951,10 +1554,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYTWOEVALUATIONTIME",
-        "codeName" : "TwentytwoEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -971,9 +1570,33 @@
     "name" : "TWENTYTWOEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ONEEVALUATIONTIME][一号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ONEEVALUATIONTIME][一号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ONEEVALUATIONTIME][一号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ONEEVALUATIONTIME][一号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -981,10 +1604,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ONEEVALUATIONTIME",
-        "codeName" : "OneEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1001,9 +1620,33 @@
     "name" : "ONEEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ELEVENCONSUMED][十一号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ELEVENCONSUMED][十一号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ELEVENCONSUMED][十一号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ELEVENCONSUMED][十一号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1011,10 +1654,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ELEVENCONSUMED",
-        "codeName" : "Elevenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1031,9 +1670,33 @@
     "name" : "ELEVENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[FOURTEENEVALUATIONTIME][十四号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FOURTEENEVALUATIONTIME][十四号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[FOURTEENEVALUATIONTIME][十四号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FOURTEENEVALUATIONTIME][十四号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1041,10 +1704,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FOURTEENEVALUATIONTIME",
-        "codeName" : "FourteenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1061,9 +1720,33 @@
     "name" : "FOURTEENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYTWOCONSUMED][二十二号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYTWOCONSUMED][二十二号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYTWOCONSUMED][二十二号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYTWOCONSUMED][二十二号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1071,10 +1754,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYTWOCONSUMED",
-        "codeName" : "Twentytwoconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1091,9 +1770,33 @@
     "name" : "TWENTYTWOCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYONEEVALUATIONCOST][二十一号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYONEEVALUATIONCOST][二十一号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYONEEVALUATIONCOST][二十一号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYONEEVALUATIONCOST][二十一号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1101,10 +1804,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYONEEVALUATIONCOST",
-        "codeName" : "TwentyoneEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1121,9 +1820,33 @@
     "name" : "TWENTYONEEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[EIGHTCONSUMED][八号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EIGHTCONSUMED][八号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[EIGHTCONSUMED][八号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EIGHTCONSUMED][八号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1131,10 +1854,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "EIGHTCONSUMED",
-        "codeName" : "Eightconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1151,9 +1870,33 @@
     "name" : "EIGHTCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYEIGHTEVALUATIONTIME][二十八号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYEIGHTEVALUATIONTIME][二十八号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYEIGHTEVALUATIONTIME][二十八号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYEIGHTEVALUATIONTIME][二十八号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1161,10 +1904,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYEIGHTEVALUATIONTIME",
-        "codeName" : "TwentyeightEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1181,9 +1920,33 @@
     "name" : "TWENTYEIGHTEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[THREECONSUMED][三号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THREECONSUMED][三号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[THREECONSUMED][三号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THREECONSUMED][三号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1191,10 +1954,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THREECONSUMED",
-        "codeName" : "Threeconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1211,9 +1970,33 @@
     "name" : "THREECONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYTHREEEVALUATIONTIME][二十三号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYTHREEEVALUATIONTIME][二十三号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYTHREEEVALUATIONTIME][二十三号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYTHREEEVALUATIONTIME][二十三号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1221,10 +2004,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYTHREEEVALUATIONTIME",
-        "codeName" : "TwentythreeEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1241,9 +2020,33 @@
     "name" : "TWENTYTHREEEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TENEVALUATIONTIME][十号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TENEVALUATIONTIME][十号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TENEVALUATIONTIME][十号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TENEVALUATIONTIME][十号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1251,10 +2054,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TENEVALUATIONTIME",
-        "codeName" : "TenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1271,9 +2070,33 @@
     "name" : "TENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[SIXCONSUMED][六号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SIXCONSUMED][六号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[SIXCONSUMED][六号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SIXCONSUMED][六号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1281,10 +2104,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SIXCONSUMED",
-        "codeName" : "Sixconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1301,9 +2120,33 @@
     "name" : "SIXCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYFIVECONSUMED][二十五号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYFIVECONSUMED][二十五号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYFIVECONSUMED][二十五号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYFIVECONSUMED][二十五号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1311,10 +2154,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYFIVECONSUMED",
-        "codeName" : "Twentyfiveconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1331,9 +2170,33 @@
     "name" : "TWENTYFIVECONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYEIGHTCONSUMED][二十八号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYEIGHTCONSUMED][二十八号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYEIGHTCONSUMED][二十八号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYEIGHTCONSUMED][二十八号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1341,10 +2204,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYEIGHTCONSUMED",
-        "codeName" : "Twentyeightconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1361,9 +2220,33 @@
     "name" : "TWENTYEIGHTCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[THIRTEENCONSUMED][十三号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THIRTEENCONSUMED][十三号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[THIRTEENCONSUMED][十三号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THIRTEENCONSUMED][十三号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1371,10 +2254,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THIRTEENCONSUMED",
-        "codeName" : "Thirteenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1391,9 +2270,33 @@
     "name" : "THIRTEENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[FOUREVALUATIONCOST][四号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FOUREVALUATIONCOST][四号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[FOUREVALUATIONCOST][四号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FOUREVALUATIONCOST][四号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1401,10 +2304,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FOUREVALUATIONCOST",
-        "codeName" : "FourEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1421,9 +2320,33 @@
     "name" : "FOUREVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYTWOEVALUATIONCOST][二十二号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYTWOEVALUATIONCOST][二十二号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYTWOEVALUATIONCOST][二十二号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYTWOEVALUATIONCOST][二十二号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1431,10 +2354,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYTWOEVALUATIONCOST",
-        "codeName" : "TwentytwoEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1451,6 +2370,7 @@
     "name" : "TWENTYTWOEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1459,6 +2379,31 @@
       "name" : "N_MONTH_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[MONTH][月]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[MONTH][月]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[MONTH][月]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[MONTH][月]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1479,10 +2424,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "MONTH",
-        "codeName" : "Month"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1499,9 +2440,33 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWELVEEVALUATIONTIME][十二号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWELVEEVALUATIONTIME][十二号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWELVEEVALUATIONTIME][十二号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWELVEEVALUATIONTIME][十二号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1509,10 +2474,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWELVEEVALUATIONTIME",
-        "codeName" : "TwelveEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1529,9 +2490,33 @@
     "name" : "TWELVEEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TENEVALUATIONCOST][十号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TENEVALUATIONCOST][十号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TENEVALUATIONCOST][十号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TENEVALUATIONCOST][十号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1539,10 +2524,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TENEVALUATIONCOST",
-        "codeName" : "TenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1559,9 +2540,33 @@
     "name" : "TENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[SEVENEVALUATIONCOST][七号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SEVENEVALUATIONCOST][七号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[SEVENEVALUATIONCOST][七号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SEVENEVALUATIONCOST][七号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1569,10 +2574,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SEVENEVALUATIONCOST",
-        "codeName" : "SevenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1589,9 +2590,33 @@
     "name" : "SEVENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[FIFTEENEVALUATIONCOST][十五号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FIFTEENEVALUATIONCOST][十五号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[FIFTEENEVALUATIONCOST][十五号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FIFTEENEVALUATIONCOST][十五号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1599,10 +2624,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FIFTEENEVALUATIONCOST",
-        "codeName" : "FifteenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1619,9 +2640,33 @@
     "name" : "FIFTEENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[NINEEVALUATIONCOST][九号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[NINEEVALUATIONCOST][九号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[NINEEVALUATIONCOST][九号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[NINEEVALUATIONCOST][九号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1629,10 +2674,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "NINEEVALUATIONCOST",
-        "codeName" : "NineEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1649,9 +2690,33 @@
     "name" : "NINEEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[THIRTYCONSUMED][三十号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THIRTYCONSUMED][三十号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[THIRTYCONSUMED][三十号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THIRTYCONSUMED][三十号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1659,10 +2724,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THIRTYCONSUMED",
-        "codeName" : "Thirtyconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1679,9 +2740,33 @@
     "name" : "THIRTYCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ELEVENEVALUATIONCOST][十一号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ELEVENEVALUATIONCOST][十一号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ELEVENEVALUATIONCOST][十一号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ELEVENEVALUATIONCOST][十一号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1689,10 +2774,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ELEVENEVALUATIONCOST",
-        "codeName" : "ElevenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1709,9 +2790,33 @@
     "name" : "ELEVENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[THREEEVALUATIONTIME][三号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THREEEVALUATIONTIME][三号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[THREEEVALUATIONTIME][三号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THREEEVALUATIONTIME][三号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1719,10 +2824,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THREEEVALUATIONTIME",
-        "codeName" : "ThreeEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1739,9 +2840,33 @@
     "name" : "THREEEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYNINEEVALUATIONTIME][二十九号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYNINEEVALUATIONTIME][二十九号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYNINEEVALUATIONTIME][二十九号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYNINEEVALUATIONTIME][二十九号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1749,10 +2874,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYNINEEVALUATIONTIME",
-        "codeName" : "TwentynineEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1769,9 +2890,33 @@
     "name" : "TWENTYNINEEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[NINECONSUMED][九号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[NINECONSUMED][九号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[NINECONSUMED][九号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[NINECONSUMED][九号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1779,10 +2924,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "NINECONSUMED",
-        "codeName" : "Nineconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1799,9 +2940,33 @@
     "name" : "NINECONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ONEEVALUATIONCOST][一号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ONEEVALUATIONCOST][一号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ONEEVALUATIONCOST][一号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ONEEVALUATIONCOST][一号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1809,10 +2974,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ONEEVALUATIONCOST",
-        "codeName" : "OneEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1829,9 +2990,33 @@
     "name" : "ONEEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYCONSUMED][二十号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYCONSUMED][二十号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYCONSUMED][二十号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYCONSUMED][二十号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1839,10 +3024,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYCONSUMED",
-        "codeName" : "Twentyconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1859,9 +3040,33 @@
     "name" : "TWENTYCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[FIVEEVALUATIONCOST][五号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FIVEEVALUATIONCOST][五号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[FIVEEVALUATIONCOST][五号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FIVEEVALUATIONCOST][五号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1869,10 +3074,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FIVEEVALUATIONCOST",
-        "codeName" : "FiveEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1889,9 +3090,33 @@
     "name" : "FIVEEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYONEEVALUATIONTIME][二十一号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYONEEVALUATIONTIME][二十一号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYONEEVALUATIONTIME][二十一号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYONEEVALUATIONTIME][二十一号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1899,10 +3124,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYONEEVALUATIONTIME",
-        "codeName" : "TwentyoneEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1919,9 +3140,33 @@
     "name" : "TWENTYONEEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[FOURONSUMED][四号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FOURONSUMED][四号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[FOURONSUMED][四号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FOURONSUMED][四号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1929,10 +3174,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FOURONSUMED",
-        "codeName" : "Fourconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1949,9 +3190,33 @@
     "name" : "FOURONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[OTHEREVALUATIONTIME][其他项目评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[OTHEREVALUATIONTIME][其他项目评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[OTHEREVALUATIONTIME][其他项目评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[OTHEREVALUATIONTIME][其他项目评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1959,10 +3224,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "OTHEREVALUATIONTIME",
-        "codeName" : "Otherevaluationtime"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1979,9 +3240,33 @@
     "name" : "OTHEREVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYSEVENCONSUMED][二十七号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYSEVENCONSUMED][二十七号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYSEVENCONSUMED][二十七号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYSEVENCONSUMED][二十七号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1989,10 +3274,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYSEVENCONSUMED",
-        "codeName" : "Twentysevenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2009,9 +3290,33 @@
     "name" : "TWENTYSEVENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWOCONSUMED][二号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWOCONSUMED][二号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWOCONSUMED][二号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWOCONSUMED][二号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2019,10 +3324,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWOCONSUMED",
-        "codeName" : "Twoconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2039,9 +3340,33 @@
     "name" : "TWOCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYFOUREVALUATIONTIME][二十四号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYFOUREVALUATIONTIME][二十四号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYFOUREVALUATIONTIME][二十四号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYFOUREVALUATIONTIME][二十四号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2049,10 +3374,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYFOUREVALUATIONTIME",
-        "codeName" : "TwentyfourEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2069,9 +3390,33 @@
     "name" : "TWENTYFOUREVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYSIXEVALUATIONTIME][二十六号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYSIXEVALUATIONTIME][二十六号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYSIXEVALUATIONTIME][二十六号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYSIXEVALUATIONTIME][二十六号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2079,10 +3424,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYSIXEVALUATIONTIME",
-        "codeName" : "TwentysixEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2099,9 +3440,33 @@
     "name" : "TWENTYSIXEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[NINEEVALUATIONTIME][九号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[NINEEVALUATIONTIME][九号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[NINEEVALUATIONTIME][九号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[NINEEVALUATIONTIME][九号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2109,10 +3474,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "NINEEVALUATIONTIME",
-        "codeName" : "NineEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2129,9 +3490,33 @@
     "name" : "NINEEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[EIGHTEENEVALUATIONCOST][十八号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EIGHTEENEVALUATIONCOST][十八号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[EIGHTEENEVALUATIONCOST][十八号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EIGHTEENEVALUATIONCOST][十八号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2139,10 +3524,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "EIGHTEENEVALUATIONCOST",
-        "codeName" : "EighteenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2159,9 +3540,33 @@
     "name" : "EIGHTEENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYTHREEEVALUATIONCOST][二十三号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYTHREEEVALUATIONCOST][二十三号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYTHREEEVALUATIONCOST][二十三号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYTHREEEVALUATIONCOST][二十三号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2169,10 +3574,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYTHREEEVALUATIONCOST",
-        "codeName" : "TwentythreeEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2189,9 +3590,33 @@
     "name" : "TWENTYTHREEEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[FOUREVALUATIONTIME][四号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FOUREVALUATIONTIME][四号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[FOUREVALUATIONTIME][四号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FOUREVALUATIONTIME][四号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2199,10 +3624,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FOUREVALUATIONTIME",
-        "codeName" : "FourEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2219,9 +3640,35 @@
     "name" : "FOUREVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PROJECTNAME][项目名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PROJECTNAME][项目名称]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PROJECTNAME][项目名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PROJECTNAME][项目名称]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2241,10 +3688,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "PROJECTNAME",
-        "codeName" : "ProjectName"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2261,9 +3704,33 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[EIGHTEVALUATIONCOST][八号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EIGHTEVALUATIONCOST][八号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[EIGHTEVALUATIONCOST][八号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EIGHTEVALUATIONCOST][八号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2271,10 +3738,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "EIGHTEVALUATIONCOST",
-        "codeName" : "EightEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2291,9 +3754,33 @@
     "name" : "EIGHTEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[EIGHTEVALUATIONTIME][八号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EIGHTEVALUATIONTIME][八号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[EIGHTEVALUATIONTIME][八号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EIGHTEVALUATIONTIME][八号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2301,10 +3788,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "EIGHTEVALUATIONTIME",
-        "codeName" : "EightEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2321,9 +3804,33 @@
     "name" : "EIGHTEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYNINECONSUMED][二十九号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYNINECONSUMED][二十九号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYNINECONSUMED][二十九号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYNINECONSUMED][二十九号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2331,10 +3838,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYNINECONSUMED",
-        "codeName" : "Twentynineconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2351,9 +3854,33 @@
     "name" : "TWENTYNINECONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CONSUMED][工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CONSUMED][工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CONSUMED][工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CONSUMED][工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2361,10 +3888,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CONSUMED",
-        "codeName" : "Consumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2381,6 +3904,7 @@
     "name" : "CONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -2396,6 +3920,31 @@
       "stdDataType" : 5,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DATE][日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[DATE][日期]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DATE][日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[DATE][日期]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2403,10 +3952,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2420,11 +3965,42 @@
     "importOrder" : 1000,
     "logicName" : "日期",
     "name" : "DATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DATE"
+    },
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
     "enableQuickSearch" : true,
     "majorDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SIXTEENCONSUMED][十六号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SIXTEENCONSUMED][十六号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SIXTEENCONSUMED][十六号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SIXTEENCONSUMED][十六号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2432,10 +4008,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SIXTEENCONSUMED",
-        "codeName" : "Sixteenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2452,9 +4024,33 @@
     "name" : "SIXTEENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[THIRTYONEEVALUATIONTIME][三十一号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THIRTYONEEVALUATIONTIME][三十一号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[THIRTYONEEVALUATIONTIME][三十一号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THIRTYONEEVALUATIONTIME][三十一号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2462,10 +4058,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THIRTYONEEVALUATIONTIME",
-        "codeName" : "ThirtyoneEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2482,9 +4074,33 @@
     "name" : "THIRTYONEEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[SIXTEENEVALUATIONCOST][十六号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SIXTEENEVALUATIONCOST][十六号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[SIXTEENEVALUATIONCOST][十六号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SIXTEENEVALUATIONCOST][十六号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2492,10 +4108,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SIXTEENEVALUATIONCOST",
-        "codeName" : "SixteenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2512,9 +4124,33 @@
     "name" : "SIXTEENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[SIXTEENEVALUATIONTIME][十六号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SIXTEENEVALUATIONTIME][十六号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[SIXTEENEVALUATIONTIME][十六号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SIXTEENEVALUATIONTIME][十六号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2522,10 +4158,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SIXTEENEVALUATIONTIME",
-        "codeName" : "SixteenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2542,6 +4174,7 @@
     "name" : "SIXTEENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -2550,6 +4183,31 @@
       "name" : "N_ACCOUNT_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ACCOUNT][用户]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ACCOUNT][用户]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ACCOUNT][用户]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ACCOUNT][用户]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2570,10 +4228,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2590,9 +4244,33 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SEVENCONSUMED][七号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SEVENCONSUMED][七号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SEVENCONSUMED][七号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SEVENCONSUMED][七号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2600,10 +4278,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SEVENCONSUMED",
-        "codeName" : "Sevenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2620,9 +4294,33 @@
     "name" : "SEVENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[NINETEENCONSUMED][十九号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[NINETEENCONSUMED][十九号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[NINETEENCONSUMED][十九号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[NINETEENCONSUMED][十九号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2630,10 +4328,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "NINETEENCONSUMED",
-        "codeName" : "Nineteenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2650,6 +4344,7 @@
     "name" : "NINETEENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -2658,6 +4353,31 @@
       "name" : "N_YEAR_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[YEAR][年]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[YEAR][年]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[YEAR][年]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[YEAR][年]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2678,10 +4398,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "YEAR",
-        "codeName" : "Year"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2698,9 +4414,33 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SIXEVALUATIONTIME][六号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SIXEVALUATIONTIME][六号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SIXEVALUATIONTIME][六号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SIXEVALUATIONTIME][六号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2708,10 +4448,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SIXEVALUATIONTIME",
-        "codeName" : "SixEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2728,9 +4464,33 @@
     "name" : "SIXEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYFIVEEVALUATIONCOST][二十五号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYFIVEEVALUATIONCOST][二十五号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYFIVEEVALUATIONCOST][二十五号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYFIVEEVALUATIONCOST][二十五号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2738,10 +4498,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYFIVEEVALUATIONCOST",
-        "codeName" : "TwentyfiveEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2758,9 +4514,33 @@
     "name" : "TWENTYFIVEEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SEVENTEENEVALUATIONTIME][十七号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SEVENTEENEVALUATIONTIME][十七号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SEVENTEENEVALUATIONTIME][十七号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SEVENTEENEVALUATIONTIME][十七号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2768,10 +4548,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SEVENTEENEVALUATIONTIME",
-        "codeName" : "SeventeenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2788,9 +4564,33 @@
     "name" : "SEVENTEENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYSEVENEVALUATIONTIME][二十七号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYSEVENEVALUATIONTIME][二十七号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYSEVENEVALUATIONTIME][二十七号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYSEVENEVALUATIONTIME][二十七号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2798,10 +4598,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYSEVENEVALUATIONTIME",
-        "codeName" : "TwentysevenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2818,9 +4614,33 @@
     "name" : "TWENTYSEVENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[FOURTEENCONSUMED][十四号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FOURTEENCONSUMED][十四号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[FOURTEENCONSUMED][十四号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FOURTEENCONSUMED][十四号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2828,10 +4648,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FOURTEENCONSUMED",
-        "codeName" : "Fourteenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2848,9 +4664,33 @@
     "name" : "FOURTEENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[EIGHTEENCONSUMED][十八号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EIGHTEENCONSUMED][十八号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[EIGHTEENCONSUMED][十八号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EIGHTEENCONSUMED][十八号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2858,10 +4698,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "EIGHTEENCONSUMED",
-        "codeName" : "Eighteenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2878,6 +4714,7 @@
     "name" : "EIGHTEENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -2886,6 +4723,31 @@
       "name" : "N_ID_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ID][主键]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ID][主键]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ID][主键]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ID][主键]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2906,10 +4768,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2926,11 +4784,35 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "keyDEField" : true,
     "pasteReset" : true,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYFOURCONSUMED][二十四号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYFOURCONSUMED][二十四号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYFOURCONSUMED][二十四号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYFOURCONSUMED][二十四号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2938,10 +4820,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYFOURCONSUMED",
-        "codeName" : "Twentyfourconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2958,9 +4836,33 @@
     "name" : "TWENTYFOURCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[THIRTYONECONSUMED][三十一号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[THIRTYONECONSUMED][三十一号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[THIRTYONECONSUMED][三十一号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[THIRTYONECONSUMED][三十一号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2968,10 +4870,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "THIRTYONECONSUMED",
-        "codeName" : "Thirtyoneconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2988,9 +4886,33 @@
     "name" : "THIRTYONECONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWELVEEVALUATIONCOST][十二号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWELVEEVALUATIONCOST][十二号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWELVEEVALUATIONCOST][十二号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWELVEEVALUATIONCOST][十二号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2998,10 +4920,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWELVEEVALUATIONCOST",
-        "codeName" : "TwelveEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3018,9 +4936,33 @@
     "name" : "TWELVEEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SEVENTEENEVALUATIONCOST][十七号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SEVENTEENEVALUATIONCOST][十七号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SEVENTEENEVALUATIONCOST][十七号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SEVENTEENEVALUATIONCOST][十七号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3028,10 +4970,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SEVENTEENEVALUATIONCOST",
-        "codeName" : "SeventeenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3048,9 +4986,33 @@
     "name" : "SEVENTEENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYEVALUATIONCOST][二十号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYEVALUATIONCOST][二十号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYEVALUATIONCOST][二十号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYEVALUATIONCOST][二十号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3058,10 +5020,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYEVALUATIONCOST",
-        "codeName" : "TwentyEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3078,9 +5036,33 @@
     "name" : "TWENTYEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TENCONSUMED][十号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TENCONSUMED][十号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TENCONSUMED][十号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TENCONSUMED][十号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3088,10 +5070,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TENCONSUMED",
-        "codeName" : "Tenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3108,9 +5086,33 @@
     "name" : "TENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ELEVENEVALUATIONTIME][十一号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ELEVENEVALUATIONTIME][十一号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ELEVENEVALUATIONTIME][十一号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ELEVENEVALUATIONTIME][十一号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3118,10 +5120,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ELEVENEVALUATIONTIME",
-        "codeName" : "ElevenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3138,9 +5136,33 @@
     "name" : "ELEVENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[FIVEEVALUATIONTIME][五号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FIVEEVALUATIONTIME][五号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[FIVEEVALUATIONTIME][五号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FIVEEVALUATIONTIME][五号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3148,10 +5170,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FIVEEVALUATIONTIME",
-        "codeName" : "FiveEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3168,9 +5186,33 @@
     "name" : "FIVEEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[FIFTEENCONSUMED][十五号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FIFTEENCONSUMED][十五号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[FIFTEENCONSUMED][十五号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FIFTEENCONSUMED][十五号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3178,10 +5220,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FIFTEENCONSUMED",
-        "codeName" : "Fifteenconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3198,9 +5236,33 @@
     "name" : "FIFTEENCONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYEIGHTEVALUATIONCOST][二十八号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYEIGHTEVALUATIONCOST][二十八号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYEIGHTEVALUATIONCOST][二十八号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYEIGHTEVALUATIONCOST][二十八号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3208,10 +5270,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYEIGHTEVALUATIONCOST",
-        "codeName" : "TwentyeightEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3228,9 +5286,33 @@
     "name" : "TWENTYEIGHTEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWELVECONSUMED][十二号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWELVECONSUMED][十二号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWELVECONSUMED][十二号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWELVECONSUMED][十二号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3238,10 +5320,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWELVECONSUMED",
-        "codeName" : "Twelveconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3258,9 +5336,33 @@
     "name" : "TWELVECONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[FOURTEENEVALUATIONCOST][十四号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FOURTEENEVALUATIONCOST][十四号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[FOURTEENEVALUATIONCOST][十四号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FOURTEENEVALUATIONCOST][十四号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3268,10 +5370,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FOURTEENEVALUATIONCOST",
-        "codeName" : "FourteenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3288,9 +5386,33 @@
     "name" : "FOURTEENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[FIVECONSUMED][五号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FIVECONSUMED][五号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[FIVECONSUMED][五号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FIVECONSUMED][五号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3298,10 +5420,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FIVECONSUMED",
-        "codeName" : "Fiveconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3318,9 +5436,33 @@
     "name" : "FIVECONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TWENTYTHREECONSUMED][二十三号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYTHREECONSUMED][二十三号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYTHREECONSUMED][二十三号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYTHREECONSUMED][二十三号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3328,10 +5470,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYTHREECONSUMED",
-        "codeName" : "Twentythreeconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3348,9 +5486,33 @@
     "name" : "TWENTYTHREECONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SEVENEVALUATIONTIME][七号评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SEVENEVALUATIONTIME][七号评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SEVENEVALUATIONTIME][七号评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SEVENEVALUATIONTIME][七号评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3358,10 +5520,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SEVENEVALUATIONTIME",
-        "codeName" : "SevenEVALUATIONTIME"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3378,9 +5536,33 @@
     "name" : "SEVENEVALUATIONTIME",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWENTYSEVENEVALUATIONCOST][二十七号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWENTYSEVENEVALUATIONCOST][二十七号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWENTYSEVENEVALUATIONCOST][二十七号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWENTYSEVENEVALUATIONCOST][二十七号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3388,10 +5570,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWENTYSEVENEVALUATIONCOST",
-        "codeName" : "TwentysevenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3408,9 +5586,33 @@
     "name" : "TWENTYSEVENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ONECONSUMED][一号工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ONECONSUMED][一号工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ONECONSUMED][一号工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ONECONSUMED][一号工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3418,10 +5620,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ONECONSUMED",
-        "codeName" : "Oneconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3438,9 +5636,33 @@
     "name" : "ONECONSUMED",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TWOEVALUATIONCOST][二号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TWOEVALUATIONCOST][二号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TWOEVALUATIONCOST][二号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TWOEVALUATIONCOST][二号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3448,10 +5670,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TWOEVALUATIONCOST",
-        "codeName" : "TwoEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3468,9 +5686,33 @@
     "name" : "TWOEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[NINETEENEVALUATIONCOST][十九号评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[NINETEENEVALUATIONCOST][十九号评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[NINETEENEVALUATIONCOST][十九号评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[NINETEENEVALUATIONCOST][十九号评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3478,10 +5720,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "NINETEENEVALUATIONCOST",
-        "codeName" : "NineteenEVALUATIONCOST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3498,6 +5736,7 @@
     "name" : "NINETEENEVALUATIONCOST",
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -3507,6 +5746,29 @@
       "name" : "INPUTCOST",
       "standardColumnName" : "`INPUTCOST`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[INPUTCOST][投入成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[INPUTCOST][投入成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[INPUTCOST][投入成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[INPUTCOST][投入成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3514,10 +5776,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "INPUTCOST",
-        "codeName" : "Inputcost"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3532,8 +5790,1182 @@
     "length" : 2,
     "logicName" : "投入成本",
     "name" : "INPUTCOST",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "INPUTCOST"
+    },
     "stdDataType" : 7,
     "valueFormat" : "%1$s"
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "ProjectTaskestimateDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "用户",
+      "name" : "Account",
+      "getPSDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "工时",
+      "name" : "Consumed",
+      "getPSDEField" : {
+        "name" : "CONSUMED",
+        "codeName" : "Consumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "日期",
+      "name" : "Date",
+      "getPSDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "八号评估成本",
+      "name" : "EightEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "EIGHTEVALUATIONCOST",
+        "codeName" : "EightEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "八号评估工时",
+      "name" : "EightEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "EIGHTEVALUATIONTIME",
+        "codeName" : "EightEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "八号工时",
+      "name" : "Eightconsumed",
+      "getPSDEField" : {
+        "name" : "EIGHTCONSUMED",
+        "codeName" : "Eightconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十八号评估成本",
+      "name" : "EighteenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "EIGHTEENEVALUATIONCOST",
+        "codeName" : "EighteenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十八号评估工时",
+      "name" : "EighteenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "EIGHTEENEVALUATIONTIME",
+        "codeName" : "EighteenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十八号工时",
+      "name" : "Eighteenconsumed",
+      "getPSDEField" : {
+        "name" : "EIGHTEENCONSUMED",
+        "codeName" : "Eighteenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十一号评估成本",
+      "name" : "ElevenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "ELEVENEVALUATIONCOST",
+        "codeName" : "ElevenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十一号评估工时",
+      "name" : "ElevenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "ELEVENEVALUATIONTIME",
+        "codeName" : "ElevenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十一号工时",
+      "name" : "Elevenconsumed",
+      "getPSDEField" : {
+        "name" : "ELEVENCONSUMED",
+        "codeName" : "Elevenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "评估成本",
+      "name" : "Evaluationcost",
+      "getPSDEField" : {
+        "name" : "EVALUATIONCOST",
+        "codeName" : "Evaluationcost"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "评估工时",
+      "name" : "Evaluationtime",
+      "getPSDEField" : {
+        "name" : "EVALUATIONTIME",
+        "codeName" : "Evaluationtime"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十五号评估成本",
+      "name" : "FifteenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "FIFTEENEVALUATIONCOST",
+        "codeName" : "FifteenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十五号评估工时",
+      "name" : "FifteenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "FIFTEENEVALUATIONTIME",
+        "codeName" : "FifteenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十五号工时",
+      "name" : "Fifteenconsumed",
+      "getPSDEField" : {
+        "name" : "FIFTEENCONSUMED",
+        "codeName" : "Fifteenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "五号评估成本",
+      "name" : "FiveEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "FIVEEVALUATIONCOST",
+        "codeName" : "FiveEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "五号评估工时",
+      "name" : "FiveEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "FIVEEVALUATIONTIME",
+        "codeName" : "FiveEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "五号工时",
+      "name" : "Fiveconsumed",
+      "getPSDEField" : {
+        "name" : "FIVECONSUMED",
+        "codeName" : "Fiveconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "四号评估成本",
+      "name" : "FourEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "FOUREVALUATIONCOST",
+        "codeName" : "FourEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "四号评估工时",
+      "name" : "FourEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "FOUREVALUATIONTIME",
+        "codeName" : "FourEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "四号工时",
+      "name" : "Fourconsumed",
+      "getPSDEField" : {
+        "name" : "FOURONSUMED",
+        "codeName" : "Fourconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十四号评估成本",
+      "name" : "FourteenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "FOURTEENEVALUATIONCOST",
+        "codeName" : "FourteenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十四号评估工时",
+      "name" : "FourteenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "FOURTEENEVALUATIONTIME",
+        "codeName" : "FourteenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十四号工时",
+      "name" : "Fourteenconsumed",
+      "getPSDEField" : {
+        "name" : "FOURTEENCONSUMED",
+        "codeName" : "Fourteenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "主键",
+      "name" : "Id",
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "投入成本",
+      "name" : "Inputcost",
+      "getPSDEField" : {
+        "name" : "INPUTCOST",
+        "codeName" : "Inputcost"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "月",
+      "name" : "Month",
+      "getPSDEField" : {
+        "name" : "MONTH",
+        "codeName" : "Month"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "九号评估成本",
+      "name" : "NineEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "NINEEVALUATIONCOST",
+        "codeName" : "NineEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "九号评估工时",
+      "name" : "NineEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "NINEEVALUATIONTIME",
+        "codeName" : "NineEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "九号工时",
+      "name" : "Nineconsumed",
+      "getPSDEField" : {
+        "name" : "NINECONSUMED",
+        "codeName" : "Nineconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十九号评估成本",
+      "name" : "NineteenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "NINETEENEVALUATIONCOST",
+        "codeName" : "NineteenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十九号评估工时",
+      "name" : "NineteenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "NINETEENEVALUATIONTIME",
+        "codeName" : "NineteenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十九号工时",
+      "name" : "Nineteenconsumed",
+      "getPSDEField" : {
+        "name" : "NINETEENCONSUMED",
+        "codeName" : "Nineteenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "一号评估成本",
+      "name" : "OneEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "ONEEVALUATIONCOST",
+        "codeName" : "OneEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "一号评估工时",
+      "name" : "OneEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "ONEEVALUATIONTIME",
+        "codeName" : "OneEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "一号工时",
+      "name" : "Oneconsumed",
+      "getPSDEField" : {
+        "name" : "ONECONSUMED",
+        "codeName" : "Oneconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "其他项目工时",
+      "name" : "Otherconsumed",
+      "getPSDEField" : {
+        "name" : "OTHERCONSUMED",
+        "codeName" : "Otherconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "其他项目评估工时",
+      "name" : "Otherevaluationtime",
+      "getPSDEField" : {
+        "name" : "OTHEREVALUATIONTIME",
+        "codeName" : "Otherevaluationtime"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "项目标识",
+      "name" : "Project",
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "项目名称",
+      "name" : "ProjectName",
+      "getPSDEField" : {
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "七号评估成本",
+      "name" : "SevenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "SEVENEVALUATIONCOST",
+        "codeName" : "SevenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "七号评估工时",
+      "name" : "SevenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "SEVENEVALUATIONTIME",
+        "codeName" : "SevenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "七号工时",
+      "name" : "Sevenconsumed",
+      "getPSDEField" : {
+        "name" : "SEVENCONSUMED",
+        "codeName" : "Sevenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十七号评估成本",
+      "name" : "SeventeenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "SEVENTEENEVALUATIONCOST",
+        "codeName" : "SeventeenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十七号评估工时",
+      "name" : "SeventeenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "SEVENTEENEVALUATIONTIME",
+        "codeName" : "SeventeenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十七号工时",
+      "name" : "Seventeenconsumed",
+      "getPSDEField" : {
+        "name" : "SEVENTEENCONSUMED",
+        "codeName" : "Seventeenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "六号评估成本",
+      "name" : "SixEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "SIXEVALUATIONCOST",
+        "codeName" : "SixEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "六号评估工时",
+      "name" : "SixEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "SIXEVALUATIONTIME",
+        "codeName" : "SixEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "六号工时",
+      "name" : "Sixconsumed",
+      "getPSDEField" : {
+        "name" : "SIXCONSUMED",
+        "codeName" : "Sixconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十六号评估成本",
+      "name" : "SixteenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "SIXTEENEVALUATIONCOST",
+        "codeName" : "SixteenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十六号评估工时",
+      "name" : "SixteenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "SIXTEENEVALUATIONTIME",
+        "codeName" : "SixteenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十六号工时",
+      "name" : "Sixteenconsumed",
+      "getPSDEField" : {
+        "name" : "SIXTEENCONSUMED",
+        "codeName" : "Sixteenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十号评估成本",
+      "name" : "TenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TENEVALUATIONCOST",
+        "codeName" : "TenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十号评估工时",
+      "name" : "TenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TENEVALUATIONTIME",
+        "codeName" : "TenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十号工时",
+      "name" : "Tenconsumed",
+      "getPSDEField" : {
+        "name" : "TENCONSUMED",
+        "codeName" : "Tenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十三号评估成本",
+      "name" : "ThirteenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "THIRTEENEVALUATIONCOST",
+        "codeName" : "ThirteenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十三号评估工时",
+      "name" : "ThirteenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "THIRTEENEVALUATIONTIME",
+        "codeName" : "ThirteenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十三号工时",
+      "name" : "Thirteenconsumed",
+      "getPSDEField" : {
+        "name" : "THIRTEENCONSUMED",
+        "codeName" : "Thirteenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "三十号评估成本",
+      "name" : "ThirtyEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "THIRTYEVALUATIONCOST",
+        "codeName" : "ThirtyEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "三十号评估工时",
+      "name" : "ThirtyEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "THIRTYEVALUATIONTIME",
+        "codeName" : "ThirtyEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "三十号工时",
+      "name" : "Thirtyconsumed",
+      "getPSDEField" : {
+        "name" : "THIRTYCONSUMED",
+        "codeName" : "Thirtyconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "三十一号评估成本",
+      "name" : "ThirtyoneEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "THIRTYONEEVALUATIONCOST",
+        "codeName" : "ThirtyoneEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "三十一号评估工时",
+      "name" : "ThirtyoneEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "THIRTYONEEVALUATIONTIME",
+        "codeName" : "ThirtyoneEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "三十一号工时",
+      "name" : "Thirtyoneconsumed",
+      "getPSDEField" : {
+        "name" : "THIRTYONECONSUMED",
+        "codeName" : "Thirtyoneconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "三号评估成本",
+      "name" : "ThreeEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "THREEEVALUATIONCOST",
+        "codeName" : "ThreeEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "三号评估工时",
+      "name" : "ThreeEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "THREEEVALUATIONTIME",
+        "codeName" : "ThreeEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "三号工时",
+      "name" : "Threeconsumed",
+      "getPSDEField" : {
+        "name" : "THREECONSUMED",
+        "codeName" : "Threeconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十二号评估成本",
+      "name" : "TwelveEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWELVEEVALUATIONCOST",
+        "codeName" : "TwelveEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十二号评估工时",
+      "name" : "TwelveEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWELVEEVALUATIONTIME",
+        "codeName" : "TwelveEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "十二号工时",
+      "name" : "Twelveconsumed",
+      "getPSDEField" : {
+        "name" : "TWELVECONSUMED",
+        "codeName" : "Twelveconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十号评估成本",
+      "name" : "TwentyEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWENTYEVALUATIONCOST",
+        "codeName" : "TwentyEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十号评估工时",
+      "name" : "TwentyEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWENTYEVALUATIONTIME",
+        "codeName" : "TwentyEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十号工时",
+      "name" : "Twentyconsumed",
+      "getPSDEField" : {
+        "name" : "TWENTYCONSUMED",
+        "codeName" : "Twentyconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十八号评估成本",
+      "name" : "TwentyeightEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWENTYEIGHTEVALUATIONCOST",
+        "codeName" : "TwentyeightEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十八号评估工时",
+      "name" : "TwentyeightEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWENTYEIGHTEVALUATIONTIME",
+        "codeName" : "TwentyeightEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十八号工时",
+      "name" : "Twentyeightconsumed",
+      "getPSDEField" : {
+        "name" : "TWENTYEIGHTCONSUMED",
+        "codeName" : "Twentyeightconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十五号评估成本",
+      "name" : "TwentyfiveEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWENTYFIVEEVALUATIONCOST",
+        "codeName" : "TwentyfiveEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十五号评估工时",
+      "name" : "TwentyfiveEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWENTYFIVEEVALUATIONTIME",
+        "codeName" : "TwentyfiveEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十五号工时",
+      "name" : "Twentyfiveconsumed",
+      "getPSDEField" : {
+        "name" : "TWENTYFIVECONSUMED",
+        "codeName" : "Twentyfiveconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十四号评估成本",
+      "name" : "TwentyfourEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWENTYFOUREVALUATIONCOST",
+        "codeName" : "TwentyfourEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十四号评估工时",
+      "name" : "TwentyfourEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWENTYFOUREVALUATIONTIME",
+        "codeName" : "TwentyfourEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十四号工时",
+      "name" : "Twentyfourconsumed",
+      "getPSDEField" : {
+        "name" : "TWENTYFOURCONSUMED",
+        "codeName" : "Twentyfourconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十九号评估成本",
+      "name" : "TwentynineEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWENTYNINEEVALUATIONCOST",
+        "codeName" : "TwentynineEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十九号评估工时",
+      "name" : "TwentynineEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWENTYNINEEVALUATIONTIME",
+        "codeName" : "TwentynineEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十九号工时",
+      "name" : "Twentynineconsumed",
+      "getPSDEField" : {
+        "name" : "TWENTYNINECONSUMED",
+        "codeName" : "Twentynineconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十一号评估成本",
+      "name" : "TwentyoneEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWENTYONEEVALUATIONCOST",
+        "codeName" : "TwentyoneEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十一号评估工时",
+      "name" : "TwentyoneEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWENTYONEEVALUATIONTIME",
+        "codeName" : "TwentyoneEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十一号工时",
+      "name" : "Twentyoneconsumed",
+      "getPSDEField" : {
+        "name" : "TWENTYONECONSUMED",
+        "codeName" : "Twentyoneconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十七号评估成本",
+      "name" : "TwentysevenEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWENTYSEVENEVALUATIONCOST",
+        "codeName" : "TwentysevenEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十七号评估工时",
+      "name" : "TwentysevenEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWENTYSEVENEVALUATIONTIME",
+        "codeName" : "TwentysevenEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十七号工时",
+      "name" : "Twentysevenconsumed",
+      "getPSDEField" : {
+        "name" : "TWENTYSEVENCONSUMED",
+        "codeName" : "Twentysevenconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十六号评估成本",
+      "name" : "TwentysixEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWENTYSIXEVALUATIONCOST",
+        "codeName" : "TwentysixEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十六号评估工时",
+      "name" : "TwentysixEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWENTYSIXEVALUATIONTIME",
+        "codeName" : "TwentysixEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十六号工时",
+      "name" : "Twentysixconsumed",
+      "getPSDEField" : {
+        "name" : "TWENTYSIXCONSUMED",
+        "codeName" : "Twentysixconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十三号评估成本",
+      "name" : "TwentythreeEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWENTYTHREEEVALUATIONCOST",
+        "codeName" : "TwentythreeEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十三号评估工时",
+      "name" : "TwentythreeEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWENTYTHREEEVALUATIONTIME",
+        "codeName" : "TwentythreeEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十三号工时",
+      "name" : "Twentythreeconsumed",
+      "getPSDEField" : {
+        "name" : "TWENTYTHREECONSUMED",
+        "codeName" : "Twentythreeconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十二号评估成本",
+      "name" : "TwentytwoEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWENTYTWOEVALUATIONCOST",
+        "codeName" : "TwentytwoEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十二号评估工时",
+      "name" : "TwentytwoEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWENTYTWOEVALUATIONTIME",
+        "codeName" : "TwentytwoEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二十二号工时",
+      "name" : "Twentytwoconsumed",
+      "getPSDEField" : {
+        "name" : "TWENTYTWOCONSUMED",
+        "codeName" : "Twentytwoconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二号评估成本",
+      "name" : "TwoEVALUATIONCOST",
+      "getPSDEField" : {
+        "name" : "TWOEVALUATIONCOST",
+        "codeName" : "TwoEVALUATIONCOST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二号评估工时",
+      "name" : "TwoEVALUATIONTIME",
+      "getPSDEField" : {
+        "name" : "TWOEVALUATIONTIME",
+        "codeName" : "TwoEVALUATIONTIME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "二号工时",
+      "name" : "Twoconsumed",
+      "getPSDEField" : {
+        "name" : "TWOCONSUMED",
+        "codeName" : "Twoconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "年",
+      "name" : "Year",
+      "getPSDEField" : {
+        "name" : "YEAR",
+        "codeName" : "Year"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "ProjectTaskestimateFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "用户",
+      "name" : "N_ACCOUNT_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ACCOUNT_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "日期",
+      "name" : "N_DATE_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_DATE_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "主键",
+      "name" : "N_ID_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ID_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "月",
+      "name" : "N_MONTH_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_MONTH_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "MONTH",
+        "codeName" : "Month"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "项目标识",
+      "name" : "N_PROJECT_IN",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PROJECT_IN"
+      },
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "年",
+      "name" : "N_YEAR_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_YEAR_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "YEAR",
+        "codeName" : "Year"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -3547,6 +6979,61 @@
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "EditView2",
+    "logicName" : "项目工时统计实体编辑视图（左右关系）",
+    "name" : "项目工时统计实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "项目工时统计实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "项目工时统计实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "项目工时统计实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "项目工时统计实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "项目工时统计实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "项目工时统计实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "项目工时统计实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "项目工时统计实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "项目工时统计实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "项目工时统计实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "项目工时统计实体选择表格视图（部件视图）",
+    "name" : "项目工时统计实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "ProjectTaskestimate",
   "dEType" : 1,
@@ -3565,8 +7052,24 @@
   "enableUIActions" : 15,
   "enableViewLevel" : 0,
   "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "项目工时统计",
+  "getMajorPSDEField" : {
+    "name" : "DATE",
+    "codeName" : "Date"
+  },
   "name" : "PROJECTTASKESTIMATE",
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Auto1.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro.json"
+  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
@@ -3575,7 +7078,6 @@
   "storageMode" : 1,
   "systemTag" : "iBizPMS",
   "tableName" : "zt_taskestimate",
-  "virtualMode" : 0,
   "enableAPIStorage" : false,
   "enableCreate" : true,
   "enableDataVer" : false,

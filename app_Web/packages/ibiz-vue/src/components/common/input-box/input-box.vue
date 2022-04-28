@@ -6,6 +6,8 @@
       :placeholder="placeholder"
       :formatter="numberFormat"
       :size="size"
+      :max="max"
+      :min="min"
       :readonly="readonly"
       :precision="precision"
       v-model="CurrentVal"
@@ -22,8 +24,10 @@
       v-model="CurrentVal"
       :disabled="disabled ? true : false"
       :element-id="textareaId"
-      @on-enter="enter"
-    ></i-input>
+      :maxlength="maxLength"
+      @on-enter="enter">
+    </i-input>
+    <span v-if="maxLength && type === 'textarea'" class="input__count">{{ textLength }}/{{ upperLimit }}</span>
     <div class="unit-text">{{ unit }}</div>
   </div>
 </template>
@@ -58,29 +62,48 @@ export default class InputBox extends Vue {
   /**
    * 单位
    * @type {String}
-   * @memberof InputBoxUnit
+   * @memberof InputBox
    */
   @Prop() public unit?: string;
 
   /**
    * 多行文本十行 特殊参数样式（模型高度自带）
    * @type {String}
-   * @memberof InputBoxUnit
+   * @memberof InputBox
    */
   @Prop() public textareaStyle?: string;
 
   /**
    * 多行文本十行 特殊参数id（模型高度自带）
    * @type {String}
-   * @memberof InputBoxUnit
+   * @memberof InputBox
    */
   @Prop() public textareaId?: string;
   /**
    * 大小
    * @type {String}
-   * @memberof InputBoxUnit
+   * @memberof InputBox
    */
   @Prop() public size?: string;
+  /**
+   * 最大值
+   * @type {Number}
+   * @memberof InputBox
+   */
+  @Prop() public max?: number;
+  /**
+   * 最小值
+   * @type {Number}
+   * @memberof InputBox
+   */
+  @Prop() public min?: number;
+
+  /**
+   * textarea最大值
+   * @type {Number}
+   * @memberof InputBox
+   */
+  @Prop() public maxLength?: string;
 
   /**
    * placeholder值
@@ -114,7 +137,7 @@ export default class InputBox extends Vue {
   /**
    * 文本行数
    * @type {String}
-   * @memberof InputBoxUnit
+   * @memberof InputBox
    */
   @Prop({default: 2}) public rows?: number;
 
@@ -141,6 +164,14 @@ export default class InputBox extends Vue {
    * @memberof InputBox
    */
   @Prop() public valueFormat?: any;
+
+  /**
+   * 是否启用防抖
+   *
+   * @type {Boolean}
+   * @memberof InputBox
+   */
+  @Prop({default: true}) public isDebounce?: Boolean;
 
   /**
    * 数值框numberId
@@ -179,7 +210,11 @@ export default class InputBox extends Vue {
     if (Object.is(_data, "")) {
       _data = null;
     }
-    debounce(this.emitChangeEvent, _data, 300);
+    if (this.isDebounce) {
+      debounce(this.emitChangeEvent, _data, 300);
+    } else {
+      this.emitChangeEvent(_data);
+    }
   }
 
   /**
@@ -222,6 +257,30 @@ export default class InputBox extends Vue {
     }
     return value;
   }
+
+  /**
+   * 最大输入字数
+   *
+   * @param {*} value
+   * @memberof InputBox
+   */
+  get upperLimit() {
+    return this.$props.maxLength;
+  }
+
+  /**
+   * 当前输入字数
+   *
+   * @param {*} value
+   * @memberof InputBox
+   */
+  get textLength() {
+    if (typeof this.CurrentVal === 'number') {
+      return String(this.CurrentVal).length;
+    }
+    return (this.CurrentVal || '').length;
+  }
+  
 }
 </script>
 

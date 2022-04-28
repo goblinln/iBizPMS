@@ -142,7 +142,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzprojectmembers/${_context.ibzprojectmember}`);
+        const res = await this.http.get(`/ibzprojectmembers/${encodeURIComponent(_context.ibzprojectmember)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -177,7 +177,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibzprojectmembers/${_context.ibzprojectmember}`);
+        const res = await this.http.delete(`/ibzprojectmembers/${encodeURIComponent(_context.ibzprojectmember)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -195,7 +195,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibzprojectmembers/${_context.ibzprojectmember}`, _data);
+        const res = await this.http.put(`/ibzprojectmembers/${encodeURIComponent(_context.ibzprojectmember)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -228,7 +228,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzprojectmembers/${_context.ibzprojectmember}/select`);
+        const res = await this.http.get(`/ibzprojectmembers/${encodeURIComponent(_context.ibzprojectmember)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -6,13 +6,15 @@
   "logicName" : "已读",
   "name" : "sendMarkDone",
   "getPSDEActionInput" : {
-    "codeName" : "SendMarkDoneInput",
-    "name" : "输入对象",
+    "name" : "SendMarkDoneInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ActionDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SendMarkDoneResult",
-    "name" : "返回对象",
+    "name" : "SendMarkDoneResult",
     "type" : "VOID"
   }
 }

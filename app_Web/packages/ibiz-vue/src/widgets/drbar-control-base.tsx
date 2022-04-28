@@ -1,4 +1,4 @@
-import { IPSAppView, IPSDEDRBar, IPSDEDRCtrlItem, IPSDEEditForm, IPSNavigateContext, IPSNavigateParam } from '@ibiz/dynamic-model-api';
+import { IPSAppView, IPSDEDRBar, IPSDEDRBarGroup, IPSDEDRCtrlItem, IPSDEEditForm, IPSNavigateContext, IPSNavigateParam } from '@ibiz/dynamic-model-api';
 import { DrbarControlInterface, ModelTool, Util } from "ibiz-core";
 import { MainControlBase } from "./main-control-base";
 
@@ -76,6 +76,39 @@ export class DrbarControlBase extends MainControlBase implements DrbarControlInt
     public width: number = 240;
 
     /**
+     * @description 菜单方向
+     * @type {('horizontal' | 'vertical')}
+     * @memberof DrbarControlBase
+     */
+    public menuDir: 'horizontal' | 'vertical' = 'vertical';
+
+    /**
+     * @description 显示模式（DEFAULT：默认模式，INDEXMODE：嵌入实体首页视图中）
+     * @type {('DEFAULT' | 'INDEXMODE')}
+     * @memberof DrbarControlBase
+     */
+    public showMode: 'DEFAULT' | 'INDEXMODE' = 'DEFAULT';
+
+    /**
+     * @description 菜单项数据
+     * @type {any[]}
+     * @memberof DrbarControlBase
+     */
+    public menuItems: any[] = [];
+
+    /**
+     * @description 静态参数变化
+     * @param {*} newVal 新值
+     * @param {*} oldVal 旧值
+     * @memberof DrbarControlBase
+     */
+    public onStaticPropsChange(newVal: any, oldVal: any) {
+        super.onStaticPropsChange(newVal, oldVal);
+        this.showMode = newVal.showMode == 'INDEXMODE' ? 'INDEXMODE' : 'DEFAULT';
+        this.menuDir = newVal.showMode == 'INDEXMODE' ? 'horizontal' : newVal.menuDir == 'horizontal' ? 'horizontal' : 'vertical';
+    }
+
+    /**
      * 部件模型初始化
      * 
      * @memberof DrbarControlBase
@@ -103,7 +136,21 @@ export class DrbarControlBase extends MainControlBase implements DrbarControlInt
                 }
             });
         }
-        this.selection = this.items[0];
+        this.initDefaultSelection();
+    }
+
+    /**
+     * @description 初始化默认选中
+     * @memberof DrbarControlBase
+     */
+    public initDefaultSelection() {
+        if (this.items.length > 0) {
+            if (this.showMode == 'INDEXMODE') {
+                this.selection = this.items.length > 1 ? this.items[1] : this.items[0];
+            } else {
+                this.selection = this.items[0];
+            }
+        }
     }
 
     /**
@@ -133,10 +180,12 @@ export class DrbarControlBase extends MainControlBase implements DrbarControlInt
                 text: this.$tl(item.getCapPSLanguageRes()?.lanResTag, item.caption),
                 disabled: true,
                 id: item.name?.toLowerCase(),
-                iconcls: (item as any).getPSSysImage?.()?.cssClass,
-                icon: (item as any).getPSSysImage?.()?.imagePath,
+                // TODO 图标接口目前包还没更新，先从M里拿
+                iconcls: (item as any)?.M.getPSSysImage?.cssClass,
+                icon: (item as any)?.M.getPSSysImage?.imagePath,
                 view: item,
-                groupCodeName: (item as any).getPSDEDRBarGroup?.()?.id || '',
+                // TODO 待接口修复后调整。
+                groupCodeName: (item as any)?.M?.getPSDEDRBarGroup?.id || '',
             }
             if (item.counterId && counterService) {
                 Object.assign(_item, {
@@ -150,6 +199,33 @@ export class DrbarControlBase extends MainControlBase implements DrbarControlInt
             }
             this.items.push(_item);
         })
+        this.initMenuItems();
+    }
+
+    /**
+     * @description 初始化菜单项集合
+     * @memberof DrbarControlBase
+     */
+    public initMenuItems() {
+        const groups = this.controlInstance.getPSDEDRBarGroups() || [];
+        const menuItems: any[] = [];
+        groups.forEach((group: IPSDEDRBarGroup) => {
+            const items = this.items.filter((item: any) => { return Object.is(item.groupCodeName, group.id); });
+            if (items.length == 1) {
+                menuItems.push(items[0]);
+            } else {
+                menuItems.push({
+                    text: this.$tl(group.getCapPSLanguageRes()?.lanResTag, group.caption),
+                    codeName: group.id,
+                    id: group.id,
+                    hidden: group.hidden,
+                    items: items,
+                });
+            }
+        });
+        const noGroupItems = this.items.filter((item: any) => { return !item.groupCodeName; });
+        menuItems.push.apply(menuItems, noGroupItems);
+        this.menuItems = [...menuItems];
     }
 
     /**
@@ -176,7 +252,8 @@ export class DrbarControlBase extends MainControlBase implements DrbarControlInt
         if ($event == this.selection.id) {
             return;
         }
-        this.selection = this.getItem($event);
+        const newSelectItem = this.getItem($event);
+        this.selection = newSelectItem;
         this.ctrlEvent({ controlname: this.controlInstance.name, action: 'selectionchange', data: [this.selection] })
     }
 
@@ -194,19 +271,15 @@ export class DrbarControlBase extends MainControlBase implements DrbarControlInt
                 item.disabled = false;
                 if (item.view) {
                     // 设置导航参数
-                    if (
-                        item.view.getPSNavigateContexts() &&
-                        (item.view.getPSNavigateContexts() as IPSNavigateContext[])?.length > 0
-                    ) {
-                        const localContext = Util.formatNavParam(item.view.getPSNavigateContexts());
+                    const navigateContext: IPSNavigateContext[] = item.view.getPSNavigateContexts() || [];
+                    if (navigateContext && navigateContext.length > 0) {
+                        const localContext = Util.formatNavParam(navigateContext);
                         let _context: any = Util.computedNavData(args, this.context, this.viewparams, localContext);
                         item.localContext = _context;
                     }
-                    if (
-                        item?.view.getPSNavigateParams() &&
-                        (item.view.getPSNavigateParams() as IPSNavigateParam[])?.length > 0
-                    ) {
-                        const localViewParam = Util.formatNavParam(item.view.getPSNavigateParams());
+                    const navigateParams: IPSNavigateParam[] = item.view.getPSNavigateParams() || [];
+                    if (navigateParams && navigateParams.length > 0) {
+                        const localViewParam = Util.formatNavParam(navigateParams);
                         let _param: any = Util.computedNavData(args, this.context, this.viewparams, localViewParam);
                         item.localViewParam = _param;
                     }

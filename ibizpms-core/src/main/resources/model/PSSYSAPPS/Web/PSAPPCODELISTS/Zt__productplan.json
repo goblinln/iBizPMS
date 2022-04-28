@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__Zt__productplan",
   "codeListType" : "STATIC",
   "codeName" : "Zt__productplan",
   "dynaInstMode" : 1,
@@ -14,20 +15,17 @@
     "data" : "{}",
     "text" : "所有",
     "value" : "All",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Unexpired",
     "data" : "{\"n_isexpired_eq\":0}",
     "text" : "未过期",
-    "value" : "UNEXPIRED",
-    "includeBeginValue" : true
+    "value" : "UNEXPIRED"
   }, {
     "codeName" : "Isexpired",
     "data" : "{\"n_isexpired_eq\":1}",
     "text" : "已过期",
-    "value" : "ISEXPIRED",
-    "includeBeginValue" : true
+    "value" : "ISEXPIRED"
   } ],
   "enableCache" : true
 }

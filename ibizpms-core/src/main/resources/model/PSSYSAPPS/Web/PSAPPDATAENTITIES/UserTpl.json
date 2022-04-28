@@ -321,6 +321,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "UserTpl",
+  "dEAPITag" : "IBZ_API__USER_TPL",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json",
@@ -330,10 +331,14 @@
     "actionRSMode" : 1,
     "codeName" : "UserTpls",
     "dataRSMode" : 0,
+    "majorDECodeName" : "SysAccount",
+    "majorDEName" : "SYS_USER",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
+    "minorDECodeName" : "UserTpl",
+    "minorDEName" : "ZT_USERTPL",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json"
@@ -342,12 +347,17 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_USERTPL",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_USERTPL",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "TITLE",
     "codeName" : "Title"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

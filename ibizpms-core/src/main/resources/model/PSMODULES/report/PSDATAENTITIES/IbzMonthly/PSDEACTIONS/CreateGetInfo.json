@@ -6,14 +6,16 @@
   "logicName" : "新建时获取信息",
   "name" : "CreateGetInfo",
   "getPSDEActionInput" : {
-    "codeName" : "CreateGetInfoInput",
-    "name" : "输入对象",
+    "name" : "CreateGetInfoInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzMonthlyDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CreateGetInfoResult",
-    "name" : "返回对象",
+    "name" : "CreateGetInfoResult",
     "type" : "VOID"
   }
 }

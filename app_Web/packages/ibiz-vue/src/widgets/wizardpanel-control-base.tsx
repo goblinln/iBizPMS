@@ -159,7 +159,18 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
                 }
             });
         }
+    }
 
+    /**
+     * 部件挂载
+     *
+     * @memberof ControlBase
+     */
+    public ctrlMounted(args?: any) {
+        super.ctrlMounted(args);
+        this.controlInstance.getPSDEEditForms()?.forEach((item: any)=>{
+            this.mountedMap.set(item.name, false);
+        })
     }
 
     /**
@@ -223,7 +234,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
             } else {
                 this.activeForm = this.historyForms[length - 1];
                 setTimeout(() => {
-                    this.formLoad(this.formParam);
+                    this.formLoad();
                 }, 1);
                 this.historyForms.splice(length - 1, 1);
             }
@@ -298,7 +309,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
             if (this.getNextForm()) {
                 this.activeForm = this.getNextForm();
                 setTimeout(() => {
-                    this.formLoad(this.formParam);
+                    this.formLoad();
                 }, 1);
             } else {
                 this.doFinish();
@@ -308,7 +319,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
             if (length > 1) {
                 this.activeForm = this.historyForms[length - 1];
                 setTimeout(() => {
-                    this.formLoad(this.formParam);
+                    this.formLoad();
                 }, 1);
                 this.historyForms.splice(length - 1, 1);
             }
@@ -362,7 +373,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
                 if (response.data[this.appDeCodeName.toLowerCase()]) {
                     Object.assign(this.context, { [this.appDeCodeName.toLowerCase()]: response.data[this.appDeCodeName.toLowerCase()] });
                 }
-                this.formLoad(this.formParam);
+                this.formLoad();
             }
         }).catch((response: any) => {
             this.onControlResponse('doInit', response);
@@ -371,11 +382,23 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
     }
 
     /**
+     * 是否FormLoad被阻塞
+     *
+     * @type {boolean}
+     * @memberof WizardPanelControlBase
+     */
+    public hasFormLoadBlocked: boolean = false;
+
+    /**
      * 表单加载
      *
      * @memberof WizardPanelControlBase
      */
-    public formLoad(data: any) {
+    public formLoad() {
+        if(!this.mountedMap.get(this.activeForm)){
+            this.hasFormLoadBlocked = true;
+            return;
+        }
         if (this.activeForm) {
             this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].loadAction, emitAction: 'load', data: this.formParam } });
         }
@@ -452,10 +475,17 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
      * @memberof WizardPanelControlBase
      */
     public onCtrlEvent(controlname: string, action: string, data: any) {
-        if (Object.is(action, "save")) {
+        if (action == 'controlIsMounted') {
+            this.setIsMounted(controlname);
+            if(this.hasFormLoadBlocked){
+                this.formLoad();
+                this.hasFormLoadBlocked = false;
+            }
+        } else if (Object.is(action, "save")) {
             this.wizardpanelFormsave(data, controlname);
         } else if (Object.is(action, "load")) {
             this.wizardpanelFormload(data, controlname);
         }
     }
+
 }

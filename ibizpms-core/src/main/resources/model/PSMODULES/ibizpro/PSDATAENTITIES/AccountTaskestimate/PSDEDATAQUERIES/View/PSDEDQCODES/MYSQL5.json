@@ -1,0 +1,16 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`EVALUATIONCOST`",
+    "name" : "EVALUATIONCOST"
+  }, {
+    "expression" : "t1.`INPUTCOST`",
+    "name" : "INPUTCOST"
+  } ],
+  "queryCode" : "SELECT\nt1.`DATE`,\nt1.`EVALUATIONCOST`,\nt1.`INPUTCOST`\nFROM `zt_taskestimate` t1 \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/AccountTaskestimate/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

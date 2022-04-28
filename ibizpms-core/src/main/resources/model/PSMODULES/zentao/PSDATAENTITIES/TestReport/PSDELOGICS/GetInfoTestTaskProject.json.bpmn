@@ -5,26 +5,26 @@
                 <tns:import name="java.util.Map" />
                 <tns:import name="org.springframework.util.StringUtils"/>
                 <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
-                                <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.TestTask()" name="testreportgetinfotesttaskprojecttesttask" type="refentity"/>
                                 <tns:metaData express="" name="testreportgetinfotesttaskprojectdefault" type="entity"/>
+                                <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.TestTask()" name="testreportgetinfotesttaskprojecttesttask" type="refentity"/>
                                     <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.ITestReportService))" name="testreportservice" type="service"/>
                     <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.ITestReportService))" name="iBzSysTestreportDefaultService" type="service"/>
                     <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
-                            <tns:global identifier="testreportgetinfotesttaskprojecttesttask" type="cn.ibizlab.pms.core.zentao.domain.TestTask" />
                             <tns:global identifier="testreportgetinfotesttaskprojectdefault" type="cn.ibizlab.pms.core.zentao.domain.TestReport" />
+                            <tns:global identifier="testreportgetinfotesttaskprojecttesttask" type="cn.ibizlab.pms.core.zentao.domain.TestTask" />
             </extensionElements>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取数据"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取测试单"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall5" id="rawsqlcall5" implementation="http://www.jboss.org/drools/rule" name="获取影响Bug"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="获取项目周期"/>
                         <startEvent id="begin" isInterrupting="true"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall7" id="rawsqlcall7" implementation="http://www.jboss.org/drools/rule" name="获取产品"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall6" id="rawsqlcall6" implementation="http://www.jboss.org/drools/rule" name="获取产品数"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="准备参数"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="获取概况信息"/>
                         <endEvent id="deaction1_end" name="end"/>
                         <sequenceFlow id="deaction1_end_line" sourceRef="deaction1" targetRef="deaction1_end"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="准备参数"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="获取项目周期"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall6" id="rawsqlcall6" implementation="http://www.jboss.org/drools/rule" name="获取产品数"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall4" id="rawsqlcall4" implementation="http://www.jboss.org/drools/rule" name="获取影响需求"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取测试单"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall5" id="rawsqlcall5" implementation="http://www.jboss.org/drools/rule" name="获取影响Bug"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall7" id="rawsqlcall7" implementation="http://www.jboss.org/drools/rule" name="获取产品"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskprojectrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取数据"/>
                     <sequenceFlow id="begin_prepareparam1" sourceRef="begin" targetRef="prepareparam1">
                     </sequenceFlow>
                     <sequenceFlow id="prepareparam1_rawsqlcall2" sourceRef="prepareparam1" targetRef="rawsqlcall2">

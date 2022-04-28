@@ -96,7 +96,7 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/doccontents/${_context.doccontent}`);
+        const res = await this.http.get(`/doccontents/${encodeURIComponent(_context.doccontent)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/doccontents/${_context.doccontent}`);
+        const res = await this.http.delete(`/doccontents/${encodeURIComponent(_context.doccontent)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/doccontents/${_context.doccontent}`, _data);
+        const res = await this.http.put(`/doccontents/${encodeURIComponent(_context.doccontent)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -199,7 +199,7 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/doccontents/${_context.doccontent}/select`);
+        const res = await this.http.get(`/doccontents/${encodeURIComponent(_context.doccontent)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -1,0 +1,85 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CODENAME`",
+    "name" : "CODENAME"
+  }, {
+    "expression" : "t1.`CONTENT`",
+    "name" : "CONTENT"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`MODULESN`",
+    "name" : "MODULESN"
+  }, {
+    "expression" : "t1.`MODULETAG`",
+    "name" : "MODULETAG"
+  }, {
+    "expression" : "t1.`MODULETAG2`",
+    "name" : "MODULETAG2"
+  }, {
+    "expression" : "t1.`MODULETAG3`",
+    "name" : "MODULETAG3"
+  }, {
+    "expression" : "t1.`MODULETAG4`",
+    "name" : "MODULETAG4"
+  }, {
+    "expression" : "t1.`ORDERVALUE`",
+    "name" : "ORDERVALUE"
+  }, {
+    "expression" : "t1.`PPSSYSREQMODULEID`",
+    "name" : "PPSSYSREQMODULEID"
+  }, {
+    "expression" : "t21.`PSSYSREQMODULENAME`",
+    "name" : "PPSSYSREQMODULENAME"
+  }, {
+    "expression" : "t1.`PSMODULEID`",
+    "name" : "PSMODULEID"
+  }, {
+    "expression" : "t11.`PSMODULENAME`",
+    "name" : "PSMODULENAME"
+  }, {
+    "expression" : "t1.`PSSYSREQMODULEID`",
+    "name" : "PSSYSREQMODULEID"
+  }, {
+    "expression" : "t1.`PSSYSREQMODULENAME`",
+    "name" : "PSSYSREQMODULENAME"
+  }, {
+    "expression" : "t1.`PSSYSTEMID`",
+    "name" : "PSSYSTEMID"
+  }, {
+    "expression" : "t1.`PSSYSTEMNAME`",
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`USERCAT`",
+    "name" : "USERCAT"
+  }, {
+    "expression" : "t1.`USERTAG`",
+    "name" : "USERTAG"
+  }, {
+    "expression" : "t1.`USERTAG2`",
+    "name" : "USERTAG2"
+  }, {
+    "expression" : "t1.`USERTAG3`",
+    "name" : "USERTAG3"
+  }, {
+    "expression" : "t1.`USERTAG4`",
+    "name" : "USERTAG4"
+  } ],
+  "queryCode" : "SELECT\nt1.`CODENAME`,\nt1.`CONTENT`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`MEMO`,\nt1.`MODULESN`,\nt1.`MODULETAG`,\nt1.`MODULETAG2`,\nt1.`MODULETAG3`,\nt1.`MODULETAG4`,\nt1.`ORDERVALUE`,\nt1.`PPSSYSREQMODULEID`,\nt21.`PSSYSREQMODULENAME` AS `PPSSYSREQMODULENAME`,\nt1.`PSMODULEID`,\nt11.`PSMODULENAME`,\nt1.`PSSYSREQMODULEID`,\nt1.`PSSYSREQMODULENAME`,\nt1.`PSSYSTEMID`,\nt1.`PSSYSTEMNAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`USERCAT`,\nt1.`USERTAG`,\nt1.`USERTAG2`,\nt1.`USERTAG3`,\nt1.`USERTAG4`\nFROM `T_PSSYSREQMODULE` t1 \nLEFT JOIN `T_PSMODULE` t11 ON t1.`PSMODULEID` = t11.`PSMODULEID` \nLEFT JOIN `T_PSSYSREQMODULE` t21 ON t1.`PPSSYSREQMODULEID` = t21.`PSSYSREQMODULEID` \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

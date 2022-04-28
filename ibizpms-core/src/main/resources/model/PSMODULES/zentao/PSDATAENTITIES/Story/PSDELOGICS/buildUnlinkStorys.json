@@ -17,9 +17,25 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction1",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildUnlinkStory.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    },
+    "logicNodeType" : "DEACTION",
+    "name" : "处理",
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
@@ -34,8 +50,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "build",
@@ -67,32 +82,17 @@
       "srcValueType" : "SRCDLPARAM"
     } ],
     "parallelOutput" : true
-  }, {
-    "codeName" : "Deaction1",
-    "getDstPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildUnlinkStory.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
-    },
-    "logicNodeType" : "DEACTION",
-    "name" : "处理",
-    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

@@ -1,0 +1,45 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`OBJECTID` = ${srfdatacontext('srfparentkey','{\"defname\":\"OBJECTID\",\"dename\":\"ZT_ACTION\"}')}  AND  t1.`OBJECTTYPE` =  ${srfdatacontext('objecttype','{\"defname\":\"OBJECTTYPE\",\"dename\":\"ZT_ACTION\"}')} )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`EXTRA`",
+    "name" : "EXTRA"
+  }, {
+    "expression" : "t1.`ACTION`",
+    "name" : "ACTION"
+  }, {
+    "expression" : "t1.`ACTOR`",
+    "name" : "ACTOR"
+  }, {
+    "expression" : "t1.`COMMENT`",
+    "name" : "COMMENT"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`OBJECTID`",
+    "name" : "OBJECTID"
+  }, {
+    "expression" : "t1.`OBJECTTYPE`",
+    "name" : "OBJECTTYPE"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t1.`READ`",
+    "name" : "READ"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACTION`,\nt1.`actor` as actor,\nt1.`DATE`,\nt1.`ID`,\nt1.id as srfkey,\nt1.`OBJECTID`,\n(case when t1.`OBJECTTYPE` in ('daily','weekly','monthly') then CONCAT_WS('','ibz',t1.objectType) else t1.objectType end ) as OBJECTTYPE,\nt1.`PRODUCT`,\nt1.`PROJECT`,\nt1.`READ`,\nt1.`comment`,\nt1.extra,\n(case when t1.actor =  #{srf.sessioncontext.srfloginname} then 1 else 0 end) as ISACTORSS,\ncase when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end as ActionManner,\nt1.ACTIONSN\nFROM `zt_action` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEDATAQUERIES/Type/PSDEDQCODES/MYSQL5.json"
+}

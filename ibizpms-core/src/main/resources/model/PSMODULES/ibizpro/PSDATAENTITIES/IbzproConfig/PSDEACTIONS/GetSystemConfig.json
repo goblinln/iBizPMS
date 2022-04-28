@@ -6,13 +6,19 @@
   "logicName" : "获取系统配置",
   "name" : "GetSystemConfig",
   "getPSDEActionInput" : {
-    "codeName" : "GetSystemConfigInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "IBZPRO_CONFIGID",
+      "codeName" : "IbzproConfigId"
+    },
+    "name" : "GetSystemConfigInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetSystemConfigResult",
-    "name" : "返回对象",
+    "name" : "GetSystemConfigResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzproConfigDTO"
+    },
     "type" : "DTO"
   }
 }

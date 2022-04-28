@@ -645,6 +645,14 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "getPSRawItem" : {
+        "caption" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计日志数 <strong>{{data.yearlogcnt ? data.yearlogcnt: 0}}</strong></li><li >累计工时数 <strong>{{data.yearestimatecnt ? data.yearestimatecnt: 0}}</strong></li></ul></div>",
+        "contentType" : "RAW",
+        "name" : "rawitem1",
+        "getPSSysCss" : {
+          "cssName" : "year-stats-info-css"
+        }
+      },
       "getPSSysCss" : {
         "cssName" : "year-stats-info-css"
       },
@@ -677,6 +685,14 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "getPSRawItem" : {
+        "caption" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li>累计参与产品数 <strong>{{data.yearproductcnt ? data.yearproductcnt: 0}}</strong></li><li >累计创建计划数 <strong>{{data.yearplancnt ? data.yearplancnt: 0}}</strong></li><li >累计创建需求数 <strong>{{data.yearstorycnt ? data.yearstorycnt: 0}}</strong></li></ul></div>",
+        "contentType" : "RAW",
+        "name" : "rawitem2",
+        "getPSSysCss" : {
+          "cssName" : "year-stats-info-css"
+        }
+      },
       "getPSSysCss" : {
         "cssName" : "year-stats-info-css"
       },
@@ -708,6 +724,14 @@
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
+      },
+      "getPSRawItem" : {
+        "caption" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计创建用例数 <strong>{{data.yearcasecnt ? data.yearcasecnt: 0}}</strong></li><li >累计创建Bug数 <strong>{{data.yearbugcnt ? data.yearbugcnt: 0}}</strong></li></ul></div>",
+        "contentType" : "RAW",
+        "name" : "rawitem3",
+        "getPSSysCss" : {
+          "cssName" : "year-stats-info-css"
+        }
       },
       "getPSSysCss" : {
         "cssName" : "year-stats-info-css"

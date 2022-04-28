@@ -55,6 +55,7 @@ export class AppChartViewBase extends ChartViewBase {
     public onStaticPropsChange(newVal: any, oldVal: any) {
         if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
             super.onStaticPropsChange(newVal, oldVal);
+            newVal.modeldata.xDataControlName = 'chart';
         }
     }
 

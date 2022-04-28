@@ -483,7 +483,6 @@ export default class AppCustomTheme extends Vue {
     public generateShareUrl(themeOptionId: any) {
         const href: string = window.location.href;
         const userName = this.$store.getters.getAppData().context?.srfusername;
-        console.log(userName);
         const baseStr = window.btoa(`applyThemeOption=true&themeOptionId=${themeOptionId}`);
         const param = `#/appsharepage?theme=${baseStr}&shareUserName=${encodeURIComponent(userName)}`;
         return href.replace(/#\/\S*/, param);

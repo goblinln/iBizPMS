@@ -1,4 +1,20 @@
 {
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDEACMODES/Default.json"
+  } ],
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
@@ -8,14 +24,16 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
-      "codeName" : "CreateInput",
-      "name" : "输入对象",
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateResult",
-      "name" : "返回对象",
+      "name" : "CreateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -28,14 +46,16 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateInput",
-      "name" : "输入对象",
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateResult",
-      "name" : "返回对象",
+      "name" : "UpdateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -49,13 +69,15 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveResult",
-      "name" : "返回对象",
+      "name" : "RemoveResult",
       "type" : "VOID"
     },
     "batchAction" : true,
@@ -69,13 +91,19 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
-      "codeName" : "GetInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetResult",
-      "name" : "返回对象",
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -88,13 +116,19 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftInput",
-      "name" : "输入对象",
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftResult",
-      "name" : "返回对象",
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -106,13 +140,15 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
-      "codeName" : "CheckKeyInput",
-      "name" : "输入对象",
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CheckKeyResult",
-      "name" : "返回对象",
+      "name" : "CheckKeyResult",
       "stdDataType" : 9,
       "type" : "SIMPLE"
     },
@@ -125,21 +161,181 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
-      "codeName" : "SaveInput",
-      "name" : "输入对象",
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "SaveResult",
-      "name" : "返回对象",
+      "name" : "SaveResult",
       "type" : "VOID"
     },
     "builtinAction" : true
   } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`zt_task`",
+    "tableName" : "zt_task",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "ID",
+      "codeName" : "Id"
+    }, {
+      "name" : "NAME",
+      "codeName" : "Name"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDETABLES/Table.json",
+    "name" : "ZT_TASK",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "zt_task"
+    },
+    "tableType" : "MAIN"
+  } ],
+  "getAllPSDEDataExports" : [ {
+    "codeName" : "TaskFinishGird",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDEDATAEXPS/TaskFinishGird.json",
+    "maxRowCount" : 1000,
+    "name" : "数据导出-任务完成汇总表",
+    "getPSDEDataExportItems" : [ {
+      "caption" : "完成者",
+      "format" : "%1$s",
+      "name" : "finishedby",
+      "getPSDEField" : {
+        "name" : "FINISHEDBY",
+        "codeName" : "FinishedBy"
+      }
+    }, {
+      "caption" : "所属项目",
+      "format" : "%1$s",
+      "name" : "projectname",
+      "getPSDEField" : {
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      }
+    }, {
+      "caption" : "编号",
+      "format" : "%1$s",
+      "name" : "taskid",
+      "getPSDEField" : {
+        "name" : "TASKID",
+        "codeName" : "Taskid"
+      }
+    }, {
+      "caption" : "任务名称",
+      "format" : "%1$s",
+      "name" : "taskname",
+      "getPSDEField" : {
+        "name" : "TASKNAME",
+        "codeName" : "TaskName"
+      }
+    }, {
+      "caption" : "优先级",
+      "format" : "%1$s",
+      "name" : "taskpri",
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSCODELISTS/Task__pri.json"
+      },
+      "getPSDEField" : {
+        "name" : "TASKPRI",
+        "codeName" : "Taskpri"
+      }
+    }, {
+      "caption" : "预计开始",
+      "format" : "%1$s",
+      "name" : "taskeststarted",
+      "getPSDEField" : {
+        "name" : "TASKESTSTARTED",
+        "codeName" : "Taskeststarted"
+      }
+    }, {
+      "caption" : "实际开始",
+      "format" : "%1$s",
+      "name" : "taskrealstart",
+      "getPSDEField" : {
+        "name" : "TASKREALSTART",
+        "codeName" : "Taskrealstart"
+      }
+    }, {
+      "caption" : "截至日期",
+      "format" : "%1$s",
+      "name" : "taskdeadline",
+      "getPSDEField" : {
+        "name" : "TASKDEADLINE",
+        "codeName" : "Taskdeadline"
+      }
+    }, {
+      "caption" : "实际完成",
+      "format" : "%1$s",
+      "name" : "taskfinisheddate",
+      "getPSDEField" : {
+        "name" : "TASKFINISHEDDATE",
+        "codeName" : "Taskfinisheddate"
+      }
+    }, {
+      "caption" : "延期",
+      "format" : "%1$s",
+      "name" : "taskdelay",
+      "getPSDEField" : {
+        "name" : "TASKDELAY",
+        "codeName" : "Taskdelay"
+      }
+    }, {
+      "caption" : "最初预计",
+      "format" : "%1$s",
+      "name" : "taskestimate",
+      "getPSDEField" : {
+        "name" : "TASKESTIMATE",
+        "codeName" : "Taskestimate"
+      }
+    }, {
+      "caption" : "任务总消耗",
+      "format" : "%1$s",
+      "name" : "totalconsumed",
+      "getPSDEField" : {
+        "name" : "TOTALCONSUMED",
+        "codeName" : "TotalConsumed"
+      }
+    }, {
+      "caption" : "总任务数",
+      "format" : "%1$s",
+      "name" : "taskcnt",
+      "getPSDEField" : {
+        "name" : "TASKCNT",
+        "codeName" : "TaskCnt"
+      }
+    }, {
+      "caption" : "项目总消耗",
+      "format" : "%1$s",
+      "name" : "projectconsumed",
+      "getPSDEField" : {
+        "name" : "PROJECTCONSUMED",
+        "codeName" : "Projectconsumed"
+      }
+    }, {
+      "caption" : "用户总消耗",
+      "format" : "%1$s",
+      "name" : "userconsumed",
+      "getPSDEField" : {
+        "name" : "USERCONSUMED",
+        "codeName" : "Userconsumed"
+      }
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
@@ -152,11 +348,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_TASKSTATS"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
+      "type" : "DTOS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDEDATAQUERIES/TaskFinishHuiZong/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "TaskFinishHuiZong",
     "logicName" : "任务完成汇总表",
@@ -169,11 +381,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_TASKSTATS"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "TaskFinishHuiZongInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "TaskFinishHuiZongResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDEDATAQUERIES/UserFinishTaskSum/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "UserFinishTaskSum",
     "logicName" : "用户完成任务统计",
@@ -186,11 +414,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_MYTERRITORY"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "UserFinishTaskSumInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "UserFinishTaskSumResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
@@ -202,7 +446,24 @@
       },
       "joinType" : "MAIN",
       "name" : "IBZ_TASKSTATS"
-    }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -213,13 +474,19 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultInput",
-      "name" : "输入对象",
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultResult",
-      "name" : "返回对象",
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
       "type" : "PAGE"
     },
     "defaultMode" : true,
@@ -234,13 +501,19 @@
       "id" : "TaskFinishHuiZong"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "TaskFinishHuiZongInput",
-      "name" : "输入对象",
+      "name" : "TaskFinishHuiZongInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "TaskFinishHuiZongResult",
-      "name" : "返回对象",
+      "name" : "TaskFinishHuiZongResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -254,19 +527,50 @@
       "id" : "UserFinishTaskSum"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "UserFinishTaskSumInput",
-      "name" : "输入对象",
+      "name" : "UserFinishTaskSumInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "UserFinishTaskSumResult",
-      "name" : "返回对象",
+      "name" : "UserFinishTaskSumResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskStatsDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
     "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TASKDEADLINE][任务截至日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[TASKDEADLINE][任务截至日期]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKDEADLINE][任务截至日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[TASKDEADLINE][任务截至日期]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -274,10 +578,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKDEADLINE",
-        "codeName" : "Taskdeadline"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -293,9 +593,33 @@
     "name" : "TASKDEADLINE",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKID][任务编号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TASKID][任务编号]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TASKID][任务编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TASKID][任务编号]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -303,10 +627,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKID",
-        "codeName" : "Taskid"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -322,9 +642,35 @@
     "name" : "TASKID",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TASKREALSTART][任务实际开始时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[TASKREALSTART][任务实际开始时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKREALSTART][任务实际开始时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[TASKREALSTART][任务实际开始时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -332,10 +678,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKREALSTART",
-        "codeName" : "Taskrealstart"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -351,6 +693,7 @@
     "name" : "TASKREALSTART",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -360,6 +703,31 @@
       "name" : "TASKEFFICIENT",
       "queryCodeExp" : "0",
       "standardColumnName" : "`TASKEFFICIENT`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKEFFICIENT][效率]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TASKEFFICIENT][效率]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TASKEFFICIENT][效率]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TASKEFFICIENT][效率]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -380,10 +748,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "TASKEFFICIENT",
-        "codeName" : "Taskefficient"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -393,6 +757,7 @@
     "codeName" : "Taskefficient",
     "dEFType" : 2,
     "dataType" : "TEXT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "效率",
@@ -400,9 +765,33 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKESTIMATE][任务预计开始时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TASKESTIMATE][任务预计开始时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TASKESTIMATE][任务预计开始时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TASKESTIMATE][任务预计开始时间]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -410,10 +799,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKESTIMATE",
-        "codeName" : "Taskestimate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -429,6 +814,7 @@
     "name" : "TASKESTIMATE",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -438,6 +824,31 @@
       "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[END][结束]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[END][结束]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[END][结束]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[END][结束]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -445,10 +856,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "END",
-        "codeName" : "End"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -464,9 +871,33 @@
     "name" : "END",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[USERCONSUMED][用户总消耗]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[USERCONSUMED][用户总消耗]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[USERCONSUMED][用户总消耗]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[USERCONSUMED][用户总消耗]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -474,10 +905,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "USERCONSUMED",
-        "codeName" : "Userconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -493,6 +920,7 @@
     "name" : "USERCONSUMED",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -503,6 +931,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`TOTALLEFT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TOTALLEFT][剩余总工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TOTALLEFT][剩余总工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TOTALLEFT][剩余总工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TOTALLEFT][剩余总工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -510,10 +961,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TOTALLEFT",
-        "codeName" : "TotalLeft"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -524,14 +971,39 @@
     "codeName" : "TotalLeft",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "剩余总工时",
     "name" : "TOTALLEFT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PROJECTCONSUMED][项目总消耗]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PROJECTCONSUMED][项目总消耗]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PROJECTCONSUMED][项目总消耗]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PROJECTCONSUMED][项目总消耗]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -539,10 +1011,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PROJECTCONSUMED",
-        "codeName" : "Projectconsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -558,6 +1026,7 @@
     "name" : "PROJECTCONSUMED",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -567,6 +1036,31 @@
       "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[BEGIN][属性]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[BEGIN][属性]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[BEGIN][属性]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[BEGIN][属性]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -574,10 +1068,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -593,6 +1083,7 @@
     "name" : "BEGIN",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -603,6 +1094,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`TOTALCONSUMED`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TOTALCONSUMED][消耗总工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TOTALCONSUMED][消耗总工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TOTALCONSUMED][消耗总工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TOTALCONSUMED][消耗总工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -610,10 +1124,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TOTALCONSUMED",
-        "codeName" : "TotalConsumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -624,11 +1134,13 @@
     "codeName" : "TotalConsumed",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "消耗总工时",
     "name" : "TOTALCONSUMED",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -639,6 +1151,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`TOTALESTIMATE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TOTALESTIMATE][预计总工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TOTALESTIMATE][预计总工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TOTALESTIMATE][预计总工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TOTALESTIMATE][预计总工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -646,10 +1181,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TOTALESTIMATE",
-        "codeName" : "TotalEstimate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -660,14 +1191,41 @@
     "codeName" : "TotalEstimate",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "预计总工时",
     "name" : "TOTALESTIMATE",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TASKESTSTARTED][任务预计开始日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[TASKESTSTARTED][任务预计开始日期]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKESTSTARTED][任务预计开始日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[TASKESTSTARTED][任务预计开始日期]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -675,10 +1233,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKESTSTARTED",
-        "codeName" : "Taskeststarted"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -694,6 +1248,7 @@
     "name" : "TASKESTSTARTED",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -710,6 +1265,29 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ID][编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ID][编号]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ID][编号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ID][编号]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -717,10 +1295,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -735,6 +1309,14 @@
     "length" : 20,
     "logicName" : "编号",
     "name" : "ID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ID"
+    },
     "getPSSysSequence" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTaskSeq.json"
@@ -750,6 +1332,33 @@
       "name" : "N_DEPT_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DEPT][部门]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[DEPT][部门]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DEPT][部门]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[DEPT][部门]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -769,10 +1378,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "DEPT",
-        "codeName" : "Dept"
       },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
@@ -794,6 +1399,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -809,6 +1415,31 @@
       "name" : "N_NAME_LIKE",
       "stdDataType" : 25,
       "valueOP" : "LIKE"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[NAME][名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[NAME][名称]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[NAME][名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[NAME][名称]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -829,10 +1460,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -846,12 +1473,45 @@
     "length" : 100,
     "logicName" : "名称",
     "name" : "NAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "NAME"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
     "enableQuickSearch" : true,
     "majorDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PROJECTNAME][项目名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PROJECTNAME][项目名称]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PROJECTNAME][项目名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PROJECTNAME][项目名称]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -871,10 +1531,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "PROJECTNAME",
-        "codeName" : "ProjectName"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -891,6 +1547,7 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -899,6 +1556,31 @@
       "name" : "N_PROJECT_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PROJECT][项目]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PROJECT][项目]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PROJECT][项目]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PROJECT][项目]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -919,10 +1601,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -939,9 +1617,35 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TASKFINISHEDDATE][任务实际完成日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[TASKFINISHEDDATE][任务实际完成日期]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKFINISHEDDATE][任务实际完成日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[TASKFINISHEDDATE][任务实际完成日期]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -949,10 +1653,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKFINISHEDDATE",
-        "codeName" : "Taskfinisheddate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -968,9 +1668,35 @@
     "name" : "TASKFINISHEDDATE",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKNAME][任务名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TASKNAME][任务名称]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TASKNAME][任务名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TASKNAME][任务名称]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -990,10 +1716,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "TASKNAME",
-        "codeName" : "TaskName"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1010,9 +1732,33 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKCNT][总任务数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TASKCNT][总任务数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TASKCNT][总任务数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TASKCNT][总任务数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1020,10 +1766,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKCNT",
-        "codeName" : "TaskCnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1039,9 +1781,33 @@
     "name" : "TASKCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TASKPRI][任务优先级]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TASKPRI][任务优先级]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKPRI][任务优先级]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TASKPRI][任务优先级]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1049,10 +1815,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKPRI",
-        "codeName" : "Taskpri"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1072,9 +1834,35 @@
     },
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TASKDELAY][任务延期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TASKDELAY][任务延期]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKDELAY][任务延期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TASKDELAY][任务延期]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1094,10 +1882,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "TASKDELAY",
-        "codeName" : "Taskdelay"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1114,6 +1898,7 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1122,6 +1907,31 @@
       "name" : "N_FINISHEDBY_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[FINISHEDBY][完成者]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FINISHEDBY][完成者]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[FINISHEDBY][完成者]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FINISHEDBY][完成者]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1142,10 +1952,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "FINISHEDBY",
-        "codeName" : "FinishedBy"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1162,8 +1968,372 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "TaskStatsDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "属性",
+      "name" : "Begin",
+      "getPSDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "部门",
+      "name" : "Dept",
+      "getPSDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "结束",
+      "name" : "End",
+      "getPSDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "完成者",
+      "name" : "FinishedBy",
+      "getPSDEField" : {
+        "name" : "FINISHEDBY",
+        "codeName" : "FinishedBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "编号",
+      "name" : "Id",
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "名称",
+      "name" : "Name",
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "项目",
+      "name" : "Project",
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "项目名称",
+      "name" : "ProjectName",
+      "getPSDEField" : {
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "项目总消耗",
+      "name" : "Projectconsumed",
+      "getPSDEField" : {
+        "name" : "PROJECTCONSUMED",
+        "codeName" : "Projectconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "总任务数",
+      "name" : "TaskCnt",
+      "getPSDEField" : {
+        "name" : "TASKCNT",
+        "codeName" : "TaskCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务名称",
+      "name" : "TaskName",
+      "getPSDEField" : {
+        "name" : "TASKNAME",
+        "codeName" : "TaskName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务截至日期",
+      "name" : "Taskdeadline",
+      "getPSDEField" : {
+        "name" : "TASKDEADLINE",
+        "codeName" : "Taskdeadline"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务延期",
+      "name" : "Taskdelay",
+      "getPSDEField" : {
+        "name" : "TASKDELAY",
+        "codeName" : "Taskdelay"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "效率",
+      "name" : "Taskefficient",
+      "getPSDEField" : {
+        "name" : "TASKEFFICIENT",
+        "codeName" : "Taskefficient"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务预计消耗",
+      "name" : "Taskestimate",
+      "getPSDEField" : {
+        "name" : "TASKESTIMATE",
+        "codeName" : "Taskestimate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务预计开始日期",
+      "name" : "Taskeststarted",
+      "getPSDEField" : {
+        "name" : "TASKESTSTARTED",
+        "codeName" : "Taskeststarted"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务实际完成日期",
+      "name" : "Taskfinisheddate",
+      "getPSDEField" : {
+        "name" : "TASKFINISHEDDATE",
+        "codeName" : "Taskfinisheddate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务编号",
+      "name" : "Taskid",
+      "getPSDEField" : {
+        "name" : "TASKID",
+        "codeName" : "Taskid"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务优先级",
+      "name" : "Taskpri",
+      "getPSDEField" : {
+        "name" : "TASKPRI",
+        "codeName" : "Taskpri"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务实际开始时间",
+      "name" : "Taskrealstart",
+      "getPSDEField" : {
+        "name" : "TASKREALSTART",
+        "codeName" : "Taskrealstart"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "消耗总工时",
+      "name" : "TotalConsumed",
+      "getPSDEField" : {
+        "name" : "TOTALCONSUMED",
+        "codeName" : "TotalConsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "预计总工时",
+      "name" : "TotalEstimate",
+      "getPSDEField" : {
+        "name" : "TOTALESTIMATE",
+        "codeName" : "TotalEstimate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "剩余总工时",
+      "name" : "TotalLeft",
+      "getPSDEField" : {
+        "name" : "TOTALLEFT",
+        "codeName" : "TotalLeft"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "用户总消耗",
+      "name" : "Userconsumed",
+      "getPSDEField" : {
+        "name" : "USERCONSUMED",
+        "codeName" : "Userconsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "TaskStatsFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "属性",
+      "name" : "N_BEGIN_GTANDEQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_BEGIN_GTANDEQ"
+      },
+      "getPSDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "部门",
+      "name" : "N_DEPT_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_DEPT_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "结束",
+      "name" : "N_END_LTANDEQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_END_LTANDEQ"
+      },
+      "getPSDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "完成者",
+      "name" : "N_FINISHEDBY_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_FINISHEDBY_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "FINISHEDBY",
+        "codeName" : "FinishedBy"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "编号",
+      "name" : "N_ID_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ID_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "名称",
+      "name" : "N_NAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_NAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "项目",
+      "name" : "N_PROJECT_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PROJECT_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -1177,6 +2347,73 @@
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "UserFinishTaskGridView",
+    "logicName" : "任务统计实体表格视图(任务完成汇总表）",
+    "name" : "任务统计实体表格视图(任务完成汇总表）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "UserFinishTaskSumGridView",
+    "logicName" : "任务统计实体表格视图（用户完成任务汇总）",
+    "name" : "任务统计实体表格视图（用户完成任务汇总）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "任务统计实体编辑视图（左右关系）",
+    "name" : "任务统计实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "任务统计实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "任务统计实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "任务统计实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "任务统计实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "任务统计实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "任务统计实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "任务统计实体选择表格视图（部件视图）",
+    "name" : "任务统计实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "任务统计实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "任务统计实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "任务统计实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "任务统计实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "TaskStats",
   "dEType" : 1,
@@ -1195,8 +2432,24 @@
   "enableUIActions" : 15,
   "enableViewLevel" : 0,
   "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "任务统计",
+  "getMajorPSDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
+  },
   "name" : "IBZ_TASKSTATS",
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Auto1.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
@@ -1205,7 +2458,6 @@
   "storageMode" : 1,
   "systemTag" : "iBizPMS",
   "tableName" : "zt_task",
-  "virtualMode" : 0,
   "enableAPIStorage" : false,
   "enableCreate" : true,
   "enableDataVer" : false,

@@ -7,13 +7,19 @@
   "name" : "Get",
   "orderValue" : 31,
   "getPSDEActionInput" : {
-    "codeName" : "GetInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "TASKMSGRECORDID",
+      "codeName" : "TaskMsgRecordId"
+    },
+    "name" : "GetInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetResult",
-    "name" : "返回对象",
+    "name" : "GetResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskMsgRecordDTO"
+    },
     "type" : "DTO"
   },
   "builtinAction" : true

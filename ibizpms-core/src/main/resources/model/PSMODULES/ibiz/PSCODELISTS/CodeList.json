@@ -1,15 +1,36 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "ibiz__CodeList",
   "codeListType" : "DYNAMIC",
   "codeName" : "CodeList",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/CodeList.json",
   "emptyText" : "未定义",
+  "name" : "周报我完成的任务(下拉框选择)",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getTextPSDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
+  },
+  "getValuePSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

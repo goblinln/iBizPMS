@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__SYS_UPDATE_BRANCH",
   "codeListType" : "STATIC",
   "codeName" : "SYS_UPDATE_BRANCH",
   "dynaInstMode" : 1,
@@ -12,13 +13,11 @@
   "getPSCodeItems" : [ {
     "codeName" : "Pc",
     "text" : "PC",
-    "value" : "PC",
-    "includeBeginValue" : true
+    "value" : "PC"
   }, {
     "codeName" : "Mob",
     "text" : "MOB",
-    "value" : "MOB",
-    "includeBeginValue" : true
+    "value" : "MOB"
   } ],
   "enableCache" : true
 }

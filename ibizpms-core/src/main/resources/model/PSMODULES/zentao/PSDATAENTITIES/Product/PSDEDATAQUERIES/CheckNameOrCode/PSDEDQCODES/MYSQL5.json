@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\nt1.id,\nt1.productsn\nFROM `zt_product` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATAQUERIES/CheckNameOrCode/PSDEDQCODES/MYSQL5.json"
+}

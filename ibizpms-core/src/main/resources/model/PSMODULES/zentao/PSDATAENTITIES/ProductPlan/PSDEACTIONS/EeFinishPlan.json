@@ -6,13 +6,15 @@
   "logicName" : "EE完成计划",
   "name" : "EeFinishPlan",
   "getPSDEActionInput" : {
-    "codeName" : "EeFinishPlanInput",
-    "name" : "输入对象",
+    "name" : "EeFinishPlanInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "EeFinishPlanResult",
-    "name" : "返回对象",
+    "name" : "EeFinishPlanResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

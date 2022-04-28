@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.type = 'product'  AND t1.deleted = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : " t1.`PRODUCT` = #{srf.datacontext.product}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "select t1.* from (SELECT\n\t( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`,\n\tt1.`ACL`,\n\tt1.`DELETED`,\n\tt1.`GROUPS`,\n\tt1.`ID`,\n\tt1.`MAIN`,\n\tt1.`NAME`,\n\tt1.`ORDER`,\n\tt1.`PRODUCT`,\n\tt1.`PROJECT`,\n\tt1.`TYPE` ,\n        'doc' as DOCLIBTYPE,\n\t(select count(1) from zt_doc t where t.lib = t1.id and t.product = t1.product and t.deleted = '0') as DOCCNT,\nt1.DOCLIBSN\nFROM\n\t`zt_doclib` t1 \n\t\n\tUNION\n\tSELECT\n\t0 AS `ISFAVOURITES`,\n\t'default' as `ACL`,\n\t'0' as `DELETED`,\n\t'' as `GROUPS`,\n\t0 as `ID`,\n\t0 as `MAIN`,\n\t'附件库' as `NAME`,\n\t0 as `ORDER`,\n\t#{srf.datacontext.product} as `PRODUCT`, \n\t0 as `PROJECT`,\n\t'product' as `TYPE` ,\n        'file' as DOCLIBTYPE,\n\t(select count(1) from zt_file t where ((t.objectType ='product' and t.objectID =  #{srf.datacontext.product}\n\t) or (t.objectType = 'story' and exists(select 1 from zt_story tt where tt.id = t.objectID and tt.product =  #{srf.datacontext.product} \n\tand tt.deleted = '0')) or (t.objectType = 'bug' and exists(select 1 from zt_bug tt where tt.id = t.objectID and tt.product =  #{srf.datacontext.product} \n\tand tt.deleted = '0')) or (t.objectType = 'doc' and EXISTS(select 1 from zt_doc tt where tt.id = t.objectID and tt.product = #{srf.datacontext.product}\n\tand tt.deleted = '0'))) and t.deleted = '0') as DOCCNT,\n\t0 as DOCLIBSN\nFROM\n\tdual  ) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEDATAQUERIES/ByProduct/PSDEDQCODES/MYSQL5.json"
+}

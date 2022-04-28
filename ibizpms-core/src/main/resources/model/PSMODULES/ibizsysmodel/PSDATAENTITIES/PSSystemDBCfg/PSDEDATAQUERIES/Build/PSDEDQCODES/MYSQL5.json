@@ -1,0 +1,109 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`APPENDSCHEMA`",
+    "name" : "APPENDSCHEMA"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DBSCHEMANAME`",
+    "name" : "DBSCHEMANAME"
+  }, {
+    "expression" : "t1.`DEFAULTFLAG`",
+    "name" : "DEFAULTFLAG"
+  }, {
+    "expression" : "t1.`ENABLEWEBTOOL`",
+    "name" : "ENABLEWEBTOOL"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`NODBINSTMODE`",
+    "name" : "NODBINSTMODE"
+  }, {
+    "expression" : "t1.`NULLVALORDER`",
+    "name" : "NULLVALORDER"
+  }, {
+    "expression" : "t1.`OBJNAMECASE`",
+    "name" : "OBJNAMECASE"
+  }, {
+    "expression" : "t1.`PSSYSTEMDBCFGID`",
+    "name" : "PSSYSTEMDBCFGID"
+  }, {
+    "expression" : "t1.`PSSYSTEMDBCFGNAME`",
+    "name" : "PSSYSTEMDBCFGNAME"
+  }, {
+    "expression" : "t1.`PSSYSTEMID`",
+    "name" : "PSSYSTEMID"
+  }, {
+    "expression" : "t1.`PSSYSTEMNAME`",
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "expression" : "t1.`PUBCOMMENTFLAG`",
+    "name" : "PUBCOMMENTFLAG"
+  }, {
+    "expression" : "t1.`PUBDBMODELFLAG`",
+    "name" : "PUBDBMODELFLAG"
+  }, {
+    "expression" : "t1.`PUBFKEYFLAG`",
+    "name" : "PUBFKEYFLAG"
+  }, {
+    "expression" : "t1.`PUBINDEXFLAG`",
+    "name" : "PUBINDEXFLAG"
+  }, {
+    "expression" : "t1.`PUBVIEWFLAG`",
+    "name" : "PUBVIEWFLAG"
+  }, {
+    "expression" : "t1.`RESINFO`",
+    "name" : "RESINFO"
+  }, {
+    "expression" : "t1.`RESREADYTIME`",
+    "name" : "RESREADYTIME"
+  }, {
+    "expression" : "t1.`RESSTATE`",
+    "name" : "RESSTATE"
+  }, {
+    "expression" : "t1.`TABSPACE`",
+    "name" : "TABSPACE"
+  }, {
+    "expression" : "t1.`TABSPACE2`",
+    "name" : "TABSPACE2"
+  }, {
+    "expression" : "t1.`TABSPACE3`",
+    "name" : "TABSPACE3"
+  }, {
+    "expression" : "t1.`TABSPACE4`",
+    "name" : "TABSPACE4"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`USERCAT`",
+    "name" : "USERCAT"
+  }, {
+    "expression" : "t1.`USERPARAMS`",
+    "name" : "USERPARAMS"
+  }, {
+    "expression" : "t1.`USERTAG`",
+    "name" : "USERTAG"
+  }, {
+    "expression" : "t1.`USERTAG2`",
+    "name" : "USERTAG2"
+  }, {
+    "expression" : "t1.`USERTAG3`",
+    "name" : "USERTAG3"
+  }, {
+    "expression" : "t1.`USERTAG4`",
+    "name" : "USERTAG4"
+  } ],
+  "queryCode" : "SELECT\nt1.`APPENDSCHEMA`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DBSCHEMANAME`,\nt1.`DEFAULTFLAG`,\nt1.`ENABLEWEBTOOL`,\nt1.`MEMO`,\nt1.`NODBINSTMODE`,\nt1.`NULLVALORDER`,\nt1.`OBJNAMECASE`,\nt1.`PSSYSTEMDBCFGID`,\nt1.`PSSYSTEMDBCFGNAME`,\nt1.`PSSYSTEMID`,\nt1.`PSSYSTEMNAME`,\nt1.`PUBCOMMENTFLAG`,\nt1.`PUBDBMODELFLAG`,\nt1.`PUBFKEYFLAG`,\nt1.`PUBINDEXFLAG`,\nt1.`PUBVIEWFLAG`,\nt1.`RESINFO`,\nt1.`RESREADYTIME`,\nt1.`RESSTATE`,\nt1.`TABSPACE`,\nt1.`TABSPACE2`,\nt1.`TABSPACE3`,\nt1.`TABSPACE4`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`USERCAT`,\nt1.`USERPARAMS`,\nt1.`USERTAG`,\nt1.`USERTAG2`,\nt1.`USERTAG3`,\nt1.`USERTAG4`\nFROM `T_PSSYSTEMDBCFG` t1 \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg/PSDEDATAQUERIES/Build/PSDEDQCODES/MYSQL5.json"
+}

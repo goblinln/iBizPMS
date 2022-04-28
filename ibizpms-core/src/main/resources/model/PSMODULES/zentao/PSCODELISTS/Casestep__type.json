@@ -1,30 +1,36 @@
 {
+  "codeListTag" : "zentao__Casestep__type",
   "codeListType" : "STATIC",
   "codeName" : "Casestep__type",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Casestep__type.json",
   "emptyText" : "未定义",
+  "name" : "用例步骤类型",
   "getPSCodeItems" : [ {
     "codeName" : "Step",
     "text" : "步骤",
-    "value" : "step",
-    "includeBeginValue" : true
+    "value" : "step"
   }, {
     "codeName" : "Group",
     "text" : "分组",
-    "value" : "group",
-    "includeBeginValue" : true
+    "value" : "group"
   }, {
     "codeName" : "Item",
     "text" : "分组步骤",
-    "value" : "item",
-    "includeBeginValue" : true
+    "value" : "item"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

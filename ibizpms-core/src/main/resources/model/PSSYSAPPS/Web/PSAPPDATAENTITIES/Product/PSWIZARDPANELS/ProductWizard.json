@@ -45,7 +45,7 @@
       "getPSHandlerActions" : [ {
         "actionName" : "WizardCreate",
         "actionType" : "DEACTION",
-        "name" : "update",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "WizardCreate"
@@ -57,7 +57,7 @@
       }, {
         "actionName" : "WizardCreate",
         "actionType" : "DEACTION",
-        "name" : "load",
+        "name" : "update",
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "WizardCreate"
@@ -159,6 +159,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "getPSRawItem" : {
+          "caption" : "<p>添加产品路径：产品→新建</p>\n    <p><img src=\"../../../assets/img/productadd.png\" referrerpolicy=\"no-referrer\" alt=\"show1\"></p>",
+          "contentType" : "RAW",
+          "name" : "rawitem1"
+        },
         "getPSSysImage" : {
           "glyph" : "xf17a@FontAwesome",
           "cssClass" : "fa fa-windows"
@@ -239,7 +244,7 @@
       "getPSHandlerActions" : [ {
         "actionName" : "WizardCreate",
         "actionType" : "DEACTION",
-        "name" : "update",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "WizardCreate"
@@ -251,7 +256,7 @@
       }, {
         "actionName" : "WizardCreate",
         "actionType" : "DEACTION",
-        "name" : "load",
+        "name" : "update",
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "WizardCreate"
@@ -534,6 +539,10 @@
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                },
+                "getPSDEOPPriv" : {
+                  "modelref" : true,
+                  "id" : "SRFUR__PRODUCTLIN_BUT"
                 },
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
@@ -829,7 +838,7 @@
       "getPSHandlerActions" : [ {
         "actionName" : "WizardCreate",
         "actionType" : "DEACTION",
-        "name" : "update",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "WizardCreate"
@@ -841,7 +850,7 @@
       }, {
         "actionName" : "WizardCreate",
         "actionType" : "DEACTION",
-        "name" : "load",
+        "name" : "update",
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "WizardCreate"
@@ -943,6 +952,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "getPSRawItem" : {
+          "caption" : "<p>路径：产品→[测试数据]在线培训→需求→创建需求</p>\n<p><img src=\"../../../assets/img/storyadd.png\" referrerpolicy=\"no-referrer\" alt=\"show1\"></p>",
+          "contentType" : "RAW",
+          "name" : "rawitem1"
+        },
         "rawContent" : "<p>路径：产品→[测试数据]在线培训→需求→创建需求</p>\n<p><img src=\"../../../assets/img/storyadd.png\" referrerpolicy=\"no-referrer\" alt=\"show1\"></p>",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
@@ -997,7 +1011,7 @@
       "getPSHandlerActions" : [ {
         "actionName" : "WizardCreate",
         "actionType" : "DEACTION",
-        "name" : "update",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "WizardCreate"
@@ -1009,7 +1023,7 @@
       }, {
         "actionName" : "WizardCreate",
         "actionType" : "DEACTION",
-        "name" : "load",
+        "name" : "update",
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "WizardCreate"

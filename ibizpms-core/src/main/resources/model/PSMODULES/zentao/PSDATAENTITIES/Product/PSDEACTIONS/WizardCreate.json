@@ -6,13 +6,15 @@
   "logicName" : "向导使用",
   "name" : "WizardCreate",
   "getPSDEActionInput" : {
-    "codeName" : "WizardCreateInput",
-    "name" : "输入对象",
+    "name" : "WizardCreateInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "WizardCreateResult",
-    "name" : "返回对象",
+    "name" : "WizardCreateResult",
     "type" : "VOID"
   }
 }

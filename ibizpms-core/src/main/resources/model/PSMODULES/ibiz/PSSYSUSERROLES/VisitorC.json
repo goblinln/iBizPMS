@@ -1,0 +1,12 @@
+{
+  "codeName" : "VisitorC",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSUSERROLES/VisitorC.json",
+  "name" : "访客（C端）",
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
+  "roleTag" : "VisitorC",
+  "roleType" : "CUSTOM",
+  "globalRole" : true
+}

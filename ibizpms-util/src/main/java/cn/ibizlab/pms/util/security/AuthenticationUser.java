@@ -17,6 +17,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -190,6 +191,14 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
      */
     private String reserver;
     /**
+     * 保留字段2
+     */
+    private String reserver2;
+    /**
+     * 保留字段3
+     */
+    private String reserver3;
+    /**
      * 用户上下文参数
      */
     private Map<String, Object> sessionParams;
@@ -235,11 +244,27 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
      * 下级部门
      */
     private String sdept;
+    /**
+    * 用户状态
+    */
+    private String state;
 
+    /**
+    * 最后一次修改密码时间
+    */
     @JsonIgnore
+    private Timestamp pwdchgtime;
+
+    /**
+    * 账户是否过期
+    * true: 账户未过期
+    * false：账户已过期
+    */
+    private boolean accountNonExpired = true;
+
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return accountNonExpired;
     }
 
     @JsonIgnore
@@ -354,7 +379,17 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
                 for (int i = 0; i < permissionList.getJSONArray("authorities").size(); i++) {
                     if(permissionList.getJSONArray("authorities").get(i) instanceof String){
                         String item = permissionList.getJSONArray("authorities").getString(i);
-                        authorities.add(new SimpleGrantedAuthority(String.valueOf(item)));
+                        if(!StringUtils.isEmpty(item)){
+                            if(item.indexOf("ROLE_") == 0){
+                                String tag = item.substring(5);
+                                UAARoleAuthority authority = new UAARoleAuthority();
+                                authority.setName(tag);
+                                authority.setRoleTag(tag);
+                                authorities.add(authority);
+                            }else {
+                                authorities.add(new SimpleGrantedAuthority(String.valueOf(item)));
+                            }
+                        }
                     }else {
                         JSONObject json = permissionList.getJSONArray("authorities").getJSONObject(i);
                         if (json.getString("type").equals("OPPRIV")) {

@@ -33,10 +33,6 @@ public class IBIZProTagFallback implements FallbackFactory<IBIZProTagFeignClient
         String finalErrorMessage = errorMessage;
         return new IBIZProTagFeignClient(){
 
-            public Page<IBIZProTag> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public IBIZProTag create(IBIZProTag ibizprotag) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class IBIZProTagFallback implements FallbackFactory<IBIZProTagFeignClient
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public IBIZProTag update(String id, IBIZProTag ibizprotag) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<IBIZProTag> ibizprotags) {
+            public IBIZProTag get(String id) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class IBIZProTagFallback implements FallbackFactory<IBIZProTagFeignClient
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public IBIZProTag get(String id) {
+            public IBIZProTag update(String id, IBIZProTag ibizprotag) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<IBIZProTag> ibizprotags) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(IBIZProTag ibizprotag) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<IBIZProTag> searchDefault(IBIZProTagSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class IBIZProTagFallback implements FallbackFactory<IBIZProTagFeignClient
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(IBIZProTag ibizprotag) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(IBIZProTag ibizprotag) {
@@ -86,10 +87,9 @@ public class IBIZProTagFallback implements FallbackFactory<IBIZProTagFeignClient
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<IBIZProTag> searchDefault(IBIZProTagSearchContext context) {
+            public Page<IBIZProTag> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

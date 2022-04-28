@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__CaseTestTaskQuickpachet",
   "codeListType" : "STATIC",
   "codeName" : "CaseTestTaskQuickpachet",
   "dynaInstMode" : 1,
@@ -14,14 +15,12 @@
     "data" : "{}",
     "text" : "所有用例",
     "value" : "ALL",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Tome",
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指派给我",
-    "value" : "TOME",
-    "includeBeginValue" : true
+    "value" : "TOME"
   } ],
   "enableCache" : true
 }

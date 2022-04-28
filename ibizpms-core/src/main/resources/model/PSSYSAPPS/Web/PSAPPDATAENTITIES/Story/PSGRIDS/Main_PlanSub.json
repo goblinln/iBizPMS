@@ -270,6 +270,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__PLANLINK"
+          },
           "getPSNavigateParams" : [ {
             "key" : "productplan",
             "name" : "productplan",

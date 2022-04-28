@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Testcase__frame",
   "codeListType" : "STATIC",
   "codeName" : "Testcase__frame",
   "dynaInstMode" : 1,
@@ -12,43 +13,35 @@
   "getPSCodeItems" : [ {
     "codeName" : "Junit",
     "text" : "JUnit",
-    "value" : "junit",
-    "includeBeginValue" : true
+    "value" : "junit"
   }, {
     "codeName" : "Testng",
     "text" : "TestNG",
-    "value" : "testng",
-    "includeBeginValue" : true
+    "value" : "testng"
   }, {
     "codeName" : "Phpunit",
     "text" : "PHPUnit",
-    "value" : "phpunit",
-    "includeBeginValue" : true
+    "value" : "phpunit"
   }, {
     "codeName" : "Pytest",
     "text" : "Pytest",
-    "value" : "pytest",
-    "includeBeginValue" : true
+    "value" : "pytest"
   }, {
     "codeName" : "Jtest",
     "text" : "JTest",
-    "value" : "jtest",
-    "includeBeginValue" : true
+    "value" : "jtest"
   }, {
     "codeName" : "Cppunit",
     "text" : "CppUnit",
-    "value" : "cppunit",
-    "includeBeginValue" : true
+    "value" : "cppunit"
   }, {
     "codeName" : "Gtest",
     "text" : "GTest",
-    "value" : "gtest",
-    "includeBeginValue" : true
+    "value" : "gtest"
   }, {
     "codeName" : "Qtest",
     "text" : "QTest",
-    "value" : "qtest",
-    "includeBeginValue" : true
+    "value" : "qtest"
   } ],
   "enableCache" : true
 }

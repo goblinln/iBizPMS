@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "(t1.assignedTo = #{srf.sessioncontext.srfloginname}  or t1.openedBy = #{srf.sessioncontext.srfloginname}  or t1.reviewedby = #{srf.sessioncontext.srfloginname}  or t1.closedBy = #{srf.sessioncontext.srfloginname}  )",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "((#{srf.webcontext.calendar} = '1'  and t1.assignedDate <> '0000-00-00 00:00:00' and t1.assignedDate is not null) or (#{srf.webcontext.calendar} is null))",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`ASSIGNEDTO`,\t\n\tt1.`COLOR`,\t\n\tt1.`ESTIMATE`,\n\tt1.`ID`,\nt1.`product`,\n\t(\nSELECT\n\t( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES \nFROM\n\tT_IBZ_FAVORITES t \nWHERE\n\tt.TYPE = 'story' \n\tAND t.ACCOUNT = #{srf.sessioncontext.srfloginname}  \n\tAND t.OBJECTID = t1.id \n\t) AS `ISFAVORITES`,\t\n\tt1.`MODULE`,\n\tt11.`NAME` AS `MODULENAME`,\n\tt1.`OPENEDBY`,\t\n\t( CASE WHEN t1.`PLAN` = '0' THEN '' ELSE t1.plan END ) AS `PLAN`,\n        (select GROUP_CONCAT(t.title)  from zt_productplan t where t.deleted = '0' and t.id = t1.plan) as planname,\n\tt1.`PRI`,\n\tt31.`NAME` AS `PRODOCTNAME`,\t\n\tt1.`STAGE`,\n\tt1.`STATUS`,\t\n\tt1.`TITLE`,\n\t'' AS isChild ,\n\tt1.STORYSN \nFROM\n\t`zt_story` t1\n\tLEFT JOIN zt_module t11 ON t1.MODULE = t11.ID\n\tLEFT JOIN zt_story t21 ON t1.PARENT = t21.ID\n\tLEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID\n\tLEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEDATAQUERIES/My/PSDEDQCODES/MYSQL5.json"
+}

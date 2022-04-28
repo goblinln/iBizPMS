@@ -6,13 +6,15 @@
   "logicName" : "开始任务时填入预计剩余为0设为进行中",
   "name" : "RecordTimateZeroLeftAfterStart",
   "getPSDEActionInput" : {
-    "codeName" : "RecordTimateZeroLeftAfterStartInput",
-    "name" : "输入对象",
+    "name" : "RecordTimateZeroLeftAfterStartInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "RecordTimateZeroLeftAfterStartResult",
-    "name" : "返回对象",
+    "name" : "RecordTimateZeroLeftAfterStartResult",
     "type" : "VOID"
   }
 }

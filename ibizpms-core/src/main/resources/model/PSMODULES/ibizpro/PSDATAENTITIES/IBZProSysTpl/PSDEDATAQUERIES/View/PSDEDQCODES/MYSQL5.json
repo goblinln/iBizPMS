@@ -1,0 +1,40 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CONTENT`",
+    "name" : "CONTENT"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`FILE`",
+    "name" : "FILE"
+  }, {
+    "expression" : "t1.`IBIZ_SOURCEOBJECT`",
+    "name" : "IBIZ_SOURCEOBJECT"
+  }, {
+    "expression" : "t1.`IBZPRO_SYSTPLID`",
+    "name" : "IBZPRO_SYSTPLID"
+  }, {
+    "expression" : "t1.`IBZPRO_SYSTPLNAME`",
+    "name" : "IBZPRO_SYSTPLNAME"
+  }, {
+    "expression" : "t1.`PUBLIC`",
+    "name" : "PUBLIC"
+  }, {
+    "expression" : "t1.`TPLTYPE`",
+    "name" : "TPLTYPE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CONTENT`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`FILE`,\nt1.`IBIZ_SOURCEOBJECT`,\nt1.`IBZPRO_SYSTPLID`,\nt1.`IBZPRO_SYSTPLNAME`,\nt1.`PUBLIC`,\nt1.`TPLTYPE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_IBZPRO_SYSTPL` t1 \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

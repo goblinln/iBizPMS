@@ -356,6 +356,9 @@ export class AppPanelBase extends PanelControlBase {
                             ? uiAction.getPSSysImage()?.cssClass
                             : null
                 }
+                imagePath={
+                    icon?.imagePath? icon.imagePath:null
+                }
                 showCaption={showCaption}
                 disabled={this.detailsModel[name]?.disabled}
                 on-onClick={($event: any) => {
@@ -377,6 +380,9 @@ export class AppPanelBase extends PanelControlBase {
         let customCode: boolean = false;
         if (this.dataMap && this.dataMap.get(name)) {
             customCode = this.dataMap.get(name).customCode;
+        }
+        if (this.needFindDEField) {
+            this.findDEFieldForPanelField(modelJson);
         }
         let labelPos = 'LEFT';
         return (
@@ -503,7 +509,7 @@ export class AppPanelBase extends PanelControlBase {
         let label = this.$tl(modelJson.getCapPSLanguageRes?.()?.lanResTag, modelJson.caption) || '分页';
         const panelItems: IPSPanelItem[] = modelJson.getPSPanelItems() || [];
         return (
-            <el-tab-pane label={label} name={modelJson.name} class={this.renderDetailClass(modelJson)}>
+            <el-tab-pane label={label} name={modelJson.name} class={this.renderDetailClass(modelJson)} lazy>
                 {panelItems.map((item: IPSPanelItem, index: number) => {
                     return this.renderByDetailType(item)
                 })}
@@ -566,7 +572,11 @@ export class AppPanelBase extends PanelControlBase {
             return;
         }
         const { modelFilePath, name } = controlAppView;
-        let tempContext: any = Object.assign(Util.deepCopy(this.context), { viewpath: modelFilePath });
+        let tempContext: any = Object.assign(Util.deepCopy(this.context), { viewpath: modelFilePath, });
+        const appDeKeyCodeName = this.controlInstance.getPSAppDataEntity()?.codeName?.toLowerCase();
+        if(appDeKeyCodeName){
+                Object.assign(tempContext,{[appDeKeyCodeName]:this.data.srfkey})
+        }
         return this.$createElement('app-view-shell', {
             props: {
                 staticProps: {

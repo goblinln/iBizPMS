@@ -1,0 +1,28 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CASE`",
+    "name" : "CASE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`EXPECT`",
+    "name" : "EXPECT"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  } ],
+  "queryCode" : "SELECT t1.`CASE`,t1.type,t1.parent,t1.expect,t1.`desc`, t1.`ID`, t1.`VERSION`,t1.CASESTEPSN FROM `zt_casestep` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEDATAQUERIES/Version/PSDEDQCODES/MYSQL5.json"
+}

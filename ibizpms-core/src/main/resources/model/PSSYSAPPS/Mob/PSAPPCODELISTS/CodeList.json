@@ -1,5 +1,6 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "ibiz__CodeList",
   "codeListType" : "DYNAMIC",
   "codeName" : "CodeList",
   "dynaInstMode" : 1,

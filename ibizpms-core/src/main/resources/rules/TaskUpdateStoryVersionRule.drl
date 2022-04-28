@@ -19,6 +19,15 @@ ruleflow-group "taskupdatestoryversionbegin"
     then
     end
 
+//逻辑处理节点[重置需求版本]
+rule "prepareparam1"
+ruleflow-group "taskupdatestoryversionprepareparam1"
+    when
+    then
+    taskupdatestoryversiondefault.set("storyversion","1");
+    update(taskupdatestoryversiondefault);//更新fact中变量值
+    end
+
 //逻辑处理节点[获取需求版本]
 rule "rawsqlcall1"
 ruleflow-group "taskupdatestoryversionrawsqlcall1"
@@ -34,15 +43,6 @@ ruleflow-group "taskupdatestoryversionrawsqlcall1"
             taskupdatestoryversiondefault.set(String.valueOf(entry.getKey()),entry.getValue());
         }
     }
-    update(taskupdatestoryversiondefault);//更新fact中变量值
-    end
-
-//逻辑处理节点[重置需求版本]
-rule "prepareparam1"
-ruleflow-group "taskupdatestoryversionprepareparam1"
-    when
-    then
-    taskupdatestoryversiondefault.set("storyversion","1");
     update(taskupdatestoryversiondefault);//更新fact中变量值
     end
 

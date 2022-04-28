@@ -259,11 +259,14 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__status.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataImports" : [ {
     "batchSize" : 1000,
     "codeName" : "DataImport",
+    "createDataAccessAction" : "CREATE",
     "getCreatePSAppDEAction" : {
       "modelref" : true,
       "id" : "Create"
@@ -446,11 +449,13 @@
       },
       "uniqueItem" : false
     } ],
+    "updateDataAccessAction" : "UPDATE",
     "getUpdatePSAppDEAction" : {
       "modelref" : true,
       "id" : "Update"
     },
-    "default" : false,
+    "enableBackend" : true,
+    "enableFront" : true,
     "ignoreError" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
@@ -695,6 +700,22 @@
     "logicName" : "获取联系人",
     "name" : "获取联系人",
     "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接7428",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
       "name" : "获取参数",
@@ -714,32 +735,17 @@
         "srcValueType" : "SRCDLPARAM"
       } ],
       "parallelOutput" : true
-    }, {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Prepareparam1"
-        },
-        "name" : "连接7428",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      } ],
-      "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -1124,19 +1130,28 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "AccountTestTask",
+  "dEAPITag" : "IBZ_API__ACCOUNT_TEST_TASK",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json",
   "enableUIActions" : 15,
   "logicName" : "用户测试单",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "AccountTestTasks",
     "dataRSMode" : 0,
+    "majorDECodeName" : "SysAccount",
+    "majorDEName" : "SYS_USER",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
+    "minorDECodeName" : "AccountTestTask",
+    "minorDEName" : "ACCOUNTTESTTASK",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
@@ -1145,6 +1160,10 @@
     "rSMode" : 2
   } ],
   "name" : "ACCOUNTTESTTASK",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_TESTTASK",
   "getPSSysImage" : {
     "glyph" : "xf0ea@FontAwesome",
@@ -1155,7 +1174,9 @@
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : false,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

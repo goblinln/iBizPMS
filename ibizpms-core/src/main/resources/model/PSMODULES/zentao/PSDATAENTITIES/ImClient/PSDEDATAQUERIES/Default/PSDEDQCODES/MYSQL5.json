@@ -1,0 +1,40 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CHANGELOG`",
+    "name" : "CHANGELOG"
+  }, {
+    "expression" : "t1.`DOWNLOADS`",
+    "name" : "DOWNLOADS"
+  }, {
+    "expression" : "t1.`CREATEDBY`",
+    "name" : "CREATEDBY"
+  }, {
+    "expression" : "t1.`CREATEDDATE`",
+    "name" : "CREATEDDATE"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`EDITEDBY`",
+    "name" : "EDITEDBY"
+  }, {
+    "expression" : "t1.`EDITEDDATE`",
+    "name" : "EDITEDDATE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`STRATEGY`",
+    "name" : "STRATEGY"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDBY`,\nt1.`CREATEDDATE`,\nt1.`DESC`,\nt1.`EDITEDBY`,\nt1.`EDITEDDATE`,\nt1.`ID`,\nt1.`STATUS`,\nt1.`STRATEGY`,\nt1.`VERSION`\nFROM `zt_im_client` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ImClient/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

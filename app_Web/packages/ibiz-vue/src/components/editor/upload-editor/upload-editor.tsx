@@ -48,17 +48,20 @@ export default class UploadEditor extends EditorBase {
         const { editorType: type, editorStyle: style } = this.editorInstance;
         this.customProps.uploadparams = this.editorInstance.editorParams?.['uploadparams'];
         this.customProps.exportparams = this.editorInstance.editorParams?.['exportparams'];
+        this.customProps.limit = this.editorInstance.editorParams?.['limit'] ? JSON.parse(this.editorInstance.editorParams['limit'] as string) : 9999;
         const editorTypeStyle: string = `${type}${style && style != 'DEFAULT' ? '_'+style : ''}`;
         switch (editorTypeStyle) {
             // 图片控件
             case 'PICTURE':
                 this.customProps.multiple = true;
+                this.customProps.accept = this.editorInstance.editorParams?.['accept'] ? this.editorInstance.editorParams['accept'] : 'image/*';
                 break;
             // 图片控件（单项）
             case 'PICTURE_ONE':
             case 'PICTURE_ONE_RAW':
             case 'FILEUPLOADER_ONE':
                 this.customProps.multiple = false;
+                this.customProps.accept = this.editorInstance.editorParams?.['accept'] ? this.editorInstance.editorParams['accept'] : 'image/*';
                 break;
             // 图片控件（旋转）
             case 'PICTURE_ROMATE':
@@ -71,6 +74,7 @@ export default class UploadEditor extends EditorBase {
                 break;
             // 文件上传
             case 'FILEUPLOADER':
+                this.customProps.accept = this.editorInstance.editorParams?.['accept'] ? this.editorInstance.editorParams['accept'] : '*';
                 break;
             // 文件上传（磁盘文件）
             case 'FILEUPLOADER_DISK':
@@ -78,6 +82,7 @@ export default class UploadEditor extends EditorBase {
             // 文件上传（可拖拽）
             case 'FILEUPLOADER_DRAG':
                 this.customProps.isdrag = true;
+                this.customProps.accept = this.editorInstance.editorParams?.['accept'] ? this.editorInstance.editorParams['accept'] : '*';
                 break;
             // 文件上传（可拖拽）
             case 'FILEUPLOADER_INFO':

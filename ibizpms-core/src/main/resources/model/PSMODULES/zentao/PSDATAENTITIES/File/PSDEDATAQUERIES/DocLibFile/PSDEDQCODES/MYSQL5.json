@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "((t1.objectType = 'project' and t1.objectID = #{srf.datacontext.project}) or (t1.objectType = 'task' and EXISTS(select 1 from zt_task t where t.deleted = '0' and t.project = #{srf.datacontext.project} and t.id = t1.objectID)) or (t1.objectType = 'doc' and EXISTS(select 1 from zt_doc t where t.deleted = '0' and t.project = #{srf.datacontext.project} and t.id = t1.objectID)) or (t1.objectType = 'build' and EXISTS(select 1 from zt_build t where t.deleted = '0' and t.project = #{srf.datacontext.project} and t.id = t1.objectID)) )",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`ADDEDBY`,\nt1.`ADDEDDATE`,\nt1.`DELETED`,\nt1.`DOWNLOADS`,\nt1.`EXTENSION`,\nt1.`EXTRA`,\nt1.`ID`,\nt1.`OBJECTID`,\nt1.`OBJECTTYPE`,\nt1.`PATHNAME`,\nCONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) as `STRSIZE`,\nt1.size,\nCONCAT_WS('',t1.`TITLE`,' [',UPPER(t1.objectType),' #',t1.objectID,']') AS `TITLE`,\n'file' as doclibtype,\nt1.FILESN\nFROM `zt_file` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEDATAQUERIES/DocLibFile/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Doclib__type",
   "codeListType" : "STATIC",
   "codeName" : "Doclib__type",
   "dynaInstMode" : 1,
@@ -12,18 +13,15 @@
   "getPSCodeItems" : [ {
     "codeName" : "Product",
     "text" : "产品文档库",
-    "value" : "product",
-    "includeBeginValue" : true
+    "value" : "product"
   }, {
     "codeName" : "Project",
     "text" : "项目文档库",
-    "value" : "project",
-    "includeBeginValue" : true
+    "value" : "project"
   }, {
     "codeName" : "Custom",
     "text" : "自定义文档库",
-    "value" : "custom",
-    "includeBeginValue" : true
+    "value" : "custom"
   } ],
   "enableCache" : true
 }

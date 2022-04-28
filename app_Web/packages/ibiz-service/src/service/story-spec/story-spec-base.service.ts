@@ -88,17 +88,17 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
     async FetchVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.story && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/storyspecs/fetchversion`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchVersion');
             return res;
         }
         if (_context.project && _context.story && true) {
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/storyspecs/fetchversion`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchVersion');
             return res;
         }
         if (_context.product && _context.story && true) {
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/storyspecs/fetchversion`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchVersion');
             return res;
         }

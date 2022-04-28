@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n        t1.deadline,\n        t1.resolvedDate,\n        t1.closedDate,\n        t1.resolvedBy,\n        t1.closedBy,\n\tt1.`ACTIVATEDDATE`,\n\tt1.`ASSIGNEDTO`,\n\tt1.`COLOR`,\n\tt1.`CONFIRMED`,\n\tt1.`ID`,\n\t(\nSELECT\n\t( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES \nFROM\n\tT_IBZ_FAVORITES t \nWHERE\n\tt.TYPE = 'bug' \n\tAND t.ACCOUNT = #{srf.sessioncontext.srfloginname}\n\tAND t.OBJECTID = t1.id \n\t) AS `ISFAVORITES`,\n\t\tt1.`LASTEDITEDDATE`,\t\n\tt1.`OPENEDBY`,\n\tt1.`OPENEDDATE`,\n\tt1.`PRI`,\n\tt1.`PRODUCT`,\n\tt11.`NAME` AS `PRODUCTNAME`,\n\tt1.`PROJECT`,\n\tt21.`NAME` AS `PROJECTNAME`,\n\tt1.`RESOLUTION`,\n\tt1.`SEVERITY`,\n\tt1.`STATUS`,\t\n\tt1.`TITLE`\t,\n\tt1.BUGSN\nFROM\n\t`zt_bug` t1\n\tLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.id\n\tLEFT JOIN zt_project t21 ON t1.PROJECT = t21.id\n\tLEFT JOIN zt_story t31 ON t1.STORY = t31.id\n\tLEFT JOIN zt_task t41 ON t1.TASK = t41.id\n\tLEFT JOIN zt_module t51 ON t1.MODULE = t51.id\n\tLEFT JOIN zt_branch t61 ON t1.BRANCH = t61.id",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEDATAQUERIES/Account/PSDEDQCODES/MYSQL5.json"
+}

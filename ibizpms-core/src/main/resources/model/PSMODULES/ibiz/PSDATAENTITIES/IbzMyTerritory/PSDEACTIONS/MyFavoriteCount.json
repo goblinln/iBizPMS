@@ -6,13 +6,15 @@
   "logicName" : "我的收藏计数器",
   "name" : "MyFavoriteCount",
   "getPSDEActionInput" : {
-    "codeName" : "MyFavoriteCountInput",
-    "name" : "输入对象",
+    "name" : "MyFavoriteCountInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzMyTerritoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MyFavoriteCountResult",
-    "name" : "返回对象",
+    "name" : "MyFavoriteCountResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

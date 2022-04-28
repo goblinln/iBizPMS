@@ -6,13 +6,15 @@
   "logicName" : "导入计划模板",
   "name" : "ImportPlanTemplet",
   "getPSDEActionInput" : {
-    "codeName" : "ImportPlanTempletInput",
-    "name" : "输入对象",
+    "name" : "ImportPlanTempletInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ImportPlanTempletResult",
-    "name" : "返回对象",
+    "name" : "ImportPlanTempletResult",
     "type" : "VOID"
   }
 }

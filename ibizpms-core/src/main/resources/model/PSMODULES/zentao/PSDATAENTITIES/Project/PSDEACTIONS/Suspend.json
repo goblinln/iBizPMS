@@ -6,13 +6,15 @@
   "logicName" : "挂起",
   "name" : "Suspend",
   "getPSDEActionInput" : {
-    "codeName" : "SuspendInput",
-    "name" : "输入对象",
+    "name" : "SuspendInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SuspendResult",
-    "name" : "返回对象",
+    "name" : "SuspendResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

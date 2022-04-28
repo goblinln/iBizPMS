@@ -1,0 +1,25 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACL`",
+    "name" : "ACL"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`GROUPSN`",
+    "name" : "GROUPSN"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ROLE`",
+    "name" : "ROLE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACL`,\nt1.`DESC`,\nt1.`GROUPSN`,\nt1.`ID`,\nt1.`NAME`,\nt1.`ROLE`\nFROM `zt_group` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Group/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -112,8 +112,8 @@ export class AppCalendarService extends ControlServiceBase {
                 for(const item of calendarItems) {
                     const codeName = (item.getPSAppDataEntity() as IPSAppDataEntity)?.codeName || '' as string;
                     let service: any = _this.$itemEntityServiceMap.get(codeName);
-                    let tempRequest: any = _this.handleRequestData(action, context, data, true, item.itemStyle || '' as string);
-                    Object.assign(tempRequest.data,{start:data.start,end: data.end});
+                    let tempRequest: any = _this.handleRequestData(action, context, data, true, item.itemType || '' as string);
+                    Object.assign(tempRequest.data,{size: item.maxSize != -1 ? item.maxSize : 1000});
                     //TODO  需要codeName
                     const appDeDataSet: IPSAppDEDataSet = item.getPSAppDEDataSet() as IPSAppDEDataSet;
                     if(appDeDataSet.codeName && service[appDeDataSet.codeName]) {

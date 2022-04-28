@@ -6,13 +6,15 @@
   "logicName" : "Bug收藏",
   "name" : "BugFavorites",
   "getPSDEActionInput" : {
-    "codeName" : "BugFavoritesInput",
-    "name" : "输入对象",
+    "name" : "BugFavoritesInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BugDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BugFavoritesResult",
-    "name" : "返回对象",
+    "name" : "BugFavoritesResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

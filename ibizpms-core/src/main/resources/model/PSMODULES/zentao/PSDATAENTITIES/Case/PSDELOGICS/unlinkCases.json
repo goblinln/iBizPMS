@@ -17,8 +17,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
     "parallelOutput" : true
   }, {
@@ -39,38 +38,6 @@
     "name" : "处理移除接口",
     "parallelOutput" : true
   }, {
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "重置ID",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "name" : "连接9896",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "dstFieldName" : "ID",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "name" : "testrun[ID] ==> Default[ID]",
-      "paramAction" : "SETPARAMVALUE",
-      "srcFieldName" : "ID",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "testrun"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "parallelOutput" : true
-  }, {
     "codeName" : "Rawsqlcall1",
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -87,8 +54,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -112,22 +78,57 @@
     "sql" : "SELECT t1.`ASSIGNEDTO`, t1.`CASE`, t1.`ID`, t1.`LASTRUNDATE`, t1.`LASTRUNNER`, t1.`LASTRUNRESULT`, t1.`STATUS`, t1.`TASK`, t1.`VERSION` FROM `zt_testrun` t1  where t1.`CASE` = ? AND t1.`task` = ?",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "重置ID",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "name" : "连接9896",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "ID",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "testrun[ID] ==> Default[ID]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "testrun"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
+    "codeName" : "testrun",
+    "logicName" : "testrun",
+    "name" : "testrun",
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
+    },
+    "entityParam" : true
+  }, {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
     },
-    "default" : true
-  }, {
-    "codeName" : "testrun",
-    "name" : "testrun",
-    "getParamPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
-    }
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

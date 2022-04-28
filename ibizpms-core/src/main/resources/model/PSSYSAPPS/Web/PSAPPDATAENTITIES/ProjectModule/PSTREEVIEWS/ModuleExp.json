@@ -339,6 +339,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "UPDATE"
+        },
         "getPSSysImage" : {
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
@@ -377,6 +381,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHALLACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshAll",
@@ -435,6 +440,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshParent",
@@ -493,6 +499,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHALLACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshAll",
@@ -569,6 +576,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "UPDATE"
+        },
         "getPSSysImage" : {
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
@@ -607,6 +618,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHALLACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshAll",
@@ -683,6 +695,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "ZTProject__UPDATE"
+        },
         "getPSSysImage" : {
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
@@ -721,6 +737,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHALLACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshAll",
@@ -797,6 +814,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "ZTProject__UPDATE"
+        },
         "getPSSysImage" : {
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
@@ -835,6 +856,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHALLACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshAll",
@@ -911,6 +933,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "UPDATE"
+        },
         "getPSSysImage" : {
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
@@ -949,6 +975,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHALLACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshAll",
@@ -1359,6 +1386,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHALLACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshAll",
@@ -1465,6 +1493,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshParent",
@@ -1590,6 +1619,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UPDATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -1628,6 +1661,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHALLACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshAll",
@@ -1796,6 +1830,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProject__UPDATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -1834,6 +1872,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHALLACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshAll",
@@ -2000,6 +2039,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UPDATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -2038,6 +2081,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHALLACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshAll",
@@ -2163,6 +2207,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UPDATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -2201,6 +2249,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHALLACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshAll",
@@ -2349,6 +2398,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProject__UPDATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -2387,6 +2440,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHALLACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshAll",

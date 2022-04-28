@@ -544,7 +544,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                 if (gridColumn.dataItemName) {
                     const dataItem: IPSDEGridDataItem | undefined = this.controlInstance.getPSDEGridDataItems()?.find((_dataItem: IPSDEGridDataItem) => Object.is(gridColumn.dataItemName, _dataItem.name));
                     if (dataItem) {
-                        this.dataMap.set(dataItem.name, { itemUIName: gridColumn.name });
+                        this.dataMap.set(dataItem.name, { itemUIName: gridColumn.name.toLowerCase() });
                     };
                 };
             });
@@ -593,14 +593,8 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         this.gridRefName = `${this.name.toLowerCase()}grid`;
         this.aggMode = this.controlInstance.aggMode;
         this.allColumnsInstance = this.controlInstance.getPSDEGridColumns() || [];
-        this.isEnableGroup = (this.controlInstance.enableGroup && this.controlInstance.getGroupPSAppDEField()) ? true : false;
         //开启分组
         if (this.isEnableGroup) {
-            this.groupMode = this.controlInstance.groupMode;
-            const groupField: IPSAppDEField = this.controlInstance.getGroupPSAppDEField() as IPSAppDEField;
-            if (groupField) {
-                this.groupAppField = groupField.codeName?.toLowerCase();
-            }
             const groupCodeList: IPSAppCodeList = this.controlInstance.getGroupPSCodeList() as IPSAppCodeList;
             if (groupCodeList && groupCodeList.codeName) {
                 this.codelistTag = groupCodeList.codeName;
@@ -723,7 +717,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                             }
                         })
                     }
-                    const appDeField: IPSAppDEField = item.getPSAppDEField() as IPSAppDEField;
+                    const appDeField: IPSAppDEField = item.M.getPSAppDEField;
                     if (appDeField) {
                         Object.assign(importItem, {
                             name: appDeField.codeName.toLowerCase(),
@@ -753,7 +747,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             return item.columnType === "UAGRIDCOLUMN";
         }) as IPSDEGridUAColumn;
         if (UAGridColumn) {
-            const UIActionGroupDetails: IPSUIActionGroupDetail[] = (UAGridColumn.getPSDEUIActionGroup() as IPSDEUIActionGroup).getPSUIActionGroupDetails() || [];
+            const UIActionGroupDetails: IPSUIActionGroupDetail[] = (UAGridColumn.getPSDEUIActionGroup() as IPSDEUIActionGroup)?.getPSUIActionGroupDetails() || [];
             if (UIActionGroupDetails.length > 0) {
                 UIActionGroupDetails.forEach((detail: IPSUIActionGroupDetail) => {
                     const uiAction: IPSUIAction | null = detail.getPSUIAction();
@@ -898,7 +892,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @param {boolean} [pageReset] 页码是否重置
      * @memberof GridControlBase
      */
-    public async load(opt: any = {}, pageReset: boolean = false) {
+    public async load(opt: any = {}, pageReset: boolean = false, isQuery: boolean = false) {
         if (!this.fetchAction) {
             this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.grid.notconfig.fetchaction') as string), 'load');
             return;
@@ -919,7 +913,9 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             Object.assign(page, { sort: sort });
         }
         Object.assign(arg, page);
-        const parentdata: any = {};
+        const parentdata: any = {
+          isQuery: isQuery,
+        };
         this.ctrlEvent({ controlname: this.name, action: "beforeload", data: parentdata });
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : opt ? opt : {};
@@ -971,7 +967,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             }
             const data: any = response.data;
             this.totalRecord = response.total;
-            this.items = this.dataItemTransition(data);
+            this.items = data;
             let loadsuccessResult: any = await this.executeCtrlEventLogic('onloadsuccess', { action: this.fetchAction, sender: this, navContext: this.context, navParam: arg, navData: this.navdatas, data: data })
             if (loadsuccessResult && loadsuccessResult?.hasOwnProperty('srfret') && !loadsuccessResult.srfret) {
                 return;
@@ -1219,7 +1215,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         let errorItems: any = [];
         let errorMessage: any = [];
         const appDeCodeName: any = this.controlInstance.getPSAppDataEntity()?.codeName;
-        const items: any[] = this.itemUIDataTransition(_this.items);
+        const items: any[] = _this.items;
         for (const item of items) {
             try {
                 if (Object.is(item.rowDataState, 'create')) {
@@ -1412,7 +1408,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             }
         }
         // 设置排序
-        if (!this.isNoSort && !Object.is(this.minorSortDir, '') && !Object.is(this.minorSortPSDEF, '')) {
+        if (!this.isNoSort && Util.isExistAndNotEmpty(this.minorSortDir) && Util.isExistAndNotEmpty(this.minorSortPSDEF)) {
             const sort: string = this.minorSortPSDEF + "," + this.minorSortDir;
             Object.assign(page, { sort: sort });
         }
@@ -1472,7 +1468,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public refresh(args?: any): void {
-        this.load();
+        this.load(args);
     }
 
     /**
@@ -1512,7 +1508,6 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                 })
             }
         }
-        let _this = this;
         for (const codelistColumn of codelistColumns) {
             const { codeList } = codelistColumn;
             let items: any = await this.codeListService.getDataItems({ tag: codeList.codeName, type: codeList.codeListType, data: codeList, context: this.context, viewparams: this.viewparams });
@@ -1521,19 +1516,6 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             })
         }
         return jsonData.map((v: any) => filterVal.map((j: any) => v[j]))
-    }
-
-    /**
-     * 表格分组
-     * 
-     * @memberof GridControlBase
-     */
-    public group() {
-        if (Object.is(this.groupMode, "AUTO")) {
-            this.drawGroup();
-        } else if (Object.is(this.groupMode, "CODELIST")) {
-            this.drawCodelistGroup();
-        }
     }
 
     /**

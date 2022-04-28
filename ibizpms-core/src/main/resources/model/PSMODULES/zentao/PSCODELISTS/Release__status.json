@@ -1,27 +1,34 @@
 {
+  "codeListTag" : "zentao__Release__status",
   "codeListType" : "STATIC",
   "codeName" : "Release__status",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Release__status.json",
   "emptyText" : "未定义",
+  "name" : "发布状态",
   "getPSCodeItems" : [ {
     "codeName" : "Normal",
     "color" : "rgba(13, 255, 0, 1)",
     "text" : "正常",
     "value" : "normal",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Terminate",
     "text" : "停止维护",
-    "value" : "terminate",
-    "includeBeginValue" : true
+    "value" : "terminate"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

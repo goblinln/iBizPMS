@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "select t1.`YEAR`,concat(t1.`year`, '年') as yearname from (select DISTINCT year( t1.date ) AS `year` from zt_taskestimate t1 where t1.date <> '0000-00-00' ) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats/PSDEDATAQUERIES/ActionYear/PSDEDQCODES/MYSQL5.json"
+}

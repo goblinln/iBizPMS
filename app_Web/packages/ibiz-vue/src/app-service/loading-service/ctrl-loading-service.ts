@@ -92,6 +92,44 @@ export class CtrlLoadingService {
     }
 
     /**
+     * 部件加载2 （根据传入Key获取Dom，进行局部刷新）
+     *
+     * @public
+     * @memberof CtrlLoadingService
+     */
+    public beginLoading2(key: string) {
+        const selection: any = document.querySelector(key);
+        if (!selection || this.isLoading) {
+            return;
+        }
+        this.elLoadingComponent = Loading.service({
+            fullscreen: false,
+            target: selection,
+            customClass: 'app-loading',
+        });
+        this.isLoading = true;
+        // 自定义loading元素
+        const userEle = `<div class="app-loading-icon">
+                            <div class="icon-content">
+                                <div class="app-loading-icon-item active-color"></div>
+                                <div class="app-loading-icon-item"></div>
+                            </div>
+                            <div class="icon-content">
+                                <div class="app-loading-icon-item"></div>
+                                <div class="app-loading-icon-item"></div>
+                            </div>
+                        </div>`;
+        const loadingEle = selection.lastChild;
+        if (loadingEle) {
+            loadingEle.innerHTML = userEle;
+        }
+        // 开启视图loading
+        if (this.viewLoadingService) {
+            this.viewLoadingService.beginLoading();
+        }
+    }
+
+    /**
      * 加载结束
      *
      * @memberof CtrlLoadingService

@@ -131,6 +131,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHALLACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshAll",
@@ -401,6 +402,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHALLACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshAll",

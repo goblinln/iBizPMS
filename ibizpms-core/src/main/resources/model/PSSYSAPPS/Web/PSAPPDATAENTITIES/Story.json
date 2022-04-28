@@ -511,7 +511,9 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__color.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
@@ -538,6 +540,13 @@
     "name" : "BugStory",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchBuildLinkCompletedStories",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -550,6 +559,27 @@
     "name" : "BuildLinkableStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchBuildStories",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -585,6 +615,27 @@
     "name" : "ESBulk",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchGetProductStories",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -656,6 +707,13 @@
     "name" : "projectLinkStory",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchProjectStories",
     "methodType" : "FETCH",
     "name" : "FetchProjectStories",
@@ -667,6 +725,27 @@
     "name" : "ReleaseLinkableStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchReleaseStories",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -679,12 +758,54 @@
     "name" : "ReportStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchStoryChild",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryChild",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchStoryRelated",
     "methodType" : "FETCH",
     "name" : "FetchStoryRelated",
@@ -1191,6 +1312,22 @@
     "logicName" : "获取联系人",
     "name" : "获取联系人",
     "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接7428",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
       "name" : "获取参数",
@@ -1210,32 +1347,17 @@
         "srcValueType" : "SRCDLPARAM"
       } ],
       "parallelOutput" : true
-    }, {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Prepareparam1"
-        },
-        "name" : "连接7428",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      } ],
-      "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -1593,6 +1715,13 @@
     "name" : "BugStory",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchBuildLinkCompletedStories",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -1605,6 +1734,27 @@
     "name" : "BuildLinkableStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchBuildStories",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -1640,6 +1790,27 @@
     "name" : "ESBulk",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchGetProductStories",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -1711,6 +1882,13 @@
     "name" : "projectLinkStory",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchProjectStories",
     "methodType" : "FETCH",
     "name" : "FetchProjectStories",
@@ -1722,6 +1900,27 @@
     "name" : "ReleaseLinkableStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchReleaseStories",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -1734,12 +1933,54 @@
     "name" : "ReportStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchStoryChild",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryChild",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchStoryRelated",
     "methodType" : "FETCH",
     "name" : "FetchStoryRelated",
@@ -1814,6 +2055,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
     },
     "getPSSysImage" : {
       "glyph" : "xf011@FontAwesome",
@@ -1929,6 +2174,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ISCHILD"
+    },
     "getPSNavigateContexts" : [ {
       "key" : "PARENT",
       "name" : "PARENT",
@@ -1988,6 +2237,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TOBUG"
     },
     "getPSNavigateContexts" : [ {
       "key" : "TEST",
@@ -2098,6 +2351,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CHANGE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf0ec@FontAwesome",
       "cssClass" : "fa fa-exchange"
@@ -2124,6 +2381,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf0d0@FontAwesome",
       "cssClass" : "fa fa-magic"
@@ -2149,6 +2410,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FAVORITES"
     },
     "getPSSysImage" : {
       "glyph" : "xf006@FontAwesome",
@@ -2178,6 +2443,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
     },
     "getPSSysImage" : {
       "glyph" : "xf0a4@FontAwesome",
@@ -2210,6 +2479,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__BUILDLINK"
     },
     "getPSNavigateContexts" : [ {
       "key" : "BUILD",
@@ -2273,6 +2546,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CHANGE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf0ec@FontAwesome",
       "cssClass" : "fa fa-exchange"
@@ -2300,6 +2577,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
     },
     "getPSSysImage" : {
       "glyph" : "xf0a4@FontAwesome",
@@ -2351,6 +2632,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PLANLINK"
+    },
     "getPSNavigateParams" : [ {
       "key" : "productplan",
       "name" : "productplan",
@@ -2389,6 +2674,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PROJECTLINK"
     },
     "getPSNavigateContexts" : [ {
       "key" : "STORY",
@@ -2466,6 +2755,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
@@ -2493,6 +2786,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
     },
     "getPSNavigateContexts" : [ {
       "key" : "PLAN",
@@ -2535,6 +2832,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf011@FontAwesome",
       "cssClass" : "fa fa-power-off"
@@ -2563,6 +2864,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "REVIEW"
     },
     "getPSNavigateContexts" : [ {
       "key" : "VERSION",
@@ -2603,6 +2908,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ISCHILD"
     },
     "getPSNavigateContexts" : [ {
       "key" : "PARENT",
@@ -2663,6 +2972,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CCASE"
     },
     "getPSNavigateContexts" : [ {
       "key" : "TEST",
@@ -2796,6 +3109,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
     "getPSNavigateContexts" : [ {
       "key" : "PROJECT",
       "name" : "PROJECT",
@@ -2845,6 +3162,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__RELEASELINK"
+    },
     "getPSNavigateContexts" : [ {
       "key" : "RELEASE",
       "name" : "RELEASE",
@@ -2886,6 +3207,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__BUILDLINK"
+    },
     "getPSNavigateContexts" : [ {
       "key" : "BUILD",
       "name" : "BUILD",
@@ -2926,6 +3251,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PROJECTLINK"
     },
     "getPSNavigateContexts" : [ {
       "key" : "PROJECT",
@@ -2970,6 +3299,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "REVIEW"
+    },
     "getPSNavigateContexts" : [ {
       "key" : "VERSION",
       "name" : "VERSION",
@@ -3007,6 +3340,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
     },
     "getPSNavigateParams" : [ {
       "key" : "productmodule",
@@ -3046,6 +3383,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PROJECTLINK"
     },
     "getPSNavigateContexts" : [ {
       "key" : "PROJECT",
@@ -3091,6 +3432,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf00d@FontAwesome",
       "cssClass" : "fa fa-remove"
@@ -3118,6 +3463,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITES"
     },
     "getPSSysImage" : {
       "glyph" : "xf005@FontAwesome",
@@ -4590,19 +4939,34 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "Story",
+  "dEAPITag" : "IBZ_API__STORY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json",
   "enableUIActions" : 15,
   "logicName" : "需求",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  }, {
+    "name" : "ISFAVORITES",
+    "codeName" : "Isfavorites"
+  }, {
+    "name" : "ISCHILD",
+    "codeName" : "Ischild"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Story",
+    "minorDEName" : "ZT_STORY",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -4617,10 +4981,14 @@
     "actionRSMode" : 1,
     "codeName" : "Stories",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Story",
+    "minorDEName" : "ZT_STORY",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -4629,6 +4997,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_STORY",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_STORY",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
@@ -4642,7 +5014,9 @@
     "codeName" : "Id"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

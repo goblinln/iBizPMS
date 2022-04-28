@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Company__guest",
   "codeListType" : "STATIC",
   "codeName" : "Company__guest",
   "dynaInstMode" : 1,
@@ -8,13 +9,11 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "允许",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   }, {
     "codeName" : "Item_0",
     "text" : "不允许",
-    "value" : "0",
-    "includeBeginValue" : true
+    "value" : "0"
   } ],
   "enableCache" : true
 }

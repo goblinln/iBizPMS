@@ -1,20 +1,24 @@
 {
+  "codeListTag" : "ibizpro__Ibzpro__category",
   "codeListType" : "STATIC",
   "codeName" : "Ibzpro__category",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSCODELISTS/Ibzpro__category.json",
   "emptyText" : "未定义",
+  "name" : "业务类别",
   "getPSCodeItems" : [ {
     "codeName" : "Zt_todo",
     "text" : "ZT_TODO",
-    "value" : "ZT_TODO",
-    "includeBeginValue" : true
+    "value" : "ZT_TODO"
   } ],
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro.json"
+  },
   "refFlag" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

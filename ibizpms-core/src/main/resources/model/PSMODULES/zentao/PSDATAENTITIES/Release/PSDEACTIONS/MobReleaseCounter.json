@@ -6,13 +6,15 @@
   "logicName" : "移动端发布计数器",
   "name" : "MobReleaseCounter",
   "getPSDEActionInput" : {
-    "codeName" : "MobReleaseCounterInput",
-    "name" : "输入对象",
+    "name" : "MobReleaseCounterInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ReleaseDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MobReleaseCounterResult",
-    "name" : "返回对象",
+    "name" : "MobReleaseCounterResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

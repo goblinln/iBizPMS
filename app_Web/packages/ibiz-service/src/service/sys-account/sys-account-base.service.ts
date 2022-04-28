@@ -72,7 +72,7 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/sysaccounts/${_context.sysaccount}`);
+        const res = await this.http.get(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {

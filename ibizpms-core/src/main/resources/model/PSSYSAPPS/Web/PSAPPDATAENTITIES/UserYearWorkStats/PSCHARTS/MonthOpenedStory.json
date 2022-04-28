@@ -40,6 +40,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "MonthOpenedStory",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchMonthOpenedStory"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -63,14 +71,7 @@
     "index" : 0,
     "name" : "[storycnt]直角坐标系[0]",
     "getPSChartCoordinateSystem" : {
-      "eChartsType" : "cartesian2d",
-      "index" : 0,
-      "name" : "[storycnt]直角坐标系[0]",
-      "getPSChartGrid" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "type" : "XY",
+      "modelref" : true,
       "id" : "0"
     },
     "getPSChartGridXAxis0" : {

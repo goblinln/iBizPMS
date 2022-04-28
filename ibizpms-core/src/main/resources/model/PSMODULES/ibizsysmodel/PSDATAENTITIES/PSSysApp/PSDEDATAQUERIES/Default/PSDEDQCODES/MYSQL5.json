@@ -1,0 +1,190 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`PFSTYLEPARAM`",
+    "name" : "PFSTYLEPARAM"
+  }, {
+    "expression" : "t1.`APPFOLDER`",
+    "name" : "APPFOLDER"
+  }, {
+    "expression" : "t1.`APPMODE`",
+    "name" : "APPMODE"
+  }, {
+    "expression" : "t1.`APPPKGNAME`",
+    "name" : "APPPKGNAME"
+  }, {
+    "expression" : "t1.`APPSN`",
+    "name" : "APPSN"
+  }, {
+    "expression" : "t1.`APPTAG`",
+    "name" : "APPTAG"
+  }, {
+    "expression" : "t1.`APPTAG2`",
+    "name" : "APPTAG2"
+  }, {
+    "expression" : "t1.`APPTAG3`",
+    "name" : "APPTAG3"
+  }, {
+    "expression" : "t1.`APPTAG4`",
+    "name" : "APPTAG4"
+  }, {
+    "expression" : "t1.`AUTOADDAPPVIEW`",
+    "name" : "AUTOADDAPPVIEW"
+  }, {
+    "expression" : "t1.`BTNNOPRIVDM`",
+    "name" : "BTNNOPRIVDM"
+  }, {
+    "expression" : "t1.`CODEFOLDER`",
+    "name" : "CODEFOLDER"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DEFAULTPUB`",
+    "name" : "DEFAULTPUB"
+  }, {
+    "expression" : "t1.`ENABLEC12TOC24`",
+    "name" : "ENABLEC12TOC24"
+  }, {
+    "expression" : "t1.`ENABLEDYNASYS`",
+    "name" : "ENABLEDYNASYS"
+  }, {
+    "expression" : "t1.`ENABLESTORYBOARD`",
+    "name" : "ENABLESTORYBOARD"
+  }, {
+    "expression" : "t1.`ENALOCALSERVICE`",
+    "name" : "ENALOCALSERVICE"
+  }, {
+    "expression" : "t1.`FINOPRIVDM`",
+    "name" : "FINOPRIVDM"
+  }, {
+    "expression" : "t1.`FIUPDATEPRIVTAG`",
+    "name" : "FIUPDATEPRIVTAG"
+  }, {
+    "expression" : "t1.`GCNOPRIVDM`",
+    "name" : "GCNOPRIVDM"
+  }, {
+    "expression" : "t1.`GRIDCOLENABLELINK`",
+    "name" : "GRIDCOLENABLELINK"
+  }, {
+    "expression" : "t1.`GRIDFORCEFIT`",
+    "name" : "GRIDFORCEFIT"
+  }, {
+    "expression" : "t1.`GRIDROWACTIVEMODE`",
+    "name" : "GRIDROWACTIVEMODE"
+  }, {
+    "expression" : "t1.`ICONFILE`",
+    "name" : "ICONFILE"
+  }, {
+    "expression" : "t1.`LOGICNAME`",
+    "name" : "LOGICNAME"
+  }, {
+    "expression" : "t1.`MAINMENUSIDE`",
+    "name" : "MAINMENUSIDE"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`ORIENTATIONMODE`",
+    "name" : "ORIENTATIONMODE"
+  }, {
+    "expression" : "t1.`PREVENTXSS`",
+    "name" : "PREVENTXSS"
+  }, {
+    "expression" : "t1.`PSAPPTYPEID`",
+    "name" : "PSAPPTYPEID"
+  }, {
+    "expression" : "t1.`PSAPPTYPENAME`",
+    "name" : "PSAPPTYPENAME"
+  }, {
+    "expression" : "t1.`PSPFCDNID`",
+    "name" : "PSPFCDNID"
+  }, {
+    "expression" : "t1.`PSPFCDNNAME`",
+    "name" : "PSPFCDNNAME"
+  }, {
+    "expression" : "t1.`PSPFID`",
+    "name" : "PSPFID"
+  }, {
+    "expression" : "t1.`PSPFSTYLEID`",
+    "name" : "PSPFSTYLEID"
+  }, {
+    "expression" : "t1.`PSSTUDIOTHEMEID`",
+    "name" : "PSSTUDIOTHEMEID"
+  }, {
+    "expression" : "t1.`PSSTUDIOTHEMENAME`",
+    "name" : "PSSTUDIOTHEMENAME"
+  }, {
+    "expression" : "t1.`PSSYSAPPID`",
+    "name" : "PSSYSAPPID"
+  }, {
+    "expression" : "t1.`PSSYSAPPNAME`",
+    "name" : "PSSYSAPPNAME"
+  }, {
+    "expression" : "t1.`PSSYSSERVICEAPIID`",
+    "name" : "PSSYSSERVICEAPIID"
+  }, {
+    "expression" : "t11.`PSSYSSERVICEAPINAME`",
+    "name" : "PSSYSSERVICEAPINAME"
+  }, {
+    "expression" : "t1.`PSSYSTEMID`",
+    "name" : "PSSYSTEMID"
+  }, {
+    "expression" : "t1.`PSSYSTEMNAME`",
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "expression" : "t1.`PUBREFVIEWONLY`",
+    "name" : "PUBREFVIEWONLY"
+  }, {
+    "expression" : "t1.`PUBSYSREFVIEWONLY`",
+    "name" : "PUBSYSREFVIEWONLY"
+  }, {
+    "expression" : "t1.`REMOVEFLAG`",
+    "name" : "REMOVEFLAG"
+  }, {
+    "expression" : "t1.`SERVICECODENAME`",
+    "name" : "SERVICECODENAME"
+  }, {
+    "expression" : "t1.`STARTPAGEFILE`",
+    "name" : "STARTPAGEFILE"
+  }, {
+    "expression" : "t1.`UACLOGIN`",
+    "name" : "UACLOGIN"
+  }, {
+    "expression" : "t1.`UISTYLE`",
+    "name" : "UISTYLE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`USERCAT`",
+    "name" : "USERCAT"
+  }, {
+    "expression" : "t1.`USERPARAMS`",
+    "name" : "USERPARAMS"
+  }, {
+    "expression" : "t1.`USERTAG`",
+    "name" : "USERTAG"
+  }, {
+    "expression" : "t1.`USERTAG2`",
+    "name" : "USERTAG2"
+  }, {
+    "expression" : "t1.`USERTAG3`",
+    "name" : "USERTAG3"
+  }, {
+    "expression" : "t1.`USERTAG4`",
+    "name" : "USERTAG4"
+  }, {
+    "expression" : "t1.`VALIDFLAG`",
+    "name" : "VALIDFLAG"
+  } ],
+  "queryCode" : "SELECT\nt1.`APPFOLDER`,\nt1.`APPMODE`,\nt1.`APPPKGNAME`,\nt1.`APPSN`,\nt1.`APPTAG`,\nt1.`APPTAG2`,\nt1.`APPTAG3`,\nt1.`APPTAG4`,\nt1.`AUTOADDAPPVIEW`,\nt1.`BTNNOPRIVDM`,\nt1.`CODEFOLDER`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DEFAULTPUB`,\nt1.`ENABLEC12TOC24`,\nt1.`ENABLEDYNASYS`,\nt1.`ENABLESTORYBOARD`,\nt1.`ENALOCALSERVICE`,\nt1.`FINOPRIVDM`,\nt1.`FIUPDATEPRIVTAG`,\nt1.`GCNOPRIVDM`,\nt1.`GRIDCOLENABLELINK`,\nt1.`GRIDFORCEFIT`,\nt1.`GRIDROWACTIVEMODE`,\nt1.`ICONFILE`,\nt1.`LOGICNAME`,\nt1.`MAINMENUSIDE`,\nt1.`MEMO`,\nt1.`ORIENTATIONMODE`,\nt1.`PREVENTXSS`,\nt1.`PSAPPTYPEID`,\nt1.`PSAPPTYPENAME`,\nt1.`PSPFCDNID`,\nt1.`PSPFCDNNAME`,\nt1.`PSPFID`,\nt1.`PSPFSTYLEID`,\nt1.`PSSTUDIOTHEMEID`,\nt1.`PSSTUDIOTHEMENAME`,\nt1.`PSSYSAPPID`,\nt1.`PSSYSAPPNAME`,\nt1.`PSSYSSERVICEAPIID`,\nt11.`PSSYSSERVICEAPINAME`,\nt1.`PSSYSTEMID`,\nt1.`PSSYSTEMNAME`,\nt1.`PUBREFVIEWONLY`,\nt1.`PUBSYSREFVIEWONLY`,\nt1.`REMOVEFLAG`,\nt1.`SERVICECODENAME`,\nt1.`STARTPAGEFILE`,\nt1.`UACLOGIN`,\nt1.`UISTYLE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`USERCAT`,\nt1.`USERPARAMS`,\nt1.`USERTAG`,\nt1.`USERTAG2`,\nt1.`USERTAG3`,\nt1.`USERTAG4`,\nt1.`VALIDFLAG`\nFROM `T_PSSYSAPP` t1 \nLEFT JOIN `T_PSSYSSERVICEAPI` t11 ON t1.`PSSYSSERVICEAPIID` = t11.`PSSYSSERVICEAPIID` \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

@@ -21,10 +21,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysSFPub", fallback = PSSysSFPubFallback.class)
 public interface PSSysSFPubFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/select")
-    Page<PSSysSFPub> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs")
     PSSysSFPub create(@RequestBody PSSysSFPub pssyssfpub);
 
@@ -32,11 +28,8 @@ public interface PSSysSFPubFeignClient {
     Boolean createBatch(@RequestBody List<PSSysSFPub> pssyssfpubs);
 
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/{pssyssfpubid}")
-    PSSysSFPub update(@PathVariable("pssyssfpubid") String pssyssfpubid,@RequestBody PSSysSFPub pssyssfpub);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/batch")
-    Boolean updateBatch(@RequestBody List<PSSysSFPub> pssyssfpubs);
+    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/{pssyssfpubid}")
+    PSSysSFPub get(@PathVariable("pssyssfpubid") String pssyssfpubid);
 
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/{pssyssfpubid}")
@@ -46,16 +39,29 @@ public interface PSSysSFPubFeignClient {
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/{pssyssfpubid}")
-    PSSysSFPub get(@PathVariable("pssyssfpubid") String pssyssfpubid);
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/{pssyssfpubid}")
+    PSSysSFPub update(@PathVariable("pssyssfpubid") String pssyssfpubid,@RequestBody PSSysSFPub pssyssfpub);
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/getdraft")
-    PSSysSFPub getDraft(PSSysSFPub entity);
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/batch")
+    Boolean updateBatch(@RequestBody List<PSSysSFPub> pssyssfpubs);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/checkkey")
     Boolean checkKey(@RequestBody PSSysSFPub pssyssfpub);
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/fetchbuild")
+    Page<PSSysSFPub> searchBuild(@SpringQueryMap PSSysSFPubSearchContext context);
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/fetchdefault")
+    Page<PSSysSFPub> searchDefault(@SpringQueryMap PSSysSFPubSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/getdraft")
+    PSSysSFPub getDraft(PSSysSFPub entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/save")
@@ -67,14 +73,8 @@ public interface PSSysSFPubFeignClient {
     Boolean saveBatch(@RequestBody List<PSSysSFPub> pssyssfpubs);
 
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/fetchbuild")
-    Page<PSSysSFPub> searchBuild(@SpringQueryMap PSSysSFPubSearchContext context);
-
-
-
-    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/fetchdefault")
-    Page<PSSysSFPub> searchDefault(@SpringQueryMap PSSysSFPubSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/select")
+    Page<PSSysSFPub> select();
 
 
 

@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Testtask__status",
   "codeListType" : "STATIC",
   "codeName" : "Testtask__status",
   "dynaInstMode" : 1,
@@ -14,26 +15,22 @@
     "color" : "rgba(220, 214, 214, 1)",
     "text" : "未开始",
     "value" : "wait",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Doing",
     "color" : "rgba(208, 20, 20, 1)",
     "text" : "进行中",
-    "value" : "doing",
-    "includeBeginValue" : true
+    "value" : "doing"
   }, {
     "codeName" : "Done",
     "color" : "rgba(30, 234, 12, 1)",
     "text" : "已完成",
-    "value" : "done",
-    "includeBeginValue" : true
+    "value" : "done"
   }, {
     "codeName" : "Blocked",
     "color" : "rgba(221, 217, 10, 1)",
     "text" : "被阻塞",
-    "value" : "blocked",
-    "includeBeginValue" : true
+    "value" : "blocked"
   } ],
   "enableCache" : true
 }

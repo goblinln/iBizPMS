@@ -1,13 +1,34 @@
 {
+  "codeListTag" : "ibiz__UserYEAR",
   "codeListType" : "DYNAMIC",
   "codeName" : "UserYEAR",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/UserYEAR.json",
+  "name" : "用户使用年",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "QueryUserYEAR"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getTextPSDEField" : {
+    "name" : "DATE1",
+    "codeName" : "Date1"
+  },
+  "getValuePSDEField" : {
+    "name" : "DATE1",
+    "codeName" : "Date1"
+  },
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

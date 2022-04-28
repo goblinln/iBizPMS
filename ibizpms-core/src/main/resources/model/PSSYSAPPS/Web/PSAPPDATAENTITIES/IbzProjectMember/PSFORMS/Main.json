@@ -757,6 +757,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProjectMember.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "MANAGE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf067@FontAwesome",
             "cssClass" : "fa fa-plus"

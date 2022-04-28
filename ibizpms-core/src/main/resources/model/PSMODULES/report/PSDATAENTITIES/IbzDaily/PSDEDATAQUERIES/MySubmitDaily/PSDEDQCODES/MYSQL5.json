@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.account=#{srf.sessioncontext.srfloginname}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1. IBZ_DAILYID,\n\tt1.IBZ_DAILYNAME,\n\tt1.ACCOUNT,\n\tt1.DATE,\n\tt1.ISSUBMIT,\n\tt1.REPORTTO,\n\tt1.REPORTSTATUS\nFROM\n\tt_ibz_daily t1 \n\n",
+  "id" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEDATAQUERIES/MySubmitDaily/PSDEDQCODES/MYSQL5.json"
+}

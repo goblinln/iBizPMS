@@ -1,0 +1,52 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`DIRS`",
+    "name" : "DIRS"
+  }, {
+    "expression" : "t1.`FILES`",
+    "name" : "FILES"
+  }, {
+    "expression" : "t1.`LICENSE`",
+    "name" : "LICENSE"
+  }, {
+    "expression" : "t1.`AUTHOR`",
+    "name" : "AUTHOR"
+  }, {
+    "expression" : "t1.`CODE`",
+    "name" : "CODE"
+  }, {
+    "expression" : "t1.`DEPENDS`",
+    "name" : "DEPENDS"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`INSTALLEDTIME`",
+    "name" : "INSTALLEDTIME"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`SITE`",
+    "name" : "SITE"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  }, {
+    "expression" : "t1.`ZENTAOCOMPATIBLE`",
+    "name" : "ZENTAOCOMPATIBLE"
+  } ],
+  "queryCode" : "SELECT\nt1.`AUTHOR`,\nt1.`CODE`,\nt1.`DEPENDS`,\nt1.`ID`,\nt1.`INSTALLEDTIME`,\nt1.`NAME`,\nt1.`SITE`,\nt1.`STATUS`,\nt1.`TYPE`,\nt1.`VERSION`,\nt1.`ZENTAOCOMPATIBLE`\nFROM `zt_extension` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

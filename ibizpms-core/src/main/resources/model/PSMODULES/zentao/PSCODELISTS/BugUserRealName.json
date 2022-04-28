@@ -1,18 +1,39 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "zentao__BugUserRealName",
   "codeListType" : "DYNAMIC",
   "codeName" : "BugUserRealName",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/BugUserRealName.json",
   "emptyText" : "未定义",
+  "name" : "用户真实名称（动态）（Bug）",
   "orMode" : "STR",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "BugUser"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getTextPSDEField" : {
+    "name" : "PERSONNAME",
+    "codeName" : "PersonName"
+  },
   "textSeparator" : ",",
+  "getValuePSDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
+  },
   "valueSeparator" : ",",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

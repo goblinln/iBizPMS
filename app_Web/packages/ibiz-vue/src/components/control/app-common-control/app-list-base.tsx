@@ -1,7 +1,7 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { throttle, ModelTool, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { ListControlBase } from '../../../widgets';
-import { IPSDEListItem, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSDEListItem, IPSDEUIAction, IPSDEUIActionGroup, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 实体列表部件基类
@@ -116,12 +116,13 @@ export class AppListBase extends ListControlBase {
     }
 
     /**
-     * 绘制列表主体内容
+     * 绘制列表项内容
      *
      * @returns {*}
      * @memberof AppListBase
      */
-    public renderListContent(item: any, listItem: IPSDEListItem) {
+    public renderListItemContent(item: any, index: number) {
+        const listItem = this.controlInstance.getPSDEListItems?.()?.[0] || null;
         return [
             <div class='app-list-item-content'>
                 <div class='item-content-text'>
@@ -131,7 +132,8 @@ export class AppListBase extends ListControlBase {
                     )}
                 </div>
             </div>,
-            <div class='app-list-item-action'>{listItem ? this.renderListItemAction(item, listItem) : ''}</div>]
+            <div class='app-list-item-action'>{listItem ? this.renderListItemAction(item, listItem) : ''}</div>
+        ]
     }
 
     /**
@@ -141,10 +143,13 @@ export class AppListBase extends ListControlBase {
      * @memberof AppListBase
      */
     public renderHaveItems() {
-        return this.items.map((item: any, index: number) => {
-            let listItem: IPSDEListItem = this.controlInstance.getPSDEListItems() && (this.controlInstance.getPSDEListItems() as any)?.length > 0 ? (this.controlInstance.getPSDEListItems() as any)[0] : null;
-            return this.controlInstance.enableGroup ? this.renderHaveGroup(item, listItem) : this.renderNoGroup(item, listItem,index);
-        })
+        if (this.isEnableGroup) {
+            return this.renderHaveGroup();
+        } else {
+            return this.items.map((item: any, index: number) => {
+                return this.renderDefaultItem(item, index)
+            }) 
+        }
     }
 
     /**
@@ -160,19 +165,19 @@ export class AppListBase extends ListControlBase {
 
 
     /**
-     * 绘制没有分组的情况
+     * 绘制默认列表项
      *
      * @returns {*}
      * @memberof AppListBase
      */
-    public renderNoGroup(item: any, listItem: IPSDEListItem,index: number) {
+    public renderDefaultItem(item: any, index: number) {
         return <div
             key={index}
             class={['app-list-item', item.srfchecked === 1 ? 'isSelect' : ''].join(' ')}
             on-click={() => throttle(this.handleClick,[item],this)}
             on-dblclick={() => throttle(this.handleDblClick,[item],this)}
         >
-            {this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListContent(item, listItem)}
+            {this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListItemContent(item, index)}
         </div>
     }
 
@@ -182,29 +187,25 @@ export class AppListBase extends ListControlBase {
      * @returns {*}
      * @memberof AppListBase
      */
-    public renderHaveGroup(item: any, listItem: IPSDEListItem) {
+    public renderHaveGroup() {
         return <el-collapse>
             {this.groupData.map((item: any) => {
-                return [
-                    <div slot='title' style='margin: 0 0 0 12px;'>
-                        <b>{item.group}</b>
-                    </div>,
-                    item.children.length > 0 ? (
-                        <div style='margin: 0 0 0 32px;'>
-                            {item.children.map((item: any) => {
-                                return <div
-                                    class={['app-list-item', { 'isSelect': item.srfchecked === 1 ? true : false }]}
-                                    on-click={() => throttle(this.handleClick,[item],this)}
-                                    on-dblclick={() => throttle(this.handleDblClick,[item],this)}
-                                >
-                                    {this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListContent(item, listItem)}
-                                </div>
-                            })}
+                return (
+                    <el-collapse-item>
+                        <div slot='title' style='margin: 0 0 0 12px;'>
+                            <b>{item.group}</b>
                         </div>
-                    ) : (
-                        <div style='text-align: center;'>{this.$t('${langbase}.nodata')}</div>
-                    ),
-                ];
+                        {item.children.length > 0 ? (
+                            <div style='margin: 0 0 0 32px;'>
+                                {item.children.map((item: any, index: number) => {
+                                    return this.renderDefaultItem(item, index);
+                                })}
+                            </div>
+                        ) : (
+                            <div style='text-align: center;'>{this.$t('${langbase}.nodata')}</div>
+                        )}
+                    </el-collapse-item>
+                )
             })}
         </el-collapse>
     }

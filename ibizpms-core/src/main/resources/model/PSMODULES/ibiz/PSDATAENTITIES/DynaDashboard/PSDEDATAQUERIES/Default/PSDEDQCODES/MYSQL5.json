@@ -1,0 +1,37 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`MODEL`",
+    "name" : "MODEL"
+  }, {
+    "expression" : "t1.`APPID`",
+    "name" : "APPID"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DYNADASHBOARDID`",
+    "name" : "DYNADASHBOARDID"
+  }, {
+    "expression" : "t1.`DYNADASHBOARDNAME`",
+    "name" : "DYNADASHBOARDNAME"
+  }, {
+    "expression" : "t1.`MODELID`",
+    "name" : "MODELID"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`USERID`",
+    "name" : "USERID"
+  } ],
+  "queryCode" : "SELECT\nt1.`APPID`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DYNADASHBOARDID`,\nt1.`DYNADASHBOARDNAME`,\nt1.`MODELID`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`USERID`\nFROM `T_DYNADASHBOARD` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

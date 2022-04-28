@@ -83,6 +83,9 @@ export class AppListExpBarBase extends ListExpBarControlBase {
      * @memberof AppListExpBarBase
      */
     public render() {
+        if(!this.controlIsLoaded) {
+            return null;
+        }
         return this.renderMainContent();
     }
 }

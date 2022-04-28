@@ -34,51 +34,61 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESquery",
     "methodType" : "FETCH",
+    "name" : "FetchESquery",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchIndexDER",
     "methodType" : "FETCH",
+    "name" : "FetchIndexDER",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -167,50 +177,60 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESquery",
     "methodType" : "FETCH",
+    "name" : "FetchESquery",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchIndexDER",
     "methodType" : "FETCH",
+    "name" : "FetchIndexDER",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -250,6 +270,7 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -266,12 +287,29 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "IbizproIndex",
+  "dEAPITag" : "IBIZPROINDEX",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
+  "getDataTypePSAppDEField" : {
+    "name" : "INDEX_TYPE",
+    "codeName" : "IndexType"
+  },
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json",
   "enableUIActions" : 15,
+  "getFormTypePSAppDEField" : {
+    "name" : "INDEX_TYPE",
+    "codeName" : "IndexType"
+  },
+  "getIndexTypePSAppDEField" : {
+    "name" : "INDEX_TYPE",
+    "codeName" : "IndexType"
+  },
   "logicName" : "索引检索",
   "name" : "IBIZPRO_INDEX",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "IBIZPRO_INDEX",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "INDEXNAME",
@@ -281,6 +319,7 @@
     "codeName" : "Indexdesc"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`PRODUCTS`",
+    "name" : "PRODUCTS"
+  }, {
+    "expression" : "t1.`PROJECTS`",
+    "name" : "PROJECTS"
+  }, {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`ID`\nFROM `zt_userview` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

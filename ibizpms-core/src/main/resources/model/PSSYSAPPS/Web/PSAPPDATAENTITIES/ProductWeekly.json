@@ -351,11 +351,16 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ProductWeekly",
+  "dEAPITag" : "IBZ_API__PRODUCTWEEKLY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json",
   "enableUIActions" : 15,
   "logicName" : "产品周报",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "IBIZPRO_PRODUCTWEEKLYID",
+    "codeName" : "Ibizpro_productweeklyid"
+  } ],
   "name" : "IBIZPRO_PRODUCTWEEKLY",
   "getPSDEName" : "IBIZPRO_PRODUCTWEEKLY",
   "getQuickSearchPSAppDEFields" : [ {
@@ -363,7 +368,9 @@
     "codeName" : "IbizproProductWEEKLYName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

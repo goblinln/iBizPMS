@@ -54,10 +54,14 @@
     "actionRSMode" : 1,
     "codeName" : "Todos",
     "dataRSMode" : 0,
+    "majorDECodeName" : "SysAccount",
+    "majorDEName" : "SYS_USER",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
     },
+    "minorDECodeName" : "Todo",
+    "minorDEName" : "ZT_TODO",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"

@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.product = #{srf.datacontext.product}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "select \nt1.* \nfrom\n(select \n0 as Module,\n'/' as ModuleName, \nt1.id as Product, \ncount(distinct t2.id) as TotalCase, \nsum(case when t3.caseResult = 'pass' then 1 else 0 end) as PassCase, \nsum(case when t3.caseResult = 'fail' then 1 else 0 end) as FailCase,\nsum(case when t3.caseResult = 'blocked' then 1 else 0 end) as BlockedCase,\nsum(case when t3.caseResult is not null then 1 else 0 end) as TotalRunCase,\ncase when sum(case when t3.caseResult is not null then 1 else 0 end) = 0 then '0.00%' else CONCAT(FORMAT((sum(case when t3.caseResult = 'pass' then 1 else 0 end) / sum(case when t3.caseResult is not null then 1 else 0 end)) * 100, 2),'%') end as PassRate\nfrom zt_product t1 \nleft join zt_case t2 on t2.deleted = '0' and t2.module = 0 and t1.id = t2.product \nleft join zt_testresult t3 on t2.id = t3.`case`\nwhere t1.deleted = '0'\ngroup by t1.id\nunion\nselect\nt1.id as Module, \ncase when t1.parent > 0 then (SELECT GROUP_CONCAT( tt.`name` SEPARATOR '/' ) FROM zt_module tt WHERE FIND_IN_SET( tt.id, t1.path )) ELSE t1.`name` END as ModuleName, \nt1.root as Product, \ncount(distinct t2.id) as TotalCase, \nsum(case when t3.caseResult = 'pass' then 1 else 0 end) as PassCase, \nsum(case when t3.caseResult = 'fail' then 1 else 0 end) as FailCase,\nsum(case when t3.caseResult = 'blocked' then 1 else 0 end) as BlockedCase,\nsum(case when t3.caseResult is not null then 1 else 0 end) as TotalRunCase,\ncase when sum(case when t3.caseResult is not null then 1 else 0 end) = 0 then '0.00%' else CONCAT(FORMAT((sum(case when t3.caseResult = 'pass' then 1 else 0 end) / sum(case when t3.caseResult is not null then 1 else 0 end)) * 100, 2),'%') end as PassRate\nfrom\nzt_module t1\nleft join zt_case t2 on t1.id = t2.module and t2.deleted = '0' \nleft join zt_testresult t3 on t2.id = t3.`case`\nwhere t1.deleted = '0' and t1.type = 'story' and t1.root = #{srf.datacontext.product}\ngroup by t1.id) t1",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats/PSDEDATAQUERIES/TestCaseStats/PSDEDQCODES/MYSQL5.json"
+}

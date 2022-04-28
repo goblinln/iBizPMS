@@ -527,18 +527,24 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "SysAccount",
+  "dEAPITag" : "IBZ_API__ACCOUNT",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json",
   "enableUIActions" : 15,
   "logicName" : "系统用户",
   "name" : "SYS_USER",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "SYS_USER",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "PERSONNAME",
     "codeName" : "PersonName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

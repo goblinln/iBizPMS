@@ -96,7 +96,7 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/taskstats/${_context.taskstats}`);
+        const res = await this.http.get(`/taskstats/${encodeURIComponent(_context.taskstats)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/taskstats/${_context.taskstats}`);
+        const res = await this.http.delete(`/taskstats/${encodeURIComponent(_context.taskstats)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/taskstats/${_context.taskstats}`, _data);
+        const res = await this.http.put(`/taskstats/${encodeURIComponent(_context.taskstats)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -216,7 +216,7 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/taskstats/${_context.taskstats}/select`);
+        const res = await this.http.get(`/taskstats/${encodeURIComponent(_context.taskstats)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

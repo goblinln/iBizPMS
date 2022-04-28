@@ -6,13 +6,15 @@
   "logicName" : "行为",
   "name" : "CaseFavorite",
   "getPSDEActionInput" : {
-    "codeName" : "CaseFavoriteInput",
-    "name" : "输入对象",
+    "name" : "CaseFavoriteInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CaseFavoriteResult",
-    "name" : "返回对象",
+    "name" : "CaseFavoriteResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

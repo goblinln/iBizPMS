@@ -126,7 +126,7 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/productlines/${_context.productline}`);
+        const res = await this.http.get(`/productlines/${encodeURIComponent(_context.productline)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -161,7 +161,7 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/productlines/${_context.productline}`);
+        const res = await this.http.delete(`/productlines/${encodeURIComponent(_context.productline)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -179,7 +179,7 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/productlines/${_context.productline}`, _data);
+        const res = await this.http.put(`/productlines/${encodeURIComponent(_context.productline)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -201,5 +201,20 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
             } catch (error) {
                 return this.handleResponseError(error);
             }
+    }
+
+    /**
+     * SaveBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductLineServiceBase
+     */
+    public async SaveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        const res = await this.http.post(`/productlines/savebatch`,_data);
+        return res;
     }
 }

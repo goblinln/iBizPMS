@@ -41,6 +41,7 @@ function getAppLocale(){
             local:{
                 new: "新建",
                 add: "增加",
+                delete: "删除",
             },
             grid: {
                 choicecolumns: "选择列",

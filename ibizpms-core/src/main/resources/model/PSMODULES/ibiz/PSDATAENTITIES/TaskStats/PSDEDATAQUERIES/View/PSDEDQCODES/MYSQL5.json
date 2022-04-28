@@ -1,0 +1,25 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "0",
+    "name" : "TASKEFFICIENT"
+  }, {
+    "expression" : "0",
+    "name" : "TOTALCONSUMED"
+  }, {
+    "expression" : "0",
+    "name" : "TOTALESTIMATE"
+  }, {
+    "expression" : "0",
+    "name" : "TOTALLEFT"
+  } ],
+  "queryCode" : "SELECT\nt1.`ID`,\nt1.`NAME`,\n0 AS `TASKEFFICIENT`,\n0 AS `TOTALCONSUMED`,\n0 AS `TOTALESTIMATE`,\n0 AS `TOTALLEFT`\nFROM `zt_task` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

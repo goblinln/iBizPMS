@@ -1,0 +1,102 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`acl`",
+    "name" : "ACL"
+  }, {
+    "expression" : "t1.`code`",
+    "name" : "CODE"
+  }, {
+    "expression" : "t1.`createdversion`",
+    "name" : "CREATEDVERSION"
+  }, {
+    "expression" : "t1.`desc`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`ibiz_id`",
+    "name" : "IBIZ_ID"
+  }, {
+    "expression" : "t1.`line`",
+    "name" : "LINE"
+  }, {
+    "expression" : "t1.`order`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`po`",
+    "name" : "PO"
+  }, {
+    "expression" : "t1.`productclass`",
+    "name" : "PRODUCTCLASS"
+  }, {
+    "expression" : "t1.`qd`",
+    "name" : "QD"
+  }, {
+    "expression" : "t1.`rd`",
+    "name" : "RD"
+  }, {
+    "expression" : "t1.`substatus`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`supproreport`",
+    "name" : "SUPPROREPORT"
+  }, {
+    "expression" : "t1.`type`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`whitelist`",
+    "name" : "WHITELIST"
+  }, {
+    "expression" : "t1.`createdby`",
+    "name" : "CREATEDBY"
+  }, {
+    "expression" : "t1.`createddate`",
+    "name" : "CREATEDDATE"
+  }, {
+    "expression" : "t1.`createman`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`deleted`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`id`",
+    "name" : "ID"
+  }, {
+    "expression" : "'0'",
+    "name" : "ISTOP"
+  }, {
+    "expression" : "t1.`mdeptid`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "t1.`mdeptname`",
+    "name" : "MDEPTNAME"
+  }, {
+    "expression" : "t1.`name`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`orgid`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`orgname`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`status`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`updateby`",
+    "name" : "UPDATEBY"
+  }, {
+    "expression" : "t1.`updatedate`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`updateman`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`createdby`,\nt1.`createddate`,\nt1.`createman`,\nt1.`deleted`,\nt1.`id`,\n'0' AS `istop`,\nt1.`mdeptid`,\nt1.`mdeptname`,\nt1.`name`,\nt1.`orgid`,\nt1.`orgname`,\nt1.`status`,\nt1.`updateby`,\nt1.`updatedate`,\nt1.`updateman`\nFROM `zt_product` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATAQUERIES/Simple/PSDEDQCODES/MYSQL5.json"
+}

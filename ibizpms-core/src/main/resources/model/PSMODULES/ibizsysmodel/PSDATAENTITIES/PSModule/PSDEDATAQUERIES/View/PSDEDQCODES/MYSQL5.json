@@ -1,0 +1,100 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CLSPKGPARAMS`",
+    "name" : "CLSPKGPARAMS"
+  }, {
+    "expression" : "t1.`CODENAME`",
+    "name" : "CODENAME"
+  }, {
+    "expression" : "t1.`COLOR`",
+    "name" : "COLOR"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DEFAULTFLAG`",
+    "name" : "DEFAULTFLAG"
+  }, {
+    "expression" : "t1.`LOCKFLAG`",
+    "name" : "LOCKFLAG"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`MODTAG`",
+    "name" : "MODTAG"
+  }, {
+    "expression" : "t1.`MODTAG2`",
+    "name" : "MODTAG2"
+  }, {
+    "expression" : "t1.`MODTAG3`",
+    "name" : "MODTAG3"
+  }, {
+    "expression" : "t1.`MODTAG4`",
+    "name" : "MODTAG4"
+  }, {
+    "expression" : "t1.`MODULESN`",
+    "name" : "MODULESN"
+  }, {
+    "expression" : "t1.`NOVIEWMODE`",
+    "name" : "NOVIEWMODE"
+  }, {
+    "expression" : "t1.`ORDERVALUE`",
+    "name" : "ORDERVALUE"
+  }, {
+    "expression" : "t1.`PKGCODENAME`",
+    "name" : "PKGCODENAME"
+  }, {
+    "expression" : "t1.`PSMODULEID`",
+    "name" : "PSMODULEID"
+  }, {
+    "expression" : "t1.`PSMODULENAME`",
+    "name" : "PSMODULENAME"
+  }, {
+    "expression" : "t1.`PSSYSTEMID`",
+    "name" : "PSSYSTEMID"
+  }, {
+    "expression" : "t1.`PSSYSTEMNAME`",
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "expression" : "t1.`SERVICEAPIFLAG`",
+    "name" : "SERVICEAPIFLAG"
+  }, {
+    "expression" : "t1.`SUBSYSMODULE`",
+    "name" : "SUBSYSMODULE"
+  }, {
+    "expression" : "t1.`SYSREFTYPE`",
+    "name" : "SYSREFTYPE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`USERCAT`",
+    "name" : "USERCAT"
+  }, {
+    "expression" : "t1.`USERPARAMS`",
+    "name" : "USERPARAMS"
+  }, {
+    "expression" : "t1.`USERTAG`",
+    "name" : "USERTAG"
+  }, {
+    "expression" : "t1.`USERTAG2`",
+    "name" : "USERTAG2"
+  }, {
+    "expression" : "t1.`USERTAG3`",
+    "name" : "USERTAG3"
+  }, {
+    "expression" : "t1.`USERTAG4`",
+    "name" : "USERTAG4"
+  } ],
+  "queryCode" : "SELECT\nt1.`CLSPKGPARAMS`,\nt1.`CODENAME`,\nt1.`COLOR`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DEFAULTFLAG`,\nt1.`LOCKFLAG`,\nt1.`MEMO`,\nt1.`MODTAG`,\nt1.`MODTAG2`,\nt1.`MODTAG3`,\nt1.`MODTAG4`,\nt1.`MODULESN`,\nt1.`NOVIEWMODE`,\nt1.`ORDERVALUE`,\nt1.`PKGCODENAME`,\nt1.`PSMODULEID`,\nt1.`PSMODULENAME`,\nt1.`PSSYSTEMID`,\nt1.`PSSYSTEMNAME`,\nt1.`SERVICEAPIFLAG`,\nt1.`SUBSYSMODULE`,\nt1.`SYSREFTYPE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`USERCAT`,\nt1.`USERPARAMS`,\nt1.`USERTAG`,\nt1.`USERTAG2`,\nt1.`USERTAG3`,\nt1.`USERTAG4`\nFROM `T_PSMODULE` t1 \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSModule/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

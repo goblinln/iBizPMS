@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Doc__type",
   "codeListType" : "STATIC",
   "codeName" : "Doc__type",
   "dynaInstMode" : 1,
@@ -12,13 +13,11 @@
   "getPSCodeItems" : [ {
     "codeName" : "Text",
     "text" : "文档",
-    "value" : "text",
-    "includeBeginValue" : true
+    "value" : "text"
   }, {
     "codeName" : "Url",
     "text" : "链接",
-    "value" : "url",
-    "includeBeginValue" : true
+    "value" : "url"
   } ],
   "enableCache" : true
 }

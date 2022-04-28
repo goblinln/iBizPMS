@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "YesNo",
   "codeListType" : "STATIC",
   "codeName" : "YesNo",
   "dynaInstMode" : 0,
@@ -8,13 +9,11 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "是",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   }, {
     "codeName" : "Item_0",
     "text" : "否",
-    "value" : "0",
-    "includeBeginValue" : true
+    "value" : "0"
   } ],
   "enableCache" : true
 }

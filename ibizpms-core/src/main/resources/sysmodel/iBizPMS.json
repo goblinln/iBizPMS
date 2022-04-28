@@ -46333,7 +46333,6 @@
     "physical_field":1,
     "data_type":"VARCHAR",
     "data_length":100,
-    "predefined":"ORGID",
     "key_field":1,
     "show_order":1,
     "major_field":0

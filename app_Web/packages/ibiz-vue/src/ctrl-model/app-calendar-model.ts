@@ -40,6 +40,11 @@ export class AppCalendarModel {
                 name: 'color',
             },
             {
+              name: 'size',
+              prop: 'size',
+              dataType: 'QUERYPARAM'
+            },
+            {
                 name: 'textColor',
             },
             {
@@ -82,8 +87,18 @@ export class AppCalendarModel {
                 name: 'start',
                 prop: beginField?.codeName ? beginField.codeName.toLowerCase() : beginField?.name?.toLowerCase()
             }, {
+                name: 'query_start',
+                prop: beginField?.codeName
+                ? `n_${beginField.codeName.toLowerCase()}_gtandeq`
+                : `n_${beginField?.name?.toLowerCase()}_gtandeq`,
+            }, {
                 name: 'end',
                 prop: endField?.codeName ? endField.codeName.toLowerCase() : endField?.name?.toLowerCase()
+            }, {
+                name: 'query_end',
+                prop: endField?.codeName 
+                ? `n_${endField.codeName.toLowerCase()}_ltandeq`
+                : `n_${endField?.name?.toLowerCase()}_ltandeq`,
             }, {
                 name: 'bkcolor',
                 prop: bKColorField?.codeName ? bKColorField.codeName.toLowerCase() : bKColorField?.name?.toLowerCase()

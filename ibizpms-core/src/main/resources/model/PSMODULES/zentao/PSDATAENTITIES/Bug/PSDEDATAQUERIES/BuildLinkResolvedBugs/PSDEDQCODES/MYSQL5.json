@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.product = ( SELECT product FROM zt_build WHERE project =  (select ttt.project from zt_build ttt where ttt.id = #{srf.datacontext.project})\n\t\tAND id = #{srf.datacontext.build} ) \n\tAND t1.project = (select ttt.project from zt_build ttt where ttt.id = #{srf.datacontext.project}) \n\tAND t1.`status` <> 'closed' \n\tAND t1.id NOT IN ( SELECT t3.id FROM zt_bug t3, zt_build t4  WHERE\n\t\tt4.id = #{srf.datacontext.build} AND FIND_IN_SET( t3.id, t4.bugs ) )",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`ASSIGNEDTO`,\n\tt1.`CONFIRMED`,\n\tt1.`ID`,\n\t0 AS `ISFAVORITES`,\n\tt1.`OPENEDBY`,\n\tt1.`PRI`,\n\tt1.`PROJECT`,\n\tt1.`RESOLUTION`,\n\t( CASE WHEN t1.`RESOLVEDBY` IS NULL OR t1.`RESOLVEDBY` = '' THEN #{srf.sessioncontext.srfloginname} ELSE t1.`RESOLVEDBY` END ) AS `RESOLVEDBY`,\t\n\tt1.`STATUS`,\t\n\tt1.`TITLE`,\n\tt1.BUGSN\nFROM\n`zt_bug` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEDATAQUERIES/BuildLinkResolvedBugs/PSDEDQCODES/MYSQL5.json"
+}

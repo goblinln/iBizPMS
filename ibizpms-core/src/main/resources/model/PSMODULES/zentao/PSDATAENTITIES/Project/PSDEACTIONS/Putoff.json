@@ -6,13 +6,15 @@
   "logicName" : "延期",
   "name" : "Putoff",
   "getPSDEActionInput" : {
-    "codeName" : "PutoffInput",
-    "name" : "输入对象",
+    "name" : "PutoffInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "PutoffResult",
-    "name" : "返回对象",
+    "name" : "PutoffResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

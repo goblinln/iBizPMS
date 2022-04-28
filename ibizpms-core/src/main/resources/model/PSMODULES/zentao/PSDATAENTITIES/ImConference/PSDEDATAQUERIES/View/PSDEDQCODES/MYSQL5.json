@@ -1,0 +1,28 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CGID`",
+    "name" : "CGID"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`OPENEDDATE`",
+    "name" : "OPENEDDATE"
+  }, {
+    "expression" : "t1.`PARTICIPANTS`",
+    "name" : "PARTICIPANTS"
+  }, {
+    "expression" : "t1.`RID`",
+    "name" : "RID"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  } ],
+  "queryCode" : "SELECT\nt1.`CGID`,\nt1.`ID`,\nt1.`OPENEDBY`,\nt1.`OPENEDDATE`,\nt1.`PARTICIPANTS`,\nt1.`RID`,\nt1.`STATUS`\nFROM `zt_im_conference` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ImConference/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -114,7 +114,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/testcaselibs/${_context.testcaselib}`);
+        const res = await this.http.get(`/testcaselibs/${encodeURIComponent(_context.testcaselib)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -149,7 +149,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/testcaselibs/${_context.testcaselib}`);
+        const res = await this.http.delete(`/testcaselibs/${encodeURIComponent(_context.testcaselib)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -167,7 +167,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/testcaselibs/${_context.testcaselib}`, _data);
+        const res = await this.http.put(`/testcaselibs/${encodeURIComponent(_context.testcaselib)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

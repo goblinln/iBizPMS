@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
 import { IPSAppCounterRef, IPSAppView, IPSControl, IPSDETBGroupItem, IPSDETBRawItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface, throttle, AppCustomEngine, AppCtrlEventEngine, AppTimerEngine, AppViewEventEngine } from 'ibiz-core';
-import { CounterServiceRegister, ViewMessageService } from 'ibiz-service';
+import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface, throttle, AppCustomEngine, AppCtrlEventEngine, AppTimerEngine, AppViewEventEngine, CounterService } from 'ibiz-core';
+import { ViewMessageService } from 'ibiz-service';
 import { AppMessageBoxService, AppNavHistory, NavDataService, ViewLoadingService } from '../app-service';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
 import { createUUID, isNilOrEmpty } from 'qx-util';
@@ -752,10 +752,12 @@ export class ViewBase extends Vue implements ViewInterface {
         const appCounterRef: Array<IPSAppCounterRef> = (param as IPSAppView).getPSAppCounterRefs() || [];
         if (appCounterRef && appCounterRef.length > 0) {
             for (const counterRef of appCounterRef) {
-                const path = counterRef.getPSAppCounter?.()?.modelPath;
-                if (path) {
-                    const targetCounterService: any = await CounterServiceRegister.getInstance().getService({ context: this.context, viewparams: this.viewparams }, path);
-                    const tempData: any = { id: counterRef.id, path: path, service: targetCounterService };
+                const counter = counterRef.getPSAppCounter?.();
+                if (counter) {
+                    await counter.fill(true);
+                    const counterService: any = new CounterService();
+                    await counterService.loaded(counter, { context: this.context, viewparams: this.viewparams });
+                    const tempData: any = { id: counterRef.id, path: counter.modelPath, service: counterService };
                     this.counterServiceArray.push(tempData);
                 }
             }
@@ -841,7 +843,9 @@ export class ViewBase extends Vue implements ViewInterface {
                             (_this.$refs[_this?.viewInstance?.xDataControlName] as any).ctrl.save instanceof Function) {
                             _this.viewState.next({ tag: _this?.viewInstance?.xDataControlName, action: action, data: Object.assign(_this.viewparams, { showResultInfo: false }) });
                         } else {
-                            _this.$emit('view-event', { viewName: this.viewCodeName, action: 'drdatasaved', data: {} });
+                          if (_this.viewInstance.viewType !== 'DEMEDITVIEW9') {
+                            _this.$emit('view-event', { viewName: _this.viewCodeName, action: 'drdatasaved', data: {} });
+                          }
                         }
                     }
                 }
@@ -1029,7 +1033,7 @@ export class ViewBase extends Vue implements ViewInterface {
             if (typeof _this.viewdata == 'string') {
                 Object.assign(_this.context, JSON.parse(_this.viewdata));
             }
-            if (isNilOrEmpty(_this.context.srfsessionid)) {
+            if (isNilOrEmpty(_this.context.srfsessionid) && isNilOrEmpty(_this.context.srfsessionkey)) {
                 _this.context.srfsessionid = createUUID();
             }
             if (_this.context && _this.context.srfparentdename) {
@@ -1184,12 +1188,16 @@ export class ViewBase extends Vue implements ViewInterface {
      *
      * @memberof ViewBase
      */
-    public counterRefresh() {
+    public counterRefresh(arg?: any) {
         if (this.counterServiceArray && this.counterServiceArray.length > 0) {
             this.counterServiceArray.forEach((item: any) => {
                 let counterService = item.service;
                 if (counterService && counterService.refreshCounterData && counterService.refreshCounterData instanceof Function) {
-                    counterService.refreshCounterData();
+                    const tempParams = Util.deepCopy(this.viewparams);
+                    if (arg && Object.keys(arg).length > 0) {
+                        Object.assign(tempParams, arg);
+                    }
+                    counterService.refreshCounterData(this.context, tempParams);
                 }
             })
         }
@@ -1206,7 +1214,7 @@ export class ViewBase extends Vue implements ViewInterface {
         const modelData: any = this.staticProps?.modeldata;
         try {
             if (refs && modelData && modelData.xDataControlName && refs[modelData.xDataControlName]) {
-                refs[modelData.xDataControlName]?.ctrl?.refresh();
+                refs[modelData.xDataControlName]?.ctrl?.refresh(args);
             }
         } catch (error) {
             LogUtil.log(refs, modelData)
@@ -1220,11 +1228,11 @@ export class ViewBase extends Vue implements ViewInterface {
      */
     public closeView(args: any[]) {
         let view: any = this;
-        if (window.opener && Boolean(this.$store.getters['getCustomParamByTag']('srffullscreen'))) {
-            window.opener.postMessage({ type: 'CLOSE', data: args }, '*');
-            window.close();
-            return;
-        }
+        // if (window.opener && Boolean(this.$store.getters['getCustomParamByTag']('srffullscreen'))) {
+        //     window.opener.postMessage({ type: 'CLOSE', data: args }, '*');
+        //     window.close();
+        //     return;
+        // }
         if (view.viewdata) {
             view.$emit('view-event', { action: 'viewdataschange', data: Array.isArray(args) ? args : [args] });
             view.$emit('view-event', { action: 'close', data: Array.isArray(args) ? args : [args] });

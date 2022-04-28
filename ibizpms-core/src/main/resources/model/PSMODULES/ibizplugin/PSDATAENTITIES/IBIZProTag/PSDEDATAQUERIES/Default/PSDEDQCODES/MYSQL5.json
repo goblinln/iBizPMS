@@ -1,0 +1,10 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  } ],
+  "queryCode" : "SELECT\nt1.`ID`\nFROM `T_IBIZPRO_TAG` t1 \n",
+  "id" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProTag/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

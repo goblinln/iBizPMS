@@ -355,11 +355,16 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ProjectWeekly",
+  "dEAPITag" : "IBZ_API__PROJECTWEEKLY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectWeekly.json",
   "enableUIActions" : 15,
   "logicName" : "项目周报",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "IBZPRO_PROJECTWEEKLYID",
+    "codeName" : "PROJECTWEEKLYId"
+  } ],
   "name" : "IBZPRO_PROJECTWEEKLY",
   "getPSDEName" : "IBZPRO_PROJECTWEEKLY",
   "getQuickSearchPSAppDEFields" : [ {
@@ -367,7 +372,9 @@
     "codeName" : "PROJECTWEEKLYName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

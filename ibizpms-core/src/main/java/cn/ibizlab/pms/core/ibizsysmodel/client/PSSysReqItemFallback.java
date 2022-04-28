@@ -33,10 +33,6 @@ public class PSSysReqItemFallback implements FallbackFactory<PSSysReqItemFeignCl
         String finalErrorMessage = errorMessage;
         return new PSSysReqItemFeignClient(){
 
-            public Page<PSSysReqItem> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSSysReqItem create(PSSysReqItem pssysreqitem) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSSysReqItemFallback implements FallbackFactory<PSSysReqItemFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSysReqItem update(String pssysreqitemid, PSSysReqItem pssysreqitem) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSSysReqItem> pssysreqitems) {
+            public PSSysReqItem get(String pssysreqitemid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class PSSysReqItemFallback implements FallbackFactory<PSSysReqItemFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSysReqItem get(String pssysreqitemid) {
+            public PSSysReqItem update(String pssysreqitemid, PSSysReqItem pssysreqitem) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSSysReqItem> pssysreqitems) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSSysReqItem pssysreqitem) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSysReqItem> searchDefault(PSSysReqItemSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class PSSysReqItemFallback implements FallbackFactory<PSSysReqItemFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSSysReqItem pssysreqitem) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSSysReqItem pssysreqitem) {
@@ -86,10 +87,9 @@ public class PSSysReqItemFallback implements FallbackFactory<PSSysReqItemFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSSysReqItem> searchDefault(PSSysReqItemSearchContext context) {
+            public Page<PSSysReqItem> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

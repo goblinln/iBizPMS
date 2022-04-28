@@ -96,7 +96,7 @@ export class SysRoleBaseService extends EntityBaseService<ISysRole> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/sysroles/${_context.sysrole}`);
+        const res = await this.http.get(`/sysroles/${encodeURIComponent(_context.sysrole)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class SysRoleBaseService extends EntityBaseService<ISysRole> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/sysroles/${_context.sysrole}`);
+        const res = await this.http.delete(`/sysroles/${encodeURIComponent(_context.sysrole)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class SysRoleBaseService extends EntityBaseService<ISysRole> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/sysroles/${_context.sysrole}`, _data);
+        const res = await this.http.put(`/sysroles/${encodeURIComponent(_context.sysrole)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class SysRoleBaseService extends EntityBaseService<ISysRole> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/sysroles/${_context.sysrole}/select`);
+        const res = await this.http.get(`/sysroles/${encodeURIComponent(_context.sysrole)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

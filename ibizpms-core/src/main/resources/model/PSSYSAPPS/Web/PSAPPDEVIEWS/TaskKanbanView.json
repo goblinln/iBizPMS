@@ -473,6 +473,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CREATE"
+        },
         "getPSSysImage" : {
           "glyph" : "xf067@FontAwesome",
           "cssClass" : "fa fa-plus"
@@ -511,6 +515,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "GRIDVIEW_REFRESHACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "Refresh",
@@ -720,6 +725,11 @@
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "content" : "<br/>",
+            "contentType" : "HTML",
+            "name" : "rawitem1"
           }
         }, {
           "caption" : "动态内容",
@@ -777,6 +787,7 @@
                 "logicType" : "SINGLE",
                 "name" : "DELAY 值不为空(NotNil)"
               } ],
+              "relatedItemNames" : [ "delay" ],
               "notMode" : false
             } ],
             "getPSSysCss" : {
@@ -824,10 +835,13 @@
                 "name" : "TASKTYPE 不等于(<>) (10)",
                 "value" : "10"
               } ],
+              "relatedItemNames" : [ "tasktype" ],
               "notMode" : false
             } ],
             "getPSPanelItems" : [ {
               "actionType" : "UIACTION",
+              "buttonHeight" : 24.0,
+              "buttonStyle" : "DEFAULT",
               "caption" : "指派",
               "contentHeight" : 24.0,
               "height" : 24.0,
@@ -856,6 +870,7 @@
                   "name" : "TASKTYPE 不等于(<>) (10)",
                   "value" : "10"
                 } ],
+                "relatedItemNames" : [ "tasktype" ],
                 "notMode" : false
               } ],
               "getPSSysImage" : {
@@ -879,6 +894,10 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
+                "getPSDEOPPriv" : {
+                  "modelref" : true,
+                  "id" : "ASSIGNTO"
+                },
                 "getPSSysImage" : {
                   "glyph" : "xf0a4@FontAwesome",
                   "cssClass" : "fa fa-hand-o-right"
@@ -893,6 +912,8 @@
             } ]
           }, {
             "actionType" : "UIACTION",
+            "buttonHeight" : 24.0,
+            "buttonStyle" : "DEFAULT",
             "caption" : "转交",
             "contentHeight" : 24.0,
             "height" : 24.0,
@@ -921,6 +942,7 @@
                 "name" : "TASKTYPE 等于(=) (10)",
                 "value" : "10"
               } ],
+              "relatedItemNames" : [ "tasktype" ],
               "notMode" : false
             } ],
             "getPSSysImage" : {
@@ -943,6 +965,10 @@
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              },
+              "getPSDEOPPriv" : {
+                "modelref" : true,
+                "id" : "FORWARD"
               },
               "getPSNavigateContexts" : [ {
                 "key" : "TASK",
@@ -1026,6 +1052,11 @@
               "colLG" : 6,
               "colMD" : 6,
               "layout" : "TABLE_24COL"
+            },
+            "getPSRawItem" : {
+              "caption" : "h",
+              "contentType" : "RAW",
+              "name" : "rawitem3"
             },
             "rawContent" : "h"
           } ]
@@ -1283,43 +1314,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-        }
-      }, {
-        "actionType" : "DEDATASET",
-        "name" : "fetch",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-        }
-      }, {
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "dataAccessAction" : "READ",
@@ -1340,6 +1334,43 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -1886,10 +1917,14 @@
     "actionRSMode" : 1,
     "codeName" : "Projects",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Project",
+    "minorDEName" : "ZT_PROJECT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -1900,10 +1935,14 @@
     "actionRSMode" : 1,
     "codeName" : "Tasks",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Task",
+    "minorDEName" : "ZT_TASK",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -1918,10 +1957,14 @@
     "actionRSMode" : 1,
     "codeName" : "Tasks",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Task",
+    "minorDEName" : "ZT_TASK",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"

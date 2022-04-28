@@ -1,14 +1,31 @@
 {
+  "codeListTag" : "zentao__ProductPlan",
   "codeListType" : "DYNAMIC",
   "codeName" : "ProductPlan",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/ProductPlan.json",
   "emptyText" : "未定义",
+  "name" : "产品计划（动态）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "ProductQuery"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getValuePSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "codeItemValueNumber" : false,
   "enableCache" : false,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

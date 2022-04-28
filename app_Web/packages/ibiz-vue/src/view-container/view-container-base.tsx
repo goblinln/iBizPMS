@@ -137,6 +137,13 @@ export class ViewContainerBase extends Vue {
             if (this.context && this.context.hasOwnProperty('srfsandboxtag')) {
                 await this.initSandBoxInst(this.context);
             }
+            if (this.context && this.context.srfinsttag && this.context.srfinsttag2) {
+                let dynainstParam: DynamicInstanceConfig = (await GetModelService({ srfsandboxtag: this.context.srfsandboxtag, instTag: this.context.srfinsttag, instTag2: this.context.srfinsttag2 })).getDynaInsConfig();
+                Object.assign(this.context,{ srfdynainstid: dynainstParam.id })
+            }
+            await this.computeDynaModelFilePath();
+            this.loadDynamicModelData();
+            return;
         }
         await this.computeDynaModelFilePath();
         // 路由打开
@@ -257,6 +264,7 @@ export class ViewContainerBase extends Vue {
             if (Object.is(activedView.parameterName, 'view') && Object.is(activedView.pathName, 'views')) {
                 this.$route.meta.captionTag = opts.getCapPSLanguageRes()?.lanResTag;
                 this.$route.meta.caption = opts?.caption;
+                this.$route.meta.title = opts?.title;
                 this.$route.meta.imgPath = opts?.getPSSysImage()?.imagePath;
                 this.$route.meta.iconCls = opts?.getPSSysImage()?.cssClass;
                 if (opts.accUserMode && ((opts.accUserMode == 0) || (opts.accUserMode == 3))) {

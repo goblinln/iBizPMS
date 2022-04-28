@@ -7,13 +7,19 @@
   "name" : "Get",
   "orderValue" : 31,
   "getPSDEActionInput" : {
-    "codeName" : "GetInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "name" : "GetInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetResult",
-    "name" : "返回对象",
+    "name" : "GetResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzAgentDTO"
+    },
     "type" : "DTO"
   },
   "builtinAction" : true

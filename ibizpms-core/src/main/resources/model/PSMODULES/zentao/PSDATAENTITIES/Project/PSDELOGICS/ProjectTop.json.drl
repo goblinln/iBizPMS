@@ -5,14 +5,21 @@ package cn.ibizlab.pms.zentao.logic.projectlogic.projecttop;
         import org.springframework.util.StringUtils;
         import org.springframework.util.ObjectUtils;
         import cn.ibizlab.pms.util.errors.BadRequestAlertException;
-                global cn.ibizlab.pms.core.ibiz.domain.IbzTop projectprojecttopibztop;
                 global cn.ibizlab.pms.core.zentao.domain.Project projectprojecttopdefault;
+                global cn.ibizlab.pms.core.ibiz.domain.IbzTop projectprojecttopibztop;
                     global cn.ibizlab.pms.core.ibiz.service.IIbzTopService ibztopservice;
         global cn.ibizlab.pms.core.zentao.service.IProjectService iBzSysProjectDefaultService;
         global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
 
 
     no-loop
+
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "projectprojecttopbegin"
+            when
+            then
+            end
 
             //逻辑处理节点[设置参数]
             rule "prepareparam1"
@@ -22,8 +29,18 @@ package cn.ibizlab.pms.zentao.logic.projectlogic.projecttop;
                             projectprojecttopibztop.set("objectid",projectprojecttopdefault.get("id"));
                                 projectprojecttopibztop.set("account",curuser.getSessionParams().get("srfloginname"));
                             projectprojecttopibztop.set("type","project");
-                        update(projectprojecttopibztop);//更新fact中变量值
                         update(projectprojecttopdefault);//更新fact中变量值
+                        update(projectprojecttopibztop);//更新fact中变量值
+            end
+
+            //逻辑处理节点[save]
+            rule "deaction1"
+            ruleflow-group "projectprojecttopdeaction1"
+            when
+            then
+                        ibztopservice.create(projectprojecttopibztop);
+                        update(projectprojecttopdefault);//更新fact中变量值
+                        update(projectprojecttopibztop);//更新fact中变量值
             end
 
             //逻辑处理节点[获取置顶最大排序值]
@@ -41,23 +58,6 @@ package cn.ibizlab.pms.zentao.logic.projectlogic.projecttop;
                                     projectprojecttopibztop.set(String.valueOf(entry.getKey()),entry.getValue());
                                     }
                             }
-                        update(projectprojecttopibztop);//更新fact中变量值
                         update(projectprojecttopdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[save]
-            rule "deaction1"
-            ruleflow-group "projectprojecttopdeaction1"
-            when
-            then
-                        ibztopservice.create(projectprojecttopibztop);
                         update(projectprojecttopibztop);//更新fact中变量值
-                        update(projectprojecttopdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "projectprojecttopbegin"
-            when
-            then
             end

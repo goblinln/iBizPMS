@@ -1,15 +1,40 @@
 {
+  "codeListTag" : "zentao__CurDocVersion",
   "codeListType" : "DYNAMIC",
   "codeName" : "CurDocVersion",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/CurDocVersion.json",
   "emptyText" : "未定义",
   "minorSortDir" : "DESC",
+  "getMinorSortPSDEField" : {
+    "name" : "VERSION",
+    "codeName" : "Version"
+  },
+  "name" : "当前文档版本（动态）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "CurVersion"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getTextPSDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
+  "getValuePSDEField" : {
+    "name" : "VERSION",
+    "codeName" : "Version"
+  },
   "codeItemValueNumber" : false,
   "enableCache" : false,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

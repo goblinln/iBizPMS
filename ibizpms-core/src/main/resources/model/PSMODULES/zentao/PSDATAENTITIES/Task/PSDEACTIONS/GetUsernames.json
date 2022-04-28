@@ -6,13 +6,19 @@
   "logicName" : "获取团队成员",
   "name" : "getUsernames",
   "getPSDEActionInput" : {
-    "codeName" : "GetUsernamesInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetUsernamesInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetUsernamesResult",
-    "name" : "返回对象",
+    "name" : "GetUsernamesResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDELogic" : {

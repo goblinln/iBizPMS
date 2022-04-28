@@ -1,0 +1,54 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.type = 'product'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`CONSUMED`",
+    "name" : "CONSUMED"
+  }, {
+    "expression" : "t1.`DAYS`",
+    "name" : "DAYS"
+  }, {
+    "expression" : "t1.`ESTIMATE`",
+    "name" : "ESTIMATE"
+  }, {
+    "expression" : "t1.`HOURS`",
+    "name" : "HOURS"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`JOIN`",
+    "name" : "JOIN"
+  }, {
+    "expression" : "t1.`LEFT`",
+    "name" : "LEFT"
+  }, {
+    "expression" : "t1.`LIMITED`",
+    "name" : "LIMITED"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`ROLE`",
+    "name" : "ROLE"
+  }, {
+    "expression" : "t1.`ROOT`",
+    "name" : "ROOT"
+  }, {
+    "expression" : "(t1.`DAYS` * t1.`HOURS`)",
+    "name" : "TOTAL"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\n\tt1.account,\n\tt1.days,\n\tt1.hours,\n\tt1.id,\n\tt1.`join`,\n  t1.`end`,\n  t1.`LEADINGCADRE`,\n\tt1.limited,\n\tt1.`order`,\n\tt1.role,\n\tt1.root,\n\t( t1.days * t1.hours ) AS total,\n\tt1.type,\n\t'' AS username,\n\t(\nSELECT\n\tcount( t2.id ) \nFROM\n\tzt_task t2 \nWHERE\n\tt2.deleted = '0' \n\tAND t2.parent >= 0 \n\tAND t2.project in (t1.zzz) \n\tAND (\n\tt2.assignedTo = t1.account \n\tOR t2.finishedBy = t1.account \n\tOR t2.id IN ( SELECT t.root FROM zt_team t WHERE t.type = 'task' AND t.account = t1.account ) \n\t) \n\t) AS taskcnt,\n\t(\nSELECT\n\tROUND(sum( CASE WHEN tt.`LEFT` IS NOT NULL THEN tt.`LEFT` ELSE t2.`LEFT` END ), 1) \nFROM\n\tzt_task t2\n\tLEFT JOIN zt_team tt ON tt.root = t2.id \n\tAND tt.type = 'task' \nWHERE\n\tt2.deleted = '0' \n\tAND t2.parent >= 0 \n\tAND t2.project  in (t1.zzz) \n\tAND ( t2.assignedTo = t1.account OR tt.account = t1.account ) \n\t) AS `left`,\n\t(\nSELECT\n\tROUND(sum( CASE WHEN tt.estimate IS NOT NULL THEN tt.estimate ELSE t2.estimate END ), 1)\nFROM\n\tzt_task t2\n\tLEFT JOIN zt_team tt ON tt.root = t2.id \n\tAND tt.type = 'task' \nWHERE\n\tt2.deleted = '0' \n\tAND t2.parent >= 0 \n\tAND t2.project  in (t1.zzz) \n\tAND ( t2.assignedTo = t1.account OR tt.account = t1.account ) \n\t) AS `estimate`,\n\t(\nSELECT\n\tROUND(sum( CASE WHEN tt.consumed IS NOT NULL THEN tt.consumed ELSE t2.consumed END ), 1)\nFROM\n\tzt_task t2\n\tLEFT JOIN zt_team tt ON tt.root = t2.id \n\tAND tt.type = 'task' \nWHERE\n\tt2.deleted = '0' \n\tAND t2.parent >= 0 \n\tAND t2.project in (t1.zzz) \n\tAND ( t2.assignedTo = t1.account OR tt.account = t1.account ) \n\t) AS consumed \nFROM\n\t(\tSELECT *,(SELECT GROUP_CONCAT(t.project) from zt_projectproduct t where t.product =  #{srf.n_root_eq}) as zzz from zt_team t1 where t1.root = #{srf.n_root_eq} and t1.type = 'product'\n) t1",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEDATAQUERIES/ProductTeamInfo/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.`DELETED` = '0' \n\tAND FIND_IN_SET ( t1.ID, ( SELECT BUGS FROM ZT_TESTREPORT WHERE ID = $ { srfdatacontext ( 'srfparentkey', '{\"defname\":\"ID\",\"dename\":\"ZT_TESTREPORT \"}' ) } ) )",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`CONFIRMED`,\n\tt1.`ID`,\n\tt1.`OPENEDBY`,\n\tt1.`PRI`,\n\tt1.`RESOLVEDBY`,\n\tt1.`RESOLVEDDATE`,\n\tt1.`STATUS`,\n\tt1.`TITLE` ,\n\tt1.BUGSN\nFROM\n\t`zt_bug` t1\n\tLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.ID\n\tLEFT JOIN zt_project t21 ON t1.PROJECT = t21.ID\n\tLEFT JOIN zt_story t31 ON t1.STORY = t31.ID",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEDATAQUERIES/ReportBugs/PSDEDQCODES/MYSQL5.json"
+}

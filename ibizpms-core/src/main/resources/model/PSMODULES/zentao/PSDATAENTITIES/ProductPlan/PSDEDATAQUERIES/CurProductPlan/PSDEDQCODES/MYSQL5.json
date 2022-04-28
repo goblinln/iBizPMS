@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "(t1.`product` =#{srf.datacontext.product} or t1.`product` =#{srf.datacontext.products} or t1.`id` = #{srf.datacontext.plan})",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`ID`,\n\tt1.`ORG`,\n\tt1.`ORGNAME`,\n\tt1.`PRODUCT`,\n\tt1.`TITLE`,\n\tt1.`ORDER`,\n\tt1.`parent` as `PARENT`,\n\tt11.`TITLE` as `PARENTNAME`,\n\tt1.PRODUCTPLANSN\nFROM\n\t`zt_productplan` t1\n\tLEFT JOIN `zt_productplan` t11 on t11.`PRODUCTPLANSN` = t1.`parent`",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/CurProductPlan/PSDEDQCODES/MYSQL5.json"
+}

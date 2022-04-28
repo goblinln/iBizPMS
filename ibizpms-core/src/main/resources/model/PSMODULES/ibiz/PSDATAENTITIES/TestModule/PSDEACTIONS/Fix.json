@@ -6,13 +6,15 @@
   "logicName" : "重建模块路径",
   "name" : "Fix",
   "getPSDEActionInput" : {
-    "codeName" : "FixInput",
-    "name" : "输入对象",
+    "name" : "FixInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TestModuleDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "FixResult",
-    "name" : "返回对象",
+    "name" : "FixResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

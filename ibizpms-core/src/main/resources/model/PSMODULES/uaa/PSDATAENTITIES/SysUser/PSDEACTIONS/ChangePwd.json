@@ -6,13 +6,19 @@
   "logicName" : "修改密码",
   "name" : "ChangePwd",
   "getPSDEActionInput" : {
-    "codeName" : "ChangePwdInput",
-    "name" : "输入对象",
+    "name" : "ChangePwdInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "SysUserDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ChangePwdResult",
-    "name" : "返回对象",
+    "name" : "ChangePwdResult",
     "type" : "VOID"
+  },
+  "getPSSubSysServiceAPIDEMethod" : {
+    "modelref" : true,
+    "id" : "ChangePwd"
   }
 }

@@ -155,6 +155,7 @@
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
+  "mobileControl" : true,
   "noTabHeader" : true,
   "modelid" : "1dd6911c2504da88f0b31a454f882b12",
   "modeltype" : "PSDEFORM_SEARCHFORM"

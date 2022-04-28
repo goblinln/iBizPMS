@@ -190,6 +190,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "UPDATE"
+        },
         "getPSSysImage" : {
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
@@ -226,6 +230,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHALLACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshAll",
@@ -264,6 +269,10 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "MANAGE"
         },
         "getPSNavigateContexts" : [ {
           "key" : "PROJECT",
@@ -360,6 +369,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHALLACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshAll",
@@ -628,6 +638,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UPDATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -664,6 +678,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHALLACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshAll",
@@ -702,6 +717,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "MANAGE"
           },
           "getPSNavigateContexts" : [ {
             "key" : "PROJECT",
@@ -838,6 +857,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHALLACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshAll",

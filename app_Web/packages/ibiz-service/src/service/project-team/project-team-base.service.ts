@@ -150,7 +150,7 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/projectteams`, _data);
             return res;
         }
         if (_context.project && true) {
@@ -162,7 +162,7 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/projects/${_context.project}/projectteams`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/projectteams`, _data);
             return res;
         }
     this.log.warn([`[ProjectTeam]>>>[Create函数]异常`]);
@@ -182,12 +182,12 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.projectteam) {
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/projectteams/${encodeURIComponent(_context.projectteam)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.projectteam) {
-            const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/projectteams/${encodeURIComponent(_context.projectteam)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -210,13 +210,13 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         if (_context.product && _context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/projectteams/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/projectteams/getdraft`, _data);
             return res;
         }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/projectteams/getdraft`, _data);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/projectteams/getdraft`, _data);
             return res;
         }
     this.log.warn([`[ProjectTeam]>>>[GetDraft函数]异常`]);
@@ -236,11 +236,11 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.projectteam) {
-            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/projectteams/${encodeURIComponent(_context.projectteam)}`);
             return res;
         }
         if (_context.project && _context.projectteam) {
-            const res = await this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            const res = await this.http.delete(`/projects/${encodeURIComponent(_context.project)}/projectteams/${encodeURIComponent(_context.projectteam)}`);
             return res;
         }
     this.log.warn([`[ProjectTeam]>>>[Remove函数]异常`]);
@@ -262,13 +262,13 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         if (_context.product && _context.project && _context.projectteam) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/projectteams/${encodeURIComponent(_context.projectteam)}`, _data);
             return res;
         }
         if (_context.project && _context.projectteam) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
+            const res = await this.http.put(`/projects/${encodeURIComponent(_context.project)}/projectteams/${encodeURIComponent(_context.projectteam)}`, _data);
             return res;
         }
     this.log.warn([`[ProjectTeam]>>>[Update函数]异常`]);
@@ -288,12 +288,12 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     async FetchCntEst(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams/fetchcntest`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/projectteams/fetchcntest`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCntEst');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/projectteams/fetchcntest`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCntEst');
             return res;
         }
@@ -314,12 +314,12 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/projectteams/fetchspecifyteam`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchSpecifyTeam');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/projectteams/fetchspecifyteam`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchSpecifyTeam');
             return res;
         }
@@ -328,5 +328,29 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             } catch (error) {
                 return this.handleResponseError(error);
             }
+    }
+
+    /**
+     * SaveBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectTeamServiceBase
+     */
+    public async SaveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams/savebatch`,_data);
+            return res;
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            const res = await this.http.post(`/projects/${_context.project}/projectteams/savebatch`,_data);
+            return res;
+        }
+        this.log.warn([`[ProjectTeam]>>>[SaveBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

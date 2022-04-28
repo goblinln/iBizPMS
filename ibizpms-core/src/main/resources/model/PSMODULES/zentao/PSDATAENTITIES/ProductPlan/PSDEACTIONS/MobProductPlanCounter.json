@@ -6,13 +6,15 @@
   "logicName" : "移动端产品计划计数器",
   "name" : "MobProductPlanCounter",
   "getPSDEActionInput" : {
-    "codeName" : "MobProductPlanCounterInput",
-    "name" : "输入对象",
+    "name" : "MobProductPlanCounterInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MobProductPlanCounterResult",
-    "name" : "返回对象",
+    "name" : "MobProductPlanCounterResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

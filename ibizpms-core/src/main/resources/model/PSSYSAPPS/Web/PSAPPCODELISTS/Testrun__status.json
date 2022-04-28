@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Testrun__status",
   "codeListType" : "STATIC",
   "codeName" : "Testrun__status",
   "dynaInstMode" : 1,
@@ -13,23 +14,19 @@
     "codeName" : "Wait",
     "text" : "未开始",
     "value" : "wait",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Doing",
     "text" : "进行中",
-    "value" : "doing",
-    "includeBeginValue" : true
+    "value" : "doing"
   }, {
     "codeName" : "Done",
     "text" : "已完成",
-    "value" : "done",
-    "includeBeginValue" : true
+    "value" : "done"
   }, {
     "codeName" : "Blocked",
     "text" : "被阻塞",
-    "value" : "blocked",
-    "includeBeginValue" : true
+    "value" : "blocked"
   } ],
   "enableCache" : true
 }

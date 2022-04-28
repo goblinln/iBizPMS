@@ -1,14 +1,27 @@
 {
+  "codeListTag" : "ibizsysmodel__BackendBuild",
   "codeListType" : "DYNAMIC",
   "codeName" : "BackendBuild",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSCODELISTS/BackendBuild.json",
   "emptyText" : "未定义",
+  "name" : "后台服务体系（版本）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Build"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

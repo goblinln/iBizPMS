@@ -254,6 +254,7 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -270,18 +271,24 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "DynaFilter",
+  "dEAPITag" : "DYNAFILTER",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DynaFilter.json",
   "enableUIActions" : 15,
   "logicName" : "动态搜索栏",
   "name" : "DYNAFILTER",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "DYNAFILTER",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "DYNAFILTERNAME",
     "codeName" : "DynaFilterName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

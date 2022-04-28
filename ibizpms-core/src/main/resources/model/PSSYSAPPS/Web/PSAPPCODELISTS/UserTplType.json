@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__UserTplType",
   "codeListType" : "STATIC",
   "codeName" : "UserTplType",
   "dynaInstMode" : 1,
@@ -12,33 +13,27 @@
   "getPSCodeItems" : [ {
     "codeName" : "Story",
     "text" : "需求",
-    "value" : "story",
-    "includeBeginValue" : true
+    "value" : "story"
   }, {
     "codeName" : "Task",
     "text" : "任务",
-    "value" : "task",
-    "includeBeginValue" : true
+    "value" : "task"
   }, {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug",
-    "includeBeginValue" : true
+    "value" : "bug"
   }, {
     "codeName" : "Product",
     "text" : "产品",
-    "value" : "product",
-    "includeBeginValue" : true
+    "value" : "product"
   }, {
     "codeName" : "Project",
     "text" : "项目",
-    "value" : "project",
-    "includeBeginValue" : true
+    "value" : "project"
   }, {
     "codeName" : "Productplan",
     "text" : "产品计划",
-    "value" : "productplan",
-    "includeBeginValue" : true
+    "value" : "productplan"
   } ],
   "enableCache" : true
 }

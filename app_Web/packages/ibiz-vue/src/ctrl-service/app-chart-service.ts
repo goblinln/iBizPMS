@@ -38,7 +38,7 @@ export class AppChartService extends ControlServiceBase {
         if (this.appDeCodeName) {
             this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         }
-        this.model = new AppChartModel();
+        this.model = new AppChartModel(opts);
     }
 
     /**

@@ -6,13 +6,19 @@
   "logicName" : "根据测试单获取相应信息（项目报告）（单测试）",
   "name" : "GetInfoTestTaskR",
   "getPSDEActionInput" : {
-    "codeName" : "GetInfoTestTaskRInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetInfoTestTaskRInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetInfoTestTaskRResult",
-    "name" : "返回对象",
+    "name" : "GetInfoTestTaskRResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TestReportDTO"
+    },
     "type" : "DTO"
   },
   "getPSDELogic" : {

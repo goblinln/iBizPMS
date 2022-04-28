@@ -8,13 +8,15 @@
   "name" : "RemoveTemp",
   "orderValue" : 22,
   "getPSDEActionInput" : {
-    "codeName" : "RemoveTempInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "IBZ_PLANTEMPLETDETAILID",
+      "codeName" : "IbzPlanTempletDetailId"
+    },
+    "name" : "RemoveTempInput",
     "type" : "KEYFIELDS"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "RemoveTempResult",
-    "name" : "返回对象",
+    "name" : "RemoveTempResult",
     "type" : "VOID"
   },
   "tempDataMode" : 2,

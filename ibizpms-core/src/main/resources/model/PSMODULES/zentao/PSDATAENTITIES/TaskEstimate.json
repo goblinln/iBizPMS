@@ -1,4 +1,20 @@
 {
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACMODES/Default.json"
+  } ],
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
@@ -9,14 +25,16 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
-      "codeName" : "CreateInput",
-      "name" : "输入对象",
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTOS",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateResult",
-      "name" : "返回对象",
+      "name" : "CreateResult",
       "type" : "VOID"
     },
     "batchAction" : true,
@@ -30,14 +48,16 @@
     "name" : "CreateTemp",
     "orderValue" : 2,
     "getPSDEActionInput" : {
-      "codeName" : "CreateTempInput",
-      "name" : "输入对象",
+      "name" : "CreateTempInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateTempResult",
-      "name" : "返回对象",
+      "name" : "CreateTempResult",
       "type" : "VOID"
     },
     "tempDataMode" : 2,
@@ -52,14 +72,16 @@
     "name" : "CreateTempMajor",
     "orderValue" : 3,
     "getPSDEActionInput" : {
-      "codeName" : "CreateTempMajorInput",
-      "name" : "输入对象",
+      "name" : "CreateTempMajorInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateTempMajorResult",
-      "name" : "返回对象",
+      "name" : "CreateTempMajorResult",
       "type" : "VOID"
     },
     "tempDataMode" : 1,
@@ -74,14 +96,16 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateInput",
-      "name" : "输入对象",
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateResult",
-      "name" : "返回对象",
+      "name" : "UpdateResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1",
@@ -95,14 +119,16 @@
     "name" : "UpdateTemp",
     "orderValue" : 12,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateTempInput",
-      "name" : "输入对象",
+      "name" : "UpdateTempInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateTempResult",
-      "name" : "返回对象",
+      "name" : "UpdateTempResult",
       "type" : "VOID"
     },
     "tempDataMode" : 2,
@@ -117,14 +143,16 @@
     "name" : "UpdateTempMajor",
     "orderValue" : 13,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateTempMajorInput",
-      "name" : "输入对象",
+      "name" : "UpdateTempMajorInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateTempMajorResult",
-      "name" : "返回对象",
+      "name" : "UpdateTempMajorResult",
       "type" : "VOID"
     },
     "tempDataMode" : 1,
@@ -140,13 +168,15 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveResult",
-      "name" : "返回对象",
+      "name" : "RemoveResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1",
@@ -162,13 +192,15 @@
     "name" : "RemoveTemp",
     "orderValue" : 22,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveTempInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveTempInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveTempResult",
-      "name" : "返回对象",
+      "name" : "RemoveTempResult",
       "type" : "VOID"
     },
     "tempDataMode" : 2,
@@ -185,13 +217,15 @@
     "name" : "RemoveTempMajor",
     "orderValue" : 23,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveTempMajorInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveTempMajorInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveTempMajorResult",
-      "name" : "返回对象",
+      "name" : "RemoveTempMajorResult",
       "type" : "VOID"
     },
     "tempDataMode" : 1,
@@ -207,13 +241,19 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
-      "codeName" : "GetInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetResult",
-      "name" : "返回对象",
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -226,13 +266,19 @@
     "name" : "GetTemp",
     "orderValue" : 32,
     "getPSDEActionInput" : {
-      "codeName" : "GetTempInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetTempInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetTempResult",
-      "name" : "返回对象",
+      "name" : "GetTempResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "tempDataMode" : 2,
@@ -247,13 +293,19 @@
     "name" : "GetTempMajor",
     "orderValue" : 33,
     "getPSDEActionInput" : {
-      "codeName" : "GetTempMajorInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetTempMajorInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetTempMajorResult",
-      "name" : "返回对象",
+      "name" : "GetTempMajorResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "tempDataMode" : 1,
@@ -268,13 +320,19 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftInput",
-      "name" : "输入对象",
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftResult",
-      "name" : "返回对象",
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -287,13 +345,19 @@
     "name" : "GetDraftTemp",
     "orderValue" : 43,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftTempInput",
-      "name" : "输入对象",
+      "name" : "GetDraftTempInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftTempResult",
-      "name" : "返回对象",
+      "name" : "GetDraftTempResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "tempDataMode" : 2,
@@ -308,13 +372,19 @@
     "name" : "GetDraftTempMajor",
     "orderValue" : 45,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftTempMajorInput",
-      "name" : "输入对象",
+      "name" : "GetDraftTempMajorInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftTempMajorResult",
-      "name" : "返回对象",
+      "name" : "GetDraftTempMajorResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "tempDataMode" : 1,
@@ -328,13 +398,15 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
-      "codeName" : "CheckKeyInput",
-      "name" : "输入对象",
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CheckKeyResult",
-      "name" : "返回对象",
+      "name" : "CheckKeyResult",
       "stdDataType" : 9,
       "type" : "SIMPLE"
     },
@@ -347,13 +419,15 @@
     "logicName" : "项目经理评估",
     "name" : "PMEvaluation",
     "getPSDEActionInput" : {
-      "codeName" : "PMEvaluationInput",
-      "name" : "输入对象",
+      "name" : "PMEvaluationInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "PMEvaluationResult",
-      "name" : "返回对象",
+      "name" : "PMEvaluationResult",
       "type" : "VOID"
     }
   }, {
@@ -365,22 +439,106 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
-      "codeName" : "SaveInput",
-      "name" : "输入对象",
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "DTOS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "SaveResult",
-      "name" : "返回对象",
+      "name" : "SaveResult",
       "type" : "VOID"
     },
     "batchAction" : true,
     "builtinAction" : true
   } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`zt_taskestimate`",
+    "tableName" : "zt_taskestimate",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "ORG",
+      "codeName" : "Org"
+    }, {
+      "name" : "MONTHNAME",
+      "codeName" : "Monthname"
+    }, {
+      "name" : "DEPT",
+      "codeName" : "Dept"
+    }, {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    }, {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    }, {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    }, {
+      "name" : "CREATEBY",
+      "codeName" : "CreateBy"
+    }, {
+      "name" : "EVALUATIONCOST",
+      "codeName" : "Evaluationcost"
+    }, {
+      "name" : "FILES",
+      "codeName" : "Files"
+    }, {
+      "name" : "ID",
+      "codeName" : "Id"
+    }, {
+      "name" : "EVALUATIONSTATUS",
+      "codeName" : "Evaluationstatus"
+    }, {
+      "name" : "ORGNAME",
+      "codeName" : "OrgName"
+    }, {
+      "name" : "DATE",
+      "codeName" : "Date"
+    }, {
+      "name" : "UPDATEBY",
+      "codeName" : "UpdateBy"
+    }, {
+      "name" : "EVALUATIONTIME",
+      "codeName" : "Evaluationtime"
+    }, {
+      "name" : "INPUTCOST",
+      "codeName" : "Inputcost"
+    }, {
+      "name" : "DEPTNAME",
+      "codeName" : "DeptName"
+    }, {
+      "name" : "TASKESTIMATESN",
+      "codeName" : "TaskEstimatesn"
+    }, {
+      "name" : "WORK",
+      "codeName" : "Work"
+    }, {
+      "name" : "EVALUATIONDESC",
+      "codeName" : "Evaluationdesc"
+    }, {
+      "name" : "TASK",
+      "codeName" : "Task"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json",
+    "name" : "ZT_TASKESTIMATE",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "zt_taskestimate"
+    },
+    "tableType" : "MAIN"
+  } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEDATAQUERIES/ActionMonth/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ActionMonth",
     "logicName" : "日志月",
@@ -393,11 +551,27 @@
       "joinType" : "MAIN",
       "name" : "TASKESTIMATESTATS"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ActionMonthInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ActionMonthResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEDATAQUERIES/ActionYear/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ActionYear",
     "logicName" : "日志年",
@@ -410,11 +584,27 @@
       "joinType" : "MAIN",
       "name" : "TASKESTIMATESTATS"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ActionYearInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ActionYearResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
@@ -427,16 +617,27 @@
       "joinType" : "MAIN",
       "name" : "ZT_TASKESTIMATE"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "( 1<>1 )",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEDATAQUERIES/Defaults/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Defaults",
     "logicName" : "DEFAULT1",
@@ -454,19 +655,31 @@
         "name" : "连接条件",
         "getPSDEDQConditions" : [ {
           "condType" : "CUSTOM",
+          "condition" : "1<>1",
           "name" : "自定义条件"
         } ]
       }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultsInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultsResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
     }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.project =#{srf.webcontext.project}",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEDATAQUERIES/ProjectActionMonth/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProjectActionMonth",
     "logicName" : "日志月（项目）",
@@ -479,16 +692,27 @@
       "joinType" : "MAIN",
       "name" : "ZT_TASKESTIMATE"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProjectActionMonthInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProjectActionMonthResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.project =#{srf.webcontext.project}",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEDATAQUERIES/ProjectActionYear/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProjectActionYear",
     "logicName" : "日志年（项目）",
@@ -501,16 +725,27 @@
       "joinType" : "MAIN",
       "name" : "ZT_TASKESTIMATE"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProjectActionYearInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProjectActionYearResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "( t11.`PROJECT` = ${srfwebcontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_TASKESTIMATE\"}')}  AND  t11.`DELETED` = '0' )",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEDATAQUERIES/ProjectTaskEstimate/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProjectTaskEstimate",
     "logicName" : "项目日志",
@@ -547,11 +782,27 @@
           }
         } ]
       }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProjectTaskEstimateInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProjectTaskEstimateResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
     }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
@@ -563,7 +814,24 @@
       },
       "joinType" : "MAIN",
       "name" : "ZT_TASKESTIMATE"
-    }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ActionMonth",
@@ -574,13 +842,19 @@
       "id" : "ActionMonth"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ActionMonthInput",
-      "name" : "输入对象",
+      "name" : "ActionMonthInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ActionMonthResult",
-      "name" : "返回对象",
+      "name" : "ActionMonthResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -595,13 +869,19 @@
       "id" : "ActionYear"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ActionYearInput",
-      "name" : "输入对象",
+      "name" : "ActionYearInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ActionYearResult",
-      "name" : "返回对象",
+      "name" : "ActionYearResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -616,13 +896,19 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultInput",
-      "name" : "输入对象",
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultResult",
-      "name" : "返回对象",
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "PAGE"
     },
     "defaultMode" : true,
@@ -638,13 +924,19 @@
       "id" : "Defaults"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultsInput",
-      "name" : "输入对象",
+      "name" : "DefaultsInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultsResult",
-      "name" : "返回对象",
+      "name" : "DefaultsResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -659,13 +951,19 @@
       "id" : "ProjectActionMonth"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProjectActionMonthInput",
-      "name" : "输入对象",
+      "name" : "ProjectActionMonthInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProjectActionMonthResult",
-      "name" : "返回对象",
+      "name" : "ProjectActionMonthResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -680,13 +978,19 @@
       "id" : "ProjectActionYear"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProjectActionYearInput",
-      "name" : "输入对象",
+      "name" : "ProjectActionYearInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProjectActionYearResult",
-      "name" : "返回对象",
+      "name" : "ProjectActionYearResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -701,13 +1005,19 @@
       "id" : "ProjectTaskEstimate"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProjectTaskEstimateInput",
-      "name" : "输入对象",
+      "name" : "ProjectTaskEstimateInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProjectTaskEstimateResult",
-      "name" : "返回对象",
+      "name" : "ProjectTaskEstimateResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -721,6 +1031,31 @@
       "name" : "ORG",
       "queryCodeExp" : "t1.`ORG`",
       "standardColumnName" : "`ORG`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ORG][归属组织]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ORG][归属组织]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ORG][归属组织]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ORG][归属组织]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -741,10 +1076,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "ORG",
-        "codeName" : "Org"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -758,6 +1089,14 @@
     "length" : 100,
     "logicName" : "归属组织",
     "name" : "ORG",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ORG"
+    },
     "predefinedType" : "ORGID",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -769,6 +1108,31 @@
       "name" : "MONTHNAME",
       "queryCodeExp" : "t1.`MONTHNAME`",
       "standardColumnName" : "`MONTHNAME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[MONTHNAME][月（显示）]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[MONTHNAME][月（显示）]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[MONTHNAME][月（显示）]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[MONTHNAME][月（显示）]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -789,10 +1153,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "MONTHNAME",
-        "codeName" : "Monthname"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -806,6 +1166,14 @@
     "length" : 100,
     "logicName" : "月（显示）",
     "name" : "MONTHNAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "MONTHNAME"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
@@ -816,6 +1184,31 @@
       "name" : "DEPT",
       "queryCodeExp" : "t1.`DEPT`",
       "standardColumnName" : "`DEPT`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DEPT][归属部门]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DEPT][归属部门]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DEPT][归属部门]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DEPT][归属部门]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -836,10 +1229,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "DEPT",
-        "codeName" : "Dept"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -853,6 +1242,14 @@
     "length" : 100,
     "logicName" : "归属部门",
     "name" : "DEPT",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DEPT"
+    },
     "predefinedType" : "ORGSECTORID",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -863,6 +1260,31 @@
       "name" : "N_YEAR_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[YEAR][年]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[YEAR][年]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[YEAR][年]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[YEAR][年]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -883,10 +1305,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "YEAR",
-        "codeName" : "Year"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -903,6 +1321,7 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -919,6 +1338,53 @@
       "name" : "N_ACCOUNT_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto295",
+      "name" : "[ACCOUNT][account]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto295",
+        "editorType" : "TEXTBOX",
+        "name" : "[ACCOUNT][account]",
+        "stringLength" : 30,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Auto985",
+      "name" : "[ACCOUNT][用户]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto985",
+        "editorType" : "TEXTBOX",
+        "name" : "[ACCOUNT][用户]",
+        "stringLength" : 30,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "默认",
+        "stringLength" : 30,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "移动端默认",
+        "stringLength" : 30,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -939,10 +1405,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[30]"
       },
-      "getPSDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -957,6 +1419,14 @@
     "length" : 30,
     "logicName" : "用户",
     "name" : "ACCOUNT",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ACCOUNT"
+    },
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
@@ -968,6 +1438,53 @@
       "queryCodeExp" : "t1.`LEFT`",
       "standardColumnName" : "`LEFT`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto990",
+      "name" : "[LEFT][预计剩余]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto990",
+        "editorType" : "TEXTBOX",
+        "name" : "[LEFT][预计剩余]",
+        "precision" : 2,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Auto312",
+      "name" : "[LEFT][left]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto312",
+        "editorType" : "TEXTBOX",
+        "name" : "[LEFT][left]",
+        "precision" : 2,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "移动端默认",
+        "precision" : 2,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "默认",
+        "precision" : 2,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "ValueRule",
@@ -987,10 +1504,6 @@
         } ],
         "ruleInfo" : "预计剩余大于等于0"
       },
-      "getPSDEField" : {
-        "name" : "LEFT",
-        "codeName" : "Left"
-      },
       "ruleInfo" : "预计剩余大于等于0",
       "checkDefault" : false,
       "defaultMode" : false,
@@ -1003,10 +1516,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "LEFT",
-        "codeName" : "Left"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1021,6 +1530,14 @@
     "importOrder" : 1000,
     "logicName" : "预计剩余",
     "name" : "LEFT",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "LEFT"
+    },
     "precision" : 2,
     "stdDataType" : 7,
     "valueFormat" : "%1$s"
@@ -1032,6 +1549,53 @@
       "queryCodeExp" : "t1.`CONSUMED`",
       "standardColumnName" : "`CONSUMED`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "默认",
+        "precision" : 2,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "Auto376",
+      "name" : "[CONSUMED][consumed]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto376",
+        "editorType" : "TEXTBOX",
+        "name" : "[CONSUMED][consumed]",
+        "precision" : 2,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Auto1007",
+      "name" : "[CONSUMED][总计消耗]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto1007",
+        "editorType" : "TEXTBOX",
+        "name" : "[CONSUMED][总计消耗]",
+        "precision" : 2,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "移动端默认",
+        "precision" : 2,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "ValueRule2",
@@ -1051,10 +1615,6 @@
         } ],
         "ruleInfo" : "总计消耗大于等于0"
       },
-      "getPSDEField" : {
-        "name" : "CONSUMED",
-        "codeName" : "Consumed"
-      },
       "ruleInfo" : "总计消耗大于等于0",
       "checkDefault" : false,
       "defaultMode" : false,
@@ -1067,10 +1627,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CONSUMED",
-        "codeName" : "Consumed"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1085,6 +1641,14 @@
     "importOrder" : 1000,
     "logicName" : "总计消耗",
     "name" : "CONSUMED",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CONSUMED"
+    },
     "precision" : 2,
     "stdDataType" : 7,
     "valueFormat" : "%1$s"
@@ -1095,6 +1659,31 @@
       "name" : "CREATEBY",
       "queryCodeExp" : "t1.`CREATEBY`",
       "standardColumnName" : "`CREATEBY`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEBY][由谁创建]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CREATEBY][由谁创建]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CREATEBY][由谁创建]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CREATEBY][由谁创建]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1115,10 +1704,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "CREATEBY",
-        "codeName" : "CreateBy"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1136,6 +1721,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEBY"
+    },
     "predefinedType" : "CREATEMANNAME",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -1149,6 +1742,29 @@
       "queryCodeExp" : "t1.`EVALUATIONCOST`",
       "standardColumnName" : "`EVALUATIONCOST`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[EVALUATIONCOST][评估成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EVALUATIONCOST][评估成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[EVALUATIONCOST][评估成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EVALUATIONCOST][评估成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1156,10 +1772,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "EVALUATIONCOST",
-        "codeName" : "Evaluationcost"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1174,9 +1786,40 @@
     "length" : 2,
     "logicName" : "评估成本",
     "name" : "EVALUATIONCOST",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "EVALUATIONCOST"
+    },
     "stdDataType" : 7,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[MONTHORDER][月（排序）]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[MONTHORDER][月（排序）]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[MONTHORDER][月（排序）]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[MONTHORDER][月（排序）]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1184,10 +1827,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "MONTHORDER",
-        "codeName" : "Monthorder"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1203,6 +1842,7 @@
     "name" : "MONTHORDER",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1212,6 +1852,31 @@
       "name" : "FILES",
       "queryCodeExp" : "t1.`FILES`",
       "standardColumnName" : "`FILES`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[FILES][附件]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXTAREA",
+        "name" : "[FILES][附件]移动端默认",
+        "stringLength" : 2000,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[FILES][附件]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[FILES][附件]",
+        "stringLength" : 2000,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1232,10 +1897,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[2000]"
       },
-      "getPSDEField" : {
-        "name" : "FILES",
-        "codeName" : "Files"
-      },
       "ruleInfo" : "内容长度必须小于等于[2000]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1249,6 +1910,14 @@
     "length" : 2000,
     "logicName" : "附件",
     "name" : "FILES",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "FILES"
+    },
     "stdDataType" : 25,
     "stringLength" : 2000,
     "valueFormat" : "%1$s"
@@ -1271,6 +1940,53 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto587",
+      "name" : "[ID][id]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto587",
+        "editorType" : "TEXTBOX",
+        "name" : "[ID][id]",
+        "uIMode" : "CUSTOM",
+        "allowEmpty" : false
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Auto1080",
+      "name" : "[ID][编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto1080",
+        "editorType" : "TEXTBOX",
+        "name" : "[ID][编号]",
+        "uIMode" : "CUSTOM",
+        "allowEmpty" : false
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "默认",
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1278,10 +1994,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1295,6 +2007,14 @@
     "importOrder" : 1000,
     "logicName" : "编号",
     "name" : "ID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ID"
+    },
     "getPSSysSequence" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTaskEstimateSeq.json"
@@ -1318,6 +2038,31 @@
       "standardColumnName" : "`EVALUATIONSTATUS`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[EVALUATIONSTATUS][评估状态]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EVALUATIONSTATUS][评估状态]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[EVALUATIONSTATUS][评估状态]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EVALUATIONSTATUS][评估状态]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1337,10 +2082,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "EVALUATIONSTATUS",
-        "codeName" : "Evaluationstatus"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1355,6 +2096,14 @@
     "length" : 100,
     "logicName" : "评估状态",
     "name" : "EVALUATIONSTATUS",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "EVALUATIONSTATUS"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
@@ -1365,6 +2114,31 @@
       "name" : "ORGNAME",
       "queryCodeExp" : "t1.`ORGNAME`",
       "standardColumnName" : "`ORGNAME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ORGNAME][归属组织名]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ORGNAME][归属组织名]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ORGNAME][归属组织名]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ORGNAME][归属组织名]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1385,10 +2159,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "ORGNAME",
-        "codeName" : "OrgName"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1402,11 +2172,44 @@
     "length" : 100,
     "logicName" : "归属组织名",
     "name" : "ORGNAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ORGNAME"
+    },
     "predefinedType" : "ORGNAME",
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[YEARNAME][年（显示）]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[YEARNAME][年（显示）]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[YEARNAME][年（显示）]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[YEARNAME][年（显示）]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1426,10 +2229,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "YEARNAME",
-        "codeName" : "Yearname"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1446,6 +2245,7 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1456,6 +2256,53 @@
       "queryCodeExp" : "t1.`DATE`",
       "standardColumnName" : "`DATE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto1100",
+      "name" : "[DATE][日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto1100",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[DATE][日期]",
+        "uIMode" : "CUSTOM",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "默认",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Auto662",
+      "name" : "[DATE][date]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto662",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[DATE][date]",
+        "uIMode" : "CUSTOM",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "CUSTOM"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1463,10 +2310,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1480,6 +2323,14 @@
     "importOrder" : 1000,
     "logicName" : "日期",
     "name" : "DATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DATE"
+    },
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td"
   }, {
@@ -1489,6 +2340,31 @@
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
       "standardColumnName" : "`UPDATEBY`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEBY][由谁更新]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[UPDATEBY][由谁更新]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEBY][由谁更新]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[UPDATEBY][由谁更新]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1509,10 +2385,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "UPDATEBY",
-        "codeName" : "UpdateBy"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1530,6 +2402,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEBY"
+    },
     "predefinedType" : "UPDATEMANNAME",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -1543,6 +2423,29 @@
       "queryCodeExp" : "t1.`EVALUATIONTIME`",
       "standardColumnName" : "`EVALUATIONTIME`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[EVALUATIONTIME][评估工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EVALUATIONTIME][评估工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[EVALUATIONTIME][评估工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EVALUATIONTIME][评估工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1550,10 +2453,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "EVALUATIONTIME",
-        "codeName" : "Evaluationtime"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1568,6 +2467,14 @@
     "length" : 2,
     "logicName" : "评估工时",
     "name" : "EVALUATIONTIME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "EVALUATIONTIME"
+    },
     "stdDataType" : 7,
     "valueFormat" : "%1$s"
   }, {
@@ -1578,6 +2485,29 @@
       "queryCodeExp" : "t1.`INPUTCOST`",
       "standardColumnName" : "`INPUTCOST`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[INPUTCOST][投入成本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[INPUTCOST][投入成本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[INPUTCOST][投入成本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[INPUTCOST][投入成本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1585,10 +2515,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "INPUTCOST",
-        "codeName" : "Inputcost"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1603,6 +2529,14 @@
     "length" : 2,
     "logicName" : "投入成本",
     "name" : "INPUTCOST",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "INPUTCOST"
+    },
     "stdDataType" : 7,
     "valueFormat" : "%1$s"
   }, {
@@ -1613,6 +2547,31 @@
       "queryCodeExp" : "t1.`date`",
       "standardColumnName" : "`DATES`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DATES][日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[DATES][日期]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DATES][日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[DATES][日期]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1620,10 +2579,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DATES",
-        "codeName" : "Dates"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1634,11 +2589,13 @@
     "codeName" : "Dates",
     "dEFType" : 2,
     "dataType" : "DATE",
+    "formulaFormat" : "t1.`date`",
     "importOrder" : 1000,
     "logicName" : "日期",
     "name" : "DATES",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1648,6 +2605,31 @@
       "name" : "DEPTNAME",
       "queryCodeExp" : "t1.`DEPTNAME`",
       "standardColumnName" : "`DEPTNAME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DEPTNAME][归属部门名]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DEPTNAME][归属部门名]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DEPTNAME][归属部门名]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DEPTNAME][归属部门名]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1668,10 +2650,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "DEPTNAME",
-        "codeName" : "DeptName"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1685,6 +2663,14 @@
     "length" : 100,
     "logicName" : "归属部门名",
     "name" : "DEPTNAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DEPTNAME"
+    },
     "predefinedType" : "ORGSECTORNAME",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -1697,6 +2683,29 @@
       "queryCodeExp" : "t1.`TASKESTIMATESN`",
       "standardColumnName" : "`TASKESTIMATESN`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKESTIMATESN][任务预计编号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TASKESTIMATESN][任务预计编号]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TASKESTIMATESN][任务预计编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TASKESTIMATESN][任务预计编号]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1704,10 +2713,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKESTIMATESN",
-        "codeName" : "TaskEstimatesn"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1722,6 +2727,14 @@
     "length" : 20,
     "logicName" : "任务预计编号",
     "name" : "TASKESTIMATESN",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "TASKESTIMATESN"
+    },
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   }, {
@@ -1730,6 +2743,31 @@
       "name" : "N_MONTH_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[MONTH][月]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[MONTH][月]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[MONTH][月]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[MONTH][月]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1750,10 +2788,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "MONTH",
-        "codeName" : "Month"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1770,6 +2804,7 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1780,6 +2815,53 @@
       "queryCodeExp" : "t1.`WORK`",
       "standardColumnName" : "`WORK`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTAREA_10",
+        "name" : "默认",
+        "stringLength" : 65535,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXTAREA",
+        "name" : "移动端默认",
+        "stringLength" : 65535,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Auto773",
+      "name" : "[WORK][work]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto773",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[WORK][work]",
+        "stringLength" : 65535,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Auto1142",
+      "name" : "[WORK][work]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto1142",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[WORK][work]",
+        "stringLength" : 65535,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1800,10 +2882,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[65535]"
       },
-      "getPSDEField" : {
-        "name" : "WORK",
-        "codeName" : "Work"
-      },
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1818,6 +2896,14 @@
     "length" : 65535,
     "logicName" : "work",
     "name" : "WORK",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "WORK"
+    },
     "stdDataType" : 21,
     "stringLength" : 65535,
     "valueFormat" : "%1$s",
@@ -1829,6 +2915,31 @@
       "name" : "EVALUATIONDESC",
       "queryCodeExp" : "t1.`EVALUATIONDESC`",
       "standardColumnName" : "`EVALUATIONDESC`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[EVALUATIONDESC][评估说明]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[EVALUATIONDESC][评估说明]",
+        "stringLength" : 1048576,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[EVALUATIONDESC][评估说明]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXTAREA",
+        "name" : "[EVALUATIONDESC][评估说明]移动端默认",
+        "stringLength" : 1048576,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1849,10 +2960,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[1048576]"
       },
-      "getPSDEField" : {
-        "name" : "EVALUATIONDESC",
-        "codeName" : "Evaluationdesc"
-      },
       "ruleInfo" : "内容长度必须小于等于[1048576]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1866,6 +2973,14 @@
     "length" : 1048576,
     "logicName" : "评估说明",
     "name" : "EVALUATIONDESC",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "EVALUATIONDESC"
+    },
     "stdDataType" : 21,
     "stringLength" : 1048576,
     "valueFormat" : "%1$s",
@@ -1877,6 +2992,47 @@
       "name" : "TASKSPECIES",
       "queryCodeExp" : "t11.`TASKSPECIES`",
       "standardColumnName" : "`TASKSPECIES`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKSPECIES][任务种别]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TASKSPECIES][任务种别]移动端默认",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TASKSPECIES][任务种别]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TASKSPECIES][任务种别]",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1896,10 +3052,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "TASKSPECIES",
-        "codeName" : "Taskspecies"
       },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
@@ -1922,13 +3074,26 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
     },
+    "getRealPSDEField" : {
+      "name" : "TASKSPECIES",
+      "codeName" : "Taskspecies"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "TASKSPECIES",
       "codeName" : "Taskspecies"
     },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1950,6 +3115,53 @@
       "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TASKNAME][任务名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "PICKER",
+        "name" : "[TASKNAME][任务名称]",
+        "refLinkPSDEViewCodeName" : "RedirectView",
+        "refMPickupPSDEViewCodeName" : "MPickupView",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "refPickupPSDEViewCodeName" : "PickupView",
+        "stringLength" : 255,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKNAME][任务名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBPICKER",
+        "name" : "[TASKNAME][任务名称]移动端默认",
+        "refLinkPSDEViewCodeName" : "RedirectView",
+        "refMPickupPSDEViewCodeName" : "MPickupView",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "refPickupPSDEViewCodeName" : "PickupView",
+        "stringLength" : 255,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1969,10 +3181,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[255]"
       },
-      "getPSDEField" : {
-        "name" : "TASKNAME",
-        "codeName" : "TaskName"
-      },
       "ruleInfo" : "内容长度必须小于等于[255]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1990,9 +3198,21 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
     },
+    "getRealPSDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
+    },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     },
     "stdDataType" : 25,
     "stringLength" : 255,
@@ -2001,6 +3221,7 @@
       "name" : "TASK",
       "codeName" : "Task"
     },
+    "viewLevel" : 0,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2010,6 +3231,47 @@
       "name" : "PROJECTNAME",
       "queryCodeExp" : "t21.`NAME`",
       "standardColumnName" : "`PROJECTNAME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PROJECTNAME][所属项目]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[PROJECTNAME][所属项目]",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "stringLength" : 90,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PROJECTNAME][所属项目]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[PROJECTNAME][所属项目]移动端默认",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "stringLength" : 90,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2030,10 +3292,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[90]"
       },
-      "getPSDEField" : {
-        "name" : "PROJECTNAME",
-        "codeName" : "ProjectName"
-      },
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2051,13 +3309,26 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
     },
+    "getRealPSDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2067,6 +3338,47 @@
       "name" : "TYPE",
       "queryCodeExp" : "t11.`TYPE`",
       "standardColumnName" : "`TYPE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TYPE][任务类型]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TYPE][任务类型]移动端默认",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "stringLength" : 20,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TYPE][任务类型]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TYPE][任务类型]",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "stringLength" : 20,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2086,10 +3398,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[20]"
-      },
-      "getPSDEField" : {
-        "name" : "TYPE",
-        "codeName" : "Type"
       },
       "ruleInfo" : "内容长度必须小于等于[20]",
       "checkDefault" : true,
@@ -2112,13 +3420,26 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
     },
+    "getRealPSDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 20,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2128,6 +3449,47 @@
       "name" : "DELETED",
       "queryCodeExp" : "t11.`DELETED`",
       "standardColumnName" : "`DELETED`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DELETED][任务删除标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[DELETED][任务删除标识]",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "stringLength" : 1,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DELETED][任务删除标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[DELETED][任务删除标识]移动端默认",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "stringLength" : 1,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2148,10 +3510,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[1]"
       },
-      "getPSDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
-      },
       "ruleInfo" : "内容长度必须小于等于[1]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2169,13 +3527,26 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
     },
+    "getRealPSDEField" : {
+      "name" : "DELETED",
+      "codeName" : "Deleted"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "DELETED",
       "codeName" : "Deleted"
     },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 1,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2192,6 +3563,45 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PROJECT][项目]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[PROJECT][项目]",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PROJECT][项目]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[PROJECT][项目]移动端默认",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2199,10 +3609,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2221,12 +3627,25 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
     },
+    "getRealPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2244,6 +3663,51 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto955",
+      "name" : "[TASK][任务]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto955",
+        "editorType" : "HIDDEN",
+        "name" : "[TASK][任务]",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TASK][编号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "HIDDEN",
+        "name" : "[TASK][编号]移动端默认",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TASK][编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "HIDDEN",
+        "name" : "[TASK][编号]",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+        },
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2251,10 +3715,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASK",
-        "codeName" : "Task"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2270,22 +3730,540 @@
     "length" : 8,
     "logicName" : "任务",
     "name" : "TASK",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDETABLES/Table.json"
+    },
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "TASK"
     },
     "getPSSysTranslator" : {
       "modelref" : true,
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
+    "getRealPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
+    },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "TaskEstimateDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "defaultValue" : "#EMPTY",
+      "logicName" : "用户",
+      "name" : "Account",
+      "getPSDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 30,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "总计消耗",
+      "name" : "Consumed",
+      "getPSDEField" : {
+        "name" : "CONSUMED",
+        "codeName" : "Consumed"
+      },
+      "precision" : 2,
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "由谁创建",
+      "name" : "CreateBy",
+      "getPSDEField" : {
+        "name" : "CREATEBY",
+        "codeName" : "CreateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "readOnly" : true
+    }, {
+      "logicName" : "日期",
+      "name" : "Date",
+      "getPSDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "日期",
+      "name" : "Dates",
+      "getPSDEField" : {
+        "name" : "DATES",
+        "codeName" : "Dates"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务删除标识",
+      "name" : "Deleted",
+      "getPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "归属部门",
+      "name" : "Dept",
+      "getPSDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "归属部门名",
+      "name" : "DeptName",
+      "getPSDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "评估成本",
+      "name" : "Evaluationcost",
+      "getPSDEField" : {
+        "name" : "EVALUATIONCOST",
+        "codeName" : "Evaluationcost"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "评估说明",
+      "name" : "Evaluationdesc",
+      "getPSDEField" : {
+        "name" : "EVALUATIONDESC",
+        "codeName" : "Evaluationdesc"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "stringLength" : 1048576,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "no",
+      "logicName" : "评估状态",
+      "name" : "Evaluationstatus",
+      "getPSDEField" : {
+        "name" : "EVALUATIONSTATUS",
+        "codeName" : "Evaluationstatus"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "评估工时",
+      "name" : "Evaluationtime",
+      "getPSDEField" : {
+        "name" : "EVALUATIONTIME",
+        "codeName" : "Evaluationtime"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "附件",
+      "name" : "Files",
+      "getPSDEField" : {
+        "name" : "FILES",
+        "codeName" : "Files"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 2000,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "编号",
+      "name" : "Id",
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "投入成本",
+      "name" : "Inputcost",
+      "getPSDEField" : {
+        "name" : "INPUTCOST",
+        "codeName" : "Inputcost"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "预计剩余",
+      "name" : "Left",
+      "getPSDEField" : {
+        "name" : "LEFT",
+        "codeName" : "Left"
+      },
+      "precision" : 2,
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "月",
+      "name" : "Month",
+      "getPSDEField" : {
+        "name" : "MONTH",
+        "codeName" : "Month"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "月（显示）",
+      "name" : "Monthname",
+      "getPSDEField" : {
+        "name" : "MONTHNAME",
+        "codeName" : "Monthname"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "月（排序）",
+      "name" : "Monthorder",
+      "getPSDEField" : {
+        "name" : "MONTHORDER",
+        "codeName" : "Monthorder"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "归属组织",
+      "name" : "Org",
+      "getPSDEField" : {
+        "name" : "ORG",
+        "codeName" : "Org"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "归属组织名",
+      "name" : "OrgName",
+      "getPSDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "项目",
+      "name" : "Project",
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "所属项目",
+      "name" : "ProjectName",
+      "getPSDEField" : {
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "任务",
+      "name" : "Task",
+      "getPSDEField" : {
+        "name" : "TASK",
+        "codeName" : "Task"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务预计编号",
+      "name" : "TaskEstimatesn",
+      "getPSDEField" : {
+        "name" : "TASKESTIMATESN",
+        "codeName" : "TaskEstimatesn"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务名称",
+      "name" : "TaskName",
+      "getPSDEField" : {
+        "name" : "TASKNAME",
+        "codeName" : "TaskName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 255,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务种别",
+      "name" : "Taskspecies",
+      "getPSDEField" : {
+        "name" : "TASKSPECIES",
+        "codeName" : "Taskspecies"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务类型",
+      "name" : "Type",
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 20,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "由谁更新",
+      "name" : "UpdateBy",
+      "getPSDEField" : {
+        "name" : "UPDATEBY",
+        "codeName" : "UpdateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "readOnly" : true
+    }, {
+      "defaultValue" : "#EMPTY",
+      "logicName" : "work",
+      "name" : "Work",
+      "getPSDEField" : {
+        "name" : "WORK",
+        "codeName" : "Work"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "stringLength" : 65535,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "年",
+      "name" : "Year",
+      "getPSDEField" : {
+        "name" : "YEAR",
+        "codeName" : "Year"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "年（显示）",
+      "name" : "Yearname",
+      "getPSDEField" : {
+        "name" : "YEARNAME",
+        "codeName" : "Yearname"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "TaskEstimateFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "defaultValue" : "#EMPTY",
+      "logicName" : "用户",
+      "name" : "N_ACCOUNT_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ACCOUNT_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 30,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "编号",
+      "name" : "N_ID_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ID_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "编号",
+      "name" : "N_ID_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ID_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "月",
+      "name" : "N_MONTH_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_MONTH_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "MONTH",
+        "codeName" : "Month"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "项目",
+      "name" : "N_PROJECT_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PROJECT_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务名称",
+      "name" : "N_TASKNAME_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_TASKNAME_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "TASKNAME",
+        "codeName" : "TaskName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 255,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "任务名称",
+      "name" : "N_TASKNAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_TASKNAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "TASKNAME",
+        "codeName" : "TaskName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 255,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "任务",
+      "name" : "N_TASK_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_TASK_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "TASK",
+        "codeName" : "Task"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "年",
+      "name" : "N_YEAR_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_YEAR_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "YEAR",
+        "codeName" : "Year"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -2294,6 +4272,10 @@
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
+    },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     },
     "name" : "CREATE",
     "id" : "ZTtask__CREATE"
@@ -2311,6 +4293,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
     },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "name" : "DELETE",
     "id" : "ZTtask__DELETE"
   }, {
@@ -2324,6 +4310,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
     },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
     "name" : "READ",
     "id" : "ZTtask__READ"
   }, {
@@ -2336,6 +4326,10 @@
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
+    },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     },
     "name" : "UPDATE",
     "id" : "ZTtask__UPDATE"
@@ -2407,6 +4401,163 @@
     "roleTag" : "TaskEstimate_Read",
     "userDRAction" : "READ"
   } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "OptionView",
+    "logicName" : "任务预计实体选项操作视图",
+    "name" : "任务预计实体选项操作视图",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "taskestimate实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "taskestimate实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "taskestimate实体选择表格视图（部件视图）",
+    "name" : "taskestimate实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMEditView9",
+    "logicName" : "任务预计实体移动端多表单编辑视图（部件视图）",
+    "name" : "任务预计实体移动端多表单编辑视图（部件视图）",
+    "realModelSubType" : "DEMOBMEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "taskestimate实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "taskestimate实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "taskestimate实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "taskestimate实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobOptionView",
+    "logicName" : "任务预计实体移动端选项操作视图",
+    "name" : "任务预计实体移动端选项操作视图",
+    "realModelSubType" : "DEMOBOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView9",
+    "logicName" : "任务预计实体移动端编辑视图（部件视图）",
+    "name" : "任务预计实体移动端编辑视图（部件视图）",
+    "realModelSubType" : "DEMOBEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "任务预计实体移动端选择多数据视图（部件视图）",
+    "name" : "任务预计实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "NewForm",
+    "logicName" : "添加工时",
+    "modelTag2" : "1",
+    "name" : "添加工时",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "任务预计实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "任务预计实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "任务预计实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "任务预计实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "AddEstimateGridView",
+    "logicName" : "任务预计实体表格视图（记录工时）",
+    "name" : "任务预计实体表格视图（记录工时）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView9",
+    "logicName" : "任务预计实体表格视图（部件视图）",
+    "name" : "任务预计实体表格视图（部件视图）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "任务预计实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "任务预计实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "LookGridView9",
+    "logicName" : "任务预计实体表格视图（部件视图）（查看）",
+    "name" : "任务预计实体表格视图（部件视图）（查看）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView9",
+    "logicName" : "任务预计实体移动端多数据视图（部件视图）",
+    "name" : "任务预计实体移动端多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "taskestimate实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "taskestimate实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "任务预计实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "任务预计实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "EditGridView9",
+    "logicName" : "任务预计实体表格视图（部件视图）（编辑）",
+    "name" : "任务预计实体表格视图（部件视图）（编辑）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "taskestimate实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "taskestimate实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "taskestimate实体编辑视图（左右关系）",
+    "name" : "taskestimate实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  } ],
   "codeName" : "TaskEstimate",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
@@ -2424,7 +4575,15 @@
   "enableUIActions" : 15,
   "enableViewLevel" : 0,
   "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "任务预计",
+  "getMajorPSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "getMinorPSDERs" : [ {
     "codeName" : "ZTtask",
     "dERType" : "DER1N",
@@ -2441,6 +4600,10 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
     },
     "name" : "DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK",
+    "getNestedPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "TASK",
@@ -2456,6 +4619,18 @@
     "nestedRS" : true
   } ],
   "name" : "ZT_TASKESTIMATE",
+  "getOrgIdPSDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Auto1.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
@@ -2465,7 +4640,6 @@
   "systemTag" : "iBizPMS",
   "tableName" : "zt_taskestimate",
   "tempDataHolder" : 2,
-  "virtualMode" : 0,
   "enableAPIStorage" : false,
   "enableCreate" : true,
   "enableDataVer" : false,

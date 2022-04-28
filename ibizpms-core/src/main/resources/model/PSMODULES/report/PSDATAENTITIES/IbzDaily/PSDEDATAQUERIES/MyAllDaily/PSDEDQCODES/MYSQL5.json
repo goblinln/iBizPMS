@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.account =  #{srf.sessioncontext.srfloginname}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\t\tt1.`ACCOUNT`,\n\t\tt1.`CREATEDATE`,\n\t\tt1.`CREATEMAN`,\n\t\tt1.`CREATEMANNAME`,\n\t\tt1.`DATE`,\n\t\tt1.`IBZ_DAILYID`,\n\t\tt1.`IBZ_DAILYNAME`,\n\t\tt1.`ISSUBMIT`,\n\t\tt1.`MAILTO`,\n\t\tt1.MAILTO AS `MAILTOPK`,\n\t\t( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`,\n\t\tt1.`REPORTTO`,\n\t\tt1.REPORTTO AS `REPORTTOPK`,\n\t\tt1.`SUBMITTIME`,\n\t\tt1.`TODAYTASK`,\n\t\tt1.`TOMORROWPLANSTASK`,\n\t\tt1.`UPDATEDATE`,\n\t\tt1.`UPDATEMAN`,\n\t\tt1.`UPDATEMANNAME` \n\tFROM\n\t\t`T_IBZ_DAILY` t1\n\t\tLEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_DAILYID \n\t\tAND t11.objectType = 'daily' \n\t\tAND t11.action = 'read' \n\t\tAND t11.actor = #{srf.sessioncontext.srfloginname}",
+  "id" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEDATAQUERIES/MyAllDaily/PSDEDQCODES/MYSQL5.json"
+}

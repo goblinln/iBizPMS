@@ -238,6 +238,7 @@
           "glyph" : "xf0c7@FontAwesome",
           "cssClass" : "fa fa-save"
         },
+        "predefinedType" : "EDITVIEW_SAVEACTION",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
           "lanResTag" : "TBB.TOOLTIP.*.SAVE"
@@ -277,9 +278,14 @@
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "fullCodeName" : "SaveAndNew",
         "name" : "编辑界面_保存并新建操作",
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "SRFUR__UNIVERSALSAVE"
+        },
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandnew"
         },
+        "predefinedType" : "EDITVIEW_SAVEANDNEWACTION",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW"
@@ -321,6 +327,7 @@
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
+        "predefinedType" : "EDITVIEW_SAVEANDEXITACTION",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
@@ -362,10 +369,15 @@
         "dataAccessAction" : "DELETE",
         "fullCodeName" : "RemoveAndExit",
         "name" : "编辑界面_删除并退出操作",
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "DELETE"
+        },
         "getPSSysImage" : {
           "glyph" : "xf00d@FontAwesome",
           "cssClass" : "fa fa-remove"
         },
+        "predefinedType" : "EDITVIEW_REMOVEANDEXITACTION",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
@@ -411,13 +423,13 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "Update",
+        "actionName" : "GetDraft",
         "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "Update"
+          "id" : "GetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -428,32 +440,6 @@
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraftfrom",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
-        }
-      }, {
-        "actionName" : "GetDraft",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
@@ -479,6 +465,32 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

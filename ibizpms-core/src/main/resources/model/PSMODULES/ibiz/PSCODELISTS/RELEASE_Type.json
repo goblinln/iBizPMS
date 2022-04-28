@@ -1,60 +1,60 @@
 {
+  "codeListTag" : "ibiz__RELEASE_Type",
   "codeListType" : "STATIC",
   "codeName" : "RELEASE_Type",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/RELEASE_Type.json",
   "emptyText" : "未定义",
+  "name" : "运行模式",
   "getPSCodeItems" : [ {
     "codeName" : "Deploypkg",
     "text" : "部署系统组件到仓库",
-    "value" : "DEPLOYPKG",
-    "includeBeginValue" : true
+    "value" : "DEPLOYPKG"
   }, {
     "codeName" : "Packmobapp",
     "text" : "打包移动应用",
-    "value" : "PACKMOBAPP",
-    "includeBeginValue" : true
+    "value" : "PACKMOBAPP"
   }, {
     "codeName" : "Packver",
     "text" : "打包版本",
-    "value" : "PACKVER",
-    "includeBeginValue" : true
+    "value" : "PACKVER"
   }, {
     "codeName" : "Pubcode",
     "text" : "代码发布",
-    "value" : "PUBCODE",
-    "includeBeginValue" : true
+    "value" : "PUBCODE"
   }, {
     "codeName" : "Pubcode2",
     "text" : "代码发布（模板开发）",
-    "value" : "PUBCODE2",
-    "includeBeginValue" : true
+    "value" : "PUBCODE2"
   }, {
     "codeName" : "Startmsapi",
     "text" : "启动微服务",
-    "value" : "STARTMSAPI",
-    "includeBeginValue" : true
+    "value" : "STARTMSAPI"
   }, {
     "codeName" : "Startmsapp",
     "text" : "启动微服务应用",
-    "value" : "STARTMSAPP",
-    "includeBeginValue" : true
+    "value" : "STARTMSAPP"
   }, {
     "codeName" : "Startmsfunc",
     "text" : "启动微服务功能",
-    "value" : "STARTMSFUNC",
-    "includeBeginValue" : true
+    "value" : "STARTMSFUNC"
   }, {
     "codeName" : "Startx",
     "text" : "启动系统",
-    "value" : "STARTX",
-    "includeBeginValue" : true
+    "value" : "STARTX"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

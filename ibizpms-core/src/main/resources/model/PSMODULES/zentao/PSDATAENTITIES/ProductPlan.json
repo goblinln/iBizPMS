@@ -1,4 +1,20 @@
 {
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACMODES/Default.json"
+  } ],
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
@@ -8,14 +24,16 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
-      "codeName" : "CreateInput",
-      "name" : "输入对象",
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateResult",
-      "name" : "返回对象",
+      "name" : "CreateResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1",
@@ -29,14 +47,16 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateInput",
-      "name" : "输入对象",
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateResult",
-      "name" : "返回对象",
+      "name" : "UpdateResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1",
@@ -51,13 +71,15 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveResult",
-      "name" : "返回对象",
+      "name" : "RemoveResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1",
@@ -74,9 +96,6 @@
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDELOGICS/GetBedinANDEnd.json"
       },
-      "cloneParam" : false,
-      "enableBackend" : true,
-      "ignoreException" : false,
       "internalLogic" : true
     } ],
     "codeName" : "Get",
@@ -85,13 +104,19 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
-      "codeName" : "GetInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetResult",
-      "name" : "返回对象",
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -106,9 +131,6 @@
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDELOGICS/GetOldPlanName.json"
       },
-      "cloneParam" : false,
-      "enableBackend" : true,
-      "ignoreException" : false,
       "internalLogic" : true
     } ],
     "codeName" : "GetDraft",
@@ -117,13 +139,19 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftInput",
-      "name" : "输入对象",
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftResult",
-      "name" : "返回对象",
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -135,13 +163,15 @@
     "logicName" : "批关联BUG",
     "name" : "BatchLinkBug",
     "getPSDEActionInput" : {
-      "codeName" : "BatchLinkBugInput",
-      "name" : "输入对象",
+      "name" : "BatchLinkBugInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "BatchLinkBugResult",
-      "name" : "返回对象",
+      "name" : "BatchLinkBugResult",
       "type" : "VOID"
     }
   }, {
@@ -152,13 +182,15 @@
     "logicName" : "批关联需求",
     "name" : "BatchLinkStory",
     "getPSDEActionInput" : {
-      "codeName" : "BatchLinkStoryInput",
-      "name" : "输入对象",
+      "name" : "BatchLinkStoryInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "BatchLinkStoryResult",
-      "name" : "返回对象",
+      "name" : "BatchLinkStoryResult",
       "type" : "VOID"
     }
   }, {
@@ -169,13 +201,15 @@
     "logicName" : "批量解除关联Bug",
     "name" : "BatchUnlinkBug",
     "getPSDEActionInput" : {
-      "codeName" : "BatchUnlinkBugInput",
-      "name" : "输入对象",
+      "name" : "BatchUnlinkBugInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "BatchUnlinkBugResult",
-      "name" : "返回对象",
+      "name" : "BatchUnlinkBugResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -187,13 +221,15 @@
     "logicName" : "批量解除关联需求",
     "name" : "BatchUnlinkStory",
     "getPSDEActionInput" : {
-      "codeName" : "BatchUnlinkStoryInput",
-      "name" : "输入对象",
+      "name" : "BatchUnlinkStoryInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "BatchUnlinkStoryResult",
-      "name" : "返回对象",
+      "name" : "BatchUnlinkStoryResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -205,13 +241,15 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
-      "codeName" : "CheckKeyInput",
-      "name" : "输入对象",
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CheckKeyResult",
-      "name" : "返回对象",
+      "name" : "CheckKeyResult",
       "stdDataType" : 9,
       "type" : "SIMPLE"
     },
@@ -224,13 +262,15 @@
     "logicName" : "EE激活计划",
     "name" : "EeActivePlan",
     "getPSDEActionInput" : {
-      "codeName" : "EeActivePlanInput",
-      "name" : "输入对象",
+      "name" : "EeActivePlanInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "EeActivePlanResult",
-      "name" : "返回对象",
+      "name" : "EeActivePlanResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -242,13 +282,15 @@
     "logicName" : "EE取消计划",
     "name" : "EeCancelPlan",
     "getPSDEActionInput" : {
-      "codeName" : "EeCancelPlanInput",
-      "name" : "输入对象",
+      "name" : "EeCancelPlanInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "EeCancelPlanResult",
-      "name" : "返回对象",
+      "name" : "EeCancelPlanResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -260,13 +302,15 @@
     "logicName" : "EE关闭计划",
     "name" : "EeClosePlan",
     "getPSDEActionInput" : {
-      "codeName" : "EeClosePlanInput",
-      "name" : "输入对象",
+      "name" : "EeClosePlanInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "EeClosePlanResult",
-      "name" : "返回对象",
+      "name" : "EeClosePlanResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -278,13 +322,15 @@
     "logicName" : "EE完成计划",
     "name" : "EeFinishPlan",
     "getPSDEActionInput" : {
-      "codeName" : "EeFinishPlanInput",
-      "name" : "输入对象",
+      "name" : "EeFinishPlanInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "EeFinishPlanResult",
-      "name" : "返回对象",
+      "name" : "EeFinishPlanResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -296,13 +342,15 @@
     "logicName" : "EE暂停计划",
     "name" : "EePausePlan",
     "getPSDEActionInput" : {
-      "codeName" : "EePausePlanInput",
-      "name" : "输入对象",
+      "name" : "EePausePlanInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "EePausePlanResult",
-      "name" : "返回对象",
+      "name" : "EePausePlanResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -314,13 +362,15 @@
     "logicName" : "继续计划",
     "name" : "EeRestartPlan",
     "getPSDEActionInput" : {
-      "codeName" : "EeRestartPlanInput",
-      "name" : "输入对象",
+      "name" : "EeRestartPlanInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "EeRestartPlanResult",
-      "name" : "返回对象",
+      "name" : "EeRestartPlanResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -332,13 +382,15 @@
     "logicName" : "EE开始计划",
     "name" : "EeStartPlan",
     "getPSDEActionInput" : {
-      "codeName" : "EeStartPlanInput",
-      "name" : "输入对象",
+      "name" : "EeStartPlanInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "EeStartPlanResult",
-      "name" : "返回对象",
+      "name" : "EeStartPlanResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -350,13 +402,19 @@
     "logicName" : "获取上一个计划的名称",
     "name" : "GetOldPlanName",
     "getPSDEActionInput" : {
-      "codeName" : "GetOldPlanNameInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetOldPlanNameInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetOldPlanNameResult",
-      "name" : "返回对象",
+      "name" : "GetOldPlanNameResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDELogic" : {
@@ -371,13 +429,19 @@
     "logicName" : "计算计划结束时间",
     "name" : "GetPlanEnd",
     "getPSDEActionInput" : {
-      "codeName" : "GetPlanEndInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetPlanEndInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetPlanEndResult",
-      "name" : "返回对象",
+      "name" : "GetPlanEndResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     }
   }, {
@@ -388,13 +452,15 @@
     "logicName" : "导入计划模板",
     "name" : "ImportPlanTemplet",
     "getPSDEActionInput" : {
-      "codeName" : "ImportPlanTempletInput",
-      "name" : "输入对象",
+      "name" : "ImportPlanTempletInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "ImportPlanTempletResult",
-      "name" : "返回对象",
+      "name" : "ImportPlanTempletResult",
       "type" : "VOID"
     }
   }, {
@@ -405,13 +471,15 @@
     "logicName" : "关联Bug",
     "name" : "LinkBug",
     "getPSDEActionInput" : {
-      "codeName" : "LinkBugInput",
-      "name" : "输入对象",
+      "name" : "LinkBugInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "LinkBugResult",
-      "name" : "返回对象",
+      "name" : "LinkBugResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -423,13 +491,15 @@
     "logicName" : "关联需求",
     "name" : "LinkStory",
     "getPSDEActionInput" : {
-      "codeName" : "LinkStoryInput",
-      "name" : "输入对象",
+      "name" : "LinkStoryInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "LinkStoryResult",
-      "name" : "返回对象",
+      "name" : "LinkStoryResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -441,13 +511,15 @@
     "logicName" : "关联任务",
     "name" : "LinkTask",
     "getPSDEActionInput" : {
-      "codeName" : "LinkTaskInput",
-      "name" : "输入对象",
+      "name" : "LinkTaskInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "LinkTaskResult",
-      "name" : "返回对象",
+      "name" : "LinkTaskResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -459,13 +531,15 @@
     "logicName" : "移动端产品计划计数器",
     "name" : "MobProductPlanCounter",
     "getPSDEActionInput" : {
-      "codeName" : "MobProductPlanCounterInput",
-      "name" : "输入对象",
+      "name" : "MobProductPlanCounterInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "MobProductPlanCounterResult",
-      "name" : "返回对象",
+      "name" : "MobProductPlanCounterResult",
       "type" : "VOID"
     },
     "getPSDELogic" : {
@@ -480,13 +554,15 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
-      "codeName" : "SaveInput",
-      "name" : "输入对象",
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "SaveResult",
-      "name" : "返回对象",
+      "name" : "SaveResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -498,13 +574,15 @@
     "logicName" : "解除关联Bug",
     "name" : "UnlinkBug",
     "getPSDEActionInput" : {
-      "codeName" : "UnlinkBugInput",
-      "name" : "输入对象",
+      "name" : "UnlinkBugInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UnlinkBugResult",
-      "name" : "返回对象",
+      "name" : "UnlinkBugResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
@@ -516,26 +594,185 @@
     "logicName" : "解除关联需求",
     "name" : "UnlinkStory",
     "getPSDEActionInput" : {
-      "codeName" : "UnlinkStoryInput",
-      "name" : "输入对象",
+      "name" : "UnlinkStoryInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UnlinkStoryResult",
-      "name" : "返回对象",
+      "name" : "UnlinkStoryResult",
       "type" : "VOID"
     },
     "userCat" : "CAT1"
   } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`zt_productplan`",
+    "tableName" : "zt_productplan",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }, {
+      "name" : "ID",
+      "codeName" : "Id"
+    }, {
+      "name" : "ORG",
+      "codeName" : "Org"
+    }, {
+      "name" : "BEGIN",
+      "codeName" : "Begin"
+    }, {
+      "name" : "DESC",
+      "codeName" : "Desc"
+    }, {
+      "name" : "END",
+      "codeName" : "End"
+    }, {
+      "name" : "DEPTNAME",
+      "codeName" : "DeptName"
+    }, {
+      "name" : "CREATEBY",
+      "codeName" : "CreateBy"
+    }, {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    }, {
+      "name" : "ORGNAME",
+      "codeName" : "OrgName"
+    }, {
+      "name" : "UPDATEBY",
+      "codeName" : "UpdateBy"
+    }, {
+      "name" : "DELETED",
+      "codeName" : "Deleted"
+    }, {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    }, {
+      "name" : "DEPT",
+      "codeName" : "Dept"
+    }, {
+      "name" : "PRODUCTPLANSN",
+      "codeName" : "Productplansn"
+    }, {
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    }, {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    }, {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json",
+    "name" : "ZT_PRODUCTPLAN",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "zt_productplan"
+    },
+    "tableType" : "MAIN"
+  } ],
+  "getAllPSDEDataExports" : [ {
+    "codeName" : "DataExport",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAEXPS/DataExport.json",
+    "maxRowCount" : 1000,
+    "name" : "数据导出",
+    "getPSDEDataExportItems" : [ {
+      "caption" : "编号",
+      "format" : "%1$s",
+      "name" : "productplansn",
+      "getPSDEField" : {
+        "name" : "PRODUCTPLANSN",
+        "codeName" : "Productplansn"
+      }
+    }, {
+      "caption" : "编号",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "caption" : "名称",
+      "format" : "%1$s",
+      "name" : "title",
+      "getPSDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "caption" : "开始日期",
+      "format" : "%1$s",
+      "name" : "beginstr",
+      "getPSDEField" : {
+        "name" : "BEGINSTR",
+        "codeName" : "Beginstr"
+      }
+    }, {
+      "caption" : "开始日期",
+      "format" : "%1$s",
+      "name" : "begin",
+      "getPSDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      }
+    }, {
+      "caption" : "结束日期",
+      "format" : "%1$s",
+      "name" : "end",
+      "getPSDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      }
+    }, {
+      "caption" : "结束日期",
+      "format" : "%1$s",
+      "name" : "endstr",
+      "getPSDEField" : {
+        "name" : "ENDSTR",
+        "codeName" : "Endstr"
+      }
+    }, {
+      "caption" : "需求数",
+      "format" : "%1$s",
+      "name" : "storycnt",
+      "getPSDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      }
+    }, {
+      "caption" : "bug数",
+      "format" : "%1$s",
+      "name" : "bugcnt",
+      "getPSDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      }
+    }, {
+      "caption" : "状态",
+      "format" : "%1$s",
+      "name" : "statuss",
+      "getPSDEField" : {
+        "name" : "STATUSS",
+        "codeName" : "Statuss"
+      }
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/ChildPlan/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ChildPlan",
     "logicName" : "子计划",
@@ -548,20 +785,27 @@
       "joinType" : "MAIN",
       "name" : "ZT_PRODUCTPLAN"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ChildPlanInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ChildPlanResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "(t1.`product` =#{srf.datacontext.product} or t1.`product` =#{srf.datacontext.products} or t1.`id` = #{srf.datacontext.plan})",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/CurProductPlan/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "CurProductPlan",
     "logicName" : "当前产品计划",
@@ -574,16 +818,27 @@
       "joinType" : "MAIN",
       "name" : "ZT_PRODUCTPLAN"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "CurProductPlanInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "CurProductPlanResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
@@ -596,20 +851,27 @@
       "joinType" : "MAIN",
       "name" : "ZT_PRODUCTPLAN"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "( ( t1.`PARENT` <= 0 ) )",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/DefaultParent/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "DefaultParent",
     "logicName" : "默认查询",
@@ -641,20 +903,27 @@
           } ]
         } ]
       }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultParentInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultParentResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
     }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "( ( t1.`PRODUCT` = ${srfdatacontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_PRODUCTPLAN\"}')}  OR  t1.`PRODUCT` = ${srfdatacontext('products','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_PRODUCTPLAN\"}')} ) )",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/GetList/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "GetList",
     "logicName" : "获取产品计划列表",
@@ -697,11 +966,27 @@
           } ]
         } ]
       }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "GetListInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "GetListResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
     }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/PlanCodeList/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "PlanCodeList",
     "logicName" : "计划（代码表）",
@@ -714,20 +999,27 @@
       "joinType" : "MAIN",
       "name" : "ZT_PRODUCTPLAN"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "PlanCodeListInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "PlanCodeListResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "( ( t1.`PARENT` <= 0 ) )",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/PlanTasks/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "PlanTasks",
     "logicName" : "项目计划任务（项目管理-项目计划）",
@@ -740,16 +1032,27 @@
       "joinType" : "MAIN",
       "name" : "PMS_PRODUCTPLAN"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "PlanTasksInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "PlanTasksResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/ProductQuery/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProductQuery",
     "logicName" : "产品默认查询",
@@ -762,20 +1065,27 @@
       "joinType" : "MAIN",
       "name" : "ZT_PRODUCTPLAN"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProductQueryInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProductQueryResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "( t1.`PRODUCT` = ${srfwebcontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_PRODUCTPLAN\"}')} )",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/ProjectApp/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProjectApp",
     "logicName" : "项目立项",
@@ -803,26 +1113,41 @@
           "getPSVARTypeId" : "WEBCONTEXT"
         } ]
       }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProjectAppInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProjectAppResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
     }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0' and ( t21.`PROJECT` = #{srf.datacontext.srfparentkey}\n   or t1.parent in ( \tselect  t.plan from zt_projectproduct t where t.project = #{srf.datacontext.srfparentkey} and t.plan <> 0\t) \n )",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/ProjectPlan/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProjectPlan",
     "logicName" : "项目计划列表",
     "name" : "ProjectPlan",
     "getPSDEDQMain" : {
       "getChildPSDEDQJoins" : [ {
+        "getDERPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
+        },
+        "getJoinPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDERS/DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCTPLAN_PLAN.json"
+        },
         "getJoinPSDataEntity" : {
           "modelref" : true,
           "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
@@ -853,20 +1178,27 @@
       "joinType" : "MAIN",
       "name" : "ZT_PRODUCTPLAN"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProjectPlanInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProjectPlanResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.parent <= '0'",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/RootPlan/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "RootPlan",
     "logicName" : "根计划",
@@ -879,20 +1211,27 @@
       "joinType" : "MAIN",
       "name" : "ZT_PRODUCTPLAN"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "RootPlanInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "RootPlanResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "( t1.product in (select t.product from zt_projectproduct t where t.project =#{srf.webcontext.project} ) )",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/TaskPlan/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "TaskPlan",
     "logicName" : "任务计划",
@@ -910,19 +1249,31 @@
         "name" : "连接条件",
         "getPSDEDQConditions" : [ {
           "condType" : "CUSTOM",
+          "condition" : "t1.product in (select t.product from zt_projectproduct t where t.project =#{srf.webcontext.project} )",
           "name" : "自定义条件"
         } ]
       }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "TaskPlanInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "TaskPlanResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
     }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
@@ -934,7 +1285,24 @@
       },
       "joinType" : "MAIN",
       "name" : "ZT_PRODUCTPLAN"
-    }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ChildPlan",
@@ -945,13 +1313,19 @@
       "id" : "ChildPlan"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ChildPlanInput",
-      "name" : "输入对象",
+      "name" : "ChildPlanInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ChildPlanResult",
-      "name" : "返回对象",
+      "name" : "ChildPlanResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -965,13 +1339,19 @@
       "id" : "GetList"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "CurProductPlanInput",
-      "name" : "输入对象",
+      "name" : "CurProductPlanInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "CurProductPlanResult",
-      "name" : "返回对象",
+      "name" : "CurProductPlanResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -985,13 +1365,19 @@
       "id" : "CurProductPlan"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "CurProductPlanStoryInput",
-      "name" : "输入对象",
+      "name" : "CurProductPlanStoryInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "CurProductPlanStoryResult",
-      "name" : "返回对象",
+      "name" : "CurProductPlanStoryResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -1010,13 +1396,19 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultInput",
-      "name" : "输入对象",
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultResult",
-      "name" : "返回对象",
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "defaultMode" : true,
@@ -1031,13 +1423,19 @@
       "id" : "DefaultParent"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultParentInput",
-      "name" : "输入对象",
+      "name" : "DefaultParentInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultParentResult",
-      "name" : "返回对象",
+      "name" : "DefaultParentResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -1051,13 +1449,19 @@
       "id" : "PlanCodeList"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "PlanCodeListInput",
-      "name" : "输入对象",
+      "name" : "PlanCodeListInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "PlanCodeListResult",
-      "name" : "返回对象",
+      "name" : "PlanCodeListResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -1071,13 +1475,19 @@
       "id" : "PlanTasks"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "PlanTasksInput",
-      "name" : "输入对象",
+      "name" : "PlanTasksInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "PlanTasksResult",
-      "name" : "返回对象",
+      "name" : "PlanTasksResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -1091,13 +1501,19 @@
       "id" : "ProductQuery"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProductQueryInput",
-      "name" : "输入对象",
+      "name" : "ProductQueryInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProductQueryResult",
-      "name" : "返回对象",
+      "name" : "ProductQueryResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -1111,13 +1527,19 @@
       "id" : "ProjectApp"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProjectAppInput",
-      "name" : "输入对象",
+      "name" : "ProjectAppInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProjectAppResult",
-      "name" : "返回对象",
+      "name" : "ProjectAppResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -1131,13 +1553,19 @@
       "id" : "ProjectPlan"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProjectPlanInput",
-      "name" : "输入对象",
+      "name" : "ProjectPlanInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProjectPlanResult",
-      "name" : "返回对象",
+      "name" : "ProjectPlanResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -1151,13 +1579,19 @@
       "id" : "RootPlan"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "RootPlanInput",
-      "name" : "输入对象",
+      "name" : "RootPlanInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "RootPlanResult",
-      "name" : "返回对象",
+      "name" : "RootPlanResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -1171,19 +1605,48 @@
       "id" : "TaskPlan"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "TaskPlanInput",
-      "name" : "输入对象",
+      "name" : "TaskPlanInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "TaskPlanResult",
-      "name" : "返回对象",
+      "name" : "TaskPlanResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductPlanDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
     "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TASKSCNT][总任务数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TASKSCNT][总任务数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TASKSCNT][总任务数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TASKSCNT][总任务数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1191,10 +1654,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKSCNT",
-        "codeName" : "Taskscnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1210,6 +1669,7 @@
     "name" : "TASKSCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1220,6 +1680,29 @@
       "queryCodeExp" : "(select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )",
       "standardColumnName" : "`ESTIMATECNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ESTIMATECNT][工时数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[ESTIMATECNT][工时数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ESTIMATECNT][工时数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[ESTIMATECNT][工时数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1227,10 +1710,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ESTIMATECNT",
-        "codeName" : "Estimatecnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1241,14 +1720,41 @@
     "codeName" : "Estimatecnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "(select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )",
     "importOrder" : 1000,
     "logicName" : "工时数",
     "name" : "ESTIMATECNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[COMMENT][备注]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "HTMLEDITOR",
+        "name" : "[COMMENT][备注]",
+        "stringLength" : 1048576,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[COMMENT][备注]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "HTMLEDITOR",
+        "name" : "[COMMENT][备注]移动端默认",
+        "stringLength" : 1048576,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1268,10 +1774,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[1048576]"
       },
-      "getPSDEField" : {
-        "name" : "COMMENT",
-        "codeName" : "Comment"
-      },
       "ruleInfo" : "内容长度必须小于等于[1048576]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1288,6 +1790,7 @@
     "stdDataType" : 21,
     "stringLength" : 1048576,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "queryColumn" : false,
     "uIAssistDEField" : true
@@ -1304,6 +1807,57 @@
       "name" : "N_TITLE_LIKE",
       "stdDataType" : 25,
       "valueOP" : "LIKE"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto35",
+      "name" : "[TITLE][title]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto35",
+        "editorType" : "TEXTBOX",
+        "name" : "[TITLE][title]",
+        "stringLength" : 90,
+        "uIMode" : "CUSTOM",
+        "allowEmpty" : false
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "默认",
+        "stringLength" : 90,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "Auto894",
+      "name" : "[TITLE][名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto894",
+        "editorType" : "TEXTBOX",
+        "name" : "[TITLE][名称]",
+        "stringLength" : 90,
+        "uIMode" : "CUSTOM",
+        "allowEmpty" : false
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "移动端默认",
+        "stringLength" : 90,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1324,10 +1878,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[90]"
       },
-      "getPSDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      },
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1341,6 +1891,14 @@
     "length" : 90,
     "logicName" : "名称",
     "name" : "TITLE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "TITLE"
+    },
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s",
@@ -1348,6 +1906,29 @@
     "enableQuickSearch" : true,
     "majorDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DELAYTASKSCNT][延迟任务数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DELAYTASKSCNT][延迟任务数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DELAYTASKSCNT][延迟任务数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DELAYTASKSCNT][延迟任务数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1355,10 +1936,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DELAYTASKSCNT",
-        "codeName" : "DelayTaskscnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1374,9 +1951,35 @@
     "name" : "DELAYTASKSCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[OLDTITLE][上一次计划名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[OLDTITLE][上一次计划名称]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[OLDTITLE][上一次计划名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[OLDTITLE][上一次计划名称]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1396,10 +1999,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "OLDTITLE",
-        "codeName" : "Oldtitle"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1416,6 +2015,7 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1432,6 +2032,53 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "默认",
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Auto934",
+      "name" : "[ID][编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto934",
+        "editorType" : "TEXTBOX",
+        "name" : "[ID][编号]",
+        "uIMode" : "CUSTOM",
+        "allowEmpty" : false
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Auto161",
+      "name" : "[ID][id]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto161",
+        "editorType" : "TEXTBOX",
+        "name" : "[ID][id]",
+        "uIMode" : "CUSTOM",
+        "allowEmpty" : false
+      },
+      "type" : "CUSTOM"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1439,10 +2086,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1457,6 +2100,14 @@
     "length" : 8,
     "logicName" : "编号",
     "name" : "ID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ID"
+    },
     "getPSSysSequence" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProductPlanSeq.json"
@@ -1477,6 +2128,31 @@
       "queryCodeExp" : "t1.`ORG`",
       "standardColumnName" : "`ORG`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ORG][归属组织]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ORG][归属组织]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ORG][归属组织]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ORG][归属组织]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1496,10 +2172,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "ORG",
-        "codeName" : "Org"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1513,6 +2185,14 @@
     "length" : 100,
     "logicName" : "归属组织",
     "name" : "ORG",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ORG"
+    },
     "predefinedType" : "ORGID",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -1531,6 +2211,53 @@
       "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto180",
+      "name" : "[BEGIN][begin]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto180",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[BEGIN][begin]",
+        "uIMode" : "CUSTOM",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Auto943",
+      "name" : "[BEGIN][开始日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto943",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[BEGIN][开始日期]",
+        "uIMode" : "CUSTOM",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "默认",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1538,10 +2265,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1555,6 +2278,14 @@
     "importOrder" : 1000,
     "logicName" : "开始日期",
     "name" : "BEGIN",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "BEGIN"
+    },
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td"
   }, {
@@ -1570,6 +2301,31 @@
       "name" : "N_STATUSS_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[STATUSS][状态]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[STATUSS][状态]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[STATUSS][状态]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[STATUSS][状态]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1590,10 +2346,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "STATUSS",
-        "codeName" : "Statuss"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1608,6 +2360,7 @@
     "dEFType" : 2,
     "dEMSFieldMode" : "STATE1",
     "dataType" : "TEXT",
+    "formulaFormat" : "(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end)",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "状态",
@@ -1615,6 +2368,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1625,6 +2379,53 @@
       "queryCodeExp" : "t1.`DESC`",
       "standardColumnName" : "`DESC`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto959",
+      "name" : "[DESC][描述]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto959",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[DESC][描述]",
+        "stringLength" : 65535,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXTAREA",
+        "name" : "移动端默认",
+        "stringLength" : 65535,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Auto224",
+      "name" : "[DESC][desc]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto224",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[DESC][desc]",
+        "stringLength" : 65535,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTAREA_10",
+        "name" : "默认",
+        "stringLength" : 65535,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1645,10 +2446,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[65535]"
       },
-      "getPSDEField" : {
-        "name" : "DESC",
-        "codeName" : "Desc"
-      },
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1663,6 +2460,14 @@
     "length" : 65535,
     "logicName" : "描述",
     "name" : "DESC",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DESC"
+    },
     "stdDataType" : 21,
     "stringLength" : 65535,
     "valueFormat" : "%1$s",
@@ -1681,6 +2486,53 @@
       "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "默认",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "Auto964",
+      "name" : "[END][结束日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto964",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[END][结束日期]",
+        "uIMode" : "CUSTOM",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Auto242",
+      "name" : "[END][end]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto242",
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "[END][end]",
+        "uIMode" : "CUSTOM",
+        "valueFormat" : "%1$tY-%1$tm-%1$td"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1688,10 +2540,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "END",
-        "codeName" : "End"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1705,6 +2553,14 @@
     "importOrder" : 1000,
     "logicName" : "结束日期",
     "name" : "END",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "END"
+    },
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td"
   }, {
@@ -1714,6 +2570,31 @@
       "name" : "DELAY",
       "queryCodeExp" : "case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end",
       "standardColumnName" : "`DELAY`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DELAY][延期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[DELAY][延期]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DELAY][延期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[DELAY][延期]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1734,10 +2615,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "DELAY",
-        "codeName" : "Delay"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1751,6 +2628,7 @@
     },
     "dEFType" : 2,
     "dataType" : "TEXT",
+    "formulaFormat" : "case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "延期",
@@ -1758,6 +2636,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1767,6 +2646,31 @@
       "name" : "DURATION",
       "queryCodeExp" : "(to_Days(t1.`END`) - to_Days(t1.`BEGIN`))",
       "standardColumnName" : "`DURATION`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DURATION][持续时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[DURATION][持续时间]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DURATION][持续时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[DURATION][持续时间]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1787,10 +2691,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "DURATION",
-        "codeName" : "Duration"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1804,6 +2704,8 @@
     },
     "dEFType" : 2,
     "dataType" : "TEXT",
+    "formulaColumns" : "end;begin",
+    "formulaFormat" : "(to_Days(%1$s) - to_Days(%2$s))",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "持续时间",
@@ -1811,6 +2713,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1820,6 +2723,31 @@
       "name" : "BEGINSTR",
       "queryCodeExp" : "(case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end)",
       "standardColumnName" : "`BEGINSTR`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[BEGINSTR][开始日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[BEGINSTR][开始日期]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[BEGINSTR][开始日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[BEGINSTR][开始日期]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1840,10 +2768,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "BEGINSTR",
-        "codeName" : "Beginstr"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1857,6 +2781,7 @@
     },
     "dEFType" : 2,
     "dataType" : "TEXT",
+    "formulaFormat" : "(case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end)",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "开始日期",
@@ -1864,9 +2789,35 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[LEFTESTIMATE][剩余工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[LEFTESTIMATE][剩余工时]",
+        "precision" : 2,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[LEFTESTIMATE][剩余工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[LEFTESTIMATE][剩余工时]移动端默认",
+        "precision" : 2,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1874,10 +2825,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "LEFTESTIMATE",
-        "codeName" : "Leftestimate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1894,6 +2841,7 @@
     "precision" : 2,
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1902,6 +2850,33 @@
       "name" : "N_PLANTEMPLET_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PLANTEMPLET][计划模板]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[PLANTEMPLET][计划模板]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PLANTEMPLET][计划模板]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[PLANTEMPLET][计划模板]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1921,10 +2896,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "PLANTEMPLET",
-        "codeName" : "Plantemplet"
       },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
@@ -1946,6 +2917,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1955,6 +2927,31 @@
       "name" : "DEPTNAME",
       "queryCodeExp" : "t1.`DEPTNAME`",
       "standardColumnName" : "`DEPTNAME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DEPTNAME][归属部门名]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DEPTNAME][归属部门名]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DEPTNAME][归属部门名]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DEPTNAME][归属部门名]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1975,10 +2972,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "DEPTNAME",
-        "codeName" : "DeptName"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1992,11 +2985,42 @@
     "length" : 100,
     "logicName" : "归属部门名",
     "name" : "DEPTNAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DEPTNAME"
+    },
     "predefinedType" : "ORGSECTORNAME",
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UNFINISHEDTASKSCNT][未完成任务数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[UNFINISHEDTASKSCNT][未完成任务数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UNFINISHEDTASKSCNT][未完成任务数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[UNFINISHEDTASKSCNT][未完成任务数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2004,10 +3028,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "UNFINISHEDTASKSCNT",
-        "codeName" : "UnFinishedTaskscnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2023,6 +3043,7 @@
     "name" : "UNFINISHEDTASKSCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -2032,6 +3053,31 @@
       "name" : "ENDSTR",
       "queryCodeExp" : "(case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end)",
       "standardColumnName" : "`ENDSTR`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ENDSTR][结束日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[ENDSTR][结束日期]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ENDSTR][结束日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[ENDSTR][结束日期]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2052,10 +3098,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "ENDSTR",
-        "codeName" : "Endstr"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2069,6 +3111,7 @@
     },
     "dEFType" : 2,
     "dataType" : "TEXT",
+    "formulaFormat" : "(case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end)",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "结束日期",
@@ -2076,6 +3119,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2085,6 +3129,31 @@
       "name" : "CREATEBY",
       "queryCodeExp" : "t1.`CREATEBY`",
       "standardColumnName" : "`CREATEBY`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CREATEBY][由谁创建]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CREATEBY][由谁创建]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEBY][由谁创建]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CREATEBY][由谁创建]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2105,10 +3174,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "CREATEBY",
-        "codeName" : "CreateBy"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2126,6 +3191,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEBY"
+    },
     "predefinedType" : "CREATEMANNAME",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -2139,6 +3212,31 @@
       "queryCodeExp" : "t1.`STATUS`",
       "standardColumnName" : "`STATUS`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[STATUS][任务状态]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[STATUS][任务状态]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[STATUS][任务状态]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[STATUS][任务状态]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2159,10 +3257,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2181,6 +3275,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Task__status.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "STATUS"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
@@ -2197,6 +3299,31 @@
       "name" : "N_ISEXPIRED_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ISEXPIRED][是否过期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[ISEXPIRED][是否过期]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ISEXPIRED][是否过期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[ISEXPIRED][是否过期]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2217,10 +3344,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "ISEXPIRED",
-        "codeName" : "Isexpired"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2234,6 +3357,7 @@
     },
     "dEFType" : 2,
     "dataType" : "YESNO",
+    "formulaFormat" : "(case when t1.`end` > now() then '0' else '1' end)",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "是否过期",
@@ -2241,6 +3365,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2250,6 +3375,31 @@
       "name" : "ORGNAME",
       "queryCodeExp" : "t1.`ORGNAME`",
       "standardColumnName" : "`ORGNAME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ORGNAME][归属组织名]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ORGNAME][归属组织名]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ORGNAME][归属组织名]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ORGNAME][归属组织名]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2270,10 +3420,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "ORGNAME",
-        "codeName" : "OrgName"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2287,6 +3433,14 @@
     "length" : 100,
     "logicName" : "归属组织名",
     "name" : "ORGNAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ORGNAME"
+    },
     "predefinedType" : "ORGNAME",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -2298,6 +3452,31 @@
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
       "standardColumnName" : "`UPDATEBY`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEBY][由谁更新]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[UPDATEBY][由谁更新]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEBY][由谁更新]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[UPDATEBY][由谁更新]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2318,10 +3497,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "UPDATEBY",
-        "codeName" : "UpdateBy"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2339,6 +3514,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEBY"
+    },
     "predefinedType" : "UPDATEMANNAME",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -2352,6 +3535,57 @@
       "queryCodeExp" : "t1.`DELETED`",
       "standardColumnName" : "`DELETED`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto1079",
+      "name" : "[DELETED][已删除]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto1079",
+        "editorType" : "TEXTBOX",
+        "name" : "[DELETED][已删除]",
+        "stringLength" : 1,
+        "uIMode" : "CUSTOM",
+        "allowEmpty" : false
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "默认",
+        "stringLength" : 1,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "Auto582",
+      "name" : "[DELETED][逻辑删除标志]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto582",
+        "editorType" : "TEXTBOX",
+        "name" : "[DELETED][逻辑删除标志]",
+        "stringLength" : 1,
+        "uIMode" : "CUSTOM",
+        "allowEmpty" : false
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "移动端默认",
+        "stringLength" : 1,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2372,10 +3606,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[1]"
       },
-      "getPSDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
-      },
       "ruleInfo" : "内容长度必须小于等于[1]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2390,14 +3620,48 @@
     "length" : 1,
     "logicName" : "已删除",
     "name" : "DELETED",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DELETED"
+    },
     "predefinedType" : "LOGICVALID",
     "stdDataType" : 25,
     "stringLength" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
     "enableUICreate" : false,
-    "enableUIModify" : false
+    "enableUIModify" : false,
+    "systemReserver" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CONSUMEDESTIMATE][消耗工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CONSUMEDESTIMATE][消耗工时]",
+        "precision" : 2,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CONSUMEDESTIMATE][消耗工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CONSUMEDESTIMATE][消耗工时]移动端默认",
+        "precision" : 2,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2405,10 +3669,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CONSUMEDESTIMATE",
-        "codeName" : "Consumedestimate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2425,6 +3685,7 @@
     "precision" : 2,
     "stdDataType" : 7,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -2435,6 +3696,53 @@
       "queryCodeExp" : "t1.`ORDER`",
       "standardColumnName" : "`ORDER`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto1084",
+      "name" : "[ORDER][排序]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto1084",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[ORDER][排序]",
+        "stringLength" : 65535,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXTAREA",
+        "name" : "移动端默认",
+        "stringLength" : 65535,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Auto599",
+      "name" : "[ORDER][order]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto599",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[ORDER][order]",
+        "stringLength" : 65535,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTAREA_10",
+        "name" : "默认",
+        "stringLength" : 65535,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2455,10 +3763,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[65535]"
       },
-      "getPSDEField" : {
-        "name" : "ORDER",
-        "codeName" : "Order"
-      },
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2473,11 +3777,44 @@
     "length" : 65535,
     "logicName" : "排序",
     "name" : "ORDER",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ORDER"
+    },
     "stdDataType" : 21,
     "stringLength" : 65535,
     "valueFormat" : "%1$s",
     "queryColumn" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ISLEAF][叶子节点]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[ISLEAF][叶子节点]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ISLEAF][叶子节点]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[ISLEAF][叶子节点]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2485,10 +3822,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ISLEAF",
-        "codeName" : "IsLeaf"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2504,6 +3837,7 @@
     "name" : "ISLEAF",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -2519,6 +3853,31 @@
       "name" : "N_FUTURE_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[FUTURE][待定]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[FUTURE][待定]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[FUTURE][待定]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[FUTURE][待定]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2539,10 +3898,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "FUTURE",
-        "codeName" : "Future"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2556,6 +3911,7 @@
     },
     "dEFType" : 2,
     "dataType" : "SSCODELIST",
+    "formulaFormat" : "(case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end)",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "待定",
@@ -2567,6 +3923,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2576,6 +3933,31 @@
       "name" : "DEPT",
       "queryCodeExp" : "t1.`DEPT`",
       "standardColumnName" : "`DEPT`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DEPT][归属部门]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DEPT][归属部门]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DEPT][归属部门]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DEPT][归属部门]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2596,10 +3978,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "DEPT",
-        "codeName" : "Dept"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2613,6 +3991,14 @@
     "length" : 100,
     "logicName" : "归属部门",
     "name" : "DEPT",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DEPT"
+    },
     "predefinedType" : "ORGSECTORID",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -2625,6 +4011,29 @@
       "queryCodeExp" : "((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ))",
       "standardColumnName" : "`STORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[STORYCNT][需求数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[STORYCNT][需求数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[STORYCNT][需求数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[STORYCNT][需求数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2632,10 +4041,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "STORYCNT",
-        "codeName" : "StoryCnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2646,11 +4051,13 @@
     "codeName" : "StoryCnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ))",
     "importOrder" : 1000,
     "logicName" : "需求数",
     "name" : "STORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2659,6 +4066,33 @@
       "name" : "N_DELTA_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DELTA][周期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[DELTA][周期]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DELTA][周期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[DELTA][周期]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2678,10 +4112,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "DELTA",
-        "codeName" : "Delta"
       },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
@@ -2703,6 +4133,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -2713,6 +4144,29 @@
       "queryCodeExp" : "t1.`PRODUCTPLANSN`",
       "standardColumnName" : "`PRODUCTPLANSN`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PRODUCTPLANSN][产品计划编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PRODUCTPLANSN][产品计划编号]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PRODUCTPLANSN][产品计划编号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PRODUCTPLANSN][产品计划编号]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2720,10 +4174,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PRODUCTPLANSN",
-        "codeName" : "Productplansn"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2738,10 +4188,41 @@
     "length" : 20,
     "logicName" : "产品计划编号",
     "name" : "PRODUCTPLANSN",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "PRODUCTPLANSN"
+    },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "enableQuickSearch" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[FINISHEDTASKSCNT][完成任务数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FINISHEDTASKSCNT][完成任务数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[FINISHEDTASKSCNT][完成任务数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FINISHEDTASKSCNT][完成任务数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2749,10 +4230,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FINISHEDTASKSCNT",
-        "codeName" : "FinishedTaskscnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2768,6 +4245,7 @@
     "name" : "FINISHEDTASKSCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -2778,6 +4256,29 @@
       "queryCodeExp" : "((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0'))",
       "standardColumnName" : "`BUGCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[BUGCNT][bug数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[BUGCNT][bug数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[BUGCNT][bug数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[BUGCNT][bug数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2785,10 +4286,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BUGCNT",
-        "codeName" : "BugCnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2799,11 +4296,13 @@
     "codeName" : "BugCnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0'))",
     "importOrder" : 1000,
     "logicName" : "bug数",
     "name" : "BUGCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2825,6 +4324,97 @@
       "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto1051",
+      "name" : "[PARENTNAME][父计划名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto1051",
+        "editorType" : "PICKER",
+        "name" : "[PARENTNAME][父计划名称]",
+        "refLinkPSDEViewCodeName" : "RedirectView",
+        "refMPickupPSDEViewCodeName" : "MPickupView",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+        },
+        "refPickupPSDEViewCodeName" : "PickupView",
+        "stringLength" : 90,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBPICKER",
+        "name" : "移动端默认",
+        "refLinkPSDEViewCodeName" : "RedirectView",
+        "refMPickupPSDEViewCodeName" : "MPickupView",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+        },
+        "refPickupPSDEViewCodeName" : "PickupView",
+        "stringLength" : 90,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "PICKER",
+        "name" : "默认",
+        "refLinkPSDEViewCodeName" : "RedirectView",
+        "refMPickupPSDEViewCodeName" : "MPickupView",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+        },
+        "refPickupPSDEViewCodeName" : "PickupView",
+        "stringLength" : 90,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "Auto485",
+      "name" : "[PARENTNAME][parent]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto485",
+        "editorType" : "PICKER",
+        "name" : "[PARENTNAME][parent]",
+        "refLinkPSDEViewCodeName" : "RedirectView",
+        "refMPickupPSDEViewCodeName" : "MPickupView",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+        },
+        "refPickupPSDEViewCodeName" : "PickupView",
+        "stringLength" : 90,
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2844,10 +4434,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[90]"
       },
-      "getPSDEField" : {
-        "name" : "PARENTNAME",
-        "codeName" : "ParentName"
-      },
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2865,9 +4451,21 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N__ZT_PRODUCTPLAN__ZT_PRODUCTPLAN__PARENT.json"
     },
+    "getRealPSDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
+    },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
     },
     "stdDataType" : 25,
     "stringLength" : 90,
@@ -2876,6 +4474,7 @@
       "name" : "PARENT",
       "codeName" : "Parent"
     },
+    "viewLevel" : 0,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2893,6 +4492,51 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[BRANCH][编号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "HIDDEN",
+        "name" : "[BRANCH][编号]移动端默认",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+        },
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[BRANCH][编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "HIDDEN",
+        "name" : "[BRANCH][编号]",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+        },
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "Auto976",
+      "name" : "[BRANCH][平台/分支]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto976",
+        "editorType" : "HIDDEN",
+        "name" : "[BRANCH][平台/分支]",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+        },
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2900,10 +4544,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BRANCH",
-        "codeName" : "Branch"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2919,13 +4559,33 @@
     "length" : 8,
     "logicName" : "平台/分支",
     "name" : "BRANCH",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_BRANCH_BRANCH.json"
     },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "BRANCH"
+    },
+    "getRealPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
+    },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -2955,6 +4615,65 @@
       "stdDataType" : 1,
       "valueOP" : "LTANDEQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Auto1047",
+      "name" : "[PARENT][父计划]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto1047",
+        "editorType" : "HIDDEN",
+        "name" : "[PARENT][父计划]",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+        },
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "HIDDEN",
+        "name" : "移动端默认",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+        },
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "HIDDEN",
+        "name" : "默认",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+        },
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "Auto474",
+      "name" : "[PARENT][parent]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto474",
+        "editorType" : "HIDDEN",
+        "name" : "[PARENT][parent]",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+        },
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2962,10 +4681,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2981,17 +4696,37 @@
     "length" : 9,
     "logicName" : "父计划",
     "name" : "PARENT",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N__ZT_PRODUCTPLAN__ZT_PRODUCTPLAN__PARENT.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "PARENT"
     },
     "getPSSysTranslator" : {
       "modelref" : true,
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
+    "getRealPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
+    },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3012,6 +4747,51 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PRODUCT][id]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "HIDDEN",
+        "name" : "[PRODUCT][id]移动端默认",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+        },
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Auto1113",
+      "name" : "[PRODUCT][产品]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Auto1113",
+        "editorType" : "HIDDEN",
+        "name" : "[PRODUCT][产品]",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+        },
+        "uIMode" : "CUSTOM"
+      },
+      "type" : "CUSTOM"
+    }, {
+      "codeName" : "Default",
+      "name" : "[PRODUCT][id]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "HIDDEN",
+        "name" : "[PRODUCT][id]",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+        },
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3019,10 +4799,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -3038,13 +4814,33 @@
     "length" : 8,
     "logicName" : "产品",
     "name" : "PRODUCT",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDETABLES/Table.json"
+    },
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
     },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "PRODUCT"
+    },
+    "getRealPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
+    },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -3134,30 +4930,6 @@
     "logicName" : "获取开始日期和结束日期",
     "name" : "获取开始日期和结束日期",
     "getPSDELogicNodes" : [ {
-      "codeName" : "Prepareparam1",
-      "logicNodeType" : "PREPAREPARAM",
-      "name" : "设置待定",
-      "getPSDELogicNodeParams" : [ {
-        "dstFieldName" : "BEGIN",
-        "getDstPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "name" : "空值（NULL） ==> Default[BEGIN]",
-        "paramAction" : "SETPARAMVALUE",
-        "srcValueType" : "NULLVALUE"
-      }, {
-        "dstFieldName" : "END",
-        "getDstPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "name" : "空值（NULL） ==> Default[END]",
-        "paramAction" : "SETPARAMVALUE",
-        "srcValueType" : "NULLVALUE"
-      } ],
-      "parallelOutput" : true
-    }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
@@ -3186,19 +4958,44 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Prepareparam1",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "设置待定",
+      "getPSDELogicNodeParams" : [ {
+        "dstFieldName" : "BEGIN",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
         },
-        "defaultLink" : false
+        "name" : "空值（NULL） ==> Default[BEGIN]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValueType" : "NULLVALUE"
+      }, {
+        "dstFieldName" : "END",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "空值（NULL） ==> Default[END]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValueType" : "NULLVALUE"
       } ],
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -3225,23 +5022,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
-      } ],
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Prepareparam1",
-      "logicNodeType" : "PREPAREPARAM",
-      "name" : "重置主键",
-      "getPSDELogicNodeParams" : [ {
-        "dstFieldName" : "ID",
-        "getDstPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "name" : "空值（NULL） ==> Default[ID]",
-        "paramAction" : "SETPARAMVALUE",
-        "srcValueType" : "NULLVALUE"
+        }
       } ],
       "parallelOutput" : true
     }, {
@@ -3261,8 +5042,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall1"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[PRODUCT]",
@@ -3322,15 +5102,32 @@
       "sql" : "select concat('(上次计划: ', t.`TITLE`, ')')  as oldtitle from zt_productplan t where t.product = ? and ((t.parent = ? and ? is not null and ? <> 0) or ((? is null or ? = 0) and t.parent <= 0)) order by t.id desc LIMIT 0,1",
       "fillDstLogicParam" : true,
       "parallelOutput" : true
+    }, {
+      "codeName" : "Prepareparam1",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "重置主键",
+      "getPSDELogicNodeParams" : [ {
+        "dstFieldName" : "ID",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "空值（NULL） ==> Default[ID]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValueType" : "NULLVALUE"
+      } ],
+      "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -3357,8 +5154,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
+        }
       } ],
       "parallelOutput" : true
     }, {
@@ -3399,8 +5195,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall1"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ID]",
@@ -3418,12 +5213,14 @@
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -3991,6 +5788,681 @@
     "autoDEDataSetMap" : false,
     "autoDEFieldMap" : false
   } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "ProductPlanDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "开始日期",
+      "name" : "Begin",
+      "getPSDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "开始日期",
+      "name" : "Beginstr",
+      "getPSDEField" : {
+        "name" : "BEGINSTR",
+        "codeName" : "Beginstr"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "平台/分支",
+      "name" : "Branch",
+      "getPSDEField" : {
+        "name" : "BRANCH",
+        "codeName" : "Branch"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "bug数",
+      "name" : "BugCnt",
+      "getPSDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "备注",
+      "name" : "Comment",
+      "getPSDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "stringLength" : 1048576,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "消耗工时",
+      "name" : "Consumedestimate",
+      "getPSDEField" : {
+        "name" : "CONSUMEDESTIMATE",
+        "codeName" : "Consumedestimate"
+      },
+      "precision" : 2,
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "由谁创建",
+      "name" : "CreateBy",
+      "getPSDEField" : {
+        "name" : "CREATEBY",
+        "codeName" : "CreateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "readOnly" : true
+    }, {
+      "logicName" : "延期",
+      "name" : "Delay",
+      "getPSDEField" : {
+        "name" : "DELAY",
+        "codeName" : "Delay"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "延迟任务数",
+      "name" : "DelayTaskscnt",
+      "getPSDEField" : {
+        "name" : "DELAYTASKSCNT",
+        "codeName" : "DelayTaskscnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "周期",
+      "name" : "Delta",
+      "getPSDEField" : {
+        "name" : "DELTA",
+        "codeName" : "Delta"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "归属部门",
+      "name" : "Dept",
+      "getPSDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "归属部门名",
+      "name" : "DeptName",
+      "getPSDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "#EMPTY",
+      "logicName" : "描述",
+      "name" : "Desc",
+      "getPSDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "stringLength" : 65535,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "持续时间",
+      "name" : "Duration",
+      "getPSDEField" : {
+        "name" : "DURATION",
+        "codeName" : "Duration"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "结束日期",
+      "name" : "End",
+      "getPSDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "结束日期",
+      "name" : "Endstr",
+      "getPSDEField" : {
+        "name" : "ENDSTR",
+        "codeName" : "Endstr"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "工时数",
+      "name" : "Estimatecnt",
+      "getPSDEField" : {
+        "name" : "ESTIMATECNT",
+        "codeName" : "Estimatecnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "完成任务数",
+      "name" : "FinishedTaskscnt",
+      "getPSDEField" : {
+        "name" : "FINISHEDTASKSCNT",
+        "codeName" : "FinishedTaskscnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "待定",
+      "name" : "Future",
+      "getPSDEField" : {
+        "name" : "FUTURE",
+        "codeName" : "Future"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "编号",
+      "name" : "Id",
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "叶子节点",
+      "name" : "IsLeaf",
+      "getPSDEField" : {
+        "name" : "ISLEAF",
+        "codeName" : "IsLeaf"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "是否过期",
+      "name" : "Isexpired",
+      "getPSDEField" : {
+        "name" : "ISEXPIRED",
+        "codeName" : "Isexpired"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "剩余工时",
+      "name" : "Leftestimate",
+      "getPSDEField" : {
+        "name" : "LEFTESTIMATE",
+        "codeName" : "Leftestimate"
+      },
+      "precision" : 2,
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "上一次计划名称",
+      "name" : "Oldtitle",
+      "getPSDEField" : {
+        "name" : "OLDTITLE",
+        "codeName" : "Oldtitle"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "#EMPTY",
+      "logicName" : "排序",
+      "name" : "Order",
+      "getPSDEField" : {
+        "name" : "ORDER",
+        "codeName" : "Order"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "stringLength" : 65535,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "归属组织",
+      "name" : "Org",
+      "getPSDEField" : {
+        "name" : "ORG",
+        "codeName" : "Org"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "归属组织名",
+      "name" : "OrgName",
+      "getPSDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "父计划",
+      "name" : "Parent",
+      "getPSDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "父计划名称",
+      "name" : "ParentName",
+      "getPSDEField" : {
+        "name" : "PARENTNAME",
+        "codeName" : "ParentName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "计划模板",
+      "name" : "Plantemplet",
+      "getPSDEField" : {
+        "name" : "PLANTEMPLET",
+        "codeName" : "Plantemplet"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "产品",
+      "name" : "Product",
+      "getPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "产品计划编号",
+      "name" : "Productplansn",
+      "getPSDEField" : {
+        "name" : "PRODUCTPLANSN",
+        "codeName" : "Productplansn"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "wait",
+      "logicName" : "计划状态",
+      "name" : "Status",
+      "getPSDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "状态",
+      "name" : "Statuss",
+      "getPSDEField" : {
+        "name" : "STATUSS",
+        "codeName" : "Statuss"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "需求数",
+      "name" : "StoryCnt",
+      "getPSDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "总任务数",
+      "name" : "Taskscnt",
+      "getPSDEField" : {
+        "name" : "TASKSCNT",
+        "codeName" : "Taskscnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "名称",
+      "name" : "Title",
+      "getPSDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "未完成任务数",
+      "name" : "UnFinishedTaskscnt",
+      "getPSDEField" : {
+        "name" : "UNFINISHEDTASKSCNT",
+        "codeName" : "UnFinishedTaskscnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "由谁更新",
+      "name" : "UpdateBy",
+      "getPSDEField" : {
+        "name" : "UPDATEBY",
+        "codeName" : "UpdateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "readOnly" : true
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "ProductPlanFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "开始日期",
+      "name" : "N_BEGIN_GTANDEQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_BEGIN_GTANDEQ"
+      },
+      "getPSDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "平台/分支",
+      "name" : "N_BRANCH_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_BRANCH_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "BRANCH",
+        "codeName" : "Branch"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "周期",
+      "name" : "N_DELTA_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_DELTA_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "DELTA",
+        "codeName" : "Delta"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "结束日期",
+      "name" : "N_END_LTANDEQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_END_LTANDEQ"
+      },
+      "getPSDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "待定",
+      "name" : "N_FUTURE_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_FUTURE_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "FUTURE",
+        "codeName" : "Future"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "编号",
+      "name" : "N_ID_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ID_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "是否过期",
+      "name" : "N_ISEXPIRED_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ISEXPIRED_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "ISEXPIRED",
+        "codeName" : "Isexpired"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "父计划名称",
+      "name" : "N_PARENTNAME_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PARENTNAME_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PARENTNAME",
+        "codeName" : "ParentName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "父计划名称",
+      "name" : "N_PARENTNAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PARENTNAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "PARENTNAME",
+        "codeName" : "ParentName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "父计划",
+      "name" : "N_PARENT_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PARENT_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "父计划",
+      "name" : "N_PARENT_GTANDEQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PARENT_GTANDEQ"
+      },
+      "getPSDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "父计划",
+      "name" : "N_PARENT_LTANDEQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PARENT_LTANDEQ"
+      },
+      "getPSDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "计划模板",
+      "name" : "N_PLANTEMPLET_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PLANTEMPLET_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PLANTEMPLET",
+        "codeName" : "Plantemplet"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "产品",
+      "name" : "N_PRODUCT_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PRODUCT_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "状态",
+      "name" : "N_STATUSS_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_STATUSS_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "STATUSS",
+        "codeName" : "Statuss"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "名称",
+      "name" : "N_TITLE_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_TITLE_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
+  } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "添加项目",
     "name" : "ADDPROJ"
@@ -4001,6 +6473,10 @@
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
+    },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "name" : "ADDPROJ",
     "id" : "ZTProduct__ADDPROJ"
@@ -4015,6 +6491,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
     },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
     "name" : "CHILDPLAN",
     "id" : "ZTProduct__CHILDPLAN"
   }, {
@@ -4024,6 +6504,10 @@
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
+    },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "name" : "CREATE",
     "id" : "ZTProduct__CREATE"
@@ -4041,6 +6525,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
     },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
     "name" : "DELETE",
     "id" : "ZTProduct__DELETE"
   }, {
@@ -4050,6 +6538,10 @@
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
+    },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "name" : "LINKBUG",
     "id" : "ZTProduct__LINKBUG"
@@ -4063,6 +6555,10 @@
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
+    },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "name" : "LINKSTORY",
     "id" : "ZTProduct__LINKSTORY"
@@ -4080,6 +6576,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
     },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
     "name" : "MANAGE",
     "id" : "ZTProduct__MANAGE"
   }, {
@@ -4089,6 +6589,10 @@
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
+    },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "name" : "READ",
     "id" : "ZTProduct__READ"
@@ -4103,6 +6607,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DERCUSTOM_ZT_PRODUCTPLAN_ZT_PROJECT.json"
     },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
     "name" : "READ",
     "id" : "Project__READ"
   }, {
@@ -4115,6 +6623,10 @@
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
+    },
+    "getMapPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "name" : "UPDATE",
     "id" : "ZTProduct__UPDATE"
@@ -4169,6 +6681,223 @@
     "roleTag" : "ProductPlan_Read",
     "userDRAction" : "READ"
   } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "SubPlanEditView",
+    "logicName" : "子计划实体编辑视图",
+    "name" : "子计划实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobTabExpView",
+    "logicName" : "产品计划实体移动端分页导航视图",
+    "name" : "产品计划实体移动端分页导航视图",
+    "realModelSubType" : "DEMOBTABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditMobEditView",
+    "logicName" : "产品计划实体移动端编辑视图（编辑）",
+    "name" : "产品计划实体移动端编辑视图（编辑）",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "productplan实体编辑视图（左右关系）",
+    "name" : "productplan实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobNewForm",
+    "logicName" : "移动端新建",
+    "modelTag2" : "1",
+    "name" : "移动端新建",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMainTable",
+    "logicName" : "主编辑表单（移动端）",
+    "modelTag2" : "1",
+    "name" : "主编辑表单（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "NewMobEditView",
+    "logicName" : "产品计划实体移动端编辑视图（新建）",
+    "name" : "产品计划实体移动端编辑视图（新建）",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "SubPlanCreateView",
+    "logicName" : "子产品计划实体编辑视图（新建模式）",
+    "name" : "子产品计划实体编辑视图（新建模式）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2MobPickupMDView",
+    "logicName" : "产品计划实体移动端选择多数据视图（部件视图）(项目按计划关联需求)",
+    "name" : "产品计划实体移动端选择多数据视图（部件视图）(项目按计划关联需求)",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainSubPlan",
+    "logicName" : "子计划主编辑表单",
+    "modelTag2" : "0",
+    "name" : "子计划主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "ProjectGridView9",
+    "logicName" : "产品计划实体表格视图（部件视图）（项目）",
+    "name" : "产品计划实体表格视图（部件视图）（项目）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "产品计划实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "产品计划实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "产品计划实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "产品计划实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "SubPlanGridView",
+    "logicName" : "产品计划实体表格视图（子计划）",
+    "name" : "产品计划实体表格视图（子计划）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "productplan实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "productplan实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "产品计划实体移动端选择多数据视图（部件视图）",
+    "name" : "产品计划实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ImportPlanTemplet",
+    "logicName" : "导入模板",
+    "modelTag2" : "0",
+    "name" : "导入模板",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Info",
+    "logicName" : "信息表单",
+    "modelTag2" : "0",
+    "name" : "信息表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MainTabExp",
+    "logicName" : "产品计划实体分页导航视图（主信息）",
+    "name" : "产品计划实体分页导航视图（主信息）",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "产品计划实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "产品计划实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "productplan实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "productplan实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "OptionView",
+    "logicName" : "导入计划模板",
+    "name" : "导入计划模板",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "productplan实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "productplan实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "productplan实体选择表格视图（部件视图）",
+    "name" : "productplan实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainData",
+    "logicName" : "主数据",
+    "modelTag2" : "0",
+    "name" : "主数据",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MainDataEditView",
+    "logicName" : "产品计划实体编辑视图(主信息)",
+    "name" : "产品计划实体编辑视图(主信息)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "产品计划实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "产品计划实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "产品计划实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "产品计划实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainEditView",
+    "logicName" : "产品计划实体编辑视图（信息模式）",
+    "name" : "产品计划实体编辑视图（信息模式）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "产品计划实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "产品计划实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "产品计划实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "产品计划实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  } ],
   "codeName" : "ProductPlan",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
@@ -4187,11 +6916,23 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "invalidLogicValue" : "1",
+  "getKeyPSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "产品计划",
+  "getLogicValidPSDEField" : {
+    "name" : "DELETED",
+    "codeName" : "Deleted"
+  },
   "getMainStatePSDEFields" : [ {
     "name" : "STATUSS",
     "codeName" : "Statuss"
   } ],
+  "getMajorPSDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
   "getMajorPSDERs" : [ {
     "codeName" : "ZTProductPlan",
     "dERType" : "DER1N",
@@ -4437,6 +7178,18 @@
     "removeOrder" : -1
   } ],
   "name" : "ZT_PRODUCTPLAN",
+  "getOrgIdPSDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Auto1.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
@@ -4446,7 +7199,6 @@
   "systemTag" : "iBizPMS",
   "tableName" : "zt_productplan",
   "validLogicValue" : "0",
-  "virtualMode" : 0,
   "enableAPIStorage" : false,
   "enableCreate" : true,
   "enableDataVer" : false,

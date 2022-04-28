@@ -340,11 +340,16 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "ProductMonthly",
+  "dEAPITag" : "IBZ_API__PRODUCTMONTHLY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json",
   "enableUIActions" : 15,
   "logicName" : "产品月报",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "IBIZPRO_PRODUCTMONTHLYID",
+    "codeName" : "IbizproProductMonthlyId"
+  } ],
   "name" : "IBIZPRO_PRODUCTMONTHLY",
   "getPSDEName" : "IBIZPRO_PRODUCTMONTHLY",
   "getQuickSearchPSAppDEFields" : [ {
@@ -352,7 +357,9 @@
     "codeName" : "IbizproProductMonthlyName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

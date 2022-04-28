@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\n\tt1.`ID`,\n\tt1.`TITLE`,\n\tt11.orgid,\n\tt11.MDEPTID,\n\tt1.deleted,\n\tt21.spec,\n\tt1.color,\n\tt11.acl,\n\tCONCAT_WS( ',', t11.CREATEDBY, t11.qd, t11.po, t11.rd ) AS acllist,\n\tt1.product\nFROM\n\t`zt_story` t1\n\tLEFT JOIN zt_product t11 ON t11.id = t1.product\n\tLEFT JOIN zt_storyspec t21 ON t21.story = t1.id \n\tAND t1.version = t21.version",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEDATAQUERIES/ESBulk/PSDEDQCODES/MYSQL5.json"
+}

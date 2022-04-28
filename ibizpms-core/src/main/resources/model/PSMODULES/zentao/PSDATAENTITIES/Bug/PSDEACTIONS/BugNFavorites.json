@@ -6,13 +6,15 @@
   "logicName" : "取消收藏",
   "name" : "BugNFavorites",
   "getPSDEActionInput" : {
-    "codeName" : "BugNFavoritesInput",
-    "name" : "输入对象",
+    "name" : "BugNFavoritesInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BugDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BugNFavoritesResult",
-    "name" : "返回对象",
+    "name" : "BugNFavoritesResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

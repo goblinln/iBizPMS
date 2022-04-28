@@ -1,0 +1,85 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`PRECONDITION`",
+    "name" : "PRECONDITION"
+  }, {
+    "expression" : "t1.`AUTO`",
+    "name" : "AUTO"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`HOWRUN`",
+    "name" : "HOWRUN"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`KEYWORDS`",
+    "name" : "KEYWORDS"
+  }, {
+    "expression" : "t1.`LASTEDITEDBY`",
+    "name" : "LASTEDITEDBY"
+  }, {
+    "expression" : "t1.`LASTEDITEDDATE`",
+    "name" : "LASTEDITEDDATE"
+  }, {
+    "expression" : "t1.`LIB`",
+    "name" : "LIB"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "LIBNAME"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "t21.`NAME`",
+    "name" : "MODULENAME"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`OPENEDDATE`",
+    "name" : "OPENEDDATE"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t1.`SCRIPTEDBY`",
+    "name" : "SCRIPTEDBY"
+  }, {
+    "expression" : "t1.`SCRIPTEDDATE`",
+    "name" : "SCRIPTEDDATE"
+  }, {
+    "expression" : "t1.`SCRIPTLOCATION`",
+    "name" : "SCRIPTLOCATION"
+  }, {
+    "expression" : "t1.`SCRIPTSTATUS`",
+    "name" : "SCRIPTSTATUS"
+  }, {
+    "expression" : "t1.`STAGE`",
+    "name" : "STAGE"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  } ],
+  "queryCode" : "SELECT\nt1.`AUTO`,\nt1.`DELETED`,\nt1.`HOWRUN`,\nt1.`ID`,\nt1.`KEYWORDS`,\nt1.`LASTEDITEDBY`,\nt1.`LASTEDITEDDATE`,\nt1.`LIB`,\nt11.`NAME` AS `LIBNAME`,\nt1.`MODULE`,\nt21.`NAME` AS `MODULENAME`,\nt1.`OPENEDBY`,\nt1.`OPENEDDATE`,\nt1.`ORDER`,\nt1.`PATH`,\nt1.`PRI`,\nt1.`SCRIPTEDBY`,\nt1.`SCRIPTEDDATE`,\nt1.`SCRIPTLOCATION`,\nt1.`SCRIPTSTATUS`,\nt1.`STAGE`,\nt1.`STATUS`,\nt1.`TITLE`,\nt1.`TYPE`,\nt1.`VERSION`\nFROM `zt_case` t1 \nLEFT JOIN `zt_testsuite` t11 ON t1.`LIB` = t11.`ID` \nLEFT JOIN `zt_module` t21 ON t1.`MODULE` = t21.`ID` \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

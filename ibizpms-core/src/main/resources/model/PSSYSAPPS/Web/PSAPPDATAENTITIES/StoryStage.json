@@ -281,6 +281,10 @@
   "enableUIActions" : 15,
   "logicName" : "需求阶段",
   "name" : "ZT_STORYSTAGE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_STORYSTAGE",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "STORY",

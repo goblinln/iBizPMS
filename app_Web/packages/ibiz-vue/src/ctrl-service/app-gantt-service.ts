@@ -616,6 +616,8 @@ export class AppGanttService extends ControlServiceBase {
                                     let strLeafFlag: string = objLeafFlag.toString().toLowerCase();
                                     if (Object.is(strLeafFlag, '1') || Object.is(strLeafFlag, 'true')){
                                         Object.assign(treeNode, { leaf: true });
+                                    } else {
+                                        Object.assign(treeNode, { leaf: false });
                                     }
                                 }
                             }

@@ -1,15 +1,36 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "ibiz__AllRepo",
   "codeListType" : "DYNAMIC",
   "codeName" : "AllRepo",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/AllRepo.json",
   "emptyText" : "未定义",
+  "name" : "所有代码",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Repo.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getTextPSDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
+  },
+  "getValuePSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

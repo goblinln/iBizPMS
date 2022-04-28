@@ -42,6 +42,14 @@ public class SysTodo implements Serializable {
     private String content;
 
     /**
+     * 待办子类
+     */
+    @JSONField(name = "todosubtype")
+    @JsonProperty("todosubtype")
+    @ApiModelProperty("待办子类")
+    private String todosubtype;
+
+    /**
      * 长文本参数02
      */
     @JSONField(name = "clobparam02")

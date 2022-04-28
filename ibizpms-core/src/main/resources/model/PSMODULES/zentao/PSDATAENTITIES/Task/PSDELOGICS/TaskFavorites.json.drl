@@ -14,16 +14,6 @@ package cn.ibizlab.pms.zentao.logic.tasklogic.taskfavorites;
 
     no-loop
 
-            //逻辑处理节点[创建收藏信息]
-            rule "deaction1"
-            ruleflow-group "tasktaskfavoritesdeaction1"
-            when
-            then
-                        ibzfavoritesservice.create(tasktaskfavoritesibzfavorites);
-                        update(tasktaskfavoritesdefault);//更新fact中变量值
-                        update(tasktaskfavoritesibzfavorites);//更新fact中变量值
-            end
-
             //逻辑处理节点[开始]
             rule "begin"
             ruleflow-group "tasktaskfavoritesbegin"
@@ -39,6 +29,16 @@ package cn.ibizlab.pms.zentao.logic.tasklogic.taskfavorites;
                             tasktaskfavoritesibzfavorites.set("objectid",tasktaskfavoritesdefault.get("id"));
                                 tasktaskfavoritesibzfavorites.set("account",curuser.getSessionParams().get("srfloginname"));
                             tasktaskfavoritesibzfavorites.set("type","task");
+                        update(tasktaskfavoritesdefault);//更新fact中变量值
+                        update(tasktaskfavoritesibzfavorites);//更新fact中变量值
+            end
+
+            //逻辑处理节点[创建收藏信息]
+            rule "deaction1"
+            ruleflow-group "tasktaskfavoritesdeaction1"
+            when
+            then
+                        ibzfavoritesservice.create(tasktaskfavoritesibzfavorites);
                         update(tasktaskfavoritesdefault);//更新fact中变量值
                         update(tasktaskfavoritesibzfavorites);//更新fact中变量值
             end

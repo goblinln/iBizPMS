@@ -1,0 +1,90 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`BUGS`",
+    "name" : "BUGS"
+  }, {
+    "expression" : "t1.`BUILDER`",
+    "name" : "BUILDER"
+  }, {
+    "expression" : "t1.BUILDER",
+    "name" : "BUILDERPK"
+  }, {
+    "expression" : "t1.`BUILDSN`",
+    "name" : "BUILDSN"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`FILEPATH`",
+    "name" : "FILEPATH"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`name`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t1.`SCMPATH`",
+    "name" : "SCMPATH"
+  }, {
+    "expression" : "t1.`STORIES`",
+    "name" : "STORIES"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`BUGS`,\nt1.`BUILDER`,\nt1.BUILDER AS `BUILDERPK`,\nt1.`BUILDSN`,\nt1.`CREATEBY`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DATE`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`DESC`,\nt1.`FILEPATH`,\nt1.`ID`,\nt1.`NAME`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PRODUCT`,\nt11.`name` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt1.`SCMPATH`,\nt1.`STORIES`,\nt1.`UPDATEBY`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `zt_build` t1 \nLEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id` \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

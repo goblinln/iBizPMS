@@ -161,7 +161,17 @@ export default class AppDepartmentSelect extends Vue {
         return;
       }
       axios({method: this.requestMode, url: _url, data: {}}).then((response: any) => {
-          this.Nodesdata = response.data;
+          if(response.data.length > 0){
+              let item: any;
+              response.data.forEach((_item: any) => {
+                  item = _item;
+                  if(this.fillMap) {
+                      item.label = _item[this.fillMap.label];
+                      item.id = _item[this.fillMap.id];
+                  }
+                  this.Nodesdata.push(item);
+              })
+          }        
           this.$store.commit('addDepData', { srfkey: _url, depData: response.data });
       }).catch((response: any) => {
           this.$throw(response,'searchNodesData');

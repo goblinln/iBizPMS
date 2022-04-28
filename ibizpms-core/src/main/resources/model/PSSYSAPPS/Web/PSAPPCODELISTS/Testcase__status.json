@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Testcase__status",
   "codeListType" : "STATIC",
   "codeName" : "Testcase__status",
   "dynaInstMode" : 1,
@@ -13,14 +14,12 @@
     "codeName" : "Wait",
     "text" : "待评审",
     "value" : "wait",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Normal",
     "color" : "rgba(84, 238, 19, 1)",
     "text" : "正常",
-    "value" : "normal",
-    "includeBeginValue" : true
+    "value" : "normal"
   }, {
     "codeName" : "Blocked",
     "color" : "rgba(242, 238, 7, 1)",
@@ -29,14 +28,12 @@
     },
     "text" : "被阻塞",
     "textCls" : "codeitemback",
-    "value" : "blocked",
-    "includeBeginValue" : true
+    "value" : "blocked"
   }, {
     "codeName" : "Investigate",
     "color" : "rgba(245, 12, 12, 1)",
     "text" : "研究中",
-    "value" : "investigate",
-    "includeBeginValue" : true
+    "value" : "investigate"
   } ],
   "enableCache" : true
 }

@@ -6,13 +6,15 @@
   "logicName" : "批量评审",
   "name" : "BatchReview",
   "getPSDEActionInput" : {
-    "codeName" : "BatchReviewInput",
-    "name" : "输入对象",
+    "name" : "BatchReviewInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BatchReviewResult",
-    "name" : "返回对象",
+    "name" : "BatchReviewResult",
     "type" : "VOID"
   }
 }

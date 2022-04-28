@@ -1,0 +1,49 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CONSUMED`",
+    "name" : "CONSUMED"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`ESTIMATE`",
+    "name" : "ESTIMATE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "DATE_FORMAT( t1.`DATE`, '%w' )",
+    "name" : "ISWEEKEND"
+  }, {
+    "expression" : "t1.`LEFT`",
+    "name" : "LEFT"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t1.`TASK`",
+    "name" : "TASK"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`CONSUMED`,\nt1.`CREATEBY`,\nt1.`DATE`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`ESTIMATE`,\nt1.`ID`,\nDATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`,\nt1.`LEFT`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PROJECT`,\nt1.`TASK`,\nt1.`UPDATEBY`\nFROM `zt_burn` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

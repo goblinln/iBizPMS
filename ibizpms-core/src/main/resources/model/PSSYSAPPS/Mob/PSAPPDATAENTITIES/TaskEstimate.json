@@ -762,6 +762,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "TaskEstimate",
+  "dEAPITag" : "IBZ_API__TASK_ESTIMATE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TaskEstimate.json",
@@ -771,10 +772,14 @@
     "actionRSMode" : 1,
     "codeName" : "taskEstimates",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Task",
+    "majorDEName" : "ZT_TASK",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
+    "minorDECodeName" : "TaskEstimate",
+    "minorDEName" : "ZT_TASKESTIMATE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TaskEstimate.json"
@@ -788,12 +793,17 @@
     "tempDataOrder" : 10
   } ],
   "name" : "ZT_TASKESTIMATE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_TASKESTIMATE",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "ID",
     "codeName" : "Id"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableTempData" : true,

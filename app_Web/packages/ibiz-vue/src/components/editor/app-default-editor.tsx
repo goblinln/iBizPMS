@@ -155,6 +155,14 @@ export class AppDefaultEditor extends Vue {
     @Prop() public valueFormat?:any
 
     /**
+     * 是否防抖（数值输入框特有）
+     *
+     * @type {boolean}
+     * @memberof AppDefaultEditor
+     */
+     @Prop() public isDebounce?:boolean
+
+    /**
      * 编辑器change事件
      *
      * @param {*} value
@@ -190,7 +198,7 @@ export class AppDefaultEditor extends Vue {
             "HTMLEDITOR_INFO"
         ] ],
         ['ipaddress-editor', ['IPADDRESSTEXTBOX'] ],
-        ['span-editor', ['SPANEX', 'SPAN', 'SPAN_COLORSPAN'] ],
+        ['span-editor', ['SPANEX', 'SPAN', 'SPAN_COLORSPAN','SPAN_LINK'] ],
         ['upload-editor', [
             'FILEUPLOADER', 
             'PICTURE', 
@@ -329,6 +337,7 @@ export class AppDefaultEditor extends Vue {
                     valueFormat: this.valueFormat,
                     viewparams: this.viewparams,
                     contextData: this.contextData,
+                    isDebounce: this.isDebounce,
                     contextState: this.contextState,
                     service: this.service,
                     disabled: this.disabled,

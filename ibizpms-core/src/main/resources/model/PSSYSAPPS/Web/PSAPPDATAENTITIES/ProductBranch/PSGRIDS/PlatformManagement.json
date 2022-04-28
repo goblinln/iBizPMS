@@ -158,6 +158,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UPDATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -191,6 +195,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "DELETE"
           },
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",

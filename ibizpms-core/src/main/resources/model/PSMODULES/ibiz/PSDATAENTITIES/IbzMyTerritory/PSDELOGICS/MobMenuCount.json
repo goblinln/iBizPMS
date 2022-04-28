@@ -5,165 +5,20 @@
   "logicName" : "移动端菜单计数器",
   "name" : "移动端菜单计数器",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Rawsqlcall3",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "计算我的收藏数",
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Deaction2"
+        "id" : "Rawsqlcall1"
       },
-      "name" : "连接9787",
+      "name" : "连接6521",
       "getSrcPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "defaultLink" : false
+        "id" : "Begin"
+      }
     } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[MYFAVORITEBUGS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "MYFAVORITEBUGS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[MYFAVORITEBUGS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "MYFAVORITEBUGS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[MYFAVORITETASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "MYFAVORITETASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[MYFAVORITETASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "MYFAVORITETASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[MYFAVORITESTORYS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "MYFAVORITESTORYS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[MYFAVORITESTORYS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "MYFAVORITESTORYS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select ((case when ? is null then 0 else ? end )+ (case when ? is null then 0 else ? end ) + (case when ? is null then 0 else ? end )) as MYFAVORITES from dual",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Deaction2",
-    "getDstPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyTerritoryCount.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
-    },
-    "logicNodeType" : "DEACTION",
-    "name" : "我的",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall4"
-      },
-      "name" : "连接8057",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction2"
-      },
-      "defaultLink" : false
-    } ],
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall2",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "项目数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "name" : "连接1912",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    } ],
-    "sql" : "SELECT\n\tcount( t1.id ) as PROJECTS\nFROM\n\tzt_project t1 \nWHERE\n\tt1.deleted = '0' \n\tAND (\n\tt1.acl = 'open' \n\tOR t1.OPENEDBY = ? \n\tOR t1.pm = ? \n\tOR t1.PO = ? \n\tOR t1.RD =?\tOR t1.QD = ?\n\tOR (\n\tt1.acl = 'private' \n\tAND t1.id IN ( SELECT t3.root FROM zt_team t3 WHERE t3.account = ? AND t3.type = 'project' ) \n\t) \n\t)",
-    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall4",
@@ -250,20 +105,161 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
+    "codeName" : "Rawsqlcall2",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "项目数",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall1"
+        "id" : "Deaction1"
       },
-      "name" : "连接6521",
+      "name" : "连接1912",
       "getSrcPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Begin"
+        "id" : "Rawsqlcall2"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "sql" : "SELECT\n\tcount( t1.id ) as PROJECTS\nFROM\n\tzt_project t1 \nWHERE\n\tt1.deleted = '0' \n\tAND (\n\tt1.acl = 'open' \n\tOR t1.OPENEDBY = ? \n\tOR t1.pm = ? \n\tOR t1.PO = ? \n\tOR t1.RD =?\tOR t1.QD = ?\n\tOR (\n\tt1.acl = 'private' \n\tAND t1.id IN ( SELECT t3.root FROM zt_team t3 WHERE t3.account = ? AND t3.type = 'project' ) \n\t) \n\t)",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall3",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "计算我的收藏数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction2"
       },
-      "defaultLink" : false
+      "name" : "连接9787",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[MYFAVORITEBUGS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "MYFAVORITEBUGS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[MYFAVORITEBUGS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "MYFAVORITEBUGS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[MYFAVORITETASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "MYFAVORITETASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[MYFAVORITETASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "MYFAVORITETASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[MYFAVORITESTORYS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "MYFAVORITESTORYS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[MYFAVORITESTORYS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "MYFAVORITESTORYS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select ((case when ? is null then 0 else ? end )+ (case when ? is null then 0 else ? end ) + (case when ? is null then 0 else ? end )) as MYFAVORITES from dual",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction2",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyTerritoryCount.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
+    },
+    "logicNodeType" : "DEACTION",
+    "name" : "我的",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall4"
+      },
+      "name" : "连接8057",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction2"
+      }
     } ],
     "parallelOutput" : true
   }, {
@@ -283,8 +279,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
@@ -340,19 +335,20 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Deaction1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

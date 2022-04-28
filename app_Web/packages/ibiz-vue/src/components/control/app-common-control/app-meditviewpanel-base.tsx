@@ -103,7 +103,7 @@ export class AppMEditViewPanelBase extends MEditViewPanelControlBase{
                 { 
                     this.items.map((item: any) =>{
                         return (
-                            <tabPane label={item.srfmajortext}>
+                            <tabPane label={item.srfmajortext} key={item.id}>
                                 {
                                     this.$createElement('app-view-shell', {
                                         props: { 
@@ -121,6 +121,7 @@ export class AppMEditViewPanelBase extends MEditViewPanelControlBase{
                                         on: {
                                             viewdataschange: this.viewDataChange.bind(this),
                                             viewload: this.viewload.bind(this),
+                                            viewstatechange: this.viewStateChange.bind(this),
                                         }
                                     })
                                 }
@@ -139,7 +140,9 @@ export class AppMEditViewPanelBase extends MEditViewPanelControlBase{
      */
     public renderRow() {
         return this.items.map((item: any) =>{
-            return [
+            return <div class="row-panel" key={item.id}>
+              {[<i-button type="primary" on-click={()=>throttle(this.handleDelete,[item],this)} class="delete-btn">{this.$t('app.local.delete')}
+                </i-button>,
                 this.$createElement('app-view-shell', {
                     props: { 
                         staticProps: {
@@ -156,10 +159,12 @@ export class AppMEditViewPanelBase extends MEditViewPanelControlBase{
                     on: {
                         viewdataschange: this.viewDataChange.bind(this),
                         viewload: this.viewload.bind(this),
+                        viewstatechange: this.viewStateChange.bind(this),                        
                     }
                 }),
                 <divider />
-            ]
+            ]}
+            </div> 
         })
     }
 

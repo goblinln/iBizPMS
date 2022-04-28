@@ -92,7 +92,7 @@ export class TestReultBaseService extends EntityBaseService<ITestReult> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.test && _context.testcase && _context.testreult) {
-            const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}`);
+            const res = await this.http.get(`/tests/${encodeURIComponent(_context.test)}/testcases/${encodeURIComponent(_context.testcase)}/testreults/${encodeURIComponent(_context.testreult)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }

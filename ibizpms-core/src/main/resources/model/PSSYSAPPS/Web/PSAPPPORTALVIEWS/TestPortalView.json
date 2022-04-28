@@ -229,43 +229,6 @@
                 } ],
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
-                    "actionName" : "Update",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "UPDATE",
-                    "name" : "update",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Update"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-                    }
-                  }, {
-                    "actionType" : "DEDATASET",
-                    "name" : "fetch",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "FetchCurDefault"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-                    }
-                  }, {
-                    "actionName" : "Remove",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "DELETE",
-                    "name" : "remove",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Remove"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-                    }
-                  }, {
                     "actionName" : "Get",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "READ",
@@ -286,6 +249,43 @@
                     "getPSAppDEMethod" : {
                       "modelref" : true,
                       "id" : "Create"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                    }
+                  }, {
+                    "actionName" : "Update",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "UPDATE",
+                    "name" : "update",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Update"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                    }
+                  }, {
+                    "actionName" : "Remove",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "DELETE",
+                    "name" : "remove",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Remove"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                    }
+                  }, {
+                    "actionType" : "DEDATASET",
+                    "name" : "fetch",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "FetchCurDefault"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -365,6 +365,7 @@
                         "glyph" : "xf0f6@FontAwesome",
                         "cssClass" : "fa fa-file-text-o"
                       },
+                      "predefinedType" : "GRIDVIEW_NEWACTION",
                       "timeout" : 60000,
                       "getTooltipPSLanguageRes" : {
                         "lanResTag" : "TBB.TOOLTIP.*.NEW"
@@ -625,6 +626,32 @@
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
+                  "actionName" : "Get",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "READ",
+                  "name" : "load",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Get"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
+                  }
+                }, {
+                  "actionName" : "Create",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "CREATE",
+                  "name" : "create",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Create"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
+                  }
+                }, {
                   "actionName" : "Update",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "UPDATE",
@@ -632,17 +659,6 @@
                   "getPSAppDEMethod" : {
                     "modelref" : true,
                     "id" : "Update"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
-                  }
-                }, {
-                  "actionType" : "DEDATASET",
-                  "name" : "fetch",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "FetchAccount"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -662,19 +678,6 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
                   }
                 }, {
-                  "actionName" : "Get",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "READ",
-                  "name" : "load",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "Get"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
-                  }
-                }, {
                   "actionName" : "GetDraft",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
@@ -688,13 +691,11 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
                   }
                 }, {
-                  "actionName" : "Create",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "CREATE",
-                  "name" : "create",
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Create"
+                    "id" : "FetchAccount"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -1046,10 +1047,14 @@
               "actionRSMode" : 1,
               "codeName" : "AccountTestTasks",
               "dataRSMode" : 0,
+              "majorDECodeName" : "SysAccount",
+              "majorDEName" : "SYS_USER",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
+              "minorDECodeName" : "AccountTestTask",
+              "minorDEName" : "ACCOUNTTESTTASK",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
@@ -1378,6 +1383,32 @@
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
+                  "actionName" : "Get",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "READ",
+                  "name" : "load",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Get"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
+                  }
+                }, {
+                  "actionName" : "Create",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "CREATE",
+                  "name" : "create",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Create"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
+                  }
+                }, {
                   "actionName" : "Update",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "UPDATE",
@@ -1385,17 +1416,6 @@
                   "getPSAppDEMethod" : {
                     "modelref" : true,
                     "id" : "Update"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
-                  }
-                }, {
-                  "actionType" : "DEDATASET",
-                  "name" : "fetch",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "FetchMy"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -1415,19 +1435,6 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
                   }
                 }, {
-                  "actionName" : "Get",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "READ",
-                  "name" : "load",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "Get"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
-                  }
-                }, {
                   "actionName" : "GetDraft",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
@@ -1441,13 +1448,11 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
                   }
                 }, {
-                  "actionName" : "Create",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "CREATE",
-                  "name" : "create",
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Create"
+                    "id" : "FetchMy"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -1812,10 +1817,14 @@
               "actionRSMode" : 1,
               "codeName" : "AccountBugs",
               "dataRSMode" : 0,
+              "majorDECodeName" : "SysAccount",
+              "majorDEName" : "SYS_USER",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
+              "minorDECodeName" : "AccountBug",
+              "minorDEName" : "ACCOUNTBUG",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
@@ -1991,6 +2000,32 @@
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
+                  "actionName" : "Get",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "READ",
+                  "name" : "load",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Get"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
+                  }
+                }, {
+                  "actionName" : "Create",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "CREATE",
+                  "name" : "create",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Create"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
+                  }
+                }, {
                   "actionName" : "Update",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "UPDATE",
@@ -1998,17 +2033,6 @@
                   "getPSAppDEMethod" : {
                     "modelref" : true,
                     "id" : "Update"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
-                  }
-                }, {
-                  "actionType" : "DEDATASET",
-                  "name" : "fetch",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "FetchMy"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -2028,19 +2052,6 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
                   }
                 }, {
-                  "actionName" : "Get",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "READ",
-                  "name" : "load",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "Get"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
-                  }
-                }, {
                   "actionName" : "GetDraft",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
@@ -2054,13 +2065,11 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
                   }
                 }, {
-                  "actionName" : "Create",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "CREATE",
-                  "name" : "create",
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Create"
+                    "id" : "FetchMy"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -2366,10 +2375,14 @@
               "actionRSMode" : 1,
               "codeName" : "AccountTestCases",
               "dataRSMode" : 0,
+              "majorDECodeName" : "SysAccount",
+              "majorDEName" : "SYS_USER",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
+              "minorDECodeName" : "AccountTestCase",
+              "minorDEName" : "ACCOUNTCASE",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"

@@ -6,13 +6,19 @@
   "logicName" : "根据起始时间获取概况信息",
   "name" : "GetInfoTaskOvByTime",
   "getPSDEActionInput" : {
-    "codeName" : "GetInfoTaskOvByTimeInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetInfoTaskOvByTimeInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetInfoTaskOvByTimeResult",
-    "name" : "返回对象",
+    "name" : "GetInfoTaskOvByTimeResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TestReportDTO"
+    },
     "type" : "DTO"
   },
   "getPSDELogic" : {

@@ -1,0 +1,115 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DEBUGMODE`",
+    "name" : "DEBUGMODE"
+  }, {
+    "expression" : "t1.`ENABLEVC`",
+    "name" : "ENABLEVC"
+  }, {
+    "expression" : "t1.`ENDTIME`",
+    "name" : "ENDTIME"
+  }, {
+    "expression" : "t1.`FIXDBMODEL`",
+    "name" : "FIXDBMODEL"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`PACKMODE`",
+    "name" : "PACKMODE"
+  }, {
+    "expression" : "t1.`PSDSCONSOLEID`",
+    "name" : "PSDSCONSOLEID"
+  }, {
+    "expression" : "t1.`PSSYSAPPID`",
+    "name" : "PSSYSAPPID"
+  }, {
+    "expression" : "t1.`PSSYSAPPID2`",
+    "name" : "PSSYSAPPID2"
+  }, {
+    "expression" : "t1.`PSSYSAPPNAME`",
+    "name" : "PSSYSAPPNAME"
+  }, {
+    "expression" : "t1.`PSSYSAPPNAME2`",
+    "name" : "PSSYSAPPNAME2"
+  }, {
+    "expression" : "t1.`PSSYSRUNSESSIONID`",
+    "name" : "PSSYSRUNSESSIONID"
+  }, {
+    "expression" : "t1.`PSSYSRUNSESSIONNAME`",
+    "name" : "PSSYSRUNSESSIONNAME"
+  }, {
+    "expression" : "t1.`PSSYSSERVICEAPIID`",
+    "name" : "PSSYSSERVICEAPIID"
+  }, {
+    "expression" : "t1.`PSSYSSERVICEAPINAME`",
+    "name" : "PSSYSSERVICEAPINAME"
+  }, {
+    "expression" : "t1.`PSSYSSFPUBID`",
+    "name" : "PSSYSSFPUBID"
+  }, {
+    "expression" : "t1.`PSSYSSFPUBNAME`",
+    "name" : "PSSYSSFPUBNAME"
+  }, {
+    "expression" : "t1.`PSSYSTEMDBCFGID`",
+    "name" : "PSSYSTEMDBCFGID"
+  }, {
+    "expression" : "t1.`PSSYSTEMDBCFGNAME`",
+    "name" : "PSSYSTEMDBCFGNAME"
+  }, {
+    "expression" : "t1.`PSSYSTEMID`",
+    "name" : "PSSYSTEMID"
+  }, {
+    "expression" : "t1.`PSSYSTEMNAME`",
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "expression" : "t1.`REBUILDMODE`",
+    "name" : "REBUILDMODE"
+  }, {
+    "expression" : "t1.`RUNMODE`",
+    "name" : "RUNMODE"
+  }, {
+    "expression" : "t1.`RUNPARAM`",
+    "name" : "RUNPARAM"
+  }, {
+    "expression" : "t1.`RUNPARAM2`",
+    "name" : "RUNPARAM2"
+  }, {
+    "expression" : "t1.`RUNPARAM3`",
+    "name" : "RUNPARAM3"
+  }, {
+    "expression" : "t1.`RUNPARAM4`",
+    "name" : "RUNPARAM4"
+  }, {
+    "expression" : "t1.`RUNPARAM5`",
+    "name" : "RUNPARAM5"
+  }, {
+    "expression" : "t1.`RUNPARAM6`",
+    "name" : "RUNPARAM6"
+  }, {
+    "expression" : "t1.`RUNSTATE`",
+    "name" : "RUNSTATE"
+  }, {
+    "expression" : "t1.`STARTTIME`",
+    "name" : "STARTTIME"
+  }, {
+    "expression" : "t1.`STOPWHENTEMPLERROR`",
+    "name" : "STOPWHENTEMPLERROR"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DEBUGMODE`,\nt1.`ENABLEVC`,\nt1.`ENDTIME`,\nt1.`FIXDBMODEL`,\nt1.`MEMO`,\nt1.`PACKMODE`,\nt1.`PSDSCONSOLEID`,\nt1.`PSSYSAPPID`,\nt1.`PSSYSAPPID2`,\nt1.`PSSYSAPPNAME`,\nt1.`PSSYSAPPNAME2`,\nt1.`PSSYSRUNSESSIONID`,\nt1.`PSSYSRUNSESSIONNAME`,\nt1.`PSSYSSERVICEAPIID`,\nt1.`PSSYSSERVICEAPINAME`,\nt1.`PSSYSSFPUBID`,\nt1.`PSSYSSFPUBNAME`,\nt1.`PSSYSTEMDBCFGID`,\nt1.`PSSYSTEMDBCFGNAME`,\nt1.`PSSYSTEMID`,\nt1.`PSSYSTEMNAME`,\nt1.`REBUILDMODE`,\nt1.`RUNMODE`,\nt1.`RUNPARAM`,\nt1.`RUNPARAM2`,\nt1.`RUNPARAM3`,\nt1.`RUNPARAM4`,\nt1.`RUNPARAM5`,\nt1.`RUNPARAM6`,\nt1.`RUNSTATE`,\nt1.`STARTTIME`,\nt1.`STOPWHENTEMPLERROR`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_PSSYSRUNSESSION` t1 \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Product__type",
   "codeListType" : "STATIC",
   "codeName" : "Product__type",
   "dynaInstMode" : 1,
@@ -14,18 +15,15 @@
     "color" : "blue",
     "text" : "正常",
     "value" : "normal",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Branch",
     "text" : "多分支",
-    "value" : "branch",
-    "includeBeginValue" : true
+    "value" : "branch"
   }, {
     "codeName" : "Platform",
     "text" : "多平台",
-    "value" : "platform",
-    "includeBeginValue" : true
+    "value" : "platform"
   } ],
   "enableCache" : true
 }

@@ -10,15 +10,15 @@
             <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
         <tns:global identifier="releasemobreleasecounterdefault" type="cn.ibizlab.pms.core.zentao.domain.Release" />
         </extensionElements>
+     <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="releasemobreleasecounterrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取完成需求数"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="releasemobreleasecounterrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="获取遗留的bug"/>
      <endEvent id="rawsqlcall3_end" name="end"/>
      <sequenceFlow id="rawsqlcall3_end_line" sourceRef="rawsqlcall3" targetRef="rawsqlcall3_end"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="releasemobreleasecounterrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取完成需求数"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="releasemobreleasecounterrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取解决的bug"/>
-     <startEvent id="begin" isInterrupting="true"/>
-     <sequenceFlow id="rawsqlcall1_rawsqlcall2" sourceRef="rawsqlcall1" targetRef="rawsqlcall2">
-     </sequenceFlow>
      <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+     </sequenceFlow>
+     <sequenceFlow id="rawsqlcall1_rawsqlcall2" sourceRef="rawsqlcall1" targetRef="rawsqlcall2">
      </sequenceFlow>
      <sequenceFlow id="rawsqlcall2_rawsqlcall3" sourceRef="rawsqlcall2" targetRef="rawsqlcall3">
      </sequenceFlow>

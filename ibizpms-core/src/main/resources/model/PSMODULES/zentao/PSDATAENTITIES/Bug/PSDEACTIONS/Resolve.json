@@ -9,9 +9,6 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
     },
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : true
   } ],
   "codeName" : "Resolve",
@@ -19,13 +16,15 @@
   "logicName" : "解决",
   "name" : "Resolve",
   "getPSDEActionInput" : {
-    "codeName" : "ResolveInput",
-    "name" : "输入对象",
+    "name" : "ResolveInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BugDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ResolveResult",
-    "name" : "返回对象",
+    "name" : "ResolveResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

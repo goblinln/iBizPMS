@@ -33,10 +33,6 @@ public class SysOrganizationFallback implements FallbackFactory<SysOrganizationF
         String finalErrorMessage = errorMessage;
         return new SysOrganizationFeignClient(){
 
-            public Page<SysOrganization> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public SysOrganization create(SysOrganization sysorganization) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class SysOrganizationFallback implements FallbackFactory<SysOrganizationF
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysOrganization update(String orgid, SysOrganization sysorganization) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<SysOrganization> sysorganizations) {
+            public SysOrganization get(String orgid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class SysOrganizationFallback implements FallbackFactory<SysOrganizationF
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysOrganization get(String orgid) {
+            public SysOrganization update(String orgid, SysOrganization sysorganization) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<SysOrganization> sysorganizations) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(SysOrganization sysorganization) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysOrganization> searchDefault(SysOrganizationSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class SysOrganizationFallback implements FallbackFactory<SysOrganizationF
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(SysOrganization sysorganization) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(SysOrganization sysorganization) {
@@ -86,10 +87,9 @@ public class SysOrganizationFallback implements FallbackFactory<SysOrganizationF
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<SysOrganization> searchDefault(SysOrganizationSearchContext context) {
+            public Page<SysOrganization> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

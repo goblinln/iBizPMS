@@ -1,0 +1,33 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "( t21.`ID` = ${srfwebcontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_TESTRESULT\"}')} )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CASE`",
+    "name" : "CASE"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`EXPECT`",
+    "name" : "EXPECT"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  } ],
+  "queryCode" : "SELECT\nt1.`CASE`,\nt1.`DESC`,\nt1.`EXPECT`,\nt1.`ID`,\nt1.CASESTEPSN,\nt1.id AS `CASESTEPID`,\nt1.`PARENT`,\nt1.`TYPE`,\nt1.`VERSION`,\nt21.stepResults as STEPS\nFROM `zt_casestep` t1 \nRIGHT JOIN zt_case t11 ON t1.`CASE` = t11.id \nLEFT OUTER JOIN zt_testresult t21 ON t11.id = t21.`CASE`  AND t1.version = t21.version\n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEDATAQUERIES/CurTest/PSDEDQCODES/MYSQL5.json"
+}

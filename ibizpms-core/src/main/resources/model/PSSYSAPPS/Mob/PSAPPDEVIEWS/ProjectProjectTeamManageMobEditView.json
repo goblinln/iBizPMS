@@ -67,13 +67,13 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "UpdateTempMajor",
+        "actionName" : "GetDraftTempMajor",
         "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "UpdateTempMajor"
+          "id" : "GetDraftTempMajor"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -84,32 +84,6 @@
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraftfrom",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
-        }
-      }, {
-        "actionName" : "RemoveTempMajor",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "RemoveTempMajor"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
-        }
-      }, {
-        "actionName" : "GetDraftTempMajor",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraftTempMajor"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -135,6 +109,32 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "CreateTempMajor"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        }
+      }, {
+        "actionName" : "UpdateTempMajor",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "UpdateTempMajor"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        }
+      }, {
+        "actionName" : "RemoveTempMajor",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "RemoveTempMajor"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -288,6 +288,32 @@
             },
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
+                "actionName" : "GetTemp",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "READ",
+                "name" : "load",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "GetTemp"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM.json"
+                }
+              }, {
+                "actionName" : "CreateTemp",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "CREATE",
+                "name" : "create",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "CreateTemp"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM.json"
+                }
+              }, {
                 "actionName" : "UpdateTemp",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "UPDATE",
@@ -295,17 +321,6 @@
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "UpdateTemp"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM.json"
-                }
-              }, {
-                "actionType" : "DEDATASET",
-                "name" : "fetch",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "FetchTempDefault"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -325,19 +340,6 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM.json"
                 }
               }, {
-                "actionName" : "GetTemp",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "READ",
-                "name" : "load",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "GetTemp"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM.json"
-                }
-              }, {
                 "actionName" : "GetDraftTemp",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "CREATE",
@@ -351,13 +353,11 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM.json"
                 }
               }, {
-                "actionName" : "CreateTemp",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "CREATE",
-                "name" : "create",
+                "actionType" : "DEDATASET",
+                "name" : "fetch",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "CreateTemp"
+                  "id" : "FetchTempDefault"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -668,6 +668,7 @@
       "modelref" : true,
       "id" : "update"
     },
+    "mobileControl" : true,
     "noTabHeader" : true,
     "name" : "form",
     "modelid" : "03fd8da2e8ad8285bcfeab6d2f6bdeb6",
@@ -723,6 +724,7 @@
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
+        "predefinedType" : "EDITVIEW_SAVEANDEXITACTION",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
@@ -772,10 +774,14 @@
     "actionRSMode" : 1,
     "codeName" : "Projects",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Project",
+    "minorDEName" : "ZT_PROJECT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"

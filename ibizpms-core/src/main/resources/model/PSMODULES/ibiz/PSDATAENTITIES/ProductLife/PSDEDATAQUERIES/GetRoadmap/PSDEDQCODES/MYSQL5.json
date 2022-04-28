@@ -1,0 +1,49 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BEGIN`",
+    "name" : "BEGIN"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`END`",
+    "name" : "END"
+  }, {
+    "expression" : "t1.`IBZ_PRODUCTLIFEID`",
+    "name" : "IBZ_PRODUCTLIFEID"
+  }, {
+    "expression" : "t1.`IBZ_PRODUCTLIFENAME`",
+    "name" : "IBZ_PRODUCTLIFENAME"
+  }, {
+    "expression" : "t1.`MARKER`",
+    "name" : "MARKER"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`YEAR`",
+    "name" : "YEAR"
+  } ],
+  "queryCode" : "select t1.* from (\nSELECT\n\t*\nFROM ( ( SELECT\n\t\t\t\tt111.*\n\t\t\tFROM\n\t\t\t\t(\n\t\t\t\t\tSELECT\n\t\t\t\t\t\tCONCAT(\n\t\t\t\t\t\t\tt1.product,\n\t\t\t\t\t\t\t'-productplan-',\n\t\t\t\t\t\t\tt1.id\n\t\t\t\t\t\t) AS ibz_productlifeid,\n\t\t\t\t\t\tCASE\n\t\t\t\t\tWHEN t11.title IS NULL THEN\n\t\t\t\t\t\tt1.title\n\t\t\t\t\tELSE\n\t\t\t\t\t\tCONCAT(t11.title, '/', t1.title)\n\t\t\t\t\tEND AS ibz_productlifename,\n\t\t\t\t\tt1.product AS product,\n\t\t\t\t\tt1.branch AS branch,\n\t\t\t\t\tt1.parent AS parent,\n\t\t\t\t\t'productplan' AS type,\n\t\t\t\t\tt1.`begin` AS `begin`,\n\t\t\t\t\tt1.`end` AS `end`,\n\t\t\t\t\tLEFT (t1.`end`, 4) AS `year`,\n\t\t\t\t\tnull AS marker\n\t\t\t\tFROM\n\t\t\t\t\tzt_productplan t1\n\t\t\t\tLEFT JOIN zt_productplan t11 ON t1.parent = t11.id\n\t\t\t\tWHERE\n\t\t\t\t\tt1.DELETED = '0'\n\t\t\t\tAND t1.product = #{srf.datacontext.product}\n\t\t\t\tAND t1.parent != '-1'\n\t\t\t\tAND (#{srf.datacontext.branch} is null or t1.branch =  #{srf.datacontext.branch})\n\t\t\t\tAND LEFT (t1.`end`, 4) = #{srf.datacontext.year}\n\t\t\t\t) t111,\n\t\t\t\t(\n\t\t\t\t\tSELECT\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\tCASE\n\t\t\t\t\t\t\tWHEN max(date) IS NULL THEN\n\t\t\t\t\t\t\t\t0\n\t\t\t\t\t\t\tELSE\n\t\t\t\t\t\t\t\tmax(date)\n\t\t\t\t\t\t\tEND\n\t\t\t\t\t\t) AS `lastdata`\n\t\t\t\t\tFROM\n\t\t\t\t\t\tzt_release\n\t\t\t\t\tWHERE\n\t\t\t\t\t\tDELETED = '0'\n\t\t\t\t\tAND product = #{srf.datacontext.product}\n\t\t\t\t\tAND (#{srf.datacontext.branch} is null or branch =  #{srf.datacontext.branch})\n\t\t\t\t) t112\n\t\t\tWHERE\n\t\t\t\tt111.`end` > t112.lastdata\n\t\t)\n\t\tUNION\n\t\t\t(\n\t\t\t\tSELECT\n\t\t\t\t\tCONCAT(\n\t\t\t\t\t\tt2.product,\n\t\t\t\t\t\t'-release-',\n\t\t\t\t\t\tt2.id\n\t\t\t\t\t) AS ibz_productlifeid,\n\t\t\t\t\tt2.`name` AS ibz_productlifename,\n\t\t\t\t\tt2.product AS product,\n\t\t\t\t\tt2.branch AS branch,\n\t\t\t\t\tnull AS parent,\n\t\t\t\t\t'release' AS type,\n\t\t\t\t\tnull AS `begin`,\n\t\t\t\t\tt2.`date` AS `end`,\n\t\t\t\t\tLEFT (t2.`date`, 4) AS `year`,\n\t\t\t\t\tt2.marker AS marker\n\t\t\t\tFROM\n\t\t\t\t\tzt_release t2\n\t\t\t\tWHERE\n\t\t\t\t\tt2.DELETED = '0'\n\t\t\t\tAND t2.product = #{srf.datacontext.product}\n\t\t\t\tAND LEFT (t2.`date`, 4) = #{srf.datacontext.year}\n\t\t\t\tAND (#{srf.datacontext.branch} is null or t2.branch =  #{srf.datacontext.branch})\n\t\t\t)\n\t) AS ibz_productlife\nORDER BY\n\t`end`  ASC) t1",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEDATAQUERIES/GetRoadmap/PSDEDQCODES/MYSQL5.json"
+}

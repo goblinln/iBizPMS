@@ -1,0 +1,93 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BUGS`",
+    "name" : "BUGS"
+  }, {
+    "expression" : "t1.`CASES`",
+    "name" : "CASES"
+  }, {
+    "expression" : "t1.`MEMBERS`",
+    "name" : "MEMBERS"
+  }, {
+    "expression" : "t1.`REPORT`",
+    "name" : "REPORT"
+  }, {
+    "expression" : "t1.`STORIES`",
+    "name" : "STORIES"
+  }, {
+    "expression" : "t1.`BEGIN`",
+    "name" : "BEGIN"
+  }, {
+    "expression" : "t1.`BUILDS`",
+    "name" : "BUILDS"
+  }, {
+    "expression" : "t1.`CREATEDBY`",
+    "name" : "CREATEDBY"
+  }, {
+    "expression" : "t1.`CREATEDDATE`",
+    "name" : "CREATEDDATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`END`",
+    "name" : "END"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`OBJECTID`",
+    "name" : "OBJECTID"
+  }, {
+    "expression" : "t1.`OBJECTTYPE`",
+    "name" : "OBJECTTYPE"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`OWNER`",
+    "name" : "OWNER"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t21.`name`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`TASKS`",
+    "name" : "TASKS"
+  }, {
+    "expression" : "t1.`TESTREPORTSN`",
+    "name" : "TESTREPORTSN"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`BEGIN`,\nt1.`BUILDS`,\nt1.`CREATEDBY`,\nt1.`CREATEDDATE`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`END`,\nt1.`ID`,\nt1.`OBJECTID`,\nt1.`OBJECTTYPE`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`OWNER`,\nt1.`PRODUCT`,\nt21.`name` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt11.`NAME` AS `PROJECTNAME`,\nt1.`TASKS`,\nt1.`TESTREPORTSN`,\nt1.`TITLE`,\nt1.`UPDATEBY`\nFROM `zt_testreport` t1 \nLEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID` \nLEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`id` \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,28 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACTION`",
+    "name" : "ACTION"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t1.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`REPO`",
+    "name" : "REPO"
+  }, {
+    "expression" : "t1.`REVISION`",
+    "name" : "REVISION"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACTION`,\nt1.`ID`,\nt1.`PARENT`,\nt1.`PATH`,\nt1.`REPO`,\nt1.`REVISION`,\nt1.`TYPE`\nFROM `zt_repofiles` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -20,6 +20,15 @@ package cn.ibizlab.pms.zentao.logic.storylogic.projectunlinkstorys;
             then
             end
 
+            //逻辑处理节点[处理]
+            rule "deaction1"
+            ruleflow-group "storyprojectunlinkstorysdeaction1"
+            when
+            then
+                        storyservice.projectUnlinkStory(storyprojectunlinkstorysdefault);
+                        update(storyprojectunlinkstorysdefault);//更新fact中变量值
+            end
+
             //逻辑处理节点[准备参数]
             rule "prepareparam1"
             ruleflow-group "storyprojectunlinkstorysprepareparam1"
@@ -27,14 +36,5 @@ package cn.ibizlab.pms.zentao.logic.storylogic.projectunlinkstorys;
             then
                             storyprojectunlinkstorysdefault.set("story",storyprojectunlinkstorysdefault.get("id"));
                             storyprojectunlinkstorysdefault.set("id",storyprojectunlinkstorysdefault.get("project"));
-                        update(storyprojectunlinkstorysdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[处理]
-            rule "deaction1"
-            ruleflow-group "storyprojectunlinkstorysdeaction1"
-            when
-            then
-                        storyservice.projectUnlinkStory(storyprojectunlinkstorysdefault);
                         update(storyprojectunlinkstorysdefault);//更新fact中变量值
             end

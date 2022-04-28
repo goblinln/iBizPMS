@@ -1,0 +1,28 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`COMMENT`",
+    "name" : "COMMENT"
+  }, {
+    "expression" : "t1.`COMMIT`",
+    "name" : "COMMIT"
+  }, {
+    "expression" : "t1.`COMMITTER`",
+    "name" : "COMMITTER"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`REPO`",
+    "name" : "REPO"
+  }, {
+    "expression" : "t1.`REVISION`",
+    "name" : "REVISION"
+  }, {
+    "expression" : "t1.`TIME`",
+    "name" : "TIME"
+  } ],
+  "queryCode" : "SELECT\nt1.`COMMENT`,\nt1.`COMMIT`,\nt1.`COMMITTER`,\nt1.`ID`,\nt1.`REPO`,\nt1.`REVISION`,\nt1.`TIME`\nFROM `zt_repohistory` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/RepoHistory/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`GROUP`",
+    "name" : "GROUP"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`METHOD`",
+    "name" : "METHOD"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  } ],
+  "queryCode" : "SELECT\nt1.`GROUP`,\nt1.`ID`,\nt1.`METHOD`,\nt1.`MODULE`\nFROM `zt_grouppriv` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/GroupPriv/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

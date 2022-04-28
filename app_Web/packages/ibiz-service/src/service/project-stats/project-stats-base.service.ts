@@ -154,7 +154,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/projectstats/${_context.projectstats}`);
+        const res = await this.http.get(`/projectstats/${encodeURIComponent(_context.projectstats)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -189,7 +189,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      */
     async ProjectQualitySum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/projectstats/${_context.projectstats}/projectqualitysum`, _data);
+        const res = await this.http.post(`/projectstats/${encodeURIComponent(_context.projectstats)}/projectqualitysum`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -205,7 +205,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/projectstats/${_context.projectstats}`);
+        const res = await this.http.delete(`/projectstats/${encodeURIComponent(_context.projectstats)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -223,7 +223,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/projectstats/${_context.projectstats}`, _data);
+        const res = await this.http.put(`/projectstats/${encodeURIComponent(_context.projectstats)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -426,7 +426,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/projectstats/${_context.projectstats}/select`);
+        const res = await this.http.get(`/projectstats/${encodeURIComponent(_context.projectstats)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -5,6 +5,22 @@
   "logicName" : "获取成员角色",
   "name" : "获取成员角色",
   "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接8837",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      }
+    } ],
+    "parallelOutput" : true
+  }, {
     "codeName" : "Rawsqlcall1",
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -25,32 +41,17 @@
     "sql" : "select t11.`name` as role,null as id from zt_user t1 left JOIN zt_group t11 on t1.role = t11.role where t1.account = ?",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
-  }, {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接8837",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
-    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

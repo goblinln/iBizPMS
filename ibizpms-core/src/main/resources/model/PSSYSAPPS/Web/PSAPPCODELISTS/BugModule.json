@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__BugModule",
   "codeListType" : "DYNAMIC",
   "codeName" : "BugModule",
   "dynaInstMode" : 1,

@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CREATEMANNAME`,\nt1.`DATE`,\nt1.`IBZ_DAILYID`,\nt1.`IBZ_DAILYNAME`,\nt1.`ISSUBMIT`,\nt1.`MAILTO`,\nt1.MAILTO AS `MAILTOPK`,\nt1.`REPORTSTATUS`,\nt1.`REPORTTO`,\nt1.REPORTTO AS `REPORTTOPK`,\nt1.`SUBMITTIME`,\nt1.`TODAYTASK`,\nt1.`TOMORROWPLANSTASK`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`UPDATEMANNAME`\nFROM `T_IBZ_DAILY` t1 \nwhere\nt1.`ISSUBMIT` = '1' \nAND exists(select 1 from zt_team t2 where t2.account = t1.`ACCOUNT` and t2.type = 'product' and t2.root = ${srfdatacontext('curproduct')}) \nAND DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(${srfdatacontext('date')},'%Y-%m-%d')",
+  "id" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEDATAQUERIES/ProductDaily/PSDEDQCODES/MYSQL5.json"
+}

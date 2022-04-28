@@ -6,13 +6,19 @@
   "logicName" : "获取测试人员相关数据",
   "name" : "GetQaInfomation",
   "getPSDEActionInput" : {
-    "codeName" : "GetQaInfomationInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetQaInfomationInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetQaInfomationResult",
-    "name" : "返回对象",
+    "name" : "GetQaInfomationResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "UserYearWorkStatsDTO"
+    },
     "type" : "DTO"
   },
   "getPSDELogic" : {

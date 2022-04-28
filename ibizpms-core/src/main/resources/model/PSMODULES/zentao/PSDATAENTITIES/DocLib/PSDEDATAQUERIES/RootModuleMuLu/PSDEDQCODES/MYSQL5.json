@@ -1,0 +1,70 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "(t1.parent = 0 or t1.parent is null ) and t1.type = 'doc'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`COLLECTOR`",
+    "name" : "COLLECTOR"
+  }, {
+    "expression" : "t1.`USERS`",
+    "name" : "USERS"
+  }, {
+    "expression" : "t1.`ACL`",
+    "name" : "ACL"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "'doc'",
+    "name" : "DOCLIBTYPE"
+  }, {
+    "expression" : "t1.`GROUPS`",
+    "name" : "GROUPS"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "0",
+    "name" : "ISFAVOURITES"
+  }, {
+    "expression" : "t1.`MAIN`",
+    "name" : "MAIN"
+  }, {
+    "expression" : "t1.`MDEPTID`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t21.`NAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`DELETED`,\nt11.`NAME` AS `DOCLIBNAME`,\nt1.`GRADE`,\nt1.`ID`,\n(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`,\nt21.`NAME` AS `MODULENAME`,\nt1.`NAME`,\nt1.`ORDER`,\nt1.`OWNER`,\nt1.`PARENT`,\nt1.`PATH`,\nt1.`ROOT`,\nt1.`SHORT`,\n'module'  as `TYPE`,\nt1.MODULESN\nFROM `zt_module` t1 \nLEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID\nLEFT JOIN zt_module t21 ON t1.PARENT = t21.ID",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEDATAQUERIES/RootModuleMuLu/PSDEDQCODES/MYSQL5.json"
+}

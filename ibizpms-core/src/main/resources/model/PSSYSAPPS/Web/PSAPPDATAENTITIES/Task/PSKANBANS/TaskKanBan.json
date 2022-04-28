@@ -196,6 +196,11 @@
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
+        },
+        "getPSRawItem" : {
+          "content" : "<br/>",
+          "contentType" : "HTML",
+          "name" : "rawitem1"
         }
       }, {
         "caption" : "动态内容",
@@ -253,6 +258,7 @@
               "logicType" : "SINGLE",
               "name" : "DELAY 值不为空(NotNil)"
             } ],
+            "relatedItemNames" : [ "delay" ],
             "notMode" : false
           } ],
           "getPSSysCss" : {
@@ -300,10 +306,13 @@
               "name" : "TASKTYPE 不等于(<>) (10)",
               "value" : "10"
             } ],
+            "relatedItemNames" : [ "tasktype" ],
             "notMode" : false
           } ],
           "getPSPanelItems" : [ {
             "actionType" : "UIACTION",
+            "buttonHeight" : 24.0,
+            "buttonStyle" : "DEFAULT",
             "caption" : "指派",
             "contentHeight" : 24.0,
             "height" : 24.0,
@@ -332,6 +341,7 @@
                 "name" : "TASKTYPE 不等于(<>) (10)",
                 "value" : "10"
               } ],
+              "relatedItemNames" : [ "tasktype" ],
               "notMode" : false
             } ],
             "getPSSysImage" : {
@@ -355,6 +365,10 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
               },
+              "getPSDEOPPriv" : {
+                "modelref" : true,
+                "id" : "ASSIGNTO"
+              },
               "getPSSysImage" : {
                 "glyph" : "xf0a4@FontAwesome",
                 "cssClass" : "fa fa-hand-o-right"
@@ -369,6 +383,8 @@
           } ]
         }, {
           "actionType" : "UIACTION",
+          "buttonHeight" : 24.0,
+          "buttonStyle" : "DEFAULT",
           "caption" : "转交",
           "contentHeight" : 24.0,
           "height" : 24.0,
@@ -397,6 +413,7 @@
               "name" : "TASKTYPE 等于(=) (10)",
               "value" : "10"
             } ],
+            "relatedItemNames" : [ "tasktype" ],
             "notMode" : false
           } ],
           "getPSSysImage" : {
@@ -419,6 +436,10 @@
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            },
+            "getPSDEOPPriv" : {
+              "modelref" : true,
+              "id" : "FORWARD"
             },
             "getPSNavigateContexts" : [ {
               "key" : "TASK",
@@ -502,6 +523,11 @@
             "colLG" : 6,
             "colMD" : 6,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "caption" : "h",
+            "contentType" : "RAW",
+            "name" : "rawitem3"
           },
           "rawContent" : "h"
         } ]

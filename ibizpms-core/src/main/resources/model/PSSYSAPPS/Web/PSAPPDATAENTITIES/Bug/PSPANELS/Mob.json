@@ -145,8 +145,12 @@
           "logicType" : "SINGLE",
           "name" : "assignedto 值为空(Nil)"
         } ],
+        "relatedItemNames" : [ "assignedto" ],
         "notMode" : false
-      } ]
+      } ],
+      "getPSRawItem" : {
+        "name" : "rawitem2"
+      }
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "RAWITEM",
@@ -170,8 +174,12 @@
           "name" : "assignedto 等于(=) (closed)",
           "value" : "closed"
         } ],
+        "relatedItemNames" : [ "assignedto" ],
         "notMode" : false
-      } ]
+      } ],
+      "getPSRawItem" : {
+        "name" : "rawitem3"
+      }
     }, {
       "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
       "itemStyle" : "DEFAULT",
@@ -201,8 +209,13 @@
           "logicType" : "SINGLE",
           "name" : "assignedto 值不为空(NotNil)"
         } ],
+        "relatedItemNames" : [ "assignedto" ],
         "notMode" : false
-      } ]
+      } ],
+      "getPSRawItem" : {
+        "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
+        "name" : "rawitem1"
+      }
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "FIELD",

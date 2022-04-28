@@ -60,6 +60,10 @@
         "colLG" : 2,
         "colMD" : 2,
         "layout" : "TABLE_12COL"
+      },
+      "getPSRawItem" : {
+        "htmlContent" : "工时",
+        "name" : "rawitem2"
       }
     }, {
       "itemStyle" : "DEFAULT",
@@ -87,6 +91,10 @@
         "colLG" : 2,
         "colMD" : 2,
         "layout" : "TABLE_12COL"
+      },
+      "getPSRawItem" : {
+        "htmlContent" : "剩余",
+        "name" : "rawitem1"
       }
     }, {
       "itemStyle" : "DEFAULT",

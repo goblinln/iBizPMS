@@ -260,18 +260,24 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ProductLine",
+  "dEAPITag" : "IBZ_API__PRODUCT_LINE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json",
   "enableUIActions" : 15,
   "logicName" : "产品线",
   "name" : "IBZPRO_PRODUCTLINE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "IBZPRO_PRODUCTLINE",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "NAME",
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

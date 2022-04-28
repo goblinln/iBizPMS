@@ -6,13 +6,19 @@
   "logicName" : "标记已读",
   "name" : "MarkRead",
   "getPSDEActionInput" : {
-    "codeName" : "MarkReadInput",
-    "name" : "输入对象",
+    "name" : "MarkReadInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IBIZProMessageDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MarkReadResult",
-    "name" : "返回对象",
+    "name" : "MarkReadResult",
     "type" : "VOID"
+  },
+  "getPSSubSysServiceAPIDEMethod" : {
+    "modelref" : true,
+    "id" : "MarkRead"
   }
 }

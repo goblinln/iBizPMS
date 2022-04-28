@@ -107,11 +107,11 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && _context.accounttesttask) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttesttasks/${_context.accounttesttask}`);
+            const res = await this.http.get(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/accounttesttasks/${encodeURIComponent(_context.accounttesttask)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
-        const res = await this.http.get(`/accounttesttasks/${_context.accounttesttask}`);
+        const res = await this.http.get(`/accounttesttasks/${encodeURIComponent(_context.accounttesttask)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -151,7 +151,7 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttesttasks/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/accounttesttasks/fetchaccount`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
             return res;
         }
@@ -173,7 +173,7 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttesttasks/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/accounttesttasks/fetchmy`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
             return res;
         }

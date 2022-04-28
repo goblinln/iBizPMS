@@ -1,55 +1,56 @@
 {
+  "codeListTag" : "zentao__Testcase__frame",
   "codeListType" : "STATIC",
   "codeName" : "Testcase__frame",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testcase__frame.json",
   "emptyText" : "未定义",
+  "name" : "测试用例工具/框架",
   "getPSCodeItems" : [ {
     "codeName" : "Junit",
     "text" : "JUnit",
-    "value" : "junit",
-    "includeBeginValue" : true
+    "value" : "junit"
   }, {
     "codeName" : "Testng",
     "text" : "TestNG",
-    "value" : "testng",
-    "includeBeginValue" : true
+    "value" : "testng"
   }, {
     "codeName" : "Phpunit",
     "text" : "PHPUnit",
-    "value" : "phpunit",
-    "includeBeginValue" : true
+    "value" : "phpunit"
   }, {
     "codeName" : "Pytest",
     "text" : "Pytest",
-    "value" : "pytest",
-    "includeBeginValue" : true
+    "value" : "pytest"
   }, {
     "codeName" : "Jtest",
     "text" : "JTest",
-    "value" : "jtest",
-    "includeBeginValue" : true
+    "value" : "jtest"
   }, {
     "codeName" : "Cppunit",
     "text" : "CppUnit",
-    "value" : "cppunit",
-    "includeBeginValue" : true
+    "value" : "cppunit"
   }, {
     "codeName" : "Gtest",
     "text" : "GTest",
-    "value" : "gtest",
-    "includeBeginValue" : true
+    "value" : "gtest"
   }, {
     "codeName" : "Qtest",
     "text" : "QTest",
-    "value" : "qtest",
-    "includeBeginValue" : true
+    "value" : "qtest"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

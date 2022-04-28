@@ -96,7 +96,7 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibizprokeywords/${_context.ibizprokeyword}`);
+        const res = await this.http.get(`/ibizprokeywords/${encodeURIComponent(_context.ibizprokeyword)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibizprokeywords/${_context.ibizprokeyword}`);
+        const res = await this.http.delete(`/ibizprokeywords/${encodeURIComponent(_context.ibizprokeyword)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibizprokeywords/${_context.ibizprokeyword}`, _data);
+        const res = await this.http.put(`/ibizprokeywords/${encodeURIComponent(_context.ibizprokeyword)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibizprokeywords/${_context.ibizprokeyword}/select`);
+        const res = await this.http.get(`/ibizprokeywords/${encodeURIComponent(_context.ibizprokeyword)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

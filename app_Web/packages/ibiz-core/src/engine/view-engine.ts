@@ -95,7 +95,9 @@ export class ViewEngine {
      * @memberof ViewEngine
      */
     public onCtrlEvent(ctrlName: string, eventName: string, args: any): void {
-
+      if (Object.is(eventName, 'viewstatechange')) {
+        this.emitViewEvent('viewstatechange', args);
+      }
     }
 
     /**

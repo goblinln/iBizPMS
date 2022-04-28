@@ -1,0 +1,28 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`IBZ_PRODUCTLINEID`",
+    "name" : "IBZ_PRODUCTLINEID"
+  }, {
+    "expression" : "t1.`IBZ_PRODUCTLINENAME`",
+    "name" : "IBZ_PRODUCTLINENAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`IBZ_PRODUCTLINEID`,\nt1.`IBZ_PRODUCTLINENAME`,\nt1.`ORDER`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `zt_module` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -7,13 +7,19 @@
   "name" : "Get",
   "orderValue" : 31,
   "getPSDEActionInput" : {
-    "codeName" : "GetInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "IBIZPRO_PROJECTDAILYID",
+      "codeName" : "IbizproProjectDailyId"
+    },
+    "name" : "GetInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetResult",
-    "name" : "返回对象",
+    "name" : "GetResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbizproProjectDailyDTO"
+    },
     "type" : "DTO"
   },
   "builtinAction" : true

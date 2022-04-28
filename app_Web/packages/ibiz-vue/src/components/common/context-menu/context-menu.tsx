@@ -117,6 +117,10 @@ export class ContextMenu extends Vue {
         // 创建Vue实例挂载
         const mount = document.createElement('div');
         container.appendChild(mount);
+        let cssClass: string = "";
+        if (y > window.innerHeight * 0.7) {
+          cssClass = "context-menus-bottom"
+        }
         this.renderContextMenu(
             {
                 top: y + 'px',
@@ -124,6 +128,7 @@ export class ContextMenu extends Vue {
             },
             mount,
             container,
+            cssClass
         );
     }
 
@@ -135,7 +140,7 @@ export class ContextMenu extends Vue {
      * @param {*} container 容器
      * @returns
      */
-    public renderContextMenu(position: any, mount: any, container: any) {
+    public renderContextMenu(position: any, mount: any, container: any,cssClass: string) {
         const self = this;
         new Vue({
             data() {
@@ -191,7 +196,7 @@ export class ContextMenu extends Vue {
                         on-contextmenu={($event: any) => this.onContextMenu($event)}
                         on-click={($event: Event) => this.destroy($event)}
                     >
-                        <div class='context-menu-content' style={position}>
+                        <div class={`context-menu-content ${cssClass}`} style={position}>
                             {content}
                         </div>
                     </div>

@@ -6,13 +6,15 @@
   "logicName" : "取消收藏",
   "name" : "StoryNFavorites",
   "getPSDEActionInput" : {
-    "codeName" : "StoryNFavoritesInput",
-    "name" : "输入对象",
+    "name" : "StoryNFavoritesInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "StoryNFavoritesResult",
-    "name" : "返回对象",
+    "name" : "StoryNFavoritesResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

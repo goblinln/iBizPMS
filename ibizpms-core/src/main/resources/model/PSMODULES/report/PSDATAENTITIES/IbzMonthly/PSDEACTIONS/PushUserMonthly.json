@@ -6,13 +6,15 @@
   "logicName" : "定时推送待阅提醒用户月报",
   "name" : "PushUserMonthly",
   "getPSDEActionInput" : {
-    "codeName" : "PushUserMonthlyInput",
-    "name" : "输入对象",
+    "name" : "PushUserMonthlyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzMonthlyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "PushUserMonthlyResult",
-    "name" : "返回对象",
+    "name" : "PushUserMonthlyResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

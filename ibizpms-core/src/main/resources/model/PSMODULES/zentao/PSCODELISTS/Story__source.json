@@ -1,90 +1,84 @@
 {
+  "codeListTag" : "zentao__Story__source",
   "codeListType" : "STATIC",
   "codeName" : "Story__source",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__source.json",
   "emptyText" : "未定义",
+  "name" : "需求来源",
   "getPSCodeItems" : [ {
     "codeName" : "Customer",
     "text" : "客户",
-    "value" : "customer",
-    "includeBeginValue" : true
+    "value" : "customer"
   }, {
     "codeName" : "User",
     "text" : "用户",
-    "value" : "user",
-    "includeBeginValue" : true
+    "value" : "user"
   }, {
     "codeName" : "Po",
     "text" : "产品经理",
-    "value" : "po",
-    "includeBeginValue" : true
+    "value" : "po"
   }, {
     "codeName" : "Market",
     "text" : "市场",
-    "value" : "market",
-    "includeBeginValue" : true
+    "value" : "market"
   }, {
     "codeName" : "Service",
     "text" : "客服",
-    "value" : "service",
-    "includeBeginValue" : true
+    "value" : "service"
   }, {
     "codeName" : "Operation",
     "text" : "运营",
-    "value" : "operation",
-    "includeBeginValue" : true
+    "value" : "operation"
   }, {
     "codeName" : "Support",
     "text" : "技术支持",
-    "value" : "support",
-    "includeBeginValue" : true
+    "value" : "support"
   }, {
     "codeName" : "Competitor",
     "text" : "竞争对手",
-    "value" : "competitor",
-    "includeBeginValue" : true
+    "value" : "competitor"
   }, {
     "codeName" : "Partner",
     "text" : "合作伙伴",
-    "value" : "partner",
-    "includeBeginValue" : true
+    "value" : "partner"
   }, {
     "codeName" : "Dev",
     "text" : "开发人员",
-    "value" : "dev",
-    "includeBeginValue" : true
+    "value" : "dev"
   }, {
     "codeName" : "Tester",
     "text" : "测试人员",
-    "value" : "tester",
-    "includeBeginValue" : true
+    "value" : "tester"
   }, {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug",
-    "includeBeginValue" : true
+    "value" : "bug"
   }, {
     "codeName" : "Forum",
     "text" : "论坛",
-    "value" : "forum",
-    "includeBeginValue" : true
+    "value" : "forum"
   }, {
     "codeName" : "Other",
     "text" : "其它",
-    "value" : "other",
-    "includeBeginValue" : true
+    "value" : "other"
   }, {
     "codeName" : "Ibiz",
     "text" : "iBiz",
-    "value" : "iBiz",
-    "includeBeginValue" : true
+    "value" : "iBiz"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

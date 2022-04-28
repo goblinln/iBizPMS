@@ -6,13 +6,15 @@
   "logicName" : "AssignTo",
   "name" : "AssignTo",
   "getPSDEActionInput" : {
-    "codeName" : "AssignToInput",
-    "name" : "输入对象",
+    "name" : "AssignToInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TodoDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "AssignToResult",
-    "name" : "返回对象",
+    "name" : "AssignToResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

@@ -383,6 +383,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "GRIDVIEW_REFRESHACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "Refresh",
@@ -420,6 +421,7 @@
                 "glyph" : "xf1c3@FontAwesome",
                 "cssClass" : "fa fa-file-excel-o"
               },
+              "predefinedType" : "GRIDVIEW_EXPORTACTION",
               "timeout" : 60000,
               "getTooltipPSLanguageRes" : {
                 "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
@@ -463,6 +465,7 @@
                 "glyph" : "xf0b0@FontAwesome",
                 "cssClass" : "fa fa-filter"
               },
+              "predefinedType" : "GRIDVIEW_SEARCHBAR",
               "timeout" : 60000,
               "getTooltipPSLanguageRes" : {
                 "lanResTag" : "TBB.TOOLTIP.*.FILTER"
@@ -506,6 +509,32 @@
           },
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
+              "actionName" : "Get",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "READ",
+              "name" : "load",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Get"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
+              }
+            }, {
+              "actionName" : "Create",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "CREATE",
+              "name" : "create",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Create"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
+              }
+            }, {
               "actionName" : "Update",
               "actionType" : "DEACTION",
               "dataAccessAction" : "UPDATE",
@@ -513,17 +542,6 @@
               "getPSAppDEMethod" : {
                 "modelref" : true,
                 "id" : "Update"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
-              }
-            }, {
-              "actionType" : "DEDATASET",
-              "name" : "fetch",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "FetchDefault"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -543,19 +561,6 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             }, {
-              "actionName" : "Get",
-              "actionType" : "DEACTION",
-              "dataAccessAction" : "READ",
-              "name" : "load",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Get"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
-              }
-            }, {
               "actionName" : "GetDraft",
               "actionType" : "DEACTION",
               "dataAccessAction" : "CREATE",
@@ -569,13 +574,11 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             }, {
-              "actionName" : "Create",
-              "actionType" : "DEACTION",
-              "dataAccessAction" : "CREATE",
-              "name" : "create",
+              "actionType" : "DEDATASET",
+              "name" : "fetch",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "Create"
+                "id" : "FetchDefault"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -891,10 +894,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "load",
+              "name" : "loaddraft",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGet"
+                "id" : "FilterGetDraft"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -902,10 +905,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "loaddraft",
+              "name" : "load",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGetDraft"
+                "id" : "FilterGet"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,

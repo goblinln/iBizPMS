@@ -5,24 +5,97 @@
   "logicName" : "根据测试单获取相应信息（项目报告）",
   "name" : "根据测试单获取相应信息（项目报告）",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Rawsqlcall1",
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接4268",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      }
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "准备参数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接3676",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "OBJECTID",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "Default[PROJECT] ==> Default[OBJECTID]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "PROJECT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "dstFieldName" : "OBJECTTYPE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "直接值[project] ==> Default[OBJECTTYPE]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "project",
+      "srcValueType" : "SRCVALUE"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction1",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskOvProject.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+    },
+    "logicNodeType" : "DEACTION",
+    "name" : "获取概况信息",
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall3",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
     "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取数据",
+    "name" : "获取项目周期",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Deaction1"
+        "id" : "Rawsqlcall5"
       },
-      "name" : "连接3605",
+      "name" : "连接4809",
       "getSrcPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
+        "id" : "Rawsqlcall3"
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[PROJECT]",
@@ -33,7 +106,30 @@
         "id" : "Default"
       },
       "srcValueType" : "SRCDLPARAM"
-    }, {
+    } ],
+    "sql" : "select  t1.`begin`,t1.`end` , CONCAT_WS( ' ', DATE_FORMAT( now( ), '%Y-%m-%d' ), concat( 'PROJECT#', t1.id ), t1.`name`, '测试报告' ) AS TITLE,t1.name as projectname from zt_project t1 where t1.id = ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall6",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取产品数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall7"
+      },
+      "name" : "连接9359",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall6"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
       "name" : "Default[PROJECT]",
       "paramAction" : "SQLPARAM",
       "srcFieldName" : "PROJECT",
@@ -43,7 +139,39 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
-    "sql" : "select case when GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) is null then '' else GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) end as cases,case when GROUP_CONCAT(DISTINCT t1.lastRunner) is null then '' else GROUP_CONCAT(DISTINCT t1.lastRunner) end  as MEMBERS\tfrom (select t1.*,? as project from zt_testrun t1 left join zt_case t11 on t1.`case` = t11.id where t11.deleted = '0' and FIND_IN_SET(t1.task,(select GROUP_CONCAT(t1.id) as tasks from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project))) t1 GROUP BY t1.project\n",
+    "sql" : "select COUNT(1) as productcnt from ( select DISTINCT t.product from zt_testtask t where t.deleted = '0' and FIND_IN_SET(t.id,(select GROUP_CONCAT(t1.id) as tasks from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project))) t",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall4",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取影响需求",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "name" : "连接7844",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall4"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[PROJECT]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "PROJECT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select GROUP_CONCAT(t1.id) as stories from ( select DISTINCT t1.* from zt_story t1 \nleft join zt_build t11 on FIND_IN_SET(t1.id,t11.stories)\nwhere t1.deleted = '0' and  FIND_IN_SET(t11.id,(select GROUP_CONCAT(DISTINCT t1.build) as builds  from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project )) ) t1 GROUP BY t1.product",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
@@ -63,8 +191,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[PROJECT]",
@@ -96,8 +223,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall5"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[PRODUCT]",
@@ -149,56 +275,6 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
-    "codeName" : "Rawsqlcall3",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取项目周期",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall5"
-      },
-      "name" : "连接4809",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[PROJECT]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "PROJECT",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select  t1.`begin`,t1.`end` , CONCAT_WS( ' ', DATE_FORMAT( now( ), '%Y-%m-%d' ), concat( 'PROJECT#', t1.id ), t1.`name`, '测试报告' ) AS TITLE,t1.name as projectname from zt_project t1 where t1.id = ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接4268",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
-    "parallelOutput" : true
-  }, {
     "codeName" : "Rawsqlcall7",
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -215,8 +291,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall7"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[PROJECT]",
@@ -232,79 +307,27 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
-    "codeName" : "Rawsqlcall6",
+    "codeName" : "Rawsqlcall1",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
     "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取产品数",
+    "name" : "获取数据",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall7"
+        "id" : "Deaction1"
       },
-      "name" : "连接9359",
+      "name" : "连接3605",
       "getSrcPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall6"
-      },
-      "defaultLink" : false
+        "id" : "Rawsqlcall1"
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[PROJECT]",
       "paramAction" : "SQLPARAM",
-      "srcFieldName" : "PROJECT",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select COUNT(1) as productcnt from ( select DISTINCT t.product from zt_testtask t where t.deleted = '0' and FIND_IN_SET(t.id,(select GROUP_CONCAT(t1.id) as tasks from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project))) t",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Deaction1",
-    "getDstPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskOvProject.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
-    },
-    "logicNodeType" : "DEACTION",
-    "name" : "获取概况信息",
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "准备参数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接3676",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "dstFieldName" : "OBJECTID",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "name" : "Default[PROJECT] ==> Default[OBJECTID]",
-      "paramAction" : "SETPARAMVALUE",
       "srcFieldName" : "PROJECT",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
@@ -312,38 +335,6 @@
       },
       "srcValueType" : "SRCDLPARAM"
     }, {
-      "dstFieldName" : "OBJECTTYPE",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "name" : "直接值[project] ==> Default[OBJECTTYPE]",
-      "paramAction" : "SETPARAMVALUE",
-      "srcValue" : "project",
-      "srcValueType" : "SRCVALUE"
-    } ],
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall4",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取影响需求",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "name" : "连接7844",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall4"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
       "name" : "Default[PROJECT]",
       "paramAction" : "SQLPARAM",
       "srcFieldName" : "PROJECT",
@@ -353,25 +344,29 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
-    "sql" : "select GROUP_CONCAT(t1.id) as stories from ( select DISTINCT t1.* from zt_story t1 \nleft join zt_build t11 on FIND_IN_SET(t1.id,t11.stories)\nwhere t1.deleted = '0' and  FIND_IN_SET(t11.id,(select GROUP_CONCAT(DISTINCT t1.build) as builds  from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project )) ) t1 GROUP BY t1.product",
+    "sql" : "select case when GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) is null then '' else GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) end as cases,case when GROUP_CONCAT(DISTINCT t1.lastRunner) is null then '' else GROUP_CONCAT(DISTINCT t1.lastRunner) end  as MEMBERS\tfrom (select t1.*,? as project from zt_testrun t1 left join zt_case t11 on t1.`case` = t11.id where t11.deleted = '0' and FIND_IN_SET(t1.task,(select GROUP_CONCAT(t1.id) as tasks from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project))) t1 GROUP BY t1.project\n",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "codeName" : "testtask",
-    "name" : "测试版本",
-    "getParamPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
-    }
-  }, {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
+  }, {
+    "codeName" : "testtask",
+    "logicName" : "测试版本",
+    "name" : "测试版本",
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+    },
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

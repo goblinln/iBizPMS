@@ -15,6 +15,10 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/History.json"
   },
   "name" : "DER1N_ZT_HISTORY_ZT_ACTION_ACTION",
+  "getNestedPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "ACTION",

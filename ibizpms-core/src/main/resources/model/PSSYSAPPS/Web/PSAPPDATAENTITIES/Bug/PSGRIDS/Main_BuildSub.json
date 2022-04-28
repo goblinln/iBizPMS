@@ -348,6 +348,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CONFIRM"
+          },
           "getPSSysImage" : {
             "glyph" : "xf06e@FontAwesome",
             "cssClass" : "fa fa-eye"
@@ -383,6 +387,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "RESOLVE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf046@FontAwesome",
             "cssClass" : "fa fa-check-square-o"
@@ -417,6 +425,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CLOSE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf011@FontAwesome",
             "cssClass" : "fa fa-power-off"
@@ -444,10 +456,15 @@
           "dataAccessAction" : "CREATE",
           "fullCodeName" : "Copy",
           "name" : "表格界面_拷贝操作",
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CREATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf0c5@FontAwesome",
             "cssClass" : "fa fa-copy"
           },
+          "predefinedType" : "GRIDVIEW_COPYACTION",
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
             "lanResTag" : "TBB.TOOLTIP.*.COPY"
@@ -479,6 +496,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UPDATE"
           },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",

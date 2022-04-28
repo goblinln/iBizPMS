@@ -1,0 +1,58 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BEGINDATESTATS`",
+    "name" : "BEGINDATESTATS"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`ENDDATESTATS`",
+    "name" : "ENDDATESTATS"
+  }, {
+    "expression" : "t1.`IBZPRO_PROJECTWEEKLYID`",
+    "name" : "IBZPRO_PROJECTWEEKLYID"
+  }, {
+    "expression" : "t1.`IBZPRO_PROJECTWEEKLYNAME`",
+    "name" : "IBZPRO_PROJECTWEEKLYNAME"
+  }, {
+    "expression" : "t1.`MONTH`",
+    "name" : "MONTH"
+  }, {
+    "expression" : "t1.`PM`",
+    "name" : "PM"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`TASKS`",
+    "name" : "TASKS"
+  }, {
+    "expression" : "t1.`TOTALESTIMATES`",
+    "name" : "TOTALESTIMATES"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`WEEK`",
+    "name" : "WEEK"
+  }, {
+    "expression" : "t1.`YEAR`",
+    "name" : "YEAR"
+  } ],
+  "queryCode" : "SELECT\nt1.`BEGINDATESTATS`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DATE`,\nt1.`ENDDATESTATS`,\nt1.`IBZPRO_PROJECTWEEKLYID`,\nt1.`IBZPRO_PROJECTWEEKLYNAME`,\nt1.`MONTH`,\nt1.`PM`,\nt1.`PROJECT`,\nt11.`NAME` AS `PROJECTNAME`,\nt1.`TASKS`,\nt1.`TOTALESTIMATES`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`WEEK`,\nt1.`YEAR`\nFROM `T_IBZPRO_PROJECTWEEKLY` t1 \nLEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID` \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

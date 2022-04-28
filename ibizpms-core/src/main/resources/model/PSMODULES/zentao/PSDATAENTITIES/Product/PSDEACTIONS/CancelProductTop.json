@@ -6,13 +6,15 @@
   "logicName" : "取消置顶",
   "name" : "CancelProductTop",
   "getPSDEActionInput" : {
-    "codeName" : "CancelProductTopInput",
-    "name" : "输入对象",
+    "name" : "CancelProductTopInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CancelProductTopResult",
-    "name" : "返回对象",
+    "name" : "CancelProductTopResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

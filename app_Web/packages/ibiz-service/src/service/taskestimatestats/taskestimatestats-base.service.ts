@@ -96,7 +96,7 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/taskestimatestats/${_context.taskestimatestats}`);
+        const res = await this.http.get(`/taskestimatestats/${encodeURIComponent(_context.taskestimatestats)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/taskestimatestats/${_context.taskestimatestats}`);
+        const res = await this.http.delete(`/taskestimatestats/${encodeURIComponent(_context.taskestimatestats)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/taskestimatestats/${_context.taskestimatestats}`, _data);
+        const res = await this.http.put(`/taskestimatestats/${encodeURIComponent(_context.taskestimatestats)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -216,7 +216,7 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/taskestimatestats/${_context.taskestimatestats}/select`);
+        const res = await this.http.get(`/taskestimatestats/${encodeURIComponent(_context.taskestimatestats)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -115,7 +115,7 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports`, _data);
             return res;
         }
         if (_context.test && true) {
@@ -127,7 +127,7 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/tests/${_context.test}/testreports`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testreports`, _data);
             return res;
         }
         if (_context.project && true) {
@@ -139,7 +139,7 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/projects/${_context.project}/testreports`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/testreports`, _data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[Create函数]异常`]);
@@ -159,17 +159,17 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.testreport) {
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.test && _context.testreport) {
-            const res = await this.http.get(`/tests/${_context.test}/testreports/${_context.testreport}`);
+            const res = await this.http.get(`/tests/${encodeURIComponent(_context.test)}/testreports/${encodeURIComponent(_context.testreport)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.testreport) {
-            const res = await this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}`);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -192,19 +192,19 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         if (_context.product && _context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testreports/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/getdraft`, _data);
             return res;
         }
         if (_context.test && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/tests/${_context.test}/testreports/getdraft`, _data);
+            const res = await this.http.get(`/tests/${encodeURIComponent(_context.test)}/testreports/getdraft`, _data);
             return res;
         }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/testreports/getdraft`, _data);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/testreports/getdraft`, _data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[GetDraft函数]异常`]);
@@ -226,19 +226,19 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitProjectDuringReport');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/initprojectduringreport`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/initprojectduringreport`, _data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitProjectDuringReport');
-            const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/initprojectduringreport`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testreports/${encodeURIComponent(_context.testreport)}/initprojectduringreport`, _data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitProjectDuringReport');
-            const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/initprojectduringreport`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/initprojectduringreport`, _data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[InitProjectDuringReport函数]异常`]);
@@ -260,19 +260,19 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitProjectReport');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/initprojectreport`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/initprojectreport`, _data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitProjectReport');
-            const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/initprojectreport`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testreports/${encodeURIComponent(_context.testreport)}/initprojectreport`, _data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitProjectReport');
-            const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/initprojectreport`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/initprojectreport`, _data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[InitProjectReport函数]异常`]);
@@ -294,19 +294,19 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReport');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreport`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/inittesttaskreport`, _data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReport');
-            const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/inittesttaskreport`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testreports/${encodeURIComponent(_context.testreport)}/inittesttaskreport`, _data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReport');
-            const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreport`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/inittesttaskreport`, _data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[InitTestTaskReport函数]异常`]);
@@ -328,19 +328,19 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReportMulti');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreportmulti`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/inittesttaskreportmulti`, _data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReportMulti');
-            const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/inittesttaskreportmulti`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testreports/${encodeURIComponent(_context.testreport)}/inittesttaskreportmulti`, _data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReportMulti');
-            const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreportmulti`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/inittesttaskreportmulti`, _data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[InitTestTaskReportMulti函数]异常`]);
@@ -362,19 +362,19 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LoadTestReportBasic');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/loadtestreportbasic`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/loadtestreportbasic`, _data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LoadTestReportBasic');
-            const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/loadtestreportbasic`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testreports/${encodeURIComponent(_context.testreport)}/loadtestreportbasic`, _data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LoadTestReportBasic');
-            const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/loadtestreportbasic`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/loadtestreportbasic`, _data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[LoadTestReportBasic函数]异常`]);
@@ -394,15 +394,15 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.testreport) {
-            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}`);
             return res;
         }
         if (_context.test && _context.testreport) {
-            const res = await this.http.delete(`/tests/${_context.test}/testreports/${_context.testreport}`);
+            const res = await this.http.delete(`/tests/${encodeURIComponent(_context.test)}/testreports/${encodeURIComponent(_context.testreport)}`);
             return res;
         }
         if (_context.project && _context.testreport) {
-            const res = await this.http.delete(`/projects/${_context.project}/testreports/${_context.testreport}`);
+            const res = await this.http.delete(`/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}`);
             return res;
         }
     this.log.warn([`[TestReport]>>>[Remove函数]异常`]);
@@ -424,19 +424,19 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}`, _data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/tests/${_context.test}/testreports/${_context.testreport}`, _data);
+            const res = await this.http.put(`/tests/${encodeURIComponent(_context.test)}/testreports/${encodeURIComponent(_context.testreport)}`, _data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/projects/${_context.project}/testreports/${_context.testreport}`, _data);
+            const res = await this.http.put(`/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}`, _data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[Update函数]异常`]);
@@ -456,17 +456,17 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.test && true) {
-            const res = await this.http.post(`/tests/${_context.test}/testreports/fetchdefault`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testreports/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/testreports/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/testreports/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }

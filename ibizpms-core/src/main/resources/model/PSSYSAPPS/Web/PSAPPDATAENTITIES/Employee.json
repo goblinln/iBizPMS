@@ -34,11 +34,13 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
@@ -50,23 +52,27 @@
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
@@ -97,26 +103,32 @@
   }, {
     "codeName" : "FetchProjectTeamM",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTeamM",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamMProduct",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTeamMProduct",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamTaskUserTemp",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTeamTaskUserTemp",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamUserTask",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTeamUserTask",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectteamPk",
     "methodType" : "FETCH",
+    "name" : "FetchProjectteamPk",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryProductTeamPK",
     "methodType" : "FETCH",
+    "name" : "FetchStoryProductTeamPK",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTask",
@@ -327,11 +339,13 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
@@ -343,23 +357,27 @@
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBug",
@@ -389,26 +407,32 @@
   }, {
     "codeName" : "FetchProjectTeamM",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTeamM",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamMProduct",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTeamMProduct",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamTaskUserTemp",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTeamTaskUserTemp",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamUserTask",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTeamUserTask",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectteamPk",
     "methodType" : "FETCH",
+    "name" : "FetchProjectteamPk",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryProductTeamPK",
     "methodType" : "FETCH",
+    "name" : "FetchStoryProductTeamPK",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTask",
@@ -458,6 +482,7 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
     "builtinMethod" : false
   } ],
   "getAllPSAppPortletCats" : [ {
@@ -479,18 +504,24 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "Employee",
+  "dEAPITag" : "IBZ_API__EMP",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json",
   "enableUIActions" : 15,
   "logicName" : "人员",
   "name" : "IBZEMP",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "IBZEMP",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "PERSONNAME",
     "codeName" : "PersonName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

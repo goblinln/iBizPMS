@@ -5,8 +5,8 @@ package cn.ibizlab.pms.zentao.logic.storylogic.storyfavorites;
         import org.springframework.util.StringUtils;
         import org.springframework.util.ObjectUtils;
         import cn.ibizlab.pms.util.errors.BadRequestAlertException;
-                global cn.ibizlab.pms.core.zentao.domain.Story storystoryfavoritesdefault;
                 global cn.ibizlab.pms.core.ibiz.domain.IbzFavorites storystoryfavoritesibzfavorites;
+                global cn.ibizlab.pms.core.zentao.domain.Story storystoryfavoritesdefault;
                     global cn.ibizlab.pms.core.ibiz.service.IIbzFavoritesService ibzfavoritesservice;
         global cn.ibizlab.pms.core.zentao.service.IStoryService iBzSysStoryDefaultService;
         global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
@@ -21,16 +21,6 @@ package cn.ibizlab.pms.zentao.logic.storylogic.storyfavorites;
             then
             end
 
-            //逻辑处理节点[创建收藏信息]
-            rule "deaction1"
-            ruleflow-group "storystoryfavoritesdeaction1"
-            when
-            then
-                        ibzfavoritesservice.create(storystoryfavoritesibzfavorites);
-                        update(storystoryfavoritesdefault);//更新fact中变量值
-                        update(storystoryfavoritesibzfavorites);//更新fact中变量值
-            end
-
             //逻辑处理节点[设置收藏参数]
             rule "prepareparam1"
             ruleflow-group "storystoryfavoritesprepareparam1"
@@ -39,6 +29,16 @@ package cn.ibizlab.pms.zentao.logic.storylogic.storyfavorites;
                             storystoryfavoritesibzfavorites.set("objectid",storystoryfavoritesdefault.get("id"));
                                 storystoryfavoritesibzfavorites.set("account",curuser.getSessionParams().get("srfloginname"));
                             storystoryfavoritesibzfavorites.set("type","story");
-                        update(storystoryfavoritesdefault);//更新fact中变量值
                         update(storystoryfavoritesibzfavorites);//更新fact中变量值
+                        update(storystoryfavoritesdefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[创建收藏信息]
+            rule "deaction1"
+            ruleflow-group "storystoryfavoritesdeaction1"
+            when
+            then
+                        ibzfavoritesservice.create(storystoryfavoritesibzfavorites);
+                        update(storystoryfavoritesibzfavorites);//更新fact中变量值
+                        update(storystoryfavoritesdefault);//更新fact中变量值
             end

@@ -14,6 +14,23 @@ package cn.ibizlab.pms.ibiz.logic.productmodulelogic.fixpath;
 
     no-loop
 
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "productmodulefixpathbegin"
+            when
+            then
+            end
+
+            //逻辑处理节点[执行重建模块路径行为]
+            rule "deaction1"
+            ruleflow-group "productmodulefixpathdeaction1"
+            when
+            then
+                        moduleservice.update(productmodulefixpathzt_module);
+                        update(productmodulefixpathzt_module);//更新fact中变量值
+                        update(productmodulefixpathdefault);//更新fact中变量值
+            end
+
             //逻辑处理节点[准备参数]
             rule "prepareparam1"
             ruleflow-group "productmodulefixpathprepareparam1"
@@ -31,21 +48,4 @@ package cn.ibizlab.pms.ibiz.logic.productmodulelogic.fixpath;
                             productmodulefixpathzt_module.set("type",productmodulefixpathdefault.get("type"));
                         update(productmodulefixpathzt_module);//更新fact中变量值
                         update(productmodulefixpathdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[执行重建模块路径行为]
-            rule "deaction1"
-            ruleflow-group "productmodulefixpathdeaction1"
-            when
-            then
-                        moduleservice.update(productmodulefixpathzt_module);
-                        update(productmodulefixpathzt_module);//更新fact中变量值
-                        update(productmodulefixpathdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "productmodulefixpathbegin"
-            when
-            then
             end

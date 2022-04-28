@@ -1,20 +1,28 @@
 {
+  "codeListTag" : "ibiz__CloseProduct",
   "codeListType" : "STATIC",
   "codeName" : "CloseProduct",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/CloseProduct.json",
   "emptyText" : "未定义",
+  "name" : "关闭产品",
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "关闭产品",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

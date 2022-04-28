@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CREATEMANNAME`,\nDATE_FORMAT(t1.DATE,'%Y-%m-%d') as `DATE`,\nt1.`IBZ_MONTHLYID` AS IBZ_MONTHLYID,\nt1.`IBZ_MONTHLYNAME` AS IBZ_MONTHLYNAME,\nt1.`ISSUBMIT`,\nt1.`MAILTO`,\n'1' as `REPORTSTATUS`,\nt1.`REPORTTO`,\nt1.SUBMITTIME as `SUBMITTIME`,\nt1.`THISMONTHTASK` AS THISMONTHTASK,\nt1.`NEXTMONTHPLANSTASK` AS NEXTMONTHPLANSTASK,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`UPDATEMANNAME`,\nCONCAT_WS('','本月工作：',case when t1.WORKTHISMONTH is null then '无' else t1.WORKTHISMONTH end)  as WORKTHISMONTH,\nt1.`COMMENT`,\nCONCAT_WS('','下月计划：',case when t1.PLANSNEXTMONTH is null then '无' else t1.PLANSNEXTMONTH end) as PLANSNEXTMONTH,\n'monthly' as type \nFROM `T_IBZ_MONTHLY` t1",
+  "id" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEDATAQUERIES/MyMonthlyMob/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Story__closed_reason",
   "codeListType" : "STATIC",
   "codeName" : "Story__closed_reason",
   "dynaInstMode" : 1,
@@ -12,38 +13,31 @@
   "getPSCodeItems" : [ {
     "codeName" : "Done",
     "text" : "已完成",
-    "value" : "done",
-    "includeBeginValue" : true
+    "value" : "done"
   }, {
     "codeName" : "Subdivided",
     "text" : "已细分",
-    "value" : "subdivided",
-    "includeBeginValue" : true
+    "value" : "subdivided"
   }, {
     "codeName" : "Duplicate",
     "text" : "重复",
-    "value" : "duplicate",
-    "includeBeginValue" : true
+    "value" : "duplicate"
   }, {
     "codeName" : "Postponed",
     "text" : "延期",
-    "value" : "postponed",
-    "includeBeginValue" : true
+    "value" : "postponed"
   }, {
     "codeName" : "Willnotdo",
     "text" : "不做",
-    "value" : "willnotdo",
-    "includeBeginValue" : true
+    "value" : "willnotdo"
   }, {
     "codeName" : "Cancel",
     "text" : "已取消",
-    "value" : "cancel",
-    "includeBeginValue" : true
+    "value" : "cancel"
   }, {
     "codeName" : "Bydesign",
     "text" : "设计如此",
-    "value" : "bydesign",
-    "includeBeginValue" : true
+    "value" : "bydesign"
   } ],
   "enableCache" : true
 }

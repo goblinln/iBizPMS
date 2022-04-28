@@ -6,13 +6,15 @@
   "logicName" : "项目关联需求",
   "name" : "buildLinkStory",
   "getPSDEActionInput" : {
-    "codeName" : "BuildLinkStoryInput",
-    "name" : "输入对象",
+    "name" : "BuildLinkStoryInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BuildLinkStoryResult",
-    "name" : "返回对象",
+    "name" : "BuildLinkStoryResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

@@ -68,9 +68,14 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
 	}
 
     /**
-     * 系统默认用户 实体角色能力权限
+     * 系统用户角色 实体角色能力权限
      */
     protected Map<String, List<UAADEAuthority>> userRoleUAADEAuthorityMap = new HashMap<>();
+
+    /**
+     * 系统用户角色 统一资源权限
+     */
+    protected Map<String, List<UAAUniResAuthority>> userRoleUAAUniResAuthorityMap = new HashMap<>();
 
     /**
      * 系统默认用户 实体角色能力权限
@@ -111,7 +116,7 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
                             IPSDEUserRole psDEUserRole = userRoleData.getPSDEUserRole();
                             if (psDEUserRole == null)
                                 continue;
-                            if ("CAT1".equals(psDEUserRole.getUserCat())) {
+                            if ("CAT1".equals(userRoleData.getUserCat()) || "CAT1".equals(psDEUserRole.getUserCat())) {
                                 UAADEAuthority authority = genUAADEAuthority(userRoleData);
                                 if (authority != null) {
                                     if(!userRoleUAADEAuthorityMap.containsKey(userRole.getRoleTag())){
@@ -119,6 +124,24 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
                                     }
                                     userRoleUAADEAuthorityMap.get(userRole.getRoleTag()).add(authority);
                                 }
+                            }
+                        }
+                    }
+                    //添加系统角色默认统一资源
+                    List<IPSSysUserRoleRes> userRoleReses = userRole.getPSSysUserRoleReses();
+                    if (userRoleReses != null) {
+                        for (IPSSysUserRoleRes userRoleRes : userRoleReses) {
+                            IPSSysUniRes uniRes = userRoleRes.getPSSysUniRes();
+                            if (uniRes == null)
+                                continue;
+                            if ("CAT1".equals(userRoleRes.getUserCat()) || "CAT1".equals(uniRes.getUserCat())) {
+                                UAAUniResAuthority authority = new UAAUniResAuthority();
+                                authority.setName(uniRes.getName());
+                                authority.setUnionResTag(uniRes.getResCode());
+                                if(!userRoleUAAUniResAuthorityMap.containsKey(userRole.getRoleTag())){
+                                    userRoleUAAUniResAuthorityMap.put(userRole.getRoleTag(), new ArrayList<>());
+                                }
+                                userRoleUAAUniResAuthorityMap.get(userRole.getRoleTag()).add(authority);
                             }
                         }
                     }
@@ -320,9 +343,21 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
             if (StringUtils.isEmpty(curSystemId)) {
                 uaaUniResAuthorities.addAll(curUser.getAuthorities().stream()
                         .filter(f -> f instanceof UAAUniResAuthority).map(f -> (UAAUniResAuthority) f).collect(Collectors.toList()));
+                //添加系统角色统一资源
+                curUser.getAuthorities().stream()
+                        .filter(f -> f instanceof UAARoleAuthority).forEach(r -> {
+                    if (userRoleUAADEAuthorityMap.containsKey(((UAARoleAuthority) r).getRoleTag()))
+                        uaaUniResAuthorities.addAll(userRoleUAAUniResAuthorityMap.get(((UAARoleAuthority) r).getRoleTag()));
+                });
             } else {
                 uaaUniResAuthorities.addAll(curUser.getAuthorities().stream()
                         .filter(f -> f instanceof UAAUniResAuthority && curSystemId.equalsIgnoreCase(((UAAUniResAuthority) f).getSystemid())).map(f -> (UAAUniResAuthority) f).collect(Collectors.toList()));
+                //添加系统角色统一资源
+                curUser.getAuthorities().stream()
+                        .filter(f -> f instanceof UAARoleAuthority && curSystemId.equalsIgnoreCase(((UAARoleAuthority) f).getSystemid())).forEach(r -> {
+                    if (userRoleUAADEAuthorityMap.containsKey(((UAARoleAuthority) r).getRoleTag()))
+                        uaaUniResAuthorities.addAll(userRoleUAAUniResAuthorityMap.get(((UAARoleAuthority) r).getRoleTag()));
+                });
             }
         }
 

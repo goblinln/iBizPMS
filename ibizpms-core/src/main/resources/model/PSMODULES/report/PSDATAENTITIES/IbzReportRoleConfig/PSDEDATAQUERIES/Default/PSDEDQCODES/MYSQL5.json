@@ -1,0 +1,31 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`IBZ_REPORT_ROLE_CONFIGID`",
+    "name" : "IBZ_REPORT_ROLE_CONFIGID"
+  }, {
+    "expression" : "t1.`IBZ_REPORT_ROLE_CONFIGNAME`",
+    "name" : "IBZ_REPORT_ROLE_CONFIGNAME"
+  }, {
+    "expression" : "t1.`REPORT_ROLE`",
+    "name" : "REPORT_ROLE"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`IBZ_REPORT_ROLE_CONFIGID`,\nt1.`IBZ_REPORT_ROLE_CONFIGNAME`,\nt1.`REPORT_ROLE`,\nt1.`TYPE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_IBZ_REPORT_ROLE_CONFIG` t1 \n",
+  "id" : "PSMODULES/report/PSDATAENTITIES/IbzReportRoleConfig/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

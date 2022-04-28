@@ -175,7 +175,9 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestTask.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
@@ -669,6 +671,7 @@
     "id" : "ZTProject__UPDATE"
   } ],
   "codeName" : "TestReport",
+  "dEAPITag" : "IBZ_API__TEST_REPORT",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json",
@@ -678,10 +681,14 @@
     "actionRSMode" : 1,
     "codeName" : "TestReports",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "TestReport",
+    "minorDEName" : "ZT_TESTREPORT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -696,10 +703,14 @@
     "actionRSMode" : 1,
     "codeName" : "TestReports",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Test",
+    "majorDEName" : "IBZ_API__TEST",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
+    "minorDECodeName" : "TestReport",
+    "minorDEName" : "ZT_TESTREPORT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -712,6 +723,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_TESTREPORT",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_TESTREPORT",
   "getPSSysImage" : {
     "glyph" : "xf0f6@FontAwesome",
@@ -722,6 +737,7 @@
     "codeName" : "Title"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

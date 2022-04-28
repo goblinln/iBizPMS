@@ -1,5 +1,6 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "ibiz__AllTestTask",
   "codeListType" : "DYNAMIC",
   "codeName" : "AllTestTask",
   "dynaInstMode" : 1,

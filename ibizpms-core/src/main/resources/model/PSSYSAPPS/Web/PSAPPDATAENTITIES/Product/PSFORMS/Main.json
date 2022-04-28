@@ -468,6 +468,10 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
               },
+              "getPSDEOPPriv" : {
+                "modelref" : true,
+                "id" : "SRFUR__PRODUCTLIN_BUT"
+              },
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
               "uIActionTag" : "SeLine",

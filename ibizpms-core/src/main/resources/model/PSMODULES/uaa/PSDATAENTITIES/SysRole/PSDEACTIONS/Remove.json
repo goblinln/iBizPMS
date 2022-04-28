@@ -8,14 +8,20 @@
   "name" : "Remove",
   "orderValue" : 21,
   "getPSDEActionInput" : {
-    "codeName" : "RemoveInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "SYS_ROLEID",
+      "codeName" : "RoleId"
+    },
+    "name" : "RemoveInput",
     "type" : "KEYFIELDS"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "RemoveResult",
-    "name" : "返回对象",
+    "name" : "RemoveResult",
     "type" : "VOID"
+  },
+  "getPSSubSysServiceAPIDEMethod" : {
+    "modelref" : true,
+    "id" : "Remove"
   },
   "batchAction" : true,
   "builtinAction" : true

@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__BugQuickpacketMy",
   "codeListType" : "STATIC",
   "codeName" : "BugQuickpacketMy",
   "dynaInstMode" : 1,
@@ -14,26 +15,22 @@
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指派给我",
     "value" : "TOME",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Icreate",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "text" : "由我创建",
-    "value" : "ICREATE",
-    "includeBeginValue" : true
+    "value" : "ICREATE"
   }, {
     "codeName" : "Byme",
     "data" : "{\"n_resolvedby_eq\":\"%srfloginname%\"}",
     "text" : "由我解决",
-    "value" : "BYME",
-    "includeBeginValue" : true
+    "value" : "BYME"
   }, {
     "codeName" : "Waitclosed",
     "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
     "text" : "由我关闭",
-    "value" : "WAITCLOSED",
-    "includeBeginValue" : true
+    "value" : "WAITCLOSED"
   } ],
   "enableCache" : true
 }

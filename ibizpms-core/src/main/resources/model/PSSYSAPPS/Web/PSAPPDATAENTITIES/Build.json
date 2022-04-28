@@ -191,7 +191,9 @@
         "name" : "PROJECT",
         "codeName" : "Project"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchBugProductBuild",
@@ -206,6 +208,13 @@
     "name" : "BugProductOrProjectBuild",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurProduct",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -533,6 +542,13 @@
     "name" : "BugProductOrProjectBuild",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurProduct",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -937,6 +953,7 @@
     "id" : "ZTProject__UPDATE"
   } ],
   "codeName" : "Build",
+  "dEAPITag" : "IBZ_API__BUILD",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json",
@@ -946,10 +963,14 @@
     "actionRSMode" : 1,
     "codeName" : "Builds",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Build",
+    "minorDEName" : "ZT_BUILD",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
@@ -964,10 +985,14 @@
     "actionRSMode" : 1,
     "codeName" : "Builds",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Build",
+    "minorDEName" : "ZT_BUILD",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
@@ -980,6 +1005,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_BUILD",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_BUILD",
   "getPSSysImage" : {
     "glyph" : "xf126@FontAwesome",
@@ -990,6 +1019,7 @@
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

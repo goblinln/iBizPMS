@@ -34,80 +34,96 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetDevInfomation",
     "methodType" : "DEACTION",
+    "name" : "GetDevInfomation",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetPoInfomation",
     "methodType" : "DEACTION",
+    "name" : "GetPoInfomation",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetQaInfomation",
     "methodType" : "DEACTION",
+    "name" : "GetQaInfomation",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetUserYearAction",
     "methodType" : "DEACTION",
+    "name" : "GetUserYearAction",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "UpdateTitleByYear",
     "methodType" : "DEACTION",
+    "name" : "UpdateTitleByYear",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMonthFinishTaskAndBug",
     "methodType" : "FETCH",
+    "name" : "FetchMonthFinishTaskAndBug",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMonthOpenedBugAndCase",
     "methodType" : "FETCH",
+    "name" : "FetchMonthOpenedBugAndCase",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMonthOpenedStory",
     "methodType" : "FETCH",
+    "name" : "FetchMonthOpenedStory",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -400,79 +416,95 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetDevInfomation",
     "methodType" : "DEACTION",
+    "name" : "GetDevInfomation",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetPoInfomation",
     "methodType" : "DEACTION",
+    "name" : "GetPoInfomation",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetQaInfomation",
     "methodType" : "DEACTION",
+    "name" : "GetQaInfomation",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetUserYearAction",
     "methodType" : "DEACTION",
+    "name" : "GetUserYearAction",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "UpdateTitleByYear",
     "methodType" : "DEACTION",
+    "name" : "UpdateTitleByYear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMonthFinishTaskAndBug",
     "methodType" : "FETCH",
+    "name" : "FetchMonthFinishTaskAndBug",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMonthOpenedBugAndCase",
     "methodType" : "FETCH",
+    "name" : "FetchMonthOpenedBugAndCase",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMonthOpenedStory",
     "methodType" : "FETCH",
+    "name" : "FetchMonthOpenedStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -512,6 +544,7 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
     "builtinMethod" : false
   } ],
   "getAllPSAppPortletCats" : [ {
@@ -533,6 +566,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "UserYearWorkStats",
+  "dEAPITag" : "用户年度工作内容统计",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json",
@@ -545,6 +579,7 @@
     "codeName" : "Title"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

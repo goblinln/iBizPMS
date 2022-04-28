@@ -5,7 +5,7 @@
  * @param resourceArray
  */
 export const setResourceData = (state: any, resourceArray:Array<any>) => {
-    if(resourceArray && resourceArray.length === 0){
+    if(!resourceArray){
         return;
     }
     state.resourceData = resourceArray;
@@ -18,7 +18,7 @@ export const setResourceData = (state: any, resourceArray:Array<any>) => {
  * @param resourceArray
  */
 export const setMenuData = (state: any, menuArray:Array<any>) => {
-    if(menuArray && menuArray.length === 0){
+    if(!menuArray){
         return;
     }
     state.menuData = menuArray;

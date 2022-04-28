@@ -55,10 +55,14 @@
     "actionRSMode" : 1,
     "codeName" : "Projects",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Project",
+    "minorDEName" : "ZT_PROJECT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -69,10 +73,14 @@
     "actionRSMode" : 1,
     "codeName" : "DocLibs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "DocLib",
+    "minorDEName" : "ZT_DOCLIB",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -87,10 +95,14 @@
     "actionRSMode" : 1,
     "codeName" : "DocLibModules",
     "dataRSMode" : 0,
+    "majorDECodeName" : "DocLib",
+    "majorDEName" : "ZT_DOCLIB",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
+    "minorDECodeName" : "DocLibModule",
+    "minorDEName" : "IBZ_DOCLIBMODULE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
@@ -105,10 +117,14 @@
     "actionRSMode" : 1,
     "codeName" : "DocLibs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "DocLib",
+    "minorDEName" : "ZT_DOCLIB",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -123,10 +139,14 @@
     "actionRSMode" : 1,
     "codeName" : "DocLibModules",
     "dataRSMode" : 0,
+    "majorDECodeName" : "DocLib",
+    "majorDEName" : "ZT_DOCLIB",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
+    "minorDECodeName" : "DocLibModule",
+    "minorDEName" : "IBZ_DOCLIBMODULE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
@@ -141,10 +161,14 @@
     "actionRSMode" : 1,
     "codeName" : "DocLibs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "DocLib",
+    "minorDEName" : "ZT_DOCLIB",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -159,10 +183,14 @@
     "actionRSMode" : 1,
     "codeName" : "DocLibModules",
     "dataRSMode" : 0,
+    "majorDECodeName" : "DocLib",
+    "majorDEName" : "ZT_DOCLIB",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
+    "minorDECodeName" : "DocLibModule",
+    "minorDEName" : "IBZ_DOCLIBMODULE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
@@ -177,10 +205,14 @@
     "actionRSMode" : 1,
     "codeName" : "DocLibModules",
     "dataRSMode" : 0,
+    "majorDECodeName" : "DocLib",
+    "majorDEName" : "ZT_DOCLIB",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
+    "minorDECodeName" : "DocLibModule",
+    "minorDEName" : "IBZ_DOCLIBMODULE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"

@@ -1,0 +1,157 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`ADDRESS`",
+    "name" : "ADDRESS"
+  }, {
+    "expression" : "t1.`AVATAR`",
+    "name" : "AVATAR"
+  }, {
+    "expression" : "t1.`BIRTHDAY`",
+    "name" : "BIRTHDAY"
+  }, {
+    "expression" : "t1.`CLIENTLANG`",
+    "name" : "CLIENTLANG"
+  }, {
+    "expression" : "t1.`CLIENTSTATUS`",
+    "name" : "CLIENTSTATUS"
+  }, {
+    "expression" : "t1.`COMMITER`",
+    "name" : "COMMITER"
+  }, {
+    "expression" : "'一月'",
+    "name" : "CURMONTH"
+  }, {
+    "expression" : "(DATE_FORMAT(now(),'%Y'))",
+    "name" : "CURYEAR"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DINGDING`",
+    "name" : "DINGDING"
+  }, {
+    "expression" : "t1.`EMAIL`",
+    "name" : "EMAIL"
+  }, {
+    "expression" : "t1.`FAILS`",
+    "name" : "FAILS"
+  }, {
+    "expression" : "t1.`GENDER`",
+    "name" : "GENDER"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`IP`",
+    "name" : "IP"
+  }, {
+    "expression" : "t1.`JOIN`",
+    "name" : "JOIN"
+  }, {
+    "expression" : "(case when t1.role in ('dev','td','pm') then 'dev' when t1.role in ('qd','qa') then 'qa' else 'po' end)",
+    "name" : "JUDGEROLE"
+  }, {
+    "expression" : "t1.`LAST`",
+    "name" : "LAST"
+  }, {
+    "expression" : "t1.`LOCKED`",
+    "name" : "LOCKED"
+  }, {
+    "expression" : "t1.`MOBILE`",
+    "name" : "MOBILE"
+  }, {
+    "expression" : "0",
+    "name" : "MONTESTIMATE"
+  }, {
+    "expression" : "0",
+    "name" : "MONTHFINISHTASK"
+  }, {
+    "expression" : "0",
+    "name" : "MONTRESOLVEDBUG"
+  }, {
+    "expression" : "t1.`NICKNAME`",
+    "name" : "NICKNAME"
+  }, {
+    "expression" : "t1.`PASSWORD`",
+    "name" : "PASSWORD"
+  }, {
+    "expression" : "t1.`PHONE`",
+    "name" : "PHONE"
+  }, {
+    "expression" : "t1.`QQ`",
+    "name" : "QQ"
+  }, {
+    "expression" : "t1.`RANZHI`",
+    "name" : "RANZHI"
+  }, {
+    "expression" : "t1.`REALNAME`",
+    "name" : "REALNAME"
+  }, {
+    "expression" : "t1.`ROLE`",
+    "name" : "ROLE"
+  }, {
+    "expression" : "t1.`SCORE`",
+    "name" : "SCORE"
+  }, {
+    "expression" : "t1.`SCORELEVEL`",
+    "name" : "SCORELEVEL"
+  }, {
+    "expression" : "t1.`SKYPE`",
+    "name" : "SKYPE"
+  }, {
+    "expression" : "t1.`SLACK`",
+    "name" : "SLACK"
+  }, {
+    "expression" : " CONCAT_WS('',(DATE_FORMAT(now(),'%Y')),'年工作内容统计一览表 —— ',t1.realname)",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`VISITS`",
+    "name" : "VISITS"
+  }, {
+    "expression" : "t1.`WEIXIN`",
+    "name" : "WEIXIN"
+  }, {
+    "expression" : "t1.`WHATSAPP`",
+    "name" : "WHATSAPP"
+  }, {
+    "expression" : "0",
+    "name" : "YEARACTIONCNT"
+  }, {
+    "expression" : "0",
+    "name" : "YEARBUGCNT"
+  }, {
+    "expression" : "0",
+    "name" : "YEARCASECNT"
+  }, {
+    "expression" : "0",
+    "name" : "YEARESTIMATECNT"
+  }, {
+    "expression" : "0",
+    "name" : "YEARLOGCNT"
+  }, {
+    "expression" : "0",
+    "name" : "YEARPLANCNT"
+  }, {
+    "expression" : "0",
+    "name" : "YEARPRODUCTCNT"
+  }, {
+    "expression" : "0",
+    "name" : "YEARSTORYCNT"
+  }, {
+    "expression" : "(select count(1) from zt_action t where t.actor = t1.account and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = DATE_FORMAT(now(),'%Y'))",
+    "name" : "YEARVISITS"
+  }, {
+    "expression" : "t1.`ZIPCODE`",
+    "name" : "ZIPCODE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`ADDRESS`,\nt1.`AVATAR`,\nt1.`BIRTHDAY`,\nt1.`CLIENTLANG`,\nt1.`CLIENTSTATUS`,\nt1.`COMMITER`,\n'一月' AS `CURMONTH`,\n(DATE_FORMAT(now(),'%Y')) AS `CURYEAR`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DINGDING`,\nt1.`EMAIL`,\nt1.`FAILS`,\nt1.`GENDER`,\nt1.`ID`,\nt1.`IP`,\nt1.`JOIN`,\n(case when t1.role in ('dev','td','pm') then 'dev' when t1.role in ('qd','qa') then 'qa' else 'po' end) AS `JUDGEROLE`,\nt1.`LAST`,\nt1.`LOCKED`,\nt1.`MOBILE`,\n0 AS `MONTESTIMATE`,\n0 AS `MONTHFINISHTASK`,\n0 AS `MONTRESOLVEDBUG`,\nt1.`NICKNAME`,\nt1.`PASSWORD`,\nt1.`PHONE`,\nt1.`QQ`,\nt1.`RANZHI`,\nt1.`REALNAME`,\nt1.`ROLE`,\nt1.`SCORE`,\nt1.`SCORELEVEL`,\nt1.`SKYPE`,\nt1.`SLACK`,\n CONCAT_WS('',(DATE_FORMAT(now(),'%Y')),'年工作内容统计一览表 —— ',t1.realname) AS `TITLE`,\nt1.`VISITS`,\nt1.`WEIXIN`,\nt1.`WHATSAPP`,\n0 AS `YEARACTIONCNT`,\n0 AS `YEARBUGCNT`,\n0 AS `YEARCASECNT`,\n0 AS `YEARESTIMATECNT`,\n0 AS `YEARLOGCNT`,\n0 AS `YEARPLANCNT`,\n0 AS `YEARPRODUCTCNT`,\n0 AS `YEARSTORYCNT`,\n(select count(1) from zt_action t where t.actor = t1.account and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = DATE_FORMAT(now(),'%Y')) AS `YEARVISITS`,\nt1.`ZIPCODE`\nFROM `zt_user` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

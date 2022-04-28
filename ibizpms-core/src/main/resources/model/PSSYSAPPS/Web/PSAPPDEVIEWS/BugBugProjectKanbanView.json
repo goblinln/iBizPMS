@@ -396,6 +396,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CREATE"
+        },
         "getPSNavigateParams" : [ {
           "key" : "project",
           "name" : "project",
@@ -440,6 +444,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "GRIDVIEW_REFRESHACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "Refresh",
@@ -627,6 +632,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "caption" : "级别",
+            "contentType" : "RAW",
+            "name" : "rawitem4"
+          },
           "rawContent" : "级别"
         }, {
           "itemStyle" : "DEFAULT",
@@ -660,6 +670,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "caption" : "优先级",
+            "contentType" : "RAW",
+            "name" : "rawitem3"
+          },
           "rawContent" : "优先级"
         }, {
           "itemStyle" : "DEFAULT",
@@ -691,6 +706,10 @@
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "contentType" : "HTML",
+            "name" : "rawitem1"
           }
         }, {
           "caption" : "动态内容",
@@ -730,6 +749,7 @@
                 "name" : "STATUS 等于(=) (active)",
                 "value" : "active"
               } ],
+              "relatedItemNames" : [ "status" ],
               "notMode" : false
             } ],
             "getPSPanelItems" : [ {
@@ -741,6 +761,11 @@
                 "colLG" : 4,
                 "colMD" : 4,
                 "layout" : "TABLE_24COL"
+              },
+              "getPSRawItem" : {
+                "caption" : "截止日期",
+                "contentType" : "RAW",
+                "name" : "rawitem5"
               },
               "rawContent" : "截止日期"
             }, {
@@ -785,6 +810,7 @@
                   "logicType" : "SINGLE",
                   "name" : "DELAY 值不为空(NotNil)"
                 } ],
+                "relatedItemNames" : [ "delay" ],
                 "notMode" : false
               } ],
               "getPSSysCss" : {
@@ -819,6 +845,7 @@
                 "name" : "STATUS 等于(=) (resolved)",
                 "value" : "resolved"
               } ],
+              "relatedItemNames" : [ "status" ],
               "notMode" : false
             } ],
             "getPSPanelItems" : [ {
@@ -843,6 +870,11 @@
                   "colLG" : 6,
                   "colMD" : 6,
                   "layout" : "TABLE_24COL"
+                },
+                "getPSRawItem" : {
+                  "caption" : "解决日期",
+                  "contentType" : "RAW",
+                  "name" : "rawitem6"
                 },
                 "rawContent" : "解决日期"
               }, {
@@ -887,6 +919,7 @@
                     "logicType" : "SINGLE",
                     "name" : "DELAYRESOLVE 值不为空(NotNil)"
                   } ],
+                  "relatedItemNames" : [ "delayresolve" ],
                   "notMode" : false
                 } ],
                 "getPSSysCss" : {
@@ -905,6 +938,11 @@
                 "colLG" : 4,
                 "colMD" : 4,
                 "layout" : "TABLE_24COL"
+              },
+              "getPSRawItem" : {
+                "caption" : "由谁解决",
+                "contentType" : "RAW",
+                "name" : "rawitem7"
               },
               "rawContent" : "由谁解决"
             }, {
@@ -955,6 +993,7 @@
                 "name" : "STATUS 等于(=) (closed)",
                 "value" : "closed"
               } ],
+              "relatedItemNames" : [ "status" ],
               "notMode" : false
             } ],
             "getPSPanelItems" : [ {
@@ -966,6 +1005,11 @@
                 "colLG" : 4,
                 "colMD" : 4,
                 "layout" : "TABLE_24COL"
+              },
+              "getPSRawItem" : {
+                "caption" : "关闭日期",
+                "contentType" : "RAW",
+                "name" : "rawitem8"
               },
               "rawContent" : "关闭日期"
             }, {
@@ -996,6 +1040,11 @@
                 "colMD" : 4,
                 "colMDOffset" : 2,
                 "layout" : "TABLE_24COL"
+              },
+              "getPSRawItem" : {
+                "caption" : "由谁关闭",
+                "contentType" : "RAW",
+                "name" : "rawitem9"
               },
               "rawContent" : "由谁关闭"
             }, {
@@ -1046,6 +1095,7 @@
                 "name" : "STATUS 不等于(<>) (active)",
                 "value" : "active"
               } ],
+              "relatedItemNames" : [ "status" ],
               "notMode" : false
             } ],
             "getPSPanelItems" : [ {
@@ -1057,6 +1107,11 @@
                 "colLG" : 4,
                 "colMD" : 4,
                 "layout" : "TABLE_24COL"
+              },
+              "getPSRawItem" : {
+                "caption" : "解决方案",
+                "contentType" : "RAW",
+                "name" : "rawitem10"
               },
               "rawContent" : "解决方案"
             }, {
@@ -1103,8 +1158,13 @@
                 "name" : "DEADLINE 小于(<) (%SRFCURDATA%)",
                 "value" : "%SRFCURDATA%"
               } ],
+              "relatedItemNames" : [ "deadline" ],
               "notMode" : false
-            } ]
+            } ],
+            "getPSRawItem" : {
+              "contentType" : "HTML",
+              "name" : "rawitem2"
+            }
           } ]
         }, {
           "itemStyle" : "DEFAULT",
@@ -1121,6 +1181,8 @@
           },
           "getPSPanelItems" : [ {
             "actionType" : "UIACTION",
+            "buttonHeight" : 24.0,
+            "buttonStyle" : "DEFAULT",
             "caption" : "指派",
             "contentHeight" : 24.0,
             "height" : 24.0,
@@ -1157,6 +1219,10 @@
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+              },
+              "getPSDEOPPriv" : {
+                "modelref" : true,
+                "id" : "ASSIGNTO"
               },
               "getPSSysImage" : {
                 "glyph" : "xf0a4@FontAwesome",
@@ -1359,43 +1425,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
         }
       }, {
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        }
-      }, {
-        "actionType" : "DEDATASET",
-        "name" : "fetch",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        }
-      }, {
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "dataAccessAction" : "READ",
@@ -1416,6 +1445,43 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -2013,10 +2079,14 @@
     "actionRSMode" : 1,
     "codeName" : "Projects",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Project",
+    "minorDEName" : "ZT_PROJECT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -2027,10 +2097,14 @@
     "actionRSMode" : 1,
     "codeName" : "Bugs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Bug",
+    "minorDEName" : "ZT_BUG",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -2045,10 +2119,14 @@
     "actionRSMode" : 1,
     "codeName" : "Bugs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Test",
+    "majorDEName" : "IBZ_API__TEST",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
+    "minorDECodeName" : "Bug",
+    "minorDEName" : "ZT_BUG",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -2063,10 +2141,14 @@
     "actionRSMode" : 1,
     "codeName" : "Bugs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Bug",
+    "minorDEName" : "ZT_BUG",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"

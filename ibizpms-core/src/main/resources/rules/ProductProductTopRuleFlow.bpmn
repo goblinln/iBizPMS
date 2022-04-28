@@ -13,15 +13,15 @@
         <tns:global identifier="productproducttopibztop" type="cn.ibizlab.pms.core.ibiz.domain.IbzTop" />
         <tns:global identifier="productproducttopdefault" type="cn.ibizlab.pms.core.zentao.domain.Product" />
         </extensionElements>
+     <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productproducttopprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置置顶数据"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productproducttoprawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取置顶最大排序值"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productproducttopdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="save置顶"/>
      <endEvent id="deaction1_end" name="end"/>
      <sequenceFlow id="deaction1_end_line" sourceRef="deaction1" targetRef="deaction1_end"/>
-     <startEvent id="begin" isInterrupting="true"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productproducttopprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置置顶数据"/>
-     <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">
-     </sequenceFlow>
      <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+     </sequenceFlow>
+     <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">
      </sequenceFlow>
      <sequenceFlow id="rawsqlcall1_prepareparam1" sourceRef="rawsqlcall1" targetRef="prepareparam1">
      </sequenceFlow>

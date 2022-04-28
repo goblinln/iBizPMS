@@ -118,7 +118,7 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/depts/${_context.dept}`);
+        const res = await this.http.get(`/depts/${encodeURIComponent(_context.dept)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -153,7 +153,7 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/depts/${_context.dept}`);
+        const res = await this.http.delete(`/depts/${encodeURIComponent(_context.dept)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -171,7 +171,7 @@ export class DeptBaseService extends EntityBaseService<IDept> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/depts/${_context.dept}`, _data);
+        const res = await this.http.put(`/depts/${encodeURIComponent(_context.dept)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -221,7 +221,7 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/depts/${_context.dept}/select`);
+        const res = await this.http.get(`/depts/${encodeURIComponent(_context.dept)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

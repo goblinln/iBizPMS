@@ -6,13 +6,15 @@
   "logicName" : "runCases",
   "name" : "runCases",
   "getPSDEActionInput" : {
-    "codeName" : "RunCasesInput",
-    "name" : "输入对象",
+    "name" : "RunCasesInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "RunCasesResult",
-    "name" : "返回对象",
+    "name" : "RunCasesResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

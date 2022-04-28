@@ -6,13 +6,15 @@
   "logicName" : "添加备注",
   "name" : "Comment",
   "getPSDEActionInput" : {
-    "codeName" : "CommentInput",
-    "name" : "输入对象",
+    "name" : "CommentInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ActionDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CommentResult",
-    "name" : "返回对象",
+    "name" : "CommentResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

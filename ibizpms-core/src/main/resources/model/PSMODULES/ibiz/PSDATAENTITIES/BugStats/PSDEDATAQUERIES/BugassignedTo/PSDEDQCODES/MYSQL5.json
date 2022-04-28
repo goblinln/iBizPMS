@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\n\tt1.assignedTo , t1.product,t1.productname,t1.bugcnt,t11.bugcnt as bugtotal\nFROM\n\t(\nSELECT\n\tt1.assignedTo,\n\tt1.product,\n\tt11.`name` as productname,\n\tCOUNT( t1.id ) AS bugcnt \nFROM\n\t`zt_bug` t1\n\tLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.ID \nWHERE\n\tt1.deleted = '0' \n\tAND t1.assignedTo <> '' \n\tAND t1.assignedTo IS NOT NULL \n\tAND t1.product <> 0 \n\tAND t1.assignedTo <> 'closed' \n\tAND t1.`status` = 'active'\n\tand t11.deleted = '0'\nGROUP BY\n\tt1.assignedTo,\n\tt1.product,\n\tt11.`name` \n\t) t1 inner join (SELECT\n\tt1.assignedTo,\n\tCOUNT( t1.id ) AS bugcnt \nFROM\n\t`zt_bug` t1\n\tLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.ID \nWHERE\n\tt1.deleted = '0' \n\tAND t1.assignedTo <> '' \n\tAND t1.assignedTo IS NOT NULL \n\tAND t1.product <> 0 \n\tAND t1.assignedTo <> 'closed' \n\tAND t1.`status` = 'active'\n\tand t11.deleted = '0'\nGROUP BY\n\tt1.assignedTo) t11 on t1.assignedTo = t11.assignedTo\nORDER BY\n\tt1.assignedTo asc\n\t\n\t",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEDATAQUERIES/BugassignedTo/PSDEDQCODES/MYSQL5.json"
+}

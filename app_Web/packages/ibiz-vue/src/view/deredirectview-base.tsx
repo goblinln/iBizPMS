@@ -104,6 +104,11 @@ export class DeRedirectViewBase extends MainViewBase implements RedirectViewInte
       if (!result) {
         return;
       }
+      if(result.isError){
+          const data = result?.response?.data;
+          this.$throw(data?.messages?data.messages:this.$t('components.500.errortext1'));
+          return;
+      }
       let targetOpenViewRef: IPSAppViewRef | null | undefined = null;
       if (this.viewUseByExpBar) {
         //  重定向视图识别属性
@@ -177,7 +182,7 @@ export class DeRedirectViewBase extends MainViewBase implements RedirectViewInte
         }
         await targetOpenView.fill(true);
         const view: any = {
-          viewname: Util.srfFilePath2(targetOpenView.codeName),
+          viewname: 'app-view-shell',
           height: targetOpenView.height,
           width: targetOpenView.width,
           title: targetOpenView.title

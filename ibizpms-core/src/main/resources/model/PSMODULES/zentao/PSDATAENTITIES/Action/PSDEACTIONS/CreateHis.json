@@ -6,14 +6,16 @@
   "logicName" : "创建历史日志",
   "name" : "CreateHis",
   "getPSDEActionInput" : {
-    "codeName" : "CreateHisInput",
-    "name" : "输入对象",
+    "name" : "CreateHisInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ActionDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CreateHisResult",
-    "name" : "返回对象",
+    "name" : "CreateHisResult",
     "type" : "VOID"
   }
 }

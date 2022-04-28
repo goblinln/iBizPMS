@@ -150,7 +150,7 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates`, _data);
             return res;
         }
         if (_context.project && _context.task && true) {
@@ -162,7 +162,7 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates`, _data);
             return res;
         }
     this.log.warn([`[TaskEstimate]>>>[Create函数]异常`]);
@@ -182,12 +182,12 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates/${encodeURIComponent(_context.taskestimate)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates/${encodeURIComponent(_context.taskestimate)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -210,13 +210,13 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         if (_context.product && _context.project && _context.task && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates/getdraft`, _data);
             return res;
         }
         if (_context.project && _context.task && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/getdraft`, _data);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates/getdraft`, _data);
             return res;
         }
     this.log.warn([`[TaskEstimate]>>>[GetDraft函数]异常`]);
@@ -236,11 +236,11 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.task && _context.taskestimate) {
-            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates/${encodeURIComponent(_context.taskestimate)}`);
             return res;
         }
         if (_context.project && _context.task && _context.taskestimate) {
-            const res = await this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+            const res = await this.http.delete(`/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates/${encodeURIComponent(_context.taskestimate)}`);
             return res;
         }
     this.log.warn([`[TaskEstimate]>>>[Remove函数]异常`]);
@@ -262,13 +262,13 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         if (_context.product && _context.project && _context.task && _context.taskestimate) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates/${encodeURIComponent(_context.taskestimate)}`, _data);
             return res;
         }
         if (_context.project && _context.task && _context.taskestimate) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
+            const res = await this.http.put(`/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates/${encodeURIComponent(_context.taskestimate)}`, _data);
             return res;
         }
     this.log.warn([`[TaskEstimate]>>>[Update函数]异常`]);
@@ -288,12 +288,12 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.task && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.task && true) {
-            const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskestimates/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }

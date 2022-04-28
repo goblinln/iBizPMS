@@ -249,6 +249,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__BUILDLINK"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "BUILD",
             "name" : "BUILD",

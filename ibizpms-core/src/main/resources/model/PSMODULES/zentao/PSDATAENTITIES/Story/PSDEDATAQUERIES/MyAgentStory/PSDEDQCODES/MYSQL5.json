@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`ASSIGNEDDATE`,\ncase when t51.`AGENTUSER` = #{srf.sessioncontext.srfloginname} then t51.`AGENTUSER` else t1.`ASSIGNEDTO` end as `ASSIGNEDTO`,\nt1.`BRANCH`,\nt41.`NAME` AS `BRANCHNAME`,\nt1.`CHILDSTORIES`,\nt1.`CLOSEDBY`,\nt1.`CLOSEDDATE`,\nt1.`CLOSEDREASON`,\nt1.`COLOR`,\nt1.`DELETED`,\nt1.`DUPLICATESTORY`,\nt1.`ESTIMATE`,\nt1.`FROMBUG`,\nt1.`ID`,\n(select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`,\n( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`,\nt1.`KEYWORDS`,\nt1.`LASTEDITEDBY`,\nt1.`LASTEDITEDDATE`,\nt1.`LINKSTORIES`,\nt1.`MAILTO`,\nt1.`MODULE`,\nt11.`NAME` AS `MODULENAME`,\n(SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) and tt.deleted = '0' AND tt.type = 'story' GROUP BY\ttt.root ) AS `MODULENAME1`,\nt1.`OPENEDBY`,\nt1.`OPENEDDATE`,\nt1.`PARENT`,\nt21.`TITLE` AS `PARENTNAME`,\nt11.`PATH`,\n(case when t1.`PLAN` = '0' then '' else t1.plan end ) as `PLAN`,\nt1.`PRI`,\nt31.`NAME` AS `PRODOCTNAME`,\nt1.`PRODUCT`,\nt1.`REVIEWEDBY`,\nt1.`REVIEWEDDATE`,\nt1.`SOURCE`,\nt1.`SOURCENOTE`,\nt1.`STAGE`,\nt1.`STAGEDBY`,\nt1.`STATUS`,\nt1.`SUBSTATUS`,\nt1.`TITLE`,\nt1.`TOBUG`,\nt1.`TYPE`,\nt1.`VERSION`,\nt1.`VERSION` AS `VERSIONC`,\n(case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild,\n\tt1.STORYSN \nFROM\n\t`zt_story` t1\n\tLEFT JOIN zt_module t11 ON t1.MODULE = t11.ID\n\tLEFT JOIN zt_story t21 ON t1.PARENT = t21.ID\n\tLEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID\n\tLEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID\nLEFT JOIN t_ibz_agent t51 ON t1.assignedTo = t51.CREATEMANNAME and DATE_FORMAT(now(), '%Y-%m-%d') >= t51.AGENTBEGIN and DATE_FORMAT(now(), '%Y-%m-%d') <= t51.AGENTEND",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEDATAQUERIES/MyAgentStory/PSDEDQCODES/MYSQL5.json"
+}

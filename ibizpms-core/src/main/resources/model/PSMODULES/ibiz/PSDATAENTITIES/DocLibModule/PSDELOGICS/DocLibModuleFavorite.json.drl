@@ -5,8 +5,8 @@ package cn.ibizlab.pms.ibiz.logic.doclibmodulelogic.doclibmodulefavorite;
         import org.springframework.util.StringUtils;
         import org.springframework.util.ObjectUtils;
         import cn.ibizlab.pms.util.errors.BadRequestAlertException;
-                global cn.ibizlab.pms.core.ibiz.domain.DocLibModule doclibmoduledoclibmodulefavoritedefault;
                 global cn.ibizlab.pms.core.ibiz.domain.IbzFavorites doclibmoduledoclibmodulefavoriteibz_favorites;
+                global cn.ibizlab.pms.core.ibiz.domain.DocLibModule doclibmoduledoclibmodulefavoritedefault;
                     global cn.ibizlab.pms.core.ibiz.service.IIbzFavoritesService ibzfavoritesservice;
         global cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService iBzSysDoclibmoduleDefaultService;
         global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
@@ -27,8 +27,8 @@ package cn.ibizlab.pms.ibiz.logic.doclibmodulelogic.doclibmodulefavorite;
             when
             then
                         ibzfavoritesservice.create(doclibmoduledoclibmodulefavoriteibz_favorites);
-                        update(doclibmoduledoclibmodulefavoritedefault);//更新fact中变量值
                         update(doclibmoduledoclibmodulefavoriteibz_favorites);//更新fact中变量值
+                        update(doclibmoduledoclibmodulefavoritedefault);//更新fact中变量值
             end
 
             //逻辑处理节点[准备参数]
@@ -39,6 +39,6 @@ package cn.ibizlab.pms.ibiz.logic.doclibmodulelogic.doclibmodulefavorite;
                             doclibmoduledoclibmodulefavoriteibz_favorites.set("objectid",doclibmoduledoclibmodulefavoritedefault.get("id"));
                             doclibmoduledoclibmodulefavoriteibz_favorites.set("type",doclibmoduledoclibmodulefavoritedefault.get("type"));
                                 doclibmoduledoclibmodulefavoriteibz_favorites.set("account",curuser.getSessionParams().get("srfloginname"));
-                        update(doclibmoduledoclibmodulefavoritedefault);//更新fact中变量值
                         update(doclibmoduledoclibmodulefavoriteibz_favorites);//更新fact中变量值
+                        update(doclibmoduledoclibmodulefavoritedefault);//更新fact中变量值
             end

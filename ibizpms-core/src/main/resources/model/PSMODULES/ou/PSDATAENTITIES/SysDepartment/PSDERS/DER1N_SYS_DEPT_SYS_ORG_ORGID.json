@@ -15,6 +15,10 @@
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
   },
   "name" : "DER1N_SYS_DEPT_SYS_ORG_ORGID",
+  "getNestedPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "ORGID",

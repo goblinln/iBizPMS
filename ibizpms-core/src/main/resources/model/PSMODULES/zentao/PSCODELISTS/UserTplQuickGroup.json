@@ -1,40 +1,45 @@
 {
+  "codeListTag" : "zentao__UserTplQuickGroup",
   "codeListType" : "STATIC",
   "codeName" : "UserTplQuickGroup",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/UserTplQuickGroup.json",
   "emptyText" : "未定义",
+  "name" : "用户模板快速分组",
   "getPSCodeItems" : [ {
     "codeName" : "All",
     "data" : "{}",
     "text" : "所有",
-    "value" : "all",
-    "includeBeginValue" : true
+    "value" : "all"
   }, {
     "codeName" : "Story",
     "data" : "{\"n_type_eq\":\"story\"}",
     "text" : "需求",
     "value" : "story",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Task",
     "data" : "{\"n_type_eq\":\"task\"}",
     "text" : "任务",
-    "value" : "task",
-    "includeBeginValue" : true
+    "value" : "task"
   }, {
     "codeName" : "Bug",
     "data" : "{\"n_type_eq\":\"bug\"}",
     "text" : "Bug",
-    "value" : "bug",
-    "includeBeginValue" : true
+    "value" : "bug"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

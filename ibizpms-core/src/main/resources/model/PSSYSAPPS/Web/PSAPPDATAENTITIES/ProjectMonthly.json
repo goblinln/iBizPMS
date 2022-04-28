@@ -335,11 +335,16 @@
     "id" : "ZTProject__UPDATE"
   } ],
   "codeName" : "ProjectMonthly",
+  "dEAPITag" : "IBZ_API__PROJECTMONTHLY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectMonthly.json",
   "enableUIActions" : 15,
   "logicName" : "项目月报",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "IBIZPRO_PROJECTMONTHLYID",
+    "codeName" : "IbizproProjectMonthlyId"
+  } ],
   "name" : "IBIZPRO_PROJECTMONTHLY",
   "getPSDEName" : "IBIZPRO_PROJECTMONTHLY",
   "getQuickSearchPSAppDEFields" : [ {
@@ -347,7 +352,9 @@
     "codeName" : "IbizproProjectMonthlyName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

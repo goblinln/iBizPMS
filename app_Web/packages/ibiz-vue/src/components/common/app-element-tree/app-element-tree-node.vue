@@ -10,6 +10,7 @@
             'is-hidden': !node.visible,
             'is-focusable': !node.disabled,
             'is-checked': !node.disabled && node.checked,
+            [`tree-node-id-${node.id}`]: true
         }"
         role="treeitem"
         tabindex="-1"

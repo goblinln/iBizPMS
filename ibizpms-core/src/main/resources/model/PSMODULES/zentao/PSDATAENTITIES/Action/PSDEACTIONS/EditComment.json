@@ -6,13 +6,15 @@
   "logicName" : "编辑备注信息",
   "name" : "editComment",
   "getPSDEActionInput" : {
-    "codeName" : "EditCommentInput",
-    "name" : "输入对象",
+    "name" : "EditCommentInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ActionDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "EditCommentResult",
-    "name" : "返回对象",
+    "name" : "EditCommentResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

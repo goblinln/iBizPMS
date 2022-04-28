@@ -19,15 +19,6 @@ ruleflow-group "productplangetoldplannamebegin"
     then
     end
 
-//逻辑处理节点[重置主键]
-rule "prepareparam1"
-ruleflow-group "productplangetoldplannameprepareparam1"
-    when
-    then
-    productplangetoldplannamedefault.set("id",null);
-    update(productplangetoldplannamedefault);//更新fact中变量值
-    end
-
 //逻辑处理节点[获取名称]
 rule "rawsqlcall1"
 ruleflow-group "productplangetoldplannamerawsqlcall1"
@@ -48,6 +39,15 @@ ruleflow-group "productplangetoldplannamerawsqlcall1"
             productplangetoldplannamedefault.set(String.valueOf(entry.getKey()),entry.getValue());
         }
     }
+    update(productplangetoldplannamedefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[重置主键]
+rule "prepareparam1"
+ruleflow-group "productplangetoldplannameprepareparam1"
+    when
+    then
+    productplangetoldplannamedefault.set("id",null);
     update(productplangetoldplannamedefault);//更新fact中变量值
     end
 

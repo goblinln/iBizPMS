@@ -197,7 +197,7 @@ export class AppFormService extends ControlServiceBase {
         this.controlInstance.getPSDEFormItems()?.find((item: IPSDEFormItem) => {
             if (!item.hidden && item.getPSAppDEField()?.keyField) {
                 Object.assign(Data, {
-                    [this.appDeKeyFieldName.toLowerCase()]: data[item.name],
+                    [this.appDeKeyFieldName.toLowerCase()]: data[item.id],
                     srffrontuf: '1'
                 });
                 return true;

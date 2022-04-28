@@ -6,13 +6,15 @@
   "logicName" : "Pms企业专用",
   "name" : "ManagePmsEe",
   "getPSDEActionInput" : {
-    "codeName" : "ManagePmsEeInput",
-    "name" : "输入对象",
+    "name" : "ManagePmsEeInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ActionDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ManagePmsEeResult",
-    "name" : "返回对象",
+    "name" : "ManagePmsEeResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

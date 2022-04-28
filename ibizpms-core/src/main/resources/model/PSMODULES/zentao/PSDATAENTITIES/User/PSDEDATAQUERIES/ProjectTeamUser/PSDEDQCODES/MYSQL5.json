@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and t.`root` = ${srfdatacontext('project','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')})",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.`account` not in(select t2.`account` from zt_user t2 where FIND_IN_SET(t2.`account`, ${srfdatacontext('account','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`ADDRESS`,\nt1.`AVATAR`,\nt1.`BIRTHDAY`,\nt1.`CLIENTLANG`,\nt1.`CLIENTSTATUS`,\nt1.`COMMITER`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DINGDING`,\nt1.`EMAIL`,\nt1.`FAILS`,\nt1.`GENDER`,\nt1.`USERSN`,\nt1.`id`,\nt1.`IP`,\nt1.`JOIN`,\nt1.`LAST`,\nt1.`LOCKED`,\nt1.`MOBILE`,\nt1.`NICKNAME`,\nt1.`PASSWORD`,\nt1.`PHONE`,\nt1.`QQ`,\nt1.`RANZHI`,\nt1.`REALNAME`,\nt1.`ROLE`,\nt1.`SCORE`,\nt1.`SCORELEVEL`,\nt1.`SKYPE`,\nt1.`SLACK`,\nt1.`VISITS`,\nt1.`WEIXIN`,\nt1.`WHATSAPP`,\nt1.`ZIPCODE`\nFROM `zt_user` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEDATAQUERIES/ProjectTeamUser/PSDEDQCODES/MYSQL5.json"
+}

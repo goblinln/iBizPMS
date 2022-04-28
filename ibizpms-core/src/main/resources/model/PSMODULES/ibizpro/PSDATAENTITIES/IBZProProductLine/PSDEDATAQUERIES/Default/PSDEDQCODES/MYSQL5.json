@@ -1,0 +1,52 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`TYPE` = 'line' )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`MDEPTID`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "t1.`MDEPTNAME`",
+    "name" : "MDEPTNAME"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`SHORT`",
+    "name" : "SHORT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEBY`,\nt1.`DELETED`,\nt1.`ID`,\nt1.`MDEPTID`,\nt1.`MDEPTNAME`,\nt1.`NAME`,\nt1.`ORDER`,\nt1.`ORGID`,\nt1.`ORGNAME`,\nt1.`SHORT`,\nt1.`TYPE`,\nt1.`UPDATEBY`\nFROM `zt_module` t1 \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

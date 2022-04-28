@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__BugCreateResolve",
   "codeListType" : "STATIC",
   "codeName" : "BugCreateResolve",
   "dynaInstMode" : 1,
@@ -12,8 +13,7 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "创建",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   } ],
   "enableCache" : true
 }

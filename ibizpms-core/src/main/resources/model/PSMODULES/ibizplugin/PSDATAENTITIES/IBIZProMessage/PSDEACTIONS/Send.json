@@ -6,13 +6,19 @@
   "logicName" : "发送消息",
   "name" : "Send",
   "getPSDEActionInput" : {
-    "codeName" : "SendInput",
-    "name" : "输入对象",
+    "name" : "SendInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IBIZProMessageDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SendResult",
-    "name" : "返回对象",
+    "name" : "SendResult",
     "type" : "VOID"
+  },
+  "getPSSubSysServiceAPIDEMethod" : {
+    "modelref" : true,
+    "id" : "Send"
   }
 }

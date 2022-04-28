@@ -340,6 +340,14 @@
         "codeName" : "EstStarted"
       }
     } ],
+    "getPSDETreeNodeRVs" : [ {
+      "name" : "EDITDATA",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+        "viewType" : "DEPORTALVIEW"
+      }
+    } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -421,6 +429,14 @@
       "getPSAppDEField" : {
         "name" : "DEADLINE",
         "codeName" : "Deadline"
+      }
+    } ],
+    "getPSDETreeNodeRVs" : [ {
+      "name" : "EDITDATA",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+        "viewType" : "DEPORTALVIEW"
       }
     } ],
     "getTextPSAppDEField" : {

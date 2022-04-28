@@ -96,7 +96,7 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzprostorymodules/${_context.ibzprostorymodule}`);
+        const res = await this.http.get(`/ibzprostorymodules/${encodeURIComponent(_context.ibzprostorymodule)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibzprostorymodules/${_context.ibzprostorymodule}`);
+        const res = await this.http.delete(`/ibzprostorymodules/${encodeURIComponent(_context.ibzprostorymodule)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -147,7 +147,7 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      */
     async SyncFromIBIZ(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/ibzprostorymodules/${_context.ibzprostorymodule}/syncfromibiz`, _data);
+        const res = await this.http.post(`/ibzprostorymodules/${encodeURIComponent(_context.ibzprostorymodule)}/syncfromibiz`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -165,7 +165,7 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibzprostorymodules/${_context.ibzprostorymodule}`, _data);
+        const res = await this.http.put(`/ibzprostorymodules/${encodeURIComponent(_context.ibzprostorymodule)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -198,7 +198,7 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzprostorymodules/${_context.ibzprostorymodule}/select`);
+        const res = await this.http.get(`/ibzprostorymodules/${encodeURIComponent(_context.ibzprostorymodule)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

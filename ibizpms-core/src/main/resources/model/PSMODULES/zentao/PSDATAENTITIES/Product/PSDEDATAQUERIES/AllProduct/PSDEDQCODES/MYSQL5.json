@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tid,\n\t`name`,\n\t`code`,\n\tline,\n\ttype,\n\t`status`,\n\tsubStatus,\n\t`desc`,\n\tPO,\n\tQD,\n\tRD,\n\tacl,\n\twhitelist,\n\tcreatedBy,\n\tcreatedDate,\n\tcreatedVersion,\n\t`order`,\n\tdeleted,\n\tIBIZ_ID,\n\tORGID,\n\tMDEPTID ,\n        productsn\nFROM\n\tzt_product \n\n\t",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATAQUERIES/AllProduct/PSDEDQCODES/MYSQL5.json"
+}

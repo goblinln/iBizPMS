@@ -186,6 +186,7 @@
           "glyph" : "xf0b0@FontAwesome",
           "cssClass" : "fa fa-filter"
         },
+        "predefinedType" : "GRIDVIEW_SEARCHBAR",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
           "lanResTag" : "TBB.TOOLTIP.*.FILTER"
@@ -387,6 +388,32 @@
     } ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        }
+      }, {
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "dataAccessAction" : "UPDATE",
@@ -394,17 +421,6 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Update"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        }
-      }, {
-        "actionType" : "DEDATASET",
-        "name" : "fetch",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchProjectBugs"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -424,19 +440,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
         }
       }, {
-        "actionName" : "Get",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "READ",
-        "name" : "load",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        }
-      }, {
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
@@ -450,13 +453,11 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
         }
       }, {
-        "actionName" : "Create",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "create",
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "Create"
+          "id" : "FetchProjectBugs"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -668,6 +669,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "ASSIGNTO"
+        },
         "getPSSysImage" : {
           "glyph" : "xf0a4@FontAwesome",
           "cssClass" : "fa fa-hand-o-right"
@@ -737,6 +742,10 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
+            "getPSDEOPPriv" : {
+              "modelref" : true,
+              "id" : "CONFIRM"
+            },
             "getPSSysImage" : {
               "glyph" : "xf06e@FontAwesome",
               "cssClass" : "fa fa-eye"
@@ -772,6 +781,10 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
+            "getPSDEOPPriv" : {
+              "modelref" : true,
+              "id" : "RESOLVE"
+            },
             "getPSSysImage" : {
               "glyph" : "xf046@FontAwesome",
               "cssClass" : "fa fa-check-square-o"
@@ -805,6 +818,10 @@
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+            },
+            "getPSDEOPPriv" : {
+              "modelref" : true,
+              "id" : "CLOSE"
             },
             "getPSSysImage" : {
               "glyph" : "xf011@FontAwesome",
@@ -840,6 +857,10 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
+            "getPSDEOPPriv" : {
+              "modelref" : true,
+              "id" : "UPDATE"
+            },
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
@@ -867,10 +888,15 @@
             "dataAccessAction" : "CREATE",
             "fullCodeName" : "Copy",
             "name" : "表格界面_拷贝操作",
+            "getPSDEOPPriv" : {
+              "modelref" : true,
+              "id" : "CREATE"
+            },
             "getPSSysImage" : {
               "glyph" : "xf0c5@FontAwesome",
               "cssClass" : "fa fa-copy"
             },
+            "predefinedType" : "GRIDVIEW_COPYACTION",
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
               "lanResTag" : "TBB.TOOLTIP.*.COPY"
@@ -899,6 +925,10 @@
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+            },
+            "getPSDEOPPriv" : {
+              "modelref" : true,
+              "id" : "FAVORITES"
             },
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
@@ -933,6 +963,10 @@
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+            },
+            "getPSDEOPPriv" : {
+              "modelref" : true,
+              "id" : "NFAVORITES"
             },
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
@@ -2932,10 +2966,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterGetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -2943,10 +2977,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "loaddraft",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGetDraft"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -3035,10 +3069,14 @@
     "actionRSMode" : 1,
     "codeName" : "Projects",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Project",
+    "minorDEName" : "ZT_PROJECT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -3049,10 +3087,14 @@
     "actionRSMode" : 1,
     "codeName" : "Bugs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Bug",
+    "minorDEName" : "ZT_BUG",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -3067,10 +3109,14 @@
     "actionRSMode" : 1,
     "codeName" : "Bugs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Test",
+    "majorDEName" : "IBZ_API__TEST",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
+    "minorDECodeName" : "Bug",
+    "minorDEName" : "ZT_BUG",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -3085,10 +3131,14 @@
     "actionRSMode" : 1,
     "codeName" : "Bugs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Bug",
+    "minorDEName" : "ZT_BUG",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"

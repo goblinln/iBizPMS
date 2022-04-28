@@ -22,6 +22,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "DEFAULT",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {

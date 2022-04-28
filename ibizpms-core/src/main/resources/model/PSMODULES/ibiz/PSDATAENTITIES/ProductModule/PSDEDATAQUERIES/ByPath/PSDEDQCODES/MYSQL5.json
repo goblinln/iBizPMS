@@ -1,0 +1,62 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`TYPE` = 'story' )",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "FIND_IN_SET (${srfdatacontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_PRODUCTMODULE\"}')}, t1.`PATH`)",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`COLLECTOR`",
+    "name" : "COLLECTOR"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`GRADE`",
+    "name" : "GRADE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END )",
+    "name" : "ISLEAF"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`OWNER`",
+    "name" : "OWNER"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t1.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`ROOT`",
+    "name" : "ROOT"
+  }, {
+    "expression" : "t1.`SHORT`",
+    "name" : "SHORT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`DELETED`,\nt1.`GRADE`,\nt1.`ID`,\n(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`,\nt1.`NAME`,\nt1.`ORDER`,\nt1.`OWNER`,\nt1.`PARENT`,\nt1.`PATH`,\nt1.`ROOT`,\nt1.`SHORT`,\nt1.`TYPE`,\nt1.MODULESN\nFROM `zt_module` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEDATAQUERIES/ByPath/PSDEDQCODES/MYSQL5.json"
+}

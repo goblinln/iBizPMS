@@ -1,0 +1,43 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DEPTSN`",
+    "name" : "DEPTSN"
+  }, {
+    "expression" : "t1.`FUNCTION`",
+    "name" : "FUNCTION"
+  }, {
+    "expression" : "t1.`GRADE`",
+    "name" : "GRADE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "(CASE WHEN EXISTS (SELECT 1 FROM ZT_DEPT WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END )",
+    "name" : "ISLEAF"
+  }, {
+    "expression" : "t1.`MANAGER`",
+    "name" : "MANAGER"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PARENTNAME"
+  }, {
+    "expression" : "t1.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`POSITION`",
+    "name" : "POSITION"
+  } ],
+  "queryCode" : "SELECT\nt1.`DEPTSN`,\nt1.`FUNCTION`,\nt1.`GRADE`,\nt1.`ID`,\n(CASE WHEN EXISTS (SELECT 1 FROM ZT_DEPT WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`,\nt1.`MANAGER`,\nt1.`NAME`,\nt1.`ORDER`,\nt1.`PARENT`,\nt11.`NAME` AS `PARENTNAME`,\nt1.`PATH`,\nt1.`POSITION`\nFROM `zt_dept` t1 \nLEFT JOIN `zt_dept` t11 ON t1.`PARENT` = t11.`ID` \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

@@ -496,43 +496,6 @@
           } ],
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
-              "actionName" : "Update",
-              "actionType" : "DEACTION",
-              "dataAccessAction" : "UPDATE",
-              "name" : "update",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Update"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
-              }
-            }, {
-              "actionType" : "DEDATASET",
-              "name" : "fetch",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "FetchMyUpcoming"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
-              }
-            }, {
-              "actionName" : "Remove",
-              "actionType" : "DEACTION",
-              "dataAccessAction" : "DELETE",
-              "name" : "remove",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Remove"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
-              }
-            }, {
               "actionName" : "Get",
               "actionType" : "DEACTION",
               "dataAccessAction" : "READ",
@@ -553,6 +516,43 @@
               "getPSAppDEMethod" : {
                 "modelref" : true,
                 "id" : "Create"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+              }
+            }, {
+              "actionName" : "Update",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "UPDATE",
+              "name" : "update",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Update"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+              }
+            }, {
+              "actionName" : "Remove",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "DELETE",
+              "name" : "remove",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Remove"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+              }
+            }, {
+              "actionType" : "DEDATASET",
+              "name" : "fetch",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "FetchMyUpcoming"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -654,6 +654,10 @@
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+                },
+                "getPSDEOPPriv" : {
+                  "modelref" : true,
+                  "id" : "START"
                 },
                 "getPSSysImage" : {
                   "cssClass" : "play"
@@ -896,10 +900,14 @@
           "actionRSMode" : 1,
           "codeName" : "Todos",
           "dataRSMode" : 0,
+          "majorDECodeName" : "SysAccount",
+          "majorDEName" : "SYS_USER",
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
           },
+          "minorDECodeName" : "Todo",
+          "minorDEName" : "ZT_TODO",
           "getMinorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"

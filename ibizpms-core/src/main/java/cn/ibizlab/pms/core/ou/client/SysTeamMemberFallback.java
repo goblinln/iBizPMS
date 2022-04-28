@@ -33,10 +33,6 @@ public class SysTeamMemberFallback implements FallbackFactory<SysTeamMemberFeign
         String finalErrorMessage = errorMessage;
         return new SysTeamMemberFeignClient(){
 
-            public Page<SysTeamMember> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public SysTeamMember create(SysTeamMember systeammember) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class SysTeamMemberFallback implements FallbackFactory<SysTeamMemberFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysTeamMember update(String teammemberid, SysTeamMember systeammember) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<SysTeamMember> systeammembers) {
+            public SysTeamMember get(String teammemberid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class SysTeamMemberFallback implements FallbackFactory<SysTeamMemberFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysTeamMember get(String teammemberid) {
+            public SysTeamMember update(String teammemberid, SysTeamMember systeammember) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<SysTeamMember> systeammembers) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(SysTeamMember systeammember) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysTeamMember> searchDefault(SysTeamMemberSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class SysTeamMemberFallback implements FallbackFactory<SysTeamMemberFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(SysTeamMember systeammember) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(SysTeamMember systeammember) {
@@ -86,10 +87,9 @@ public class SysTeamMemberFallback implements FallbackFactory<SysTeamMemberFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<SysTeamMember> searchDefault(SysTeamMemberSearchContext context) {
+            public Page<SysTeamMember> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

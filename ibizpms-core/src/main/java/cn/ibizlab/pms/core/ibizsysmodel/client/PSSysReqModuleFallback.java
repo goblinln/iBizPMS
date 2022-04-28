@@ -33,10 +33,6 @@ public class PSSysReqModuleFallback implements FallbackFactory<PSSysReqModuleFei
         String finalErrorMessage = errorMessage;
         return new PSSysReqModuleFeignClient(){
 
-            public Page<PSSysReqModule> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSSysReqModule create(PSSysReqModule pssysreqmodule) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSSysReqModuleFallback implements FallbackFactory<PSSysReqModuleFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSysReqModule update(String pssysreqmoduleid, PSSysReqModule pssysreqmodule) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSSysReqModule> pssysreqmodules) {
+            public PSSysReqModule get(String pssysreqmoduleid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class PSSysReqModuleFallback implements FallbackFactory<PSSysReqModuleFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSysReqModule get(String pssysreqmoduleid) {
+            public PSSysReqModule update(String pssysreqmoduleid, PSSysReqModule pssysreqmodule) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSSysReqModule> pssysreqmodules) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSSysReqModule pssysreqmodule) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSysReqModule> searchDefault(PSSysReqModuleSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class PSSysReqModuleFallback implements FallbackFactory<PSSysReqModuleFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSSysReqModule pssysreqmodule) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSSysReqModule pssysreqmodule) {
@@ -86,10 +87,9 @@ public class PSSysReqModuleFallback implements FallbackFactory<PSSysReqModuleFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSSysReqModule> searchDefault(PSSysReqModuleSearchContext context) {
+            public Page<PSSysReqModule> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

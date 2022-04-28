@@ -6,13 +6,15 @@
   "logicName" : "汇总产品日报",
   "name" : "StatsProductDaily",
   "getPSDEActionInput" : {
-    "codeName" : "StatsProductDailyInput",
-    "name" : "输入对象",
+    "name" : "StatsProductDailyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbizproProductDailyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "StatsProductDailyResult",
-    "name" : "返回对象",
+    "name" : "StatsProductDailyResult",
     "type" : "VOID"
   }
 }

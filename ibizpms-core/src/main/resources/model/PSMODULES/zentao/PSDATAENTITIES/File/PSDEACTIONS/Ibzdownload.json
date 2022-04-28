@@ -6,13 +6,15 @@
   "logicName" : "下载",
   "name" : "ibzdownload",
   "getPSDEActionInput" : {
-    "codeName" : "IbzdownloadInput",
-    "name" : "输入对象",
+    "name" : "IbzdownloadInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "FileDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "IbzdownloadResult",
-    "name" : "返回对象",
+    "name" : "IbzdownloadResult",
     "type" : "VOID"
   }
 }

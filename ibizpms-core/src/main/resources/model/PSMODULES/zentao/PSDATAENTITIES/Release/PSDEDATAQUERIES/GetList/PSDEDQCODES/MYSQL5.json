@@ -1,0 +1,91 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`PRODUCT` = ${srfdatacontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_RELEASE\"}')}  AND  <#assign _value=srfdatacontext('status','{\"ignoreempty\":true,\"defname\":\"STATUS\",\"dename\":\"ZT_RELEASE\"}')><#if _value?length gt 0>t1.`STATUS` =  ${_value}<#else>1=1</#if> )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BUGS`",
+    "name" : "BUGS"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`LEFTBUGS`",
+    "name" : "LEFTBUGS"
+  }, {
+    "expression" : "t1.`STORIES`",
+    "name" : "STORIES"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`BUILD`",
+    "name" : "BUILD"
+  }, {
+    "expression" : "t21.`DATE`",
+    "name" : "BUILDDATE"
+  }, {
+    "expression" : "t21.`BUILDER`",
+    "name" : "BUILDER"
+  }, {
+    "expression" : "t21.`NAME`",
+    "name" : "BUILDNAME"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`MARKER`",
+    "name" : "MARKER"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`name`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`RELEASESN`",
+    "name" : "RELEASESN"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`SUBSTATUS`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`BUILD`,\nt21.`DATE` AS `BUILDDATE`,\nt21.`BUILDER`,\nt21.`NAME` AS `BUILDNAME`,\nt1.`CREATEBY`,\nt1.`DATE`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`ID`,\nt1.`MARKER`,\nt1.`NAME`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PRODUCT`,\nt11.`name` AS `PRODUCTNAME`,\nt1.`RELEASESN`,\nt1.`STATUS`,\nt1.`SUBSTATUS`,\nt1.`UPDATEBY`\nFROM `zt_release` t1 \nLEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id` \nLEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`ID` \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEDATAQUERIES/GetList/PSDEDQCODES/MYSQL5.json"
+}

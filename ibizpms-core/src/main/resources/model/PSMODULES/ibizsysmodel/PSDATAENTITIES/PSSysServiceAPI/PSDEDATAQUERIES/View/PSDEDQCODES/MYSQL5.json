@@ -1,0 +1,142 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`APIMODE`",
+    "name" : "APIMODE"
+  }, {
+    "expression" : "t1.`APITAG`",
+    "name" : "APITAG"
+  }, {
+    "expression" : "t1.`APITAG2`",
+    "name" : "APITAG2"
+  }, {
+    "expression" : "t1.`APITYPE`",
+    "name" : "APITYPE"
+  }, {
+    "expression" : "t1.`AUTHCHECKTOKENURI`",
+    "name" : "AUTHCHECKTOKENURI"
+  }, {
+    "expression" : "t1.`AUTHCLIENTID`",
+    "name" : "AUTHCLIENTID"
+  }, {
+    "expression" : "t1.`AUTHCLIENTSECRET`",
+    "name" : "AUTHCLIENTSECRET"
+  }, {
+    "expression" : "t1.`AUTHMODE`",
+    "name" : "AUTHMODE"
+  }, {
+    "expression" : "t1.`AUTHPARAM`",
+    "name" : "AUTHPARAM"
+  }, {
+    "expression" : "t1.`AUTHPARAM2`",
+    "name" : "AUTHPARAM2"
+  }, {
+    "expression" : "t1.`AUTHPARAM3`",
+    "name" : "AUTHPARAM3"
+  }, {
+    "expression" : "t1.`AUTHPARAM4`",
+    "name" : "AUTHPARAM4"
+  }, {
+    "expression" : "t1.`CFGPSMODELSTORAGEID`",
+    "name" : "CFGPSMODELSTORAGEID"
+  }, {
+    "expression" : "t1.`CFGTAG`",
+    "name" : "CFGTAG"
+  }, {
+    "expression" : "t1.`CODENAME`",
+    "name" : "CODENAME"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DEFDEACTIONREQMETHOD`",
+    "name" : "DEFDEACTIONREQMETHOD"
+  }, {
+    "expression" : "t1.`DEFDEDATASETREQMETHOD`",
+    "name" : "DEFDEDATASETREQMETHOD"
+  }, {
+    "expression" : "t1.`DEFSELECTREQMETHOD`",
+    "name" : "DEFSELECTREQMETHOD"
+  }, {
+    "expression" : "t1.`LOCKFLAG`",
+    "name" : "LOCKFLAG"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`PREDEFINEDTYPE`",
+    "name" : "PREDEFINEDTYPE"
+  }, {
+    "expression" : "t1.`PSMODULEID`",
+    "name" : "PSMODULEID"
+  }, {
+    "expression" : "t11.`PSMODULENAME`",
+    "name" : "PSMODULENAME"
+  }, {
+    "expression" : "t1.`PSSYSSERVICEAPIID`",
+    "name" : "PSSYSSERVICEAPIID"
+  }, {
+    "expression" : "t1.`PSSYSSERVICEAPINAME`",
+    "name" : "PSSYSSERVICEAPINAME"
+  }, {
+    "expression" : "t1.`PSSYSTEMID`",
+    "name" : "PSSYSTEMID"
+  }, {
+    "expression" : "t1.`PSSYSTEMNAME`",
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "expression" : "t1.`SERVICECODENAME`",
+    "name" : "SERVICECODENAME"
+  }, {
+    "expression" : "t1.`SERVICEPARAM`",
+    "name" : "SERVICEPARAM"
+  }, {
+    "expression" : "t1.`SERVICEPARAM2`",
+    "name" : "SERVICEPARAM2"
+  }, {
+    "expression" : "t1.`SERVICEPARAM3`",
+    "name" : "SERVICEPARAM3"
+  }, {
+    "expression" : "t1.`SERVICEPARAM4`",
+    "name" : "SERVICEPARAM4"
+  }, {
+    "expression" : "t1.`SERVICETYPE`",
+    "name" : "SERVICETYPE"
+  }, {
+    "expression" : "t1.`UNIQUETAG`",
+    "name" : "UNIQUETAG"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`USERCAT`",
+    "name" : "USERCAT"
+  }, {
+    "expression" : "t1.`USERTAG`",
+    "name" : "USERTAG"
+  }, {
+    "expression" : "t1.`USERTAG2`",
+    "name" : "USERTAG2"
+  }, {
+    "expression" : "t1.`USERTAG3`",
+    "name" : "USERTAG3"
+  }, {
+    "expression" : "t1.`USERTAG4`",
+    "name" : "USERTAG4"
+  }, {
+    "expression" : "t1.`VALIDFLAG`",
+    "name" : "VALIDFLAG"
+  }, {
+    "expression" : "t1.`VER`",
+    "name" : "VER"
+  } ],
+  "queryCode" : "SELECT\nt1.`APIMODE`,\nt1.`APITAG`,\nt1.`APITAG2`,\nt1.`APITYPE`,\nt1.`AUTHCHECKTOKENURI`,\nt1.`AUTHCLIENTID`,\nt1.`AUTHCLIENTSECRET`,\nt1.`AUTHMODE`,\nt1.`AUTHPARAM`,\nt1.`AUTHPARAM2`,\nt1.`AUTHPARAM3`,\nt1.`AUTHPARAM4`,\nt1.`CFGPSMODELSTORAGEID`,\nt1.`CFGTAG`,\nt1.`CODENAME`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DEFDEACTIONREQMETHOD`,\nt1.`DEFDEDATASETREQMETHOD`,\nt1.`DEFSELECTREQMETHOD`,\nt1.`LOCKFLAG`,\nt1.`MEMO`,\nt1.`PREDEFINEDTYPE`,\nt1.`PSMODULEID`,\nt11.`PSMODULENAME`,\nt1.`PSSYSSERVICEAPIID`,\nt1.`PSSYSSERVICEAPINAME`,\nt1.`PSSYSTEMID`,\nt1.`PSSYSTEMNAME`,\nt1.`SERVICECODENAME`,\nt1.`SERVICEPARAM`,\nt1.`SERVICEPARAM2`,\nt1.`SERVICEPARAM3`,\nt1.`SERVICEPARAM4`,\nt1.`SERVICETYPE`,\nt1.`UNIQUETAG`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`USERCAT`,\nt1.`USERTAG`,\nt1.`USERTAG2`,\nt1.`USERTAG3`,\nt1.`USERTAG4`,\nt1.`VALIDFLAG`,\nt1.`VER`\nFROM `T_PSSYSSERVICEAPI` t1 \nLEFT JOIN `T_PSMODULE` t11 ON t1.`PSMODULEID` = t11.`PSMODULEID` \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

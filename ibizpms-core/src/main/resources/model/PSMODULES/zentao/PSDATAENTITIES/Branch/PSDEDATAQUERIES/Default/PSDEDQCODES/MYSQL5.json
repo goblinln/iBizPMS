@@ -1,0 +1,51 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BRANCHSN`",
+    "name" : "BRANCHSN"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "REALORDER"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCHSN`,\nt1.`CREATEBY`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`ID`,\nt1.`NAME`,\nt1.`ORDER`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PRODUCT`,\nt1.`ORDER` AS `REALORDER`,\nt1.`UPDATEBY`\nFROM `zt_branch` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

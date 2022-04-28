@@ -309,6 +309,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "START"
+          },
           "getPSSysImage" : {
             "glyph" : "xf01d@FontAwesome",
             "cssClass" : "fa fa-play-circle-o"

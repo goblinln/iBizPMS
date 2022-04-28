@@ -77,13 +77,13 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "RecordEstimate",
+        "actionName" : "GetDraft",
         "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "RecordEstimate"
+          "id" : "GetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -94,32 +94,6 @@
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraftfrom",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
-        }
-      }, {
-        "actionName" : "GetDraft",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
@@ -145,6 +119,32 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Pause"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        }
+      }, {
+        "actionName" : "RecordEstimate",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "RecordEstimate"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -442,6 +442,10 @@
                       "colLG" : 2,
                       "colMD" : 2,
                       "layout" : "TABLE_12COL"
+                    },
+                    "getPSRawItem" : {
+                      "htmlContent" : "工时",
+                      "name" : "rawitem2"
                     }
                   }, {
                     "itemStyle" : "DEFAULT",
@@ -469,6 +473,10 @@
                       "colLG" : 2,
                       "colMD" : 2,
                       "layout" : "TABLE_12COL"
+                    },
+                    "getPSRawItem" : {
+                      "htmlContent" : "剩余",
+                      "name" : "rawitem1"
                     }
                   }, {
                     "itemStyle" : "DEFAULT",
@@ -546,43 +554,6 @@
               } ],
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
-                  "actionName" : "Update",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "UPDATE",
-                  "name" : "update",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "Update"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TaskEstimate.json"
-                  }
-                }, {
-                  "actionType" : "DEDATASET",
-                  "name" : "fetch",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "FetchDefault"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TaskEstimate.json"
-                  }
-                }, {
-                  "actionName" : "Remove",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "DELETE",
-                  "name" : "remove",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "Remove"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TaskEstimate.json"
-                  }
-                }, {
                   "actionName" : "Get",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "READ",
@@ -603,6 +574,43 @@
                   "getPSAppDEMethod" : {
                     "modelref" : true,
                     "id" : "Create"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TaskEstimate.json"
+                  }
+                }, {
+                  "actionName" : "Update",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "UPDATE",
+                  "name" : "update",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Update"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TaskEstimate.json"
+                  }
+                }, {
+                  "actionName" : "Remove",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "DELETE",
+                  "name" : "remove",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Remove"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TaskEstimate.json"
+                  }
+                }, {
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "FetchDefault"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -788,10 +796,14 @@
               "actionRSMode" : 1,
               "codeName" : "Projects",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Product",
+              "majorDEName" : "ZT_PRODUCT",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
               },
+              "minorDECodeName" : "Project",
+              "minorDEName" : "ZT_PROJECT",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -802,10 +814,14 @@
               "actionRSMode" : 1,
               "codeName" : "Tasks",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Project",
+              "majorDEName" : "ZT_PROJECT",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
               },
+              "minorDECodeName" : "Task",
+              "minorDEName" : "ZT_TASK",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
@@ -820,10 +836,14 @@
               "actionRSMode" : 1,
               "codeName" : "taskEstimates",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Task",
+              "majorDEName" : "ZT_TASK",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
               },
+              "minorDECodeName" : "TaskEstimate",
+              "minorDEName" : "ZT_TASKESTIMATE",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TaskEstimate.json"
@@ -839,10 +859,14 @@
               "actionRSMode" : 1,
               "codeName" : "Tasks",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Project",
+              "majorDEName" : "ZT_PROJECT",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
               },
+              "minorDECodeName" : "Task",
+              "minorDEName" : "ZT_TASK",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
@@ -857,10 +881,14 @@
               "actionRSMode" : 1,
               "codeName" : "taskEstimates",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Task",
+              "majorDEName" : "ZT_TASK",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
               },
+              "minorDECodeName" : "TaskEstimate",
+              "minorDEName" : "ZT_TASKESTIMATE",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TaskEstimate.json"
@@ -972,6 +1000,32 @@
             },
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
+                "actionName" : "GetTemp",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "READ",
+                "name" : "load",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "GetTemp"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
+                }
+              }, {
+                "actionName" : "CreateTemp",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "CREATE",
+                "name" : "create",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "CreateTemp"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
+                }
+              }, {
                 "actionName" : "UpdateTemp",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "UPDATE",
@@ -979,17 +1033,6 @@
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "UpdateTemp"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
-                }
-              }, {
-                "actionType" : "DEDATASET",
-                "name" : "fetch",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "FetchTempDefaults"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1009,19 +1052,6 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
                 }
               }, {
-                "actionName" : "GetTemp",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "READ",
-                "name" : "load",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "GetTemp"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
-                }
-              }, {
                 "actionName" : "GetDraftTemp",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "CREATE",
@@ -1035,13 +1065,11 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
                 }
               }, {
-                "actionName" : "CreateTemp",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "CREATE",
-                "name" : "create",
+                "actionType" : "DEDATASET",
+                "name" : "fetch",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "CreateTemp"
+                  "id" : "FetchTempDefaults"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1519,6 +1547,7 @@
       "modelref" : true,
       "id" : "update"
     },
+    "mobileControl" : true,
     "noTabHeader" : true,
     "name" : "form",
     "modelid" : "d1f33eb045ca0b2cff87b55dd1424971",
@@ -1557,10 +1586,14 @@
     "actionRSMode" : 1,
     "codeName" : "Projects",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Project",
+    "minorDEName" : "ZT_PROJECT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -1571,10 +1604,14 @@
     "actionRSMode" : 1,
     "codeName" : "Tasks",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Task",
+    "minorDEName" : "ZT_TASK",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
@@ -1589,10 +1626,14 @@
     "actionRSMode" : 1,
     "codeName" : "Tasks",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Task",
+    "minorDEName" : "ZT_TASK",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"

@@ -2,6 +2,7 @@ package cn.ibizlab.pms.util.client;
 
 import cn.ibizlab.pms.util.domain.WFInstance;
 import cn.ibizlab.pms.util.domain.DataAccessMode;
+import cn.ibizlab.pms.util.filter.WFTaskSearchContext;
 import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSONObject;
 import java.util.*;
@@ -32,15 +33,14 @@ public class IBZWFFallback implements IBZWFFeignClient {
     }
 
     @Override
-    public Map<String, Map<String, Object>> getTask(String system, String userId, String entity, String instTag, String instTag2 ,String taskType) {
+    public Map<String, Map<String, Object>> getTask(String system, String userId, String entity, String instTag, String instTag2, WFTaskSearchContext context) {
         return null;
     }
 
     @Override
-    public Map<String, Map<String, Object>> getTaskByStep(String system, String userId, String entity, String instTag, String instTag2 , String taskType, String srfwfstep) {
+    public feign.Response getWFTask(String system, String userId, String entity, String instTag, String instTag2, WFTaskSearchContext context) {
         return null;
     }
-
     @Override
     public Integer getDataAccessMode(String system, String entity, Serializable businessKey) {
         return null;
@@ -60,4 +60,9 @@ public class IBZWFFallback implements IBZWFFeignClient {
     public Boolean WFUnregister(String system, String entity, Object businessKey) {
         return null;
     }
+
+    @Override
+	public Boolean readTask(String system, String appname, String entity, String businessKey, String taskId, Object taskWay){
+	    return null;
+	}
 }

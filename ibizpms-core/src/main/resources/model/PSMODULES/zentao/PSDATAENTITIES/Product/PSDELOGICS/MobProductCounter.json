@@ -5,37 +5,20 @@
   "logicName" : "移动端产品计数器",
   "name" : "移动端产品计数器",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Rawsqlcall3",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "计划数",
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall4"
+        "id" : "Rawsqlcall1"
       },
-      "name" : "连接6010",
+      "name" : "连接1090",
       "getSrcPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "defaultLink" : false
+        "id" : "Begin"
+      }
     } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[ID]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "ID",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select count(t1.id) as PRODUCTPLANCNT from zt_productplan t1 where t1.deleted = '0' and t1.product = ?",
-    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall4",
@@ -75,8 +58,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -92,21 +74,36 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
+    "codeName" : "Rawsqlcall3",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "计划数",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall1"
+        "id" : "Rawsqlcall4"
       },
-      "name" : "连接1090",
+      "name" : "连接6010",
       "getSrcPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
+        "id" : "Rawsqlcall3"
+      }
     } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[ID]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "ID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select count(t1.id) as PRODUCTPLANCNT from zt_productplan t1 where t1.deleted = '0' and t1.product = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -125,8 +122,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -144,12 +140,14 @@
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

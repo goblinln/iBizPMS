@@ -23,6 +23,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "BuildProduceBugStatus_Project",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchBuildProduceBugStatus_Project"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {

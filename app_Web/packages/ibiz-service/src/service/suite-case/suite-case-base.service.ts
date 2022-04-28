@@ -96,7 +96,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/suitecases/${_context.suitecase}`);
+        const res = await this.http.get(`/suitecases/${encodeURIComponent(_context.suitecase)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/suitecases/${_context.suitecase}`);
+        const res = await this.http.delete(`/suitecases/${encodeURIComponent(_context.suitecase)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/suitecases/${_context.suitecase}`, _data);
+        const res = await this.http.put(`/suitecases/${encodeURIComponent(_context.suitecase)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/suitecases/${_context.suitecase}/select`);
+        const res = await this.http.get(`/suitecases/${encodeURIComponent(_context.suitecase)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

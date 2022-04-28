@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\n        t1.CASESTEPSN,\n\tt1.`CASE`,\n\tt1.`DESC`,\n\tt1.`EXPECT`,\n\tt1.`ID`,\n        t1.id AS `CASESTEPID`,\n\tt1.`PARENT`,\n\tt1.`TYPE`,\n\tt1.`VERSION` \nFROM\n\t`zt_casestep` t1\n\tinner JOIN zt_case t11 ON t1.`case` = t11.id \n\tAND t1.version = t11.version",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEDATAQUERIES/Mob/PSDEDQCODES/MYSQL5.json"
+}

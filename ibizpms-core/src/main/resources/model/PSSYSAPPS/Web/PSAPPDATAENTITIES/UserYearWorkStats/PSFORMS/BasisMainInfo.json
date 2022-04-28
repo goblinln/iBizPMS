@@ -362,6 +362,14 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "caption" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计日志数 <strong>{{data.yearlogcnt ? data.yearlogcnt: 0}}</strong></li><li >累计工时数 <strong>{{data.yearestimatecnt ? data.yearestimatecnt: 0}}</strong></li></ul></div>",
+            "contentType" : "RAW",
+            "name" : "rawitem1",
+            "getPSSysCss" : {
+              "cssName" : "year-stats-info-css"
+            }
+          },
           "getPSSysCss" : {
             "cssName" : "year-stats-info-css"
           },
@@ -394,6 +402,14 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "caption" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li>累计参与产品数 <strong>{{data.yearproductcnt ? data.yearproductcnt: 0}}</strong></li><li >累计创建计划数 <strong>{{data.yearplancnt ? data.yearplancnt: 0}}</strong></li><li >累计创建需求数 <strong>{{data.yearstorycnt ? data.yearstorycnt: 0}}</strong></li></ul></div>",
+            "contentType" : "RAW",
+            "name" : "rawitem2",
+            "getPSSysCss" : {
+              "cssName" : "year-stats-info-css"
+            }
+          },
           "getPSSysCss" : {
             "cssName" : "year-stats-info-css"
           },
@@ -425,6 +441,14 @@
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "caption" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计创建用例数 <strong>{{data.yearcasecnt ? data.yearcasecnt: 0}}</strong></li><li >累计创建Bug数 <strong>{{data.yearbugcnt ? data.yearbugcnt: 0}}</strong></li></ul></div>",
+            "contentType" : "RAW",
+            "name" : "rawitem3",
+            "getPSSysCss" : {
+              "cssName" : "year-stats-info-css"
+            }
           },
           "getPSSysCss" : {
             "cssName" : "year-stats-info-css"
@@ -537,6 +561,14 @@
                 "getPSChartDataSetGroups" : [ {
                   "index" : 0,
                   "name" : "ProductCreateStory",
+                  "getPSAppDEDataSet" : {
+                    "modelref" : true,
+                    "id" : "FetchProductCreateStory"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                  },
                   "id" : "0"
                 } ],
                 "getPSChartDataSets" : [ {
@@ -557,43 +589,6 @@
                 } ],
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
-                    "actionName" : "Update",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "UPDATE",
-                    "name" : "update",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Update"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-                    }
-                  }, {
-                    "actionType" : "DEDATASET",
-                    "name" : "fetch",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "FetchProductCreateStory"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-                    }
-                  }, {
-                    "actionName" : "Remove",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "DELETE",
-                    "name" : "remove",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Remove"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-                    }
-                  }, {
                     "actionName" : "Get",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "READ",
@@ -614,6 +609,43 @@
                     "getPSAppDEMethod" : {
                       "modelref" : true,
                       "id" : "Create"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                    }
+                  }, {
+                    "actionName" : "Update",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "UPDATE",
+                    "name" : "update",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Update"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                    }
+                  }, {
+                    "actionName" : "Remove",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "DELETE",
+                    "name" : "remove",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Remove"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                    }
+                  }, {
+                    "actionType" : "DEDATASET",
+                    "name" : "fetch",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "FetchProductCreateStory"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -845,6 +877,14 @@
                 "getPSChartDataSetGroups" : [ {
                   "index" : 0,
                   "name" : "ProductBugcnt_QA",
+                  "getPSAppDEDataSet" : {
+                    "modelref" : true,
+                    "id" : "FetchProductBugcnt_QA"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                  },
                   "id" : "0"
                 } ],
                 "getPSChartDataSets" : [ {
@@ -865,43 +905,6 @@
                 } ],
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
-                    "actionName" : "Update",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "UPDATE",
-                    "name" : "update",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Update"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-                    }
-                  }, {
-                    "actionType" : "DEDATASET",
-                    "name" : "fetch",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "FetchProductBugcnt_QA"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-                    }
-                  }, {
-                    "actionName" : "Remove",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "DELETE",
-                    "name" : "remove",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Remove"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-                    }
-                  }, {
                     "actionName" : "Get",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "READ",
@@ -922,6 +925,43 @@
                     "getPSAppDEMethod" : {
                       "modelref" : true,
                       "id" : "Create"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                    }
+                  }, {
+                    "actionName" : "Update",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "UPDATE",
+                    "name" : "update",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Update"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                    }
+                  }, {
+                    "actionName" : "Remove",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "DELETE",
+                    "name" : "remove",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Remove"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                    }
+                  }, {
+                    "actionType" : "DEDATASET",
+                    "name" : "fetch",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "FetchProductBugcnt_QA"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -1153,6 +1193,14 @@
                 "getPSChartDataSetGroups" : [ {
                   "index" : 0,
                   "name" : "InvolvedProject",
+                  "getPSAppDEDataSet" : {
+                    "modelref" : true,
+                    "id" : "FetchInvolvedProject"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                  },
                   "id" : "0"
                 } ],
                 "getPSChartDataSets" : [ {
@@ -1178,43 +1226,6 @@
                 } ],
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
-                    "actionName" : "Update",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "UPDATE",
-                    "name" : "update",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Update"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-                    }
-                  }, {
-                    "actionType" : "DEDATASET",
-                    "name" : "fetch",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "FetchInvolvedProject"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-                    }
-                  }, {
-                    "actionName" : "Remove",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "DELETE",
-                    "name" : "remove",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Remove"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-                    }
-                  }, {
                     "actionName" : "Get",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "READ",
@@ -1235,6 +1246,43 @@
                     "getPSAppDEMethod" : {
                       "modelref" : true,
                       "id" : "Create"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                    }
+                  }, {
+                    "actionName" : "Update",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "UPDATE",
+                    "name" : "update",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Update"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                    }
+                  }, {
+                    "actionName" : "Remove",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "DELETE",
+                    "name" : "remove",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Remove"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                    }
+                  }, {
+                    "actionType" : "DEDATASET",
+                    "name" : "fetch",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "FetchInvolvedProject"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -1353,10 +1401,14 @@
                 "actionRSMode" : 1,
                 "codeName" : "Projects",
                 "dataRSMode" : 0,
+                "majorDECodeName" : "Product",
+                "majorDEName" : "ZT_PRODUCT",
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
                 },
+                "minorDECodeName" : "Project",
+                "minorDEName" : "ZT_PROJECT",
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -1580,6 +1632,32 @@
                 },
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
+                    "actionName" : "Get",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "READ",
+                    "name" : "load",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Get"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                    }
+                  }, {
+                    "actionName" : "Create",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "CREATE",
+                    "name" : "create",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Create"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                    }
+                  }, {
                     "actionName" : "Update",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "UPDATE",
@@ -1587,17 +1665,6 @@
                     "getPSAppDEMethod" : {
                       "modelref" : true,
                       "id" : "Update"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-                    }
-                  }, {
-                    "actionType" : "DEDATASET",
-                    "name" : "fetch",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "FetchInvolvedProject_StoryTaskBug"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -1617,19 +1684,6 @@
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
                     }
                   }, {
-                    "actionName" : "Get",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "READ",
-                    "name" : "load",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Get"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-                    }
-                  }, {
                     "actionName" : "GetDraft",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "CREATE",
@@ -1643,13 +1697,11 @@
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
                     }
                   }, {
-                    "actionName" : "Create",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "CREATE",
-                    "name" : "create",
+                    "actionType" : "DEDATASET",
+                    "name" : "fetch",
                     "getPSAppDEMethod" : {
                       "modelref" : true,
-                      "id" : "Create"
+                      "id" : "FetchInvolvedProject_StoryTaskBug"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -1900,10 +1952,14 @@
                 "actionRSMode" : 1,
                 "codeName" : "Projects",
                 "dataRSMode" : 0,
+                "majorDECodeName" : "Product",
+                "majorDEName" : "ZT_PRODUCT",
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
                 },
+                "minorDECodeName" : "Project",
+                "minorDEName" : "ZT_PROJECT",
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -2106,6 +2162,32 @@
                 },
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
+                    "actionName" : "Get",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "READ",
+                    "name" : "load",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Get"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                    }
+                  }, {
+                    "actionName" : "Create",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "CREATE",
+                    "name" : "create",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Create"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                    }
+                  }, {
                     "actionName" : "Update",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "UPDATE",
@@ -2113,17 +2195,6 @@
                     "getPSAppDEMethod" : {
                       "modelref" : true,
                       "id" : "Update"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-                    }
-                  }, {
-                    "actionType" : "DEDATASET",
-                    "name" : "fetch",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "FetchProductStorycntAndPlancnt"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -2143,19 +2214,6 @@
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
                     }
                   }, {
-                    "actionName" : "Get",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "READ",
-                    "name" : "load",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Get"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-                    }
-                  }, {
                     "actionName" : "GetDraft",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "CREATE",
@@ -2169,13 +2227,11 @@
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
                     }
                   }, {
-                    "actionName" : "Create",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "CREATE",
-                    "name" : "create",
+                    "actionType" : "DEDATASET",
+                    "name" : "fetch",
                     "getPSAppDEMethod" : {
                       "modelref" : true,
-                      "id" : "Create"
+                      "id" : "FetchProductStorycntAndPlancnt"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -2569,6 +2625,32 @@
                 },
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
+                    "actionName" : "Get",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "READ",
+                    "name" : "load",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Get"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                    }
+                  }, {
+                    "actionName" : "Create",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "CREATE",
+                    "name" : "create",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Create"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+                    }
+                  }, {
                     "actionName" : "Update",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "UPDATE",
@@ -2576,17 +2658,6 @@
                     "getPSAppDEMethod" : {
                       "modelref" : true,
                       "id" : "Update"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-                    }
-                  }, {
-                    "actionType" : "DEDATASET",
-                    "name" : "fetch",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "FetchProductBugcnt_QA"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -2606,19 +2677,6 @@
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
                     }
                   }, {
-                    "actionName" : "Get",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "READ",
-                    "name" : "load",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Get"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-                    }
-                  }, {
                     "actionName" : "GetDraft",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "CREATE",
@@ -2632,13 +2690,11 @@
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
                     }
                   }, {
-                    "actionName" : "Create",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "CREATE",
-                    "name" : "create",
+                    "actionType" : "DEDATASET",
+                    "name" : "fetch",
                     "getPSAppDEMethod" : {
                       "modelref" : true,
-                      "id" : "Create"
+                      "id" : "FetchProductBugcnt_QA"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -3066,6 +3122,14 @@
                     "getPSChartDataSetGroups" : [ {
                       "index" : 0,
                       "name" : "CurFinishTask",
+                      "getPSAppDEDataSet" : {
+                        "modelref" : true,
+                        "id" : "FetchCurFinishTask"
+                      },
+                      "getPSAppDataEntity" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                      },
                       "id" : "0"
                     } ],
                     "getPSChartDataSets" : [ {
@@ -3086,43 +3150,6 @@
                     } ],
                     "getPSControlHandler" : {
                       "getPSHandlerActions" : [ {
-                        "actionName" : "Update",
-                        "actionType" : "DEACTION",
-                        "dataAccessAction" : "UPDATE",
-                        "name" : "update",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "Update"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                        }
-                      }, {
-                        "actionType" : "DEDATASET",
-                        "name" : "fetch",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "FetchCurFinishTask"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                        }
-                      }, {
-                        "actionName" : "Remove",
-                        "actionType" : "DEACTION",
-                        "dataAccessAction" : "DELETE",
-                        "name" : "remove",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "Remove"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                        }
-                      }, {
                         "actionName" : "Get",
                         "actionType" : "DEACTION",
                         "dataAccessAction" : "READ",
@@ -3143,6 +3170,43 @@
                         "getPSAppDEMethod" : {
                           "modelref" : true,
                           "id" : "Create"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                        }
+                      }, {
+                        "actionName" : "Update",
+                        "actionType" : "DEACTION",
+                        "dataAccessAction" : "UPDATE",
+                        "name" : "update",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "Update"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                        }
+                      }, {
+                        "actionName" : "Remove",
+                        "actionType" : "DEACTION",
+                        "dataAccessAction" : "DELETE",
+                        "name" : "remove",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "Remove"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                        }
+                      }, {
+                        "actionType" : "DEDATASET",
+                        "name" : "fetch",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "FetchCurFinishTask"
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
@@ -3272,6 +3336,14 @@
                     "getPSChartDataSetGroups" : [ {
                       "index" : 0,
                       "name" : "CurUserResolve",
+                      "getPSAppDEDataSet" : {
+                        "modelref" : true,
+                        "id" : "FetchCurUserResolve"
+                      },
+                      "getPSAppDataEntity" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                      },
                       "id" : "0"
                     } ],
                     "getPSChartDataSets" : [ {
@@ -3292,43 +3364,6 @@
                     } ],
                     "getPSControlHandler" : {
                       "getPSHandlerActions" : [ {
-                        "actionName" : "Update",
-                        "actionType" : "DEACTION",
-                        "dataAccessAction" : "UPDATE",
-                        "name" : "update",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "Update"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                        }
-                      }, {
-                        "actionType" : "DEDATASET",
-                        "name" : "fetch",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "FetchCurUserResolve"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                        }
-                      }, {
-                        "actionName" : "Remove",
-                        "actionType" : "DEACTION",
-                        "dataAccessAction" : "DELETE",
-                        "name" : "remove",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "Remove"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                        }
-                      }, {
                         "actionName" : "Get",
                         "actionType" : "DEACTION",
                         "dataAccessAction" : "READ",
@@ -3349,6 +3384,43 @@
                         "getPSAppDEMethod" : {
                           "modelref" : true,
                           "id" : "Create"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                        }
+                      }, {
+                        "actionName" : "Update",
+                        "actionType" : "DEACTION",
+                        "dataAccessAction" : "UPDATE",
+                        "name" : "update",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "Update"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                        }
+                      }, {
+                        "actionName" : "Remove",
+                        "actionType" : "DEACTION",
+                        "dataAccessAction" : "DELETE",
+                        "name" : "remove",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "Remove"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                        }
+                      }, {
+                        "actionType" : "DEDATASET",
+                        "name" : "fetch",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "FetchCurUserResolve"
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
@@ -3523,6 +3595,14 @@
                     "getPSChartDataSetGroups" : [ {
                       "index" : 0,
                       "name" : "MonthFinishTaskAndBug",
+                      "getPSAppDEDataSet" : {
+                        "modelref" : true,
+                        "id" : "FetchMonthFinishTaskAndBug"
+                      },
+                      "getPSAppDataEntity" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                      },
                       "id" : "0"
                     } ],
                     "getPSChartDataSets" : [ {
@@ -3578,14 +3658,7 @@
                       "index" : 0,
                       "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
                       "getPSChartCoordinateSystem" : {
-                        "eChartsType" : "cartesian2d",
-                        "index" : 0,
-                        "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-                        "getPSChartGrid" : {
-                          "modelref" : true,
-                          "id" : "0"
-                        },
-                        "type" : "XY",
+                        "modelref" : true,
                         "id" : "0"
                       },
                       "getPSChartGridXAxis0" : {
@@ -3623,43 +3696,6 @@
                     } ],
                     "getPSControlHandler" : {
                       "getPSHandlerActions" : [ {
-                        "actionName" : "Update",
-                        "actionType" : "DEACTION",
-                        "dataAccessAction" : "UPDATE",
-                        "name" : "update",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "Update"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                        }
-                      }, {
-                        "actionType" : "DEDATASET",
-                        "name" : "fetch",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "FetchMonthFinishTaskAndBug"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                        }
-                      }, {
-                        "actionName" : "Remove",
-                        "actionType" : "DEACTION",
-                        "dataAccessAction" : "DELETE",
-                        "name" : "remove",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "Remove"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                        }
-                      }, {
                         "actionName" : "Get",
                         "actionType" : "DEACTION",
                         "dataAccessAction" : "READ",
@@ -3680,6 +3716,43 @@
                         "getPSAppDEMethod" : {
                           "modelref" : true,
                           "id" : "Create"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                        }
+                      }, {
+                        "actionName" : "Update",
+                        "actionType" : "DEACTION",
+                        "dataAccessAction" : "UPDATE",
+                        "name" : "update",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "Update"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                        }
+                      }, {
+                        "actionName" : "Remove",
+                        "actionType" : "DEACTION",
+                        "dataAccessAction" : "DELETE",
+                        "name" : "remove",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "Remove"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                        }
+                      }, {
+                        "actionType" : "DEDATASET",
+                        "name" : "fetch",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "FetchMonthFinishTaskAndBug"
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
@@ -4132,6 +4205,14 @@
                       "getPSChartDataSetGroups" : [ {
                         "index" : 0,
                         "name" : "MyCurOpenedBug",
+                        "getPSAppDEDataSet" : {
+                          "modelref" : true,
+                          "id" : "FetchMyCurOpenedBug"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                        },
                         "id" : "0"
                       } ],
                       "getPSChartDataSets" : [ {
@@ -4156,43 +4237,6 @@
                       } ],
                       "getPSControlHandler" : {
                         "getPSHandlerActions" : [ {
-                          "actionName" : "Update",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "UPDATE",
-                          "name" : "update",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Update"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                          }
-                        }, {
-                          "actionType" : "DEDATASET",
-                          "name" : "fetch",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "FetchMyCurOpenedBug"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                          }
-                        }, {
-                          "actionName" : "Remove",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "DELETE",
-                          "name" : "remove",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Remove"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                          }
-                        }, {
                           "actionName" : "Get",
                           "actionType" : "DEACTION",
                           "dataAccessAction" : "READ",
@@ -4213,6 +4257,43 @@
                           "getPSAppDEMethod" : {
                             "modelref" : true,
                             "id" : "Create"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                          }
+                        }, {
+                          "actionName" : "Update",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "UPDATE",
+                          "name" : "update",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Update"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                          }
+                        }, {
+                          "actionName" : "Remove",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "DELETE",
+                          "name" : "remove",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Remove"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                          }
+                        }, {
+                          "actionType" : "DEDATASET",
+                          "name" : "fetch",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "FetchMyCurOpenedBug"
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
@@ -4372,6 +4453,14 @@
                       "getPSChartDataSetGroups" : [ {
                         "index" : 0,
                         "name" : "CurOpenedCase",
+                        "getPSAppDEDataSet" : {
+                          "modelref" : true,
+                          "id" : "FetchCurOpenedCase"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                        },
                         "id" : "0"
                       } ],
                       "getPSChartDataSets" : [ {
@@ -4396,43 +4485,6 @@
                       } ],
                       "getPSControlHandler" : {
                         "getPSHandlerActions" : [ {
-                          "actionName" : "Update",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "UPDATE",
-                          "name" : "update",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Update"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
-                          }
-                        }, {
-                          "actionType" : "DEDATASET",
-                          "name" : "fetch",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "FetchCurOpenedCase"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
-                          }
-                        }, {
-                          "actionName" : "Remove",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "DELETE",
-                          "name" : "remove",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Remove"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
-                          }
-                        }, {
                           "actionName" : "Get",
                           "actionType" : "DEACTION",
                           "dataAccessAction" : "READ",
@@ -4453,6 +4505,43 @@
                           "getPSAppDEMethod" : {
                             "modelref" : true,
                             "id" : "Create"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                          }
+                        }, {
+                          "actionName" : "Update",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "UPDATE",
+                          "name" : "update",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Update"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                          }
+                        }, {
+                          "actionName" : "Remove",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "DELETE",
+                          "name" : "remove",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Remove"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                          }
+                        }, {
+                          "actionType" : "DEDATASET",
+                          "name" : "fetch",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "FetchCurOpenedCase"
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
@@ -4632,6 +4721,14 @@
                     "getPSChartDataSetGroups" : [ {
                       "index" : 0,
                       "name" : "MonthOpenedBugAndCase",
+                      "getPSAppDEDataSet" : {
+                        "modelref" : true,
+                        "id" : "FetchMonthOpenedBugAndCase"
+                      },
+                      "getPSAppDataEntity" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                      },
                       "id" : "0"
                     } ],
                     "getPSChartDataSets" : [ {
@@ -4671,14 +4768,7 @@
                       "index" : 0,
                       "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
                       "getPSChartCoordinateSystem" : {
-                        "eChartsType" : "cartesian2d",
-                        "index" : 0,
-                        "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-                        "getPSChartGrid" : {
-                          "modelref" : true,
-                          "id" : "0"
-                        },
-                        "type" : "XY",
+                        "modelref" : true,
                         "id" : "0"
                       },
                       "getPSChartGridXAxis0" : {
@@ -4716,43 +4806,6 @@
                     } ],
                     "getPSControlHandler" : {
                       "getPSHandlerActions" : [ {
-                        "actionName" : "Update",
-                        "actionType" : "DEACTION",
-                        "dataAccessAction" : "UPDATE",
-                        "name" : "update",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "Update"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                        }
-                      }, {
-                        "actionType" : "DEDATASET",
-                        "name" : "fetch",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "FetchMonthOpenedBugAndCase"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                        }
-                      }, {
-                        "actionName" : "Remove",
-                        "actionType" : "DEACTION",
-                        "dataAccessAction" : "DELETE",
-                        "name" : "remove",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "Remove"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                        }
-                      }, {
                         "actionName" : "Get",
                         "actionType" : "DEACTION",
                         "dataAccessAction" : "READ",
@@ -4773,6 +4826,43 @@
                         "getPSAppDEMethod" : {
                           "modelref" : true,
                           "id" : "Create"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                        }
+                      }, {
+                        "actionName" : "Update",
+                        "actionType" : "DEACTION",
+                        "dataAccessAction" : "UPDATE",
+                        "name" : "update",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "Update"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                        }
+                      }, {
+                        "actionName" : "Remove",
+                        "actionType" : "DEACTION",
+                        "dataAccessAction" : "DELETE",
+                        "name" : "remove",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "Remove"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                        }
+                      }, {
+                        "actionType" : "DEDATASET",
+                        "name" : "fetch",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "FetchMonthOpenedBugAndCase"
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
@@ -5187,6 +5277,14 @@
                       "getPSChartDataSetGroups" : [ {
                         "index" : 0,
                         "name" : "MyCurOpenedStory",
+                        "getPSAppDEDataSet" : {
+                          "modelref" : true,
+                          "id" : "FetchMyCurOpenedStory"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                        },
                         "id" : "0"
                       } ],
                       "getPSChartDataSets" : [ {
@@ -5211,43 +5309,6 @@
                       } ],
                       "getPSControlHandler" : {
                         "getPSHandlerActions" : [ {
-                          "actionName" : "Update",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "UPDATE",
-                          "name" : "update",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Update"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                          }
-                        }, {
-                          "actionType" : "DEDATASET",
-                          "name" : "fetch",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "FetchMyCurOpenedStory"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                          }
-                        }, {
-                          "actionName" : "Remove",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "DELETE",
-                          "name" : "remove",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Remove"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                          }
-                        }, {
                           "actionName" : "Get",
                           "actionType" : "DEACTION",
                           "dataAccessAction" : "READ",
@@ -5268,6 +5329,43 @@
                           "getPSAppDEMethod" : {
                             "modelref" : true,
                             "id" : "Create"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                          }
+                        }, {
+                          "actionName" : "Update",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "UPDATE",
+                          "name" : "update",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Update"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                          }
+                        }, {
+                          "actionName" : "Remove",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "DELETE",
+                          "name" : "remove",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Remove"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                          }
+                        }, {
+                          "actionType" : "DEDATASET",
+                          "name" : "fetch",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "FetchMyCurOpenedStory"
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
@@ -5426,6 +5524,14 @@
                       "getPSChartDataSetGroups" : [ {
                         "index" : 0,
                         "name" : "MyCurOpenedStory",
+                        "getPSAppDEDataSet" : {
+                          "modelref" : true,
+                          "id" : "FetchMyCurOpenedStory"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                        },
                         "id" : "0"
                       } ],
                       "getPSChartDataSets" : [ {
@@ -5450,43 +5556,6 @@
                       } ],
                       "getPSControlHandler" : {
                         "getPSHandlerActions" : [ {
-                          "actionName" : "Update",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "UPDATE",
-                          "name" : "update",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Update"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                          }
-                        }, {
-                          "actionType" : "DEDATASET",
-                          "name" : "fetch",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "FetchMyCurOpenedStory"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                          }
-                        }, {
-                          "actionName" : "Remove",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "DELETE",
-                          "name" : "remove",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Remove"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                          }
-                        }, {
                           "actionName" : "Get",
                           "actionType" : "DEACTION",
                           "dataAccessAction" : "READ",
@@ -5507,6 +5576,43 @@
                           "getPSAppDEMethod" : {
                             "modelref" : true,
                             "id" : "Create"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                          }
+                        }, {
+                          "actionName" : "Update",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "UPDATE",
+                          "name" : "update",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Update"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                          }
+                        }, {
+                          "actionName" : "Remove",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "DELETE",
+                          "name" : "remove",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Remove"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                          }
+                        }, {
+                          "actionType" : "DEDATASET",
+                          "name" : "fetch",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "FetchMyCurOpenedStory"
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
@@ -5687,6 +5793,14 @@
                     "getPSChartDataSetGroups" : [ {
                       "index" : 0,
                       "name" : "MonthOpenedStory",
+                      "getPSAppDEDataSet" : {
+                        "modelref" : true,
+                        "id" : "FetchMonthOpenedStory"
+                      },
+                      "getPSAppDataEntity" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                      },
                       "id" : "0"
                     } ],
                     "getPSChartDataSets" : [ {
@@ -5710,14 +5824,7 @@
                       "index" : 0,
                       "name" : "[storycnt]直角坐标系[0]",
                       "getPSChartCoordinateSystem" : {
-                        "eChartsType" : "cartesian2d",
-                        "index" : 0,
-                        "name" : "[storycnt]直角坐标系[0]",
-                        "getPSChartGrid" : {
-                          "modelref" : true,
-                          "id" : "0"
-                        },
-                        "type" : "XY",
+                        "modelref" : true,
                         "id" : "0"
                       },
                       "getPSChartGridXAxis0" : {
@@ -5754,43 +5861,6 @@
                     } ],
                     "getPSControlHandler" : {
                       "getPSHandlerActions" : [ {
-                        "actionName" : "Update",
-                        "actionType" : "DEACTION",
-                        "dataAccessAction" : "UPDATE",
-                        "name" : "update",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "Update"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                        }
-                      }, {
-                        "actionType" : "DEDATASET",
-                        "name" : "fetch",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "FetchMonthOpenedStory"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                        }
-                      }, {
-                        "actionName" : "Remove",
-                        "actionType" : "DEACTION",
-                        "dataAccessAction" : "DELETE",
-                        "name" : "remove",
-                        "getPSAppDEMethod" : {
-                          "modelref" : true,
-                          "id" : "Remove"
-                        },
-                        "getPSAppDataEntity" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                        }
-                      }, {
                         "actionName" : "Get",
                         "actionType" : "DEACTION",
                         "dataAccessAction" : "READ",
@@ -5811,6 +5881,43 @@
                         "getPSAppDEMethod" : {
                           "modelref" : true,
                           "id" : "Create"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                        }
+                      }, {
+                        "actionName" : "Update",
+                        "actionType" : "DEACTION",
+                        "dataAccessAction" : "UPDATE",
+                        "name" : "update",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "Update"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                        }
+                      }, {
+                        "actionName" : "Remove",
+                        "actionType" : "DEACTION",
+                        "dataAccessAction" : "DELETE",
+                        "name" : "remove",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "Remove"
+                        },
+                        "getPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                        }
+                      }, {
+                        "actionType" : "DEDATASET",
+                        "name" : "fetch",
+                        "getPSAppDEMethod" : {
+                          "modelref" : true,
+                          "id" : "FetchMonthOpenedStory"
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,

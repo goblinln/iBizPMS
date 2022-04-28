@@ -131,7 +131,6 @@
     }
     .el-message__content{
       color: #fff;
-      font-family: "Microsoft YaHei";
       line-height: 20px;
     }
 }

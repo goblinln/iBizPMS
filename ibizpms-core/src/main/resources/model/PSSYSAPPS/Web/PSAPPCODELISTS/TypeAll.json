@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__TypeAll",
   "codeListType" : "STATIC",
   "codeName" : "TypeAll",
   "dynaInstMode" : 1,
@@ -12,28 +13,23 @@
   "getPSCodeItems" : [ {
     "codeName" : "Custom",
     "text" : "自定义",
-    "value" : "custom",
-    "includeBeginValue" : true
+    "value" : "custom"
   }, {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug",
-    "includeBeginValue" : true
+    "value" : "bug"
   }, {
     "codeName" : "Task",
     "text" : "项目任务",
-    "value" : "task",
-    "includeBeginValue" : true
+    "value" : "task"
   }, {
     "codeName" : "Story",
     "text" : "项目需求",
-    "value" : "story",
-    "includeBeginValue" : true
+    "value" : "story"
   }, {
     "codeName" : "Cycle",
     "text" : "周期",
-    "value" : "cycle",
-    "includeBeginValue" : true
+    "value" : "cycle"
   } ],
   "enableCache" : true
 }

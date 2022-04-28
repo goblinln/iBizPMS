@@ -96,7 +96,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/bugstats/${_context.bugstats}`);
+        const res = await this.http.get(`/bugstats/${encodeURIComponent(_context.bugstats)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/bugstats/${_context.bugstats}`);
+        const res = await this.http.delete(`/bugstats/${encodeURIComponent(_context.bugstats)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/bugstats/${_context.bugstats}`, _data);
+        const res = await this.http.put(`/bugstats/${encodeURIComponent(_context.bugstats)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -318,7 +318,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/bugstats/${_context.bugstats}/select`);
+        const res = await this.http.get(`/bugstats/${encodeURIComponent(_context.bugstats)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`TYPE` = 'doc'  AND  t1.`ROOT` =  ${srfdatacontext('doclib','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')} )",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.* \nFROM\n\t(\n\tSELECT\n\t\t'0' AS DELETED,\n\t\t0 AS ID,\n\t\t'/' AS NAME,\n\t\t0 AS PARENT,\n\t\t',0,' AS path,\n\t\t$ { srfdatacontext ( 'doclib', '{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}' )} AS root,\n\t\t'doc' AS type ,\n\t  0 as MODULESN UNION\n\tSELECT\n\t\tt1.`DELETED`,\n\t\tt1.`ID`,\n\t\tCONCAT(\n\t\t\t'/',\n\t\tCASE\n\t\t\t\t\n\t\t\t\tWHEN (\n\t\t\t\tSELECT\n\t\t\t\t\tGROUP_CONCAT( tt.NAME SEPARATOR '/' ) \n\t\t\t\tFROM\n\t\t\t\t\tzt_module tt \n\t\t\t\tWHERE\n\t\t\t\t\tFIND_IN_SET( tt.id, t1.path ) \n\t\t\t\t\tAND tt.type = 'doc' \n\t\t\t\tGROUP BY\n\t\t\t\t\ttt.root \n\t\t\t\t\tLIMIT 0,\n\t\t\t\t\t1 \n\t\t\t\t\t) IS NOT NULL THEN\n\t\t\t\t\t(\n\t\t\t\t\tSELECT\n\t\t\t\t\t\tGROUP_CONCAT( tt.NAME SEPARATOR '/' ) \n\t\t\t\t\tFROM\n\t\t\t\t\t\tzt_module tt \n\t\t\t\t\tWHERE\n\t\t\t\t\t\tFIND_IN_SET( tt.id, t1.path ) \n\t\t\t\t\t\tAND tt.type = 'doc' \n\t\t\t\t\tGROUP BY\n\t\t\t\t\t\ttt.root \n\t\t\t\t\t\tLIMIT 0,\n\t\t\t\t\t\t1 \n\t\t\t\t\t) ELSE t1.`name` \n\t\t\t\tEND \n\t\t\t\t) AS `NAME`,\n\t\t\t\tt1.`PARENT`,\n\t\t\t\tt1.`PATH`,\n\t\t\t\tt1.`ROOT`,\n\t\t\t\tt1.`TYPE` ,\n\t\t\t\tt1.MODULESN\n\t\t\tFROM\n\t\t\t\t`zt_module` t1\n\t\t\tLEFT JOIN zt_module t11 ON t1.PARENT = t11.ID\n\t) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEDATAQUERIES/DocModule/PSDEDQCODES/MYSQL5.json"
+}

@@ -62,13 +62,13 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "Update",
+        "actionName" : "GetDraft",
         "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "Update"
+          "id" : "GetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -79,32 +79,6 @@
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraftfrom",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-        }
-      }, {
-        "actionName" : "GetDraft",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
@@ -130,6 +104,32 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -488,6 +488,11 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "getPSRawItem" : {
+              "content" : "<p>&lt;div style=\"padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;昨天解决Bug数&amp;nbsp;&lt;b&gt;{{data.yesterdayresolvedbugcnt ? data.yesterdayresolvedbugcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+              "contentType" : "HTML",
+              "name" : "rawitem1"
+            },
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
@@ -640,6 +645,11 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "getPSRawItem" : {
+              "content" : "<p>&lt;div style=\"padding-left: 69px;\"&gt;&lt;/div&gt;</p>",
+              "contentType" : "HTML",
+              "name" : "rawitem2"
+            },
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
@@ -791,6 +801,11 @@
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
+            },
+            "getPSRawItem" : {
+              "content" : "<p>&lt;div style=\"padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;昨天关闭Bug数&amp;nbsp;&lt;b&gt;{{data.yesterdayClosedBugCnt ? data.yesterdayClosedBugCnt: 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+              "contentType" : "HTML",
+              "name" : "rawitem3"
             },
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,

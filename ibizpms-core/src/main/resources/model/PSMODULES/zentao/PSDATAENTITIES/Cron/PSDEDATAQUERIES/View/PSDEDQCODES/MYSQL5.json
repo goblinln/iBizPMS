@@ -1,0 +1,43 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BUILDIN`",
+    "name" : "BUILDIN"
+  }, {
+    "expression" : "t1.`COMMAND`",
+    "name" : "COMMAND"
+  }, {
+    "expression" : "t1.`DOM`",
+    "name" : "DOM"
+  }, {
+    "expression" : "t1.`DOW`",
+    "name" : "DOW"
+  }, {
+    "expression" : "t1.`H`",
+    "name" : "H"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`LASTTIME`",
+    "name" : "LASTTIME"
+  }, {
+    "expression" : "t1.`M`",
+    "name" : "M"
+  }, {
+    "expression" : "t1.`MON`",
+    "name" : "MON"
+  }, {
+    "expression" : "t1.`REMARK`",
+    "name" : "REMARK"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`BUILDIN`,\nt1.`COMMAND`,\nt1.`DOM`,\nt1.`DOW`,\nt1.`H`,\nt1.`ID`,\nt1.`LASTTIME`,\nt1.`M`,\nt1.`MON`,\nt1.`REMARK`,\nt1.`STATUS`,\nt1.`TYPE`\nFROM `zt_cron` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

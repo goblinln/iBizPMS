@@ -5,52 +5,6 @@
   "logicName" : "置顶",
   "name" : "置顶",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Rawsqlcall1",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "ibzTop"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取置顶最大排序值",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接9397",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    } ],
-    "sql" : "select (case when max(t1.`objectorder`) >= 16000000  then max(t1.`objectorder`) + 1 else 16000000 end) as `objectorder` from T_IBZ_TOP t1 where t1.type = 'product' and t1.account= ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Deaction1",
-    "getDstPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop/PSDEACTIONS/Create.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "ibzTop"
-    },
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
-    },
-    "logicNodeType" : "DEACTION",
-    "name" : "save置顶",
-    "parallelOutput" : true
-  }, {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始",
@@ -63,8 +17,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
     "parallelOutput" : true
   }, {
@@ -80,8 +33,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "OBJECTID",
@@ -119,9 +71,55 @@
       "srcValueType" : "SRCVALUE"
     } ],
     "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "ibzTop"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取置顶最大排序值",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接9397",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "sql" : "select (case when max(t1.`objectorder`) >= 16000000  then max(t1.`objectorder`) + 1 else 16000000 end) as `objectorder` from T_IBZ_TOP t1 where t1.type = 'product' and t1.account= ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction1",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop/PSDEACTIONS/Create.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "ibzTop"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
+    },
+    "logicNodeType" : "DEACTION",
+    "name" : "save置顶",
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "ibzTop",
+    "logicName" : "置顶",
     "name" : "置顶",
     "getParamPSDataEntity" : {
       "modelref" : true,
@@ -130,12 +128,14 @@
     "sessionParam" : true
   }, {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

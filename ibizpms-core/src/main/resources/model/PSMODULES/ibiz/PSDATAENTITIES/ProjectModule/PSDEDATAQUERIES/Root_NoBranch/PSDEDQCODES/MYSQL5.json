@@ -1,0 +1,82 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`TYPE` = 'story'  AND  t1.`BRANCH` = 0  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 ) )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`COLLECTOR`",
+    "name" : "COLLECTOR"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`GRADE`",
+    "name" : "GRADE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END )",
+    "name" : "ISLEAF"
+  }, {
+    "expression" : "t1.`MDEPTID`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "t1.`MDEPTNAME`",
+    "name" : "MDEPTNAME"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`OWNER`",
+    "name" : "OWNER"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t21.`NAME`",
+    "name" : "PARENTNAME"
+  }, {
+    "expression" : "t1.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`ROOT`",
+    "name" : "ROOT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "ROOTNAME"
+  }, {
+    "expression" : "t1.`SHORT`",
+    "name" : "SHORT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`CREATEBY`,\nt1.`DELETED`,\nt1.`GRADE`,\nt1.`ID`,\n(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`,\nt1.`MDEPTID`,\nt1.`MDEPTNAME`,\nt1.`NAME`,\nt1.`ORDER`,\nt1.`ORGID`,\nt1.`ORGNAME`,\nt1.`OWNER`,\nt1.`PARENT`,\nt21.`NAME` AS `PARENTNAME`,\nt1.`PATH`,\nt1.`ROOT`,\nt11.`NAME` AS `ROOTNAME`,\nt1.`SHORT`,\nt1.`TYPE`,\nt1.`UPDATEBY`\nFROM `zt_module` t1 \nLEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID` \nLEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID` \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEDATAQUERIES/Root_NoBranch/PSDEDQCODES/MYSQL5.json"
+}

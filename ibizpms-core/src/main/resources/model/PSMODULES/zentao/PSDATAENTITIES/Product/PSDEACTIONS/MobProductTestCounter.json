@@ -6,13 +6,15 @@
   "logicName" : "移动端测试计数器",
   "name" : "MobProductTestCounter",
   "getPSDEActionInput" : {
-    "codeName" : "MobProductTestCounterInput",
-    "name" : "输入对象",
+    "name" : "MobProductTestCounterInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MobProductTestCounterResult",
-    "name" : "返回对象",
+    "name" : "MobProductTestCounterResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

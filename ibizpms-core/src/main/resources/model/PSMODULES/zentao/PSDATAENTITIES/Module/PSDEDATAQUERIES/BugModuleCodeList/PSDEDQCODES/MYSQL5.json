@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.type = 'story'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`BRANCH`,\n\tt1.`DELETED`,\n\tt1.`GRADE`,\n\tt1.`ID`,\n\tCONCAT( '/', t1.`name` ) AS `NAME`,\n\tt1.`ORDER`,\n\tt1.`OWNER`,\n\tcase when t1.`PARENT` = 0 then null else t1.parent end as parent ,\n\tt11.`NAME` AS `PARENTNAME`,\n\tt1.`PATH`,\n\tt1.`ROOT`,\n\tt1.`SHORT`,\n\tt1.`TYPE`,\n\tt1.MODULESN\nFROM\n\t`zt_module` t1\n\tLEFT JOIN zt_module t11 ON t1.PARENT = t11.ID",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEDATAQUERIES/BugModuleCodeList/PSDEDQCODES/MYSQL5.json"
+}

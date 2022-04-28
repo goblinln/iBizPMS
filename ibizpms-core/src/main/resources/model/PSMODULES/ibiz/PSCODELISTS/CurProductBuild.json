@@ -1,15 +1,36 @@
 {
+  "codeListTag" : "ibiz__CurProductBuild",
   "codeListType" : "DYNAMIC",
   "codeName" : "CurProductBuild",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/CurProductBuild.json",
   "emptyText" : "未定义",
   "minorSortDir" : "DESC",
+  "getMinorSortPSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "name" : "当前产品版本（动态）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getValuePSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "codeItemValueNumber" : false,
   "enableCache" : false,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__TestQuickpacket",
   "codeListType" : "STATIC",
   "codeName" : "TestQuickpacket",
   "dynaInstMode" : 1,
@@ -14,32 +15,27 @@
     "data" : "{}",
     "text" : "全部",
     "value" : "ALL",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Icreate",
     "data" : "{\"n_status_eq\":\"wait\"}",
     "text" : "待测测试单",
-    "value" : "ICREATE",
-    "includeBeginValue" : true
+    "value" : "ICREATE"
   }, {
     "codeName" : "Ireview",
     "data" : "{\"n_status_eq\":\"doing\"}",
     "text" : "测试中测试单",
-    "value" : "IREVIEW",
-    "includeBeginValue" : true
+    "value" : "IREVIEW"
   }, {
     "codeName" : "Iclose",
     "data" : "{\"n_status_eq\":\"blocked\"}",
     "text" : "被阻塞测试单",
-    "value" : "ICLOSE",
-    "includeBeginValue" : true
+    "value" : "ICLOSE"
   }, {
     "codeName" : "Tested",
     "data" : "{\"n_status_eq\":\"done\"}",
     "text" : "已测测试单",
-    "value" : "Tested",
-    "includeBeginValue" : true
+    "value" : "Tested"
   } ],
   "enableCache" : true
 }

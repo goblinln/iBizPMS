@@ -589,6 +589,37 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
             type: axis.eChartsType,
             name: this.$tl(axis.getCapPSLanguageRes()?.lanResTag, axis.caption),
         }
+        const dataShowMode = (axis as any).dataShowMode;
+        if (dataShowMode === 1) {
+            //  纵向显示
+            Object.assign(_axis, {
+                axisLabel: {
+                    formatter: (value: any) => {
+                        if (value.length > 4) {
+                            return value.substr(0, 4).split('').join('\n') + '\n...';
+                        } else {
+                            return value.split('').join('\n');
+                        }
+                    }
+                }
+            })
+        } else if (dataShowMode === 2) {
+            //  横向显示
+        } else if (dataShowMode === 3) {
+            //  斜向显示
+            Object.assign(_axis, {
+                axisLabel: {
+                    rotate: 45,
+                    formatter: (value: any) => {
+                        if (value.length > 4) {
+                            return value.substr(0, 4) + '...';
+                        } else {
+                            return value;
+                        }
+                    }
+                }
+            })
+        }
         // 填充用户自定义参数
         this.fillUserParam(axis, _axis, 'EC')
         if (axis.minValue) {
@@ -692,7 +723,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
      * @param {*} [opt] 额外参数
      * @memberof ChartControlBase
      */
-    public load(opt?: any) {
+    public async load(opt?: any) {
         let _this = this;
         const arg: any = { ...opt };
         const parentdata: any = {};
@@ -707,27 +738,27 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         }
         let tempContext: any = Util.deepCopy(this.context);
         this.onControlRequset('load', tempContext, arg);
-        this.service
-            .search(this.fetchAction, tempContext, arg, this.showBusyIndicator)
-            .then(
-                (res: any) => {
-                    this.onControlResponse('load', res);
-                    if (res) {
-                        this.transformToBasicChartSetData(res.data, (codelist: any) => {
-                            _this.ctrlEvent({
-                                controlname: _this.name,
-                                action: 'load',
-                                data: res.data,
-                            });
-                            _this.drawCharts();
-                        });
-                    }
-                },
-                (error: any) => {
-                    this.onControlResponse('load', error);
-                    this.$throw(error, 'load');
-                },
-            );
+        try {
+            const res = await this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
+            this.onControlResponse('load', res);
+            if (res && res.status == 200) {
+                let loadsuccessResult: any = await this.executeCtrlEventLogic('onloadsuccess', { action: this.fetchAction, sender: this, navContext: this.context, navParam: tempViewParams, navData: this.navdatas, data: res.data })
+                if (loadsuccessResult && loadsuccessResult?.hasOwnProperty('srfret') && !loadsuccessResult.srfret) {
+                    return;
+                }
+                this.transformToBasicChartSetData(res.data, (codelist: any) => {
+                    _this.ctrlEvent({
+                        controlname: _this.name,
+                        action: 'load',
+                        data: res.data,
+                    });
+                    _this.drawCharts();
+                });
+            }
+        } catch(error) {
+            this.onControlResponse('load', error);
+            this.$throw(error, 'load');
+        }
     }
 
     /**
@@ -743,13 +774,16 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                 this.myChart = init(element);
             }
         }
-        let _chartOption = this.handleChartOPtion();
-        this.chartRenderOption = { ..._chartOption };
-        if (this.myChart) {
-            this.myChart.setOption(_chartOption);
-            this.onChartEvents();
-            this.handleDefaultSelect();
-            this.myChart.resize();
+        //判断刷新时dom是否存在
+        if (!Object.is(this.myChart._dom.offsetHeight,0) && !Object.is(this.myChart._dom.offsetWidth,0)) {
+            let _chartOption = this.handleChartOPtion();
+            this.chartRenderOption = { ..._chartOption };
+            if (this.myChart) {
+                this.myChart.setOption(_chartOption);
+                this.onChartEvents();
+                this.handleDefaultSelect();
+                this.myChart.resize();
+            }
         }
     }
 

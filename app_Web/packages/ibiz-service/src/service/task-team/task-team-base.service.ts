@@ -106,12 +106,12 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.task && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskteams/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.task && true) {
-            const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/taskteams/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }

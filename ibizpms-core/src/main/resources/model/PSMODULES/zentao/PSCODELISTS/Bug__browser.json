@@ -1,120 +1,108 @@
 {
+  "codeListTag" : "zentao__Bug__browser",
   "codeListType" : "STATIC",
   "codeName" : "Bug__browser",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__browser.json",
   "emptyText" : "未定义",
+  "name" : "Bug浏览器",
   "getPSCodeItems" : [ {
     "codeName" : "All",
     "text" : "全部",
-    "value" : "all",
-    "includeBeginValue" : true
+    "value" : "all"
   }, {
     "codeName" : "Ie",
     "text" : "IE系列",
-    "value" : "ie",
-    "includeBeginValue" : true
+    "value" : "ie"
   }, {
     "codeName" : "Ie11",
     "text" : "IE11",
-    "value" : "ie11",
-    "includeBeginValue" : true
+    "value" : "ie11"
   }, {
     "codeName" : "Ie10",
     "text" : "IE10",
-    "value" : "ie10",
-    "includeBeginValue" : true
+    "value" : "ie10"
   }, {
     "codeName" : "Ie9",
     "text" : "IE9",
-    "value" : "ie9",
-    "includeBeginValue" : true
+    "value" : "ie9"
   }, {
     "codeName" : "Ie8",
     "text" : "IE8",
-    "value" : "ie8",
-    "includeBeginValue" : true
+    "value" : "ie8"
   }, {
     "codeName" : "Ie7",
     "text" : "IE7",
-    "value" : "ie7",
-    "includeBeginValue" : true
+    "value" : "ie7"
   }, {
     "codeName" : "Ie6",
     "text" : "IE6",
-    "value" : "ie6",
-    "includeBeginValue" : true
+    "value" : "ie6"
   }, {
     "codeName" : "Chrome",
     "text" : "chrome",
-    "value" : "chrome",
-    "includeBeginValue" : true
+    "value" : "chrome"
   }, {
     "codeName" : "Firefox",
     "text" : "firefox系列",
-    "value" : "firefox",
-    "includeBeginValue" : true
+    "value" : "firefox"
   }, {
     "codeName" : "Firefox4",
     "text" : "firefox4",
-    "value" : "firefox4",
-    "includeBeginValue" : true
+    "value" : "firefox4"
   }, {
     "codeName" : "Firefox3",
     "text" : "firefox3",
-    "value" : "firefox3",
-    "includeBeginValue" : true
+    "value" : "firefox3"
   }, {
     "codeName" : "Firefox2",
     "text" : "firefox2",
-    "value" : "firefox2",
-    "includeBeginValue" : true
+    "value" : "firefox2"
   }, {
     "codeName" : "Opera",
     "text" : "opera系列",
-    "value" : "opera",
-    "includeBeginValue" : true
+    "value" : "opera"
   }, {
     "codeName" : "Opera11",
     "text" : "opera11",
-    "value" : "opera11",
-    "includeBeginValue" : true
+    "value" : "opera11"
   }, {
     "codeName" : "Oprea10",
     "text" : "oprea10",
-    "value" : "oprea10",
-    "includeBeginValue" : true
+    "value" : "oprea10"
   }, {
     "codeName" : "Opera9",
     "text" : "opera9",
-    "value" : "opera9",
-    "includeBeginValue" : true
+    "value" : "opera9"
   }, {
     "codeName" : "Safari",
     "text" : "safari",
-    "value" : "safari",
-    "includeBeginValue" : true
+    "value" : "safari"
   }, {
     "codeName" : "Maxthon",
     "text" : "傲游",
-    "value" : "maxthon",
-    "includeBeginValue" : true
+    "value" : "maxthon"
   }, {
     "codeName" : "Uc",
     "text" : "UC",
-    "value" : "uc",
-    "includeBeginValue" : true
+    "value" : "uc"
   }, {
     "codeName" : "Others",
     "text" : "其他",
-    "value" : "others",
-    "includeBeginValue" : true
+    "value" : "others"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

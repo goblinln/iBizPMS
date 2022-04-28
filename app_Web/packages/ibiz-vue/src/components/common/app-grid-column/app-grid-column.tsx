@@ -96,12 +96,12 @@ export class AppDefaultGridColumn extends Vue {
      */
     public renderGridColumn() {
         const columnModel: IPSDEGridFieldColumn = this.columnInstance as IPSDEGridFieldColumn;
-        const { cLConvertMode, enableLinkView, name } = columnModel;
+        const { cLConvertMode, enableLinkView,  dataItemName } = columnModel;
         const codeList: IPSAppCodeList | null = columnModel.getPSAppCodeList();
         if (codeList && cLConvertMode == "FRONT") {   //  代码表
             return (
                 <codelist
-                    value={this.row[name]}
+                    value={this.row[dataItemName]}
                     codeList={codeList}
                 >
                 </codelist>
@@ -173,12 +173,13 @@ export class AppDefaultGridColumn extends Vue {
         let { stdDataType, precision, valueFormat } = appDEField;
         valueFormat = (this.columnInstance as IPSDEGridFieldColumn).valueFormat ? (this.columnInstance as IPSDEGridFieldColumn).valueFormat : valueFormat;
         const name: any = editor?.name ? editor.name : this.columnInstance.name;
+        const dataItemName:any = this.columnInstance.dataItemName;
         if ((editor && editor.editorType) || (valueFormat && valueFormat != '%1$s')) {
           return (
             <app-span
                 name={name}
                 editorType={editor?.editorType}
-                value={name ? this.row[name] : ""}
+                value={dataItemName ? this.row[dataItemName] : ""}
                 dataType={stdDataType ? DataTypes.toString(stdDataType) : "text"}
                 valueFormat={valueFormat}
                 precision={precision || 0}>
@@ -188,7 +189,7 @@ export class AppDefaultGridColumn extends Vue {
             return (<app-format-data
                 dataType={DataTypes.toString(stdDataType)}
                 precision={precision ? precision : 0}
-                data={this.row[name]}>
+                data={this.row[dataItemName]}>
             </app-format-data>)
         } else {
             const dataItem: IPSDEGridDataItem | undefined = this.gridInstance.getPSDEGridDataItems()?.find((item: IPSDEGridDataItem) => { return item.name === this.columnInstance.dataItemName; });
@@ -196,13 +197,25 @@ export class AppDefaultGridColumn extends Vue {
                 return (
                     this.$createElement('div', {
                         domProps: {
-                            innerHTML: this.row[name],
+                            innerHTML: this.row[dataItemName],
                         },
                     })
                 )
             } else {
+                if (Object.is('ADDRESSPICKUP', this.columnInstance?.userTag)) {
+                  return (
+                    <app-span
+                        name={name}
+                        editorType={'ADDRESSPICKUP'}
+                        value={dataItemName ? this.row[dataItemName] : ""}
+                        dataType={stdDataType ? DataTypes.toString(stdDataType) : "text"}
+                        valueFormat={valueFormat}
+                        precision={precision || 0}>
+                    </app-span>
+                  )
+                }
                 return (
-                    <span>{this.row[name]}</span>
+                    <span>{this.row[dataItemName]}</span>
                 )
             }
 
@@ -218,11 +231,18 @@ export class AppDefaultGridColumn extends Vue {
         const linkViewEntity: IPSAppDataEntity | null = this.gridInstance.getPSAppDataEntity();
         const editInstance: IPSEditor = (ModelTool.getGridItemByCodeName(this.columnInstance.codeName, this.gridInstance) as IPSDEGridEditItem)?.getPSEditor() as IPSEditor;
         const name = this.columnInstance.name.toLowerCase();
+        const dataItemName = this.columnInstance.dataItemName;
         let tempContext: any = Util.deepCopy(this.context);
         if (view.viewpath) {
             Object.assign(tempContext, { viewpath: view.viewpath });
         }
         let tempViewParam: any = Util.deepCopy(this.viewparams);
+        let localContext: any = {}
+        let localParam: any = {}
+        if(editInstance){
+          localContext = ModelTool.getNavigateContext(editInstance)
+          localParam = ModelTool.getNavigateParams(editInstance)
+        }
         return (
             <app-column-link
                 deKeyField={linkViewEntity && linkViewEntity.codeName ? linkViewEntity.codeName?.toLowerCase() : ""}
@@ -232,16 +252,18 @@ export class AppDefaultGridColumn extends Vue {
                 data={this.row}
                 linkview={view}
                 appUIService={this.appUIService}
+                localContext={localContext}
+                localParam={localParam}
                 valueitem={(this.columnInstance as IPSDEGridFieldColumn).linkValueItem}
             >
                 {editInstance && editInstance.editorType ?
                     <app-span
                         name={name}
                         editorType={editInstance.editorType}
-                        value={this.row[name]}>
+                        value={this.row[dataItemName]}>
                     </app-span> :
                     <span>
-                        {this.row[name]}
+                        {this.row[dataItemName]}
                     </span>}
             </app-column-link>
         )

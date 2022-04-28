@@ -1,0 +1,51 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.ENABLE = 1",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`APPTASKID`",
+    "name" : "APPTASKID"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DATAID`",
+    "name" : "DATAID"
+  }, {
+    "expression" : "t1.`ENABLE`",
+    "name" : "ENABLE"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`TASKMSGRECORDID`",
+    "name" : "TASKMSGRECORDID"
+  }, {
+    "expression" : "t1.`TASKMSGRECORDNAME`",
+    "name" : "TASKMSGRECORDNAME"
+  }, {
+    "expression" : "t1.`TASKTYPE`",
+    "name" : "TASKTYPE"
+  }, {
+    "expression" : "t1.`TASKUSERID`",
+    "name" : "TASKUSERID"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`APPTASKID`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DATAID`,\nt1.`ENABLE`,\nt1.`MEMO`,\nt1.`TASKMSGRECORDID`,\nt1.`TASKMSGRECORDNAME`,\nt1.`TASKTYPE`,\nt1.`TASKUSERID`,\nt1.`TITLE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_TASKMSGRECORD` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

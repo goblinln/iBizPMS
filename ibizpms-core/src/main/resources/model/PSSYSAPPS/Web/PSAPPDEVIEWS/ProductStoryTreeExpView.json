@@ -246,39 +246,6 @@
       } ],
       "getPSControlHandler" : {
         "getPSHandlerActions" : [ {
-          "actionName" : "Update",
-          "actionType" : "DEACTION",
-          "dataAccessAction" : "UPDATE",
-          "name" : "update",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          }
-        }, {
-          "actionType" : "DEDATASET",
-          "name" : "fetch",
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          }
-        }, {
-          "actionName" : "Remove",
-          "actionType" : "DEACTION",
-          "dataAccessAction" : "DELETE",
-          "name" : "remove",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          }
-        }, {
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "dataAccessAction" : "READ",
@@ -300,6 +267,39 @@
             "modelref" : true,
             "id" : "Create"
           },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          }
+        }, {
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "UPDATE",
+          "name" : "update",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          }
+        }, {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          }
+        }, {
+          "actionType" : "DEDATASET",
+          "name" : "fetch",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
@@ -372,6 +372,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -430,6 +431,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -488,6 +490,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -546,6 +549,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -604,6 +608,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -662,6 +667,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -912,6 +918,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -1018,6 +1025,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -1118,6 +1126,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -1257,6 +1266,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -1415,6 +1425,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -1573,6 +1584,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",

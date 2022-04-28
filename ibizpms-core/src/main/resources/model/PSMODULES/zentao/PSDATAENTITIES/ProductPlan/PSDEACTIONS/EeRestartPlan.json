@@ -6,13 +6,15 @@
   "logicName" : "继续计划",
   "name" : "EeRestartPlan",
   "getPSDEActionInput" : {
-    "codeName" : "EeRestartPlanInput",
-    "name" : "输入对象",
+    "name" : "EeRestartPlanInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "EeRestartPlanResult",
-    "name" : "返回对象",
+    "name" : "EeRestartPlanResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

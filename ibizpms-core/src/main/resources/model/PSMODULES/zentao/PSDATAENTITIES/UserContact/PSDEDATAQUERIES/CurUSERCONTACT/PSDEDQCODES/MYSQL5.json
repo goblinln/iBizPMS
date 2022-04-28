@@ -1,0 +1,24 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USERCONTACT\"}')} )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`USERLIST`",
+    "name" : "USERLIST"
+  }, {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`LISTNAME`",
+    "name" : "LISTNAME"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`ID`,\nt1.USERLIST,\nt1.`LISTNAME`\nFROM `zt_usercontact` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEDATAQUERIES/CurUSERCONTACT/PSDEDQCODES/MYSQL5.json"
+}

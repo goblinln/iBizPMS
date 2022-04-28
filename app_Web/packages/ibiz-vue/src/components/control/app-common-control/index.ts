@@ -29,3 +29,4 @@ export { AppWizardPanelBase } from "./app-wizardpanel-base";
 export { AppStateWizardPanelBase } from './app-statewizard-panel-base';
 export { AppMapExpBarBase } from './app-map-exp-bar-base';
 export { AppDrtabBase } from './app-drtab-base';
+export { AppChartExpBarBase } from './app-chart-exp-bar-base';

@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : " FIND_IN_SET ( t1.ID, (select tt.linkStories from zt_story tt where tt.id = ${srfdatacontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\t\n\tt1.`ID`,\t\n\tt1.`TITLE`,\n\tt1.STORYSN \nFROM\n\t`zt_story` t1\n\tLEFT JOIN zt_module t11 ON t1.MODULE = t11.ID\n\tLEFT JOIN zt_story t21 ON t1.PARENT = t21.ID\n\tLEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID \n\tLEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEDATAQUERIES/StoryRelated/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,82 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`EXTRA`",
+    "name" : "EXTRA"
+  }, {
+    "expression" : "t1.`ACTION`",
+    "name" : "ACTION"
+  }, {
+    "expression" : "(case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end)",
+    "name" : "ACTIONMANNER"
+  }, {
+    "expression" : "t1.`ACTIONSN`",
+    "name" : "ACTIONSN"
+  }, {
+    "expression" : "t1.`ACTOR`",
+    "name" : "ACTOR"
+  }, {
+    "expression" : "t1.`COMMENT`",
+    "name" : "COMMENT"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "DATE_FORMAT(t1.date,'%m月%d日 %H:%i')",
+    "name" : "DATE1"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "0",
+    "name" : "ISACTORSS"
+  }, {
+    "expression" : "t1.`comment`",
+    "name" : "LASTCOMMENT"
+  }, {
+    "expression" : "(case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 MONTH),'%Y-%m') then '1' end)",
+    "name" : "LASTMONTH"
+  }, {
+    "expression" : "(case when YEARWEEK(DATE_ADD(now(),INTERVAL -1 WEEK)) = YEARWEEK(t1.date) then '1' end)",
+    "name" : "LASTWEEK"
+  }, {
+    "expression" : "t1.`OBJECTTYPE`",
+    "name" : "OBJECTTYPE"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t1.`READ`",
+    "name" : "READ"
+  }, {
+    "expression" : "(case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m') then '1' end)",
+    "name" : "THISMONTH"
+  }, {
+    "expression" : "(case when YEARWEEK(now()) = YEARWEEK(t1.date) then '1' end)",
+    "name" : "THISWEEK"
+  }, {
+    "expression" : "(case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(now(),'%Y-%m-%d') then '1' end)",
+    "name" : "TODAY"
+  }, {
+    "expression" : "(case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 DAY),'%Y-%m-%d') then '1' end)",
+    "name" : "YESTERDAY"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACTION`,\n(case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end) AS `ACTIONMANNER`,\nt1.`ACTIONSN`,\nt1.`ACTOR`,\nt1.`COMMENT`,\nt1.`DATE`,\nDATE_FORMAT(t1.date,'%m月%d日 %H:%i') AS `DATE1`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`ID`,\n0 AS `ISACTORSS`,\nt1.`comment` AS `LASTCOMMENT`,\n(case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 MONTH),'%Y-%m') then '1' end) AS `LASTMONTH`,\n(case when YEARWEEK(DATE_ADD(now(),INTERVAL -1 WEEK)) = YEARWEEK(t1.date) then '1' end) AS `LASTWEEK`,\nt1.`OBJECTTYPE`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PRODUCT`,\nt1.`PROJECT`,\nt1.`READ`,\n(case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m') then '1' end) AS `THISMONTH`,\n(case when YEARWEEK(now()) = YEARWEEK(t1.date) then '1' end) AS `THISWEEK`,\n(case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(now(),'%Y-%m-%d') then '1' end) AS `TODAY`,\n(case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 DAY),'%Y-%m-%d') then '1' end) AS `YESTERDAY`\nFROM `zt_action` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProReportlyAction/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,25 +1,28 @@
 {
+  "codeListTag" : "zentao__Webhook__sendType",
   "codeListType" : "STATIC",
   "codeName" : "Webhook__sendType",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Webhook__sendType.json",
   "emptyText" : "未定义",
+  "name" : "ZT_WEBHOOK__SENDTYPE",
   "getPSCodeItems" : [ {
     "codeName" : "Sync",
     "text" : "sync",
-    "value" : "sync",
-    "includeBeginValue" : true
+    "value" : "sync"
   }, {
     "codeName" : "Async",
     "text" : "async",
-    "value" : "async",
-    "includeBeginValue" : true
+    "value" : "async"
   } ],
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

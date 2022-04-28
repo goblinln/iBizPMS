@@ -188,7 +188,9 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
@@ -688,11 +690,16 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "Daily",
+  "dEAPITag" : "IBZ_API__DAILY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json",
   "enableUIActions" : 15,
   "logicName" : "日报",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "ISSUBMIT",
+    "codeName" : "Issubmit"
+  } ],
   "name" : "IBZ_DAILY",
   "getPSDEName" : "IBZ_DAILY",
   "getQuickSearchPSAppDEFields" : [ {
@@ -700,7 +707,9 @@
     "codeName" : "IbzDailyName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

@@ -134,6 +134,7 @@ export class AppDefaultSearchFormItem extends AppDefaultSearchFormDetail {
           return (
           <app-default-editor
               editorInstance={editor}
+              containerCtrl={this.controlInstance}
               value={this.data[editor.name]}
               contextData={this.data}
               context={this.context}

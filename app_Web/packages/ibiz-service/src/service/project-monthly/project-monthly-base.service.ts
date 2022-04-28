@@ -72,7 +72,7 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/projectmonthlies/${_context.projectmonthly}/autocreate`, _data);
+        const res = await this.http.post(`/projectmonthlies/${encodeURIComponent(_context.projectmonthly)}/autocreate`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -112,7 +112,7 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/projectmonthlies/${_context.projectmonthly}`);
+        const res = await this.http.get(`/projectmonthlies/${encodeURIComponent(_context.projectmonthly)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -149,7 +149,7 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/projectmonthlies/${_context.projectmonthly}`, _data);
+        const res = await this.http.put(`/projectmonthlies/${encodeURIComponent(_context.projectmonthly)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

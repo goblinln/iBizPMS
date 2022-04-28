@@ -40,6 +40,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "ESTIMATEANDLEFT",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchEstimate"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -77,14 +85,7 @@
     "index" : 0,
     "name" : "[real]直角坐标系[0]",
     "getPSChartCoordinateSystem" : {
-      "eChartsType" : "cartesian2d",
-      "index" : 0,
-      "name" : "[real]直角坐标系[0]",
-      "getPSChartGrid" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "type" : "XY",
+      "modelref" : true,
       "id" : "0"
     },
     "getPSChartGridXAxis0" : {
@@ -100,6 +101,7 @@
   } ],
   "getPSChartXAxises" : [ {
     "caption" : "日期",
+    "dataShowMode" : 3,
     "eChartsPos" : "xAxis",
     "eChartsType" : "category",
     "index" : 0,

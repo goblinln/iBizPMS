@@ -9,9 +9,6 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDELOGICS/GetProjectDays.json"
     },
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : true
   } ],
   "codeName" : "GetDraft",
@@ -20,13 +17,19 @@
   "name" : "GetDraft",
   "orderValue" : 41,
   "getPSDEActionInput" : {
-    "codeName" : "GetDraftInput",
-    "name" : "输入对象",
+    "name" : "GetDraftInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectTeamDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetDraftResult",
-    "name" : "返回对象",
+    "name" : "GetDraftResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectTeamDTO"
+    },
     "type" : "DTO"
   },
   "builtinAction" : true

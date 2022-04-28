@@ -88,7 +88,7 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.test && _context.testcase && true) {
-            const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testcases/${encodeURIComponent(_context.testcase)}/testcasesteps/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
@@ -109,7 +109,7 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
     async FetchVersions(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.test && _context.testcase && true) {
-            const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchversions`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testcases/${encodeURIComponent(_context.testcase)}/testcasesteps/fetchversions`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchVersions');
             return res;
         }

@@ -72,7 +72,7 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
+        const res = await this.http.post(`/productmonthlies/${encodeURIComponent(_context.productmonthly)}/autocreate`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -112,7 +112,7 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/productmonthlies/${_context.productmonthly}`);
+        const res = await this.http.get(`/productmonthlies/${encodeURIComponent(_context.productmonthly)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -149,7 +149,7 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/productmonthlies/${_context.productmonthly}`, _data);
+        const res = await this.http.put(`/productmonthlies/${encodeURIComponent(_context.productmonthly)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

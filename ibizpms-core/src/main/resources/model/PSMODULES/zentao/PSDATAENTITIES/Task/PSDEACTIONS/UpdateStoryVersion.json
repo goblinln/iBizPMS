@@ -6,14 +6,16 @@
   "logicName" : "更新需求版本",
   "name" : "updateStoryVersion",
   "getPSDEActionInput" : {
-    "codeName" : "UpdateStoryVersionInput",
-    "name" : "输入对象",
+    "name" : "UpdateStoryVersionInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UpdateStoryVersionResult",
-    "name" : "返回对象",
+    "name" : "UpdateStoryVersionResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

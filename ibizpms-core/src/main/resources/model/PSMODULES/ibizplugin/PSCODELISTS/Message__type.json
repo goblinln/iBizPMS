@@ -1,25 +1,32 @@
 {
+  "codeListTag" : "ibizplugin__Message__type",
   "codeListType" : "STATIC",
   "codeName" : "Message__type",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizplugin/PSCODELISTS/Message__type.json",
   "emptyText" : "未定义",
+  "name" : "插件_消息类型",
   "getPSCodeItems" : [ {
     "codeName" : "Todo",
     "text" : "待办",
-    "value" : "todo",
-    "includeBeginValue" : true
+    "value" : "todo"
   }, {
     "codeName" : "Toread",
     "text" : "待阅",
-    "value" : "toread",
-    "includeBeginValue" : true
+    "value" : "toread"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

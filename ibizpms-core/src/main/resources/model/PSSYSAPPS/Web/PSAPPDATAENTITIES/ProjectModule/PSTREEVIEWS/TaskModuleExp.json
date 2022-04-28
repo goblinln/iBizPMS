@@ -206,6 +206,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshParent",
@@ -264,6 +265,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshParent",
@@ -322,6 +324,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshParent",
@@ -380,6 +383,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshParent",
@@ -438,6 +442,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshParent",
@@ -496,6 +501,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshParent",
@@ -554,6 +560,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "RefreshParent",
@@ -920,6 +927,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshParent",
@@ -1026,6 +1034,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshParent",
@@ -1251,6 +1260,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshParent",
@@ -1399,6 +1409,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshParent",
@@ -1547,6 +1558,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshParent",
@@ -1695,6 +1707,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshParent",
@@ -1843,6 +1856,7 @@
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "RefreshParent",

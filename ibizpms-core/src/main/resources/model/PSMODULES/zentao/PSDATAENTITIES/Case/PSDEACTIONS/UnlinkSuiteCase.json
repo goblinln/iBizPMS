@@ -6,13 +6,15 @@
   "logicName" : "移除用例",
   "name" : "unlinkSuiteCase",
   "getPSDEActionInput" : {
-    "codeName" : "UnlinkSuiteCaseInput",
-    "name" : "输入对象",
+    "name" : "UnlinkSuiteCaseInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UnlinkSuiteCaseResult",
-    "name" : "返回对象",
+    "name" : "UnlinkSuiteCaseResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

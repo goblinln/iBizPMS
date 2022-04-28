@@ -173,6 +173,14 @@ export default class AppClaendarTimeline extends Vue{
      */
     @Prop()
     public viewparams!: any;
+
+    /**
+     * 是否懒加载，为false时加载所有数据，true时只加载当前时间范围内的数据
+     * 
+     * @memberof AppClaendarTimeline
+     */
+    @Prop({ default: true })
+    public lazy!: boolean;
     
     /**
      * 分组属性
@@ -565,8 +573,28 @@ export default class AppClaendarTimeline extends Vue{
      * @memberof AppClaendarTimeline 
      */
     public searchEvents(){
+        let fetchInfo: any = {};
+
+        // 懒加载时才附带时间范围，否则搜索所有数据
+        if(this.lazy){
+          let startTime: any;
+          let endTime: any;
+          if (Object.is(this.defaultView, 'monthview')) {
+              startTime = this.currentMonth.start;
+              endTime = this.currentMonth.end;
+          } else if (Object.is(this.defaultView, 'weekview')) {
+              startTime = this.currentWeek.start;
+              endTime = this.currentWeek.end;
+          } else if (Object.is(this.defaultView, 'dayview')) {
+              startTime = this.currentDay.start;
+              endTime = this.currentDay.end;
+          }
+          fetchInfo.start = startTime.toDate();
+          fetchInfo.end = endTime.toDate();
+        }
+        
         if(this.events && this.events instanceof Function){
-            this.events({},(filterEvents: any)=>{
+            this.events( fetchInfo ,(filterEvents: any)=>{
                 this.schedule = filterEvents;
                 this.clearDirtyData(this.schedule);
                 this.partitionTime();
@@ -909,7 +937,12 @@ export default class AppClaendarTimeline extends Vue{
                 this.modalVisible = true;
             break
         }
-        this.partitionTime();
+        // 懒加载时重新加载数据，否则直接进行日程划分。
+        if(this.lazy){
+          this.searchEvents();
+        }else{
+          this.partitionTime();
+        }
     }
 
     /**
@@ -952,7 +985,13 @@ export default class AppClaendarTimeline extends Vue{
      */
     public confirmJump() {
         this.currentTime = this.selectedGotoDate;
-        this.partitionTime();
+
+        // 懒加载时重新请求数据，否则刷新界面。
+        if(this.lazy){
+          this.searchEvents();
+        }else{
+          this.partitionTime();
+        }
     }
 
     /**

@@ -1,0 +1,22 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  } ],
+  "queryCode" : "SELECT\n'0' AS `DELETED`,\n0 AS `ID`,\n'所有平台' AS`NAME`,\n0 AS `ORDER`,\nt2.`id` AS `PRODUCT`\nFROM `zt_branch` t1 RIGHT JOIN `zt_product` t2 ON t1.product=t2.productsn\nWHERE\n( ( t2.`ID` = ${srfwebcontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BRANCH\"}')}  OR  t2.`ID` = ${srfdatacontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BRANCH\"}')}  OR  t2.`ID` = ${srfdatacontext('products','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BRANCH\"}')} ) )",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDEDATAQUERIES/DefaultBranch/PSDEDQCODES/MYSQL5.json"
+}

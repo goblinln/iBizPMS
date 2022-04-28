@@ -5,6 +5,63 @@
   "logicName" : "获取测试人员相关数据",
   "name" : "获取测试人员相关数据",
   "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接9789",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      }
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall2",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取创建bug数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "name" : "连接8169",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[ACCOUNT]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "ACCOUNT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[CURYEAR]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "CURYEAR",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select count(1)  as `YEARBUGCNT` from zt_bug t where t.product > 0 and t.openedBy = ?  and DATE_FORMAT(t.openedDate,'%Y') = ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
     "codeName" : "Rawsqlcall4",
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -35,48 +92,6 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
-    "codeName" : "Rawsqlcall2",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取创建bug数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "name" : "连接8169",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[ACCOUNT]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "ACCOUNT",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[CURYEAR]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "CURYEAR",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select count(1)  as `YEARBUGCNT` from zt_bug t where t.product > 0 and t.openedBy = ?  and DATE_FORMAT(t.openedDate,'%Y') = ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
     "codeName" : "Rawsqlcall3",
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -93,8 +108,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall3"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ACCOUNT]",
@@ -119,23 +133,6 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接9789",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
-    "parallelOutput" : true
-  }, {
     "codeName" : "Rawsqlcall1",
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -152,8 +149,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ACCOUNT]",
@@ -180,12 +176,14 @@
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

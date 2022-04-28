@@ -34,72 +34,109 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Fix",
     "methodType" : "DEACTION",
+    "name" : "Fix",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchBugModule",
     "methodType" : "FETCH",
+    "name" : "FetchBugModule",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugModuleCodeList",
     "methodType" : "FETCH",
+    "name" : "FetchBugModuleCodeList",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "ROOT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchDocModule",
     "methodType" : "FETCH",
+    "name" : "FetchDocModule",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchLine",
     "methodType" : "FETCH",
+    "name" : "FetchLine",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchStoryModule",
     "methodType" : "FETCH",
+    "name" : "FetchStoryModule",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "project",
+      "name" : "ROOT 等于(=) 数据上下文(project)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchTaskModule",
     "methodType" : "FETCH",
+    "name" : "FetchTaskModule",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -236,71 +273,108 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Fix",
     "methodType" : "DEACTION",
+    "name" : "Fix",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugModule",
     "methodType" : "FETCH",
+    "name" : "FetchBugModule",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugModuleCodeList",
     "methodType" : "FETCH",
+    "name" : "FetchBugModuleCodeList",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "ROOT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchDocModule",
     "methodType" : "FETCH",
+    "name" : "FetchDocModule",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchLine",
     "methodType" : "FETCH",
+    "name" : "FetchLine",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchStoryModule",
     "methodType" : "FETCH",
+    "name" : "FetchStoryModule",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "project",
+      "name" : "ROOT 等于(=) 数据上下文(project)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchTaskModule",
     "methodType" : "FETCH",
+    "name" : "FetchTaskModule",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -340,6 +414,7 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -359,18 +434,24 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "Module",
+  "dEAPITag" : "ZT_MODULE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Module.json",
   "enableUIActions" : 15,
   "logicName" : "模块",
   "name" : "ZT_MODULE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "ZT_MODULE",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "NAME",
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

@@ -1,0 +1,40 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DATA`",
+    "name" : "DATA"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DENAME`",
+    "name" : "DENAME"
+  }, {
+    "expression" : "t1.`DEPTID`",
+    "name" : "DEPTID"
+  }, {
+    "expression" : "t1.`DYNAFILTERID`",
+    "name" : "DYNAFILTERID"
+  }, {
+    "expression" : "t1.`DYNAFILTERNAME`",
+    "name" : "DYNAFILTERNAME"
+  }, {
+    "expression" : "t1.`FORMNAME`",
+    "name" : "FORMNAME"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DENAME`,\nt1.`DEPTID`,\nt1.`DYNAFILTERID`,\nt1.`DYNAFILTERNAME`,\nt1.`FORMNAME`,\nt1.`ORGID`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_DYNAFILTER` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/DynaFilter/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

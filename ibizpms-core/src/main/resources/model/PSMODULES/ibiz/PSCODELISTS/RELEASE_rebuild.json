@@ -1,35 +1,40 @@
 {
+  "codeListTag" : "ibiz__RELEASE_rebuild",
   "codeListType" : "STATIC",
   "codeName" : "RELEASE_rebuild",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/RELEASE_rebuild.json",
   "emptyText" : "未定义",
+  "name" : "重新构建",
   "getPSCodeItems" : [ {
     "codeName" : "None",
     "text" : "无操作",
-    "value" : "0",
-    "includeBeginValue" : true
+    "value" : "0"
   }, {
     "codeName" : "Quick",
     "text" : "快速（删除本地项目与代码仓库多余文件）",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   }, {
     "codeName" : "FixModel",
     "text" : "修复模型",
-    "value" : "4",
-    "includeBeginValue" : true
+    "value" : "4"
   }, {
     "codeName" : "Full",
     "text" : "完整（完全重建本地项目及代码仓库）",
-    "value" : "2",
-    "includeBeginValue" : true
+    "value" : "2"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : true,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

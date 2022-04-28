@@ -1,0 +1,60 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`ACL`",
+    "name" : "ACL"
+  }, {
+    "expression" : "t1.`CLIENT`",
+    "name" : "CLIENT"
+  }, {
+    "expression" : "t1.`COMMITS`",
+    "name" : "COMMITS"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`ENCODING`",
+    "name" : "ENCODING"
+  }, {
+    "expression" : "t1.`ENCRYPT`",
+    "name" : "ENCRYPT"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`LASTSYNC`",
+    "name" : "LASTSYNC"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`PASSWORD`",
+    "name" : "PASSWORD"
+  }, {
+    "expression" : "t1.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`PREFIX`",
+    "name" : "PREFIX"
+  }, {
+    "expression" : "t1.`SCM`",
+    "name" : "SCM"
+  }, {
+    "expression" : "t1.`SYNCED`",
+    "name" : "SYNCED"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`ACL`,\nt1.`CLIENT`,\nt1.`COMMITS`,\nt1.`DELETED`,\nt1.`DESC`,\nt1.`ENCODING`,\nt1.`ENCRYPT`,\nt1.`ID`,\nt1.`LASTSYNC`,\nt1.`NAME`,\nt1.`PASSWORD`,\nt1.`PATH`,\nt1.`PREFIX`,\nt1.`SCM`,\nt1.`SYNCED`\nFROM `zt_repo` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Repo/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -368,6 +368,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;昨天解决Bug数&amp;nbsp;&lt;b&gt;{{data.yesterdayresolvedbugcnt ? data.yesterdayresolvedbugcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem1"
+          },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -520,6 +525,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"padding-left: 69px;\"&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem2"
+          },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -671,6 +681,11 @@
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;昨天关闭Bug数&amp;nbsp;&lt;b&gt;{{data.yesterdayClosedBugCnt ? data.yesterdayClosedBugCnt: 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem3"
           },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,

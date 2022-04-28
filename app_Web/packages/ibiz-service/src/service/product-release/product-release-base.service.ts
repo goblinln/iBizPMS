@@ -126,7 +126,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Activate');
-            const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/activate`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productreleases/${encodeURIComponent(_context.productrelease)}/activate`, _data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[Activate函数]异常`]);
@@ -154,7 +154,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/productreleases`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productreleases`, _data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[Create函数]异常`]);
@@ -174,7 +174,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.productrelease) {
-            const res = await this.http.get(`/products/${_context.product}/productreleases/${_context.productrelease}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/productreleases/${encodeURIComponent(_context.productrelease)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -197,7 +197,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productreleases/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/productreleases/getdraft`, _data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[GetDraft函数]异常`]);
@@ -219,7 +219,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
-            const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkbug`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productreleases/${encodeURIComponent(_context.productrelease)}/linkbug`, _data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[LinkBug函数]异常`]);
@@ -241,7 +241,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkBugbyLeftBug');
-            const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkbugbyleftbug`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productreleases/${encodeURIComponent(_context.productrelease)}/linkbugbyleftbug`, _data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[LinkBugbyLeftBug函数]异常`]);
@@ -263,7 +263,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
-            const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productreleases/${encodeURIComponent(_context.productrelease)}/linkstory`, _data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[LinkStory函数]异常`]);
@@ -283,7 +283,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.productrelease) {
-            const res = await this.http.delete(`/products/${_context.product}/productreleases/${_context.productrelease}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/productreleases/${encodeURIComponent(_context.productrelease)}`);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[Remove函数]异常`]);
@@ -305,7 +305,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Terminate');
-            const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/terminate`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productreleases/${encodeURIComponent(_context.productrelease)}/terminate`, _data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[Terminate函数]异常`]);
@@ -327,7 +327,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/productreleases/${_context.productrelease}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/productreleases/${encodeURIComponent(_context.productrelease)}`, _data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[Update函数]异常`]);
@@ -347,7 +347,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/productreleases/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productreleases/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }

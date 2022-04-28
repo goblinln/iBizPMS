@@ -14,25 +14,25 @@ package cn.ibizlab.pms.zentao.logic.testreportlogic.getinfotesttaskr;
 
     no-loop
 
-            //逻辑处理节点[准备参数]
-            rule "prepareparam1"
-            ruleflow-group "testreportgetinfotesttaskrprepareparam1"
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "testreportgetinfotesttaskrbegin"
             when
             then
-                            testreportgetinfotesttaskrdefault.set("objectid",testreportgetinfotesttaskrdefault.get("tasks"));
-                            testreportgetinfotesttaskrdefault.set("objecttype","testtask");
-                        update(testreportgetinfotesttaskrdefault);//更新fact中变量值
-                        update(testreportgetinfotesttaskrtesttask);//更新fact中变量值
             end
 
-            //逻辑处理节点[获取相应需求]
-            rule "rawsqlcall4"
-            ruleflow-group "testreportgetinfotesttaskrrawsqlcall4"
+            //逻辑处理节点[获取影响bug]
+            rule "rawsqlcall5"
+            ruleflow-group "testreportgetinfotesttaskrrawsqlcall5"
             when
             then
     Map param =new HashMap();
-        param.put("param0",testreportgetinfotesttaskrdefault.get("builds"));
-    String strSql="select case when GROUP_CONCAT(t1.id) is null then '' else GROUP_CONCAT(t1.id) end as stories from ( select DISTINCT t1.* from zt_story t1  left join zt_build t11 on FIND_IN_SET(t1.id,t11.stories) where t1.deleted = '0' and  FIND_IN_SET(t11.id,#{et.param0}) ) t1 GROUP BY t1.product";
+        param.put("param0",testreportgetinfotesttaskrdefault.get("product"));
+        param.put("param1",testreportgetinfotesttaskrdefault.get("begin"));
+        param.put("param2",testreportgetinfotesttaskrdefault.get("tasks"));
+        param.put("param3",testreportgetinfotesttaskrdefault.get("begin"));
+        param.put("param4",testreportgetinfotesttaskrdefault.get("end"));
+    String strSql="select GROUP_CONCAT(t1.id) as bugs from zt_bug t1 where t1.deleted = '0' and t1.product = #{et.param0} and t1.RESOLUTION in('fixed','postponed') and t1.openedDate < #{et.param1} and (FIND_IN_SET(t1.id,(select GROUP_CONCAT(t2.bugs) from zt_build t2 where t2.id in (select build from zt_testtask t3 where t3.deleted = '0' and FIND_IN_SET(t3.id,#{et.param2})) ORDER BY t2.product)) or (t1.resolvedBuild = 'trunk' and t1.resolvedDate >= #{et.param3} and t1.resolvedDate <= CONCAT(#{et.param4},' 23:59:59'))) GROUP BY t1.product";
                         java.util.List<JSONObject> entities=iBzSysTestreportDefaultService.select(strSql,param);//SQL调用
                             if(entities.size()>0){
                             JSONObject entity=entities.get(0);
@@ -44,14 +44,15 @@ package cn.ibizlab.pms.zentao.logic.testreportlogic.getinfotesttaskr;
                         update(testreportgetinfotesttaskrtesttask);//更新fact中变量值
             end
 
-            //逻辑处理节点[获取测试单]
-            rule "rawsqlcall2"
-            ruleflow-group "testreportgetinfotesttaskrrawsqlcall2"
+            //逻辑处理节点[获取数据]
+            rule "rawsqlcall1"
+            ruleflow-group "testreportgetinfotesttaskrrawsqlcall1"
             when
             then
     Map param =new HashMap();
-        param.put("param0",testreportgetinfotesttaskrdefault.get("tasks"));
-    String strSql="select case when GROUP_CONCAT(DISTINCT t1.build) is null then '' else GROUP_CONCAT(DISTINCT t1.build) end as builds  from zt_testtask t1 where FIND_IN_SET(t1.id, #{et.param0}) and t1.deleted = '0' GROUP BY t1.project";
+        param.put("param0",testreportgetinfotesttaskrdefault.get("project"));
+        param.put("param1",testreportgetinfotesttaskrdefault.get("tasks"));
+    String strSql="select case when GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) is null then '' else GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) end as cases,case when GROUP_CONCAT(DISTINCT t1.lastRunner) is null then '' else GROUP_CONCAT(DISTINCT t1.lastRunner) end  as MEMBERS	from (select t1.*,#{et.param0} as project from zt_testrun t1 left join zt_case t11 on t1.`case` = t11.id where t11.deleted = '0' and FIND_IN_SET(t1.task, #{et.param1})) t1 GROUP BY t1.project";
                         java.util.List<JSONObject> entities=iBzSysTestreportDefaultService.select(strSql,param);//SQL调用
                             if(entities.size()>0){
                             JSONObject entity=entities.get(0);
@@ -92,25 +93,14 @@ package cn.ibizlab.pms.zentao.logic.testreportlogic.getinfotesttaskr;
                         update(testreportgetinfotesttaskrtesttask);//更新fact中变量值
             end
 
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "testreportgetinfotesttaskrbegin"
-            when
-            then
-            end
-
-            //逻辑处理节点[获取影响bug]
-            rule "rawsqlcall5"
-            ruleflow-group "testreportgetinfotesttaskrrawsqlcall5"
+            //逻辑处理节点[获取相应需求]
+            rule "rawsqlcall4"
+            ruleflow-group "testreportgetinfotesttaskrrawsqlcall4"
             when
             then
     Map param =new HashMap();
-        param.put("param0",testreportgetinfotesttaskrdefault.get("product"));
-        param.put("param1",testreportgetinfotesttaskrdefault.get("begin"));
-        param.put("param2",testreportgetinfotesttaskrdefault.get("tasks"));
-        param.put("param3",testreportgetinfotesttaskrdefault.get("begin"));
-        param.put("param4",testreportgetinfotesttaskrdefault.get("end"));
-    String strSql="select GROUP_CONCAT(t1.id) as bugs from zt_bug t1 where t1.deleted = '0' and t1.product = #{et.param0} and t1.RESOLUTION in('fixed','postponed') and t1.openedDate < #{et.param1} and (FIND_IN_SET(t1.id,(select GROUP_CONCAT(t2.bugs) from zt_build t2 where t2.id in (select build from zt_testtask t3 where t3.deleted = '0' and FIND_IN_SET(t3.id,#{et.param2})) ORDER BY t2.product)) or (t1.resolvedBuild = 'trunk' and t1.resolvedDate >= #{et.param3} and t1.resolvedDate <= CONCAT(#{et.param4},' 23:59:59'))) GROUP BY t1.product";
+        param.put("param0",testreportgetinfotesttaskrdefault.get("builds"));
+    String strSql="select case when GROUP_CONCAT(t1.id) is null then '' else GROUP_CONCAT(t1.id) end as stories from ( select DISTINCT t1.* from zt_story t1  left join zt_build t11 on FIND_IN_SET(t1.id,t11.stories) where t1.deleted = '0' and  FIND_IN_SET(t11.id,#{et.param0}) ) t1 GROUP BY t1.product";
                         java.util.List<JSONObject> entities=iBzSysTestreportDefaultService.select(strSql,param);//SQL调用
                             if(entities.size()>0){
                             JSONObject entity=entities.get(0);
@@ -141,15 +131,14 @@ package cn.ibizlab.pms.zentao.logic.testreportlogic.getinfotesttaskr;
                         update(testreportgetinfotesttaskrtesttask);//更新fact中变量值
             end
 
-            //逻辑处理节点[获取数据]
-            rule "rawsqlcall1"
-            ruleflow-group "testreportgetinfotesttaskrrawsqlcall1"
+            //逻辑处理节点[获取测试单]
+            rule "rawsqlcall2"
+            ruleflow-group "testreportgetinfotesttaskrrawsqlcall2"
             when
             then
     Map param =new HashMap();
-        param.put("param0",testreportgetinfotesttaskrdefault.get("project"));
-        param.put("param1",testreportgetinfotesttaskrdefault.get("tasks"));
-    String strSql="select case when GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) is null then '' else GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) end as cases,case when GROUP_CONCAT(DISTINCT t1.lastRunner) is null then '' else GROUP_CONCAT(DISTINCT t1.lastRunner) end  as MEMBERS	from (select t1.*,#{et.param0} as project from zt_testrun t1 left join zt_case t11 on t1.`case` = t11.id where t11.deleted = '0' and FIND_IN_SET(t1.task, #{et.param1})) t1 GROUP BY t1.project";
+        param.put("param0",testreportgetinfotesttaskrdefault.get("tasks"));
+    String strSql="select case when GROUP_CONCAT(DISTINCT t1.build) is null then '' else GROUP_CONCAT(DISTINCT t1.build) end as builds  from zt_testtask t1 where FIND_IN_SET(t1.id, #{et.param0}) and t1.deleted = '0' GROUP BY t1.project";
                         java.util.List<JSONObject> entities=iBzSysTestreportDefaultService.select(strSql,param);//SQL调用
                             if(entities.size()>0){
                             JSONObject entity=entities.get(0);
@@ -157,6 +146,17 @@ package cn.ibizlab.pms.zentao.logic.testreportlogic.getinfotesttaskr;
                                     testreportgetinfotesttaskrdefault.set(String.valueOf(entry.getKey()),entry.getValue());
                                     }
                             }
+                        update(testreportgetinfotesttaskrdefault);//更新fact中变量值
+                        update(testreportgetinfotesttaskrtesttask);//更新fact中变量值
+            end
+
+            //逻辑处理节点[准备参数]
+            rule "prepareparam1"
+            ruleflow-group "testreportgetinfotesttaskrprepareparam1"
+            when
+            then
+                            testreportgetinfotesttaskrdefault.set("objectid",testreportgetinfotesttaskrdefault.get("tasks"));
+                            testreportgetinfotesttaskrdefault.set("objecttype","testtask");
                         update(testreportgetinfotesttaskrdefault);//更新fact中变量值
                         update(testreportgetinfotesttaskrtesttask);//更新fact中变量值
             end

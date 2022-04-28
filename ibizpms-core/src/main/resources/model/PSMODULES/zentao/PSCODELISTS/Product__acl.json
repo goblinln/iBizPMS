@@ -1,26 +1,33 @@
 {
+  "codeListTag" : "zentao__Product__acl",
   "codeListType" : "STATIC",
   "codeName" : "Product__acl",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Product__acl.json",
   "emptyText" : "未定义",
+  "name" : "产品访问控制",
   "getPSCodeItems" : [ {
     "codeName" : "Open",
     "text" : "默认设置(有产品视图权限，即可访问)",
     "value" : "open",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Private",
     "text" : "私有产品(相关负责人和项目团队成员才能访问)",
-    "value" : "private",
-    "includeBeginValue" : true
+    "value" : "private"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

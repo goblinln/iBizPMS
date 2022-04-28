@@ -96,7 +96,7 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/productweeklies/${_context.productweekly}`);
+        const res = await this.http.get(`/productweeklies/${encodeURIComponent(_context.productweekly)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
      */
     async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/productweeklies/${_context.productweekly}/summary`, _data);
+        const res = await this.http.post(`/productweeklies/${encodeURIComponent(_context.productweekly)}/summary`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/productweeklies/${_context.productweekly}`, _data);
+        const res = await this.http.put(`/productweeklies/${encodeURIComponent(_context.productweekly)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

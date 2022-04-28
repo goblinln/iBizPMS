@@ -6,13 +6,15 @@
   "logicName" : "批量变更平台/分支",
   "name" : "BatchChangeBranch",
   "getPSDEActionInput" : {
-    "codeName" : "BatchChangeBranchInput",
-    "name" : "输入对象",
+    "name" : "BatchChangeBranchInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BatchChangeBranchResult",
-    "name" : "返回对象",
+    "name" : "BatchChangeBranchResult",
     "type" : "VOID"
   }
 }

@@ -145,10 +145,15 @@
           "dataAccessAction" : "DELETE",
           "fullCodeName" : "Remove",
           "name" : "表格界面_删除操作",
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "DELETE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "predefinedType" : "GRIDVIEW_REMOVEACTION",
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
             "lanResTag" : "TBB.TOOLTIP.*.REMOVE"

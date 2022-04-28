@@ -6,13 +6,15 @@
   "logicName" : "团队管理",
   "name" : "ManageMembers",
   "getPSDEActionInput" : {
-    "codeName" : "ManageMembersInput",
-    "name" : "输入对象",
+    "name" : "ManageMembersInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ManageMembersResult",
-    "name" : "返回对象",
+    "name" : "ManageMembersResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

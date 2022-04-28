@@ -9,9 +9,6 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendTodoTask.json"
     },
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : true
   }, {
     "actionLogicType" : 1,
@@ -21,9 +18,6 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
     },
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : true
   } ],
   "codeName" : "AssignTo",
@@ -31,13 +25,15 @@
   "logicName" : "指派",
   "name" : "assignTo",
   "getPSDEActionInput" : {
-    "codeName" : "AssignToInput",
-    "name" : "输入对象",
+    "name" : "AssignToInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BugDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "AssignToResult",
-    "name" : "返回对象",
+    "name" : "AssignToResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

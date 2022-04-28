@@ -1,0 +1,70 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "0",
+    "name" : "BUGBYDESIGN"
+  }, {
+    "expression" : "0",
+    "name" : "BUGCNT"
+  }, {
+    "expression" : "0",
+    "name" : "BUGDUPLICATE"
+  }, {
+    "expression" : "0%",
+    "name" : "BUGEFFICIENT"
+  }, {
+    "expression" : "0",
+    "name" : "BUGEXTERNAL"
+  }, {
+    "expression" : "0",
+    "name" : "BUGFIXED"
+  }, {
+    "expression" : "0",
+    "name" : "BUGNOTREPRO"
+  }, {
+    "expression" : "0",
+    "name" : "BUGPOSTPONED"
+  }, {
+    "expression" : "0",
+    "name" : "BUGTOSTORY"
+  }, {
+    "expression" : "0",
+    "name" : "BUGTOTAL"
+  }, {
+    "expression" : "0",
+    "name" : "BUGWILLNOTFIX"
+  }, {
+    "expression" : "0",
+    "name" : "BUGWJJ"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`name`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t2.`PROJECTNAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`RESOLVEDBY`",
+    "name" : "RESOLVEDBY"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ASSIGNEDTO`,\n0 AS `BUGBYDESIGN`,\n0 AS `BUGCNT`,\n0 AS `BUGDUPLICATE`,\n0% AS `BUGEFFICIENT`,\n0 AS `BUGEXTERNAL`,\n0 AS `BUGFIXED`,\n0 AS `BUGNOTREPRO`,\n0 AS `BUGPOSTPONED`,\n0 AS `BUGTOSTORY`,\n0 AS `BUGTOTAL`,\n0 AS `BUGWILLNOTFIX`,\n0 AS `BUGWJJ`,\nt1.`ID`,\nt1.`OPENEDBY`,\nt1.`PRODUCT`,\nt11.`name` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt2.`PROJECTNAME`,\nt1.`RESOLVEDBY`,\nt1.`TITLE`\nFROM `zt_bug` t1 \nLEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id` \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,70 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "0",
+    "name" : "BUGBYDESIGN"
+  }, {
+    "expression" : "0",
+    "name" : "BUGCNT"
+  }, {
+    "expression" : "0",
+    "name" : "BUGDUPLICATE"
+  }, {
+    "expression" : "0%",
+    "name" : "BUGEFFICIENT"
+  }, {
+    "expression" : "0",
+    "name" : "BUGEXTERNAL"
+  }, {
+    "expression" : "0",
+    "name" : "BUGFIXED"
+  }, {
+    "expression" : "0",
+    "name" : "BUGNOTREPRO"
+  }, {
+    "expression" : "0",
+    "name" : "BUGPOSTPONED"
+  }, {
+    "expression" : "0",
+    "name" : "BUGTOSTORY"
+  }, {
+    "expression" : "0",
+    "name" : "BUGTOTAL"
+  }, {
+    "expression" : "0",
+    "name" : "BUGWILLNOTFIX"
+  }, {
+    "expression" : "0",
+    "name" : "BUGWJJ"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t2.`PROJECTNAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`RESOLVEDBY`",
+    "name" : "RESOLVEDBY"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  } ],
+  "queryCode" : "SELECT t1.resolvedBy,t1.resolution as bugresolution,t1.id as bugid,t1.title as bugtitle,t1.pri as bugpri,t1.severity as bugseverity,t1.openedBy as bugopenedby,t1.openedDate as bugopeneddate,t1.resolvedDate as bugresolvedDate,t1.`status` as bugstatus ,t2.dept,DATE_FORMAT(t1.resolvedDate,'%Y-%m-%d') as `begin`,DATE_FORMAT(t1.resolvedDate,'%Y-%m-%d') as `end`\n\nfrom zt_bug t1 LEFT JOIN zt_user t2 on t1.resolvedBy = t2.account where t1.deleted = '0' and t1.resolution = 'fixed' and t1.`status` in ('closed','resolved') \nand ( t2.dept = #{srf.datacontext.dept} or #{srf.datacontext.dept} is null )\nand (DATE_FORMAT(t1.resolvedDate,'%Y-%m-%d') >= #{srf.datacontext.begin} or #{srf.datacontext.begin} is null)\nand (DATE_FORMAT(t1.resolvedDate,'%Y-%m-%d') <= #{srf.datacontext.end} or #{srf.datacontext.end} is null)\n\nORDER BY t1.resolvedBy",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEDATAQUERIES/BugResolvedGird/PSDEDQCODES/MYSQL5.json"
+}

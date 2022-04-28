@@ -12,22 +12,11 @@ global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
 
 no-loop
 
-//逻辑处理节点[获取遗留的bug]
-rule "rawsqlcall3"
-ruleflow-group "releasemobreleasecounterrawsqlcall3"
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "releasemobreleasecounterbegin"
     when
     then
-    Map param =new HashMap();
-    param.put("param0",releasemobreleasecounterdefault.get("id"));
-    String strSql="select count(1) as LEFTBUGS from zt_bug t1 where t1.deleted = '0'  and    FIND_IN_SET(t1.id,(select leftbugs from zt_release where id = #{et.param0}))";
-    java.util.List<JSONObject> entities=iBzSysReleaseDefaultService.select(strSql,param);//SQL调用
-    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
-        JSONObject entity=entities.get(0);
-        for (Map.Entry entry : entity.entrySet()) {
-            releasemobreleasecounterdefault.set(String.valueOf(entry.getKey()),entry.getValue());
-        }
-    }
-    update(releasemobreleasecounterdefault);//更新fact中变量值
     end
 
 //逻辑处理节点[获取完成需求数]
@@ -38,6 +27,24 @@ ruleflow-group "releasemobreleasecounterrawsqlcall1"
     Map param =new HashMap();
     param.put("param0",releasemobreleasecounterdefault.get("id"));
     String strSql="select count(1) as stories from zt_story t1 where t1.deleted = '0'  and  FIND_IN_SET(t1.id,(select stories from zt_release where id = #{et.param0}))";
+    java.util.List<JSONObject> entities=iBzSysReleaseDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            releasemobreleasecounterdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(releasemobreleasecounterdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[获取遗留的bug]
+rule "rawsqlcall3"
+ruleflow-group "releasemobreleasecounterrawsqlcall3"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",releasemobreleasecounterdefault.get("id"));
+    String strSql="select count(1) as LEFTBUGS from zt_bug t1 where t1.deleted = '0'  and    FIND_IN_SET(t1.id,(select leftbugs from zt_release where id = #{et.param0}))";
     java.util.List<JSONObject> entities=iBzSysReleaseDefaultService.select(strSql,param);//SQL调用
     if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
         JSONObject entity=entities.get(0);
@@ -64,12 +71,5 @@ ruleflow-group "releasemobreleasecounterrawsqlcall2"
         }
     }
     update(releasemobreleasecounterdefault);//更新fact中变量值
-    end
-
-//逻辑处理节点[开始]
-rule "begin"
-ruleflow-group "releasemobreleasecounterbegin"
-    when
-    then
     end
 

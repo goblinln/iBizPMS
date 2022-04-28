@@ -237,7 +237,9 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo3.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchCntEst",
@@ -724,6 +726,7 @@
     "id" : "ProjectTeam__UPDATE"
   } ],
   "codeName" : "ProjectTeam",
+  "dEAPITag" : "IBZ_API__PROJECT_TEAM",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTeam.json",
@@ -733,10 +736,14 @@
     "actionRSMode" : 1,
     "codeName" : "ProjectTeams",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "ProjectTeam",
+    "minorDEName" : "IBZ_PROJECTTEAM",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTeam.json"
@@ -749,6 +756,10 @@
     "rSMode" : 2
   } ],
   "name" : "IBZ_PROJECTTEAM",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "IBZ_PROJECTTEAM",
   "getPSSysImage" : {
     "glyph" : "xf0c0@FontAwesome",
@@ -759,6 +770,7 @@
     "codeName" : "Account"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableTempData" : true,

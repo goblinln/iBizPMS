@@ -1,0 +1,79 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t11.`BEGIN`",
+    "name" : "BEGIN"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t11.`END`",
+    "name" : "END"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PLAN`",
+    "name" : "PLAN"
+  }, {
+    "expression" : "t11.`TITLE`",
+    "name" : "PLANNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t21.`code`",
+    "name" : "PRODUCTCODE"
+  }, {
+    "expression" : "t21.`name`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t31.`CODE`",
+    "name" : "PROJECTCODE"
+  }, {
+    "expression" : "t31.`END`",
+    "name" : "PROJECTEND"
+  }, {
+    "expression" : "t31.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t31.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt11.`BEGIN`,\nt1.`BRANCH`,\nt1.`CREATEBY`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt11.`END`,\nt1.`ID`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PLAN`,\nt11.`TITLE` AS `PLANNAME`,\nt1.`PRODUCT`,\nt21.`code` AS `PRODUCTCODE`,\nt21.`name` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt31.`CODE` AS `PROJECTCODE`,\nt31.`END` AS `PROJECTEND`,\nt31.`NAME` AS `PROJECTNAME`,\nt31.`STATUS`,\nt1.`UPDATEBY`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `zt_projectproduct` t1 \nLEFT JOIN `zt_productplan` t11 ON t1.`PLAN` = t11.`ID` \nLEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`id` \nLEFT JOIN `zt_project` t31 ON t1.`PROJECT` = t31.`ID` \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

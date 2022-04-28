@@ -33,10 +33,6 @@ public class IBIZProMessageFallback implements FallbackFactory<IBIZProMessageFei
         String finalErrorMessage = errorMessage;
         return new IBIZProMessageFeignClient(){
 
-            public Page<IBIZProMessage> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public IBIZProMessage create(IBIZProMessage ibizpromessage) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class IBIZProMessageFallback implements FallbackFactory<IBIZProMessageFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public IBIZProMessage update(String ibizpromessageid, IBIZProMessage ibizpromessage) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<IBIZProMessage> ibizpromessages) {
+            public IBIZProMessage get(String ibizpromessageid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,30 @@ public class IBIZProMessageFallback implements FallbackFactory<IBIZProMessageFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public IBIZProMessage get(String ibizpromessageid) {
+            public IBIZProMessage update(String ibizpromessageid, IBIZProMessage ibizpromessage) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<IBIZProMessage> ibizpromessages) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(IBIZProMessage ibizpromessage) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<IBIZProMessage> searchDefault(IBIZProMessageSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<IBIZProMessage> searchUserAllMessages(IBIZProMessageSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<IBIZProMessage> searchUserUnreadMessages(IBIZProMessageSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +84,6 @@ public class IBIZProMessageFallback implements FallbackFactory<IBIZProMessageFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(IBIZProMessage ibizpromessage) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public IBIZProMessage markDone( String ibizpromessageid, IBIZProMessage ibizpromessage) {
@@ -94,24 +105,13 @@ public class IBIZProMessageFallback implements FallbackFactory<IBIZProMessageFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
+            public Page<IBIZProMessage> select() {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
             public IBIZProMessage send( String ibizpromessageid, IBIZProMessage ibizpromessage) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
-            public Page<IBIZProMessage> searchDefault(IBIZProMessageSearchContext context) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
-
-            public Page<IBIZProMessage> searchUserAllMessages(IBIZProMessageSearchContext context) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
-
-            public Page<IBIZProMessage> searchUserUnreadMessages(IBIZProMessageSearchContext context) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
 
 
         };

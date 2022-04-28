@@ -96,7 +96,7 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibizprotags/${_context.ibizprotag}`);
+        const res = await this.http.get(`/ibizprotags/${encodeURIComponent(_context.ibizprotag)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibizprotags/${_context.ibizprotag}`);
+        const res = await this.http.delete(`/ibizprotags/${encodeURIComponent(_context.ibizprotag)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibizprotags/${_context.ibizprotag}`, _data);
+        const res = await this.http.put(`/ibizprotags/${encodeURIComponent(_context.ibizprotag)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibizprotags/${_context.ibizprotag}/select`);
+        const res = await this.http.get(`/ibizprotags/${encodeURIComponent(_context.ibizprotag)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

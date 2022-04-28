@@ -6,13 +6,15 @@
   "logicName" : "判断本周是否创建过周报",
   "name" : "JugThisWeekCreateWeekly",
   "getPSDEActionInput" : {
-    "codeName" : "JugThisWeekCreateWeeklyInput",
-    "name" : "输入对象",
+    "name" : "JugThisWeekCreateWeeklyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzWeeklyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "JugThisWeekCreateWeeklyResult",
-    "name" : "返回对象",
+    "name" : "JugThisWeekCreateWeeklyResult",
     "type" : "VOID"
   }
 }

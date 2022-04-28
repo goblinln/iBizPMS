@@ -1,0 +1,22 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DOMAINS`",
+    "name" : "DOMAINS"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`POSTCODE`",
+    "name" : "POSTCODE"
+  }, {
+    "expression" : "t1.`POSTID`",
+    "name" : "POSTID"
+  }, {
+    "expression" : "t1.`POSTNAME`",
+    "name" : "POSTNAME"
+  } ],
+  "queryCode" : "SELECT\nt1.`DOMAINS`,\nt1.`MEMO`,\nt1.`POSTCODE`,\nt1.`POSTID`,\nt1.`POSTNAME`\nFROM `IBZPOST` t1 \n",
+  "id" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

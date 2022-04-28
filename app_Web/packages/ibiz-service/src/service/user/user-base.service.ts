@@ -146,7 +146,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/users/${_context.user}`);
+        const res = await this.http.get(`/users/${encodeURIComponent(_context.user)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -163,7 +163,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      */
     async GetByCommiter(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/users/${_context.user}/getbycommiter`);
+        const res = await this.http.get(`/users/${encodeURIComponent(_context.user)}/getbycommiter`);
         res.data = await this.afterExecuteAction(_context,res?.data,'GetByCommiter');
         return res;
             } catch (error) {
@@ -198,7 +198,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/users/${_context.user}`);
+        const res = await this.http.delete(`/users/${encodeURIComponent(_context.user)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -214,7 +214,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      */
     async SyncAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/users/${_context.user}/syncaccount`, _data);
+        const res = await this.http.post(`/users/${encodeURIComponent(_context.user)}/syncaccount`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -232,7 +232,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/users/${_context.user}`, _data);
+        const res = await this.http.put(`/users/${encodeURIComponent(_context.user)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -367,7 +367,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/users/${_context.user}/select`);
+        const res = await this.http.get(`/users/${encodeURIComponent(_context.user)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

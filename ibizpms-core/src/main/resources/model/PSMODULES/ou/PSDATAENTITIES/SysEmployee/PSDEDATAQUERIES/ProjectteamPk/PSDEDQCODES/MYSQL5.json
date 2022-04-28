@@ -1,0 +1,100 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ADDR`",
+    "name" : "ADDR"
+  }, {
+    "expression" : "t1.`AVATAR`",
+    "name" : "AVATAR"
+  }, {
+    "expression" : "t1.`BCODE`",
+    "name" : "BCODE"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DOMAINS`",
+    "name" : "DOMAINS"
+  }, {
+    "expression" : "t1.`EMAIL`",
+    "name" : "EMAIL"
+  }, {
+    "expression" : "t1.`ENABLE`",
+    "name" : "ENABLE"
+  }, {
+    "expression" : "t1.`IPADDR`",
+    "name" : "IPADDR"
+  }, {
+    "expression" : "t1.`LANG`",
+    "name" : "LANG"
+  }, {
+    "expression" : "t1.`LOGINNAME`",
+    "name" : "LOGINNAME"
+  }, {
+    "expression" : "t1.`MDEPTCODE`",
+    "name" : "MDEPTCODE"
+  }, {
+    "expression" : "t1.`MDEPTID`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "t1.`MDEPTNAME`",
+    "name" : "MDEPTNAME"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`NICKNAME`",
+    "name" : "NICKNAME"
+  }, {
+    "expression" : "t1.`ORGCODE`",
+    "name" : "ORGCODE"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PASSWORD`",
+    "name" : "PASSWORD"
+  }, {
+    "expression" : "t1.`PERSONNAME`",
+    "name" : "PERSONNAME"
+  }, {
+    "expression" : "t1.`PHONE`",
+    "name" : "PHONE"
+  }, {
+    "expression" : "t1.`RESERVER`",
+    "name" : "RESERVER"
+  }, {
+    "expression" : "t1.`SEX`",
+    "name" : "SEX"
+  }, {
+    "expression" : "t1.`SHOWORDER`",
+    "name" : "SHOWORDER"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`USERCODE`",
+    "name" : "USERCODE"
+  }, {
+    "expression" : "t1.`USERICON`",
+    "name" : "USERICON"
+  }, {
+    "expression" : "t1.`USERID`",
+    "name" : "USERID"
+  }, {
+    "expression" : "t1.`USERNAME`",
+    "name" : "USERNAME"
+  } ],
+  "queryCode" : "SELECT\nt1.`ADDR`,\nt1.`AVATAR`,\nt1.`BCODE`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DOMAINS`,\nt1.`EMAIL`,\nt1.`ENABLE`,\nt1.`IPADDR`,\nt1.`LANG`,\nt1.`LOGINNAME`,\nt1.`MDEPTCODE`,\nt1.`MDEPTID`,\nt1.`MDEPTNAME`,\nt1.`MEMO`,\nt1.`NICKNAME`,\nt1.`ORGCODE`,\nt1.`ORGID`,\nt1.`ORGNAME`,\nt1.`PASSWORD`,\nt1.`PERSONNAME`,\nt1.`PHONE`,\nt1.`RESERVER`,\nt1.`SEX`,\nt1.`SHOWORDER`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`USERCODE`,\nt1.`USERICON`,\nt1.`USERID`,\nt1.`USERNAME`\nFROM `T_IBZEMP` t1 \n",
+  "id" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEDATAQUERIES/ProjectteamPk/PSDEDQCODES/MYSQL5.json"
+}

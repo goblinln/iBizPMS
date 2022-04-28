@@ -110,7 +110,7 @@ export class MDViewEngine extends ViewEngine {
      */
     public onCtrlEvent(ctrlName: string, eventName: string, args: any): void {
         super.onCtrlEvent(ctrlName, eventName, args);
-        if (Object.is(ctrlName, 'searchform')) {
+        if (Object.is(ctrlName, 'searchform') || Object.is(ctrlName,'quicksearchform')) {
             this.searchFormEvent(eventName, args);
         }
     }
@@ -410,16 +410,17 @@ export class MDViewEngine extends ViewEngine {
      * @memberof MDViewEngine
      */
     public MDCtrlBeforeLoad(arg: any = {}): void {
+        const { isQuery } = arg;
         if (this.view.viewparams && Object.keys(this.view.viewparams).length > 0) {
             Object.assign(arg, this.view.viewparams);
         }
-        if (this.getSearchForm()) {
+        if (this.getSearchForm() && !isQuery) {
             Object.assign(arg, this.getSearchForm().getData());
         }
         if (this.getSearchBar()) {
             Object.assign(arg, this.getSearchBar().getData());
         }
-        if (this.view && !this.view.isExpandSearchForm) {
+        if (this.view && !this.view.isExpandSearchForm && isQuery) {
             Object.assign(arg, { query: this.view.query });
         }
         // 快速分组和快速搜索栏
@@ -435,6 +436,7 @@ export class MDViewEngine extends ViewEngine {
         if(mdCtrl && mdCtrl.controlInstance &&  mdCtrl.controlInstance.customCond){
             Object.assign(otherQueryParam, { srfdsscope: mdCtrl.controlInstance.customCond });
         }
+        delete arg.isQuery;
         Object.assign(arg, { viewparams: otherQueryParam });
     }
 

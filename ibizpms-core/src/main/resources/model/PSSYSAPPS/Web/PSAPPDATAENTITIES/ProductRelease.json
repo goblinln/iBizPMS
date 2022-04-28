@@ -219,7 +219,9 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
@@ -405,7 +407,8 @@
     "codeName" : "Builddate",
     "logicName" : "打包日期",
     "name" : "BUILDDATE",
-    "stdDataType" : 5
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
   }, {
     "codeName" : "Product",
     "logicName" : "产品",
@@ -609,6 +612,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__ACTIVATE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf04b@FontAwesome",
       "cssClass" : "fa fa-play"
@@ -638,6 +645,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__CREATE"
+    },
     "refreshMode" : 1,
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
@@ -661,6 +672,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__DELETE"
     },
     "getPSSysImage" : {
       "glyph" : "xf00d@FontAwesome",
@@ -690,6 +705,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__TERMINATE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf04c@FontAwesome",
       "cssClass" : "fa fa-pause"
@@ -718,6 +737,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__UPDATE"
     },
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
@@ -755,6 +778,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__LINKSTORY"
     },
     "getPSNavigateContexts" : [ {
       "key" : "RELEASE",
@@ -813,6 +840,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__LINKBUG"
     },
     "getPSNavigateContexts" : [ {
       "key" : "TEST",
@@ -988,19 +1019,28 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ProductRelease",
+  "dEAPITag" : "IBZ_API__PRODUCT_RELEASE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json",
   "enableUIActions" : 15,
   "logicName" : "发布",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "ProductReleases",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "ProductRelease",
+    "minorDEName" : "ZT_RELEASE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
@@ -1013,6 +1053,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_RELEASE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_RELEASE",
   "getPSSysImage" : {
     "glyph" : "xf11d@FontAwesome",
@@ -1023,7 +1067,9 @@
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

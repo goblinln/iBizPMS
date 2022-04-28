@@ -1,0 +1,40 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ASSIGN`",
+    "name" : "ASSIGN"
+  }, {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "０",
+    "name" : "LEFT"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "０",
+    "name" : "TASKCNT"
+  }, {
+    "expression" : "０",
+    "name" : "TOTALLEFT"
+  }, {
+    "expression" : "０",
+    "name" : "TOTALTASKCNT"
+  }, {
+    "expression" : "０",
+    "name" : "WORKLOAD"
+  } ],
+  "queryCode" : "SELECT\nt1.`ASSIGN`,\nt1.`ASSIGNEDTO`,\nt1.`ID`,\n０ AS `LEFT`,\nt1.`NAME`,\nt1.`PROJECT`,\nt11.`NAME` AS `PROJECTNAME`,\n０ AS `TASKCNT`,\n０ AS `TOTALLEFT`,\n０ AS `TOTALTASKCNT`,\n０ AS `WORKLOAD`\nFROM `ZT_TASK` t1 \nLEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID` \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

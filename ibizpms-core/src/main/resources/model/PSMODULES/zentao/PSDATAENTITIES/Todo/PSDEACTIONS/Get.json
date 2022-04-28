@@ -9,9 +9,6 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/GetTODOTitle.json"
     },
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : true
   }, {
     "actionLogicType" : 1,
@@ -21,9 +18,6 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/ResetBeginEnd.json"
     },
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : true
   } ],
   "codeName" : "Get",
@@ -32,13 +26,19 @@
   "name" : "Get",
   "orderValue" : 31,
   "getPSDEActionInput" : {
-    "codeName" : "GetInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetResult",
-    "name" : "返回对象",
+    "name" : "GetResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TodoDTO"
+    },
     "type" : "DTO"
   },
   "builtinAction" : true

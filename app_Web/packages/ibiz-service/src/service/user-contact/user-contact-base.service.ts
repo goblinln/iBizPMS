@@ -139,7 +139,7 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usercontacts`, _data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
@@ -167,11 +167,11 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && _context.usercontact) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`);
+            const res = await this.http.get(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usercontacts/${encodeURIComponent(_context.usercontact)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
-        const res = await this.http.get(`/usercontacts/${_context.usercontact}`);
+        const res = await this.http.get(`/usercontacts/${encodeURIComponent(_context.usercontact)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -191,7 +191,7 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         if (_context.sysaccount && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/getdraft`, _data);
+            const res = await this.http.get(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usercontacts/getdraft`, _data);
             return res;
         }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
@@ -213,10 +213,10 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && _context.usercontact) {
-            const res = await this.http.delete(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`);
+            const res = await this.http.delete(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usercontacts/${encodeURIComponent(_context.usercontact)}`);
             return res;
         }
-        const res = await this.http.delete(`/usercontacts/${_context.usercontact}`);
+        const res = await this.http.delete(`/usercontacts/${encodeURIComponent(_context.usercontact)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -235,12 +235,12 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         if (_context.sysaccount && _context.usercontact) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`, _data);
+            const res = await this.http.put(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usercontacts/${encodeURIComponent(_context.usercontact)}`, _data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/usercontacts/${_context.usercontact}`, _data);
+        const res = await this.http.put(`/usercontacts/${encodeURIComponent(_context.usercontact)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -257,7 +257,7 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usercontacts/fetchaccount`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
             return res;
         }
@@ -279,7 +279,7 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usercontacts/fetchmy`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
             return res;
         }

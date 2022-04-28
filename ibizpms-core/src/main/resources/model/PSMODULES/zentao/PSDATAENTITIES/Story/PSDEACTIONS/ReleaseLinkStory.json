@@ -6,13 +6,15 @@
   "logicName" : "发布关联需求",
   "name" : "ReleaseLinkStory",
   "getPSDEActionInput" : {
-    "codeName" : "ReleaseLinkStoryInput",
-    "name" : "输入对象",
+    "name" : "ReleaseLinkStoryInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ReleaseLinkStoryResult",
-    "name" : "返回对象",
+    "name" : "ReleaseLinkStoryResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

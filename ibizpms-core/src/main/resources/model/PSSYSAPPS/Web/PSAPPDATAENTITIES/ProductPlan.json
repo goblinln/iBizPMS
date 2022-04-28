@@ -296,7 +296,9 @@
         "name" : "STATUSS",
         "codeName" : "Statuss"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchChildPlan",
@@ -305,6 +307,19 @@
     "name" : "ChildPlan",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "products",
+      "name" : "PRODUCT 等于(=) 数据上下文(products)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurProductPlan",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -352,6 +367,13 @@
     "name" : "ProjectApp",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchProjectPlan",
     "methodType" : "FETCH",
     "name" : "FetchProjectPlan",
@@ -789,6 +811,19 @@
     "name" : "ChildPlan",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "products",
+      "name" : "PRODUCT 等于(=) 数据上下文(products)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurProductPlan",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -836,6 +871,13 @@
     "name" : "ProjectApp",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchProjectPlan",
     "methodType" : "FETCH",
     "name" : "FetchProjectPlan",
@@ -910,6 +952,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__LINKBUG"
+    },
     "getPSNavigateContexts" : [ {
       "key" : "TEST",
       "name" : "TEST",
@@ -957,6 +1003,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf00d@FontAwesome",
       "cssClass" : "fa fa-remove"
@@ -988,6 +1038,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
@@ -1014,6 +1068,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CHILDPLAN"
     },
     "getPSNavigateContexts" : [ {
       "key" : "PARENT",
@@ -1065,6 +1123,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf00d@FontAwesome",
       "cssClass" : "fa fa-remove"
@@ -1094,6 +1156,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
     },
     "getPSNavigateContexts" : [ {
       "key" : "PRODUCT",
@@ -1133,6 +1199,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__CREATE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf067@FontAwesome",
       "cssClass" : "fa fa-plus"
@@ -1161,6 +1231,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ADDPROJ"
     },
     "getPSNavigateContexts" : [ {
       "key" : "PLANID",
@@ -1243,6 +1317,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CHILDPLAN"
+    },
     "getPSNavigateContexts" : [ {
       "key" : "PARENT",
       "name" : "PARENT",
@@ -1296,6 +1374,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__LINKSTORY"
     },
     "getPSNavigateParams" : [ {
       "key" : "id",
@@ -1466,19 +1548,28 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "ProductPlan",
+  "dEAPITag" : "IBZ_API__PRODUCT_PLAN",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json",
   "enableUIActions" : 15,
   "logicName" : "产品计划",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUSS",
+    "codeName" : "Statuss"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "ProductPlan",
+    "minorDEName" : "ZT_PRODUCTPLAN",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -1493,10 +1584,14 @@
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "ProductPlan",
+    "minorDEName" : "ZT_PRODUCTPLAN",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -1505,6 +1600,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_PRODUCTPLAN",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_PRODUCTPLAN",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "TITLE",
@@ -1514,7 +1613,9 @@
     "codeName" : "Productplansn"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

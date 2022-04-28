@@ -81,8 +81,16 @@
           "name" : "marker 等于(=) (1)",
           "value" : "1"
         } ],
+        "relatedItemNames" : [ "marker" ],
         "notMode" : false
       } ],
+      "getPSRawItem" : {
+        "htmlContent" : "<ion-icon name=\"flag\" style=\"color: brown;font-size: 18px;\"></ion-icon>",
+        "name" : "rawitem1",
+        "getPSSysImage" : {
+          "cssClass" : "flag"
+        }
+      },
       "getPSSysImage" : {
         "cssClass" : "flag"
       }
@@ -188,8 +196,13 @@
             "name" : "status 等于(=) (normal)",
             "value" : "normal"
           } ],
+          "relatedItemNames" : [ "status" ],
           "notMode" : false
-        } ]
+        } ],
+        "getPSRawItem" : {
+          "htmlContent" : "<ion-icon name=\"pause\" style=\"color: blue;font-size: 18px;\"></ion-icon>",
+          "name" : "rawitem2"
+        }
       }, {
         "htmlContent" : "<ion-icon name=\"play\" style=\"color: brown;font-size: 18px;\"></ion-icon>",
         "itemStyle" : "DEFAULT",
@@ -214,8 +227,13 @@
             "name" : "status 等于(=) (terminate)",
             "value" : "terminate"
           } ],
+          "relatedItemNames" : [ "status" ],
           "notMode" : false
-        } ]
+        } ],
+        "getPSRawItem" : {
+          "htmlContent" : "<ion-icon name=\"play\" style=\"color: brown;font-size: 18px;\"></ion-icon>",
+          "name" : "rawitem3"
+        }
       } ]
     } ],
     "getPSSysCss" : {

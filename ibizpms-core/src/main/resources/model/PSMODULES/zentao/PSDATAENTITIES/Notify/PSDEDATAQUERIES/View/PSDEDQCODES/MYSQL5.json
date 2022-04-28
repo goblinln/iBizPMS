@@ -1,0 +1,49 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACTION`",
+    "name" : "ACTION"
+  }, {
+    "expression" : "t1.`CCLIST`",
+    "name" : "CCLIST"
+  }, {
+    "expression" : "t1.`CREATEDBY`",
+    "name" : "CREATEDBY"
+  }, {
+    "expression" : "t1.`CREATEDDATE`",
+    "name" : "CREATEDDATE"
+  }, {
+    "expression" : "t1.`DATA`",
+    "name" : "DATA"
+  }, {
+    "expression" : "t1.`FAILREASON`",
+    "name" : "FAILREASON"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NOTIFYSN`",
+    "name" : "NOTIFYSN"
+  }, {
+    "expression" : "t1.`OBJECTID`",
+    "name" : "OBJECTID"
+  }, {
+    "expression" : "t1.`OBJECTTYPE`",
+    "name" : "OBJECTTYPE"
+  }, {
+    "expression" : "t1.`SENDTIME`",
+    "name" : "SENDTIME"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`SUBJECT`",
+    "name" : "SUBJECT"
+  }, {
+    "expression" : "t1.`TOLIST`",
+    "name" : "TOLIST"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACTION`,\nt1.`CCLIST`,\nt1.`CREATEDBY`,\nt1.`CREATEDDATE`,\nt1.`DATA`,\nt1.`FAILREASON`,\nt1.`ID`,\nt1.`NOTIFYSN`,\nt1.`OBJECTID`,\nt1.`OBJECTTYPE`,\nt1.`SENDTIME`,\nt1.`STATUS`,\nt1.`SUBJECT`,\nt1.`TOLIST`\nFROM `zt_notify` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,46 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`IBIZPRO_PROJECTMONTHLYID`",
+    "name" : "IBIZPRO_PROJECTMONTHLYID"
+  }, {
+    "expression" : "t1.`IBIZPRO_PROJECTMONTHLYNAME`",
+    "name" : "IBIZPRO_PROJECTMONTHLYNAME"
+  }, {
+    "expression" : "t11.`PM`",
+    "name" : "PM"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`TASKS`",
+    "name" : "TASKS"
+  }, {
+    "expression" : "t1.`TOTALESTIMATES`",
+    "name" : "TOTALESTIMATES"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`YEAR_MONTH`",
+    "name" : "YEAR_MONTH"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DATE`,\nt1.`IBIZPRO_PROJECTMONTHLYID`,\nt1.`IBIZPRO_PROJECTMONTHLYNAME`,\nt11.`PM`,\nt1.`PROJECT`,\nt11.`NAME` AS `PROJECTNAME`,\nt1.`TASKS`,\nt1.`TOTALESTIMATES`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`YEAR_MONTH`\nFROM `T_IBIZPRO_PROJECTMONTHLY` t1 \nLEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID` \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

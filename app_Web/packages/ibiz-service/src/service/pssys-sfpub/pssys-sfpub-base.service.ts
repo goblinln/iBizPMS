@@ -96,7 +96,7 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/pssyssfpubs/${_context.pssyssfpub}`);
+        const res = await this.http.get(`/pssyssfpubs/${encodeURIComponent(_context.pssyssfpub)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/pssyssfpubs/${_context.pssyssfpub}`);
+        const res = await this.http.delete(`/pssyssfpubs/${encodeURIComponent(_context.pssyssfpub)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/pssyssfpubs/${_context.pssyssfpub}`, _data);
+        const res = await this.http.put(`/pssyssfpubs/${encodeURIComponent(_context.pssyssfpub)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -199,7 +199,7 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/pssyssfpubs/${_context.pssyssfpub}/select`);
+        const res = await this.http.get(`/pssyssfpubs/${encodeURIComponent(_context.pssyssfpub)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

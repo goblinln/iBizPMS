@@ -6,13 +6,15 @@
   "logicName" : "发送消息前置处理",
   "name" : "sendMsgPreProcess",
   "getPSDEActionInput" : {
-    "codeName" : "SendMsgPreProcessInput",
-    "name" : "输入对象",
+    "name" : "SendMsgPreProcessInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TodoDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SendMsgPreProcessResult",
-    "name" : "返回对象",
+    "name" : "SendMsgPreProcessResult",
     "type" : "VOID"
   }
 }

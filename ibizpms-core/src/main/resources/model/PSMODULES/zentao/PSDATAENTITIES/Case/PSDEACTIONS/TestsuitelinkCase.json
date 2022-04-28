@@ -7,13 +7,15 @@
   "logicName" : "套件关联",
   "name" : "testsuitelinkCase",
   "getPSDEActionInput" : {
-    "codeName" : "TestsuitelinkCaseInput",
-    "name" : "输入对象",
+    "name" : "TestsuitelinkCaseInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTOS"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "TestsuitelinkCaseResult",
-    "name" : "返回对象",
+    "name" : "TestsuitelinkCaseResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1",

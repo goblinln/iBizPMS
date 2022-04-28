@@ -6,13 +6,15 @@
   "logicName" : "版本关联Bug",
   "name" : "buildLinkBug",
   "getPSDEActionInput" : {
-    "codeName" : "BuildLinkBugInput",
-    "name" : "输入对象",
+    "name" : "BuildLinkBugInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BugDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BuildLinkBugResult",
-    "name" : "返回对象",
+    "name" : "BuildLinkBugResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

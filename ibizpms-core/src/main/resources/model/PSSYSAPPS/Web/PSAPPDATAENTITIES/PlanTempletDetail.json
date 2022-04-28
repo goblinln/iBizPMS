@@ -446,6 +446,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "PlanTempletDetail",
+  "dEAPITag" : "PlanTempletDetail",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json",
@@ -455,10 +456,14 @@
     "actionRSMode" : 1,
     "codeName" : "PlanTempletDetails",
     "dataRSMode" : 0,
+    "majorDECodeName" : "IbzPlanTemplet",
+    "majorDEName" : "IBZ_PLANTEMPLET",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
     },
+    "minorDECodeName" : "PlanTempletDetail",
+    "minorDEName" : "IBZPLANTEMPLETDETAIL",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
@@ -477,6 +482,7 @@
     "codeName" : "IbzPlanTempletDetailName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : false,
   "enableFilterActions" : true,
   "enableTempData" : true,

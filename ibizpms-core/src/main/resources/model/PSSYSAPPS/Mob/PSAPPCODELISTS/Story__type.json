@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Story__type",
   "codeListType" : "STATIC",
   "codeName" : "Story__type",
   "dynaInstMode" : 1,
@@ -12,14 +13,12 @@
   "getPSCodeItems" : [ {
     "codeName" : "Requirement",
     "text" : "用户需求",
-    "value" : "requirement",
-    "includeBeginValue" : true
+    "value" : "requirement"
   }, {
     "codeName" : "Story",
     "text" : "软件需求",
     "value" : "story",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   } ],
   "enableCache" : true
 }

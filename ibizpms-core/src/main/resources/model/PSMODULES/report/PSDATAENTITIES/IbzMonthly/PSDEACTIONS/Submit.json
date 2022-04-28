@@ -6,13 +6,15 @@
   "logicName" : "提交",
   "name" : "Submit",
   "getPSDEActionInput" : {
-    "codeName" : "SubmitInput",
-    "name" : "输入对象",
+    "name" : "SubmitInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzMonthlyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SubmitResult",
-    "name" : "返回对象",
+    "name" : "SubmitResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

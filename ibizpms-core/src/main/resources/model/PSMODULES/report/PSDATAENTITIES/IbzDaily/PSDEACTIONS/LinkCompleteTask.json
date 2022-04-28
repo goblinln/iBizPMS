@@ -6,13 +6,15 @@
   "logicName" : "关联完成任务",
   "name" : "LinkCompleteTask",
   "getPSDEActionInput" : {
-    "codeName" : "LinkCompleteTaskInput",
-    "name" : "输入对象",
+    "name" : "LinkCompleteTaskInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzDailyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "LinkCompleteTaskResult",
-    "name" : "返回对象",
+    "name" : "LinkCompleteTaskResult",
     "type" : "VOID"
   }
 }

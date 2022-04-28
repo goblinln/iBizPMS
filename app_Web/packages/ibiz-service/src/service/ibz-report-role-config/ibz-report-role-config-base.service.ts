@@ -96,7 +96,7 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzreportroleconfigs/${_context.ibzreportroleconfig}`);
+        const res = await this.http.get(`/ibzreportroleconfigs/${encodeURIComponent(_context.ibzreportroleconfig)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibzreportroleconfigs/${_context.ibzreportroleconfig}`);
+        const res = await this.http.delete(`/ibzreportroleconfigs/${encodeURIComponent(_context.ibzreportroleconfig)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibzreportroleconfigs/${_context.ibzreportroleconfig}`, _data);
+        const res = await this.http.put(`/ibzreportroleconfigs/${encodeURIComponent(_context.ibzreportroleconfig)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzreportroleconfigs/${_context.ibzreportroleconfig}/select`);
+        const res = await this.http.get(`/ibzreportroleconfigs/${encodeURIComponent(_context.ibzreportroleconfig)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

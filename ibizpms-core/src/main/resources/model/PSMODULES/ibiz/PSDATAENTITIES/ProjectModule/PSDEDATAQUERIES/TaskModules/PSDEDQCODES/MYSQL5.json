@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "select t1.* from (select t1.* from (SELECT\n\tt1.`BRANCH`,\n\tt1.`DELETED`,\n\tt1.`ID`,\n\tCONCAT(\n\t'/', case when t1.parent > 0 then\n\t(\nSELECT\n\tGROUP_CONCAT( tt.NAME SEPARATOR '/' ) \nFROM\n\tzt_module tt \nWHERE\n\tFIND_IN_SET( tt.id, t1.path ) \n\tAND tt.type = 'story' \nGROUP BY\n\ttt.root \n\t) else t1.`name` end\n\t) AS `NAME`,\n\t(CONCAT_ws(\n\t'', \n case when t1.parent > 0 then (\nSELECT\n\tGROUP_CONCAT( tt.`ORDER` SEPARATOR '-' ) \nFROM\n\tzt_module tt \nWHERE\n\tFIND_IN_SET( tt.id, t1.path ) \n\tAND tt.type = 'story'  \nGROUP BY\n\ttt.root \n\tLIMIT 0,1\n\t) else t1.`ORDER` end)) as ORDERPK,\n\tt1.`ORDER`,\n\tt1.`PARENT`,\n\tt1.`PATH`,\n\t #{srf.webcontext.project}  AS `ROOT`,\n\tt1.`TYPE`,\n  t1.MODULESN\t\nFROM\n\t`zt_module` t1\n\tLEFT JOIN zt_product t11 ON t1.ROOT = t11.ID\n\tLEFT JOIN zt_module t21 ON t1.PARENT = t21.ID\n\twhere t1.type = 'story' and t1.deleted = '0' and #{srf.webcontext.allmodules} \n\t= '1' and \n\tt1.`root` in (select product from zt_projectproduct where project = #{srf.webcontext.project}\n\t) order by t1.path asc) t1\n\tUNION\n\tselect t1.* from (SELECT\n\tt1.`BRANCH`,\n\tt1.`DELETED`,\n\tt1.`ID`,\n\tCONCAT(\n\t'/', case when t1.parent > 0 then\n\t(\nSELECT\n\tGROUP_CONCAT( tt.NAME SEPARATOR '/' ) \nFROM\n\tzt_module tt \nWHERE\n\tFIND_IN_SET( tt.id, t1.path ) \n\tAND tt.type = 'task' \nGROUP BY\n\ttt.root \n\t) else t1.`name` end \n\t) AS `NAME`,\n\t\t(CONCAT_WS(\n\t'', case when t1.parent > 0 then\n\t(\nSELECT\n\tGROUP_CONCAT( tt.`order` SEPARATOR '-' ) \nFROM\n\tzt_module tt \nWHERE\n\tFIND_IN_SET( tt.`id`, t1.`path` ) \n\tAND tt.`type` = 'task' \nGROUP BY\n\ttt.root\nLIMIT 0,1 \n\t) else t1.`order` end\n\t)) AS `ORDERPK`,\n\tt1.`ORDER`,\n\tt1.`PARENT`,\n\tt1.`PATH`,\n\tt1.`ROOT`,\n\tt1.`TYPE`,\n  t1.MODULESN\t\nFROM\n\t`zt_module` t1\n\tLEFT JOIN zt_product t11 ON t1.ROOT = t11.ID\n\tLEFT JOIN zt_module t21 ON t1.PARENT = t21.ID\n\twhere t1.type = 'task' and t1.deleted = '0' and t1.root = #{srf.webcontext.project} \n\torder by t1.path asc) t1\n\t) t1",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEDATAQUERIES/TaskModules/PSDEDQCODES/MYSQL5.json"
+}

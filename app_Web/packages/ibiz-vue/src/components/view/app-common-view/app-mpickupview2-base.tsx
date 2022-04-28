@@ -72,7 +72,6 @@ export class AppMPickUpView2Base extends MPickUpView2Base {
         if (!this.viewIsLoaded) {
             return;
         }
-        console.log(this.viewInstance);
         const targetViewLayoutComponent: any = AppLayoutService.getLayoutComponent(`${this.viewInstance?.viewType}-${this.viewInstance?.viewStyle}`);
         return h(targetViewLayoutComponent, {
             props: { viewInstance: this.viewInstance, model: this.model, modelService: this.modelService, viewparams: this.viewparams, context: this.context }

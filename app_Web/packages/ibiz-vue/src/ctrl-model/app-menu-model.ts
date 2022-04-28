@@ -57,7 +57,7 @@ export class AppMenuModel {
     public async initAppMenuItems() {
         let appMenuItems: Array<IPSAppMenuItem> | null = this.MenuInstance.getPSAppMenuItems();
         if (appMenuItems && (appMenuItems.length > 0)) {
-            let application: IPSApplication = (await GetModelService(this.context)).getPSApplication();
+            let application: IPSApplication = (await GetModelService()).getPSApplication();
             for (const menuItem of appMenuItems) {
                 this.initAppMenuItem(menuItem,application);
             }
@@ -88,6 +88,7 @@ export class AppMenuModel {
         Object.assign(appMenuItem, { hidden: menuItem.hidden });
         Object.assign(appMenuItem, { hidesidebar: menuItem.hideSideBar });
         Object.assign(appMenuItem, { openDefault: menuItem.openDefault });
+        Object.assign(appMenuItem, { disableClose: menuItem.disableClose });
         Object.assign(appMenuItem, { getPSSysImage: menuItem.getPSSysImage() });
         Object.assign(appMenuItem, { getPSSysCss: menuItem.getPSSysCss() });
         Object.assign(appMenuItem, { getPSAppFunc: menuItem.getPSAppFunc() });
@@ -113,7 +114,7 @@ export class AppMenuModel {
      * @memberof AppMenuModel
      */
     public async initAppFuncs() {
-        let application: IPSApplication = (await GetModelService(this.context)).getPSApplication();
+        let application: IPSApplication = (await GetModelService()).getPSApplication();
         if (application && application.getAllPSAppFuncs()) {
             for (const appFunc of application.getAllPSAppFuncs() as IPSAppFunc[]) {
                 let tempAppFunc: any = {};

@@ -1,0 +1,93 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`AUTO`",
+    "name" : "AUTO"
+  }, {
+    "expression" : "t1.`BEGIN`",
+    "name" : "BEGIN"
+  }, {
+    "expression" : "t1.`BUILD`",
+    "name" : "BUILD"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`END`",
+    "name" : "END"
+  }, {
+    "expression" : "t1.`MAILTO`",
+    "name" : "MAILTO"
+  }, {
+    "expression" : "t1.`OWNER`",
+    "name" : "OWNER"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t1.`REPORT`",
+    "name" : "REPORT"
+  }, {
+    "expression" : "t1.`SUBSTATUS`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`TESTTASKSN`",
+    "name" : "TESTTASKSN"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEBY`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`ID`,\nt1.`NAME`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`STATUS`,\nt1.`UPDATEBY`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `zt_testtask` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEDATAQUERIES/Simple/PSDEDQCODES/MYSQL5.json"
+}

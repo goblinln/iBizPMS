@@ -62,6 +62,22 @@ export default class AppCommonMicrocom extends Vue {
     public name!: string;
 
     /**
+     * 局部上下文导航参数
+     * 
+     * @type {any}
+     * @memberof AppCheckBox
+     */
+    @Prop() public localContext!:any;
+
+    /**
+     * 局部导航参数
+     * 
+     * @type {any}
+     * @memberof AppCheckBox
+     */
+    @Prop() public localParam!:any;
+
+    /**
      * 上下文
      * 
      * @type {*}
@@ -197,8 +213,7 @@ export default class AppCommonMicrocom extends Vue {
      * @memberof AppCommonMicrocom
      */  
     public created() {
-        const url = this.parseURL();
-        this.load(url);
+        this.load();
     }
 
     /**
@@ -225,9 +240,11 @@ export default class AppCommonMicrocom extends Vue {
      * 解析URL
      * 
      * @type {*}
+     * @param context 上下文参数
+     * @param viewparams 视图参数
      * @memberof AppCommonMicrocom
      */
-    public parseURL() {
+    public parseURL(context: any, viewparams: any) {
         let url = this.url;
         const filterArr: Array<any> = this.filter ? this.filter.split('|') : [];
         const urlParm = url.match(/\${(.+?)\}/g);
@@ -251,10 +268,10 @@ export default class AppCommonMicrocom extends Vue {
                 } else {
                     if (this.data && this.data.hasOwnProperty(key)) {
                         value = this.data[key];
-                    } else if (this.context && this.context[key]) {
-                        value = this.context[key];
-                    } else if (this.viewparams && this.viewparams[key]) {
-                        value = this.viewparams[key];
+                    } else if (context && context[key]) {
+                        value = context[key];
+                    } else if (viewparams && viewparams[key]) {
+                        value = viewparams[key];
                     }
                 }
                 url = url.replace(res, value);
@@ -264,15 +281,43 @@ export default class AppCommonMicrocom extends Vue {
     }
 
     /**
+     * 公共参数处理
+     *
+     * @param {*} arg
+     * @returns
+     * @memberof AppCheckBox
+     */
+    public handlePublicParams(arg: any) {
+        // 合并表单参数
+        arg.param = this.viewparams ? JSON.parse(JSON.stringify(this.viewparams)) : {};
+        arg.context = this.context ? JSON.parse(JSON.stringify(this.context)) : {};
+        // 附加参数处理
+        if (this.localContext && Object.keys(this.localContext).length >0) {
+            let _context = this.$util.computedNavData(this.data,arg.context,arg.param,this.localContext);
+            Object.assign(arg.context,_context);
+        }
+        if (this.localParam && Object.keys(this.localParam).length >0) {
+            let _param = this.$util.computedNavData(this.data,arg.param,arg.param,this.localParam);
+            Object.assign(arg.param,_param);
+        }
+    }
+
+    /**
      * 加载数据
      * 
      * @type {*}
      * @memberof AppCommonMicrocom
      */
-    public load(url: string) {
+    public load() {
+        let data: any = {};
+        this.handlePublicParams(data);
+        // 参数处理
+        let context = data.context;
+        let viewparam = data.param;
+        const url = this.parseURL(context, viewparam);
         if(url){
             this.datas = [];
-            axios({method: this.requestMode, url: url, data: {}}).then((response: any) => {
+            this.$http[this.requestMode](url, viewparam).then((response: any) => {
                 if (response && response.status == 200) {
                     if(response.data.length > 0){
                         let item: any;

@@ -13,24 +13,24 @@
                             <tns:global identifier="testreportgetinfotesttaskrdefault" type="cn.ibizlab.pms.core.zentao.domain.TestReport" />
                             <tns:global identifier="testreportgetinfotesttaskrtesttask" type="cn.ibizlab.pms.core.zentao.domain.TestTask" />
             </extensionElements>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="准备参数"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrrawsqlcall4" id="rawsqlcall4" implementation="http://www.jboss.org/drools/rule" name="获取相应需求"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取测试单"/>
+                        <startEvent id="begin" isInterrupting="true"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrrawsqlcall5" id="rawsqlcall5" implementation="http://www.jboss.org/drools/rule" name="获取影响Bug"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取数据"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="获取概况信息"/>
                         <endEvent id="deaction1_end" name="end"/>
                         <sequenceFlow id="deaction1_end_line" sourceRef="deaction1" targetRef="deaction1_end"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrrawsqlcall6" id="rawsqlcall6" implementation="http://www.jboss.org/drools/rule" name="获取项目和产品"/>
-                        <startEvent id="begin" isInterrupting="true"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrrawsqlcall5" id="rawsqlcall5" implementation="http://www.jboss.org/drools/rule" name="获取影响Bug"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrrawsqlcall4" id="rawsqlcall4" implementation="http://www.jboss.org/drools/rule" name="获取相应需求"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="获取测试单周期"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取数据"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取测试单"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgetinfotesttaskrprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="准备参数"/>
+                    <sequenceFlow id="begin_prepareparam1" sourceRef="begin" targetRef="prepareparam1">
+                    </sequenceFlow>
                     <sequenceFlow id="rawsqlcall5_rawsqlcall1" sourceRef="rawsqlcall5" targetRef="rawsqlcall1">
                     </sequenceFlow>
                     <sequenceFlow id="rawsqlcall1_deaction1" sourceRef="rawsqlcall1" targetRef="deaction1">
                     </sequenceFlow>
                     <sequenceFlow id="rawsqlcall6_rawsqlcall4" sourceRef="rawsqlcall6" targetRef="rawsqlcall4">
-                    </sequenceFlow>
-                    <sequenceFlow id="begin_prepareparam1" sourceRef="begin" targetRef="prepareparam1">
                     </sequenceFlow>
                     <sequenceFlow id="rawsqlcall4_rawsqlcall3" sourceRef="rawsqlcall4" targetRef="rawsqlcall3">
                     </sequenceFlow>

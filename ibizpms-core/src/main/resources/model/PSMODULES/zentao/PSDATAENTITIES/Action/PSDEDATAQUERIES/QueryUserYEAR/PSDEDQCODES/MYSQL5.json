@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : " t1.actor = #{srf.sessioncontext.srfloginname}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "select DISTINCT DATE_FORMAT(t1.date,'%Y') as date1 from zt_action t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEDATAQUERIES/QueryUserYEAR/PSDEDQCODES/MYSQL5.json"
+}

@@ -33,10 +33,6 @@ public class IBIZProKeywordFallback implements FallbackFactory<IBIZProKeywordFei
         String finalErrorMessage = errorMessage;
         return new IBIZProKeywordFeignClient(){
 
-            public Page<IBIZProKeyword> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public IBIZProKeyword create(IBIZProKeyword ibizprokeyword) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class IBIZProKeywordFallback implements FallbackFactory<IBIZProKeywordFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public IBIZProKeyword update(String id, IBIZProKeyword ibizprokeyword) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<IBIZProKeyword> ibizprokeywords) {
+            public IBIZProKeyword get(String id) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class IBIZProKeywordFallback implements FallbackFactory<IBIZProKeywordFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public IBIZProKeyword get(String id) {
+            public IBIZProKeyword update(String id, IBIZProKeyword ibizprokeyword) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<IBIZProKeyword> ibizprokeywords) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(IBIZProKeyword ibizprokeyword) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<IBIZProKeyword> searchDefault(IBIZProKeywordSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class IBIZProKeywordFallback implements FallbackFactory<IBIZProKeywordFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(IBIZProKeyword ibizprokeyword) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(IBIZProKeyword ibizprokeyword) {
@@ -86,10 +87,9 @@ public class IBIZProKeywordFallback implements FallbackFactory<IBIZProKeywordFei
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<IBIZProKeyword> searchDefault(IBIZProKeywordSearchContext context) {
+            public Page<IBIZProKeyword> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

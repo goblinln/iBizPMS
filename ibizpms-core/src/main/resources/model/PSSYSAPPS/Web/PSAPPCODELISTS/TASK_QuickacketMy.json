@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__TASK_QuickacketMy",
   "codeListType" : "STATIC",
   "codeName" : "TASK_QuickacketMy",
   "dynaInstMode" : 1,
@@ -14,32 +15,27 @@
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指派给我",
     "value" : "TOME",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Cancelled",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "text" : "由我创建",
-    "value" : "CANCELLED",
-    "includeBeginValue" : true
+    "value" : "CANCELLED"
   }, {
     "codeName" : "Ifinished",
     "data" : "{\"n_finishedby_eq\":\"%srfloginname%\"}",
     "text" : "由我完成",
-    "value" : "IFINISHED",
-    "includeBeginValue" : true
+    "value" : "IFINISHED"
   }, {
     "codeName" : "Completed",
     "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
     "text" : "由我关闭",
-    "value" : "COMPLETED",
-    "includeBeginValue" : true
+    "value" : "COMPLETED"
   }, {
     "codeName" : "Closed",
     "data" : "{\"n_canceledby_eq\":\"%srfloginname%\"}",
     "text" : "由我取消",
-    "value" : "CLOSED",
-    "includeBeginValue" : true
+    "value" : "CLOSED"
   } ],
   "enableCache" : true
 }

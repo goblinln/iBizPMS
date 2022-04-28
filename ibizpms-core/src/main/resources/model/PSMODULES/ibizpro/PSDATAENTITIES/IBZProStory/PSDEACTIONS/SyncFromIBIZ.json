@@ -6,13 +6,15 @@
   "logicName" : "同步Ibz平台需求",
   "name" : "SyncFromIBIZ",
   "getPSDEActionInput" : {
-    "codeName" : "SyncFromIBIZInput",
-    "name" : "输入对象",
+    "name" : "SyncFromIBIZInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IBZProStoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SyncFromIBIZResult",
-    "name" : "返回对象",
+    "name" : "SyncFromIBIZResult",
     "type" : "VOID"
   }
 }

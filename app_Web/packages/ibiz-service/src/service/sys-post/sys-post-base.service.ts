@@ -96,7 +96,7 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/sysposts/${_context.syspost}`);
+        const res = await this.http.get(`/sysposts/${encodeURIComponent(_context.syspost)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/sysposts/${_context.syspost}`);
+        const res = await this.http.delete(`/sysposts/${encodeURIComponent(_context.syspost)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/sysposts/${_context.syspost}`, _data);
+        const res = await this.http.put(`/sysposts/${encodeURIComponent(_context.syspost)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/sysposts/${_context.syspost}/select`);
+        const res = await this.http.get(`/sysposts/${encodeURIComponent(_context.syspost)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

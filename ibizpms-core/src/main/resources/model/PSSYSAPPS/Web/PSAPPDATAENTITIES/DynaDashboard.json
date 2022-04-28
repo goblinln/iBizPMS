@@ -260,6 +260,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "DynaDashboard",
+  "dEAPITag" : "IBZ_API__DYNADASHBOARD",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 0,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DynaDashboard.json",
@@ -272,6 +273,7 @@
     "codeName" : "DynaDashboardName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

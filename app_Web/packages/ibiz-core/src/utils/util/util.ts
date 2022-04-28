@@ -416,6 +416,8 @@ export class Util {
                 if (majorPSAppDataEntity && majorPSAppDataEntity.codeName) {
                     tempData.isInclude = context[majorPSAppDataEntity.codeName.toLowerCase()] && tempData.isInclude;
                     tempData.data.push({ pathName: this.srfpluralize(majorPSAppDataEntity.codeName).toLowerCase(), parameterName: majorPSAppDataEntity.codeName.toLowerCase() });
+                }else{
+                    tempData.isInclude = false;
                 }
             }
             counter++;
@@ -720,13 +722,13 @@ export const removeSessionStorage: Function = (key: string) => {
  * @memberof Util
  */
 export const throttle: Function = (fun: any, params: any[], context: any, delay: number = 300) => {
-    let now: any = Date.now();
-    if (!fun.last || now - fun.last >= delay) {
-        if (typeof fun === 'function') {
-            return fun.apply(context, params);
-        }
-        fun.last = now;
+    if (fun.timer) {
+        return;
     }
+    fun.timer = setTimeout(function () {
+        fun.apply(context, params);
+        fun.timer = null; // 在delay后执行完fun之后清空timer，此时timer为false，throttle触发可以进入计时器
+    }, delay)
 }
 
 const map = new WeakMap();

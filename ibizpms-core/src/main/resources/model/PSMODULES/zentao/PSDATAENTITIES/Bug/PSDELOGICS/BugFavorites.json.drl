@@ -5,14 +5,31 @@ package cn.ibizlab.pms.zentao.logic.buglogic.bugfavorites;
         import org.springframework.util.StringUtils;
         import org.springframework.util.ObjectUtils;
         import cn.ibizlab.pms.util.errors.BadRequestAlertException;
-                global cn.ibizlab.pms.core.ibiz.domain.IbzFavorites bugbugfavoritesibzfavorites;
                 global cn.ibizlab.pms.core.zentao.domain.Bug bugbugfavoritesdefault;
+                global cn.ibizlab.pms.core.ibiz.domain.IbzFavorites bugbugfavoritesibzfavorites;
                     global cn.ibizlab.pms.core.ibiz.service.IIbzFavoritesService ibzfavoritesservice;
         global cn.ibizlab.pms.core.zentao.service.IBugService iBzSysBugDefaultService;
         global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
 
 
     no-loop
+
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "bugbugfavoritesbegin"
+            when
+            then
+            end
+
+            //逻辑处理节点[创建收藏信息]
+            rule "deaction1"
+            ruleflow-group "bugbugfavoritesdeaction1"
+            when
+            then
+                        ibzfavoritesservice.create(bugbugfavoritesibzfavorites);
+                        update(bugbugfavoritesdefault);//更新fact中变量值
+                        update(bugbugfavoritesibzfavorites);//更新fact中变量值
+            end
 
             //逻辑处理节点[设置收藏参数]
             rule "prepareparam1"
@@ -22,23 +39,6 @@ package cn.ibizlab.pms.zentao.logic.buglogic.bugfavorites;
                             bugbugfavoritesibzfavorites.set("objectid",bugbugfavoritesdefault.get("id"));
                                 bugbugfavoritesibzfavorites.set("account",curuser.getSessionParams().get("srfloginname"));
                             bugbugfavoritesibzfavorites.set("type","bug");
-                        update(bugbugfavoritesibzfavorites);//更新fact中变量值
                         update(bugbugfavoritesdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[创建收藏信息]
-            rule "deaction1"
-            ruleflow-group "bugbugfavoritesdeaction1"
-            when
-            then
-                        ibzfavoritesservice.create(bugbugfavoritesibzfavorites);
                         update(bugbugfavoritesibzfavorites);//更新fact中变量值
-                        update(bugbugfavoritesdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "bugbugfavoritesbegin"
-            when
-            then
             end

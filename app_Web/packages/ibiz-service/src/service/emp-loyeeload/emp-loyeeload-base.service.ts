@@ -96,7 +96,7 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/employeeloads/${_context.employeeload}`);
+        const res = await this.http.get(`/employeeloads/${encodeURIComponent(_context.employeeload)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/employeeloads/${_context.employeeload}`);
+        const res = await this.http.delete(`/employeeloads/${encodeURIComponent(_context.employeeload)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/employeeloads/${_context.employeeload}`, _data);
+        const res = await this.http.put(`/employeeloads/${encodeURIComponent(_context.employeeload)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -199,7 +199,7 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/employeeloads/${_context.employeeload}/select`);
+        const res = await this.http.get(`/employeeloads/${encodeURIComponent(_context.employeeload)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

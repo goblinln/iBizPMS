@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n        t1.id ,\n\tt1.`ASSIGN`,\n\tt1.`ASSIGNEDDATE`,\n\tt1.`ASSIGNEDTO`,\n\tt1.`CANCELEDBY`,\n\tt1.`CANCELEDDATE`,\n\tt1.`CLOSEDBY`,\n\tt1.`CLOSEDDATE`,\n\tt1.`CLOSEDREASON`,\n\tt1.`COLOR`,\n\tt1.`CONSUMED`,\n\tt1.`DEADLINE`,\n\t'' AS `DELAY`,\n\tt1.`DELETED`,\n\tt1.`ESTIMATE`,\n\tt1.`ESTSTARTED`,\n\tt1.`FINISHEDBY`,\n\tt1.`FINISHEDDATE`,\n\t0 AS `MULTIPLE`,\n\tt1.`TASKSN`,\n\t(\nSELECT\n\t( COUNT( t.IBZ_FAVORITESID ) ) AS ISFAVORITES \nFROM\n\tT_IBZ_FAVORITES t \nWHERE\n\tt.TYPE = 'task' \n\tAND t.ACCOUNT = #{srf.sessioncontext.srfloginname}  \n\tAND t.OBJECTID = t1.id\n\t) AS `ISFAVORITES`,\n\tt1.`LASTEDITEDBY`,\n\tt1.`LASTEDITEDDATE`,\n\tt1.`LEFT`,\n\tt1.`MODULE`,\n\tt11.`NAME` AS `MODULENAME`,\n\tt1.`NAME`,\n\tt1.`PARENT`,\n\tt1.`PRI`,\n\t'' AS `PROGRESSRATE`,\n\tt1.`PROJECT`,\n\tt1.`REALSTARTED`,\n\tt1.`STATUS`,\n\t'' AS `STATUS1`,\n\t'' AS `STATUSORDER`,\n\tt1.`STORY`,\n\tt21.`TITLE` AS `STORYNAME`,\n\t'' AS `TASKTYPE`,\n\tt21.`version` AS `storyVersions`,\n\tt1.`storyVersion` AS `storyVersion`,\n\tt21.`status` AS `storyStatus` \nFROM\n\t`zt_task` t1\n\tLEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`id`\n\tLEFT JOIN `zt_story` t21 ON t1.`STORY` = t21.`id`\n\tLEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`id`\n\tLEFT JOIN `zt_project` t41 ON t1.`PROJECT` = t41.`id`\n\tLEFT JOIN `zt_product` t51 ON t21.`PRODUCT` = t51.`id`\n\tLEFT JOIN `zt_task` t61 ON t1.`PARENT` = t61.`id`",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEDATAQUERIES/ChildDefault/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,5 +1,6 @@
-import { IPSAppCodeList, IPSAppDEField, IPSCodeListEditor } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeListEditor } from '@ibiz/dynamic-model-api';
 import { DataTypes, ModelTool, Util } from 'ibiz-core';
+import { IPSAppDEView, IPSAppView } from 'ibz-dynamic-core';
 import { Vue, Component, Prop, Inject } from 'vue-property-decorator';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { EditorBase } from '../editor-base/editor-base';
@@ -14,6 +15,13 @@ import { EditorBase } from '../editor-base/editor-base';
 @Component({})
 @VueLifeCycleProcessing()
 export default class SpanEditor extends EditorBase {
+
+    /**
+     * @description 链接需要的参数
+     * @type {*}
+     * @memberof SpanEditor
+     */
+    public spanLinkProps: any = {}
 
     /**
      * 编辑器初始化
@@ -44,8 +52,49 @@ export default class SpanEditor extends EditorBase {
               case 'SPAN_ADDRESSPICKUP':
                   await this.initAddressPickUp();
                   break;
+              case 'SPAN_LINK':
+                  await this.initSpanLink();
+                  break;
 
           }
+    }
+
+    /**
+     * @description 解析标签链接参数
+     * @memberof SpanEditor
+     */
+    public async initSpanLink(){
+      await this.initSpan();
+      let linkAppView: IPSAppView | null = (this.editorInstance as any)?.getLinkPSAppView?.();
+      await (linkAppView as any)?.fill(true);
+      if (linkAppView) {
+          const view: any = {
+              viewname: 'app-view-shell',
+              title: this.$tl(linkAppView.getCapPSLanguageRes()?.lanResTag, linkAppView.title),
+              width: linkAppView?.width,
+              height: linkAppView?.height,
+              placement: linkAppView?.openMode,
+              deResParameters: Util.formatAppDERSPath(this.context, (linkAppView as IPSAppDEView).getPSAppDERSPaths()),
+              isRedirectView: linkAppView.redirectView,
+              viewpath: linkAppView?.modelPath
+          }
+          Object.defineProperty(view, 'viewModel', { enumerable: false, writable: true, value: linkAppView });
+          if (linkAppView?.getPSAppDataEntity()) {
+              Object.assign(view, {
+                  parameters: [
+                      { pathName: Util.srfpluralize(linkAppView.getPSAppDataEntity()?.codeName || '').toLowerCase(), parameterName: linkAppView.getPSAppDataEntity()?.codeName.toLowerCase() },
+                      { pathName: 'views', parameterName: (linkAppView as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase() },
+                  ]
+              })
+          } else {
+              Object.assign(view, {
+                  parameters: [
+                      { pathName: 'views', parameterName: linkAppView.codeName.toLowerCase() }
+                  ]
+              })
+          }
+          this.spanLinkProps.linkview = view;
+      }
     }
 
     /**
@@ -60,9 +109,6 @@ export default class SpanEditor extends EditorBase {
         let appDeField: IPSAppDEField= this.parentItem?.getPSAppDEField?.();
         if (appDeField?.stdDataType) {
             this.customProps.dataType = DataTypes.toString(appDeField.stdDataType);
-        }
-        if (Object.is('PANEL', this.containerCtrl.controlType)) {
-            this.customProps.dataType = 'VARCHAR';
         }
         if (appDeField?.valueFormat) {
             this.customProps.valueFormat = appDeField?.valueFormat;
@@ -205,6 +251,50 @@ export default class SpanEditor extends EditorBase {
     }
 
     /**
+     * 绘制标签（链接）
+     *
+     * @memberof SpanEditor
+     */
+    public renderSpanLink(){
+      let linkAppView: IPSAppView | null = (this.editorInstance as any)?.getLinkPSAppView?.();
+      const linkViewEntity: IPSAppDataEntity | null = linkAppView?.getPSAppDataEntity?.();
+      let tempContext: any = Util.deepCopy(this.context);
+      if (this.spanLinkProps.linkview.viewpath) {
+          Object.assign(tempContext, { viewpath: this.spanLinkProps.linkview.viewpath });
+      }
+      let tempViewParam: any = Util.deepCopy(this.viewparams);
+      let localContext: any = {}
+      let localParam: any = {}
+      if(this.editorInstance){
+        localContext = ModelTool.getNavigateContext(this.editorInstance)
+        localParam = ModelTool.getNavigateParams(this.editorInstance)
+      }
+        return <app-column-link
+            class="app-span-link"
+            deKeyField={linkViewEntity && linkViewEntity.codeName ? linkViewEntity.codeName?.toLowerCase() : ""}
+            context={tempContext}
+            viewparams={tempViewParam}
+            data={this.contextData}
+            linkview={this.spanLinkProps.linkview}
+            localContext={localContext}
+            localParam={localParam}
+            valueitem={this.parentItem?.valueItemName}
+        >
+          {this.$createElement('app-span',{
+              props: {
+                  name: this.editorInstance.name,
+                  value: this.value,
+                  disabled: this.disabled,
+                  data: this.contextData,
+                  ...this.customProps,
+              },
+              style: this.customStyle,
+              on: { change: this.editorChange }
+          })}
+    </app-column-link>;
+    }
+
+    /**
      * 绘制内容
      *
      * @returns {*}
@@ -217,7 +307,10 @@ export default class SpanEditor extends EditorBase {
         const { editorType: type, editorStyle: style } = this.editorInstance;
         const editorTypeStyle: string = `${type}${style && style != 'DEFAULT' ? '_'+style : ''}`;
         if (editorTypeStyle == "SPAN_HTML") {
-            return this.renderSpanHtml();
+          return this.renderSpanHtml();
+        }else if(editorTypeStyle == "SPAN_LINK"){
+          debugger
+            return this.renderSpanLink()
         }
         return this.$createElement(this.editorComponentName,{
           props: {
@@ -230,7 +323,6 @@ export default class SpanEditor extends EditorBase {
           style: this.customStyle,
           on: { change: this.editorChange }
       })
-
     }
 
 

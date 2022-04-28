@@ -6,13 +6,15 @@
   "logicName" : "CheckKey",
   "name" : "CheckKey",
   "getPSDEActionInput" : {
-    "codeName" : "CheckKeyInput",
-    "name" : "输入对象",
+    "name" : "CheckKeyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "HistoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CheckKeyResult",
-    "name" : "返回对象",
+    "name" : "CheckKeyResult",
     "stdDataType" : 9,
     "type" : "SIMPLE"
   },

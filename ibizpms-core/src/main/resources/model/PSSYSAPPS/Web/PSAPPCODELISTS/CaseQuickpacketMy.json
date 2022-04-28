@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__CaseQuickpacketMy",
   "codeListType" : "STATIC",
   "codeName" : "CaseQuickpacketMy",
   "dynaInstMode" : 1,
@@ -14,14 +15,12 @@
     "data" : "{\"n_lastrunner_eq\":\"%srfloginname%\"}",
     "text" : "给我的用例",
     "value" : "TOME",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Icreate",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "text" : "我建的用例",
-    "value" : "ICREATE",
-    "includeBeginValue" : true
+    "value" : "ICREATE"
   } ],
   "enableCache" : true
 }

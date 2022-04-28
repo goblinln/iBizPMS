@@ -55,6 +55,5 @@
     "name" : "indexdesc=spec"
   } ],
   "typeValue" : "story",
-  "inherit" : false,
   "virtual" : true
 }

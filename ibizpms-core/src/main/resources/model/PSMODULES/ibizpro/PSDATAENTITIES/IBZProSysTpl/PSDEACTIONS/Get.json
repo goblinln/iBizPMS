@@ -7,13 +7,19 @@
   "name" : "Get",
   "orderValue" : 31,
   "getPSDEActionInput" : {
-    "codeName" : "GetInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "IBZPRO_SYSTPLID",
+      "codeName" : "IBZProSysTplId"
+    },
+    "name" : "GetInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetResult",
-    "name" : "返回对象",
+    "name" : "GetResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IBZProSysTplDTO"
+    },
     "type" : "DTO"
   },
   "builtinAction" : true

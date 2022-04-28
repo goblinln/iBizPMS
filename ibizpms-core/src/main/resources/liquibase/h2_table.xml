@@ -1911,7 +1911,7 @@
 
 
     <!--输出实体[IBZ_TOP]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_top-1-66">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_top-9-66">
         <createTable tableName="T_IBZ_TOP">
                 <column name="CREATEDATE" remarks="" type="DATETIME">
                 </column>

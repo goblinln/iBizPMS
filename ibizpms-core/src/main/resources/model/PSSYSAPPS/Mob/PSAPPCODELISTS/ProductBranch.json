@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__ProductBranch",
   "codeListType" : "DYNAMIC",
   "codeName" : "ProductBranch",
   "dynaInstMode" : 1,

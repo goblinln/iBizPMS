@@ -114,7 +114,7 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/monthlies/${_context.monthly}/autocreate`, _data);
+        const res = await this.http.post(`/monthlies/${encodeURIComponent(_context.monthly)}/autocreate`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -154,7 +154,7 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/monthlies/${_context.monthly}`);
+        const res = await this.http.get(`/monthlies/${encodeURIComponent(_context.monthly)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -189,7 +189,7 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      */
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/monthlies/${_context.monthly}/notice`, _data);
+        const res = await this.http.post(`/monthlies/${encodeURIComponent(_context.monthly)}/notice`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -205,7 +205,7 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/monthlies/${_context.monthly}/read`, _data);
+        const res = await this.http.post(`/monthlies/${encodeURIComponent(_context.monthly)}/read`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -221,7 +221,7 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/monthlies/${_context.monthly}/submit`, _data);
+        const res = await this.http.post(`/monthlies/${encodeURIComponent(_context.monthly)}/submit`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -239,7 +239,7 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/monthlies/${_context.monthly}`, _data);
+        const res = await this.http.put(`/monthlies/${encodeURIComponent(_context.monthly)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

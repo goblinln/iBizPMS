@@ -305,6 +305,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "TOBUG"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "TEST",
             "name" : "TEST",
@@ -421,6 +425,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CHANGE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf0ec@FontAwesome",
             "cssClass" : "fa fa-exchange"
@@ -454,6 +462,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "REVIEW"
           },
           "getPSNavigateContexts" : [ {
             "key" : "VERSION",
@@ -501,6 +513,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CLOSE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf011@FontAwesome",
             "cssClass" : "fa fa-power-off"
@@ -537,6 +553,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CCASE"
           },
           "getPSNavigateContexts" : [ {
             "key" : "TEST",
@@ -593,6 +613,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ISCHILD"
           },
           "getPSNavigateContexts" : [ {
             "key" : "PARENT",
@@ -654,10 +678,15 @@
           "dataAccessAction" : "CREATE",
           "fullCodeName" : "Copy",
           "name" : "表格界面_拷贝操作",
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CREATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf0c5@FontAwesome",
             "cssClass" : "fa fa-copy"
           },
+          "predefinedType" : "GRIDVIEW_COPYACTION",
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
             "lanResTag" : "TBB.TOOLTIP.*.COPY"
@@ -686,6 +715,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "FAVORITES"
           },
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
@@ -720,6 +753,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "NFAVORITES"
           },
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",

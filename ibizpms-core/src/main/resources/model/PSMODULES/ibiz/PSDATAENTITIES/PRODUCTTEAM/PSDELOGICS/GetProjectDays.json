@@ -5,6 +5,22 @@
   "logicName" : "获取项目的可用工日",
   "name" : "获取项目的可用工日",
   "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接4176",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      }
+    } ],
+    "parallelOutput" : true
+  }, {
     "codeName" : "Deaction1",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -29,40 +45,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Deaction1"
-      },
-      "defaultLink" : false
-    } ],
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "设置产品参数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "name" : "连接4776",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "dstFieldName" : "ID",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "product"
-      },
-      "name" : "Default[ROOT] ==> product[ID]",
-      "paramAction" : "SETPARAMVALUE",
-      "srcFieldName" : "ROOT",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
+      }
     } ],
     "parallelOutput" : true
   }, {
@@ -86,38 +69,56 @@
     } ],
     "parallelOutput" : true
   }, {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置产品参数",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Prepareparam1"
+        "id" : "Deaction1"
       },
-      "name" : "连接4176",
+      "name" : "连接4776",
       "getSrcPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Begin"
+        "id" : "Prepareparam1"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "ID",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "product"
       },
-      "defaultLink" : false
+      "name" : "Default[ROOT] ==> product[ID]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ROOT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "product",
+    "logicName" : "产品",
     "name" : "产品",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-    }
+    },
+    "entityParam" : true
   }, {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

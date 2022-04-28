@@ -5,38 +5,20 @@
   "logicName" : "项目立项待办任务快速分组计数器",
   "name" : "项目立项待办任务快速分组计数器",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Rawsqlcall1",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取临时任务",
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接7308",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
         "id" : "Rawsqlcall1"
       },
-      "defaultLink" : false
+      "name" : "连接9322",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      }
     } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "网页请求上下文[srfcurproject]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfcurproject",
-      "srcValueType" : "WEBCONTEXT"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    } ],
-    "sql" : "select count(*) as temp  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and taskspecies = 'temp' and (\nt1.assignedTo = ? \n)",
-    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -55,8 +37,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "网页请求上下文[srfcurproject]",
@@ -70,6 +51,72 @@
       "srcValueType" : "SESSION"
     } ],
     "sql" : "select count(*) as cycle  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and t1.taskspecies = 'cycle'\nand (\nt1.assignedTo = ? \n)",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall3",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取计划任务",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall4"
+      },
+      "name" : "连接3736",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "网页请求上下文[srfcurproject]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfcurproject",
+      "srcValueType" : "WEBCONTEXT"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "sql" : "select count(*) as plan from zt_task t1 where t1.deleted = '0' and  t1.project in (?) and t1.taskspecies = 'plan'\nand (\nt1.assignedTo = ? \n)",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取临时任务",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接7308",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "网页请求上下文[srfcurproject]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfcurproject",
+      "srcValueType" : "WEBCONTEXT"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "sql" : "select count(*) as temp  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and taskspecies = 'temp' and (\nt1.assignedTo = ? \n)",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
@@ -94,66 +141,17 @@
     "sql" : "select count(*) as all from zt_task t1 where t1.deleted = '0'  and t1.project in (?)  and (\nt1.assignedTo = ? \n)",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
-  }, {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接9322",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall3",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取计划任务",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall4"
-      },
-      "name" : "连接3736",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "网页请求上下文[srfcurproject]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfcurproject",
-      "srcValueType" : "WEBCONTEXT"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    } ],
-    "sql" : "select count(*) as plan from zt_task t1 where t1.deleted = '0' and  t1.project in (?) and t1.taskspecies = 'plan'\nand (\nt1.assignedTo = ? \n)",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

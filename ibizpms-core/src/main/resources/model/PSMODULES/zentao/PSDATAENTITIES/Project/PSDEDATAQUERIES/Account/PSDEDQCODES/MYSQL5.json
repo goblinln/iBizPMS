@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.MDEPTID,\nt1.orgid,\n(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `BUGCNT`,\nt1.`CODE`,\nt1.`DELETED`,\nt1.`ID`,\nt1.`NAME`,\nt1.openedBy,\nt1.OPENEDDATE,\n(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END)  as `ORDER`,\n(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) as `ORDER1`,\n\t(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END) as `ISTOP`,\n(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `STORYCNT`,\n(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `TASKCNT`,\nt1.`TYPE`,\nt1.`STATUS`,\nt1.PROJECTSN\nFROM `zt_project` t1 \nleft join t_ibz_top t2 on t1.id = t2.OBJECTID and t2.type = 'project' and t2.ACCOUNT = #{srf.sessioncontext.srfloginname}\nLEFT JOIN zt_project t11 ON t1.PARENT = t11.id",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEDATAQUERIES/Account/PSDEDQCODES/MYSQL5.json"
+}

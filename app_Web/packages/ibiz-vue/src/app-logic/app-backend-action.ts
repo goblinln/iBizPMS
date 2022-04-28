@@ -176,6 +176,12 @@ export class AppBackEndAction extends AppDEUIAction {
                 delete context.srfsessionid;
             }
             const backend = () => {
+                if (xData && xData.formValidateStatus instanceof Function) {
+                  if (!xData.formValidateStatus()) {
+                    actionContext.$throw(actionContext.$t('app.searchform.globalerrortip') as string, 'save', { dangerouslyUseHTMLString: true });
+                    return;
+                  }
+                }
                 if (this.actionModel.getPSAppDataEntity() && this.actionModel.getPSAppDEMethod()) {
                     new GlobalService()
                         .getService((this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName)

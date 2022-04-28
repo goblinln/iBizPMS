@@ -5,52 +5,6 @@
   "logicName" : "我的地盘移动端计数器",
   "name" : "我的地盘移动端计数器",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Rawsqlcall1",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取我的需求数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接8800",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    } ],
-    "sql" : "select count(t1.id) AS MYSTORYS from zt_story t1 where t1.deleted = '0' and t1.assignedTo = ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall4",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "我的待办数",
-    "getPSDELogicNodeParams" : [ {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    } ],
-    "sql" : "select count(t1.id) as MYTODOCNT from zt_todo t1 where t1.cycle = '0' and t1.account = ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始",
@@ -63,8 +17,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
     "parallelOutput" : true
   }, {
@@ -84,8 +37,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
@@ -113,8 +65,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall3"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
@@ -125,15 +76,62 @@
     "sql" : "select count(t1.id) AS MYTASKS from zt_task t1 where t1.deleted = '0' and t1.assignedTo = ?",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall4",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "我的待办数",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "sql" : "select count(t1.id) as MYTODOCNT from zt_todo t1 where t1.cycle = '0' and t1.account = ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取我的需求数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接8800",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "sql" : "select count(t1.id) AS MYSTORYS from zt_story t1 where t1.deleted = '0' and t1.assignedTo = ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

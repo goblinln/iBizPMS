@@ -1,0 +1,94 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`TYPE` = 'custom'  AND  t1.`ORGID` =  ${srfsessioncontext('SRFORGID','{\"defname\":\"ORGID\",\"dename\":\"ZT_DOCLIB\"}')} )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`COLLECTOR`",
+    "name" : "COLLECTOR"
+  }, {
+    "expression" : "t1.`USERS`",
+    "name" : "USERS"
+  }, {
+    "expression" : "t1.`ACL`",
+    "name" : "ACL"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`DOCLIBSN`",
+    "name" : "DOCLIBSN"
+  }, {
+    "expression" : "'doc'",
+    "name" : "DOCLIBTYPE"
+  }, {
+    "expression" : "t1.`GROUPS`",
+    "name" : "GROUPS"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END )",
+    "name" : "ISFAVOURITES"
+  }, {
+    "expression" : "t1.`MAIN`",
+    "name" : "MAIN"
+  }, {
+    "expression" : "t1.`MDEPTID`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "(select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id)",
+    "name" : "MODULECNT"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "(select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created')",
+    "name" : "OPENEDDATE"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`name`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t21.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  }, {
+    "expression" : "t1.`UPDATEMANNAME`",
+    "name" : "UPDATEMANNAME"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACL`,\nt1.`CREATEBY`,\nt1.`DELETED`,\nt1.`DEPTNAME`,\nt1.`DOCLIBSN`,\n'doc' AS `DOCLIBTYPE`,\nt1.`GROUPS`,\nt1.`ID`,\n( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`,\nt1.`MAIN`,\nt1.`MDEPTID`,\n(select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) AS `MODULECNT`,\nt1.`NAME`,\n(select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') AS `OPENEDDATE`,\nt1.`ORDER`,\nt1.`ORGID`,\nt1.`ORGNAME`,\nt1.`PRODUCT`,\nt11.`name` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt21.`NAME` AS `PROJECTNAME`,\nt1.`TYPE`,\nt1.`UPDATEBY`,\nt1.`UPDATEMANNAME`\nFROM `zt_doclib` t1 \nLEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id` \nLEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID` \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEDATAQUERIES/ByCustom/PSDEDQCODES/MYSQL5.json"
+}

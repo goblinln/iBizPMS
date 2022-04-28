@@ -1,50 +1,52 @@
 {
+  "codeListTag" : "zentao__Block__source_block",
   "codeListType" : "STATIC",
   "codeName" : "Block__source_block",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Block__source_block.json",
   "emptyText" : "未定义",
+  "name" : "来源区块",
   "getPSCodeItems" : [ {
     "codeName" : "Statistic",
     "text" : "统计",
-    "value" : "statistic",
-    "includeBeginValue" : true
+    "value" : "statistic"
   }, {
     "codeName" : "Overview",
     "text" : "总览",
-    "value" : "overview",
-    "includeBeginValue" : true
+    "value" : "overview"
   }, {
     "codeName" : "List",
     "text" : "列表",
-    "value" : "list",
-    "includeBeginValue" : true
+    "value" : "list"
   }, {
     "codeName" : "Task",
     "text" : "任务",
-    "value" : "task",
-    "includeBeginValue" : true
+    "value" : "task"
   }, {
     "codeName" : "Bug",
     "text" : "bug",
-    "value" : "bug",
-    "includeBeginValue" : true
+    "value" : "bug"
   }, {
     "codeName" : "Case",
     "text" : "用例",
-    "value" : "case",
-    "includeBeginValue" : true
+    "value" : "case"
   }, {
     "codeName" : "Testtask",
     "text" : "测试版本",
-    "value" : "testtask",
-    "includeBeginValue" : true
+    "value" : "testtask"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Block.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

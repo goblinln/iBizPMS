@@ -1,14 +1,27 @@
 {
+  "codeListTag" : "ibizsysmodel__SQLBuild",
   "codeListType" : "DYNAMIC",
   "codeName" : "SQLBuild",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSCODELISTS/SQLBuild.json",
   "emptyText" : "未定义",
+  "name" : "运行数据库（版本）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Build"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

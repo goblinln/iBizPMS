@@ -1,0 +1,43 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`EXPECT`",
+    "name" : "EXPECT"
+  }, {
+    "expression" : "t1.`IBZ_PLANTEMPLETDETAILID`",
+    "name" : "IBZ_PLANTEMPLETDETAILID"
+  }, {
+    "expression" : "t1.`IBZ_PLANTEMPLETDETAILNAME`",
+    "name" : "IBZ_PLANTEMPLETDETAILNAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`PLANCODE`",
+    "name" : "PLANCODE"
+  }, {
+    "expression" : "t1.`PLANTEMPLETID`",
+    "name" : "PLANTEMPLETID"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DESC`,\nt1.`EXPECT`,\nt1.`IBZ_PLANTEMPLETDETAILID`,\nt1.`IBZ_PLANTEMPLETDETAILNAME`,\nt1.`ORDER`,\nt1.`PLANCODE`,\nt1.`PLANTEMPLETID`,\nt1.`TYPE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_IBZ_PLANTEMPLETDETAIL` t1 \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

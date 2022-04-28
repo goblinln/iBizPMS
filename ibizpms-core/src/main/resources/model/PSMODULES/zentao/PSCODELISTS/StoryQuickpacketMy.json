@@ -1,40 +1,45 @@
 {
+  "codeListTag" : "zentao__StoryQuickpacketMy",
   "codeListType" : "STATIC",
   "codeName" : "StoryQuickpacketMy",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/StoryQuickpacketMy.json",
   "emptyText" : "未定义",
+  "name" : "需求快速分组（我的地盘）",
   "getPSCodeItems" : [ {
     "codeName" : "Tome",
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指给我",
     "value" : "TOME",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Icreate",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "text" : "由我创建",
-    "value" : "ICREATE",
-    "includeBeginValue" : true
+    "value" : "ICREATE"
   }, {
     "codeName" : "Ireview",
     "data" : "{\"n_reviewedby_eq\":\"%srfloginname%\"}",
     "text" : "由我评审",
-    "value" : "IREVIEW",
-    "includeBeginValue" : true
+    "value" : "IREVIEW"
   }, {
     "codeName" : "Iclose",
     "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
     "text" : "由我关闭",
-    "value" : "ICLOSE",
-    "includeBeginValue" : true
+    "value" : "ICLOSE"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`ASSIGNEDBY`,\nt1.`ASSIGNEDDATE`,\nt1.`ASSIGNEDTO`,\ncase when t1.`BEGIN` = 2400 then null else t1.`begin` end as `begin`,\nt1.`CLOSEDBY`,\nt1.`CLOSEDDATE`,\nt1.`CONFIG`,\nt1.`CYCLE`,\nt1.`DATE` as `DATE`,\nDATE_FORMAT(t1.`date`,'%c月%d日') AS `DATE1`,\ncase when t1.`END` = 2400 then null else t1.`END` end as `END`,\nt1.`FINISHEDBY`,\nt1.`FINISHEDDATE`,\nt1.`TODOSN`,\nt1.`id`,\nt1.`IDVALUE`,\ncase when t1.type = 'bug' then t11.`TITLE` when t1.type = 'task' then t21.`name` when t1.type = 'story' then t31.`TITLE` else t1.`NAME` end `name`,\nt1.`PRI`,\nt1.`PRIVATE`,\nt1.`STATUS`,\nt1.`TYPE`\nFROM `zt_todo` t1 \nLEFT JOIN zt_bug t11 on t11.ID= t1.idvalue\nLEFT JOIN zt_task t21 on t21.ID= t1.idvalue\nLEFT JOIN zt_story t31 on t31.ID= t1.idvalue",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEDATAQUERIES/Account/PSDEDQCODES/MYSQL5.json"
+}

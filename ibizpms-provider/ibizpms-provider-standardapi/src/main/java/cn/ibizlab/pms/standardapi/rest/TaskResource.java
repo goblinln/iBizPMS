@@ -647,5 +647,22 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @Autowired
+    cn.ibizlab.pms.core.zentao.mapping.TaskDataImport dataimportImpMapping;
+    @RequestMapping(method = RequestMethod.POST, value = "/tasks/import")
+    public ResponseEntity<JSONObject> importData(@RequestParam(value = "config") String config , @RequestBody List<Task> dtos){
+        JSONObject rs=new JSONObject();
+        if(dtos.size()==0){
+            rs.put("rst", 1);
+            rs.put("msg", "未传入内容");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(rs);
+        }
+        else{
+            if("DataImport".equals(config)){
+                rs=taskService.importData(dataimportImpMapping.toDomain(dtos),1000,false);
+            }
+            return ResponseEntity.status(HttpStatus.OK).body(rs);
+        }
+    }
 }
 

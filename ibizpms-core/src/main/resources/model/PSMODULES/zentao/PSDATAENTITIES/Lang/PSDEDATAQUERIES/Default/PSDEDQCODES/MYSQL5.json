@@ -1,0 +1,28 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`VALUE`",
+    "name" : "VALUE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`KEY`",
+    "name" : "KEY"
+  }, {
+    "expression" : "t1.`LANG`",
+    "name" : "LANG"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "t1.`SECTION`",
+    "name" : "SECTION"
+  }, {
+    "expression" : "t1.`SYSTEM`",
+    "name" : "SYSTEM"
+  } ],
+  "queryCode" : "SELECT\nt1.`ID`,\nt1.`KEY`,\nt1.`LANG`,\nt1.`MODULE`,\nt1.`SECTION`,\nt1.`SYSTEM`\nFROM `zt_lang` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Lang/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

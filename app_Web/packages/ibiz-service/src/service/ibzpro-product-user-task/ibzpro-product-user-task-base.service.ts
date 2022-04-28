@@ -96,7 +96,7 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzproproductusertasks/${_context.ibzproproductusertask}`);
+        const res = await this.http.get(`/ibzproproductusertasks/${encodeURIComponent(_context.ibzproproductusertask)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibzproproductusertasks/${_context.ibzproproductusertask}`);
+        const res = await this.http.delete(`/ibzproproductusertasks/${encodeURIComponent(_context.ibzproproductusertask)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibzproproductusertasks/${_context.ibzproproductusertask}`, _data);
+        const res = await this.http.put(`/ibzproproductusertasks/${encodeURIComponent(_context.ibzproproductusertask)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -233,7 +233,7 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzproproductusertasks/${_context.ibzproproductusertask}/select`);
+        const res = await this.http.get(`/ibzproproductusertasks/${encodeURIComponent(_context.ibzproproductusertask)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

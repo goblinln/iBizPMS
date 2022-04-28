@@ -1,18 +1,39 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "zentao__UserRealNameUnAssignTo_Gird",
   "codeListType" : "DYNAMIC",
   "codeName" : "UserRealNameUnAssignTo_Gird",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/UserRealNameUnAssignTo_Gird.json",
   "emptyText" : "未指派",
+  "name" : "用户真实名称（动态-表格）（未指派）",
   "orMode" : "STR",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getTextPSDEField" : {
+    "name" : "PERSONNAME",
+    "codeName" : "PersonName"
+  },
   "textSeparator" : ",",
+  "getValuePSDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
+  },
   "valueSeparator" : ",",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

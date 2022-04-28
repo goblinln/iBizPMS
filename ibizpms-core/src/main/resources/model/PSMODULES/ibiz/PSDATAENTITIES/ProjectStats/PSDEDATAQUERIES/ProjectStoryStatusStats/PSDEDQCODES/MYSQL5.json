@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "select \nt1.id, \nt1.`name`, \nt1.`status`, \nsum(case when t3.`status` = '' then 1 else 0 end) as `EmptyStory`, \nsum(case when t3.`status` = 'draft' then 1 else 0 end) as `DraftStory`, \nsum(case when t3.`status` = 'active' then 1 else 0 end) as `ActiveStory`, \nsum(case when t3.`status` = 'closed' then 1 else 0 end) as `ClosedStory`, \nsum(case when t3.`status` = 'changed' then 1 else 0 end) as `ChangedStory`, \nsum(case when t3.`status` is not null then 1 else 0 end) as `StoryCNT` \nfrom \nzt_project t1 \nleft join zt_projectstory t2 on t1.id = t2.project \nleft join zt_story t3 on t2.story = t3.id and t3.deleted = '0' \nwhere t1.deleted = '0' \ngroup by t1.id",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEDATAQUERIES/ProjectStoryStatusStats/PSDEDQCODES/MYSQL5.json"
+}

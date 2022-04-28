@@ -88,7 +88,7 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
     async FetchRoadMapYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/productlives/fetchroadmapyear`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productlives/fetchroadmapyear`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchRoadMapYear');
             return res;
         }
@@ -109,7 +109,7 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
     async FetchRoadmap(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/productlives/fetchroadmap`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productlives/fetchroadmap`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchRoadmap');
             return res;
         }

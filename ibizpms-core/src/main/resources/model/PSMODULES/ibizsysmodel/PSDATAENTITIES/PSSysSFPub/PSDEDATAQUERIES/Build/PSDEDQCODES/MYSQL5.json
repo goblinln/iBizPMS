@@ -1,0 +1,115 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BASECLSPKGCODENAME`",
+    "name" : "BASECLSPKGCODENAME"
+  }, {
+    "expression" : "t1.`CODENAME`",
+    "name" : "CODENAME"
+  }, {
+    "expression" : "t1.`CONTENTTYPE`",
+    "name" : "CONTENTTYPE"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DEFAULTPUB`",
+    "name" : "DEFAULTPUB"
+  }, {
+    "expression" : "t1.`DOCPSSFSTYLEID`",
+    "name" : "DOCPSSFSTYLEID"
+  }, {
+    "expression" : "t1.`DOCPSSFSTYLENAME`",
+    "name" : "DOCPSSFSTYLENAME"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`PKGCODENAME`",
+    "name" : "PKGCODENAME"
+  }, {
+    "expression" : "t1.`PPSSYSSFPUBID`",
+    "name" : "PPSSYSSFPUBID"
+  }, {
+    "expression" : "t11.`PSSYSSFPUBNAME`",
+    "name" : "PPSSYSSFPUBNAME"
+  }, {
+    "expression" : "t1.`PSSFSTYLEID`",
+    "name" : "PSSFSTYLEID"
+  }, {
+    "expression" : "t1.`PSSFSTYLEPARAMID`",
+    "name" : "PSSFSTYLEPARAMID"
+  }, {
+    "expression" : "t1.`PSSFSTYLEPARAMNAME`",
+    "name" : "PSSFSTYLEPARAMNAME"
+  }, {
+    "expression" : "t1.`PSSFSTYLEVERID`",
+    "name" : "PSSFSTYLEVERID"
+  }, {
+    "expression" : "t1.`PSSYSSFPUBID`",
+    "name" : "PSSYSSFPUBID"
+  }, {
+    "expression" : "t1.`PSSYSSFPUBNAME`",
+    "name" : "PSSYSSFPUBNAME"
+  }, {
+    "expression" : "t1.`PSSYSTEMID`",
+    "name" : "PSSYSTEMID"
+  }, {
+    "expression" : "t1.`PSSYSTEMNAME`",
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "expression" : "t1.`PUBFOLDER`",
+    "name" : "PUBFOLDER"
+  }, {
+    "expression" : "t1.`PUBTAG`",
+    "name" : "PUBTAG"
+  }, {
+    "expression" : "t1.`PUBTAG2`",
+    "name" : "PUBTAG2"
+  }, {
+    "expression" : "t1.`PUBTAG3`",
+    "name" : "PUBTAG3"
+  }, {
+    "expression" : "t1.`PUBTAG4`",
+    "name" : "PUBTAG4"
+  }, {
+    "expression" : "t1.`REMOVEFLAG`",
+    "name" : "REMOVEFLAG"
+  }, {
+    "expression" : "t1.`STYLEPARAMS`",
+    "name" : "STYLEPARAMS"
+  }, {
+    "expression" : "t1.`SUBSYSPKGFLAG`",
+    "name" : "SUBSYSPKGFLAG"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`USERCAT`",
+    "name" : "USERCAT"
+  }, {
+    "expression" : "t1.`USERTAG`",
+    "name" : "USERTAG"
+  }, {
+    "expression" : "t1.`USERTAG2`",
+    "name" : "USERTAG2"
+  }, {
+    "expression" : "t1.`USERTAG3`",
+    "name" : "USERTAG3"
+  }, {
+    "expression" : "t1.`USERTAG4`",
+    "name" : "USERTAG4"
+  }, {
+    "expression" : "t1.`VERSTR`",
+    "name" : "VERSTR"
+  } ],
+  "queryCode" : "SELECT\nt1.`BASECLSPKGCODENAME`,\nt1.`CODENAME`,\nt1.`CONTENTTYPE`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DEFAULTPUB`,\nt1.`DOCPSSFSTYLEID`,\nt1.`DOCPSSFSTYLENAME`,\nt1.`MEMO`,\nt1.`PKGCODENAME`,\nt1.`PPSSYSSFPUBID`,\nt11.`PSSYSSFPUBNAME` AS `PPSSYSSFPUBNAME`,\nt1.`PSSFSTYLEID`,\nt1.`PSSFSTYLEPARAMID`,\nt1.`PSSFSTYLEPARAMNAME`,\nt1.`PSSFSTYLEVERID`,\nt1.`PSSYSSFPUBID`,\nt1.`PSSYSSFPUBNAME`,\nt1.`PSSYSTEMID`,\nt1.`PSSYSTEMNAME`,\nt1.`PUBFOLDER`,\nt1.`PUBTAG`,\nt1.`PUBTAG2`,\nt1.`PUBTAG3`,\nt1.`PUBTAG4`,\nt1.`REMOVEFLAG`,\nt1.`STYLEPARAMS`,\nt1.`SUBSYSPKGFLAG`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`USERCAT`,\nt1.`USERTAG`,\nt1.`USERTAG2`,\nt1.`USERTAG3`,\nt1.`USERTAG4`,\nt1.`VERSTR`\nFROM `T_PSSYSSFPUB` t1 \nLEFT JOIN `T_PSSYSSFPUB` t11 ON t1.`PPSSYSSFPUBID` = t11.`PSSYSSFPUBID` \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub/PSDEDATAQUERIES/Build/PSDEDQCODES/MYSQL5.json"
+}

@@ -6,13 +6,15 @@
   "logicName" : "EE取消计划",
   "name" : "EeCancelPlan",
   "getPSDEActionInput" : {
-    "codeName" : "EeCancelPlanInput",
-    "name" : "输入对象",
+    "name" : "EeCancelPlanInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "EeCancelPlanResult",
-    "name" : "返回对象",
+    "name" : "EeCancelPlanResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

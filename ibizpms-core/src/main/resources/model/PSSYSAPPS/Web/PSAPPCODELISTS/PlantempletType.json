@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__PlantempletType",
   "codeListType" : "STATIC",
   "codeName" : "PlantempletType",
   "dynaInstMode" : 1,
@@ -12,18 +13,15 @@
   "getPSCodeItems" : [ {
     "codeName" : "Step",
     "text" : "计划",
-    "value" : "step",
-    "includeBeginValue" : true
+    "value" : "step"
   }, {
     "codeName" : "Group",
     "text" : "父计划",
-    "value" : "group",
-    "includeBeginValue" : true
+    "value" : "group"
   }, {
     "codeName" : "Item",
     "text" : "子计划",
-    "value" : "item",
-    "includeBeginValue" : true
+    "value" : "item"
   } ],
   "enableCache" : true
 }

@@ -49,7 +49,7 @@ export default class DataPickerEditor extends EditorBase {
         await this.initModelService();
         // 加载链接视图和选择视图
         let pickupAppView: IPSAppView | null = (this.editorInstance as IPSPickerEditor)?.getPickupPSAppView?.();
-        let linkAppView: IPSAppView | null = (this.editorInstance as IPSPickerEditor)?.getPickupPSAppView?.();
+        let linkAppView: IPSAppView | null = (this.editorInstance as IPSPicker)?.getLinkPSAppView?.();
         await (pickupAppView as any)?.fill(true);
         await (linkAppView as any)?.fill(true);
 
@@ -340,6 +340,11 @@ export default class DataPickerEditor extends EditorBase {
                 treeurl: this.editorInstance.editorParams['treeurl'],
             })
         }
+        if (this.editorInstance.editorParams?.['editorMode']) {
+            Object.assign(params, {
+                editorMode: this.editorInstance.editorParams['editorMode'],
+            })
+        }
         return this.$createElement(this.editorComponentName, {
             props: params,
             on: {
@@ -402,7 +407,9 @@ export default class DataPickerEditor extends EditorBase {
             disabled: this.disabled,
             data: this.contextData,
             context: this.context,
-            style: this.customStyle
+            style: this.customStyle,
+            localParam: this.customProps.localParam,
+            localContext: this.customProps.localContext,
         };
         if (this.codeList) {
             Object.assign(params, {

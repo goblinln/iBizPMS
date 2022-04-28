@@ -6,13 +6,15 @@
   "logicName" : "取消收藏",
   "name" : "UnCollect",
   "getPSDEActionInput" : {
-    "codeName" : "UnCollectInput",
-    "name" : "输入对象",
+    "name" : "UnCollectInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "DocDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UnCollectResult",
-    "name" : "返回对象",
+    "name" : "UnCollectResult",
     "type" : "VOID"
   }
 }

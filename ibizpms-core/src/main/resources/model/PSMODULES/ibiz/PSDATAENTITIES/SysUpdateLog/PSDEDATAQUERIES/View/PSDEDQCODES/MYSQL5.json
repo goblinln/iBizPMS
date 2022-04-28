@@ -1,0 +1,37 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`LATESTUPDATE`",
+    "name" : "LATESTUPDATE"
+  }, {
+    "expression" : "t1.`SYS_UPDATE_LOGID`",
+    "name" : "SYS_UPDATE_LOGID"
+  }, {
+    "expression" : "t1.`SYS_UPDATE_LOGNAME`",
+    "name" : "SYS_UPDATE_LOGNAME"
+  }, {
+    "expression" : "t1.`UPDATE`",
+    "name" : "UPDATE"
+  }, {
+    "expression" : "t1.`UPDATEBRANCH`",
+    "name" : "UPDATEBRANCH"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`UPDESC`",
+    "name" : "UPDESC"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`LATESTUPDATE`,\nt1.`SYS_UPDATE_LOGID`,\nt1.`SYS_UPDATE_LOGNAME`,\nt1.`UPDATE`,\nt1.`UPDATEBRANCH`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`UPDESC`\nFROM `T_SYS_UPDATE_LOG` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

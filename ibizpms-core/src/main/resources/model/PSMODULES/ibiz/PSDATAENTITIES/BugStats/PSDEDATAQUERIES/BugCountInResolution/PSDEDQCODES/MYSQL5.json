@@ -1,0 +1,70 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "0",
+    "name" : "BUGBYDESIGN"
+  }, {
+    "expression" : "0",
+    "name" : "BUGCNT"
+  }, {
+    "expression" : "0",
+    "name" : "BUGDUPLICATE"
+  }, {
+    "expression" : "0%",
+    "name" : "BUGEFFICIENT"
+  }, {
+    "expression" : "0",
+    "name" : "BUGEXTERNAL"
+  }, {
+    "expression" : "0",
+    "name" : "BUGFIXED"
+  }, {
+    "expression" : "0",
+    "name" : "BUGNOTREPRO"
+  }, {
+    "expression" : "0",
+    "name" : "BUGPOSTPONED"
+  }, {
+    "expression" : "0",
+    "name" : "BUGTOSTORY"
+  }, {
+    "expression" : "0",
+    "name" : "BUGTOTAL"
+  }, {
+    "expression" : "0",
+    "name" : "BUGWILLNOTFIX"
+  }, {
+    "expression" : "0",
+    "name" : "BUGWJJ"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t2.`PROJECTNAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`RESOLVEDBY`",
+    "name" : "RESOLVEDBY"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  } ],
+  "queryCode" : "SELECT\nt1.project,\nt1.projectname,\nsum(if(t1.resolution='tostory',t1.ss,0)) as bugtostory,\nsum(if(t1.resolution='bydesign',t1.ss,0)) as bugbydesign,\nsum(if(t1.resolution='duplicate',t1.ss,0)) as bugduplicate,\nsum(if(t1.resolution='fixed',t1.ss,0)) as bugfixed,\nsum(if(t1.resolution='external',t1.ss,0)) as bugexternal,\nsum(if(t1.resolution='willnotfix',t1.ss,0)) as bugwillnotfix,\nsum(if(t1.resolution='notrepro',t1.ss,0)) as bugnotrepro,\nsum(if(t1.resolution='postponed',t1.ss,0)) as bugpostponed,\ncount(1) as bugcnt\nfrom\n(\nSELECT\nt1.resolution,\nt1.project,\nt11.name as projectname,\n1 as ss\nfrom\nzt_bug t1\nleft join zt_project t11 on t1.project = t11.id\nwhere t1.deleted='0' and t1.project <>0 and t1.resolution <> ''\n)t1\nGROUP BY\nt1.project,\nt1.projectname\n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEDATAQUERIES/BugCountInResolution/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,97 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`ASSIGNEDBY`",
+    "name" : "ASSIGNEDBY"
+  }, {
+    "expression" : "t1.`ASSIGNEDDATE`",
+    "name" : "ASSIGNEDDATE"
+  }, {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "t1.ASSIGNEDTO",
+    "name" : "ASSIGNEDTOPK"
+  }, {
+    "expression" : "t1.`BEGIN`",
+    "name" : "BEGIN"
+  }, {
+    "expression" : "t1.`CLOSEDBY`",
+    "name" : "CLOSEDBY"
+  }, {
+    "expression" : "t1.`CLOSEDDATE`",
+    "name" : "CLOSEDDATE"
+  }, {
+    "expression" : "t1.`CONFIG`",
+    "name" : "CONFIG"
+  }, {
+    "expression" : "t1.`COST`",
+    "name" : "COST"
+  }, {
+    "expression" : "t1.`CYCLE`",
+    "name" : "CYCLE"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "(case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end)",
+    "name" : "DATE1"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`END`",
+    "name" : "END"
+  }, {
+    "expression" : "t1.`FINISHEDBY`",
+    "name" : "FINISHEDBY"
+  }, {
+    "expression" : "t1.`FINISHEDDATE`",
+    "name" : "FINISHEDDATE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`IDVALUE`",
+    "name" : "IDVALUE"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t1.`PRIVATE`",
+    "name" : "PRIVATE"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`TODOSN`",
+    "name" : "TODOSN"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`ASSIGNEDBY`,\nt1.`ASSIGNEDDATE`,\nt1.`ASSIGNEDTO`,\nt1.ASSIGNEDTO AS `ASSIGNEDTOPK`,\nt1.`BEGIN`,\nt1.`CLOSEDBY`,\nt1.`CLOSEDDATE`,\nt1.`CONFIG`,\nt1.`COST`,\nt1.`CYCLE`,\nt1.`DATE`,\n(case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`DESC`,\nt1.`END`,\nt1.`FINISHEDBY`,\nt1.`FINISHEDDATE`,\nt1.`ID`,\nt1.`IDVALUE`,\nt1.`NAME`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PRI`,\nt1.`PRIVATE`,\nt1.`STATUS`,\nt1.`TODOSN`,\nt1.`TYPE`,\nt1.`UPDATEBY`\nFROM `zt_todo` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

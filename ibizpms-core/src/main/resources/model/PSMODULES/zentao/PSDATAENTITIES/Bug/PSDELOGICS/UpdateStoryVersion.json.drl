@@ -12,6 +12,13 @@ package cn.ibizlab.pms.zentao.logic.buglogic.updatestoryversion;
 
     no-loop
 
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "bugupdatestoryversionbegin"
+            when
+            then
+            end
+
             //逻辑处理节点[重置需求版本]
             rule "prepareparam1"
             ruleflow-group "bugupdatestoryversionprepareparam1"
@@ -37,11 +44,4 @@ package cn.ibizlab.pms.zentao.logic.buglogic.updatestoryversion;
                                     }
                             }
                         update(bugupdatestoryversiondefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "bugupdatestoryversionbegin"
-            when
-            then
             end

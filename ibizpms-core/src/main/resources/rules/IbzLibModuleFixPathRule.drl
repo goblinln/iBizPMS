@@ -5,8 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.util.StringUtils;
 import org.springframework.util.ObjectUtils;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
-global cn.ibizlab.pms.core.ibiz.domain.IbzLibModule ibzlibmodulefixpathdefault;
 global cn.ibizlab.pms.core.zentao.domain.Module ibzlibmodulefixpathzt_module;
+global cn.ibizlab.pms.core.ibiz.domain.IbzLibModule ibzlibmodulefixpathdefault;
 global cn.ibizlab.pms.core.zentao.service.IModuleService moduleservice;
 global cn.ibizlab.pms.core.ibiz.service.IIbzLibModuleService iBzSysIbzlibmoduleDefaultService;
 global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
@@ -27,8 +27,8 @@ ruleflow-group "ibzlibmodulefixpathdeaction1"
     when
     then
     moduleservice.update(ibzlibmodulefixpathzt_module);
-    update(ibzlibmodulefixpathdefault);//更新fact中变量值
     update(ibzlibmodulefixpathzt_module);//更新fact中变量值
+    update(ibzlibmodulefixpathdefault);//更新fact中变量值
     end
 
 //逻辑处理节点[准备参数]
@@ -46,7 +46,7 @@ ruleflow-group "ibzlibmodulefixpathprepareparam1"
     ibzlibmodulefixpathzt_module.set("root",ibzlibmodulefixpathdefault.get("root"));
     ibzlibmodulefixpathzt_module.set("ibizshort",ibzlibmodulefixpathdefault.get("ibizshort"));
     ibzlibmodulefixpathzt_module.set("type",ibzlibmodulefixpathdefault.get("type"));
-    update(ibzlibmodulefixpathdefault);//更新fact中变量值
     update(ibzlibmodulefixpathzt_module);//更新fact中变量值
+    update(ibzlibmodulefixpathdefault);//更新fact中变量值
     end
 

@@ -1,4 +1,20 @@
 {
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp/PSDEACMODES/Default.json"
+  } ],
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
@@ -8,15 +24,21 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
-      "codeName" : "CreateInput",
-      "name" : "输入对象",
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateResult",
-      "name" : "返回对象",
+      "name" : "CreateResult",
       "type" : "VOID"
+    },
+    "getPSSubSysServiceAPIDEMethod" : {
+      "modelref" : true,
+      "id" : "Create"
     },
     "builtinAction" : true
   }, {
@@ -28,15 +50,21 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateInput",
-      "name" : "输入对象",
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateResult",
-      "name" : "返回对象",
+      "name" : "UpdateResult",
       "type" : "VOID"
+    },
+    "getPSSubSysServiceAPIDEMethod" : {
+      "modelref" : true,
+      "id" : "Update"
     },
     "builtinAction" : true
   }, {
@@ -49,14 +77,20 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "PSSYSAPPID",
+        "codeName" : "PSSysAppId"
+      },
+      "name" : "RemoveInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveResult",
-      "name" : "返回对象",
+      "name" : "RemoveResult",
       "type" : "VOID"
+    },
+    "getPSSubSysServiceAPIDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
     },
     "batchAction" : true,
     "builtinAction" : true
@@ -69,14 +103,24 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
-      "codeName" : "GetInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "PSSYSAPPID",
+        "codeName" : "PSSysAppId"
+      },
+      "name" : "GetInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetResult",
-      "name" : "返回对象",
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
       "type" : "DTO"
+    },
+    "getPSSubSysServiceAPIDEMethod" : {
+      "modelref" : true,
+      "id" : "Get"
     },
     "builtinAction" : true
   }, {
@@ -88,14 +132,24 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftInput",
-      "name" : "输入对象",
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftResult",
-      "name" : "返回对象",
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
       "type" : "DTO"
+    },
+    "getPSSubSysServiceAPIDEMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinAction" : true
   }, {
@@ -106,15 +160,21 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
-      "codeName" : "CheckKeyInput",
-      "name" : "输入对象",
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CheckKeyResult",
-      "name" : "返回对象",
+      "name" : "CheckKeyResult",
       "stdDataType" : 9,
       "type" : "SIMPLE"
+    },
+    "getPSSubSysServiceAPIDEMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
     },
     "builtinAction" : true
   }, {
@@ -125,21 +185,35 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
-      "codeName" : "SaveInput",
-      "name" : "输入对象",
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "SaveResult",
-      "name" : "返回对象",
+      "name" : "SaveResult",
       "type" : "VOID"
+    },
+    "getPSSubSysServiceAPIDEMethod" : {
+      "modelref" : true,
+      "id" : "Save"
     },
     "builtinAction" : true
   } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`T_PSSYSAPP`",
+    "tableName" : "T_PSSYSAPP",
+    "valid" : true
+  } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp/PSDEDATAQUERIES/Build/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Build",
     "logicName" : "版本",
@@ -151,11 +225,27 @@
       },
       "joinType" : "MAIN",
       "name" : "PSSYSAPP"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "BuildInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "BuildResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
+      "type" : "DTOS"
     }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
@@ -168,11 +258,27 @@
       "joinType" : "MAIN",
       "name" : "PSSYSAPP"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
+      "type" : "DTOS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
@@ -184,7 +290,24 @@
       },
       "joinType" : "MAIN",
       "name" : "PSSYSAPP"
-    }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Build",
@@ -195,14 +318,24 @@
       "id" : "Build"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "BuildInput",
-      "name" : "输入对象",
+      "name" : "BuildInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "BuildResult",
-      "name" : "返回对象",
+      "name" : "BuildResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
       "type" : "PAGE"
+    },
+    "getPSSubSysServiceAPIDEMethod" : {
+      "modelref" : true,
+      "id" : "FetchBuild"
     },
     "enableBackend" : true,
     "enableFront" : true
@@ -215,14 +348,24 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultInput",
-      "name" : "输入对象",
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultResult",
-      "name" : "返回对象",
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysAppDTO"
+      },
       "type" : "PAGE"
+    },
+    "getPSSubSysServiceAPIDEMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
     },
     "defaultMode" : true,
     "enableBackend" : true,
@@ -236,6 +379,31 @@
       "queryCodeExp" : "t1.`UACLOGIN`",
       "standardColumnName" : "`UACLOGIN`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[UACLOGIN][启用统一认证]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[UACLOGIN][启用统一认证]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[UACLOGIN][启用统一认证]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[UACLOGIN][启用统一认证]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -243,10 +411,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "UACLOGIN",
-        "codeName" : "UACLogin"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -274,6 +438,33 @@
       "queryCodeExp" : "t1.`PSPFID`",
       "standardColumnName" : "`PSPFID`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PSPFID][前台技术架构]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSPFID][前台技术架构]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PSPFID][前台技术架构]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSPFID][前台技术架构]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -292,10 +483,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "PSPFID",
-        "codeName" : "PSPFId"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -322,6 +509,31 @@
       "queryCodeExp" : "t1.`USERTAG`",
       "standardColumnName" : "`USERTAG`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[USERTAG][用户标记]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[USERTAG][用户标记]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[USERTAG][用户标记]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[USERTAG][用户标记]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -340,10 +552,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "USERTAG",
-        "codeName" : "UserTag"
       },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
@@ -369,6 +577,31 @@
       "queryCodeExp" : "t1.`AUTOADDAPPVIEW`",
       "standardColumnName" : "`AUTOADDAPPVIEW`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[AUTOADDAPPVIEW][自动添加应用视图]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[AUTOADDAPPVIEW][自动添加应用视图]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[AUTOADDAPPVIEW][自动添加应用视图]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[AUTOADDAPPVIEW][自动添加应用视图]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -376,10 +609,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "AUTOADDAPPVIEW",
-        "codeName" : "AutoAddAppView"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -407,6 +636,31 @@
       "queryCodeExp" : "t1.`ENALOCALSERVICE`",
       "standardColumnName" : "`ENALOCALSERVICE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ENALOCALSERVICE][启用本地服务]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[ENALOCALSERVICE][启用本地服务]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ENALOCALSERVICE][启用本地服务]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[ENALOCALSERVICE][启用本地服务]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -414,10 +668,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ENALOCALSERVICE",
-        "codeName" : "EnaLocalService"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -445,6 +695,31 @@
       "queryCodeExp" : "t1.`USERTAG2`",
       "standardColumnName" : "`USERTAG2`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[USERTAG2][用户标记2]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[USERTAG2][用户标记2]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[USERTAG2][用户标记2]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[USERTAG2][用户标记2]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -463,10 +738,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "USERTAG2",
-        "codeName" : "UserTag2"
       },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
@@ -492,6 +763,31 @@
       "queryCodeExp" : "t1.`USERTAG4`",
       "standardColumnName" : "`USERTAG4`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[USERTAG4][用户标记4]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[USERTAG4][用户标记4]",
+        "stringLength" : 50,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[USERTAG4][用户标记4]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[USERTAG4][用户标记4]移动端默认",
+        "stringLength" : 50,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -510,10 +806,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[50]"
-      },
-      "getPSDEField" : {
-        "name" : "USERTAG4",
-        "codeName" : "UserTag4"
       },
       "ruleInfo" : "内容长度必须小于等于[50]",
       "checkDefault" : true,
@@ -539,6 +831,31 @@
       "queryCodeExp" : "t1.`PSSYSTEMID`",
       "standardColumnName" : "`PSSYSTEMID`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PSSYSTEMID][系统]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSSYSTEMID][系统]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PSSYSTEMID][系统]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSSYSTEMID][系统]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -557,10 +874,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "PSSYSTEMID",
-        "codeName" : "PSSystemId"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -586,6 +899,33 @@
       "queryCodeExp" : "t1.`CREATEDATE`",
       "standardColumnName" : "`CREATEDATE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CREATEDATE][建立时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEDATE][建立时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -593,10 +933,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CREATEDATE",
-        "codeName" : "CreateDate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -624,6 +960,31 @@
       "queryCodeExp" : "t1.`PUBSYSREFVIEWONLY`",
       "standardColumnName" : "`PUBSYSREFVIEWONLY`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PUBSYSREFVIEWONLY][只发布系统引用视图（废弃）]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[PUBSYSREFVIEWONLY][只发布系统引用视图（废弃）]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PUBSYSREFVIEWONLY][只发布系统引用视图（废弃）]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[PUBSYSREFVIEWONLY][只发布系统引用视图（废弃）]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -631,10 +992,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PUBSYSREFVIEWONLY",
-        "codeName" : "PubSysRefViewOnly"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -668,6 +1025,33 @@
       "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[MAINMENUSIDE][视图主菜单方向]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[MAINMENUSIDE][视图主菜单方向]移动端默认",
+        "stringLength" : 20,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[MAINMENUSIDE][视图主菜单方向]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[MAINMENUSIDE][视图主菜单方向]",
+        "stringLength" : 20,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -686,10 +1070,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[20]"
-      },
-      "getPSDEField" : {
-        "name" : "MAINMENUSIDE",
-        "codeName" : "MainMenuSide"
       },
       "ruleInfo" : "内容长度必须小于等于[20]",
       "checkDefault" : true,
@@ -721,6 +1101,33 @@
       "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PSSYSAPPID][系统应用标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[PSSYSAPPID][系统应用标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PSSYSAPPID][系统应用标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[PSSYSAPPID][系统应用标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -739,10 +1146,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "PSSYSAPPID",
-        "codeName" : "PSSysAppId"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -771,6 +1174,31 @@
       "queryCodeExp" : "t1.`CODEFOLDER`",
       "standardColumnName" : "`CODEFOLDER`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CODEFOLDER][代码目录]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CODEFOLDER][代码目录]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CODEFOLDER][代码目录]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CODEFOLDER][代码目录]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -789,10 +1217,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "CODEFOLDER",
-        "codeName" : "CodeFolder"
       },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
@@ -818,6 +1242,31 @@
       "queryCodeExp" : "t1.`GRIDFORCEFIT`",
       "standardColumnName" : "`GRIDFORCEFIT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[GRIDFORCEFIT][表格适应屏宽]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[GRIDFORCEFIT][表格适应屏宽]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[GRIDFORCEFIT][表格适应屏宽]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[GRIDFORCEFIT][表格适应屏宽]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -825,10 +1274,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "GRIDFORCEFIT",
-        "codeName" : "GridForceFit"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -856,6 +1301,33 @@
       "queryCodeExp" : "t1.`UPDATEMAN`",
       "standardColumnName" : "`UPDATEMAN`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEMAN][更新人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEMAN][更新人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -874,10 +1346,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEMAN",
-        "codeName" : "UpdateMan"
       },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
@@ -916,6 +1384,31 @@
       "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[FINOPRIVDM][表单项无权限显示模式]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[FINOPRIVDM][表单项无权限显示模式]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[FINOPRIVDM][表单项无权限显示模式]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[FINOPRIVDM][表单项无权限显示模式]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -923,10 +1416,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FINOPRIVDM",
-        "codeName" : "FINoPrivDM"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -950,6 +1439,31 @@
       "queryCodeExp" : "t1.`USERPARAMS`",
       "standardColumnName" : "`USERPARAMS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[USERPARAMS][自定义参数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[USERPARAMS][自定义参数]移动端默认",
+        "stringLength" : 2000,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[USERPARAMS][自定义参数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[USERPARAMS][自定义参数]",
+        "stringLength" : 2000,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -968,10 +1482,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[2000]"
-      },
-      "getPSDEField" : {
-        "name" : "USERPARAMS",
-        "codeName" : "UserParams"
       },
       "ruleInfo" : "内容长度必须小于等于[2000]",
       "checkDefault" : true,
@@ -1003,6 +1513,33 @@
       "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ORIENTATIONMODE][移动端方向设置]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[ORIENTATIONMODE][移动端方向设置]移动端默认",
+        "stringLength" : 20,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ORIENTATIONMODE][移动端方向设置]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[ORIENTATIONMODE][移动端方向设置]",
+        "stringLength" : 20,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1021,10 +1558,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[20]"
-      },
-      "getPSDEField" : {
-        "name" : "ORIENTATIONMODE",
-        "codeName" : "OrientationMode"
       },
       "ruleInfo" : "内容长度必须小于等于[20]",
       "checkDefault" : true,
@@ -1050,6 +1583,31 @@
       "queryCodeExp" : "t1.`MEMO`",
       "standardColumnName" : "`MEMO`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[MEMO][备注]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[MEMO][备注]",
+        "stringLength" : 2000,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[MEMO][备注]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXTAREA",
+        "name" : "[MEMO][备注]移动端默认",
+        "stringLength" : 2000,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1068,10 +1626,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[2000]"
-      },
-      "getPSDEField" : {
-        "name" : "MEMO",
-        "codeName" : "Memo"
       },
       "ruleInfo" : "内容长度必须小于等于[2000]",
       "checkDefault" : true,
@@ -1103,6 +1657,31 @@
       "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[REMOVEFLAG][删除模式]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[REMOVEFLAG][删除模式]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[REMOVEFLAG][删除模式]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[REMOVEFLAG][删除模式]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1110,10 +1689,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "REMOVEFLAG",
-        "codeName" : "RemoveFlag"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1137,6 +1712,31 @@
       "queryCodeExp" : "t1.`ENABLESTORYBOARD`",
       "standardColumnName" : "`ENABLESTORYBOARD`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ENABLESTORYBOARD][启用故事板]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[ENABLESTORYBOARD][启用故事板]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ENABLESTORYBOARD][启用故事板]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[ENABLESTORYBOARD][启用故事板]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1144,10 +1744,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ENABLESTORYBOARD",
-        "codeName" : "EnableStoryBoard"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1175,6 +1771,31 @@
       "queryCodeExp" : "t1.`PSSTUDIOTHEMENAME`",
       "standardColumnName" : "`PSSTUDIOTHEMENAME`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PSSTUDIOTHEMENAME][应用主题]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSSTUDIOTHEMENAME][应用主题]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PSSTUDIOTHEMENAME][应用主题]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSSTUDIOTHEMENAME][应用主题]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1193,10 +1814,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "PSSTUDIOTHEMENAME",
-        "codeName" : "PSStudioThemeName"
       },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
@@ -1222,6 +1839,31 @@
       "queryCodeExp" : "t1.`ENABLEDYNASYS`",
       "standardColumnName" : "`ENABLEDYNASYS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ENABLEDYNASYS][支持动态系统]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[ENABLEDYNASYS][支持动态系统]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ENABLEDYNASYS][支持动态系统]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[ENABLEDYNASYS][支持动态系统]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1229,10 +1871,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ENABLEDYNASYS",
-        "codeName" : "EnableDynaSys"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1261,6 +1899,31 @@
       "standardColumnName" : "`VALIDFLAG`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[VALIDFLAG][是否启用]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[VALIDFLAG][是否启用]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[VALIDFLAG][是否启用]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[VALIDFLAG][是否启用]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1268,10 +1931,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "VALIDFLAG",
-        "codeName" : "ValidFlag"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1300,6 +1959,31 @@
       "queryCodeExp" : "t1.`ICONFILE`",
       "standardColumnName" : "`ICONFILE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ICONFILE][图标文件]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ICONFILE][图标文件]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ICONFILE][图标文件]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ICONFILE][图标文件]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1318,10 +2002,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "ICONFILE",
-        "codeName" : "IconFile"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -1347,6 +2027,31 @@
       "queryCodeExp" : "t1.`APPTAG`",
       "standardColumnName" : "`APPTAG`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[APPTAG][应用标记]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[APPTAG][应用标记]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[APPTAG][应用标记]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[APPTAG][应用标记]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1365,10 +2070,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "APPTAG",
-        "codeName" : "AppTag"
       },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
@@ -1394,6 +2095,31 @@
       "queryCodeExp" : "t1.`DEFAULTPUB`",
       "standardColumnName" : "`DEFAULTPUB`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DEFAULTPUB][默认应用]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[DEFAULTPUB][默认应用]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DEFAULTPUB][默认应用]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[DEFAULTPUB][默认应用]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1401,10 +2127,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DEFAULTPUB",
-        "codeName" : "DefaultPub"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1432,6 +2154,31 @@
       "queryCodeExp" : "t1.`APPTAG2`",
       "standardColumnName" : "`APPTAG2`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[APPTAG2][应用标记2]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[APPTAG2][应用标记2]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[APPTAG2][应用标记2]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[APPTAG2][应用标记2]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1450,10 +2197,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "APPTAG2",
-        "codeName" : "AppTag2"
       },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
@@ -1479,6 +2222,31 @@
       "queryCodeExp" : "t1.`SERVICECODENAME`",
       "standardColumnName" : "`SERVICECODENAME`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[SERVICECODENAME][服务代码名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SERVICECODENAME][服务代码名称]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[SERVICECODENAME][服务代码名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SERVICECODENAME][服务代码名称]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1497,10 +2265,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "SERVICECODENAME",
-        "codeName" : "ServiceCodeName"
       },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
@@ -1526,6 +2290,31 @@
       "queryCodeExp" : "t1.`PREVENTXSS`",
       "standardColumnName" : "`PREVENTXSS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PREVENTXSS][防止XSS攻击]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[PREVENTXSS][防止XSS攻击]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PREVENTXSS][防止XSS攻击]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[PREVENTXSS][防止XSS攻击]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1533,10 +2322,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PREVENTXSS",
-        "codeName" : "PreventXSS"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1564,6 +2349,33 @@
       "queryCodeExp" : "t1.`PSAPPTYPENAME`",
       "standardColumnName" : "`PSAPPTYPENAME`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PSAPPTYPENAME][应用类型]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSAPPTYPENAME][应用类型]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PSAPPTYPENAME][应用类型]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSAPPTYPENAME][应用类型]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1582,10 +2394,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "PSAPPTYPENAME",
-        "codeName" : "PSAppTypeName"
       },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
@@ -1613,6 +2421,31 @@
       "queryCodeExp" : "t1.`PSPFCDNID`",
       "standardColumnName" : "`PSPFCDNID`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PSPFCDNID][应用CDN]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSPFCDNID][应用CDN]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PSPFCDNID][应用CDN]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSPFCDNID][应用CDN]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1631,10 +2464,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "PSPFCDNID",
-        "codeName" : "PSPFCDNId"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -1666,6 +2495,31 @@
       "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[GRIDCOLENABLELINK][表格列启用链接]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[GRIDCOLENABLELINK][表格列启用链接]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[GRIDCOLENABLELINK][表格列启用链接]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[GRIDCOLENABLELINK][表格列启用链接]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1673,10 +2527,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "GRIDCOLENABLELINK",
-        "codeName" : "GridColEnableLink"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1700,6 +2550,31 @@
       "queryCodeExp" : "t1.`PSSTUDIOTHEMEID`",
       "standardColumnName" : "`PSSTUDIOTHEMEID`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PSSTUDIOTHEMEID][应用主题]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSSTUDIOTHEMEID][应用主题]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PSSTUDIOTHEMEID][应用主题]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSSTUDIOTHEMEID][应用主题]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1718,10 +2593,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "PSSTUDIOTHEMEID",
-        "codeName" : "PSStudioThemeId"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -1747,6 +2618,31 @@
       "queryCodeExp" : "t1.`ENABLEC12TOC24`",
       "standardColumnName" : "`ENABLEC12TOC24`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ENABLEC12TOC24][转换12列至24列布局]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[ENABLEC12TOC24][转换12列至24列布局]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ENABLEC12TOC24][转换12列至24列布局]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[ENABLEC12TOC24][转换12列至24列布局]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1754,10 +2650,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ENABLEC12TOC24",
-        "codeName" : "EnableC12ToC24"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1785,6 +2677,31 @@
       "queryCodeExp" : "t1.`APPSN`",
       "standardColumnName" : "`APPSN`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[APPSN][应用编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[APPSN][应用编号]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[APPSN][应用编号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[APPSN][应用编号]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1803,10 +2720,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "APPSN",
-        "codeName" : "AppSN"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -1832,6 +2745,31 @@
       "queryCodeExp" : "t1.`APPTAG4`",
       "standardColumnName" : "`APPTAG4`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[APPTAG4][应用标记4]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[APPTAG4][应用标记4]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[APPTAG4][应用标记4]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[APPTAG4][应用标记4]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1850,10 +2788,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "APPTAG4",
-        "codeName" : "AppTag4"
       },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
@@ -1879,6 +2813,33 @@
       "queryCodeExp" : "t1.`CREATEMAN`",
       "standardColumnName" : "`CREATEMAN`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEMAN][建立人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CREATEMAN][建立人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1897,10 +2858,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "CREATEMAN",
-        "codeName" : "CreateMan"
       },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
@@ -1939,6 +2896,31 @@
       "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[GRIDROWACTIVEMODE][表格行激活模式]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[GRIDROWACTIVEMODE][表格行激活模式]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[GRIDROWACTIVEMODE][表格行激活模式]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[GRIDROWACTIVEMODE][表格行激活模式]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1946,10 +2928,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "GRIDROWACTIVEMODE",
-        "codeName" : "GridRowActiveMode"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1973,6 +2951,31 @@
       "queryCodeExp" : "t1.`USERTAG3`",
       "standardColumnName" : "`USERTAG3`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[USERTAG3][用户标记3]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[USERTAG3][用户标记3]",
+        "stringLength" : 50,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[USERTAG3][用户标记3]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[USERTAG3][用户标记3]移动端默认",
+        "stringLength" : 50,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1991,10 +2994,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[50]"
-      },
-      "getPSDEField" : {
-        "name" : "USERTAG3",
-        "codeName" : "UserTag3"
       },
       "ruleInfo" : "内容长度必须小于等于[50]",
       "checkDefault" : true,
@@ -2020,6 +3019,33 @@
       "queryCodeExp" : "t1.`APPPKGNAME`",
       "standardColumnName" : "`APPPKGNAME`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[APPPKGNAME][代码名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[APPPKGNAME][代码名称]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[APPPKGNAME][代码名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[APPPKGNAME][代码名称]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2038,10 +3064,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "APPPKGNAME",
-        "codeName" : "AppPKGName"
       },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
@@ -2068,6 +3090,31 @@
       "queryCodeExp" : "t1.`LOGICNAME`",
       "standardColumnName" : "`LOGICNAME`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[LOGICNAME][中文名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[LOGICNAME][中文名称]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[LOGICNAME][中文名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[LOGICNAME][中文名称]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2086,10 +3133,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "LOGICNAME",
-        "codeName" : "LogicName"
       },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
@@ -2115,6 +3158,33 @@
       "queryCodeExp" : "t1.`PSPFSTYLEID`",
       "standardColumnName" : "`PSPFSTYLEID`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PSPFSTYLEID][应用样式]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSPFSTYLEID][应用样式]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PSPFSTYLEID][应用样式]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSPFSTYLEID][应用样式]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2133,10 +3203,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "PSPFSTYLEID",
-        "codeName" : "PSPFStyleId"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -2169,6 +3235,31 @@
       "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[BTNNOPRIVDM][按钮无权限显示模式]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[BTNNOPRIVDM][按钮无权限显示模式]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[BTNNOPRIVDM][按钮无权限显示模式]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[BTNNOPRIVDM][按钮无权限显示模式]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2176,10 +3267,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BTNNOPRIVDM",
-        "codeName" : "BtnNoPrivDM"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2203,6 +3290,31 @@
       "queryCodeExp" : "t1.`PSPFCDNNAME`",
       "standardColumnName" : "`PSPFCDNNAME`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PSPFCDNNAME][应用CDN]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSPFCDNNAME][应用CDN]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PSPFCDNNAME][应用CDN]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSPFCDNNAME][应用CDN]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2221,10 +3333,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "PSPFCDNNAME",
-        "codeName" : "PSPFCDNName"
       },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
@@ -2250,6 +3358,31 @@
       "queryCodeExp" : "t1.`PUBREFVIEWONLY`",
       "standardColumnName" : "`PUBREFVIEWONLY`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PUBREFVIEWONLY][只发布引用视图]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[PUBREFVIEWONLY][只发布引用视图]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PUBREFVIEWONLY][只发布引用视图]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[PUBREFVIEWONLY][只发布引用视图]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2257,10 +3390,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PUBREFVIEWONLY",
-        "codeName" : "PubRefViewOnly"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2294,6 +3423,33 @@
       "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[APPMODE][应用模式]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[APPMODE][应用模式]移动端默认",
+        "stringLength" : 30,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[APPMODE][应用模式]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[APPMODE][应用模式]",
+        "stringLength" : 30,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2312,10 +3468,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[30]"
-      },
-      "getPSDEField" : {
-        "name" : "APPMODE",
-        "codeName" : "AppMode"
       },
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
@@ -2347,6 +3499,31 @@
       "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PSSYSAPPNAME][系统应用名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSSYSAPPNAME][系统应用名称]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PSSYSAPPNAME][系统应用名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSSYSAPPNAME][系统应用名称]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2365,10 +3542,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "PSSYSAPPNAME",
-        "codeName" : "PSSysAppName"
       },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
@@ -2396,6 +3569,31 @@
       "queryCodeExp" : "t1.`PSAPPTYPEID`",
       "standardColumnName" : "`PSAPPTYPEID`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PSAPPTYPEID][应用类型]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSAPPTYPEID][应用类型]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PSAPPTYPEID][应用类型]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSAPPTYPEID][应用类型]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2414,10 +3612,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "PSAPPTYPEID",
-        "codeName" : "PSAppTypeId"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -2443,6 +3637,31 @@
       "queryCodeExp" : "t1.`APPFOLDER`",
       "standardColumnName" : "`APPFOLDER`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[APPFOLDER][应用目录]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[APPFOLDER][应用目录]",
+        "stringLength" : 500,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[APPFOLDER][应用目录]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[APPFOLDER][应用目录]移动端默认",
+        "stringLength" : 500,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2461,10 +3680,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[500]"
-      },
-      "getPSDEField" : {
-        "name" : "APPFOLDER",
-        "codeName" : "AppFolder"
       },
       "ruleInfo" : "内容长度必须小于等于[500]",
       "checkDefault" : true,
@@ -2490,6 +3705,31 @@
       "queryCodeExp" : "t1.`STARTPAGEFILE`",
       "standardColumnName" : "`STARTPAGEFILE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[STARTPAGEFILE][起始页图片文件]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[STARTPAGEFILE][起始页图片文件]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[STARTPAGEFILE][起始页图片文件]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[STARTPAGEFILE][起始页图片文件]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2508,10 +3748,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "STARTPAGEFILE",
-        "codeName" : "StartPageFile"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -2543,6 +3779,33 @@
       "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[USERCAT][用户分类]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[USERCAT][用户分类]",
+        "stringLength" : 10,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[USERCAT][用户分类]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[USERCAT][用户分类]移动端默认",
+        "stringLength" : 10,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2561,10 +3824,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[10]"
-      },
-      "getPSDEField" : {
-        "name" : "USERCAT",
-        "codeName" : "UserCat"
       },
       "ruleInfo" : "内容长度必须小于等于[10]",
       "checkDefault" : true,
@@ -2590,6 +3849,31 @@
       "queryCodeExp" : "t1.`APPTAG3`",
       "standardColumnName" : "`APPTAG3`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[APPTAG3][应用标记3]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[APPTAG3][应用标记3]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[APPTAG3][应用标记3]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[APPTAG3][应用标记3]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2608,10 +3892,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "APPTAG3",
-        "codeName" : "AppTag3"
       },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
@@ -2637,6 +3917,31 @@
       "queryCodeExp" : "t1.`PFSTYLEPARAM`",
       "standardColumnName" : "`PFSTYLEPARAM`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PFSTYLEPARAM][应用样式参数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[PFSTYLEPARAM][应用样式参数]",
+        "stringLength" : 1048576,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PFSTYLEPARAM][应用样式参数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXTAREA",
+        "name" : "[PFSTYLEPARAM][应用样式参数]移动端默认",
+        "stringLength" : 1048576,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2655,10 +3960,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[1048576]"
-      },
-      "getPSDEField" : {
-        "name" : "PFSTYLEPARAM",
-        "codeName" : "PFStyleParam"
       },
       "ruleInfo" : "内容长度必须小于等于[1048576]",
       "checkDefault" : true,
@@ -2685,6 +3986,31 @@
       "queryCodeExp" : "t1.`PSSYSTEMNAME`",
       "standardColumnName" : "`PSSYSTEMNAME`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PSSYSTEMNAME][系统]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PSSYSTEMNAME][系统]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PSSYSTEMNAME][系统]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PSSYSTEMNAME][系统]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2703,10 +4029,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "PSSYSTEMNAME",
-        "codeName" : "PSSystemName"
       },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
@@ -2732,6 +4054,33 @@
       "queryCodeExp" : "t1.`UPDATEDATE`",
       "standardColumnName" : "`UPDATEDATE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[UPDATEDATE][更新时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEDATE][更新时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2739,10 +4088,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEDATE",
-        "codeName" : "UpdateDate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2776,6 +4121,33 @@
       "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[UISTYLE][内建界面式样]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[UISTYLE][内建界面式样]",
+        "stringLength" : 30,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[UISTYLE][内建界面式样]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[UISTYLE][内建界面式样]移动端默认",
+        "stringLength" : 30,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2794,10 +4166,6 @@
           "keyCond" : true
         } ],
         "ruleInfo" : "内容长度必须小于等于[30]"
-      },
-      "getPSDEField" : {
-        "name" : "UISTYLE",
-        "codeName" : "UIStyle"
       },
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
@@ -2829,6 +4197,31 @@
       "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[GCNOPRIVDM][表格列无权限显示模式]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[GCNOPRIVDM][表格列无权限显示模式]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[GCNOPRIVDM][表格列无权限显示模式]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[GCNOPRIVDM][表格列无权限显示模式]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2836,10 +4229,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "GCNOPRIVDM",
-        "codeName" : "GCNoPrivDM"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2863,6 +4252,31 @@
       "queryCodeExp" : "t1.`FIUPDATEPRIVTAG`",
       "standardColumnName" : "`FIUPDATEPRIVTAG`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[FIUPDATEPRIVTAG][输出表单项更新权限标记]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBSWITCH",
+        "name" : "[FIUPDATEPRIVTAG][输出表单项更新权限标记]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[FIUPDATEPRIVTAG][输出表单项更新权限标记]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST_100",
+        "name" : "[FIUPDATEPRIVTAG][输出表单项更新权限标记]",
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2870,10 +4284,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FIUPDATEPRIVTAG",
-        "codeName" : "FIUpdatePrivTag"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2912,6 +4322,53 @@
       "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PSSYSSERVICEAPINAME][默认服务接口]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBPICKER",
+        "name" : "[PSSYSSERVICEAPINAME][默认服务接口]移动端默认",
+        "refLinkPSDEViewCodeName" : "RedirectView",
+        "refMPickupPSDEViewCodeName" : "MPickupView",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
+        },
+        "refPickupPSDEViewCodeName" : "PickupView",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PSSYSSERVICEAPINAME][默认服务接口]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "PICKER",
+        "name" : "[PSSYSSERVICEAPINAME][默认服务接口]",
+        "refLinkPSDEViewCodeName" : "RedirectView",
+        "refMPickupPSDEViewCodeName" : "MPickupView",
+        "getRefPSDEACMode" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI/PSDEACMODES/Default.json"
+        },
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
+        },
+        "refPickupPSDEViewCodeName" : "PickupView",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2931,10 +4388,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "PSSYSSERVICEAPINAME",
-        "codeName" : "PSSysServiceAPIName"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2952,9 +4405,21 @@
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp/PSDERS/DER1N_PSSYSAPP_PSSYSSERVICEAPI_PSSYSSERVICEAPIID.json"
     },
+    "getRealPSDEField" : {
+      "name" : "PSSYSSERVICEAPINAME",
+      "codeName" : "PSSysServiceAPIName"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "PSSYSSERVICEAPINAME",
       "codeName" : "PSSysServiceAPIName"
+    },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
     },
     "stdDataType" : 25,
     "stringLength" : 200,
@@ -2963,6 +4428,7 @@
       "name" : "PSSYSSERVICEAPIID",
       "codeName" : "PSSysServiceAPIId"
     },
+    "viewLevel" : 0,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2978,6 +4444,39 @@
       "name" : "N_PSSYSSERVICEAPIID_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PSSYSSERVICEAPIID][默认服务接口]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "HIDDEN",
+        "name" : "[PSSYSSERVICEAPIID][默认服务接口]",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
+        },
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PSSYSSERVICEAPIID][默认服务接口]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "HIDDEN",
+        "name" : "[PSSYSSERVICEAPIID][默认服务接口]移动端默认",
+        "getRefPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
+        },
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2998,10 +4497,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "PSSYSSERVICEAPIID",
-        "codeName" : "PSSysServiceAPIId"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -3019,14 +4514,937 @@
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp/PSDERS/DER1N_PSSYSAPP_PSSYSSERVICEAPI_PSSYSSERVICEAPIID.json"
     },
+    "getRealPSDEField" : {
+      "name" : "PSSYSSERVICEAPIID",
+      "codeName" : "PSSysServiceAPIId"
+    },
+    "getRealPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "PSSYSSERVICEAPIID",
       "codeName" : "PSSysServiceAPIId"
+    },
+    "getRelatedPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
     },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
     "linkDEField" : true
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "PSSysAppDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "应用目录",
+      "name" : "AppFolder",
+      "getPSDEField" : {
+        "name" : "APPFOLDER",
+        "codeName" : "AppFolder"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 500,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "应用模式",
+      "name" : "AppMode",
+      "getPSDEField" : {
+        "name" : "APPMODE",
+        "codeName" : "AppMode"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 30,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "代码名称",
+      "name" : "AppPKGName",
+      "getPSDEField" : {
+        "name" : "APPPKGNAME",
+        "codeName" : "AppPKGName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "应用编号",
+      "name" : "AppSN",
+      "getPSDEField" : {
+        "name" : "APPSN",
+        "codeName" : "AppSN"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "应用标记",
+      "name" : "AppTag",
+      "getPSDEField" : {
+        "name" : "APPTAG",
+        "codeName" : "AppTag"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "应用标记2",
+      "name" : "AppTag2",
+      "getPSDEField" : {
+        "name" : "APPTAG2",
+        "codeName" : "AppTag2"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "应用标记3",
+      "name" : "AppTag3",
+      "getPSDEField" : {
+        "name" : "APPTAG3",
+        "codeName" : "AppTag3"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "应用标记4",
+      "name" : "AppTag4",
+      "getPSDEField" : {
+        "name" : "APPTAG4",
+        "codeName" : "AppTag4"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "自动添加应用视图",
+      "name" : "AutoAddAppView",
+      "getPSDEField" : {
+        "name" : "AUTOADDAPPVIEW",
+        "codeName" : "AutoAddAppView"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "按钮无权限显示模式",
+      "name" : "BtnNoPrivDM",
+      "getPSDEField" : {
+        "name" : "BTNNOPRIVDM",
+        "codeName" : "BtnNoPrivDM"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "代码目录",
+      "name" : "CodeFolder",
+      "getPSDEField" : {
+        "name" : "CODEFOLDER",
+        "codeName" : "CodeFolder"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "默认应用",
+      "name" : "DefaultPub",
+      "getPSDEField" : {
+        "name" : "DEFAULTPUB",
+        "codeName" : "DefaultPub"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "启用本地服务",
+      "name" : "EnaLocalService",
+      "getPSDEField" : {
+        "name" : "ENALOCALSERVICE",
+        "codeName" : "EnaLocalService"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "转换12列至24列布局",
+      "name" : "EnableC12ToC24",
+      "getPSDEField" : {
+        "name" : "ENABLEC12TOC24",
+        "codeName" : "EnableC12ToC24"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "支持动态系统",
+      "name" : "EnableDynaSys",
+      "getPSDEField" : {
+        "name" : "ENABLEDYNASYS",
+        "codeName" : "EnableDynaSys"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "启用故事板",
+      "name" : "EnableStoryBoard",
+      "getPSDEField" : {
+        "name" : "ENABLESTORYBOARD",
+        "codeName" : "EnableStoryBoard"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "表单项无权限显示模式",
+      "name" : "FINoPrivDM",
+      "getPSDEField" : {
+        "name" : "FINOPRIVDM",
+        "codeName" : "FINoPrivDM"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "输出表单项更新权限标记",
+      "name" : "FIUpdatePrivTag",
+      "getPSDEField" : {
+        "name" : "FIUPDATEPRIVTAG",
+        "codeName" : "FIUpdatePrivTag"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "表格列无权限显示模式",
+      "name" : "GCNoPrivDM",
+      "getPSDEField" : {
+        "name" : "GCNOPRIVDM",
+        "codeName" : "GCNoPrivDM"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "表格列启用链接",
+      "name" : "GridColEnableLink",
+      "getPSDEField" : {
+        "name" : "GRIDCOLENABLELINK",
+        "codeName" : "GridColEnableLink"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "表格适应屏宽",
+      "name" : "GridForceFit",
+      "getPSDEField" : {
+        "name" : "GRIDFORCEFIT",
+        "codeName" : "GridForceFit"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "表格行激活模式",
+      "name" : "GridRowActiveMode",
+      "getPSDEField" : {
+        "name" : "GRIDROWACTIVEMODE",
+        "codeName" : "GridRowActiveMode"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "图标文件",
+      "name" : "IconFile",
+      "getPSDEField" : {
+        "name" : "ICONFILE",
+        "codeName" : "IconFile"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "中文名称",
+      "name" : "LogicName",
+      "getPSDEField" : {
+        "name" : "LOGICNAME",
+        "codeName" : "LogicName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "视图主菜单方向",
+      "name" : "MainMenuSide",
+      "getPSDEField" : {
+        "name" : "MAINMENUSIDE",
+        "codeName" : "MainMenuSide"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 20,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "备注",
+      "name" : "Memo",
+      "getPSDEField" : {
+        "name" : "MEMO",
+        "codeName" : "Memo"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 2000,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "移动端方向设置",
+      "name" : "OrientationMode",
+      "getPSDEField" : {
+        "name" : "ORIENTATIONMODE",
+        "codeName" : "OrientationMode"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 20,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "应用样式参数",
+      "name" : "PFStyleParam",
+      "getPSDEField" : {
+        "name" : "PFSTYLEPARAM",
+        "codeName" : "PFStyleParam"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "stringLength" : 1048576,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "应用类型",
+      "name" : "PSAppTypeId",
+      "getPSDEField" : {
+        "name" : "PSAPPTYPEID",
+        "codeName" : "PSAppTypeId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "应用类型",
+      "name" : "PSAppTypeName",
+      "getPSDEField" : {
+        "name" : "PSAPPTYPENAME",
+        "codeName" : "PSAppTypeName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "应用CDN",
+      "name" : "PSPFCDNId",
+      "getPSDEField" : {
+        "name" : "PSPFCDNID",
+        "codeName" : "PSPFCDNId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "应用CDN",
+      "name" : "PSPFCDNName",
+      "getPSDEField" : {
+        "name" : "PSPFCDNNAME",
+        "codeName" : "PSPFCDNName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "前台技术架构",
+      "name" : "PSPFId",
+      "getPSDEField" : {
+        "name" : "PSPFID",
+        "codeName" : "PSPFId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "应用样式",
+      "name" : "PSPFStyleId",
+      "getPSDEField" : {
+        "name" : "PSPFSTYLEID",
+        "codeName" : "PSPFStyleId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "应用主题",
+      "name" : "PSStudioThemeId",
+      "getPSDEField" : {
+        "name" : "PSSTUDIOTHEMEID",
+        "codeName" : "PSStudioThemeId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "应用主题",
+      "name" : "PSStudioThemeName",
+      "getPSDEField" : {
+        "name" : "PSSTUDIOTHEMENAME",
+        "codeName" : "PSStudioThemeName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "系统应用标识",
+      "name" : "PSSysAppId",
+      "getPSDEField" : {
+        "name" : "PSSYSAPPID",
+        "codeName" : "PSSysAppId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "系统应用名称",
+      "name" : "PSSysAppName",
+      "getPSDEField" : {
+        "name" : "PSSYSAPPNAME",
+        "codeName" : "PSSysAppName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "默认服务接口",
+      "name" : "PSSysServiceAPIId",
+      "getPSDEField" : {
+        "name" : "PSSYSSERVICEAPIID",
+        "codeName" : "PSSysServiceAPIId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "默认服务接口",
+      "name" : "PSSysServiceAPIName",
+      "getPSDEField" : {
+        "name" : "PSSYSSERVICEAPINAME",
+        "codeName" : "PSSysServiceAPIName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "系统",
+      "name" : "PSSystemId",
+      "getPSDEField" : {
+        "name" : "PSSYSTEMID",
+        "codeName" : "PSSystemId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "系统",
+      "name" : "PSSystemName",
+      "getPSDEField" : {
+        "name" : "PSSYSTEMNAME",
+        "codeName" : "PSSystemName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "防止XSS攻击",
+      "name" : "PreventXSS",
+      "getPSDEField" : {
+        "name" : "PREVENTXSS",
+        "codeName" : "PreventXSS"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "只发布引用视图",
+      "name" : "PubRefViewOnly",
+      "getPSDEField" : {
+        "name" : "PUBREFVIEWONLY",
+        "codeName" : "PubRefViewOnly"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "只发布系统引用视图（废弃）",
+      "name" : "PubSysRefViewOnly",
+      "getPSDEField" : {
+        "name" : "PUBSYSREFVIEWONLY",
+        "codeName" : "PubSysRefViewOnly"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "删除模式",
+      "name" : "RemoveFlag",
+      "getPSDEField" : {
+        "name" : "REMOVEFLAG",
+        "codeName" : "RemoveFlag"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "服务代码名称",
+      "name" : "ServiceCodeName",
+      "getPSDEField" : {
+        "name" : "SERVICECODENAME",
+        "codeName" : "ServiceCodeName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "起始页图片文件",
+      "name" : "StartPageFile",
+      "getPSDEField" : {
+        "name" : "STARTPAGEFILE",
+        "codeName" : "StartPageFile"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "启用统一认证",
+      "name" : "UACLogin",
+      "getPSDEField" : {
+        "name" : "UACLOGIN",
+        "codeName" : "UACLogin"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "内建界面式样",
+      "name" : "UIStyle",
+      "getPSDEField" : {
+        "name" : "UISTYLE",
+        "codeName" : "UIStyle"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 30,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "用户分类",
+      "name" : "UserCat",
+      "getPSDEField" : {
+        "name" : "USERCAT",
+        "codeName" : "UserCat"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 10,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "自定义参数",
+      "name" : "UserParams",
+      "getPSDEField" : {
+        "name" : "USERPARAMS",
+        "codeName" : "UserParams"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 2000,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "用户标记",
+      "name" : "UserTag",
+      "getPSDEField" : {
+        "name" : "USERTAG",
+        "codeName" : "UserTag"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "用户标记2",
+      "name" : "UserTag2",
+      "getPSDEField" : {
+        "name" : "USERTAG2",
+        "codeName" : "UserTag2"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "用户标记3",
+      "name" : "UserTag3",
+      "getPSDEField" : {
+        "name" : "USERTAG3",
+        "codeName" : "UserTag3"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 50,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "用户标记4",
+      "name" : "UserTag4",
+      "getPSDEField" : {
+        "name" : "USERTAG4",
+        "codeName" : "UserTag4"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 50,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "1",
+      "logicName" : "是否启用",
+      "name" : "ValidFlag",
+      "getPSDEField" : {
+        "name" : "VALIDFLAG",
+        "codeName" : "ValidFlag"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "PSSysAppFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "应用模式",
+      "name" : "N_APPMODE_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_APPMODE_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "APPMODE",
+        "codeName" : "AppMode"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 30,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "按钮无权限显示模式",
+      "name" : "N_BTNNOPRIVDM_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_BTNNOPRIVDM_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "BTNNOPRIVDM",
+        "codeName" : "BtnNoPrivDM"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "表单项无权限显示模式",
+      "name" : "N_FINOPRIVDM_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_FINOPRIVDM_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "FINOPRIVDM",
+        "codeName" : "FINoPrivDM"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "表格列无权限显示模式",
+      "name" : "N_GCNOPRIVDM_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_GCNOPRIVDM_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "GCNOPRIVDM",
+        "codeName" : "GCNoPrivDM"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "表格列启用链接",
+      "name" : "N_GRIDCOLENABLELINK_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_GRIDCOLENABLELINK_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "GRIDCOLENABLELINK",
+        "codeName" : "GridColEnableLink"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "表格行激活模式",
+      "name" : "N_GRIDROWACTIVEMODE_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_GRIDROWACTIVEMODE_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "GRIDROWACTIVEMODE",
+        "codeName" : "GridRowActiveMode"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "视图主菜单方向",
+      "name" : "N_MAINMENUSIDE_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_MAINMENUSIDE_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "MAINMENUSIDE",
+        "codeName" : "MainMenuSide"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 20,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "移动端方向设置",
+      "name" : "N_ORIENTATIONMODE_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ORIENTATIONMODE_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "ORIENTATIONMODE",
+        "codeName" : "OrientationMode"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 20,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "系统应用标识",
+      "name" : "N_PSSYSAPPID_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PSSYSAPPID_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PSSYSAPPID",
+        "codeName" : "PSSysAppId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "系统应用名称",
+      "name" : "N_PSSYSAPPNAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PSSYSAPPNAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "PSSYSAPPNAME",
+        "codeName" : "PSSysAppName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "默认服务接口",
+      "name" : "N_PSSYSSERVICEAPIID_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PSSYSSERVICEAPIID_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PSSYSSERVICEAPIID",
+        "codeName" : "PSSysServiceAPIId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "默认服务接口",
+      "name" : "N_PSSYSSERVICEAPINAME_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PSSYSSERVICEAPINAME_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PSSYSSERVICEAPINAME",
+        "codeName" : "PSSysServiceAPIName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "默认服务接口",
+      "name" : "N_PSSYSSERVICEAPINAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PSSYSSERVICEAPINAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "PSSYSSERVICEAPINAME",
+        "codeName" : "PSSysServiceAPIName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "删除模式",
+      "name" : "N_REMOVEFLAG_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_REMOVEFLAG_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "REMOVEFLAG",
+        "codeName" : "RemoveFlag"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "内建界面式样",
+      "name" : "N_UISTYLE_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_UISTYLE_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "UISTYLE",
+        "codeName" : "UIStyle"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 30,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "用户分类",
+      "name" : "N_USERCAT_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_USERCAT_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "USERCAT",
+        "codeName" : "UserCat"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 10,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -3040,6 +5458,61 @@
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "系统应用实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "系统应用实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "系统应用实体选择表格视图（部件视图）",
+    "name" : "系统应用实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "系统应用实体编辑视图（左右关系）",
+    "name" : "系统应用实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "系统应用实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "系统应用实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "系统应用实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "系统应用实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "系统应用实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "系统应用实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "系统应用实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "系统应用实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "PSSysApp",
   "dEType" : 1,
@@ -3058,7 +5531,15 @@
   "enableUIActions" : 15,
   "enableViewLevel" : 0,
   "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "PSSYSAPPID",
+    "codeName" : "PSSysAppId"
+  },
   "logicName" : "系统应用",
+  "getMajorPSDEField" : {
+    "name" : "PSSYSAPPNAME",
+    "codeName" : "PSSysAppName"
+  },
   "getMajorPSDERs" : [ {
     "codeName" : "PSSysApp",
     "dERType" : "DER1N",
@@ -3143,6 +5624,22 @@
     "removeOrder" : 0
   } ],
   "name" : "PSSYSAPP",
+  "getPSSubSysServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSSUBSYSSERVICEAPIS/iBizPSSysModelAPI.json"
+  },
+  "getPSSubSysServiceAPIDE" : {
+    "modelref" : true,
+    "id" : "PSSysApp"
+  },
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Auto1.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel.json"
+  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
@@ -3152,7 +5649,6 @@
   "storageMode" : 4,
   "systemTag" : "iBizPMS",
   "tableName" : "T_PSSYSAPP",
-  "virtualMode" : 0,
   "enableAPIStorage" : true,
   "enableCreate" : true,
   "enableDataVer" : false,

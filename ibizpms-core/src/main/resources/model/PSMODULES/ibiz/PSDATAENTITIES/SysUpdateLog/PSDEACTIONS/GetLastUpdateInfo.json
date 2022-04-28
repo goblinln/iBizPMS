@@ -6,13 +6,19 @@
   "logicName" : "获取最新更新信息",
   "name" : "getLastUpdateInfo",
   "getPSDEActionInput" : {
-    "codeName" : "GetLastUpdateInfoInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "SYS_UPDATE_LOGID",
+      "codeName" : "SysUpdateLogId"
+    },
+    "name" : "GetLastUpdateInfoInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetLastUpdateInfoResult",
-    "name" : "返回对象",
+    "name" : "GetLastUpdateInfoResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "SysUpdateLogDTO"
+    },
     "type" : "DTO"
   }
 }

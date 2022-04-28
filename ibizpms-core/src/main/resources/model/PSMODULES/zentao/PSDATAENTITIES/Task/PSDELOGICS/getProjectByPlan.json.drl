@@ -19,6 +19,14 @@ package cn.ibizlab.pms.zentao.logic.tasklogic.getprojectbyplan;
             then
             end
 
+            //逻辑处理节点[设置常规参数]
+            rule "prepareparam1"
+            ruleflow-group "taskgetprojectbyplanprepareparam1"
+            when
+            then
+                        update(taskgetprojectbyplandefault);//更新fact中变量值
+            end
+
             //逻辑处理节点[根据需求获取项目]
             rule "rawsqlcall1"
             ruleflow-group "taskgetprojectbyplanrawsqlcall1"
@@ -52,13 +60,5 @@ package cn.ibizlab.pms.zentao.logic.tasklogic.getprojectbyplan;
                                     taskgetprojectbyplandefault.set(String.valueOf(entry.getKey()),entry.getValue());
                                     }
                             }
-                        update(taskgetprojectbyplandefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[设置常规参数]
-            rule "prepareparam1"
-            ruleflow-group "taskgetprojectbyplanprepareparam1"
-            when
-            then
                         update(taskgetprojectbyplandefault);//更新fact中变量值
             end

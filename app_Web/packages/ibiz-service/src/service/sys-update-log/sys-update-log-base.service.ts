@@ -96,7 +96,7 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/sysupdatelogs/${_context.sysupdatelog}`);
+        const res = await this.http.get(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      */
     async GetLastUpdateInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/getlastupdateinfo`, _data);
+        const res = await this.http.put(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}/getlastupdateinfo`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -147,7 +147,7 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/sysupdatelogs/${_context.sysupdatelog}`);
+        const res = await this.http.delete(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -165,7 +165,7 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/sysupdatelogs/${_context.sysupdatelog}`, _data);
+        const res = await this.http.put(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -198,7 +198,7 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/select`);
+        const res = await this.http.get(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

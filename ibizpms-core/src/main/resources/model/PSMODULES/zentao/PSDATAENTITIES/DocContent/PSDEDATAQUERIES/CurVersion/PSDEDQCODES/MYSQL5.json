@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\n\tt1.id AS `ID`,\n\tt1.`DOC`,\n\tt1.`VERSION`,\n\tCONCAT( '#', t1.`version` ) AS `TITLE` ,\n\tt1.DOCCONTENTSN\nFROM\n\t`zt_doccontent` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEDATAQUERIES/CurVersion/PSDEDQCODES/MYSQL5.json"
+}

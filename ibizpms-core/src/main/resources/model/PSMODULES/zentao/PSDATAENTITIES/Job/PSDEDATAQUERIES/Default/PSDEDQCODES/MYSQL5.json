@@ -1,0 +1,72 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ATDAY`",
+    "name" : "ATDAY"
+  }, {
+    "expression" : "t1.`ATTIME`",
+    "name" : "ATTIME"
+  }, {
+    "expression" : "t1.`COMMENT`",
+    "name" : "COMMENT"
+  }, {
+    "expression" : "t1.`CREATEDBY`",
+    "name" : "CREATEDBY"
+  }, {
+    "expression" : "t1.`CREATEDDATE`",
+    "name" : "CREATEDDATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`EDITEDBY`",
+    "name" : "EDITEDBY"
+  }, {
+    "expression" : "t1.`EDITEDDATE`",
+    "name" : "EDITEDDATE"
+  }, {
+    "expression" : "t1.`FRAME`",
+    "name" : "FRAME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`JKHOST`",
+    "name" : "JKHOST"
+  }, {
+    "expression" : "t1.`JKJOB`",
+    "name" : "JKJOB"
+  }, {
+    "expression" : "t1.`LASTEXEC`",
+    "name" : "LASTEXEC"
+  }, {
+    "expression" : "t1.`LASTSTATUS`",
+    "name" : "LASTSTATUS"
+  }, {
+    "expression" : "t1.`LASTTAG`",
+    "name" : "LASTTAG"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`REPO`",
+    "name" : "REPO"
+  }, {
+    "expression" : "t1.`SVNDIR`",
+    "name" : "SVNDIR"
+  }, {
+    "expression" : "t1.`TRIGGERTYPE`",
+    "name" : "TRIGGERTYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ATDAY`,\nt1.`ATTIME`,\nt1.`COMMENT`,\nt1.`CREATEDBY`,\nt1.`CREATEDDATE`,\nt1.`DELETED`,\nt1.`EDITEDBY`,\nt1.`EDITEDDATE`,\nt1.`FRAME`,\nt1.`ID`,\nt1.`JKHOST`,\nt1.`JKJOB`,\nt1.`LASTEXEC`,\nt1.`LASTSTATUS`,\nt1.`LASTTAG`,\nt1.`NAME`,\nt1.`PRODUCT`,\nt1.`REPO`,\nt1.`SVNDIR`,\nt1.`TRIGGERTYPE`\nFROM `zt_job` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Job/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

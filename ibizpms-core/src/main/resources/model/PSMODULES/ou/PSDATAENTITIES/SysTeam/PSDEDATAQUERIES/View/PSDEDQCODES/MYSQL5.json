@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DOMAINS`",
+    "name" : "DOMAINS"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`TEAMID`",
+    "name" : "TEAMID"
+  }, {
+    "expression" : "t1.`TEAMNAME`",
+    "name" : "TEAMNAME"
+  } ],
+  "queryCode" : "SELECT\nt1.`DOMAINS`,\nt1.`MEMO`,\nt1.`TEAMID`,\nt1.`TEAMNAME`\nFROM `IBZTEAM` t1 \n",
+  "id" : "PSMODULES/ou/PSDATAENTITIES/SysTeam/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

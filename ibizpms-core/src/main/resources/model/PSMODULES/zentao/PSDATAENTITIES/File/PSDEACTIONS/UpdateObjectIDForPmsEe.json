@@ -6,14 +6,16 @@
   "logicName" : "保存附件",
   "name" : "updateObjectIDForPmsEe",
   "getPSDEActionInput" : {
-    "codeName" : "UpdateObjectIDForPmsEeInput",
-    "name" : "输入对象",
+    "name" : "UpdateObjectIDForPmsEeInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "FileDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UpdateObjectIDForPmsEeResult",
-    "name" : "返回对象",
+    "name" : "UpdateObjectIDForPmsEeResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

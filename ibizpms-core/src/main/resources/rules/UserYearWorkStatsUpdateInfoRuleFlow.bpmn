@@ -11,17 +11,19 @@
             <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
         <tns:global identifier="useryearworkstatsupdateinfodefault" type="cn.ibizlab.pms.core.ibiz.domain.UserYearWorkStats" />
         </extensionElements>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsupdateinfodeaction3" id="deaction3" implementation="http://www.jboss.org/drools/rule" name="获取测试用户信息"/>
-     <endEvent id="deaction3_end" name="end"/>
-     <sequenceFlow id="deaction3_end_line" sourceRef="deaction3" targetRef="deaction3_end"/>
      <startEvent id="begin" isInterrupting="true"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsupdateinfodeaction2" id="deaction2" implementation="http://www.jboss.org/drools/rule" name="获取研发用户信息"/>
-     <endEvent id="deaction2_end" name="end"/>
-     <sequenceFlow id="deaction2_end_line" sourceRef="deaction2" targetRef="deaction2_end"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsupdateinfodeaction4" id="deaction4" implementation="http://www.jboss.org/drools/rule" name="获取产品经理信息"/>
      <endEvent id="deaction4_end" name="end"/>
      <sequenceFlow id="deaction4_end_line" sourceRef="deaction4" targetRef="deaction4_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsupdateinfodeaction2" id="deaction2" implementation="http://www.jboss.org/drools/rule" name="获取研发用户信息"/>
+     <endEvent id="deaction2_end" name="end"/>
+     <sequenceFlow id="deaction2_end_line" sourceRef="deaction2" targetRef="deaction2_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsupdateinfodeaction3" id="deaction3" implementation="http://www.jboss.org/drools/rule" name="获取测试用户信息"/>
+     <endEvent id="deaction3_end" name="end"/>
+     <sequenceFlow id="deaction3_end_line" sourceRef="deaction3" targetRef="deaction3_end"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsupdateinforawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取标题"/>
+     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+     </sequenceFlow>
      <sequenceFlow id="gateway-rawsqlcall1_deaction4" sourceRef="gateway-rawsqlcall1" targetRef="deaction4">
             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
             $useryearworkstatsupdateinfodefault:UserYearWorkStats();
@@ -45,8 +47,6 @@
                 eval((RuleUtils.test($useryearworkstatsupdateinfodefault.get("judgerole"),"EQ","dev")))
                 ]]>
             </conditionExpression>
-     </sequenceFlow>
-     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
      </sequenceFlow>
     <exclusiveGateway id="gateway-rawsqlcall1" name="Gateway" gatewayDirection="Diverging" default="gateway-rawsqlcall1_end_line"></exclusiveGateway>
     <sequenceFlow id="rawsqlcall1_gateway-rawsqlcall1_gatewayline" sourceRef="rawsqlcall1" targetRef="gateway-rawsqlcall1"></sequenceFlow>

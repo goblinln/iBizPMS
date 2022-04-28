@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "select\nt1.id, \nt1.`name`, \nCONCAT(t1.`begin`, ' ~ ', t1.`end`) as `timescale`, \nt1.`begin`, \nt1.`end`, \nt1.`status`, \n(select count(1) from zt_task t2 where t1.id = t2.project and t2.deleted = '0') as `taskcnt`,\n(select count(1) from zt_projectstory t2 where t1.id = t2.project and exists(select 1 from zt_story t3 where t2.story = t3.id and t3.deleted = '0')) as `storycnt`,\n(select count(1) from zt_team t2 where t2.type = 'project' and t1.id = t2.root) as `membercnt`, \nIFNULL((select sum(t2.consumed) from zt_taskestimate t2 where exists(select 1 from zt_task t3 where t3.project = t1.id and t3.id = t2.task and t3.deleted = '0')), 0) as `projecttotalconsumed` \nfrom zt_project t1",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEDATAQUERIES/ProjectInputStats/PSDEDQCODES/MYSQL5.json"
+}

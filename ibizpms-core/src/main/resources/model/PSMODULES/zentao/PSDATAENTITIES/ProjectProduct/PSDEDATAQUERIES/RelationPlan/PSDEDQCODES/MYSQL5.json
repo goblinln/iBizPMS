@@ -1,0 +1,58 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`PLAN` <> 0 )",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t31.deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PLAN`",
+    "name" : "PLAN"
+  }, {
+    "expression" : "t31.`TITLE`",
+    "name" : "PLANNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`name`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t21.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`CREATEBY`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`ID`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PLAN`,\n(\n\tCONCAT(\n\tt21.`name`,\n\t'/',\n\tt31.title,\n\t'[',\nCASE\n\t\n\tWHEN t31.`begin` IS NOT NULL THEN\n\tt31.`begin` ELSE '' \n\tEND,\n\t'~',\nCASE\n\t\t\n\t\tWHEN t31.`end` IS NOT NULL THEN\n\t\tt31.`end` ELSE '' \n\tEND,\n\t']' \n\t) \n\t) AS `PLANNAME`,\nt1.`PRODUCT`,\nt11.`code` AS `PRODUCTCODE`,\nt11.`name` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt21.`NAME` AS `PROJECTNAME`,\nt1.`UPDATEBY`\nFROM `zt_projectproduct` t1 \nLEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  \nLEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`\nLEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID`",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDEDATAQUERIES/RelationPlan/PSDEDQCODES/MYSQL5.json"
+}

@@ -45,6 +45,5 @@
     "name" : "PROJECT=PROJECT"
   } ],
   "typeValue" : "task",
-  "inherit" : false,
   "virtual" : true
 }

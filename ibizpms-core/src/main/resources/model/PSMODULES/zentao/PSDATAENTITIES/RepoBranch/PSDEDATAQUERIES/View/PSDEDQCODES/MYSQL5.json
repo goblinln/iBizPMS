@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`REPO`",
+    "name" : "REPO"
+  }, {
+    "expression" : "t1.`REVISION`",
+    "name" : "REVISION"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`ID`,\nt1.`REPO`,\nt1.`REVISION`\nFROM `zt_repobranch` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

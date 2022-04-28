@@ -72,7 +72,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/weeklies/${_context.weekly}/autocreate`, _data);
+        const res = await this.http.post(`/weeklies/${encodeURIComponent(_context.weekly)}/autocreate`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -112,7 +112,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/weeklies/${_context.weekly}`);
+        const res = await this.http.get(`/weeklies/${encodeURIComponent(_context.weekly)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -147,7 +147,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/weeklies/${_context.weekly}/notice`, _data);
+        const res = await this.http.post(`/weeklies/${encodeURIComponent(_context.weekly)}/notice`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -163,7 +163,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/weeklies/${_context.weekly}/read`, _data);
+        const res = await this.http.post(`/weeklies/${encodeURIComponent(_context.weekly)}/read`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -179,7 +179,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/weeklies/${_context.weekly}/submit`, _data);
+        const res = await this.http.post(`/weeklies/${encodeURIComponent(_context.weekly)}/submit`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -197,7 +197,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/weeklies/${_context.weekly}`, _data);
+        const res = await this.http.put(`/weeklies/${encodeURIComponent(_context.weekly)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -6,13 +6,15 @@
   "logicName" : "关联计划",
   "name" : "LinkPlan",
   "getPSDEActionInput" : {
-    "codeName" : "LinkPlanInput",
-    "name" : "输入对象",
+    "name" : "LinkPlanInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "LinkPlanResult",
-    "name" : "返回对象",
+    "name" : "LinkPlanResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

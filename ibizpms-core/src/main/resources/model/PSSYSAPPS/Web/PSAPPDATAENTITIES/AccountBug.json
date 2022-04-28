@@ -405,7 +405,9 @@
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
@@ -615,12 +617,26 @@
     "name" : "ReleaseLeftBugs",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchReleaseLinkableLeftBug",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLinkableLeftBug",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchReleaseLinkableResolvedBug",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -1141,8 +1157,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
+        }
       } ],
       "parallelOutput" : true
     }, {
@@ -1168,12 +1183,14 @@
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -1616,12 +1633,26 @@
     "name" : "ReleaseLeftBugs",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchReleaseLinkableLeftBug",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLinkableLeftBug",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchReleaseLinkableResolvedBug",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -2449,19 +2480,34 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "AccountBug",
+  "dEAPITag" : "IBZ_API__ACCOUNT_BUG",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json",
   "enableUIActions" : 15,
   "logicName" : "用户BUG",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  }, {
+    "name" : "ISFAVORITES",
+    "codeName" : "Isfavorites"
+  }, {
+    "name" : "CONFIRMED",
+    "codeName" : "Confirmed"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "AccountBugs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "SysAccount",
+    "majorDEName" : "SYS_USER",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
+    "minorDECodeName" : "AccountBug",
+    "minorDEName" : "ACCOUNTBUG",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
@@ -2470,6 +2516,10 @@
     "rSMode" : 2
   } ],
   "name" : "ACCOUNTBUG",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_BUG",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
@@ -2483,7 +2533,9 @@
     "codeName" : "Title"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : false,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

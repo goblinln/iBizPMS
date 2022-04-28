@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CODE`",
+    "name" : "CODE"
+  }, {
+    "expression" : "t1.`IBIZ_ID`",
+    "name" : "IBIZ_ID"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  } ],
+  "queryCode" : "SELECT\nt1.`CODE`,\nt1.`IBIZ_ID`,\nt1.`ID`,\nt1.`NAME`\nFROM `zt_product` t1 \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

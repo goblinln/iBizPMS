@@ -10,19 +10,11 @@
                     <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
                             <tns:global identifier="testtaskgetproductbuilddefault" type="cn.ibizlab.pms.core.zentao.domain.TestTask" />
             </extensionElements>
+                        <startEvent id="begin" isInterrupting="true"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testtaskgetproductbuildrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取产品"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testtaskgetproductbuildrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取版本"/>
                         <endEvent id="rawsqlcall2_end" name="end"/>
                         <sequenceFlow id="rawsqlcall2_end_line" sourceRef="rawsqlcall2" targetRef="rawsqlcall2_end"/>
-                        <startEvent id="begin" isInterrupting="true"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testtaskgetproductbuildrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取产品"/>
-                    <sequenceFlow id="gateway-rawsqlcall1_rawsqlcall2" sourceRef="gateway-rawsqlcall1" targetRef="rawsqlcall2">
-                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-                                            $testtaskgetproductbuilddefault:TestTask();
-                                    eval($testtaskgetproductbuilddefault==testtaskgetproductbuilddefault);
-                                eval((RuleUtils.test($testtaskgetproductbuilddefault.get("product"),"ISNOTNULL","")))
-                                ]]>
-                            </conditionExpression>
-                    </sequenceFlow>
                     <sequenceFlow id="gateway-begin_rawsqlcall1" sourceRef="gateway-begin" targetRef="rawsqlcall1">
                             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
                                             $testtaskgetproductbuilddefault:TestTask();
@@ -31,13 +23,21 @@
                                 ]]>
                             </conditionExpression>
                     </sequenceFlow>
-                            <exclusiveGateway id="gateway-rawsqlcall1" name="Gateway" gatewayDirection="Diverging" default="gateway-rawsqlcall1_end_line"></exclusiveGateway>
-                            <sequenceFlow id="rawsqlcall1_gateway-rawsqlcall1_gatewayline" sourceRef="rawsqlcall1" targetRef="gateway-rawsqlcall1"></sequenceFlow>
-                            <sequenceFlow id="gateway-rawsqlcall1_end_line" sourceRef="gateway-rawsqlcall1" targetRef="gateway-rawsqlcall1_end"/>
-                            <endEvent id="gateway-rawsqlcall1_end" name="end"/>
+                    <sequenceFlow id="gateway-rawsqlcall1_rawsqlcall2" sourceRef="gateway-rawsqlcall1" targetRef="rawsqlcall2">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $testtaskgetproductbuilddefault:TestTask();
+                                    eval($testtaskgetproductbuilddefault==testtaskgetproductbuilddefault);
+                                eval((RuleUtils.test($testtaskgetproductbuilddefault.get("product"),"ISNOTNULL","")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
                             <exclusiveGateway id="gateway-begin" name="Gateway" gatewayDirection="Diverging" default="gateway-begin_end_line"></exclusiveGateway>
                             <sequenceFlow id="begin_gateway-begin_gatewayline" sourceRef="begin" targetRef="gateway-begin"></sequenceFlow>
                             <sequenceFlow id="gateway-begin_end_line" sourceRef="gateway-begin" targetRef="gateway-begin_end"/>
                             <endEvent id="gateway-begin_end" name="end"/>
+                            <exclusiveGateway id="gateway-rawsqlcall1" name="Gateway" gatewayDirection="Diverging" default="gateway-rawsqlcall1_end_line"></exclusiveGateway>
+                            <sequenceFlow id="rawsqlcall1_gateway-rawsqlcall1_gatewayline" sourceRef="rawsqlcall1" targetRef="gateway-rawsqlcall1"></sequenceFlow>
+                            <sequenceFlow id="gateway-rawsqlcall1_end_line" sourceRef="gateway-rawsqlcall1" targetRef="gateway-rawsqlcall1_end"/>
+                            <endEvent id="gateway-rawsqlcall1_end" name="end"/>
         </process>
     </definitions>

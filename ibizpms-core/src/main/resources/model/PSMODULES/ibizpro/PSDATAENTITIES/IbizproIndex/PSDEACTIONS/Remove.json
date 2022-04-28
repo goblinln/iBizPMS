@@ -8,22 +8,15 @@
   "name" : "Remove",
   "orderValue" : 21,
   "getPSDEActionInput" : {
-    "codeName" : "RemoveInput",
-    "name" : "输入对象",
-    "type" : "KEYFIELDS"
-  },
-  "getPSDEActionParams" : [ {
-    "name" : "INDEXID",
-    "getPSDEField" : {
+    "getKeyPSDEField" : {
       "name" : "INDEXID",
       "codeName" : "Indexid"
     },
-    "stdDataType" : 1,
-    "valueType" : "INPUTVALUE"
-  } ],
+    "name" : "RemoveInput",
+    "type" : "KEYFIELDS"
+  },
   "getPSDEActionReturn" : {
-    "codeName" : "RemoveResult",
-    "name" : "返回对象",
+    "name" : "RemoveResult",
     "type" : "VOID"
   },
   "paramMode" : 2,

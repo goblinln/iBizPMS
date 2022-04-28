@@ -1,14 +1,31 @@
 {
+  "codeListTag" : "ibiz__ProductTeam",
   "codeListType" : "DYNAMIC",
   "codeName" : "ProductTeam",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProductTeam.json",
   "emptyText" : "未定义",
+  "name" : "产品团队",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "CurDefault"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getValuePSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "codeItemValueNumber" : false,
   "enableCache" : false,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

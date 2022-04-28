@@ -488,6 +488,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__PROJECTLINK"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "PROJECT",
             "name" : "PROJECT",

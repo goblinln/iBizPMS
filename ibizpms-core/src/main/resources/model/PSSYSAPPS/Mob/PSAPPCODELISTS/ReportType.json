@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "report__ReportType",
   "codeListType" : "STATIC",
   "codeName" : "ReportType",
   "dynaInstMode" : 1,
@@ -12,23 +13,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Weekly",
     "text" : "周报",
-    "value" : "weekly",
-    "includeBeginValue" : true
+    "value" : "weekly"
   }, {
     "codeName" : "Daily",
     "text" : "日报",
-    "value" : "daily",
-    "includeBeginValue" : true
+    "value" : "daily"
   }, {
     "codeName" : "Monthly",
     "text" : "月报",
-    "value" : "monthly",
-    "includeBeginValue" : true
+    "value" : "monthly"
   }, {
     "codeName" : "Reportly",
     "text" : "汇报",
-    "value" : "reportly",
-    "includeBeginValue" : true
+    "value" : "reportly"
   } ],
   "enableCache" : true
 }

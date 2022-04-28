@@ -6,13 +6,15 @@
   "logicName" : "定时推送项目周报",
   "name" : "pushSumProjectWeekly",
   "getPSDEActionInput" : {
-    "codeName" : "PushSumProjectWeeklyInput",
-    "name" : "输入对象",
+    "name" : "PushSumProjectWeeklyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbizproProjectWeeklyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "PushSumProjectWeeklyResult",
-    "name" : "返回对象",
+    "name" : "PushSumProjectWeeklyResult",
     "type" : "VOID"
   }
 }

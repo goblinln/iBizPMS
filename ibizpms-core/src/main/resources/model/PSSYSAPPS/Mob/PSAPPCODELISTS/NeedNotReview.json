@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__NeedNotReview",
   "codeListType" : "STATIC",
   "codeName" : "NeedNotReview",
   "dynaInstMode" : 1,
@@ -12,8 +13,7 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_0",
     "text" : "不需要评审",
-    "value" : "0",
-    "includeBeginValue" : true
+    "value" : "0"
   } ],
   "enableCache" : true
 }

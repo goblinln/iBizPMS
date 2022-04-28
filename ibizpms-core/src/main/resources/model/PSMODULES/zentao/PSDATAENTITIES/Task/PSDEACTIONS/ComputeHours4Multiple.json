@@ -6,13 +6,15 @@
   "logicName" : "更新父任务时间",
   "name" : "computeHours4Multiple",
   "getPSDEActionInput" : {
-    "codeName" : "ComputeHours4MultipleInput",
-    "name" : "输入对象",
+    "name" : "ComputeHours4MultipleInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ComputeHours4MultipleResult",
-    "name" : "返回对象",
+    "name" : "ComputeHours4MultipleResult",
     "type" : "VOID"
   }
 }

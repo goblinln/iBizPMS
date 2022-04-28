@@ -121,13 +121,13 @@
           },
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
-              "actionName" : "Update",
+              "actionName" : "GetDraft",
               "actionType" : "DEACTION",
-              "dataAccessAction" : "UPDATE",
-              "name" : "update",
+              "dataAccessAction" : "CREATE",
+              "name" : "loaddraft",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "Update"
+                "id" : "GetDraft"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -138,32 +138,6 @@
               "actionType" : "DEACTION",
               "dataAccessAction" : "CREATE",
               "name" : "loaddraftfrom",
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
-              }
-            }, {
-              "actionName" : "Remove",
-              "actionType" : "DEACTION",
-              "dataAccessAction" : "DELETE",
-              "name" : "remove",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Remove"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
-              }
-            }, {
-              "actionName" : "GetDraft",
-              "actionType" : "DEACTION",
-              "dataAccessAction" : "CREATE",
-              "name" : "loaddraft",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "GetDraft"
-              },
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
@@ -189,6 +163,32 @@
               "getPSAppDEMethod" : {
                 "modelref" : true,
                 "id" : "Create"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
+              }
+            }, {
+              "actionName" : "Update",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "UPDATE",
+              "name" : "update",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Update"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
+              }
+            }, {
+              "actionName" : "Remove",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "DELETE",
+              "name" : "remove",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Remove"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -765,43 +765,6 @@
                       },
                       "getPSControlHandler" : {
                         "getPSHandlerActions" : [ {
-                          "actionName" : "Update",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "UPDATE",
-                          "name" : "update",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Update"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
-                          }
-                        }, {
-                          "actionType" : "DEDATASET",
-                          "name" : "fetch",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "FetchType"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
-                          }
-                        }, {
-                          "actionName" : "Remove",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "DELETE",
-                          "name" : "remove",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Remove"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
-                          }
-                        }, {
                           "actionName" : "Get",
                           "actionType" : "DEACTION",
                           "dataAccessAction" : "READ",
@@ -822,6 +785,43 @@
                           "getPSAppDEMethod" : {
                             "modelref" : true,
                             "id" : "Create"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                          }
+                        }, {
+                          "actionName" : "Update",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "UPDATE",
+                          "name" : "update",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Update"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                          }
+                        }, {
+                          "actionName" : "Remove",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "DELETE",
+                          "name" : "remove",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Remove"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                          }
+                        }, {
+                          "actionType" : "DEDATASET",
+                          "name" : "fetch",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "FetchType"
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
@@ -958,10 +958,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -972,10 +976,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -990,10 +998,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Docs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Doc",
+                      "minorDEName" : "ZT_DOC",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
@@ -1008,10 +1020,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1022,10 +1038,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "TestCases",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Test",
+                      "majorDEName" : "IBZ_API__TEST",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
                       },
+                      "minorDECodeName" : "TestCase",
+                      "minorDEName" : "ZT_CASE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
@@ -1040,10 +1060,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "caseSteps",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestCase",
+                      "majorDEName" : "ZT_CASE",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
                       },
+                      "minorDECodeName" : "TestCaseStep",
+                      "minorDEName" : "ZT_CASESTEP",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCaseStep.json"
@@ -1059,10 +1083,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestCaseStep",
+                      "majorDEName" : "ZT_CASESTEP",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCaseStep.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1073,10 +1101,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -1091,10 +1123,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Docs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Doc",
+                      "minorDEName" : "ZT_DOC",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
@@ -1109,10 +1145,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1123,10 +1163,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -1137,10 +1181,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "TestTasks",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "TestTask",
+                      "minorDEName" : "ZT_TESTTASK",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
@@ -1155,10 +1203,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestTask",
+                      "majorDEName" : "ZT_TESTTASK",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1169,10 +1221,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -1183,10 +1239,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Stories",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Story",
+                      "minorDEName" : "ZT_STORY",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
@@ -1197,10 +1257,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Story",
+                      "majorDEName" : "ZT_STORY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1211,10 +1275,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -1225,10 +1293,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Tasks",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Task",
+                      "minorDEName" : "ZT_TASK",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
@@ -1243,10 +1315,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Task",
+                      "majorDEName" : "ZT_TASK",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1257,10 +1333,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -1271,10 +1351,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Builds",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Build",
+                      "minorDEName" : "ZT_BUILD",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
@@ -1289,10 +1373,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Build",
+                      "majorDEName" : "ZT_BUILD",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1303,10 +1391,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -1317,10 +1409,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Bugs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Bug",
+                      "minorDEName" : "ZT_BUG",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
@@ -1335,10 +1431,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Bug",
+                      "majorDEName" : "ZT_BUG",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1349,10 +1449,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -1363,10 +1467,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "ProductPlans",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "ProductPlan",
+                      "minorDEName" : "ZT_PRODUCTPLAN",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
@@ -1377,10 +1485,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "ProductPlan",
+                      "majorDEName" : "ZT_PRODUCTPLAN",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1391,10 +1503,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -1405,10 +1521,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -1423,10 +1543,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1437,10 +1561,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -1455,10 +1583,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Docs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Doc",
+                      "minorDEName" : "ZT_DOC",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
@@ -1473,10 +1605,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1487,10 +1623,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "TestCases",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Test",
+                      "majorDEName" : "IBZ_API__TEST",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
                       },
+                      "minorDECodeName" : "TestCase",
+                      "minorDEName" : "ZT_CASE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
@@ -1505,10 +1645,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestCase",
+                      "majorDEName" : "ZT_CASE",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1519,10 +1663,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Bugs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Test",
+                      "majorDEName" : "IBZ_API__TEST",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
                       },
+                      "minorDECodeName" : "Bug",
+                      "minorDEName" : "ZT_BUG",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
@@ -1537,10 +1685,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Bug",
+                      "majorDEName" : "ZT_BUG",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1551,10 +1703,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "TestTasks",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "TestTask",
+                      "minorDEName" : "ZT_TESTTASK",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
@@ -1569,10 +1725,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestTask",
+                      "majorDEName" : "ZT_TESTTASK",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1583,10 +1743,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Stories",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Story",
+                      "minorDEName" : "ZT_STORY",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
@@ -1597,10 +1761,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Story",
+                      "majorDEName" : "ZT_STORY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1611,10 +1779,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Tasks",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Task",
+                      "minorDEName" : "ZT_TASK",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
@@ -1629,10 +1801,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Task",
+                      "majorDEName" : "ZT_TASK",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1643,10 +1819,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Builds",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Build",
+                      "minorDEName" : "ZT_BUILD",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
@@ -1661,10 +1841,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Build",
+                      "majorDEName" : "ZT_BUILD",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1675,10 +1859,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Bugs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Bug",
+                      "minorDEName" : "ZT_BUG",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
@@ -1693,10 +1881,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Bug",
+                      "majorDEName" : "ZT_BUG",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1707,10 +1899,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "ProductPlans",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "ProductPlan",
+                      "minorDEName" : "ZT_PRODUCTPLAN",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
@@ -1721,10 +1917,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "ProductPlan",
+                      "majorDEName" : "ZT_PRODUCTPLAN",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1735,10 +1935,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -1753,10 +1957,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1767,10 +1975,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -1781,10 +1993,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1795,10 +2011,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Stories",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Story",
+                      "minorDEName" : "ZT_STORY",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
@@ -1813,10 +2033,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Story",
+                      "majorDEName" : "ZT_STORY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1827,10 +2051,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "ProductReleases",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "ProductRelease",
+                      "minorDEName" : "ZT_RELEASE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
@@ -1845,10 +2073,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "ProductRelease",
+                      "majorDEName" : "ZT_RELEASE",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1859,10 +2091,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "ProductPlans",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "ProductPlan",
+                      "minorDEName" : "ZT_PRODUCTPLAN",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
@@ -1877,10 +2113,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "ProductPlan",
+                      "majorDEName" : "ZT_PRODUCTPLAN",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1891,10 +2131,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Builds",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Build",
+                      "minorDEName" : "ZT_BUILD",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
@@ -1909,10 +2153,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Build",
+                      "majorDEName" : "ZT_BUILD",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1923,10 +2171,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -1941,10 +2193,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1955,10 +2211,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "TestTasks",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Test",
+                      "majorDEName" : "IBZ_API__TEST",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
                       },
+                      "minorDECodeName" : "TestTask",
+                      "minorDEName" : "ZT_TESTTASK",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
@@ -1973,10 +2233,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestTask",
+                      "majorDEName" : "ZT_TESTTASK",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -1987,10 +2251,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Docs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Doc",
+                      "minorDEName" : "ZT_DOC",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
@@ -2005,10 +2273,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2019,10 +2291,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Todos",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "SysAccount",
+                      "majorDEName" : "SYS_USER",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
                       },
+                      "minorDECodeName" : "Todo",
+                      "minorDEName" : "ZT_TODO",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
@@ -2033,10 +2309,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Todo",
+                      "majorDEName" : "ZT_TODO",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2047,10 +2327,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Docs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "SysAccount",
+                      "majorDEName" : "SYS_USER",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
                       },
+                      "minorDECodeName" : "Doc",
+                      "minorDEName" : "ZT_DOC",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
@@ -2061,10 +2345,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2075,10 +2363,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Weekly",
+                      "majorDEName" : "IBZ_WEEKLY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2089,10 +2381,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Todo",
+                      "majorDEName" : "ZT_TODO",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2103,10 +2399,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestSuite",
+                      "majorDEName" : "ZT_TESTSUITE",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestSuite.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2117,10 +2417,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Reportly",
+                      "majorDEName" : "IBZ_REPORTLY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2131,10 +2435,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2145,10 +2453,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2159,10 +2471,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Monthly",
+                      "majorDEName" : "IBZ_MONTHLY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2173,10 +2489,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2187,10 +2507,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2201,10 +2525,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Files",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Daily",
+                      "majorDEName" : "IBZ_DAILY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
                       },
+                      "minorDECodeName" : "File",
+                      "minorDEName" : "ZT_FILE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
@@ -2464,43 +2792,6 @@
                       },
                       "getPSControlHandler" : {
                         "getPSHandlerActions" : [ {
-                          "actionName" : "Update",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "UPDATE",
-                          "name" : "update",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Update"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
-                          }
-                        }, {
-                          "actionType" : "DEDATASET",
-                          "name" : "fetch",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "FetchMobType"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
-                          }
-                        }, {
-                          "actionName" : "Remove",
-                          "actionType" : "DEACTION",
-                          "dataAccessAction" : "DELETE",
-                          "name" : "remove",
-                          "getPSAppDEMethod" : {
-                            "modelref" : true,
-                            "id" : "Remove"
-                          },
-                          "getPSAppDataEntity" : {
-                            "modelref" : true,
-                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
-                          }
-                        }, {
                           "actionName" : "Get",
                           "actionType" : "DEACTION",
                           "dataAccessAction" : "READ",
@@ -2521,6 +2812,43 @@
                           "getPSAppDEMethod" : {
                             "modelref" : true,
                             "id" : "Create"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                          }
+                        }, {
+                          "actionName" : "Update",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "UPDATE",
+                          "name" : "update",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Update"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                          }
+                        }, {
+                          "actionName" : "Remove",
+                          "actionType" : "DEACTION",
+                          "dataAccessAction" : "DELETE",
+                          "name" : "remove",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "Remove"
+                          },
+                          "getPSAppDataEntity" : {
+                            "modelref" : true,
+                            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                          }
+                        }, {
+                          "actionType" : "DEDATASET",
+                          "name" : "fetch",
+                          "getPSAppDEMethod" : {
+                            "modelref" : true,
+                            "id" : "FetchMobType"
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
@@ -2662,10 +2990,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -2676,10 +3008,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -2694,10 +3030,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Docs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Doc",
+                      "minorDEName" : "ZT_DOC",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
@@ -2712,10 +3052,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -2726,10 +3070,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -2744,10 +3092,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Docs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Doc",
+                      "minorDEName" : "ZT_DOC",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
@@ -2762,10 +3114,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -2776,10 +3132,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -2790,10 +3150,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "TestTasks",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "TestTask",
+                      "minorDEName" : "ZT_TESTTASK",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
@@ -2808,10 +3172,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestTask",
+                      "majorDEName" : "ZT_TESTTASK",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -2822,10 +3190,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -2836,10 +3208,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Stories",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Story",
+                      "minorDEName" : "ZT_STORY",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
@@ -2850,10 +3226,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Story",
+                      "majorDEName" : "ZT_STORY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -2864,10 +3244,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -2878,10 +3262,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Tasks",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Task",
+                      "minorDEName" : "ZT_TASK",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
@@ -2896,10 +3284,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Task",
+                      "majorDEName" : "ZT_TASK",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -2910,10 +3302,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -2924,10 +3320,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Builds",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Build",
+                      "minorDEName" : "ZT_BUILD",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
@@ -2942,10 +3342,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Build",
+                      "majorDEName" : "ZT_BUILD",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -2956,10 +3360,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -2970,10 +3378,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Bugs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Bug",
+                      "minorDEName" : "ZT_BUG",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
@@ -2988,10 +3400,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Bug",
+                      "majorDEName" : "ZT_BUG",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3002,10 +3418,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -3016,10 +3436,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "ProductPlans",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "ProductPlan",
+                      "minorDEName" : "ZT_PRODUCTPLAN",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
@@ -3030,10 +3454,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "ProductPlan",
+                      "majorDEName" : "ZT_PRODUCTPLAN",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3044,10 +3472,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -3058,10 +3490,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -3076,10 +3512,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3090,10 +3530,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -3108,10 +3552,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Docs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Doc",
+                      "minorDEName" : "ZT_DOC",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
@@ -3126,10 +3574,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3140,10 +3592,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "TestCases",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Test",
+                      "majorDEName" : "IBZ_API__TEST",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
                       },
+                      "minorDECodeName" : "TestCase",
+                      "minorDEName" : "ZT_CASE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
@@ -3158,10 +3614,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestCase",
+                      "majorDEName" : "ZT_CASE",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3172,10 +3632,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Bugs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Test",
+                      "majorDEName" : "IBZ_API__TEST",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
                       },
+                      "minorDECodeName" : "Bug",
+                      "minorDEName" : "ZT_BUG",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
@@ -3190,10 +3654,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Bug",
+                      "majorDEName" : "ZT_BUG",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3204,10 +3672,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "TestTasks",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "TestTask",
+                      "minorDEName" : "ZT_TESTTASK",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
@@ -3222,10 +3694,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestTask",
+                      "majorDEName" : "ZT_TESTTASK",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3236,10 +3712,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Stories",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Story",
+                      "minorDEName" : "ZT_STORY",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
@@ -3250,10 +3730,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Story",
+                      "majorDEName" : "ZT_STORY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3264,10 +3748,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Tasks",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Task",
+                      "minorDEName" : "ZT_TASK",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
@@ -3282,10 +3770,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Task",
+                      "majorDEName" : "ZT_TASK",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3296,10 +3788,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Builds",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Build",
+                      "minorDEName" : "ZT_BUILD",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
@@ -3314,10 +3810,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Build",
+                      "majorDEName" : "ZT_BUILD",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3328,10 +3828,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Bugs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Bug",
+                      "minorDEName" : "ZT_BUG",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
@@ -3346,10 +3850,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Bug",
+                      "majorDEName" : "ZT_BUG",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3360,10 +3868,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "ProductPlans",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "ProductPlan",
+                      "minorDEName" : "ZT_PRODUCTPLAN",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
@@ -3374,10 +3886,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "ProductPlan",
+                      "majorDEName" : "ZT_PRODUCTPLAN",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3388,10 +3904,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -3406,10 +3926,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3420,10 +3944,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Projects",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Project",
+                      "minorDEName" : "ZT_PROJECT",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -3434,10 +3962,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3448,10 +3980,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Stories",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Story",
+                      "minorDEName" : "ZT_STORY",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
@@ -3466,10 +4002,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Story",
+                      "majorDEName" : "ZT_STORY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3480,10 +4020,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "ProductReleases",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "ProductRelease",
+                      "minorDEName" : "ZT_RELEASE",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
@@ -3498,10 +4042,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "ProductRelease",
+                      "majorDEName" : "ZT_RELEASE",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3512,10 +4060,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "ProductPlans",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "ProductPlan",
+                      "minorDEName" : "ZT_PRODUCTPLAN",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
@@ -3530,10 +4082,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "ProductPlan",
+                      "majorDEName" : "ZT_PRODUCTPLAN",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3544,10 +4100,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Builds",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Build",
+                      "minorDEName" : "ZT_BUILD",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
@@ -3562,10 +4122,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Build",
+                      "majorDEName" : "ZT_BUILD",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3576,10 +4140,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "DocLibs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "DocLib",
+                      "minorDEName" : "ZT_DOCLIB",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -3594,10 +4162,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3608,10 +4180,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "TestTasks",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Test",
+                      "majorDEName" : "IBZ_API__TEST",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
                       },
+                      "minorDECodeName" : "TestTask",
+                      "minorDEName" : "ZT_TESTTASK",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
@@ -3626,10 +4202,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestTask",
+                      "majorDEName" : "ZT_TESTTASK",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3640,10 +4220,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Docs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Doc",
+                      "minorDEName" : "ZT_DOC",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
@@ -3658,10 +4242,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3672,10 +4260,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Todos",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "SysAccount",
+                      "majorDEName" : "SYS_USER",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
                       },
+                      "minorDECodeName" : "Todo",
+                      "minorDEName" : "ZT_TODO",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
@@ -3686,10 +4278,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Todo",
+                      "majorDEName" : "ZT_TODO",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3700,10 +4296,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Docs",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "SysAccount",
+                      "majorDEName" : "SYS_USER",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
                       },
+                      "minorDECodeName" : "Doc",
+                      "minorDEName" : "ZT_DOC",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
@@ -3714,10 +4314,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3728,10 +4332,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Weekly",
+                      "majorDEName" : "IBZ_WEEKLY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3742,10 +4350,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Todo",
+                      "majorDEName" : "ZT_TODO",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3756,10 +4368,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "TestSuite",
+                      "majorDEName" : "ZT_TESTSUITE",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestSuite.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3770,10 +4386,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Reportly",
+                      "majorDEName" : "IBZ_REPORTLY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3784,10 +4404,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Project",
+                      "majorDEName" : "ZT_PROJECT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3798,10 +4422,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Product",
+                      "majorDEName" : "ZT_PRODUCT",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3812,10 +4440,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Monthly",
+                      "majorDEName" : "IBZ_MONTHLY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3826,10 +4458,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Doc",
+                      "majorDEName" : "ZT_DOC",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3840,10 +4476,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "DocLib",
+                      "majorDEName" : "ZT_DOCLIB",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3854,10 +4494,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "Daily",
+                      "majorDEName" : "IBZ_DAILY",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -3868,10 +4512,14 @@
                       "actionRSMode" : 1,
                       "codeName" : "Actions",
                       "dataRSMode" : 0,
+                      "majorDECodeName" : "SysAccount",
+                      "majorDEName" : "SYS_USER",
                       "getMajorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
                       },
+                      "minorDECodeName" : "Action",
+                      "minorDEName" : "ZT_ACTION",
                       "getMinorPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
@@ -4054,6 +4702,7 @@
             "id" : "update"
           },
           "infoFormMode" : true,
+          "mobileControl" : true,
           "noTabHeader" : true,
           "name" : "form",
           "modelid" : "eab13bb9298668efa2d5d232735058e3",

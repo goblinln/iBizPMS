@@ -392,6 +392,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf127@FontAwesome",
       "cssClass" : "fa fa-unlink"
@@ -426,6 +430,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
     },
     "getPSNavigateContexts" : [ {
       "key" : "PRODUCT",
@@ -500,6 +508,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ProductTeam",
+  "dEAPITag" : "IBZ_API__PRODUCT_TEAM",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json",
@@ -509,10 +518,14 @@
     "actionRSMode" : 1,
     "codeName" : "ProductTeams",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "ProductTeam",
+    "minorDEName" : "IBZ_PRODUCTTEAM",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
@@ -525,12 +538,17 @@
     "rSMode" : 2
   } ],
   "name" : "IBZ_PRODUCTTEAM",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "IBZ_PRODUCTTEAM",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "ACCOUNT",
     "codeName" : "Account"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

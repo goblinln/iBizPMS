@@ -1,0 +1,268 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ALLOWEMPTY`",
+    "name" : "ALLOWEMPTY"
+  }, {
+    "expression" : "t1.`AUDITINFOFORMAT`",
+    "name" : "AUDITINFOFORMAT"
+  }, {
+    "expression" : "t1.`BIZTAG`",
+    "name" : "BIZTAG"
+  }, {
+    "expression" : "t1.`CHECKRECURSION`",
+    "name" : "CHECKRECURSION"
+  }, {
+    "expression" : "t1.`CODENAME`",
+    "name" : "CODENAME"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`CUSTOMEXPORTSCOPE`",
+    "name" : "CUSTOMEXPORTSCOPE"
+  }, {
+    "expression" : "t1.`DBVALUEMODE`",
+    "name" : "DBVALUEMODE"
+  }, {
+    "expression" : "t1.`DBVALUEMODE2`",
+    "name" : "DBVALUEMODE2"
+  }, {
+    "expression" : "t1.`DEFAULTVALUE`",
+    "name" : "DEFAULTVALUE"
+  }, {
+    "expression" : "t1.`DEFTYPE`",
+    "name" : "DEFTYPE"
+  }, {
+    "expression" : "t1.`DERPSDEFID`",
+    "name" : "DERPSDEFID"
+  }, {
+    "expression" : "t1.`DERPSDEFNAME`",
+    "name" : "DERPSDEFNAME"
+  }, {
+    "expression" : "t1.`DUPCHECKMODE`",
+    "name" : "DUPCHECKMODE"
+  }, {
+    "expression" : "t1.`DUPCHECKVALUES`",
+    "name" : "DUPCHECKVALUES"
+  }, {
+    "expression" : "t1.`DUPCHKPSDEFID`",
+    "name" : "DUPCHKPSDEFID"
+  }, {
+    "expression" : "t1.`DUPCHKPSDEFNAME`",
+    "name" : "DUPCHKPSDEFNAME"
+  }, {
+    "expression" : "t1.`DVT`",
+    "name" : "DVT"
+  }, {
+    "expression" : "t1.`DYNAMODELFLAG`",
+    "name" : "DYNAMODELFLAG"
+  }, {
+    "expression" : "t1.`ENABLEAUDIT`",
+    "name" : "ENABLEAUDIT"
+  }, {
+    "expression" : "t1.`ENABLECOLPRIV`",
+    "name" : "ENABLECOLPRIV"
+  }, {
+    "expression" : "t1.`ENABLEQS`",
+    "name" : "ENABLEQS"
+  }, {
+    "expression" : "t1.`ENABLETEMPDATA`",
+    "name" : "ENABLETEMPDATA"
+  }, {
+    "expression" : "t1.`ENABLEUSERINPUT`",
+    "name" : "ENABLEUSERINPUT"
+  }, {
+    "expression" : "t1.`ENAWRITEBACK`",
+    "name" : "ENAWRITEBACK"
+  }, {
+    "expression" : "t1.`EXPORTSCOPE`",
+    "name" : "EXPORTSCOPE"
+  }, {
+    "expression" : "t1.`EXTENDMODE`",
+    "name" : "EXTENDMODE"
+  }, {
+    "expression" : "t1.`FKEY`",
+    "name" : "FKEY"
+  }, {
+    "expression" : "t1.`FORMULAFIELDS`",
+    "name" : "FORMULAFIELDS"
+  }, {
+    "expression" : "t1.`FORMULAFORMAT`",
+    "name" : "FORMULAFORMAT"
+  }, {
+    "expression" : "t1.`IMPORTKEY`",
+    "name" : "IMPORTKEY"
+  }, {
+    "expression" : "t1.`IMPORTORDER`",
+    "name" : "IMPORTORDER"
+  }, {
+    "expression" : "t1.`IMPORTTAG`",
+    "name" : "IMPORTTAG"
+  }, {
+    "expression" : "t1.`INDEXTYPE`",
+    "name" : "INDEXTYPE"
+  }, {
+    "expression" : "t1.`LENGTH`",
+    "name" : "LENGTH"
+  }, {
+    "expression" : "t1.`LOCKFLAG`",
+    "name" : "LOCKFLAG"
+  }, {
+    "expression" : "t1.`LOGICNAME`",
+    "name" : "LOGICNAME"
+  }, {
+    "expression" : "t1.`MAJORFIELD`",
+    "name" : "MAJORFIELD"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`MULTIFORMFIELD`",
+    "name" : "MULTIFORMFIELD"
+  }, {
+    "expression" : "t1.`NO2DUPCHKPSDEFID`",
+    "name" : "NO2DUPCHKPSDEFID"
+  }, {
+    "expression" : "t1.`NO2DUPCHKPSDEFNAME`",
+    "name" : "NO2DUPCHKPSDEFNAME"
+  }, {
+    "expression" : "t1.`NO3DUPCHKPSDEFID`",
+    "name" : "NO3DUPCHKPSDEFID"
+  }, {
+    "expression" : "t1.`NO3DUPCHKPSDEFNAME`",
+    "name" : "NO3DUPCHKPSDEFNAME"
+  }, {
+    "expression" : "t1.`NULLVALORDER`",
+    "name" : "NULLVALORDER"
+  }, {
+    "expression" : "t1.`ORDERVALUE`",
+    "name" : "ORDERVALUE"
+  }, {
+    "expression" : "t1.`PASTERESET`",
+    "name" : "PASTERESET"
+  }, {
+    "expression" : "t1.`PHYSICALFIELD`",
+    "name" : "PHYSICALFIELD"
+  }, {
+    "expression" : "t1.`PKEY`",
+    "name" : "PKEY"
+  }, {
+    "expression" : "t1.`PRECISION2`",
+    "name" : "PRECISION2"
+  }, {
+    "expression" : "t1.`PREDEFINETYPE`",
+    "name" : "PREDEFINETYPE"
+  }, {
+    "expression" : "t1.`PSDATATYPEID`",
+    "name" : "PSDATATYPEID"
+  }, {
+    "expression" : "t1.`PSDATATYPENAME`",
+    "name" : "PSDATATYPENAME"
+  }, {
+    "expression" : "t1.`PSDEFIELDID`",
+    "name" : "PSDEFIELDID"
+  }, {
+    "expression" : "t1.`PSDEFIELDNAME`",
+    "name" : "PSDEFIELDNAME"
+  }, {
+    "expression" : "t1.`PSDEID`",
+    "name" : "PSDEID"
+  }, {
+    "expression" : "t1.`PSDENAME`",
+    "name" : "PSDENAME"
+  }, {
+    "expression" : "t11.`PSSUBSYSSADEID`",
+    "name" : "PSSUBSYSSADEID"
+  }, {
+    "expression" : "t1.`PSSYSTEMID`",
+    "name" : "PSSYSTEMID"
+  }, {
+    "expression" : "t1.`PSSYSTEMNAME`",
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "expression" : "t1.`QUERYCOLUMN`",
+    "name" : "QUERYCOLUMN"
+  }, {
+    "expression" : "t1.`QUERYCS`",
+    "name" : "QUERYCS"
+  }, {
+    "expression" : "t1.`SERVICECODENAME`",
+    "name" : "SERVICECODENAME"
+  }, {
+    "expression" : "t1.`STATEFIELD`",
+    "name" : "STATEFIELD"
+  }, {
+    "expression" : "t1.`STRINGCASE`",
+    "name" : "STRINGCASE"
+  }, {
+    "expression" : "t1.`STRLENGTH`",
+    "name" : "STRLENGTH"
+  }, {
+    "expression" : "t1.`TABLENAME`",
+    "name" : "TABLENAME"
+  }, {
+    "expression" : "t1.`TESTDATA`",
+    "name" : "TESTDATA"
+  }, {
+    "expression" : "t1.`UNICODECHAR`",
+    "name" : "UNICODECHAR"
+  }, {
+    "expression" : "t1.`UNIONKEYVALUE`",
+    "name" : "UNIONKEYVALUE"
+  }, {
+    "expression" : "t1.`UNIT`",
+    "name" : "UNIT"
+  }, {
+    "expression" : "t1.`UNITWIDTH`",
+    "name" : "UNITWIDTH"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`UPDATEOVMODE`",
+    "name" : "UPDATEOVMODE"
+  }, {
+    "expression" : "t1.`USERCAT`",
+    "name" : "USERCAT"
+  }, {
+    "expression" : "t1.`USERPARAMS`",
+    "name" : "USERPARAMS"
+  }, {
+    "expression" : "t1.`USERTAG`",
+    "name" : "USERTAG"
+  }, {
+    "expression" : "t1.`USERTAG2`",
+    "name" : "USERTAG2"
+  }, {
+    "expression" : "t1.`USERTAG3`",
+    "name" : "USERTAG3"
+  }, {
+    "expression" : "t1.`USERTAG4`",
+    "name" : "USERTAG4"
+  }, {
+    "expression" : "t1.`VALIDFLAG`",
+    "name" : "VALIDFLAG"
+  }, {
+    "expression" : "t1.`VALUEFORMAT`",
+    "name" : "VALUEFORMAT"
+  }, {
+    "expression" : "t1.`VALUEPSDEFID`",
+    "name" : "VALUEPSDEFID"
+  }, {
+    "expression" : "t1.`VALUEPSDEFNAME`",
+    "name" : "VALUEPSDEFNAME"
+  }, {
+    "expression" : "t1.`VIEWCOLLEVEL`",
+    "name" : "VIEWCOLLEVEL"
+  } ],
+  "queryCode" : "SELECT\nt1.`ALLOWEMPTY`,\nt1.`AUDITINFOFORMAT`,\nt1.`BIZTAG`,\nt1.`CHECKRECURSION`,\nt1.`CODENAME`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CUSTOMEXPORTSCOPE`,\nt1.`DBVALUEMODE`,\nt1.`DBVALUEMODE2`,\nt1.`DEFAULTVALUE`,\nt1.`DEFTYPE`,\nt1.`DERPSDEFID`,\nt1.`DERPSDEFNAME`,\nt1.`DUPCHECKMODE`,\nt1.`DUPCHECKVALUES`,\nt1.`DUPCHKPSDEFID`,\nt1.`DUPCHKPSDEFNAME`,\nt1.`DVT`,\nt1.`DYNAMODELFLAG`,\nt1.`ENABLEAUDIT`,\nt1.`ENABLECOLPRIV`,\nt1.`ENABLEQS`,\nt1.`ENABLETEMPDATA`,\nt1.`ENABLEUSERINPUT`,\nt1.`ENAWRITEBACK`,\nt1.`EXPORTSCOPE`,\nt1.`EXTENDMODE`,\nt1.`FKEY`,\nt1.`FORMULAFIELDS`,\nt1.`FORMULAFORMAT`,\nt1.`IMPORTKEY`,\nt1.`IMPORTORDER`,\nt1.`IMPORTTAG`,\nt1.`INDEXTYPE`,\nt1.`LENGTH`,\nt1.`LOCKFLAG`,\nt1.`LOGICNAME`,\nt1.`MAJORFIELD`,\nt1.`MEMO`,\nt1.`MULTIFORMFIELD`,\nt1.`NO2DUPCHKPSDEFID`,\nt1.`NO2DUPCHKPSDEFNAME`,\nt1.`NO3DUPCHKPSDEFID`,\nt1.`NO3DUPCHKPSDEFNAME`,\nt1.`NULLVALORDER`,\nt1.`ORDERVALUE`,\nt1.`PASTERESET`,\nt1.`PHYSICALFIELD`,\nt1.`PKEY`,\nt1.`PRECISION2`,\nt1.`PREDEFINETYPE`,\nt1.`PSDATATYPEID`,\nt1.`PSDATATYPENAME`,\nt1.`PSDEFIELDID`,\nt1.`PSDEFIELDNAME`,\nt1.`PSDEID`,\nt1.`PSDENAME`,\nt11.`PSSUBSYSSADEID`,\nt1.`PSSYSTEMID`,\nt1.`PSSYSTEMNAME`,\nt1.`QUERYCOLUMN`,\nt1.`QUERYCS`,\nt1.`SERVICECODENAME`,\nt1.`STATEFIELD`,\nt1.`STRINGCASE`,\nt1.`STRLENGTH`,\nt1.`TABLENAME`,\nt1.`TESTDATA`,\nt1.`UNICODECHAR`,\nt1.`UNIONKEYVALUE`,\nt1.`UNIT`,\nt1.`UNITWIDTH`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`UPDATEOVMODE`,\nt1.`USERCAT`,\nt1.`USERPARAMS`,\nt1.`USERTAG`,\nt1.`USERTAG2`,\nt1.`USERTAG3`,\nt1.`USERTAG4`,\nt1.`VALIDFLAG`,\nt1.`VALUEFORMAT`,\nt1.`VALUEPSDEFID`,\nt1.`VALUEPSDEFNAME`,\nt1.`VIEWCOLLEVEL`\nFROM `T_PSDEFIELD` t1 \nLEFT JOIN `T_PSDATAENTITY` t11 ON t1.`PSDEID` = t11.`PSDATAENTITYID` \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

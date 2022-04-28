@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__DOCLIBTYPE",
   "codeListType" : "STATIC",
   "codeName" : "DOCLIBTYPE",
   "dynaInstMode" : 1,
@@ -12,13 +13,11 @@
   "getPSCodeItems" : [ {
     "codeName" : "Doc",
     "text" : "文档",
-    "value" : "doc",
-    "includeBeginValue" : true
+    "value" : "doc"
   }, {
     "codeName" : "File",
     "text" : "附件",
-    "value" : "file",
-    "includeBeginValue" : true
+    "value" : "file"
   } ],
   "enableCache" : true
 }

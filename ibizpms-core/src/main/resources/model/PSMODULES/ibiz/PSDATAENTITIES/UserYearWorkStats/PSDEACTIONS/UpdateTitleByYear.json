@@ -9,9 +9,6 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/UpdateInfo.json"
     },
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : true
   } ],
   "codeName" : "UpdateTitleByYear",
@@ -19,14 +16,16 @@
   "logicName" : "更新标题",
   "name" : "UpdateTitleByYear",
   "getPSDEActionInput" : {
-    "codeName" : "UpdateTitleByYearInput",
-    "name" : "输入对象",
+    "name" : "UpdateTitleByYearInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "UserYearWorkStatsDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UpdateTitleByYearResult",
-    "name" : "返回对象",
+    "name" : "UpdateTitleByYearResult",
     "type" : "VOID"
   }
 }

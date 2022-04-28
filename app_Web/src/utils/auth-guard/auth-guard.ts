@@ -268,7 +268,7 @@ export class AuthGuard {
                     NoticeHandler.errorHandler(message);
                     return;
                 }
-                router.push({ name: 'login', query: { redirect: router.currentRoute.fullPath } });
+                router.push({ name: 'login', query: { redirect: window.location.hash.replace("#",'') } });
             }
             return false;
         }

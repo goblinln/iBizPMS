@@ -205,10 +205,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "load",
+              "name" : "loaddraft",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGet"
+                "id" : "FilterGetDraft"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -216,10 +216,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "loaddraft",
+              "name" : "load",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGetDraft"
+                "id" : "FilterGet"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -442,6 +442,7 @@
           "enableAdvanceSearch" : false,
           "enableAutoSearch" : false,
           "enableFilterSave" : false,
+          "mobileControl" : true,
           "noTabHeader" : true,
           "name" : "searchform",
           "modelid" : "adc0055a81f0b256ab62a61e36c33ce5",
@@ -660,43 +661,6 @@
           } ],
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
-              "actionName" : "Update",
-              "actionType" : "DEACTION",
-              "dataAccessAction" : "UPDATE",
-              "name" : "update",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Update"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
-              }
-            }, {
-              "actionType" : "DEDATASET",
-              "name" : "fetch",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "FetchCurSuite"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
-              }
-            }, {
-              "actionName" : "Remove",
-              "actionType" : "DEACTION",
-              "dataAccessAction" : "DELETE",
-              "name" : "remove",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Remove"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
-              }
-            }, {
               "actionName" : "Get",
               "actionType" : "DEACTION",
               "dataAccessAction" : "READ",
@@ -717,6 +681,43 @@
               "getPSAppDEMethod" : {
                 "modelref" : true,
                 "id" : "Create"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+              }
+            }, {
+              "actionName" : "Update",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "UPDATE",
+              "name" : "update",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Update"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+              }
+            }, {
+              "actionName" : "Remove",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "DELETE",
+              "name" : "remove",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Remove"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+              }
+            }, {
+              "actionType" : "DEDATASET",
+              "name" : "fetch",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "FetchCurSuite"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -867,6 +868,10 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
                 },
+                "getPSDEOPPriv" : {
+                  "modelref" : true,
+                  "id" : "UNLINKSUITCASE"
+                },
                 "getPSNavigateContexts" : [ {
                   "key" : "SUITE",
                   "name" : "SUITE",
@@ -969,10 +974,14 @@
           "actionRSMode" : 1,
           "codeName" : "TestCases",
           "dataRSMode" : 0,
+          "majorDECodeName" : "Test",
+          "majorDEName" : "IBZ_API__TEST",
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
           },
+          "minorDECodeName" : "TestCase",
+          "minorDEName" : "ZT_CASE",
           "getMinorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"

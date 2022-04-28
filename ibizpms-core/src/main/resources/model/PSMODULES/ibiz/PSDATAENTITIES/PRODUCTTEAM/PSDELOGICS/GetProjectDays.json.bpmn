@@ -13,17 +13,17 @@
                             <tns:global identifier="productteamgetprojectdaysproduct" type="cn.ibizlab.pms.core.zentao.domain.Product" />
                             <tns:global identifier="productteamgetprojectdaysdefault" type="cn.ibizlab.pms.core.ibiz.domain.PRODUCTTEAM" />
             </extensionElements>
+                        <startEvent id="begin" isInterrupting="true"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productteamgetprojectdaysdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="获取产品详情"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productteamgetprojectdaysprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置产品参数"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productteamgetprojectdaysprepareparam2" id="prepareparam2" implementation="http://www.jboss.org/drools/rule" name="回填"/>
                         <endEvent id="prepareparam2_end" name="end"/>
                         <sequenceFlow id="prepareparam2_end_line" sourceRef="prepareparam2" targetRef="prepareparam2_end"/>
-                        <startEvent id="begin" isInterrupting="true"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productteamgetprojectdaysprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置产品参数"/>
+                    <sequenceFlow id="begin_prepareparam1" sourceRef="begin" targetRef="prepareparam1">
+                    </sequenceFlow>
                     <sequenceFlow id="deaction1_prepareparam2" sourceRef="deaction1" targetRef="prepareparam2">
                     </sequenceFlow>
                     <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">
-                    </sequenceFlow>
-                    <sequenceFlow id="begin_prepareparam1" sourceRef="begin" targetRef="prepareparam1">
                     </sequenceFlow>
         </process>
     </definitions>

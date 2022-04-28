@@ -96,7 +96,7 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/casestats/${_context.casestats}`);
+        const res = await this.http.get(`/casestats/${encodeURIComponent(_context.casestats)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/casestats/${_context.casestats}`);
+        const res = await this.http.delete(`/casestats/${encodeURIComponent(_context.casestats)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/casestats/${_context.casestats}`, _data);
+        const res = await this.http.put(`/casestats/${encodeURIComponent(_context.casestats)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -199,7 +199,7 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/casestats/${_context.casestats}/select`);
+        const res = await this.http.get(`/casestats/${encodeURIComponent(_context.casestats)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

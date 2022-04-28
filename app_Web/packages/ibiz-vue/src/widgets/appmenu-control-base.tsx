@@ -309,7 +309,7 @@ export class AppMenuControlBase extends ControlBase implements MenuControlInterf
     public computeMenuSelect(items: Array<any>, appfunctag: string): boolean {
         const appFuncs: Array<any> = this.service.getAllFuncs();
         return items.some((item: any) => {
-            if (Object.is(appfunctag, '') && item.getPSAppFunc && item.openDefault) {
+            if (Object.is(appfunctag, '') && item.getPSAppFunc && item.openDefault && !item.hidden) {
                 const appfunc = appFuncs?.find((_appfunc: any) => Object.is(_appfunc.appfunctag, item.getPSAppFunc.codeName));
                 if (appfunc) {
                     this.defaultActive = item.name;
@@ -489,5 +489,18 @@ export class AppMenuControlBase extends ControlBase implements MenuControlInterf
                 this.dataProcess(_item.getPSAppMenuItems)
             }
         });
+    }
+    
+    /**
+     * @description 处理关闭菜单
+     * @param {*} key 菜单项标识
+     * @param {*} keyPath 标识集合
+     * @memberof AppMenuControlBase
+     */
+    public handleCloseMenu(key: any, keyPath: any){
+      const refs: any = this.$refs;
+      if (refs[this.controlInstance?.codeName] && refs[this.controlInstance?.codeName].close instanceof Function) {
+        refs[this.controlInstance?.codeName].close(key);
+      }
     }
 }

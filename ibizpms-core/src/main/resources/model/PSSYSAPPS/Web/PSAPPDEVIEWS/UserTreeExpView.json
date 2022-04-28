@@ -168,39 +168,6 @@
       } ],
       "getPSControlHandler" : {
         "getPSHandlerActions" : [ {
-          "actionName" : "Update",
-          "actionType" : "DEACTION",
-          "dataAccessAction" : "UPDATE",
-          "name" : "update",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          }
-        }, {
-          "actionType" : "DEDATASET",
-          "name" : "fetch",
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          }
-        }, {
-          "actionName" : "Remove",
-          "actionType" : "DEACTION",
-          "dataAccessAction" : "DELETE",
-          "name" : "remove",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          }
-        }, {
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "dataAccessAction" : "READ",
@@ -222,6 +189,39 @@
             "modelref" : true,
             "id" : "Create"
           },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+          }
+        }, {
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "UPDATE",
+          "name" : "update",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+          }
+        }, {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+          }
+        }, {
+          "actionType" : "DEDATASET",
+          "name" : "fetch",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
@@ -304,6 +304,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHALLACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshAll",
@@ -574,6 +575,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHALLACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshAll",

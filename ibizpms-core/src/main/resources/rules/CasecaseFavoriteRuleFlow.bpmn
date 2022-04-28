@@ -13,14 +13,14 @@
         <tns:global identifier="casecasefavoritedefault" type="cn.ibizlab.pms.core.zentao.domain.Case" />
         <tns:global identifier="casecasefavoriteibzfavorite" type="cn.ibizlab.pms.core.ibiz.domain.IbzFavorites" />
         </extensionElements>
+     <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="casecasefavoriteprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="准备参数"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="casecasefavoritecreate" id="create" implementation="http://www.jboss.org/drools/rule" name="Create"/>
      <endEvent id="create_end" name="end"/>
      <sequenceFlow id="create_end_line" sourceRef="create" targetRef="create_end"/>
-     <startEvent id="begin" isInterrupting="true"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="casecasefavoriteprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="准备参数"/>
-     <sequenceFlow id="prepareparam1_create" sourceRef="prepareparam1" targetRef="create">
-     </sequenceFlow>
      <sequenceFlow id="begin_prepareparam1" sourceRef="begin" targetRef="prepareparam1">
+     </sequenceFlow>
+     <sequenceFlow id="prepareparam1_create" sourceRef="prepareparam1" targetRef="create">
      </sequenceFlow>
     </process>
 </definitions>

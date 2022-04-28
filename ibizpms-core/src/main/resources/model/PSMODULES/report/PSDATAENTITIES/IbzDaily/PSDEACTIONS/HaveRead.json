@@ -6,13 +6,15 @@
   "logicName" : "已读",
   "name" : "HaveRead",
   "getPSDEActionInput" : {
-    "codeName" : "HaveReadInput",
-    "name" : "输入对象",
+    "name" : "HaveReadInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzDailyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "HaveReadResult",
-    "name" : "返回对象",
+    "name" : "HaveReadResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

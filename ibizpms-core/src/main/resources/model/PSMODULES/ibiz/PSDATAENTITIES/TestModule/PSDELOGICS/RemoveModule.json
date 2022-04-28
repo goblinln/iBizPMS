@@ -17,8 +17,38 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
+      }
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置模块参数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
       },
-      "defaultLink" : false
+      "name" : "连接1737",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "ID",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "module"
+      },
+      "name" : "Default[ID] ==> module[ID]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
     "parallelOutput" : true
   }, {
@@ -38,54 +68,26 @@
     "logicNodeType" : "DEACTION",
     "name" : "模块删除",
     "parallelOutput" : true
-  }, {
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "设置模块参数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "name" : "连接1737",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "dstFieldName" : "ID",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "module"
-      },
-      "name" : "Default[ID] ==> module[ID]",
-      "paramAction" : "SETPARAMVALUE",
-      "srcFieldName" : "ID",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "codeName" : "module",
-    "name" : "模块",
-    "getParamPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    }
-  }, {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
+  }, {
+    "codeName" : "module",
+    "logicName" : "模块",
+    "name" : "模块",
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    },
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

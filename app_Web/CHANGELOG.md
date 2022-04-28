@@ -2,6 +2,86 @@
 
 初始化文件
 
+## 2021-08-24
+
+更新列表部件分组逻辑，[b0eaac67](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/b0eaac67f62127d20247dd09a8b8c3bf2c6ef4bc)（by Mosher）
+
+修复表格操作列界面行为不支持图片配置，[8569066d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/8569066d476d8029e001247b400b77f9a7aa7ec4)（by KK）
+
+## 2021-08-19
+
+修复默认界面行为处理导航上下文异常，[81a6dc8d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/81a6dc8dd99b349c3942937b339ea3016e9fa34e)（by RedPig97）
+
+删除搜索表单冗余样式，[a4e0bb99](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/a4e0bb99e0313af62823271f03bcd390edebd0bd)（by Mosher）
+
+## 2021-08-18
+
+修复图表刷新异常，[d398322c](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/d398322c966ada0585a352d69833700157724781)（by RedPig97）
+
+选择树视图刷新传参，[450a61ad](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/450a61ad34895630429bc6aade8f43700fd17dc5)（by RedPig97）
+
+input-box组件防抖修复，[e2b35e82](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/e2b35e823321a6dabf1a44d8b6f2e947a70cad39)（by RedPig97）
+
+树节点右键菜单图标修复，[cd538a4c](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/cd538a4cb52c3de74202ebe4786a54ff886fdd27)（by RedPig97）
+
+## 2021-08-16
+
+修复app-chartexpview-base导入失败，[7c09fcdc](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/7c09fcdc3726cb6e941c89b1e86f5cf8e7e5f611)（by WodahsOrez）
+
+搜索栏间距调整，[3cfb7dc1](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/3cfb7dc1674a2f6b7b1781b53e29e0877504ad13)（by RedPig97）
+
+重构计数器服务，[4ac47aa6](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/4ac47aa6d7502ac6c9a21e16e251eaf3dc05f4c9)，[71360d9d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/71360d9d7bd87f68857e11eb72a950f406460b2f)（by Mosher）
+
+更新自定义视图布局面板分页栏宽高计算逻辑，[5424e821](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/5424e821910be02a2a025421fbcf38a04900ec63)（by Mosher）
+
+更新门户部件分隔栏样式，[4c787ce9](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/4c787ce9d6d0286dabaa1c044d76e41ee49042e4)（by Mosher）
+
+优化布局面板编辑器宽度，[9f7d00f2](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/9f7d00f27984eb3993babc075aaf244df98ced45)（by RedPig97）
+
+优化数据看板高度自适应，[d8cefd64](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/d8cefd6473665f1cbeda5655ce24f45a079b5b6d)（by RedPig97）
+
+## 2021-08-13
+
+更新分页导航面板样式，[2995f8c4](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/2995f8c4aa47ed930125b67ab5414ccd3c857e10)（by Shine-zwj）
+
+更新评分编辑器编辑器最大值参数MAXVALUE，[fe0af778](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/fe0af778dacb8fbec7fb95615f6293cfc7bfef5b)（by Shine-zwj）
+
+表单分组锚点样式修复，[391df12b](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/391df12bfe8c5fffa9c226d49dda6fb31ee4eaef)（by RedPig97）
+
+江苏地图json，[43bbd136](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/43bbd136004fcea5d38e0546b669e98cb572985c)（by KK）
+
+视图消息实体fill填充，[1c70462c](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/1c70462c3d020dfb8daf337546159833e1c75e49)（by zhujiamin）
+
+更新面板属性获取父容器实体属性项逻辑、面板获取数据模式逻辑，[31778c6f](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/31778c6f9e5523d77cb317e1c7bcef267b330a82)（by Mosher）
+
+新增图表部件坐标轴显示方向支持，[cbf44ef6](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/cbf44ef6ee92ad51ddc4e1b7aab7f6f1a6374b13)（by Mosher）
+
+菜单模型适配’禁止关闭‘项，[0af4eb45](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/0af4eb457091744063b7553268512e253802a0b5)（by suzichen）
+
+修复app-chartexpview-base导入失败，[7c09fcdc](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/7c09fcdc3726cb6e941c89b1e86f5cf8e7e5f611)（by WodahsOrez）
+
+## 2021-08-12
+
+新增编辑器只读模式，[a56452f4](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/a56452f404a46b36d02d28a6ed79f3cb510e204f)（by Shine-zwj）
+
+## 2021-08-10
+
+优化微标指令更新逻辑，[2514073e](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/2514073e6a4534000a535c8e8a2274e379e8bd01)（by RedPig97）
+
+修复多数据部件激活模式（无激活模式），[327088c1](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/327088c1547ede28863fe49d0070a5acda92190d)（by Shine-zwj）
+
+修复微标指令样式，[d6df1f6d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/d6df1f6de70ea78f0e853afd7b02545ffab705dd)（by RedPig97）
+
+优化微标指令样式，[26ab946d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/26ab946d67d2ddc15acafd7b1a4168d96b8d31ca)（by RedPig97）
+
+新增数据关系栏部件分组、计数器支持，[95df4f5d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/95df4f5d75a915da6f0e955305b24c9257bc6388)（by Mosher）
+
+新增数据分页部件计数器支持，样式调整，[03c822de](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/03c822de8dc380ac634b4be5b4a41aa7bc6ac257)（by Mosher）
+
+调整数据分页部件计数器禁用样式，[e78decce](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/e78deccedb170ea1bf2b6524192c0ed5b3861882)（by Mosher）
+
+调整重定向视图逻辑，计算导航参数，[730a98ea](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/730a98eaa3be2a8377bd19a3dff2fff0e275e670)（by Mosher）
+
 ## 2021-08-09
 新增视图消息显示模式支持，[2706c8ee](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/2706c8eeb33dbc376c570aab12ca191fcd5ffd5e)（by Mosher）
 

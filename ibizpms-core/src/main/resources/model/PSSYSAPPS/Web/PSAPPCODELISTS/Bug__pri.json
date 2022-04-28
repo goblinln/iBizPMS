@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Bug__pri",
   "codeListType" : "STATIC",
   "codeName" : "Bug__pri",
   "dynaInstMode" : 1,
@@ -16,8 +17,7 @@
     },
     "text" : "严重",
     "textCls" : "text-red-border-color-lang",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   }, {
     "codeName" : "Item_2",
     "getPSSysCss" : {
@@ -25,8 +25,7 @@
     },
     "text" : "主要",
     "textCls" : "text-pink-border-color-lang",
-    "value" : "2",
-    "includeBeginValue" : true
+    "value" : "2"
   }, {
     "codeName" : "Item_3",
     "getPSSysCss" : {
@@ -35,8 +34,7 @@
     "text" : "次要",
     "textCls" : "text-blue-border-color-lang",
     "value" : "3",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Item_4",
     "getPSSysCss" : {
@@ -44,8 +42,7 @@
     },
     "text" : "不重要",
     "textCls" : "text-green-border-color-lang",
-    "value" : "4",
-    "includeBeginValue" : true
+    "value" : "4"
   } ],
   "codeItemValueNumber" : true,
   "enableCache" : true

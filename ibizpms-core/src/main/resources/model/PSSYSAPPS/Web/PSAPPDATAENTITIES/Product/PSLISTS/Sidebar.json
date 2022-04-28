@@ -149,6 +149,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "NOTOP"
+        },
         "getPSSysImage" : {
           "glyph" : "xf0a6@FontAwesome",
           "cssClass" : "fa fa-hand-o-up"
@@ -194,6 +198,10 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "TOP"
         },
         "getPSSysImage" : {
           "glyph" : "xf0a7@FontAwesome",

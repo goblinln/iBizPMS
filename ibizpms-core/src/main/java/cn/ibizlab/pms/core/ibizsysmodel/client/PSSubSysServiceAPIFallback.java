@@ -33,10 +33,6 @@ public class PSSubSysServiceAPIFallback implements FallbackFactory<PSSubSysServi
         String finalErrorMessage = errorMessage;
         return new PSSubSysServiceAPIFeignClient(){
 
-            public Page<PSSubSysServiceAPI> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSSubSysServiceAPI create(PSSubSysServiceAPI pssubsysserviceapi) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSSubSysServiceAPIFallback implements FallbackFactory<PSSubSysServi
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSubSysServiceAPI update(String pssubsysserviceapiid, PSSubSysServiceAPI pssubsysserviceapi) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSSubSysServiceAPI> pssubsysserviceapis) {
+            public PSSubSysServiceAPI get(String pssubsysserviceapiid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class PSSubSysServiceAPIFallback implements FallbackFactory<PSSubSysServi
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSubSysServiceAPI get(String pssubsysserviceapiid) {
+            public PSSubSysServiceAPI update(String pssubsysserviceapiid, PSSubSysServiceAPI pssubsysserviceapi) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSSubSysServiceAPI> pssubsysserviceapis) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSSubSysServiceAPI pssubsysserviceapi) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSubSysServiceAPI> searchDefault(PSSubSysServiceAPISearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class PSSubSysServiceAPIFallback implements FallbackFactory<PSSubSysServi
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSSubSysServiceAPI pssubsysserviceapi) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSSubSysServiceAPI pssubsysserviceapi) {
@@ -86,10 +87,9 @@ public class PSSubSysServiceAPIFallback implements FallbackFactory<PSSubSysServi
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSSubSysServiceAPI> searchDefault(PSSubSysServiceAPISearchContext context) {
+            public Page<PSSubSysServiceAPI> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

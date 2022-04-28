@@ -1,14 +1,35 @@
 {
+  "codeListTag" : "uaa__AllRole",
   "codeListType" : "DYNAMIC",
   "codeName" : "AllRole",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/uaa/PSCODELISTS/AllRole.json",
   "emptyText" : "未定义",
+  "name" : "所有角色",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getTextPSDEField" : {
+    "name" : "SYS_ROLENAME",
+    "codeName" : "RoleName"
+  },
+  "getValuePSDEField" : {
+    "name" : "SYS_ROLEID",
+    "codeName" : "RoleId"
+  },
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

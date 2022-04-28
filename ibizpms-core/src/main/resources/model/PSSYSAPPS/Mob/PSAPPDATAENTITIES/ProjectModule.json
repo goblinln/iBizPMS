@@ -423,6 +423,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ProjectModule",
+  "dEAPITag" : "IBZ_API__PROJECT_MODULE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectModule.json",
@@ -432,10 +433,14 @@
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "ProjectModule",
+    "minorDEName" : "IBZ_PROJECTMODULE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectModule.json"
@@ -448,12 +453,17 @@
     "rSMode" : 2
   } ],
   "name" : "IBZ_PROJECTMODULE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "IBZ_PROJECTMODULE",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "NAME",
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

@@ -7,13 +7,19 @@
   "name" : "GetTemp",
   "orderValue" : 32,
   "getPSDEActionInput" : {
-    "codeName" : "GetTempInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetTempInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetTempResult",
-    "name" : "返回对象",
+    "name" : "GetTempResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "tempDataMode" : 2,

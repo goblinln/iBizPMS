@@ -148,8 +148,13 @@
             "name" : "assignedto 不等于(<>) (closed)",
             "value" : "closed"
           } ],
+          "relatedItemNames" : [ "assignedto" ],
           "notMode" : false
-        } ]
+        } ],
+        "getPSRawItem" : {
+          "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
+          "name" : "rawitem1"
+        }
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "RAWITEM",
@@ -171,8 +176,12 @@
             "name" : "assignedto 等于(=) (closed)",
             "value" : "closed"
           } ],
+          "relatedItemNames" : [ "assignedto" ],
           "notMode" : false
-        } ]
+        } ],
+        "getPSRawItem" : {
+          "name" : "rawitem3"
+        }
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "RAWITEM",
@@ -193,8 +202,12 @@
             "logicType" : "SINGLE",
             "name" : "assignedto 值为空(Nil)"
           } ],
+          "relatedItemNames" : [ "assignedto" ],
           "notMode" : false
-        } ]
+        } ],
+        "getPSRawItem" : {
+          "name" : "rawitem2"
+        }
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
@@ -648,6 +661,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "XQCHANGE"
+        },
         "getPSSysImage" : {
           "glyph" : "xf002@FontAwesome",
           "cssClass" : "fa fa-search"
@@ -754,6 +771,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "START"
+        },
         "getPSNavigateParams" : [ {
           "key" : "actioninfo",
           "name" : "actioninfo",
@@ -793,6 +814,10 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "ASSIGNTO"
         },
         "getPSSysImage" : {
           "cssClass" : "people"
@@ -834,6 +859,10 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "FINISH"
         },
         "getPSNavigateParams" : [ {
           "key" : "actioninfo",
@@ -881,6 +910,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "PAUSE"
+        },
         "getPSNavigateParams" : [ {
           "key" : "actioninfo",
           "name" : "actioninfo",
@@ -921,6 +954,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CANCEL"
+        },
         "getPSSysImage" : {
           "cssClass" : "power"
         },
@@ -959,6 +996,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CLOSE"
+        },
         "getPSSysImage" : {
           "cssClass" : "backspace"
         },
@@ -992,6 +1033,10 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "ACTIVATE"
         },
         "getPSSysImage" : {
           "glyph" : "xf0d0@FontAwesome",

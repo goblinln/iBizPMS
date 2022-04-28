@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "(t1.id IN ( select tt3.story from zt_release  tt1 \nLEFT JOIN zt_build tt2 on tt1.build = tt2.id  \nLEFT JOIN zt_projectstory tt3 on tt3.project = tt2.project\nwhere tt1.id =  #{srf.datacontext.release}\n)  or (select tt2.project from zt_release  tt1 \nLEFT JOIN zt_build tt2 on tt1.build = tt2.id where tt1.id =  #{srf.datacontext.release}\n) = 0)\n\tAND t1.product =  #{srf.datacontext.product}\n\tAND not FIND_IN_SET (\nt1.ID,(SELECT STORIES FROM ZT_RELEASE WHERE ID =  #{srf.datacontext.release}\n))",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`ASSIGNEDTO`,\t\n\tt1.`ESTIMATE`,\n\tt1.`ID`,\n\tt11.`NAME` AS `MODULENAME`,\n\tt1.`OPENEDBY`,\n\tt1.`PLAN`,\n\tt1.`PRI`,\n\tt1.`PRODUCT`,\n\tt1.`STAGE`,\n\tt1.`STATUS`,\n\tt1.`TITLE`\t,\n        t1.STORYSN,\n        (select GROUP_CONCAT(t.title)  from zt_productplan t where t.`deleted` = '0' and t.id = t1.`plan`) as `Planname`\nFROM\n\t`zt_story` t1\n\tLEFT JOIN zt_module t11 ON t1.MODULE = t11.ID\n\tLEFT JOIN zt_story t21 ON t1.PARENT = t21.ID\n\tLEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID\n\tLEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEDATAQUERIES/ReleaseLinkableStories/PSDEDQCODES/MYSQL5.json"
+}

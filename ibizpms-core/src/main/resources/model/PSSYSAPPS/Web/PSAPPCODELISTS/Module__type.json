@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Module__type",
   "codeListType" : "STATIC",
   "codeName" : "Module__type",
   "dynaInstMode" : 1,
@@ -8,33 +9,27 @@
   "getPSCodeItems" : [ {
     "codeName" : "Line",
     "text" : "产品线",
-    "value" : "line",
-    "includeBeginValue" : true
+    "value" : "line"
   }, {
     "codeName" : "Story",
     "text" : "需求",
-    "value" : "story",
-    "includeBeginValue" : true
+    "value" : "story"
   }, {
     "codeName" : "Task",
     "text" : "任务",
-    "value" : "task",
-    "includeBeginValue" : true
+    "value" : "task"
   }, {
     "codeName" : "Doc",
     "text" : "文档目录",
-    "value" : "doc",
-    "includeBeginValue" : true
+    "value" : "doc"
   }, {
     "codeName" : "Case",
     "text" : "测试用例",
-    "value" : "case",
-    "includeBeginValue" : true
+    "value" : "case"
   }, {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug",
-    "includeBeginValue" : true
+    "value" : "bug"
   } ],
   "enableCache" : true
 }

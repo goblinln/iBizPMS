@@ -14,16 +14,6 @@ package cn.ibizlab.pms.zentao.logic.caselogic.casefavorite;
 
     no-loop
 
-            //逻辑处理节点[create]
-            rule "create"
-            ruleflow-group "casecasefavoritecreate"
-            when
-            then
-                        ibzfavoritesservice.create(casecasefavoriteibzfavorite);
-                        update(casecasefavoritedefault);//更新fact中变量值
-                        update(casecasefavoriteibzfavorite);//更新fact中变量值
-            end
-
             //逻辑处理节点[开始]
             rule "begin"
             ruleflow-group "casecasefavoritebegin"
@@ -39,6 +29,16 @@ package cn.ibizlab.pms.zentao.logic.caselogic.casefavorite;
                             casecasefavoriteibzfavorite.set("objectid",casecasefavoritedefault.get("id"));
                                 casecasefavoriteibzfavorite.set("account",curuser.getSessionParams().get("srfloginname"));
                             casecasefavoriteibzfavorite.set("type","case");
+                        update(casecasefavoritedefault);//更新fact中变量值
+                        update(casecasefavoriteibzfavorite);//更新fact中变量值
+            end
+
+            //逻辑处理节点[create]
+            rule "create"
+            ruleflow-group "casecasefavoritecreate"
+            when
+            then
+                        ibzfavoritesservice.create(casecasefavoriteibzfavorite);
                         update(casecasefavoritedefault);//更新fact中变量值
                         update(casecasefavoriteibzfavorite);//更新fact中变量值
             end

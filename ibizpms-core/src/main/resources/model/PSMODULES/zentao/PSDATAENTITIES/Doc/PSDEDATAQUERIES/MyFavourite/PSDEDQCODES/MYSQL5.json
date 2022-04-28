@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\n\t* \nFROM\n\t(\n\tSELECT\n\t\tt1.id,\n\t\tt1.`name` AS `title`,\n\t\tNULL AS `addedBy`,\n\t\tNULL AS `addedDate`,\n\t\tNULL AS `editedBy`,\n\t\tNULL AS `editedDate`,\n\t\t1 AS `ISFAVOURITES`, \n\t\t'doclib' as DOCQTYPE,\n                 t1.doclibsn as docsn\n\tFROM\n\t\tzt_doclib t1 \n\tWHERE\n\t\tt1.collector LIKE CONCAT_WS( '', '%,', #{srf.sessioncontext.srfloginname}, '%,' ) \n\t\tAND t1.deleted = '0' UNION\n\tSELECT\n\t\tt2.id,\n\t\tt2.`name` AS `title`,\n\t\tNULL AS `addedBy`,\n\t\tNULL AS `addedDate`,\n\t\tNULL AS `editedBy`,\n\t\tNULL AS `editedDate`,\n\t\t1 AS `ISFAVOURITES`, \n\t\t'module' as DOCQTYPE,\n                t2.modulesn as docsn \n\tFROM\n\t\tzt_module t2 \n\tWHERE\n\t\tt2.collector LIKE CONCAT_WS( '', '%,', #{srf.sessioncontext.srfloginname}, '%,' ) \n\t\tAND t2.deleted = '0' UNION\n\tSELECT\n\t\tt3.id,\n\t\tt3.title AS `title`,\n\t\tt3.addedBy,\n\t\tt3.addedDate,\n\t\tt3.editedBy,\n\t\tt3.editedDate,\n\t\t1 AS `ISFAVOURITES`, \n\t\t'doc' as DOCQTYPE,\n                 t3.docsn \n\tFROM\n\t\tzt_doc t3 \n\tWHERE\n\t\tt3.collector LIKE CONCAT_WS( '', '%,', #{srf.sessioncontext.srfloginname}, '%,' ) \n\tAND t3.deleted = '0' \n\t) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEDATAQUERIES/MyFavourite/PSDEDQCODES/MYSQL5.json"
+}

@@ -6,13 +6,19 @@
   "logicName" : "获取ZT账户登录信息\u001C",
   "name" : "getUser",
   "getPSDEActionInput" : {
-    "codeName" : "GetUserInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetUserInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetUserResult",
-    "name" : "返回对象",
+    "name" : "GetUserResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbiLoginDTO"
+    },
     "type" : "DTO"
   },
   "transactionMode" : "NONE",

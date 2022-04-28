@@ -1,20 +1,25 @@
 <template>
-    <div class="ibiz-group-select">
-        <div class="ibiz-group-content">
-            <span class="group-item-text" v-if="!multiple">
-                {{ selectName }}
-            </span>
-            <template v-else v-for="(select, index) of selects">
-                <div :key="index" class="ibiz-group-item">
-                    <span class="group-item-multiple">{{ select.label }}</span>
-                    <i v-if="!disabled" class="el-icon-circle-close" @click="remove(select)"></i>
-                </div>
-            </template>
+    <div :class="{'ibiz-group-select':true,'ibiz-group-select-tree':editorMode == 'tree'}">
+        <div v-if="editorMode == 'tree'" class="ibiz-group-select-tree-content">
+            <ibiz-select-tree  :NodesData="nodesData" v-model="curValue" :disabled="disabled" :multiple="multiple"></ibiz-select-tree>
         </div>
-        <div v-if="!disabled" class="ibiz-group-open">
-            <i v-if="!disabled && !multiple && selects.length > 0" class="el-icon-circle-close" @click="remove(selects[0])"></i>
-            <i class="el-icon-search" @click="openView" style="color: #c0c4cc;"></i>
-        </div>
+        <template v-else>
+            <div class="ibiz-group-content">
+                <span class="group-item-text" v-if="!multiple">
+                    {{ selectName }}
+                </span>
+                <template v-else v-for="(select, index) of selects">
+                    <div :key="index" class="ibiz-group-item">
+                        <span class="group-item-multiple">{{ select.label }}</span>
+                        <i v-if="!disabled" class="el-icon-circle-close" @click="remove(select)"></i>
+                    </div>
+                </template>
+            </div>
+            <div v-if="!disabled" class="ibiz-group-open">
+                <i v-if="!disabled && !multiple && selects.length > 0" class="el-icon-circle-close" @click="remove(selects[0])"></i>
+                <i class="el-icon-search" @click="openView" style="color: #c0c4cc;"></i>
+            </div>
+        </template>
     </div>
 </template>
 
@@ -22,7 +27,8 @@
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { CodeListService } from "ibiz-service";
-import { LogUtil } from 'ibiz-core';
+import { LogUtil, Util } from 'ibiz-core';
+import axios from 'axios';
 
 @Component({})
 export default class AppGroupSelect extends Vue {
@@ -138,12 +144,49 @@ export default class AppGroupSelect extends Vue {
     public requestMode!: 'get' | 'post' | 'delete' | 'put';
 
     /**
+     * 树双向绑定值
+     *
+     * @memberof AppGroupSelect
+     */ 
+    get curValue(){
+        return JSON.stringify(this.selects);
+    }
+    
+    set curValue(newVal:any ){
+        this.onSelect(newVal);
+    }
+
+    /**
+     * 分组编辑器模式
+     *
+     * @memberof AppGroupSelect
+     */ 
+    @Prop({ default: ''})
+    public editorMode ?:string ;
+
+    /**
      * 选中项集合
      *
      * @type {*}
      * @memberof AppGroupSelect
      */  
     protected selects: any[] = [];
+
+    /**
+     * 树模式数据
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */  
+    public nodesData:any[] = [];
+
+    /**
+     * 树模式下模拟树父节点标识（用于过滤父节点）
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */  
+    public groupIDArray:string[] = [];
 
     /**
      * 值变化
@@ -333,6 +376,98 @@ export default class AppGroupSelect extends Vue {
             LogUtil.log(error);
         })
         }
+    }
+
+    /**
+     * 声明周期
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */  
+    mounted(){
+        if(this.editorMode == 'tree'){
+            this.loadTree();
+        }
+    }
+
+    /**
+     * 加载树数据
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */  
+    public loadTree() {
+        const context: any = JSON.parse(JSON.stringify(this.context));
+        let orgid:string = "";
+        if(this.filter){
+            if(this.data[this.filter]){
+                orgid = this.data[this.filter];
+            }else if(context[this.filter]){
+                orgid = context[this.filter];
+            }else{
+                orgid = context.srforgid;
+            }
+        }else{
+            orgid = context.srforgid;
+        }
+        let tempTreeUrl = this.url?.replace('${selected-orgid}',orgid);
+        if(!tempTreeUrl){
+            return;
+        }
+        axios({method: this.requestMode, url: tempTreeUrl, data: {}}).then((response: any) => {
+            if(response.status === 200) {
+                this.parseTreeData(response.data);
+            }
+        }).catch((error: any) => {
+            LogUtil.log(error)
+        })
+    }
+
+    /**
+     * 树选择事件
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */  
+    public onSelect(event: any) {
+        if (!event || JSON.parse(event).length == 0) {
+            return;
+        }
+        const items: any[] = JSON.parse(event);
+        this.selects = [];
+        const _this: any = this;
+        // 过滤根节点
+        const curValue = items.filter((item: any) => {
+            return !(
+                _this.groupIDArray.findIndex((_item: any) => {
+                    return item.id === _item;
+                }) != -1
+            );
+        });
+        this.selects = curValue;
+        this.setValue();
+    }
+
+
+    /**
+     * 构造树数据
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */
+    public parseTreeData(data:any) {
+        let treeData:any = [];
+        data.forEach((item:any) => {
+            const index = treeData.findIndex((_item:any)=>{return _item.label == item.group});
+            if(index != -1){
+                treeData[index].children.push(item);
+            }else{
+                const uuid = Util.createUUID();
+                this.groupIDArray.push(uuid);
+                treeData.push({id:uuid,label:item.group,children:[item]});
+            }
+        });
+        this.nodesData =treeData;
     }
   
 }

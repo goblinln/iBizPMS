@@ -6,13 +6,19 @@
   "logicName" : "根据代码账户查询用户信息",
   "name" : "getByCommiter",
   "getPSDEActionInput" : {
-    "codeName" : "GetByCommiterInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetByCommiterInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetByCommiterResult",
-    "name" : "返回对象",
+    "name" : "GetByCommiterResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "UserDTO"
+    },
     "type" : "DTO"
   },
   "builtinAction" : true

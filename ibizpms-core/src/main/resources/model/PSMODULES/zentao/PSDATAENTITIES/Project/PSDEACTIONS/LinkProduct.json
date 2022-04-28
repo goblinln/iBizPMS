@@ -6,13 +6,15 @@
   "logicName" : "关联产品",
   "name" : "LinkProduct",
   "getPSDEActionInput" : {
-    "codeName" : "LinkProductInput",
-    "name" : "输入对象",
+    "name" : "LinkProductInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "LinkProductResult",
-    "name" : "返回对象",
+    "name" : "LinkProductResult",
     "type" : "VOID"
   }
 }

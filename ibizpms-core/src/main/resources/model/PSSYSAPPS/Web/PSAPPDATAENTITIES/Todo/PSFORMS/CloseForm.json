@@ -98,6 +98,11 @@
         "colMDOffset" : 4,
         "layout" : "TABLE_24COL"
       },
+      "getPSRawItem" : {
+        "caption" : "您确定要关闭这条待办吗？",
+        "contentType" : "RAW",
+        "name" : "rawitem1"
+      },
       "rawContent" : "您确定要关闭这条待办吗？",
       "rawItemHeight" : -1.0,
       "rawItemWidth" : -1.0,

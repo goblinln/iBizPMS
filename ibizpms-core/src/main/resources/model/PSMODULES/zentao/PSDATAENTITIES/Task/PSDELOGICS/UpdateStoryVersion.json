@@ -42,8 +42,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     }, {
       "getDstPSDELogicNode" : {
         "modelref" : true,
@@ -83,8 +82,23 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
+      }
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "重置需求版本",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "STORYVERSION",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
       },
-      "defaultLink" : false
+      "name" : "直接值[1] ==> Default[STORYVERSION]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "1",
+      "srcValueType" : "SRCVALUE"
     } ],
     "parallelOutput" : true
   }, {
@@ -108,31 +122,17 @@
     "sql" : "select version as STORYVERSION from zt_story where id = ?",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
-  }, {
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "重置需求版本",
-    "getPSDELogicNodeParams" : [ {
-      "dstFieldName" : "STORYVERSION",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "name" : "直接值[1] ==> Default[STORYVERSION]",
-      "paramAction" : "SETPARAMVALUE",
-      "srcValue" : "1",
-      "srcValueType" : "SRCVALUE"
-    } ],
-    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

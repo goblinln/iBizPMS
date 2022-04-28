@@ -6,13 +6,15 @@
   "logicName" : "手动生成项目月报",
   "name" : "ManualCreateMonthly",
   "getPSDEActionInput" : {
-    "codeName" : "ManualCreateMonthlyInput",
-    "name" : "输入对象",
+    "name" : "ManualCreateMonthlyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbizproProjectMonthlyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ManualCreateMonthlyResult",
-    "name" : "返回对象",
+    "name" : "ManualCreateMonthlyResult",
     "type" : "VOID"
   }
 }

@@ -582,6 +582,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "TestCaseStep",
+  "dEAPITag" : "IBZ_API__TEST_CASE_STEP",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCaseStep.json",
@@ -591,10 +592,14 @@
     "actionRSMode" : 1,
     "codeName" : "caseSteps",
     "dataRSMode" : 0,
+    "majorDECodeName" : "TestCase",
+    "majorDEName" : "ZT_CASE",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
     },
+    "minorDECodeName" : "TestCaseStep",
+    "minorDEName" : "ZT_CASESTEP",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCaseStep.json"
@@ -608,12 +613,17 @@
     "tempDataOrder" : 10
   } ],
   "name" : "ZT_CASESTEP",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_CASESTEP",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "EXPECT",
     "codeName" : "Expect"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableTempData" : true,

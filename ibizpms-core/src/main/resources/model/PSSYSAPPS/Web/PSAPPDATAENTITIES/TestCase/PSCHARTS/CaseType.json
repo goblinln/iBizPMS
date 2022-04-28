@@ -23,6 +23,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "RePortCase",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchRePortCase"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {

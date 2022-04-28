@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Project__acl",
   "codeListType" : "STATIC",
   "codeName" : "Project__acl",
   "dynaInstMode" : 1,
@@ -13,13 +14,11 @@
     "codeName" : "Open",
     "text" : "默认设置(有项目视图权限，即可访问)",
     "value" : "open",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Private",
     "text" : "私有项目(只有项目团队成员才能访问)",
-    "value" : "private",
-    "includeBeginValue" : true
+    "value" : "private"
   } ],
   "enableCache" : true
 }

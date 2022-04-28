@@ -6,13 +6,15 @@
   "logicName" : "置顶",
   "name" : "ProductTop",
   "getPSDEActionInput" : {
-    "codeName" : "ProductTopInput",
-    "name" : "输入对象",
+    "name" : "ProductTopInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ProductTopResult",
-    "name" : "返回对象",
+    "name" : "ProductTopResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

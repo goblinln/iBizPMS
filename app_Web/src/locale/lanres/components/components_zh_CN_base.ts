@@ -69,6 +69,7 @@ function getLocaleResourceBase(){
           filetypeerrorinfo: '请选择图片类型的文件，如JPEG，GIF，PNG，BMP',
           downloaderror: "图片下载失败！",
           caption: "上传",
+          limitselect: '当前限制选择数量为 ',
         },
         camera: {
           dev: "开发中",

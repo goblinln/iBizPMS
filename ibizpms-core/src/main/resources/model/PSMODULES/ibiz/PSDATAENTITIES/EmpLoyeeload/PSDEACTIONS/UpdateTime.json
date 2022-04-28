@@ -6,14 +6,16 @@
   "logicName" : "UpdateTime",
   "name" : "UpdateTime",
   "getPSDEActionInput" : {
-    "codeName" : "UpdateTimeInput",
-    "name" : "输入对象",
+    "name" : "UpdateTimeInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "EmpLoyeeloadDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UpdateTimeResult",
-    "name" : "返回对象",
+    "name" : "UpdateTimeResult",
     "type" : "VOID"
   }
 }

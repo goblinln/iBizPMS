@@ -124,6 +124,7 @@ export class AppTreeService extends ControlServiceBase {
             srfnodeid: srfnodeid,
             strNodeType: strNodeType,
             viewparams: Util.deepCopy(data).viewparams,
+            srfparentdata: Util.deepCopy(data).parentData
         });
 
         // 分解节点标识
@@ -421,6 +422,12 @@ export class AppTreeService extends ControlServiceBase {
                                 } else {
                                     Object.assign(treeNode, { expanded: filter.isAutoExpand });
                                 }
+                                if ((nodeJson as IPSDETreeDataSetNode).appendCaption) {
+                                    Object.assign(treeNode, { appendCaption: true });
+                                }
+                                if ((nodeJson as IPSDETreeDataSetNode).textFormat) {
+                                    Object.assign(treeNode, { textFormat: (nodeJson as IPSDETreeDataSetNode).textFormat });
+                                } 
                                 Object.assign(treeNode, { leaf: !nodeJson.hasPSDETreeNodeRSs() });
                                 if ((nodeJson as IPSDETreeDataSetNode)?.getLeafFlagPSAppDEField()) {
                                     let objLeafFlag = entity[(nodeJson as IPSDETreeDataSetNode).getLeafFlagPSAppDEField()?.codeName.toLowerCase() as string];
@@ -428,6 +435,8 @@ export class AppTreeService extends ControlServiceBase {
                                         let strLeafFlag: string = objLeafFlag.toString().toLowerCase();
                                         if (Object.is(strLeafFlag, '1') || Object.is(strLeafFlag, 'true')) {
                                             Object.assign(treeNode, { leaf: true });
+                                        } else {
+                                            Object.assign(treeNode, { leaf: false });
                                         }
                                     }
                                 }
@@ -458,9 +467,9 @@ export class AppTreeService extends ControlServiceBase {
                                 if (nodeJson?.getPSNavigateParams()) {
                                     Object.assign(treeNode, { navigateParams: ModelTool.getNavigateParams(nodeJson) });
                                 }
-                                // 计数器标识
-                                if (nodeJson.counterId) {
-                                    Object.assign(treeNode, { counterId: nodeJson.counterId });
+                                // 计数器标识(TODO)
+                                if (nodeJson.M.getChildCntPSAppDEField && nodeJson.M.getChildCntPSAppDEField.codeName) {
+                                    Object.assign(treeNode, { counterId: entity[nodeJson.M.getChildCntPSAppDEField.codeName.toLowerCase()] });
                                 }
                                 // 为1时计数器不显示0值
                                 if (nodeJson.counterMode) {
@@ -514,8 +523,9 @@ export class AppTreeService extends ControlServiceBase {
         }
         const appDataEntity = nodeJson.getPSAppDataEntity() as IPSAppDataEntity;
         await appDataEntity.fill();
-        if ((nodeJson as IPSDETreeDataSetNode)?.getSortPSAppDEField() && (nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName && (nodeJson as IPSDETreeDataSetNode)?.sortDir) {
-            Object.assign(searchFilter, { sort: `${(nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName.toLowerCase()},${(nodeJson as IPSDETreeDataSetNode).sortDir.toLowerCase()}` });
+        if ((nodeJson as IPSDETreeDataSetNode)?.getSortPSAppDEField() && (nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName) {
+            const sortDir = (nodeJson as IPSDETreeDataSetNode).sortDir ? (nodeJson as IPSDETreeDataSetNode).sortDir.toLowerCase() : 'asc';
+            Object.assign(searchFilter, { sort: `${(nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName.toLowerCase()},${sortDir}` });
         }
         let appEntityService = await this.globalService.getService(appDataEntity?.codeName, context);
         let list: any[] = [];
@@ -678,7 +688,7 @@ export class AppTreeService extends ControlServiceBase {
             }
             Object.keys(resNavContext).forEach((item: any) => {
                 let curDataObj: any = resNavContext[item];
-                this.handleCustomDataLogic(context, tempViewParams, curDataObj, tempContextData, item);
+                this.handleCustomDataLogic(context, tempViewParams, curDataObj, tempContextData, item, filter?.srfparentdata);
             });
             return tempContextData;
         } else {
@@ -707,7 +717,7 @@ export class AppTreeService extends ControlServiceBase {
             if (Object.keys(resNavParams).length > 0) {
                 Object.keys(resNavParams).forEach((item: any) => {
                     let curDataObj: any = resNavParams[item];
-                    this.handleCustomDataLogic(context, tempViewParams, curDataObj, tempViewParamData, item);
+                    this.handleCustomDataLogic(context, tempViewParams, curDataObj, tempViewParamData, item, filter?.srfparentdata);
                 });
             }
             if (Object.keys(resParams).length > 0) {
@@ -731,10 +741,11 @@ export class AppTreeService extends ControlServiceBase {
      * @param curNavData 节点关系导航参数对象
      * @param tempData 返回数据
      * @param item 节点关系导航参数键值
+     * @param parentData 父值
      *
      * @memberof AppTreeService
      */
-    public handleCustomDataLogic(context: any, viewparams: any, curNavData: any, tempData: any, item: string) {
+    public handleCustomDataLogic(context: any, viewparams: any, curNavData: any, tempData: any, item: string,parentData?:any) {
         // 直接值直接赋值
         if (curNavData.isRawValue) {
             if (Util.isEmpty(curNavData.value)) {
@@ -754,7 +765,14 @@ export class AppTreeService extends ControlServiceBase {
             }
         } else {
             // 先从导航上下文取数，没有再从导航参数（URL）取数，如果导航上下文和导航参数都没有则为null
-            if (context[curNavData.value.toLowerCase()] != null) {
+            if ( parentData && parentData[curNavData.value.toLowerCase()] != null) {
+                Object.defineProperty(tempData, item.toLowerCase(), {
+                    value: parentData[curNavData.value.toLowerCase()],
+                    writable: true,
+                    enumerable: true,
+                    configurable: true,
+                });
+            } else if (context[curNavData.value.toLowerCase()] != null) {
                 Object.defineProperty(tempData, item.toLowerCase(), {
                     value: context[curNavData.value.toLowerCase()],
                     writable: true,

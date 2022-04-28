@@ -96,7 +96,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}`);
+        const res = await this.http.get(`/ibzmyterritories/${encodeURIComponent(_context.ibzmyterritory)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -179,7 +179,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibzmyterritories/${_context.ibzmyterritory}`);
+        const res = await this.http.delete(`/ibzmyterritories/${encodeURIComponent(_context.ibzmyterritory)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -197,7 +197,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibzmyterritories/${_context.ibzmyterritory}`, _data);
+        const res = await this.http.put(`/ibzmyterritories/${encodeURIComponent(_context.ibzmyterritory)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -315,7 +315,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}/select`);
+        const res = await this.http.get(`/ibzmyterritories/${encodeURIComponent(_context.ibzmyterritory)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

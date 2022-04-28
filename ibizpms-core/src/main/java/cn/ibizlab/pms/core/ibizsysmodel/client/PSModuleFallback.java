@@ -33,10 +33,6 @@ public class PSModuleFallback implements FallbackFactory<PSModuleFeignClient> {
         String finalErrorMessage = errorMessage;
         return new PSModuleFeignClient(){
 
-            public Page<PSModule> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSModule create(PSModule psmodule) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSModuleFallback implements FallbackFactory<PSModuleFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSModule update(String psmoduleid, PSModule psmodule) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSModule> psmodules) {
+            public PSModule get(String psmoduleid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class PSModuleFallback implements FallbackFactory<PSModuleFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSModule get(String psmoduleid) {
+            public PSModule update(String psmoduleid, PSModule psmodule) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSModule> psmodules) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSModule psmodule) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSModule> searchDefault(PSModuleSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class PSModuleFallback implements FallbackFactory<PSModuleFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSModule psmodule) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSModule psmodule) {
@@ -86,10 +87,9 @@ public class PSModuleFallback implements FallbackFactory<PSModuleFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSModule> searchDefault(PSModuleSearchContext context) {
+            public Page<PSModule> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

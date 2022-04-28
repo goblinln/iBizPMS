@@ -7,14 +7,24 @@
   "name" : "Get",
   "orderValue" : 31,
   "getPSDEActionInput" : {
-    "codeName" : "GetInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    },
+    "name" : "GetInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetResult",
-    "name" : "返回对象",
+    "name" : "GetResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "SysOrganizationDTO"
+    },
     "type" : "DTO"
+  },
+  "getPSSubSysServiceAPIDEMethod" : {
+    "modelref" : true,
+    "id" : "Get"
   },
   "builtinAction" : true
 }

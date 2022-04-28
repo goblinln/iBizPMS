@@ -137,6 +137,10 @@
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
+        },
+        "getPSRawItem" : {
+          "htmlContent" : "<br/>",
+          "name" : "rawitem1"
         }
       }, {
         "itemStyle" : "DEFAULT",
@@ -223,9 +227,16 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "caption" : "h",
+            "contentType" : "RAW",
+            "name" : "rawitem2"
+          },
           "rawContent" : "h"
         }, {
           "actionType" : "UIACTION",
+          "buttonHeight" : 24.0,
+          "buttonStyle" : "DEFAULT",
           "caption" : "移除",
           "contentHeight" : 24.0,
           "height" : 24.0,
@@ -262,6 +273,10 @@
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+            },
+            "getPSDEOPPriv" : {
+              "modelref" : true,
+              "id" : "ZTProduct__PROJECTLINK"
             },
             "getPSNavigateContexts" : [ {
               "key" : "PROJECT",

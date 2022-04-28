@@ -1,28 +1,35 @@
 {
+  "codeListTag" : "zentao__CaseQuickpachet",
   "codeListType" : "STATIC",
   "codeName" : "CaseQuickpachet",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/CaseQuickpachet.json",
   "emptyText" : "未定义",
+  "name" : "功能测试快速分组",
   "getPSCodeItems" : [ {
     "codeName" : "All",
     "data" : "{}",
     "text" : "所有",
     "value" : "ALL",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Tome",
     "data" : "{\"n_status1_eq\":\"storychange\"}",
     "text" : "需求变动",
-    "value" : "TOME",
-    "includeBeginValue" : true
+    "value" : "TOME"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

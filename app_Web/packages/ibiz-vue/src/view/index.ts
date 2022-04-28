@@ -40,3 +40,4 @@ export { MapViewBase } from './mapview-base';
 export { DeReportViewBase } from './dereportview-base';
 export { MapExpViewBase } from './mapexpview-base';
 export { DePanelViewBase } from './depanelview-base';
+export { DeIndexViewBase } from './deindexview-base';

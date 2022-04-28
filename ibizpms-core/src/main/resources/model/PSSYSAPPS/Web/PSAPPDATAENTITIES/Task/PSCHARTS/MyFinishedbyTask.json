@@ -23,6 +23,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "CurFinishTask",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchCurFinishTask"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {

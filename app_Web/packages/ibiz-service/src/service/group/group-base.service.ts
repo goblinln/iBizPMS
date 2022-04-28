@@ -96,7 +96,7 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/groups/${_context.group}`);
+        const res = await this.http.get(`/groups/${encodeURIComponent(_context.group)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/groups/${_context.group}`);
+        const res = await this.http.delete(`/groups/${encodeURIComponent(_context.group)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/groups/${_context.group}`, _data);
+        const res = await this.http.put(`/groups/${encodeURIComponent(_context.group)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/groups/${_context.group}/select`);
+        const res = await this.http.get(`/groups/${encodeURIComponent(_context.group)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

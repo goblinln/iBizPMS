@@ -1,39 +1,44 @@
 {
+  "codeListTag" : "zentao__Bug__severity",
   "codeListType" : "STATIC",
   "codeName" : "Bug__severity",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__severity.json",
   "emptyText" : "未定义",
+  "name" : "Bug严重程度",
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "color" : "rgba(241, 11, 11, 1)",
     "text" : "致命",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   }, {
     "codeName" : "Item_2",
     "color" : "rgba(239, 155, 18, 1)",
     "text" : "严重",
-    "value" : "2",
-    "includeBeginValue" : true
+    "value" : "2"
   }, {
     "codeName" : "Item_3",
     "color" : "rgba(58, 149, 247, 1)",
     "text" : "一般",
-    "value" : "3",
-    "includeBeginValue" : true
+    "value" : "3"
   }, {
     "codeName" : "Item_4",
     "color" : "rgba(11, 228, 87, 1)",
     "text" : "轻微",
-    "value" : "4",
-    "includeBeginValue" : true
+    "value" : "4"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : true,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

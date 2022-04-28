@@ -2,6 +2,7 @@
     <div class="app-panel-button">
         <Button type="primary" long @click="onClick" :style="buttonStyle" :disabled="disabled" :title="tooltip">
             <i v-if="icon" :class="icon"></i>
+            <img v-else-if="imagePath" :src="imagePath" alt="">
             <span v-if="showCaption" :class="lableStyle">{{caption ? caption : ''}}</span>
         </Button>
     </div>
@@ -59,6 +60,14 @@ export default class AppPanelButton extends Vue {
      * @memberof AppPanelButton
      */
     @Prop() public tooltip?: string;
+
+    /**
+     * 图片路径
+     * 
+     * 
+     * @memberof AppPanelButton
+     */
+    @Prop() public imagePath?: string;
 
     /**
      * 禁用状态

@@ -287,6 +287,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"padding-left: 30px;text-align: center;\"&gt;&amp;nbsp;今日更新&amp;nbsp;&amp;nbsp;&lt;b&gt;{{data.todayupdatecnt ? data.todayupdatecnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem4"
+          },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -301,6 +306,11 @@
             "colLG" : 12,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"padding-left: 30px;text-align: center;\"&gt;&amp;nbsp;最近更新&amp;nbsp;&amp;nbsp;&lt;b&gt;{{data.recentupdatecnt ? data.recentupdatecnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem5"
           },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -346,6 +356,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "getPSRawItem" : {
+          "content" : "<p>&lt;div style=\"margin-top: 0px;\"&gt;&lt;/div&gt;</p>",
+          "contentType" : "HTML",
+          "name" : "rawitem6"
+        },
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
         "showCaption" : true
@@ -368,6 +383,11 @@
             "colLGOffset" : 3,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 40px;padding-left: 10px;\"&gt;&amp;nbsp;最近添加&amp;nbsp;&amp;nbsp;&lt;b&gt;{{data.recentaddcnt ? data.recentaddcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem1"
           },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -481,6 +501,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 40px;padding-left: 10px;\"&gt;&amp;nbsp;我的文档&amp;nbsp;&amp;nbsp;&lt;b&gt;{{data.mydoccnt ? data.mydoccnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem2"
+          },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -592,6 +617,11 @@
             "colLGOffset" : 3,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 40px;padding-left: 10px;\"&gt;&amp;nbsp;我的收藏&amp;nbsp;&amp;nbsp;&lt;b&gt;{{data.myfavouritecnt ? data.myfavouritecnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem3"
           },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,

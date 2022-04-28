@@ -12,6 +12,13 @@ package cn.ibizlab.pms.zentao.logic.doclogic.curuserisf;
 
     no-loop
 
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "doccuruserisfbegin"
+            when
+            then
+            end
+
             //逻辑处理节点[查询是否收藏]
             rule "rawsqlcall1"
             ruleflow-group "doccuruserisfrawsqlcall1"
@@ -29,11 +36,4 @@ package cn.ibizlab.pms.zentao.logic.doclogic.curuserisf;
                                     }
                             }
                         update(doccuruserisfdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "doccuruserisfbegin"
-            when
-            then
             end

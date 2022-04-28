@@ -7,13 +7,19 @@
   "name" : "GetTemp",
   "orderValue" : 32,
   "getPSDEActionInput" : {
-    "codeName" : "GetTempInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "IBZ_PLANTEMPLETDETAILID",
+      "codeName" : "IbzPlanTempletDetailId"
+    },
+    "name" : "GetTempInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetTempResult",
-    "name" : "返回对象",
+    "name" : "GetTempResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzPlanTempletDetailDTO"
+    },
     "type" : "DTO"
   },
   "tempDataMode" : 2,

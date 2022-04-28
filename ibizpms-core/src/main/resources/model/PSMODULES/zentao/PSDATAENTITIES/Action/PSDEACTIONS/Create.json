@@ -9,9 +9,6 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDELOGICS/Comment.json"
     },
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : true
   } ],
   "codeName" : "Create",
@@ -20,14 +17,16 @@
   "name" : "Create",
   "orderValue" : 1,
   "getPSDEActionInput" : {
-    "codeName" : "CreateInput",
-    "name" : "输入对象",
+    "name" : "CreateInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ActionDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CreateResult",
-    "name" : "返回对象",
+    "name" : "CreateResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1",

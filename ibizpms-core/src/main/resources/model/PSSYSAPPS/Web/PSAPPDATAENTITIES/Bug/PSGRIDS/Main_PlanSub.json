@@ -228,6 +228,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "PLANLINK"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "STORY",
             "name" : "STORY",

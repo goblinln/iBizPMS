@@ -96,7 +96,7 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzfavorites/${_context.ibzfavorites}`);
+        const res = await this.http.get(`/ibzfavorites/${encodeURIComponent(_context.ibzfavorites)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibzfavorites/${_context.ibzfavorites}`);
+        const res = await this.http.delete(`/ibzfavorites/${encodeURIComponent(_context.ibzfavorites)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibzfavorites/${_context.ibzfavorites}`, _data);
+        const res = await this.http.put(`/ibzfavorites/${encodeURIComponent(_context.ibzfavorites)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzfavorites/${_context.ibzfavorites}/select`);
+        const res = await this.http.get(`/ibzfavorites/${encodeURIComponent(_context.ibzfavorites)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -28,6 +28,9 @@ import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEFSearchMode;
 import net.ibizsys.model.dataentity.defield.IPSLinkDEField;
+import net.ibizsys.model.dataentity.defield.IPSDEField;
+import net.ibizsys.model.dataentity.defield.valuerule.IPSDEFValueRule;
+import net.ibizsys.model.dataentity.logic.IPSDEFLogic;
 import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
@@ -54,10 +57,13 @@ import net.ibizsys.runtime.dataentity.report.IDEReportRuntime;
 import net.ibizsys.runtime.security.DataAccessActions;
 import net.ibizsys.runtime.security.DataRanges;
 import net.ibizsys.runtime.security.IUserContext;
+import net.ibizsys.runtime.dataentity.action.DEActionModes;
+import net.ibizsys.runtime.dataentity.action.DEActions;
+import net.ibizsys.runtime.dataentity.action.IDEScriptLogicRuntime;
+import net.ibizsys.runtime.dataentity.defield.DEFDupCheckModes;
 import net.ibizsys.runtime.util.*;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 import org.flowable.ui.common.service.exception.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -203,7 +209,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                 if (psDEUserRoleOPPrivs != null) {
                     for (IPSDEUserRoleOPPriv psDEUserRoleOPPriv : psDEUserRoleOPPrivs) {
                         Map<String, String> deAction = new HashMap<>();
-                        deAction.put(psDEUserRoleOPPriv.getDataAccessAction(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
+                        deAction.put(psDEUserRoleOPPriv.getDataAccessAction(), StringUtils.isEmpty(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
                         deActions.add(deAction);
                     }
                 }
@@ -273,7 +279,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         if (iPSDERBase instanceof IPSDER1N) {
             IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
             String strNestField = iPSDER1N.getMinorCodeName();
-            if (StringUtils.isBlank(strNestField)) {
+            if (StringUtils.isEmpty(strNestField)) {
                 try {
                     strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
                 } catch (Exception e) {
@@ -295,7 +301,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         if (iPSDERBase instanceof IPSDER1N) {
             IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
             String strNestField = iPSDER1N.getMinorCodeName();
-            if (StringUtils.isBlank(strNestField)) {
+            if (StringUtils.isEmpty(strNestField)) {
                 try {
                     strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
                 } catch (Exception e) {
@@ -312,7 +318,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         if (iPSDERBase instanceof IPSDER1N) {
             IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
             String strNestField = iPSDER1N.getMinorCodeName();
-            if (StringUtils.isBlank(strNestField)) {
+            if (StringUtils.isEmpty(strNestField)) {
                 try {
                     strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
                 } catch (Exception e) {
@@ -330,7 +336,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         if (iPSDERBase instanceof IPSDER1N) {
             IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
             String strNestField = iPSDER1N.getMinorCodeName();
-            if (StringUtils.isBlank(strNestField)) {
+            if (StringUtils.isEmpty(strNestField)) {
                 try {
                     strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
                 } catch (Exception e) {
@@ -705,9 +711,9 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         Consumer<QueryWrapper> authorityConditions = authorityCondition -> {
             for (UAADEAuthority uaadeAuthority : authorities) {
                 //未设置权限能力范围 拒绝操作
-                if ((StringUtils.isBlank(this.getOrgIdField()) || (StringUtils.isNotBlank(this.getOrgIdField()) && ((uaadeAuthority.getEnableorgdr() == null || uaadeAuthority.getEnableorgdr() == 0) || (uaadeAuthority.getEnableorgdr() == 1 && (uaadeAuthority.getOrgdr() == null || uaadeAuthority.getOrgdr() == 0)))))
-                        && (StringUtils.isBlank(this.getDeptIdField()) || (StringUtils.isNotBlank(this.getDeptIdField()) && ((uaadeAuthority.getEnabledeptdr() == null || uaadeAuthority.getEnabledeptdr() == 0) || (uaadeAuthority.getEnabledeptdr() == 1 && (uaadeAuthority.getDeptdr() == null || uaadeAuthority.getDeptdr() == 0)))))
-                        && (StringUtils.isBlank(uaadeAuthority.getBscope()))
+                if ((StringUtils.isEmpty(this.getOrgIdField()) || (!StringUtils.isEmpty(this.getOrgIdField()) && ((uaadeAuthority.getEnableorgdr() == null || uaadeAuthority.getEnableorgdr() == 0) || (uaadeAuthority.getEnableorgdr() == 1 && (uaadeAuthority.getOrgdr() == null || uaadeAuthority.getOrgdr() == 0)))))
+                        && (StringUtils.isEmpty(this.getDeptIdField()) || (!StringUtils.isEmpty(this.getDeptIdField()) && ((uaadeAuthority.getEnabledeptdr() == null || uaadeAuthority.getEnabledeptdr() == 0) || (uaadeAuthority.getEnabledeptdr() == 1 && (uaadeAuthority.getDeptdr() == null || uaadeAuthority.getDeptdr() == 0)))))
+                        && (StringUtils.isEmpty(uaadeAuthority.getBscope()))
                 ) {
                     Consumer<QueryWrapper> denyDataCondition = dataCondition -> {
                         dataCondition.apply("1 <> 1");
@@ -744,14 +750,14 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             if (uaadeAuthority.getEnableorgdr() != null && uaadeAuthority.getEnableorgdr() == 1
                     && uaadeAuthority.getOrgdr() != null && uaadeAuthority.getOrgdr() > 0) {
                 //当前机构
-                if (StringUtils.isNotBlank(this.getOrgIdField()) && (DataRanges.ORG_CURRENT & uaadeAuthority.getOrgdr()) > 0) {
+                if (!StringUtils.isEmpty(this.getOrgIdField()) && (DataRanges.ORG_CURRENT & uaadeAuthority.getOrgdr()) > 0) {
                     Consumer<QueryWrapper> org = orgQw -> {
                         orgQw.eq(this.getOrgIdField(), curUser.getOrgid());
                     };
                     authorityCondition.or(org);
                 }
                 //上级机构
-                if (StringUtils.isNotBlank(this.getOrgIdField()) && (DataRanges.ORG_PARENT & uaadeAuthority.getOrgdr()) > 0) {
+                if (!StringUtils.isEmpty(this.getOrgIdField()) && (DataRanges.ORG_PARENT & uaadeAuthority.getOrgdr()) > 0) {
                     if (orgParent.size() > 0) {
                         Consumer<QueryWrapper> org = orgQw -> {
                             orgQw.in(this.getOrgIdField(), orgParent);
@@ -760,7 +766,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     }
                 }
                 //下级机构
-                if (StringUtils.isNotBlank(this.getOrgIdField()) && (DataRanges.ORG_CHILD & uaadeAuthority.getOrgdr()) > 0) {
+                if (!StringUtils.isEmpty(this.getOrgIdField()) && (DataRanges.ORG_CHILD & uaadeAuthority.getOrgdr()) > 0) {
                     if (orgChild.size() > 0) {
                         Consumer<QueryWrapper> org = orgQw -> {
                             orgQw.in(this.getOrgIdField(), orgChild);
@@ -769,7 +775,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     }
                 }
                 //无值
-                if (StringUtils.isNotBlank(this.getOrgIdField()) && (DataRanges.ORG_NULL & uaadeAuthority.getOrgdr()) > 0) {
+                if (!StringUtils.isEmpty(this.getOrgIdField()) && (DataRanges.ORG_NULL & uaadeAuthority.getOrgdr()) > 0) {
                     Consumer<QueryWrapper> org = orgQw -> {
                         orgQw.isNull(this.getOrgIdField());
                     };
@@ -781,14 +787,14 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             if (uaadeAuthority.getEnabledeptdr() != null && uaadeAuthority.getEnabledeptdr() == 1
                     && uaadeAuthority.getDeptdr() != null && uaadeAuthority.getDeptdr() > 0) {
                 //当前
-                if (StringUtils.isNotBlank(this.getDeptIdField()) && (DataRanges.SECTOR_CURRENT & uaadeAuthority.getDeptdr()) > 0) {
+                if (!StringUtils.isEmpty(this.getDeptIdField()) && (DataRanges.SECTOR_CURRENT & uaadeAuthority.getDeptdr()) > 0) {
                     Consumer<QueryWrapper> dept = deptQw -> {
                         deptQw.eq(this.getDeptIdField(), curUser.getDeptid());
                     };
                     authorityCondition.or(dept);
                 }
                 //上级
-                if (StringUtils.isNotBlank(this.getDeptIdField()) && (DataRanges.SECTOR_PARENT & uaadeAuthority.getDeptdr()) > 0) {
+                if (!StringUtils.isEmpty(this.getDeptIdField()) && (DataRanges.SECTOR_PARENT & uaadeAuthority.getDeptdr()) > 0) {
                     if (orgDeptParent.size() > 0) {
                         Consumer<QueryWrapper> dept = deptQw -> {
                             deptQw.in(this.getDeptIdField(), orgDeptParent);
@@ -797,7 +803,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     }
                 }
                 //下级
-                if (StringUtils.isNotBlank(this.getDeptIdField()) && (DataRanges.SECTOR_CHILD & uaadeAuthority.getDeptdr()) > 0) {
+                if (!StringUtils.isEmpty(this.getDeptIdField()) && (DataRanges.SECTOR_CHILD & uaadeAuthority.getDeptdr()) > 0) {
                     if (orgDeptChild.size() > 0) {
                         Consumer<QueryWrapper> dept = deptQw -> {
                             deptQw.in(this.getDeptIdField(), orgDeptChild);
@@ -806,7 +812,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     }
                 }
                 //无值
-                if (StringUtils.isNotBlank(this.getDeptIdField()) && (DataRanges.SECTOR_NULL & uaadeAuthority.getDeptdr()) > 0) {
+                if (!StringUtils.isEmpty(this.getDeptIdField()) && (DataRanges.SECTOR_NULL & uaadeAuthority.getDeptdr()) > 0) {
                     Consumer<QueryWrapper> dept = deptQw -> {
                         deptQw.isNull(this.getDeptIdField());
                     };
@@ -815,7 +821,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             }
 
             //自定义条件
-            if (StringUtils.isNotBlank(uaadeAuthority.getBscope())) {
+            if (!StringUtils.isEmpty(uaadeAuthority.getBscope())) {
                 if (!uaadeAuthority.isDataset()) {
                     authorityCondition.or(ScopeUtils.parse(this, uaadeAuthority.getBscope()));
                 } else {
@@ -829,7 +835,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
 
             //操作判断
-            List<Map<String, String>> deActions = uaadeAuthority.getDeAction().stream().filter(deaction -> deaction.containsKey(action) && StringUtils.isNotBlank(deaction.get(action)))
+            List<Map<String, String>> deActions = uaadeAuthority.getDeAction().stream().filter(deaction -> deaction.containsKey(action) && !StringUtils.isEmpty(deaction.get(action)))
                     .collect(Collectors.toList());
             if (deActions.size() > 0) {
                 authorityCondition.and(ScopeUtils.parse(this, uaadeAuthority.getBscope()));
@@ -929,7 +935,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         //操作映射
         List<IPSDEOPPriv> mspdeopPrivs = null;
         try {
-            mspdeopPrivs = this.getPSDataEntity().getAllPSDEOPPrivs().stream().filter(oppriv -> StringUtils.isNotBlank(oppriv.getMapPSDEName()) && oppriv.getMapPSDEName().equals(PDEName)).collect(Collectors.toList());
+            mspdeopPrivs = this.getPSDataEntity().getAllPSDEOPPrivs().stream().filter(oppriv -> !StringUtils.isEmpty(oppriv.getMapPSDEName()) && oppriv.getMapPSDEName().equals(PDEName)).collect(Collectors.toList());
         } catch (Exception e) {
             throw new DataEntityRuntimeException(String.format("根据[%s]数据获取数据全部能力发生错误：%s", PDEName, e.getMessage()), Errors.INTERNALERROR, this);
         }
@@ -1059,7 +1065,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public String getKey() {
-        if (StringUtils.isBlank(this.key)) {
+        if (StringUtils.isEmpty(this.key)) {
             this.key = this.getKeyFieldQueryExp();
         }
         return this.key;
@@ -1071,7 +1077,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public String getOrgIdField() {
-        if (StringUtils.isBlank(this.orgIdField)) {
+        if (StringUtils.isEmpty(this.orgIdField)) {
             this.orgIdField = this.getOrgIdFieldQueryExp();
         }
         return this.orgIdField;
@@ -1083,7 +1089,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public String getDeptIdField() {
-        if (StringUtils.isBlank(this.deptIdField)) {
+        if (StringUtils.isEmpty(this.deptIdField)) {
             this.deptIdField = this.getDeptIdFieldQueryExp();
         }
         return this.deptIdField;
@@ -1092,7 +1098,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     @Override
     protected String getFieldDataSetSortExp(IPSDEField iPSDEField) throws Exception {
         String fieldExp = super.getFieldDataSetSortExp(iPSDEField);
-        if (StringUtils.isBlank(fieldExp))
+        if (StringUtils.isEmpty(fieldExp))
             return iPSDEField.getName();
         if (fieldExp.indexOf(".") > 0) {
             fieldExp = fieldExp.substring(fieldExp.indexOf(".") + 1);
@@ -1183,6 +1189,159 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
         iDEReportRuntime.output(outputStream, iSearchContextBase, strType);
 
+    }
+
+    /**
+     * 操作之后 检查数据对象
+     *
+     * @param iPSDEAction
+     * @param arg0
+     * @param joinPoint
+     * @throws Exception
+     */
+    protected void checkEntityAfterProceed(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
+        java.util.List<IPSDEField> psDEFields = iPSDataEntity.getAllPSDEFields();
+        if (psDEFields == null) {
+            return;
+        }
+
+        EntityError entityError = new EntityError();
+
+        boolean bCheckDup = false;
+        if (DEActions.UPDATE.equals(strActionName) || (iPSDEAction != null && DEActionModes.UPDATE.equals(iPSDEAction.getActionMode()))) {
+            bCheckDup = true;
+        }
+
+        String strActionMode = (iPSDEAction != null) ? iPSDEAction.getActionMode() : strActionName;
+
+        for (IPSDEField iPSDEField : psDEFields) {
+            if (!isCheckField(strActionName, iPSDEAction, iPSDEField)) {
+                continue;
+            }
+
+            Object objValue = this.getFieldValue(arg0, iPSDEField);
+
+            if (bCheckDup && !iPSDEField.isKeyDEField() && (StringUtils.hasLength(iPSDEField.getDupCheckMode()) && !DEFDupCheckModes.NONE.equals(iPSDEField.getDupCheckMode()))) {
+
+                if (DEFDupCheckModes.NOTNULL.equals(iPSDEField.getDupCheckMode())) {
+                    if (objValue == null) {
+                        bCheckDup = false;
+                    }
+                } else if (DEFDupCheckModes.CHECKVALUES.equals(iPSDEField.getDupCheckMode())) {
+                    bCheckDup = false;
+                    if (objValue != null && iPSDEField.getDupCheckValues() != null) {
+                        for (String strDupValue : iPSDEField.getDupCheckValues()) {
+                            Object objDupValue = this.getSystemRuntime().convertValue(iPSDEField.getStdDataType(), strDupValue);
+                            if (this.getSystemRuntime().testValueCond(objValue, Conditions.EQ, objDupValue, iPSDEField.getStdDataType())) {
+                                bCheckDup = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                Object objKeyValue = null;
+                if (bCheckDup) {
+                    objKeyValue = this.getFieldValue(arg0, this.getKeyPSDEField());
+                }
+
+                if (objKeyValue == null) {
+                    bCheckDup = false;
+                }
+
+                if (bCheckDup) {
+                    ISearchContextBase searchContext = this.createSearchContext();
+                    // 不等于当前主键
+                    this.setSearchCondition(searchContext, this.getKeyPSDEField(), Conditions.NOTEQ, objKeyValue);
+
+                    if (objValue == null) {
+                        this.setSearchCondition(searchContext, iPSDEField, Conditions.ISNULL, objValue);
+                    } else {
+                        this.setSearchCondition(searchContext, iPSDEField, Conditions.EQ, objValue);
+                    }
+
+                    List<IPSDEField> dupCheckPSDEFields = iPSDEField.getDupCheckPSDEFields();
+                    if (dupCheckPSDEFields != null) {
+                        for (IPSDEField dupCheckPSDEField : dupCheckPSDEFields) {
+                            Object value = this.getFieldValue(arg0, dupCheckPSDEField);
+                            if (value == null) {
+                                this.setSearchCondition(searchContext, dupCheckPSDEField, Conditions.ISNULL, null);
+                            } else {
+                                this.setSearchCondition(searchContext, dupCheckPSDEField, Conditions.EQ, value);
+                            }
+                        }
+                    }
+
+                    if (this.existsData(searchContext)) {
+                        EntityFieldError entityFieldError = new EntityFieldError();
+                        entityFieldError.setErrorType(EntityFieldError.ERROR_DUPLICATE);
+                        entityFieldError.setPSDEField(iPSDEField);
+                        entityFieldError.setFieldValue(objValue);
+                        entityError.register(entityFieldError);
+                        continue;
+                    }
+                }
+
+            }
+
+            List<IPSDEFValueRule> psDEFValueRules = iPSDEField.getAllPSDEFValueRules();
+            if (psDEFValueRules != null) {
+                for (IPSDEFValueRule iPSDEFValueRule : psDEFValueRules) {
+                    if (!iPSDEFValueRule.isCheckDefault()) {
+                        continue;
+                    }
+
+                    if (!iPSDEFValueRule.isEnableBackend()) {
+                        continue;
+                    }
+
+                    this.checkFieldValueRule(objValue, arg0, iPSDEFValueRule, iPSDEField, iPSDataEntity, entityError);
+
+                }
+            }
+        }
+
+        // 执行属性检查逻辑
+        for (IPSDEField iPSDEField : psDEFields) {
+
+            IPSDEFLogic iPSDEFLogic = iPSDEField.getCheckPSDEFLogic();
+            if (iPSDEFLogic == null) {
+                continue;
+            }
+            if (iPSDEFLogic.isCustomCode() && StringUtils.hasLength(iPSDEFLogic.getScriptCode())) {
+                IDEScriptLogicRuntime iDEScriptActionRuntime = this.getDEScriptLogicRuntime(IDEScriptLogicRuntime.LOGICMODE_DEFCHECK, iPSDEFLogic.getScriptCode(), iDynaInstRuntime != null);
+                if (iDEScriptActionRuntime == null) {
+                    iDEScriptActionRuntime = iDynaInstRuntime.getDynaInstDataEntityRuntime(this.getId()).getDEScriptLogicRuntime(IDEScriptLogicRuntime.LOGICMODE_DEFCHECK, iPSDEFLogic.getScriptCode());
+                }
+
+                Object objValue = iDEScriptActionRuntime.execute(new Object[] { arg0, strActionMode, iPSDEField, iPSDEAction });
+                if (objValue != null) {
+                    boolean bCheckOk = true;
+                    String strErrorInfo = null;
+                    if (objValue instanceof Boolean) {
+                        bCheckOk = (Boolean) objValue;
+                    } else if (objValue instanceof String) {
+                        bCheckOk = false;
+                        strErrorInfo = (String) objValue;
+                    }
+
+                    if (!bCheckOk) {
+                        EntityFieldError entityFieldError = new EntityFieldError();
+                        entityFieldError.setErrorType(EntityFieldError.ERROR_VALUERULE);
+                        entityFieldError.setPSDEField(iPSDEField);
+                        entityFieldError.setErrorInfo(strErrorInfo);
+                        entityError.register(entityFieldError);
+                    }
+
+                } else {
+                    log.warn(String.format("无法执行属性[%1$s]值检查逻辑[%2$s]", iPSDEField.getName(), iPSDEFLogic.getName()));
+                }
+            }
+        }
+
+        if (entityError.hasError()) {
+            throw new EntityException(entityError, this);
+        }
     }
 
 }

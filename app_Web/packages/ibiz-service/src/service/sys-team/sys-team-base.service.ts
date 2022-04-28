@@ -96,7 +96,7 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/systeams/${_context.systeam}`);
+        const res = await this.http.get(`/systeams/${encodeURIComponent(_context.systeam)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/systeams/${_context.systeam}`);
+        const res = await this.http.delete(`/systeams/${encodeURIComponent(_context.systeam)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/systeams/${_context.systeam}`, _data);
+        const res = await this.http.put(`/systeams/${encodeURIComponent(_context.systeam)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/systeams/${_context.systeam}/select`);
+        const res = await this.http.get(`/systeams/${encodeURIComponent(_context.systeam)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

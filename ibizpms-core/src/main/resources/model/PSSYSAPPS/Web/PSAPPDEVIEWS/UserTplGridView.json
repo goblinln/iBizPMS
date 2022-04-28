@@ -181,6 +181,7 @@
           "glyph" : "xf0f6@FontAwesome",
           "cssClass" : "fa fa-file-text-o"
         },
+        "predefinedType" : "GRIDVIEW_NEWACTION",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
           "lanResTag" : "TBB.TOOLTIP.*.NEW"
@@ -235,6 +236,32 @@
     } ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json"
+        }
+      }, {
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "dataAccessAction" : "UPDATE",
@@ -242,17 +269,6 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Update"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json"
-        }
-      }, {
-        "actionType" : "DEDATASET",
-        "name" : "fetch",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -272,19 +288,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json"
         }
       }, {
-        "actionName" : "Get",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "READ",
-        "name" : "load",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json"
-        }
-      }, {
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
@@ -298,13 +301,11 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json"
         }
       }, {
-        "actionName" : "Create",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "create",
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "Create"
+          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -430,10 +431,15 @@
             "dataAccessAction" : "DELETE",
             "fullCodeName" : "Remove",
             "name" : "表格界面_删除操作",
+            "getPSDEOPPriv" : {
+              "modelref" : true,
+              "id" : "DELETE"
+            },
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
             },
+            "predefinedType" : "GRIDVIEW_REMOVEACTION",
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
               "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
@@ -580,10 +586,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterGetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -591,10 +597,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "loaddraft",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGetDraft"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -685,10 +691,14 @@
     "actionRSMode" : 1,
     "codeName" : "UserTpls",
     "dataRSMode" : 0,
+    "majorDECodeName" : "SysAccount",
+    "majorDEName" : "SYS_USER",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
+    "minorDECodeName" : "UserTpl",
+    "minorDEName" : "ZT_USERTPL",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json"

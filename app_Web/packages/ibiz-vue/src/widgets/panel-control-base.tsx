@@ -60,6 +60,22 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
     public allPanelItemGroupLogic: any[] = [];
 
     /**
+     * 是否需要查找属性
+     * 
+     * @type {boolean}
+     * @memberof PanelControlBase
+     */
+    public needFindDEField: boolean = false;
+
+    /**
+     * 父容器数据项
+     * 
+     * @type {any[]}
+     * @memberof PanelControlBase
+     */
+    public parentDataItems: any[] = [];
+
+    /**
      * 监听部件动态参数变化
      *
      * @param {*} newVal
@@ -68,6 +84,9 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      */
     public onDynamicPropsChange(newVal: any, oldVal: any) {
         super.onDynamicPropsChange(newVal, oldVal);
+        if(this.controlIsLoaded && newVal?.navdatas?.[0] != oldVal?.navdatas?.[0]){
+            this.computedUIData();
+        }
     }
 
     /**
@@ -105,6 +124,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
         this.computedUIData();
         this.computeButtonState(this.data);
         this.panelLogic({ name: '', newVal: null, oldVal: null });
+        this.computeParentDataItems();
     }
 
     /**
@@ -445,13 +465,13 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
         if (dataMode === 0) {
             //  0：不获取，使用传入数据
             if (this.navdatas && (this.navdatas.length > 0)) {
-                this.fillPanelData(this.navdatas[0]);
+                this.data = this.navdatas[0];
             }
         } else if (dataMode === 1) {
             //  1：存在传入数据时，不获取
             if (this.navdatas && this.navdatas.length > 0) {
                 if (this.navdatas && (this.navdatas.length > 0)) {
-                    this.fillPanelData(this.navdatas[0]);
+                    this.data = this.navdatas[0];
                 }
             } else {
                 await this.loadPanelData();
@@ -477,7 +497,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
         });
         if (service && service[action] && service[action] instanceof Function) {
             try {
-                const response: any = await service[action](Util.deepCopy(this.context), this.data);
+                const response: any = await service[action](Util.deepCopy(this.context), this.viewparams);
                 if (response && response.status == 200 && response.data) {
                     this.fillPanelData(response.data);
                 }
@@ -634,8 +654,8 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
                 this.initItemsActionModel(panelItem.getPSPanelItems());
             } else if (panelItem?.itemType == 'BUTTON' && panelButtomItem.getPSUIAction()) {
                 const appUIAction: any = panelButtomItem.getPSUIAction();
-                this.actionModel[appUIAction.uIActionTag] = Object.assign(appUIAction, { disabled: false, visabled: true, getNoPrivDisplayMode: appUIAction.getNoPrivDisplayMode ? appUIAction.getNoPrivDisplayMode : 6 });
-            } else if (item.itemType == 'TABPANEL') {
+                this.actionModel[appUIAction.uIActionTag] = Object.assign(appUIAction, { disabled: false, visabled: true, getNoPrivDisplayMode: appUIAction.noPrivDisplayMode ? appUIAction.noPrivDisplayMode : 6 });
+              } else if (item.itemType == 'TABPANEL') {
                 const tabPages: IPSPanelTabPage[] = (item as IPSSysPanelTabPanel).getPSPanelTabPages() || [];
                 tabPages.forEach((page: IPSPanelTabPage) => {
                     this.initItemsActionModel(page.getPSPanelItems());
@@ -674,5 +694,58 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      */
     public getData() {
         return this.data;
+    }
+
+    /**
+     * 计算父容器数据项
+     *
+     * @param {*} [args]
+     * @memberof PanelControlBase
+     */
+    public computeParentDataItems() {
+        const parent: any = this.controlInstance.getParentPSModelObject?.();
+        if (
+            parent.controlType &&
+            (parent.controlType == 'DATAVIEW' || parent.controlType == 'LIST' || parent.controlType == 'KANBAN')
+        ) {
+            this.needFindDEField = true;
+        }
+        if (!this.needFindDEField) {
+            return;
+        }
+        switch (parent.controlType) {
+            case 'DATAVIEW':
+                this.parentDataItems = parent.getPSDEDataViewDataItems?.();
+                break;
+            case 'LIST':
+                this.parentDataItems = parent.getPSDEListDataItems?.();
+                break;
+            case 'KANBAN':
+                this.parentDataItems = parent.getPSDEDataViewDataItems?.();
+                break;
+        }
+    }
+
+    /**
+     * 面板属性项查找对应父容器实体实体属性项
+     *
+     * @returns
+     * @memberof PanelControlBase
+     */
+    public findDEFieldForPanelField(target: any) {
+        const parent: any = this.controlInstance.getParentPSModelObject();
+        const entity = parent.getPSAppDataEntity?.();
+        if (entity && this.parentDataItems.length > 0) {
+            const valueItemName = (this.controlInstance.getAllPSPanelFields()?.find((item: any) => Object.is(item.id.toLowerCase(), target.name.toLowerCase()) ) as any)?.viewFieldName;
+            const dataItem = this.parentDataItems.find((item: any) => Object.is(valueItemName?.toLowerCase(), item.name?.toLowerCase()));
+            if (dataItem) {
+                Object.assign(target, {
+                    getPSAppDEField: () => {
+                        return dataItem.getPSAppDEField?.();
+                    }
+                })
+            }
+            
+        }
     }
 }

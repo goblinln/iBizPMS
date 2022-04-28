@@ -6,13 +6,15 @@
   "logicName" : "EE开始计划",
   "name" : "EeStartPlan",
   "getPSDEActionInput" : {
-    "codeName" : "EeStartPlanInput",
-    "name" : "输入对象",
+    "name" : "EeStartPlanInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "EeStartPlanResult",
-    "name" : "返回对象",
+    "name" : "EeStartPlanResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

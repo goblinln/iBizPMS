@@ -46,13 +46,13 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "UpdateTemp",
+        "actionName" : "GetDraftTemp",
         "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "UpdateTemp"
+          "id" : "GetDraftTemp"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -63,32 +63,6 @@
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraftfrom",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
-        }
-      }, {
-        "actionName" : "RemoveTemp",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "RemoveTemp"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
-        }
-      }, {
-        "actionName" : "GetDraftTemp",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraftTemp"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
@@ -114,6 +88,32 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "CreateTemp"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
+        }
+      }, {
+        "actionName" : "UpdateTemp",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "UpdateTemp"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
+        }
+      }, {
+        "actionName" : "RemoveTemp",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "RemoveTemp"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -410,6 +410,7 @@
       "modelref" : true,
       "id" : "update"
     },
+    "mobileControl" : true,
     "noTabHeader" : true,
     "name" : "form",
     "modelid" : "e2c66af15c0673c5714b112ae0f00720",

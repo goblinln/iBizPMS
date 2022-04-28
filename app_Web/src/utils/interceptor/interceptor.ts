@@ -186,7 +186,7 @@ export class Interceptors {
             if (Object.is(this.router.currentRoute.name, 'login')) {
                 return;
             }
-            this.router.push({ name: 'login', query: { redirect: this.router.currentRoute.fullPath } });
+            this.router.push({ name: 'login', query: { redirect: window.location.hash.replace("#",'') } });
         }
     }
 

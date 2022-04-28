@@ -1,0 +1,66 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`ACL` = 'open' )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACL`",
+    "name" : "ACL"
+  }, {
+    "expression" : "t1.`CANCELEDBY`",
+    "name" : "CANCELEDBY"
+  }, {
+    "expression" : "t1.`CLOSEDBY`",
+    "name" : "CLOSEDBY"
+  }, {
+    "expression" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1)",
+    "name" : "FIFTHMEMBER"
+  }, {
+    "expression" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1)",
+    "name" : "FOURTHMEMBER"
+  }, {
+    "expression" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1)",
+    "name" : "FRISTMEMBER"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.PM",
+    "name" : "PM"
+  }, {
+    "expression" : "t1.PO",
+    "name" : "PO"
+  }, {
+    "expression" : "t1.QD",
+    "name" : "QD"
+  }, {
+    "expression" : "t1.RD",
+    "name" : "RD"
+  }, {
+    "expression" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1)",
+    "name" : "SECONDMEMBER"
+  }, {
+    "expression" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1)",
+    "name" : "SIXTHMEMBER"
+  }, {
+    "expression" : "(select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root)",
+    "name" : "TEAMEMBERS"
+  }, {
+    "expression" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1)",
+    "name" : "THIRDMEMBER"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACL`,\nt1.`CANCELEDBY`,\nt1.`CLOSEDBY`,\n(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1) AS `FIFTHMEMBER`,\n(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1) AS `FOURTHMEMBER`,\n(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1) AS `FRISTMEMBER`,\nt1.`ID`,\nt1.`NAME`,\nt1.`OPENEDBY`,\nt1.PM AS `PM`,\nt1.PO AS `PO`,\nt1.QD AS `QD`,\nt1.RD AS `RD`,\n(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1) AS `SECONDMEMBER`,\n(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1) AS `SIXTHMEMBER`,\n(select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root) AS `TEAMEMBERS`,\n(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1) AS `THIRDMEMBER`,\nt1.`UPDATEBY`\nFROM `zt_project` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEDATAQUERIES/OpenQuery/PSDEDQCODES/MYSQL5.json"
+}

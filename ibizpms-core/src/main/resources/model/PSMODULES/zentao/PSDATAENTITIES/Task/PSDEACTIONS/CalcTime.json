@@ -6,13 +6,15 @@
   "logicName" : "计算总耗时",
   "name" : "CalcTime",
   "getPSDEActionInput" : {
-    "codeName" : "CalcTimeInput",
-    "name" : "输入对象",
+    "name" : "CalcTimeInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CalcTimeResult",
-    "name" : "返回对象",
+    "name" : "CalcTimeResult",
     "type" : "VOID"
   }
 }

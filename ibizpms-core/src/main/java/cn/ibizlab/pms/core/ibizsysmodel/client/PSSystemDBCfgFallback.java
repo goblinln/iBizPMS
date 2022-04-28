@@ -33,10 +33,6 @@ public class PSSystemDBCfgFallback implements FallbackFactory<PSSystemDBCfgFeign
         String finalErrorMessage = errorMessage;
         return new PSSystemDBCfgFeignClient(){
 
-            public Page<PSSystemDBCfg> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSSystemDBCfg create(PSSystemDBCfg pssystemdbcfg) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSSystemDBCfgFallback implements FallbackFactory<PSSystemDBCfgFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSystemDBCfg update(String pssystemdbcfgid, PSSystemDBCfg pssystemdbcfg) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSSystemDBCfg> pssystemdbcfgs) {
+            public PSSystemDBCfg get(String pssystemdbcfgid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,25 @@ public class PSSystemDBCfgFallback implements FallbackFactory<PSSystemDBCfgFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSystemDBCfg get(String pssystemdbcfgid) {
+            public PSSystemDBCfg update(String pssystemdbcfgid, PSSystemDBCfg pssystemdbcfg) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSSystemDBCfg> pssystemdbcfgs) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSSystemDBCfg pssystemdbcfg) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSystemDBCfg> searchBuild(PSSystemDBCfgSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSystemDBCfg> searchDefault(PSSystemDBCfgSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +79,6 @@ public class PSSystemDBCfgFallback implements FallbackFactory<PSSystemDBCfgFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSSystemDBCfg pssystemdbcfg) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSSystemDBCfg pssystemdbcfg) {
@@ -86,15 +92,9 @@ public class PSSystemDBCfgFallback implements FallbackFactory<PSSystemDBCfgFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSSystemDBCfg> searchBuild(PSSystemDBCfgSearchContext context) {
+            public Page<PSSystemDBCfg> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
-
-            public Page<PSSystemDBCfg> searchDefault(PSSystemDBCfgSearchContext context) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
 
 
         };

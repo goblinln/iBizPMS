@@ -6,13 +6,15 @@
   "logicName" : "工时录入",
   "name" : "RecordEstimate",
   "getPSDEActionInput" : {
-    "codeName" : "RecordEstimateInput",
-    "name" : "输入对象",
+    "name" : "RecordEstimateInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "RecordEstimateResult",
-    "name" : "返回对象",
+    "name" : "RecordEstimateResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

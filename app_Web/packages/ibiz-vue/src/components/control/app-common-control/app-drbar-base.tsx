@@ -83,7 +83,7 @@ export class AppDrbarBase extends DrbarControlBase {
      * @memberof AppDrbarBase
      */
     public renderDrView() {
-        if (this.selection && this.selection.view) {
+        if (this.selection && this.selection.view && !this.selection.disabled) {
             let viewData: any = Util.deepCopy(this.context);
             let viewParam: any = Util.deepCopy(this.viewparams);
             if (this.selection.localContext) {
@@ -94,6 +94,11 @@ export class AppDrbarBase extends DrbarControlBase {
             }
             if (this.selection.view.getPSAppView?.()) {
                 Object.assign(viewData, { viewpath: this.selection.view.getPSAppView()?.modelPath });
+            }
+            //  填充主视图标识参数
+            if (this.appDeCodeName && viewData.hasOwnProperty(this.appDeCodeName.toLowerCase())) {
+                Object.assign(viewData, { srfparentdename: this.appDeCodeName, srfparentkey: viewData[this.appDeCodeName.toLowerCase()] });
+                Object.assign(viewParam, { srfparentdename: this.appDeCodeName, srfparentkey: viewData[this.appDeCodeName.toLowerCase()] });
             }
             return this.$createElement('app-view-shell', {
                 props: {
@@ -115,54 +120,89 @@ export class AppDrbarBase extends DrbarControlBase {
     }
 
     /**
-     * 获取分组数据集合
-     *
+     * @description 渲染菜单项
+     * @param {any[]} items
+     * @return {*} 
      * @memberof AppDrbarBase
      */
-    public getGroupsItems(groups: IPSDEDRBarGroup[]): any[] {
-        const groupItems: any[] = [];
-        groups.forEach((group: IPSDEDRBarGroup) => {
-            groupItems.push({
-                caption: this.$tl(group.getCapPSLanguageRes()?.lanResTag, group.caption),
-                codeName: group.id,
-                hidden: group.hidden,
-                items: this.items.filter((item: any) => { return Object.is(item.groupCodeName, group.id); })
-            });
-        });
-        const noGroupItems = this.items.filter((item: any) => { return !item.groupCodeName; })
-        if (noGroupItems.length > 0) {
-            groupItems.push({
-                caption: '无分组',
-                name: 'noGroup',
-                items: noGroupItems
-            })
-        } 
-        return groupItems;
+    public renderMenuItems(items: any[]) {
+        const getGroupTitle = (item: any): string => {
+            if (this.showMode == 'DEFAULT') {
+                return item.text;
+            }
+            if (this.selection && this.selection.groupCodeName == item.id) {
+                return item.text + '-' + this.selection.text;
+            } else {
+                return item.text;
+            }
+        }
+        return items.map((item: any, index: number) => {
+            if (this.showMode == 'INDEXMODE' && item.id == this.formName) {
+                return null;
+            }
+            if (item.items && item.items.length > 0) {
+                return (
+                    <el-submenu class="drbar-menu-item drbar-menu-item--subitem" key={index} index={item.id} disabled={item.disabled}>
+                        <span class="drbar-menu-item--title" slot="title">
+                            {item.icon ? <img src={item.icon} class="drbar-menu-item--icon"></img> :
+                                item.iconcls ? <i class={[item.iconcls, 'drbar-menu-item--icon']}></i> : null}
+                            {getGroupTitle(item)}
+                        </span>
+                        {this.renderMenuItems(item.items)}
+                    </el-submenu>
+                )
+            } else {
+                return (
+                    <el-menu-item class="drbar-menu-item" key={index} index={item.id} disabled={item.disabled}>
+                        <span class="drbar-menu-item--title" slot="title">
+                            {item.icon ? <img src={item.icon} class="drbar-menu-item--icon"></img> :
+                                item.iconcls ? <i class={[item.iconcls, 'drbar-menu-item--icon']}></i> : null}
+                            {item.text}
+                        </span>
+                        {item.counter && (item.counter.count || item.counter.count == 0) ?
+                            <span v-badge={item.counter} class="right-badge"></span> : null}
+                    </el-menu-item>
+                )
+            }
+        })
     }
 
     /**
-     * 渲染导航菜单
-     *
+     * @description 渲染侧边栏
+     * @return {*} 
      * @memberof AppDrbarBase
      */
-    public renderSiderMenus() {
-        const groups: IPSDEDRBarGroup[] = this.controlInstance.getPSDEDRBarGroups() || [];
-        if (groups.length === 0) {
-            return <app-sider-menus menus={this.items}/>
-        } else {
-            const groupItems = this.getGroupsItems(groups);
-            return groupItems.map((group: any, index: number) => {
-                if (group.name == 'noGroup') {
-                    return <app-sider-menus menus={group.items} />
-                }
-                return (!group.hidden &&
-                    <el-submenu index={`${index}_${group.codeName}`} class={`drbar-group drbar-group-${group.codeName?.toLowerCase()}`}>
-                        <span class={{ [group.codeName]: true, 'drbar-item-title': true }} slot="title">{ group.caption }</span>
-                        <app-sider-menus class="group-menus" menus={group.items}/>
-                    </el-submenu>
-                )
-            })
-        }
+    public renderSider() {
+        return (
+            <sider width={this.width}>
+                <el-menu
+                    mode={this.menuDir}
+                    default-openeds={this.defaultOpeneds}
+                    default-active={this.selection?.id}
+                    on-select={(event: any) => throttle(this.onSelect, [event], this)}>
+                    {this.renderMenuItems(this.menuItems)}
+                </el-menu>
+            </sider>
+        )
+    }
+
+    /**
+     * @description 渲染头部
+     * @return {*} 
+     * @memberof AppDrbarBase
+     */
+    public renderHeader() {
+        return (
+            <header>
+                <el-menu
+                    mode={this.menuDir}
+                    default-openeds={this.defaultOpeneds}
+                    default-active={this.selection?.id}
+                    on-select={(event: any) => throttle(this.onSelect, [event], this)}>
+                    {this.renderMenuItems(this.menuItems)}
+                </el-menu>
+            </header>
+        )
     }
 
     /**
@@ -177,19 +217,13 @@ export class AppDrbarBase extends DrbarControlBase {
         }
         const { controlClassNames } = this.renderOptions;
         return (
-            <layout class={{ ...controlClassNames, 'app-dr-bar': true }}>
-                <sider width={this.width}>
-                    <el-menu
-                        default-openeds={this.defaultOpeneds}
-                        default-active={this.items[0]?.id}
-                        on-select={(event: any) => throttle(this.onSelect, [event], this)}>
-                            {this.renderSiderMenus()}
-                    </el-menu>
-                </sider>
-                <content style={{ width: `calc(100% - ${this.width + 1}px)` }}>
-                    <div class="main-data" style={[this.selection && Object.is(this.selection.id, this.formName) ? '' : { 'display': 'none', 'visibility': 'visible' }]}>
-                        {this.$parent.$slots.mainform}
-                    </div>
+            <layout class={{ ...controlClassNames, 'app-dr-bar': true, [`drbar-${this.showMode.toLowerCase()}`]: true }}>
+                {this.menuDir == 'horizontal' ? this.renderHeader() : this.renderSider()}
+                <content style={[this.showMode == 'DEFAULT' && this.menuDir == 'vertical' ? `width: calc(100% - ${this.width + 1}px)` : '']}>
+                    {this.showMode == 'DEFAULT' ?
+                        <div class="main-data" style={[this.selection && Object.is(this.selection.id, this.formName) ? '' : { 'display': 'none', 'visibility': 'visible' }]}>
+                            {this.$parent.$slots.mainform}
+                        </div> : null}
                     {this.renderDrView()}
                 </content>
             </layout>

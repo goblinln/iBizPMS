@@ -1,0 +1,37 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ADDEDBY`",
+    "name" : "ADDEDBY"
+  }, {
+    "expression" : "t1.`ADDEDDATE`",
+    "name" : "ADDEDDATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`LASTEDITEDBY`",
+    "name" : "LASTEDITEDBY"
+  }, {
+    "expression" : "t1.`LASTEDITEDDATE`",
+    "name" : "LASTEDITEDDATE"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ADDEDBY`,\nt1.`ADDEDDATE`,\nt1.`DELETED`,\nt1.`DESC`,\nt1.`ID`,\nt1.`LASTEDITEDBY`,\nt1.`LASTEDITEDDATE`,\nt1.`NAME`,\nt1.`PRODUCT`,\nt1.`TYPE`\nFROM `zt_testsuite` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLib/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

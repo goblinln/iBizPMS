@@ -1,5 +1,6 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "ibiz__AllCase",
   "codeListType" : "DYNAMIC",
   "codeName" : "AllCase",
   "dynaInstMode" : 1,

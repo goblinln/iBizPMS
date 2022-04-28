@@ -1,15 +1,32 @@
 {
+  "codeListTag" : "ibiz__ProductBranch_Cache",
   "codeListType" : "DYNAMIC",
   "codeName" : "ProductBranch_Cache",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch_Cache.json",
   "emptyText" : "未定义",
   "minorSortDir" : "ASC",
+  "getMinorSortPSDEField" : {
+    "name" : "REALORDER",
+    "codeName" : "Realorder"
+  },
+  "name" : "产品平台（动态）_缓存",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "CurProduct"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : false,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

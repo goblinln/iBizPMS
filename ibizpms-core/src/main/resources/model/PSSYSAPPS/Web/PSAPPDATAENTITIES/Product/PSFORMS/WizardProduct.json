@@ -93,6 +93,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "getPSRawItem" : {
+        "caption" : "<p>添加产品路径：产品→新建</p>\n    <p><img src=\"../../../assets/img/productadd.png\" referrerpolicy=\"no-referrer\" alt=\"show1\"></p>",
+        "contentType" : "RAW",
+        "name" : "rawitem1"
+      },
       "getPSSysImage" : {
         "glyph" : "xf17a@FontAwesome",
         "cssClass" : "fa fa-windows"

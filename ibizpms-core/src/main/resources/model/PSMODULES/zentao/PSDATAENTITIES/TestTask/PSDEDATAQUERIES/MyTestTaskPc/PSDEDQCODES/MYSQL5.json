@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.`owner` = #{srf.sessioncontext.srfloginname} \n\tand t1.`deleted` = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`id`,\n\tt1.`name`,\n\tt1.`product`,\n\tt1.`project`,\n\tt1.`build`,\n\tt1.`owner`,\n\tt1.`pri`,\n\tt1.`begin`,\n\tt1.`end`,\n\tt1.`mailto`,\n\tt1.`desc`,\n\tt1.`report`,\n\tt1.`status`,\n\tt1.`auto`,\n\tt1.`subStatus`,\n\tt1.`deleted`\nFROM\n\tzt_testtask t1 \n\n\t",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEDATAQUERIES/MyTestTaskPc/PSDEDQCODES/MYSQL5.json"
+}

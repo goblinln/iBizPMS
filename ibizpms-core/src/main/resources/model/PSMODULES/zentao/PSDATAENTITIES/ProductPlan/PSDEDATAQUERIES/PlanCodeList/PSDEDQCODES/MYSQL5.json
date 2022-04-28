@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "select t1.* from ( SELECT\nt1.`ID`,\nt1.`TITLE`,\nt1.product,\nt1.parent,\nt1.PRODUCTPLANSN\nFROM `zt_productplan` t1 \nUNION\nSELECT\n0 as `ID`,\n'未计划' as `TITLE`,\n0 as product,\n0 as parent,\n0 as PRODUCTPLANSN\nFROM dual  ) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/PlanCodeList/PSDEDQCODES/MYSQL5.json"
+}

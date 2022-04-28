@@ -851,10 +851,15 @@
                   "dataAccessAction" : "CREATE",
                   "fullCodeName" : "NewRow",
                   "name" : "表格界面_新建行",
+                  "getPSDEOPPriv" : {
+                    "modelref" : true,
+                    "id" : "CREATE"
+                  },
                   "getPSSysImage" : {
                     "glyph" : "xf067@FontAwesome",
                     "cssClass" : "fa fa-plus"
                   },
+                  "predefinedType" : "GRIDVIEW_NEWROWACTION",
                   "timeout" : 60000,
                   "uIActionMode" : "SYS",
                   "uIActionTag" : "NewRow",
@@ -932,6 +937,32 @@
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
+                  "actionName" : "GetTemp",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "READ",
+                  "name" : "load",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "GetTemp"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
+                  }
+                }, {
+                  "actionName" : "CreateTemp",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "CREATE",
+                  "name" : "create",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "CreateTemp"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
+                  }
+                }, {
                   "actionName" : "UpdateTemp",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "UPDATE",
@@ -939,17 +970,6 @@
                   "getPSAppDEMethod" : {
                     "modelref" : true,
                     "id" : "UpdateTemp"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
-                  }
-                }, {
-                  "actionType" : "DEDATASET",
-                  "name" : "fetch",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "FetchTempDefault"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -969,19 +989,6 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                   }
                 }, {
-                  "actionName" : "GetTemp",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "READ",
-                  "name" : "load",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "GetTemp"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
-                  }
-                }, {
                   "actionName" : "GetDraftTemp",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
@@ -995,13 +1002,11 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                   }
                 }, {
-                  "actionName" : "CreateTemp",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "CREATE",
-                  "name" : "create",
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "CreateTemp"
+                    "id" : "FetchTempDefault"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -1304,10 +1309,14 @@
               "actionRSMode" : 1,
               "codeName" : "TestCases",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Test",
+              "majorDEName" : "IBZ_API__TEST",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
               },
+              "minorDECodeName" : "TestCase",
+              "minorDEName" : "ZT_CASE",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
@@ -1322,10 +1331,14 @@
               "actionRSMode" : 1,
               "codeName" : "caseSteps",
               "dataRSMode" : 0,
+              "majorDECodeName" : "TestCase",
+              "majorDEName" : "ZT_CASE",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
+              "minorDECodeName" : "TestCaseStepNested",
+              "minorDEName" : "IBZ_CASESTEP",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"

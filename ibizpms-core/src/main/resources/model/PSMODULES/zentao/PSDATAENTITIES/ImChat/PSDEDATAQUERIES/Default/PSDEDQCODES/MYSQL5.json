@@ -1,0 +1,49 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ADMINS`",
+    "name" : "ADMINS"
+  }, {
+    "expression" : "t1.`COMMITTERS`",
+    "name" : "COMMITTERS"
+  }, {
+    "expression" : "t1.`CREATEDBY`",
+    "name" : "CREATEDBY"
+  }, {
+    "expression" : "t1.`CREATEDDATE`",
+    "name" : "CREATEDDATE"
+  }, {
+    "expression" : "t1.`DISMISSDATE`",
+    "name" : "DISMISSDATE"
+  }, {
+    "expression" : "t1.`EDITEDBY`",
+    "name" : "EDITEDBY"
+  }, {
+    "expression" : "t1.`EDITEDDATE`",
+    "name" : "EDITEDDATE"
+  }, {
+    "expression" : "t1.`GID`",
+    "name" : "GID"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`LASTACTIVETIME`",
+    "name" : "LASTACTIVETIME"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`PUBLIC`",
+    "name" : "PUBLIC"
+  }, {
+    "expression" : "t1.`SUBJECT`",
+    "name" : "SUBJECT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ADMINS`,\nt1.`COMMITTERS`,\nt1.`CREATEDBY`,\nt1.`CREATEDDATE`,\nt1.`DISMISSDATE`,\nt1.`EDITEDBY`,\nt1.`EDITEDDATE`,\nt1.`GID`,\nt1.`ID`,\nt1.`LASTACTIVETIME`,\nt1.`NAME`,\nt1.`PUBLIC`,\nt1.`SUBJECT`,\nt1.`TYPE`\nFROM `zt_im_chat` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ImChat/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

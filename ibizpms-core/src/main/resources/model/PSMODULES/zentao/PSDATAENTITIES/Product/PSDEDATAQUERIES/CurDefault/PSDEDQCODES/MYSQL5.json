@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n  t1.MDEPTID,\n  t1.orgid,\n\tt1.`ACL`,\n\t( SELECT COUNT( 1 ) FROM ZT_BUG t WHERE t.DELETED = '0' AND t.PRODUCT = t1.`ID` AND t.`STATUS` = 'active' ) AS `ACTIVEBUGCNT`,\n\t( SELECT COUNT( 1 ) FROM ZT_STORY t WHERE t.DELETED = '0' AND  t.PRODUCT = t1.`ID` AND t.`STATUS` = 'active' ) AS `ACTIVESTORYCNT`,\n\tt1.`CODE`,\n\tt1.`DELETED`,\n\tt1.`ID`,\n\tt1.`NAME`,\n\t(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) as `ORDER`,\n\t(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) as `ORDER1`,\n\t(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END) as `ISTOP`,\n\t( SELECT COUNT( 1 ) FROM ZT_PRODUCTPLAN t WHERE t.DELETED = '0' AND t.PRODUCT = t1.`ID`) AS `PRODUCTPLANCNT`,\n\t( SELECT COUNT( 1 ) FROM ZT_RELEASE t WHERE t.DELETED = '0' AND t.PRODUCT = t1.`ID`) AS `RELEASECNT`,\n\tt1.`STATUS`,\n\t( SELECT COUNT( 1 ) FROM ZT_BUG t WHERE t.DELETED = '0' AND t.PRODUCT = t1.`ID` AND t.`CONFIRMED` = 0 ) AS `UNCONFIRMBUGCNT` ,\n\t( SELECT COUNT( 1 ) FROM ZT_BUG t WHERE t.DELETED = '0' AND t.PRODUCT = t1.`ID` AND t.`STATUS` <> 'closed' ) AS `NOTCLOSEDBUGCNT`,\n\tt1.`TYPE`,\n        t1.productsn\nFROM\n\t`zt_product` t1\n\tleft join t_ibz_top t2 on t1.id = t2.OBJECTID and t2.type = 'product' and t2.ACCOUNT = #{srf.sessioncontext.srfloginname}\n\tLEFT JOIN zt_module t11 ON t1.LINE = t11.ID",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATAQUERIES/CurDefault/PSDEDQCODES/MYSQL5.json"
+}

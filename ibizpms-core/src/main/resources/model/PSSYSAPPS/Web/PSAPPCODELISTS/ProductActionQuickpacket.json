@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__ProductActionQuickpacket",
   "codeListType" : "STATIC",
   "codeName" : "ProductActionQuickpacket",
   "dynaInstMode" : 1,
@@ -13,45 +14,38 @@
     "codeName" : "All",
     "data" : "{}",
     "text" : "所有",
-    "value" : "All",
-    "includeBeginValue" : true
+    "value" : "All"
   }, {
     "codeName" : "Today",
     "data" : "{\"n_today_eq\":1}",
     "text" : "今天",
     "value" : "today",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Yesterday",
     "data" : "{\"n_yesterday_eq\":1}",
     "text" : "昨天",
-    "value" : "yesterday",
-    "includeBeginValue" : true
+    "value" : "yesterday"
   }, {
     "codeName" : "Thisweek",
     "data" : "{\"n_thisweek_eq\":1}",
     "text" : "本周",
-    "value" : "thisweek",
-    "includeBeginValue" : true
+    "value" : "thisweek"
   }, {
     "codeName" : "Lastweek",
     "data" : "{\"n_lastweek_eq\":1}",
     "text" : "上周",
-    "value" : "lastweek",
-    "includeBeginValue" : true
+    "value" : "lastweek"
   }, {
     "codeName" : "Thismonth",
     "data" : "{\"n_thismonth_eq\":1}",
     "text" : "本月",
-    "value" : "thismonth",
-    "includeBeginValue" : true
+    "value" : "thismonth"
   }, {
     "codeName" : "Lastmonth",
     "data" : "{\"n_lastmonth_eq\":1}",
     "text" : "上月",
-    "value" : "lastmonth",
-    "includeBeginValue" : true
+    "value" : "lastmonth"
   } ],
   "enableCache" : true
 }

@@ -139,7 +139,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usertpls`, _data);
             return res;
         }
     this.log.warn([`[UserTpl]>>>[Create函数]异常`]);
@@ -159,7 +159,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && _context.usertpl) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`);
+            const res = await this.http.get(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usertpls/${encodeURIComponent(_context.usertpl)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -182,7 +182,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         if (_context.sysaccount && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usertpls/getdraft`, _data);
+            const res = await this.http.get(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usertpls/getdraft`, _data);
             return res;
         }
     this.log.warn([`[UserTpl]>>>[GetDraft函数]异常`]);
@@ -202,7 +202,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && _context.usertpl) {
-            const res = await this.http.delete(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`);
+            const res = await this.http.delete(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usertpls/${encodeURIComponent(_context.usertpl)}`);
             return res;
         }
     this.log.warn([`[UserTpl]>>>[Remove函数]异常`]);
@@ -224,7 +224,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         if (_context.sysaccount && _context.usertpl) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`, _data);
+            const res = await this.http.put(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usertpls/${encodeURIComponent(_context.usertpl)}`, _data);
             return res;
         }
     this.log.warn([`[UserTpl]>>>[Update函数]异常`]);
@@ -244,7 +244,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usertpls/fetchaccount`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
             return res;
         }
@@ -265,7 +265,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/usertpls/fetchmy`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
             return res;
         }

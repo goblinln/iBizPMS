@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\n\tt1.id,\n\tt1.`name`,\n\tt1.`desc`,\n\tt1.deleted\nFROM\n\tzt_project t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEDATAQUERIES/ESBulk/PSDEDQCODES/MYSQL5.json"
+}

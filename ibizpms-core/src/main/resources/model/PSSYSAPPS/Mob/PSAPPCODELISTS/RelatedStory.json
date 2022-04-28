@@ -1,5 +1,6 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "zentao__RelatedStory",
   "codeListType" : "DYNAMIC",
   "codeName" : "RelatedStory",
   "dynaInstMode" : 1,

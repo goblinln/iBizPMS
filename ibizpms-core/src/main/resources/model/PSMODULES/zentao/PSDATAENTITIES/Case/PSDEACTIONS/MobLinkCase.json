@@ -6,13 +6,15 @@
   "logicName" : "移动端关联需求",
   "name" : "MobLinkCase",
   "getPSDEActionInput" : {
-    "codeName" : "MobLinkCaseInput",
-    "name" : "输入对象",
+    "name" : "MobLinkCaseInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MobLinkCaseResult",
-    "name" : "返回对象",
+    "name" : "MobLinkCaseResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

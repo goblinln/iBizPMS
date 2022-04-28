@@ -1,0 +1,58 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.type = 'story'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`COLLECTOR`",
+    "name" : "COLLECTOR"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`GRADE`",
+    "name" : "GRADE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`OWNER`",
+    "name" : "OWNER"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PARENTNAME"
+  }, {
+    "expression" : "t1.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`ROOT`",
+    "name" : "ROOT"
+  }, {
+    "expression" : "t1.`SHORT`",
+    "name" : "SHORT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`BRANCH`,\n\tt1.`DELETED`,\n\tt1.`GRADE`,\n\tt1.`ID`,\n\tCONCAT(\n\t\t'/',\n\tCASE\n\t\t\t\n\t\t\tWHEN t1.parent > 0 THEN\n\t\t\t(\n\t\t\tSELECT\n\t\t\t\tGROUP_CONCAT( tt.NAME SEPARATOR '/' ) \n\t\t\tFROM\n\t\t\t\tzt_module tt \n\t\t\tWHERE\n\t\t\t\ttt.type = 'story' \n\t\t\t\tAND FIND_IN_SET( tt.id, t1.path ) \n\t\t\t) ELSE t1.`name` \n\t\tEND \n\t\t) AS `NAME`,\n\t\t(\n\t\t\tCONCAT_ws(\n\t\t\t\t'',\n\t\t\tCASE\n\t\t\t\t\t\n\t\t\t\t\tWHEN t1.parent > 0 THEN\n\t\t\t\t\t(\n\t\t\t\t\tSELECT\n\t\t\t\t\t\tGROUP_CONCAT( tt.`ORDER` SEPARATOR '-' ) \n\t\t\t\t\tFROM\n\t\t\t\t\t\tzt_module tt \n\t\t\t\t\tWHERE\n\t\t\t\t\t\ttt.type = 'story' \n\t\t\t\t\tAND FIND_IN_SET( tt.id, t1.path )) ELSE t1.`ORDER` \n\t\t\t\tEND \n\t\t\t\t)) AS ORDERPK,\n\t\t\tt1.`ORDER`,\n\t\t\tt1.`OWNER`,\n\t\tCASE\n\t\t\t\t\n\t\t\t\tWHEN t1.`PARENT` = 0 THEN\n\t\t\t\tNULL ELSE t1.parent \n\t\t\tEND AS parent,\n\t\t\tt11.`NAME` AS `PARENTNAME`,\n\t\t\tt1.`PATH`,\n\t\t\tt1.`ROOT`,\n\t\t\tt1.`SHORT`,\n\t\t\tt1.`TYPE` ,\n\t\t\tt1.MODULESN\n\t\tFROM\n\t\t\t`zt_module` t1\n\t\t\tLEFT JOIN zt_module t11 ON t1.PARENT = t11.ID",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEDATAQUERIES/BugModule/PSDEDQCODES/MYSQL5.json"
+}

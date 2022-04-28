@@ -1,0 +1,73 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.parent <= '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`BEGIN`",
+    "name" : "BEGIN"
+  }, {
+    "expression" : "(case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end)",
+    "name" : "BEGINSTR"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0'))",
+    "name" : "BUGCNT"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`END`",
+    "name" : "END"
+  }, {
+    "expression" : "(case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end)",
+    "name" : "ENDSTR"
+  }, {
+    "expression" : "(select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )",
+    "name" : "ESTIMATECNT"
+  }, {
+    "expression" : "(case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end)",
+    "name" : "FUTURE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "(case when t1.`end` > now() then '0' else '1' end)",
+    "name" : "ISEXPIRED"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t11.`TITLE`",
+    "name" : "PARENTNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end)",
+    "name" : "STATUSS"
+  }, {
+    "expression" : "((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ))",
+    "name" : "STORYCNT"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  } ],
+  "queryCode" : "SELECT\nt1.`BEGIN`,\n(case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,\nt1.`BRANCH`,\n((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.ID and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,\nt1.`DELETED`,\nt1.`END`,\n(case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,\n(select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.ID and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,\n(case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,\nt1.`ID`,\n(case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,\nt1.`PARENT`,\nt11.`TITLE` AS `PARENTNAME`,\nt1.`PRODUCT`,\n(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,\n((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.ID and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,\n\tcase when ( To_Days( t1.`end` ) - To_Days( t1.`begin`) ) is null then null else ( To_Days( t1.`end` ) - To_Days( t1.`begin` ) ) + 1 end  AS `DURATION`,\nt1.`TITLE` as `TITLE`,\nt1.PRODUCTPLANSN\nFROM `zt_productplan` t1 \nLEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/RootPlan/PSDEDQCODES/MYSQL5.json"
+}

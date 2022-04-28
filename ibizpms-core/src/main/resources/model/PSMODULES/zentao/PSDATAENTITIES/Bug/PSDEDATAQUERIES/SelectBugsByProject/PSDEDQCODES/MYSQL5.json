@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : " t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id = #{srf.datacontext.srfparentkey}\n) and t1.openedDate < (select CONCAT(DATE_FORMAT(tt.`end`,'%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id =#{srf.datacontext.srfparentkey}\n) and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,(SELECT tasks from zt_testreport where id =#{srf.datacontext.srfparentkey})))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0 and  (t1.`status` = 'active' or t1.resolvedDate > (select CONCAT(DATE_FORMAT(tt.`end`,'%Y-%m-%d'),' 23:59:59') from zt_testreport tt where tt.id = #{srf.datacontext.srfparentkey}))",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT DISTINCT\n\tt1.`ACTIVATEDDATE`,\n\tt1.`ASSIGNEDTO`,\t\n\tt1.`COLOR`,\n\tt1.`CONFIRMED`,\t\n\tt1.`ID`,\n\t0 AS `ISFAVORITES`,\t\n\tt1.`LASTEDITEDDATE`,\t\n\tt1.`OPENEDBY`,\n\tt1.`OPENEDDATE`,\t\n\tt1.`PRI`,\n\tt1.`PRODUCT`,\t\n\tt1.`PROJECT`,\t\n\tt1.`RESOLUTION`,\t\n\tt1.`STATUS`,\t\n\tt1.`TITLE`,\n\tt1.BUGSN\nFROM\n\t`zt_bug` t1\n\tLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.ID\n\tLEFT JOIN zt_project t21 ON t1.PROJECT = t21.ID\n\tLEFT JOIN zt_story t31 ON t1.STORY = t31.ID\n\tLEFT JOIN zt_task t41 ON t1.TASK = t41.ID\n\tLEFT JOIN zt_module t51 ON t1.MODULE = t51.ID\n\tLEFT JOIN zt_branch t61 ON t1.BRANCH = t61.ID\n\tINNER JOIN (\nSELECT\n\ttt.id \nFROM\n\tzt_build tt \nWHERE\n\ttt.deleted = '0' \n\tAND tt.id IN (\nSELECT\n\tt1.build \nFROM\n\tzt_testtask t1 \nWHERE\n\tFIND_IN_SET(\n\tt1.id,\n\t(\nSELECT\n\ttasks \nFROM\n\tzt_testreport \nWHERE\n\tid = #{srf.datacontext.srfparentkey} )))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEDATAQUERIES/SelectBugsByProject/PSDEDQCODES/MYSQL5.json"
+}

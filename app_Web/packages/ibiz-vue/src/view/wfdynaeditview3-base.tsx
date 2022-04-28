@@ -1,6 +1,6 @@
-import { IPSAppDEWFDynaEditView, IPSAppView, IPSDEDRTab, IPSDEDRTabPage, IPSDEForm, IPSLanguageRes } from '@ibiz/dynamic-model-api';
+import { IPSAppDEWFDynaEditView, IPSAppView, IPSDEDRTab, IPSDEDRTabPage, IPSDEForm, IPSDEFormGroupPanel, IPSLanguageRes, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 import { WFDynaEditViewEngine, Util, ModelTool, GetModelService, AppModelService, LogUtil, throttle, WFDynaEdit3ViewInterface } from 'ibiz-core';
-import { AppCenterService } from '../app-service';
+import { AppCenterService, AppViewLogicService } from '../app-service';
 import { MainViewBase } from './mainview-base';
 
 /**
@@ -37,6 +37,24 @@ export class WFDynaEditView3Base extends MainViewBase implements WFDynaEdit3View
      * @memberof WFDynaEditView3Base
      */
     public editFormInstance !: IPSDEForm;
+
+    /**
+     * 第一个且带界面行为组的表单分组
+     *
+     * @public
+     * @type {IBizFormModel}
+     * @memberof WFDynaEditView3Base
+     */
+    public firstFormGroup !: IPSDEFormGroupPanel;
+
+    /**
+     * 第一个表单分组的界面行为组的运行时模型
+     *
+     * @public
+     * @type {IBizFormModel}
+     * @memberof WFDynaEditView3Base
+     */
+    public uiActionGroup !: any;
 
     /**
      * 数据关系分页部件实例
@@ -161,6 +179,18 @@ export class WFDynaEditView3Base extends MainViewBase implements WFDynaEdit3View
                                 </tooltip>
                             )
                         })
+                    }
+                    {
+                      this.uiActionGroup && this.uiActionGroup?.details?.map((item: any)=>{
+                        return (
+                          <tooltip v-show={item.visabled} transfer={true} max-width={600} >
+                              <i-button disabled={item.disabled} on-click={(event: any) => { throttle(this.handleActionClick,[event,item],this) }} loading={this.viewLoadingService.isLoading}>
+                                  <span class='caption'>{item.caption}</span>
+                              </i-button>
+                              <div slot='content'>{item.caption}</div>
+                          </tooltip>
+                        )
+                      })
                     }
                 </div >
             </div >
@@ -291,8 +321,28 @@ export class WFDynaEditView3Base extends MainViewBase implements WFDynaEdit3View
         } else {
             this.editFormInstance = ModelTool.findPSControlByName(`wfform_${inputForm.toLowerCase()}`, this.viewInstance.getPSControls()) as IPSDEForm;
         }
+        this.computeFormGroup();
         this.mountedMap.set(this.editFormInstance.name, false);
         this.$forceUpdate();
+    }
+
+    /**
+     * @description 计算需要重绘的表单分组
+     * @memberof WFDynaEditView3Base
+     */
+    public computeFormGroup(){
+        // 获取表单第一个分组，如果它有界面行为组则赋值
+        let formGroup = ModelTool.getAllFormDetails(this.editFormInstance)?.find((item: any)=>{
+          return item.detailType == 'GROUPPANEL';
+        })
+        if(formGroup?.getPSUIActionGroup?.()?.getPSUIActionGroupDetails?.()?.length > 0){
+          this.firstFormGroup = formGroup
+        }
+        if(this.firstFormGroup){
+          var style = document.createElement('style'); 
+          style.innerHTML=`#${this.firstFormGroup.codeName} .ivu-card-extra .ui-actions{ display:none; }`; 
+          document.getElementById(this.viewInstance.codeName)?.appendChild(style); 
+        }
     }
 
     /**
@@ -344,7 +394,7 @@ export class WFDynaEditView3Base extends MainViewBase implements WFDynaEdit3View
                                     if (Object.keys(resultData).length > 0) {
                                         let tempData: any = {};
                                         Object.keys(resultData).forEach((key: any) => {
-                                            if (Util.isExistAndNotEmpty(resultData[key]) && (key !== "srfuf")) tempData[key] = resultData[key];
+                                            if (key !== "srfuf") tempData[key] = resultData[key];
                                         })
                                         Object.assign(tempSubmitData, tempData);
                                     }
@@ -463,5 +513,41 @@ export class WFDynaEditView3Base extends MainViewBase implements WFDynaEdit3View
         }).catch((error: any) => {
             LogUtil.warn(this.$t('app.wizardpanel.error'));
         })
+    }
+
+    /**
+     * 处理操作列点击
+     * 
+     * @param {*} event 事件对象
+     * @param {*} item 界面行为的运行时模型对象
+     * @memberof EditFormControlBase
+     */
+    public handleActionClick(event: any, item: any) {
+        let actionDetal: any = this.firstFormGroup?.getPSUIActionGroup()?.getPSUIActionGroupDetails()?.find((groupDetail: IPSUIActionGroupDetail)=>{
+            return item.name == `${this.firstFormGroup.name}_${groupDetail.name}`;
+        })
+        let formEl = (this.$refs[this.editFormInstance.name] as any).ctrl;
+        if(actionDetal && formEl){
+          AppViewLogicService.getInstance().executeViewLogic(`${this.editFormInstance.name}_${this.firstFormGroup.codeName}_${actionDetal.name}_click`, event, formEl, undefined, this.editFormInstance.getPSAppViewLogics() || []);
+        }
+    }
+
+    /**
+     * 部件事件机制
+     *
+     * @param {string} ctrlName
+     * @param {string} eventName
+     * @param {*} args
+     * @memberof CalendarExpViewEngine
+     */
+    public onCtrlEvent(ctrlName: string, eventName: string, args: any): void {
+        super.onCtrlEvent(ctrlName, eventName, args);
+        if (ctrlName == this.editFormInstance?.name && eventName == "load") {
+          // 处理第一个表单分组的界面行为组
+          if(this.firstFormGroup){
+            let formEl = (this.$refs[this.editFormInstance.name] as any).ctrl;
+            this.uiActionGroup = formEl.detailsModel[this.firstFormGroup.name]?.uiActionGroup;
+          }
+        }
     }
 }

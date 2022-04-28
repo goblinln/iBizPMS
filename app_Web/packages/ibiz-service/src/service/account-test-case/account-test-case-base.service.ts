@@ -319,11 +319,11 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && _context.accounttestcase) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttestcases/${_context.accounttestcase}`);
+            const res = await this.http.get(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/accounttestcases/${encodeURIComponent(_context.accounttestcase)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
-        const res = await this.http.get(`/accounttestcases/${_context.accounttestcase}`);
+        const res = await this.http.get(`/accounttestcases/${encodeURIComponent(_context.accounttestcase)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -341,7 +341,7 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/accounttestcases/fetchaccount`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
             return res;
         }
@@ -363,7 +363,7 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/accounttestcases/fetchmy`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
             return res;
         }
@@ -385,7 +385,7 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
     async FetchMyFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmyfavorite`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/accounttestcases/fetchmyfavorite`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavorite');
             return res;
         }

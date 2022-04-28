@@ -96,7 +96,7 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/companies/${_context.company}`);
+        const res = await this.http.get(`/companies/${encodeURIComponent(_context.company)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/companies/${_context.company}`);
+        const res = await this.http.delete(`/companies/${encodeURIComponent(_context.company)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/companies/${_context.company}`, _data);
+        const res = await this.http.put(`/companies/${encodeURIComponent(_context.company)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/companies/${_context.company}/select`);
+        const res = await this.http.get(`/companies/${encodeURIComponent(_context.company)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

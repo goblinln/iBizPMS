@@ -161,6 +161,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "getPSRawItem" : {
+        "caption" : "无",
+        "contentType" : "RAW",
+        "name" : "rawitem1"
+      },
       "rawContent" : "无",
       "rawItemHeight" : -1.0,
       "rawItemWidth" : -1.0,

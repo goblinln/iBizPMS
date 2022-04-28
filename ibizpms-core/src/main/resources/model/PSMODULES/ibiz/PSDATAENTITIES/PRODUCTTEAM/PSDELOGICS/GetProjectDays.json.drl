@@ -14,22 +14,19 @@ package cn.ibizlab.pms.ibiz.logic.productteamlogic.getprojectdays;
 
     no-loop
 
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "productteamgetprojectdaysbegin"
+            when
+            then
+            end
+
             //逻辑处理节点[获取产品详情]
             rule "deaction1"
             ruleflow-group "productteamgetprojectdaysdeaction1"
             when
             then
                             cn.ibizlab.pms.util.helper.CachedBeanCopier.copy(productservice.get(productteamgetprojectdaysproduct.getId()),productteamgetprojectdaysproduct);
-                        update(productteamgetprojectdaysproduct);//更新fact中变量值
-                        update(productteamgetprojectdaysdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[设置产品参数]
-            rule "prepareparam1"
-            ruleflow-group "productteamgetprojectdaysprepareparam1"
-            when
-            then
-                            productteamgetprojectdaysproduct.set("id",productteamgetprojectdaysdefault.get("root"));
                         update(productteamgetprojectdaysproduct);//更新fact中变量值
                         update(productteamgetprojectdaysdefault);//更新fact中变量值
             end
@@ -44,9 +41,12 @@ package cn.ibizlab.pms.ibiz.logic.productteamlogic.getprojectdays;
                         update(productteamgetprojectdaysdefault);//更新fact中变量值
             end
 
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "productteamgetprojectdaysbegin"
+            //逻辑处理节点[设置产品参数]
+            rule "prepareparam1"
+            ruleflow-group "productteamgetprojectdaysprepareparam1"
             when
             then
+                            productteamgetprojectdaysproduct.set("id",productteamgetprojectdaysdefault.get("root"));
+                        update(productteamgetprojectdaysproduct);//更新fact中变量值
+                        update(productteamgetprojectdaysdefault);//更新fact中变量值
             end

@@ -11,19 +11,21 @@
         <tns:global identifier="projectprojecttaskqcntdefault" type="cn.ibizlab.pms.core.zentao.domain.Project" />
         </extensionElements>
      <startEvent id="begin" isInterrupting="true"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall8" id="rawsqlcall8" implementation="http://www.jboss.org/drools/rule" name="进行中的任务"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall10" id="rawsqlcall10" implementation="http://www.jboss.org/drools/rule" name="未关闭的任务数"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="未关闭任务数"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall7" id="rawsqlcall7" implementation="http://www.jboss.org/drools/rule" name="已关闭的任务数"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="指派给我的任务数"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall5" id="rawsqlcall5" implementation="http://www.jboss.org/drools/rule" name="所有任务"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="已完成的任务数"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall6" id="rawsqlcall6" implementation="http://www.jboss.org/drools/rule" name="已取消任务"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall9" id="rawsqlcall9" implementation="http://www.jboss.org/drools/rule" name="未开始的任务数"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall4" id="rawsqlcall4" implementation="http://www.jboss.org/drools/rule" name="我完成的任务数"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall7" id="rawsqlcall7" implementation="http://www.jboss.org/drools/rule" name="已关闭的任务数"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall8" id="rawsqlcall8" implementation="http://www.jboss.org/drools/rule" name="进行中的任务"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="指派给我的任务数"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall11" id="rawsqlcall11" implementation="http://www.jboss.org/drools/rule" name="需求变更数"/>
      <endEvent id="rawsqlcall11_end" name="end"/>
      <sequenceFlow id="rawsqlcall11_end_line" sourceRef="rawsqlcall11" targetRef="rawsqlcall11_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="未关闭任务数"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall4" id="rawsqlcall4" implementation="http://www.jboss.org/drools/rule" name="我完成的任务数"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall6" id="rawsqlcall6" implementation="http://www.jboss.org/drools/rule" name="已取消任务"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="已完成的任务数"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttaskqcntrawsqlcall5" id="rawsqlcall5" implementation="http://www.jboss.org/drools/rule" name="所有任务"/>
+     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+     </sequenceFlow>
      <sequenceFlow id="rawsqlcall10_rawsqlcall5" sourceRef="rawsqlcall10" targetRef="rawsqlcall5">
      </sequenceFlow>
      <sequenceFlow id="rawsqlcall9_rawsqlcall10" sourceRef="rawsqlcall9" targetRef="rawsqlcall10">
@@ -35,8 +37,6 @@
      <sequenceFlow id="rawsqlcall2_rawsqlcall3" sourceRef="rawsqlcall2" targetRef="rawsqlcall3">
      </sequenceFlow>
      <sequenceFlow id="rawsqlcall1_rawsqlcall2" sourceRef="rawsqlcall1" targetRef="rawsqlcall2">
-     </sequenceFlow>
-     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
      </sequenceFlow>
      <sequenceFlow id="rawsqlcall4_rawsqlcall9" sourceRef="rawsqlcall4" targetRef="rawsqlcall9">
      </sequenceFlow>

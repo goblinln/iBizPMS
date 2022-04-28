@@ -11,23 +11,23 @@
                     <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
                             <tns:global identifier="testreportgettestreportbasicinfodefault" type="cn.ibizlab.pms.core.zentao.domain.TestReport" />
             </extensionElements>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall13" id="rawsqlcall13" implementation="http://www.jboss.org/drools/rule" name="需求覆盖用例数"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall11" id="rawsqlcall11" implementation="http://www.jboss.org/drools/rule" name="用例产生的Bug"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取需求数"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="执行的用例数"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取用例数"/>
+                        <startEvent id="begin" isInterrupting="true"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall10" id="rawsqlcall10" implementation="http://www.jboss.org/drools/rule" name="遗留Bug"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall12" id="rawsqlcall12" implementation="http://www.jboss.org/drools/rule" name="有效需求数"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinfodeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="获取数据"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall11" id="rawsqlcall11" implementation="http://www.jboss.org/drools/rule" name="用例产生的Bug"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="执行的用例数"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取需求数"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall6" id="rawsqlcall6" implementation="http://www.jboss.org/drools/rule" name="有效Bug数"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall5" id="rawsqlcall5" implementation="http://www.jboss.org/drools/rule" name="执行结果"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取用例数"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall4" id="rawsqlcall4" implementation="http://www.jboss.org/drools/rule" name="失败的用例数"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall8" id="rawsqlcall8" implementation="http://www.jboss.org/drools/rule" name="产生的Bug"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall13" id="rawsqlcall13" implementation="http://www.jboss.org/drools/rule" name="需求覆盖用例数"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall7" id="rawsqlcall7" implementation="http://www.jboss.org/drools/rule" name="解决的Bug"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall9" id="rawsqlcall9" implementation="http://www.jboss.org/drools/rule" name="设置概况"/>
                         <endEvent id="rawsqlcall9_end" name="end"/>
                         <sequenceFlow id="rawsqlcall9_end_line" sourceRef="rawsqlcall9" targetRef="rawsqlcall9_end"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall6" id="rawsqlcall6" implementation="http://www.jboss.org/drools/rule" name="有效Bug数"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall7" id="rawsqlcall7" implementation="http://www.jboss.org/drools/rule" name="解决的Bug"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall8" id="rawsqlcall8" implementation="http://www.jboss.org/drools/rule" name="产生的Bug"/>
-                        <startEvent id="begin" isInterrupting="true"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinforawsqlcall10" id="rawsqlcall10" implementation="http://www.jboss.org/drools/rule" name="遗留Bug"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="testreportgettestreportbasicinfodeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="获取数据"/>
                     <sequenceFlow id="begin_deaction1" sourceRef="begin" targetRef="deaction1">
                     </sequenceFlow>
                     <sequenceFlow id="rawsqlcall10_rawsqlcall11" sourceRef="rawsqlcall10" targetRef="rawsqlcall11">

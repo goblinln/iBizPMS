@@ -5,23 +5,6 @@
   "logicName" : "更新相关信息",
   "name" : "更新相关信息",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Deaction3",
-    "getDstPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
-    },
-    "logicNodeType" : "DEACTION",
-    "name" : "获取测试用户信息",
-    "parallelOutput" : true
-  }, {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始",
@@ -34,9 +17,25 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction4",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetPoInfomation.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+    },
+    "logicNodeType" : "DEACTION",
+    "name" : "获取产品经理信息",
     "parallelOutput" : true
   }, {
     "codeName" : "Deaction2",
@@ -56,10 +55,10 @@
     "name" : "获取研发用户信息",
     "parallelOutput" : true
   }, {
-    "codeName" : "Deaction4",
+    "codeName" : "Deaction3",
     "getDstPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetPoInfomation.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
     },
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -70,7 +69,7 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
     "logicNodeType" : "DEACTION",
-    "name" : "获取产品经理信息",
+    "name" : "获取测试用户信息",
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
@@ -105,8 +104,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
+      }
     }, {
       "getDstPSDELogicNode" : {
         "modelref" : true,
@@ -132,8 +130,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
+      }
     }, {
       "getDstPSDELogicNode" : {
         "modelref" : true,
@@ -159,8 +156,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[CURYEAR]",
@@ -187,12 +183,14 @@
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

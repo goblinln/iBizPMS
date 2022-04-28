@@ -1,88 +1,85 @@
 {
+  "codeListTag" : "zentao__Task_quickpacket",
   "codeListType" : "STATIC",
   "codeName" : "Task_quickpacket",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Task_quickpacket.json",
   "emptyText" : "未定义",
+  "name" : "任务快速分组",
   "getPSCodeItems" : [ {
     "codeName" : "ALLTASKCNT",
     "data" : "{}",
     "text" : "所有",
-    "value" : "All",
-    "includeBeginValue" : true
+    "value" : "All"
   }, {
     "codeName" : "UNCLOSETASKCNT",
     "data" : "{\"n_status_noteq\":\"closed\"}",
     "text" : "未关闭",
     "value" : "UNCLOSED",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "ASSTOMYTASKCNT",
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指派给我",
-    "value" : "TOME",
-    "includeBeginValue" : true
+    "value" : "TOME"
   }, {
     "codeName" : "STORYCHANGECNT",
     "data" : "{\"n_status1_eq\":\"storychange\"}",
     "text" : "需求变更",
-    "value" : "storychange",
-    "includeBeginValue" : true
+    "value" : "storychange"
   }, {
     "codeName" : "MORETASKCNT",
     "getPSCodeItems" : [ {
       "codeName" : "UNSTARTTASKCNT",
       "data" : "{\"n_status_eq\":\"wait\"}",
       "text" : "未开始",
-      "value" : "NOTSTARTED",
-      "includeBeginValue" : true
+      "value" : "NOTSTARTED"
     }, {
       "codeName" : "YSTARTASKCNT",
       "data" : "{\"n_status_eq\":\"doing\"}",
       "text" : "进行中",
-      "value" : "INPROGRESS",
-      "includeBeginValue" : true
+      "value" : "INPROGRESS"
     }, {
       "codeName" : "UNCOMPLETETASKCNT",
       "data" : "{\"n_status_in\":\"wait;cancel;doing\"}",
       "text" : "未完成",
-      "value" : "UNACCOMPLISHED",
-      "includeBeginValue" : true
+      "value" : "UNACCOMPLISHED"
     }, {
       "codeName" : "MYCOMPLETETASKCNT",
       "data" : "{\"n_finishedby_eq\":\"%srfloginname%\"}",
       "text" : "我完成",
-      "value" : "IFINISHED",
-      "includeBeginValue" : true
+      "value" : "IFINISHED"
     }, {
       "codeName" : "YCOMPLETETASKCNT",
       "data" : "{\"n_status_eq\":\"done\"}",
       "text" : "已完成",
-      "value" : "COMPLETED",
-      "includeBeginValue" : true
+      "value" : "COMPLETED"
     }, {
       "codeName" : "CLOSETASKCNT",
       "data" : "{\"n_status_eq\":\"closed\"}",
       "text" : "已关闭",
-      "value" : "CLOSED",
-      "includeBeginValue" : true
+      "value" : "CLOSED"
     }, {
       "codeName" : "CANCELTASKCNT",
       "data" : "{\"n_status_eq\":\"cancel\"}",
       "text" : "已取消",
-      "value" : "CANCELLED",
-      "includeBeginValue" : true
+      "value" : "CANCELLED"
     } ],
     "text" : "更多",
-    "value" : "MORE",
-    "includeBeginValue" : true
+    "value" : "MORE"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

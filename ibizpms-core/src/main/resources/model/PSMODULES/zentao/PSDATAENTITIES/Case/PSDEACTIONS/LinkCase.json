@@ -7,13 +7,15 @@
   "logicName" : "测试单关联测试用例",
   "name" : "linkCase",
   "getPSDEActionInput" : {
-    "codeName" : "LinkCaseInput",
-    "name" : "输入对象",
+    "name" : "LinkCaseInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTOS"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "LinkCaseResult",
-    "name" : "返回对象",
+    "name" : "LinkCaseResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1",

@@ -6,13 +6,19 @@
   "logicName" : "计算计划结束时间",
   "name" : "GetPlanEnd",
   "getPSDEActionInput" : {
-    "codeName" : "GetPlanEndInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetPlanEndInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetPlanEndResult",
-    "name" : "返回对象",
+    "name" : "GetPlanEndResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   }
 }

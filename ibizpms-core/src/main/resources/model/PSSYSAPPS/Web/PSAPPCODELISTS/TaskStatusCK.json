@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__TaskStatusCK",
   "codeListType" : "STATIC",
   "codeName" : "TaskStatusCK",
   "dynaInstMode" : 1,
@@ -14,44 +15,37 @@
     "color" : "rgba(131, 138, 157, 1)",
     "text" : "未开始",
     "value" : "wait",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Doing",
     "color" : "rgba(255, 93, 93, 1)",
     "text" : "进行中",
-    "value" : "doing",
-    "includeBeginValue" : true
+    "value" : "doing"
   }, {
     "codeName" : "Done",
     "color" : "rgba(67, 160, 71, 1)",
     "text" : "已完成",
-    "value" : "done",
-    "includeBeginValue" : true
+    "value" : "done"
   }, {
     "codeName" : "Pause",
     "color" : "rgba(255, 152, 0, 1)",
     "text" : "已暂停",
-    "value" : "pause",
-    "includeBeginValue" : true
+    "value" : "pause"
   }, {
     "codeName" : "Cancel",
     "color" : "rgba(131, 138, 157, 1)",
     "text" : "已取消",
-    "value" : "cancel",
-    "includeBeginValue" : true
+    "value" : "cancel"
   }, {
     "codeName" : "Closed",
     "color" : "rgba(131, 138, 157, 1)",
     "text" : "已关闭",
-    "value" : "closed",
-    "includeBeginValue" : true
+    "value" : "closed"
   }, {
     "codeName" : "Storychange",
     "color" : "rgba(245, 8, 8, 1)",
     "text" : "需求变更",
-    "value" : "storychange",
-    "includeBeginValue" : true
+    "value" : "storychange"
   } ],
   "enableCache" : true
 }

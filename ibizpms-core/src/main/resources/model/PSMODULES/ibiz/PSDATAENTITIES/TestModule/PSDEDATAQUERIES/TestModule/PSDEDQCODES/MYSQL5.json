@@ -1,0 +1,60 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`TYPE` = 'story'  AND  t1.`DELETED` = '0' )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`COLLECTOR`",
+    "name" : "COLLECTOR"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`GRADE`",
+    "name" : "GRADE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END )",
+    "name" : "ISLEAF"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`OWNER`",
+    "name" : "OWNER"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PARENTNAME"
+  }, {
+    "expression" : "t1.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`ROOT`",
+    "name" : "ROOT"
+  }, {
+    "expression" : "t21.`NAME`",
+    "name" : "ROOTNAME"
+  }, {
+    "expression" : "t1.`SHORT`",
+    "name" : "SHORT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`BRANCH`,\n\tt1.`DELETED`,\n\tt1.`GRADE`,\n\tt1.`ID`,\n\t( CASE WHEN EXISTS ( SELECT 1 FROM ZT_MODULE WHERE PARENT = t1.`ID` ) THEN FALSE ELSE TRUE END ) AS `ISLEAF`,\n\tCONCAT('/',(select GROUP_CONCAT(tt.name SEPARATOR '/') from zt_module tt where FIND_IN_SET(tt.id,t1.path) and tt.type = 'story' GROUP BY tt.root)) as `NAME`,\n\tt1.`ORDER`,\n\tt1.`OWNER`,\n\tt1.`PARENT`,\n\tt21.`NAME` AS `PARENTNAME`,\n\tt1.`PATH`,\n\tt1.`ROOT`,\n\tt11.`NAME` AS `ROOTNAME`,\n\tt1.`SHORT`,\n\tt1.`TYPE`,\n\tt1.MODULESN\nFROM\n\t`zt_module` t1\n\tLEFT JOIN zt_product t11 ON t1.ROOT = t11.id\n\tLEFT JOIN zt_module t21 ON t1.PARENT = t21.id",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEDATAQUERIES/TestModule/PSDEDQCODES/MYSQL5.json"
+}

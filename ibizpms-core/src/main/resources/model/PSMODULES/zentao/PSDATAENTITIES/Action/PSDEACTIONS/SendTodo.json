@@ -6,13 +6,15 @@
   "logicName" : "发送待办",
   "name" : "sendTodo",
   "getPSDEActionInput" : {
-    "codeName" : "SendTodoInput",
-    "name" : "输入对象",
+    "name" : "SendTodoInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ActionDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SendTodoResult",
-    "name" : "返回对象",
+    "name" : "SendTodoResult",
     "type" : "VOID"
   }
 }

@@ -23,7 +23,7 @@
       <span v-else-if="textFormat">
           <span class="app-span-value-format" v-format="textFormat">{{text}}</span>
       </span>
-      <span v-else>
+      <span v-else style="white-space:pre-line">
         {{ text + '&nbsp;' + (unitName ? unitName : '') }}
       </span>
     </span>
@@ -240,7 +240,7 @@ export default class AppSpan extends Vue {
      * @memberof AppSpan
      */
     public formatData() {
-      if (this.valueFormat && !Object.is(this.dataType, 'DATETIME')) {
+      if (this.valueFormat && !Object.is(this.getDataType(), 'DATETIME')) {
         this.textFormat = this.unitName ? this.valueFormat + '_' + this.unitName : this.valueFormat;
         //vue-text-format插件重复值修复
         if(this.valueFormat.includes("*")) {
@@ -250,11 +250,33 @@ export default class AppSpan extends Vue {
           })
         }
       }
-      if (Object.is(this.dataType, 'DATETIME') && this.valueFormat.length > 0) {
-        this.text = moment(this.value).format(this.valueFormat);
+      if (Object.is(this.getDataType(), 'DATETIME') && this.valueFormat.length > 0) {
+        if (/^([01]\d|2[0-3]):[0-5]\d:[0-5]\d$/.test(this.value)) {
+          // 如果当前值是HH:mm:ss格式
+          this.text = moment(this.value,'HH:mm:ss').format(this.valueFormat);
+        } else {
+          this.text = moment(this.value).format(this.valueFormat);
+        }
       }else {
         this.text = this.value;
       }
+    }
+
+    /**
+     * 获取数据格式
+     *
+     * @memberof AppSpan
+     */
+    public getDataType() {
+        if (
+            this.dataType &&
+            (this.dataType == 'DATETIME' || this.dataType == 'DATE' || this.dataType == 'TIME' || this.dataType == 'SMALLDATETIME')
+        ) {
+            //  日期格式统一处理
+            return 'DATETIME';
+        } else {
+            return this.dataType;
+        }
     }
 }
 </script>

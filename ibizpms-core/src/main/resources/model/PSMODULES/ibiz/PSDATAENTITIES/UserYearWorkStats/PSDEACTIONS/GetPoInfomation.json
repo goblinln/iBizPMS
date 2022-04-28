@@ -6,13 +6,19 @@
   "logicName" : "获取产品经理相关数据",
   "name" : "GetPoInfomation",
   "getPSDEActionInput" : {
-    "codeName" : "GetPoInfomationInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetPoInfomationInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetPoInfomationResult",
-    "name" : "返回对象",
+    "name" : "GetPoInfomationResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "UserYearWorkStatsDTO"
+    },
     "type" : "DTO"
   },
   "getPSDELogic" : {

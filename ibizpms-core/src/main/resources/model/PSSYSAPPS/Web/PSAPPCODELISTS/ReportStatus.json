@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "report__ReportStatus",
   "codeListType" : "STATIC",
   "codeName" : "ReportStatus",
   "dynaInstMode" : 1,
@@ -9,13 +10,11 @@
     "codeName" : "Item_0",
     "color" : "rgba(244, 15, 15, 1)",
     "text" : "未读",
-    "value" : "0",
-    "includeBeginValue" : true
+    "value" : "0"
   }, {
     "codeName" : "Item_1",
     "text" : "已读",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   } ],
   "enableCache" : true
 }

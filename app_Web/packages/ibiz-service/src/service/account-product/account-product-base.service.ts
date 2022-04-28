@@ -187,11 +187,11 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && _context.accountproduct) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountproducts/${_context.accountproduct}`);
+            const res = await this.http.get(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/accountproducts/${encodeURIComponent(_context.accountproduct)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
-        const res = await this.http.get(`/accountproducts/${_context.accountproduct}`);
+        const res = await this.http.get(`/accountproducts/${encodeURIComponent(_context.accountproduct)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -209,7 +209,7 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/accountproducts/fetchaccount`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
             return res;
         }
@@ -231,7 +231,7 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/accountproducts/fetchmy`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
             return res;
         }

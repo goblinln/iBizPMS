@@ -93,6 +93,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "getPSRawItem" : {
+        "caption" : "<p>路径：产品→[测试数据]在线培训→需求→创建需求</p>\n<p><img src=\"../../../assets/img/storyadd.png\" referrerpolicy=\"no-referrer\" alt=\"show1\"></p>",
+        "contentType" : "RAW",
+        "name" : "rawitem1"
+      },
       "rawContent" : "<p>路径：产品→[测试数据]在线培训→需求→创建需求</p>\n<p><img src=\"../../../assets/img/storyadd.png\" referrerpolicy=\"no-referrer\" alt=\"show1\"></p>",
       "rawItemHeight" : -1.0,
       "rawItemWidth" : -1.0,

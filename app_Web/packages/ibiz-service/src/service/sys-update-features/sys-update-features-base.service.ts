@@ -98,7 +98,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures`, _data);
+            const res = await this.http.post(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}/sysupdatefeatures`, _data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
@@ -126,11 +126,11 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysupdatelog && _context.sysupdatefeatures) {
-            const res = await this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`);
+            const res = await this.http.get(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}/sysupdatefeatures/${encodeURIComponent(_context.sysupdatefeatures)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
-        const res = await this.http.get(`/sysupdatefeatures/${_context.sysupdatefeatures}`);
+        const res = await this.http.get(`/sysupdatefeatures/${encodeURIComponent(_context.sysupdatefeatures)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -150,7 +150,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         if (_context.sysupdatelog && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/getdraft`, _data);
+            const res = await this.http.get(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}/sysupdatefeatures/getdraft`, _data);
             return res;
         }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
@@ -172,10 +172,10 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysupdatelog && _context.sysupdatefeatures) {
-            const res = await this.http.delete(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`);
+            const res = await this.http.delete(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}/sysupdatefeatures/${encodeURIComponent(_context.sysupdatefeatures)}`);
             return res;
         }
-        const res = await this.http.delete(`/sysupdatefeatures/${_context.sysupdatefeatures}`);
+        const res = await this.http.delete(`/sysupdatefeatures/${encodeURIComponent(_context.sysupdatefeatures)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -194,12 +194,12 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         if (_context.sysupdatelog && _context.sysupdatefeatures) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
+            const res = await this.http.put(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}/sysupdatefeatures/${encodeURIComponent(_context.sysupdatefeatures)}`, _data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
+        const res = await this.http.put(`/sysupdatefeatures/${encodeURIComponent(_context.sysupdatefeatures)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -216,7 +216,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysupdatelog && true) {
-            const res = await this.http.post(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/fetchdefault`, _data);
+            const res = await this.http.post(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}/sysupdatefeatures/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
@@ -238,10 +238,10 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysupdatelog && _context.sysupdatefeatures) {
-            const res = await this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
+            const res = await this.http.get(`/sysupdatelogs/${encodeURIComponent(_context.sysupdatelog)}/sysupdatefeatures/${encodeURIComponent(_context.sysupdatefeatures)}/select`);
             return res;
         }
-        const res = await this.http.get(`/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
+        const res = await this.http.get(`/sysupdatefeatures/${encodeURIComponent(_context.sysupdatefeatures)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

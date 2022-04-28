@@ -1,17 +1,38 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "zentao__RelatedStory",
   "codeListType" : "DYNAMIC",
   "codeName" : "RelatedStory",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/RelatedStory.json",
+  "name" : "关联需求（动态）",
   "orMode" : "STR",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getTextPSDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
   "textSeparator" : ",",
+  "getValuePSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "valueSeparator" : ",",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

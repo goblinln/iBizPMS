@@ -9,9 +9,6 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
     },
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : true
   } ],
   "codeName" : "ToStory",
@@ -19,13 +16,15 @@
   "logicName" : "转需求",
   "name" : "toStory",
   "getPSDEActionInput" : {
-    "codeName" : "ToStoryInput",
-    "name" : "输入对象",
+    "name" : "ToStoryInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BugDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ToStoryResult",
-    "name" : "返回对象",
+    "name" : "ToStoryResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

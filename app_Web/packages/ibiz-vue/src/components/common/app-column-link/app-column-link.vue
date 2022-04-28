@@ -253,6 +253,11 @@ export default class AppColumnLink extends Vue {
         if (!result) {
             return;
         }
+        if(result.isError){
+            const data = result?.response?.data;
+            this.$throw(data?.messages?data.messages:this.$t('components.500.errortext1'));
+            return;
+        }
         let targetOpenViewRef: IPSAppViewRef | undefined = targetRedirectView
             .getRedirectPSAppViewRefs()
             ?.find((item: IPSAppViewRef) => {
@@ -279,7 +284,7 @@ export default class AppColumnLink extends Vue {
         }
         await targetOpenView.fill(true);
         const view: any = {
-            viewname: Util.srfFilePath2(targetOpenView.codeName),
+            viewname: 'app-view-shell',
             height: targetOpenView.height,
             width: targetOpenView.width,
             title: this.$tl(targetOpenView.getCapPSLanguageRes()?.lanResTag, targetOpenView.title),

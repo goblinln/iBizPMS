@@ -523,13 +523,16 @@ export class AppGridBase extends GridControlBase {
                                             }}
                                         >
                                             {uiactionDetail.showIcon ? (
+                                                    uiaction && uiaction.getPSSysImage()?.cssClass?
                                                 <i
                                                     class={
-                                                        uiaction && uiaction.getPSSysImage()?.cssClass
-                                                            ? uiaction.getPSSysImage()?.cssClass
-                                                            : 'fa fa-save'
+                                                         uiaction.getPSSysImage()?.cssClass
                                                     }
                                                 ></i>
+                                                :uiaction && uiaction.getPSSysImage()?.imagePath?
+                                                <img src={uiaction.getPSSysImage()?.imagePath} alt="" />:<i
+                                                class='fa fa-save'
+                                            ></i>
                                             ) : (
                                                 ''
                                             )}
@@ -766,7 +769,7 @@ export class AppGridBase extends GridControlBase {
         const valueFormat = (item as IPSDEGridFieldColumn).valueFormat;
         const { row, column, $index } = scope;
         return (
-            <app-form-item gridError={this.gridItemsModel[$index][column.property].error}>
+            <app-form-item gridError={this.gridItemsModel.length>0 ? this.gridItemsModel[$index][column.property].error : ''}>
                 <app-default-editor
                     editorInstance={editor}
                     parentItem={editItem}

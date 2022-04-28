@@ -62,13 +62,13 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "Update",
+        "actionName" : "GetDraft",
         "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "Update"
+          "id" : "GetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -79,32 +79,6 @@
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraftfrom",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-        }
-      }, {
-        "actionName" : "GetDraft",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -130,6 +104,32 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -385,6 +385,32 @@
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
+                  "actionName" : "Get",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "READ",
+                  "name" : "load",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Get"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
+                  }
+                }, {
+                  "actionName" : "Create",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "CREATE",
+                  "name" : "create",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Create"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
+                  }
+                }, {
                   "actionName" : "Update",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "UPDATE",
@@ -392,17 +418,6 @@
                   "getPSAppDEMethod" : {
                     "modelref" : true,
                     "id" : "Update"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
-                  }
-                }, {
-                  "actionType" : "DEDATASET",
-                  "name" : "fetch",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "FetchAccount"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -422,19 +437,6 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
                   }
                 }, {
-                  "actionName" : "Get",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "READ",
-                  "name" : "load",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "Get"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
-                  }
-                }, {
                   "actionName" : "GetDraft",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
@@ -448,13 +450,11 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
                   }
                 }, {
-                  "actionName" : "Create",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "CREATE",
-                  "name" : "create",
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Create"
+                    "id" : "FetchAccount"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -727,10 +727,14 @@
               "actionRSMode" : 1,
               "codeName" : "AccountTasks",
               "dataRSMode" : 0,
+              "majorDECodeName" : "SysAccount",
+              "majorDEName" : "SYS_USER",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
+              "minorDECodeName" : "AccountTask",
+              "minorDEName" : "ACCOUNTTASK",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
@@ -912,6 +916,32 @@
             },
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
+                "actionName" : "Get",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "READ",
+                "name" : "load",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Get"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                }
+              }, {
+                "actionName" : "Create",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "CREATE",
+                "name" : "create",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Create"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                }
+              }, {
                 "actionName" : "Update",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "UPDATE",
@@ -919,17 +949,6 @@
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Update"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                }
-              }, {
-                "actionType" : "DEDATASET",
-                "name" : "fetch",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "FetchStoryRelated"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -949,19 +968,6 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
                 }
               }, {
-                "actionName" : "Get",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "READ",
-                "name" : "load",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Get"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                }
-              }, {
                 "actionName" : "GetDraft",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "CREATE",
@@ -975,13 +981,11 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
                 }
               }, {
-                "actionName" : "Create",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "CREATE",
-                "name" : "create",
+                "actionType" : "DEDATASET",
+                "name" : "fetch",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "Create"
+                  "id" : "FetchStoryRelated"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1230,10 +1234,14 @@
             "actionRSMode" : 1,
             "codeName" : "Projects",
             "dataRSMode" : 0,
+            "majorDECodeName" : "Product",
+            "majorDEName" : "ZT_PRODUCT",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
+            "minorDECodeName" : "Project",
+            "minorDEName" : "ZT_PROJECT",
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -1244,10 +1252,14 @@
             "actionRSMode" : 1,
             "codeName" : "Stories",
             "dataRSMode" : 0,
+            "majorDECodeName" : "Project",
+            "majorDEName" : "ZT_PROJECT",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
+            "minorDECodeName" : "Story",
+            "minorDEName" : "ZT_STORY",
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -1258,10 +1270,14 @@
             "actionRSMode" : 1,
             "codeName" : "Stories",
             "dataRSMode" : 0,
+            "majorDECodeName" : "Project",
+            "majorDEName" : "ZT_PROJECT",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
+            "minorDECodeName" : "Story",
+            "minorDEName" : "ZT_STORY",
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -1272,10 +1288,14 @@
             "actionRSMode" : 1,
             "codeName" : "Stories",
             "dataRSMode" : 0,
+            "majorDECodeName" : "Product",
+            "majorDEName" : "ZT_PRODUCT",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
+            "minorDECodeName" : "Story",
+            "minorDEName" : "ZT_STORY",
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -1468,6 +1488,32 @@
             },
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
+                "actionName" : "Get",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "READ",
+                "name" : "load",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Get"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                }
+              }, {
+                "actionName" : "Create",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "CREATE",
+                "name" : "create",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Create"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                }
+              }, {
                 "actionName" : "Update",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "UPDATE",
@@ -1475,18 +1521,6 @@
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Update"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                }
-              }, {
-                "actionType" : "DEDATASET",
-                "customCond" : "StoryChild",
-                "name" : "fetch",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "FetchDefault"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1506,19 +1540,6 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
                 }
               }, {
-                "actionName" : "Get",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "READ",
-                "name" : "load",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Get"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                }
-              }, {
                 "actionName" : "GetDraft",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "CREATE",
@@ -1532,13 +1553,12 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
                 }
               }, {
-                "actionName" : "Create",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "CREATE",
-                "name" : "create",
+                "actionType" : "DEDATASET",
+                "customCond" : "StoryChild",
+                "name" : "fetch",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "Create"
+                  "id" : "FetchDefault"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1787,10 +1807,14 @@
             "actionRSMode" : 1,
             "codeName" : "Projects",
             "dataRSMode" : 0,
+            "majorDECodeName" : "Product",
+            "majorDEName" : "ZT_PRODUCT",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
+            "minorDECodeName" : "Project",
+            "minorDEName" : "ZT_PROJECT",
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -1801,10 +1825,14 @@
             "actionRSMode" : 1,
             "codeName" : "Stories",
             "dataRSMode" : 0,
+            "majorDECodeName" : "Project",
+            "majorDEName" : "ZT_PROJECT",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
+            "minorDECodeName" : "Story",
+            "minorDEName" : "ZT_STORY",
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -1815,10 +1843,14 @@
             "actionRSMode" : 1,
             "codeName" : "Stories",
             "dataRSMode" : 0,
+            "majorDECodeName" : "Project",
+            "majorDEName" : "ZT_PROJECT",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
+            "minorDECodeName" : "Story",
+            "minorDEName" : "ZT_STORY",
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -1829,10 +1861,14 @@
             "actionRSMode" : 1,
             "codeName" : "Stories",
             "dataRSMode" : 0,
+            "majorDECodeName" : "Product",
+            "majorDEName" : "ZT_PRODUCT",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
+            "minorDECodeName" : "Story",
+            "minorDEName" : "ZT_STORY",
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -2079,6 +2115,32 @@
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
+                  "actionName" : "Get",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "READ",
+                  "name" : "load",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Get"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  }
+                }, {
+                  "actionName" : "Create",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "CREATE",
+                  "name" : "create",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Create"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  }
+                }, {
                   "actionName" : "Update",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "UPDATE",
@@ -2086,17 +2148,6 @@
                   "getPSAppDEMethod" : {
                     "modelref" : true,
                     "id" : "Update"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                  }
-                }, {
-                  "actionType" : "DEDATASET",
-                  "name" : "fetch",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "FetchStoryFormBug"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -2116,19 +2167,6 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                   }
                 }, {
-                  "actionName" : "Get",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "READ",
-                  "name" : "load",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "Get"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                  }
-                }, {
                   "actionName" : "GetDraft",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
@@ -2142,13 +2180,11 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                   }
                 }, {
-                  "actionName" : "Create",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "CREATE",
-                  "name" : "create",
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Create"
+                    "id" : "FetchStoryFormBug"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -2445,10 +2481,14 @@
               "actionRSMode" : 1,
               "codeName" : "Projects",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Product",
+              "majorDEName" : "ZT_PRODUCT",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
               },
+              "minorDECodeName" : "Project",
+              "minorDEName" : "ZT_PROJECT",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -2459,10 +2499,14 @@
               "actionRSMode" : 1,
               "codeName" : "Bugs",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Project",
+              "majorDEName" : "ZT_PROJECT",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
               },
+              "minorDECodeName" : "Bug",
+              "minorDEName" : "ZT_BUG",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -2477,10 +2521,14 @@
               "actionRSMode" : 1,
               "codeName" : "Bugs",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Test",
+              "majorDEName" : "IBZ_API__TEST",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
               },
+              "minorDECodeName" : "Bug",
+              "minorDEName" : "ZT_BUG",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -2495,10 +2543,14 @@
               "actionRSMode" : 1,
               "codeName" : "Bugs",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Project",
+              "majorDEName" : "ZT_PROJECT",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
               },
+              "minorDECodeName" : "Bug",
+              "minorDEName" : "ZT_BUG",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -2699,6 +2751,32 @@
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
+                  "actionName" : "Get",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "READ",
+                  "name" : "load",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Get"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  }
+                }, {
+                  "actionName" : "Create",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "CREATE",
+                  "name" : "create",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Create"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  }
+                }, {
                   "actionName" : "Update",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "UPDATE",
@@ -2706,17 +2784,6 @@
                   "getPSAppDEMethod" : {
                     "modelref" : true,
                     "id" : "Update"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                  }
-                }, {
-                  "actionType" : "DEDATASET",
-                  "name" : "fetch",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "FetchDefault"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -2736,19 +2803,6 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                   }
                 }, {
-                  "actionName" : "Get",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "READ",
-                  "name" : "load",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "Get"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                  }
-                }, {
                   "actionName" : "GetDraft",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
@@ -2762,13 +2816,11 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                   }
                 }, {
-                  "actionName" : "Create",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "CREATE",
-                  "name" : "create",
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Create"
+                    "id" : "FetchDefault"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -3065,10 +3117,14 @@
               "actionRSMode" : 1,
               "codeName" : "Projects",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Product",
+              "majorDEName" : "ZT_PRODUCT",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
               },
+              "minorDECodeName" : "Project",
+              "minorDEName" : "ZT_PROJECT",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -3079,10 +3135,14 @@
               "actionRSMode" : 1,
               "codeName" : "Bugs",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Project",
+              "majorDEName" : "ZT_PROJECT",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
               },
+              "minorDECodeName" : "Bug",
+              "minorDEName" : "ZT_BUG",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -3097,10 +3157,14 @@
               "actionRSMode" : 1,
               "codeName" : "Bugs",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Test",
+              "majorDEName" : "IBZ_API__TEST",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
               },
+              "minorDECodeName" : "Bug",
+              "minorDEName" : "ZT_BUG",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -3115,10 +3179,14 @@
               "actionRSMode" : 1,
               "codeName" : "Bugs",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Project",
+              "majorDEName" : "ZT_PROJECT",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
               },
+              "minorDECodeName" : "Bug",
+              "minorDEName" : "ZT_BUG",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -3298,6 +3366,32 @@
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
+                  "actionName" : "Get",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "READ",
+                  "name" : "load",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Get"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                  }
+                }, {
+                  "actionName" : "Create",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "CREATE",
+                  "name" : "create",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Create"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                  }
+                }, {
                   "actionName" : "Update",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "UPDATE",
@@ -3305,17 +3399,6 @@
                   "getPSAppDEMethod" : {
                     "modelref" : true,
                     "id" : "Update"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
-                  }
-                }, {
-                  "actionType" : "DEDATASET",
-                  "name" : "fetch",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "FetchDefault"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -3335,19 +3418,6 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                   }
                 }, {
-                  "actionName" : "Get",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "READ",
-                  "name" : "load",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "Get"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
-                  }
-                }, {
                   "actionName" : "GetDraft",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
@@ -3361,13 +3431,11 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                   }
                 }, {
-                  "actionName" : "Create",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "CREATE",
-                  "name" : "create",
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Create"
+                    "id" : "FetchDefault"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -3619,10 +3687,14 @@
               "actionRSMode" : 1,
               "codeName" : "TestCases",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Test",
+              "majorDEName" : "IBZ_API__TEST",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
               },
+              "minorDECodeName" : "TestCase",
+              "minorDEName" : "ZT_CASE",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
@@ -3731,10 +3803,14 @@
     "actionRSMode" : 1,
     "codeName" : "Projects",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Project",
+    "minorDEName" : "ZT_PROJECT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -3745,10 +3821,14 @@
     "actionRSMode" : 1,
     "codeName" : "Stories",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Story",
+    "minorDEName" : "ZT_STORY",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -3759,10 +3839,14 @@
     "actionRSMode" : 1,
     "codeName" : "Stories",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Story",
+    "minorDEName" : "ZT_STORY",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -3773,10 +3857,14 @@
     "actionRSMode" : 1,
     "codeName" : "Stories",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Story",
+    "minorDEName" : "ZT_STORY",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"

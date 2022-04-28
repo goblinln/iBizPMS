@@ -107,7 +107,7 @@ export class DynamicCodeListService {
                         this.codeListInstance.fill(true).then(() => {
                             this.isEnableCache = this.codeListInstance.enableCache;
                             this.predefinedType = this.codeListInstance.predefinedType || '';
-                            this.cacheTimeout = this.codeListInstance.cacheTimeout;
+                            this.cacheTimeout = this.codeListInstance.cacheTimeout || -1;
                             this.codelistModel = { codelistid: this.codeListInstance.codeName };
                             this.initUserParams();
                             this.initQueryParams();

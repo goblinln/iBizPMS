@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\nt1.`CONSUMED`,\nt1.`DATE`,\nROUND((select estimate from zt_burn where date=t2.`begin` and project=t1.project)*(1-(DATEDIFF(t1.date,t2.`begin`))/(DATEDIFF(t2.`end`,t2.`begin`))),1) AS `ESTIMATE`,\nt1.`LEFT`,\nt1.`PROJECT`,\nDATE_FORMAT(t1.date,'%w')  as ISWEEKEND\nFROM `zt_burn` t1  \nLEFT JOIN zt_project t2 on t1.project=t2.id",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEDATAQUERIES/Estimate/PSDEDQCODES/MYSQL5.json"
+}

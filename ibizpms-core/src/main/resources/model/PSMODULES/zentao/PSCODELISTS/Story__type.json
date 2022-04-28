@@ -1,26 +1,33 @@
 {
+  "codeListTag" : "zentao__Story__type",
   "codeListType" : "STATIC",
   "codeName" : "Story__type",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__type.json",
   "emptyText" : "未定义",
+  "name" : "需求类型",
   "getPSCodeItems" : [ {
     "codeName" : "Requirement",
     "text" : "用户需求",
-    "value" : "requirement",
-    "includeBeginValue" : true
+    "value" : "requirement"
   }, {
     "codeName" : "Story",
     "text" : "软件需求",
     "value" : "story",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

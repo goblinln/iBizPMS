@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`assignedTo` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`finishedBy` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}   )",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.`CYCLE` = 0",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.date is not null",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`ASSIGNEDBY`,\nt1.`ASSIGNEDDATE`,\nt1.`ASSIGNEDTO`,\nt1.`BEGIN`,\nt1.`CLOSEDBY`,\nt1.`CLOSEDDATE`,\nt1.`CONFIG`,\nt1.`CYCLE`,\nt1.`DATE`,\n(case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`,\nt1.`END`,\nt1.`FINISHEDBY`,\nt1.`FINISHEDDATE`,\nt1.`TODOSN`,\nt1.`id`,\nt1.`IDVALUE`,\nt1.`NAME`,\nt1.`PRI`,\nt1.`PRIVATE`,\nt1.`STATUS`,\nt1.`TYPE`\nFROM `zt_todo` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEDATAQUERIES/MyTodoPc/PSDEDQCODES/MYSQL5.json"
+}

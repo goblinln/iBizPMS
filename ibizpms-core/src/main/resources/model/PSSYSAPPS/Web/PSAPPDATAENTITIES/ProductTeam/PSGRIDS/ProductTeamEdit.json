@@ -199,10 +199,15 @@
           "dataAccessAction" : "CREATE",
           "fullCodeName" : "NewRow",
           "name" : "表格界面_新建行",
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CREATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf067@FontAwesome",
             "cssClass" : "fa fa-plus"
           },
+          "predefinedType" : "GRIDVIEW_NEWROWACTION",
           "timeout" : 60000,
           "uIActionMode" : "SYS",
           "uIActionTag" : "NewRow",
@@ -225,10 +230,15 @@
           "dataAccessAction" : "DELETE",
           "fullCodeName" : "Remove",
           "name" : "表格界面_删除操作",
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "DELETE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "predefinedType" : "GRIDVIEW_REMOVEACTION",
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
             "lanResTag" : "TBB.TOOLTIP.*.REMOVE"

@@ -1,4 +1,4 @@
-import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSAppView, IPSCodeItem, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSSysImage, IPSLanguageRes, IPSSysMap, IPSDEChart } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSAppView, IPSCodeItem, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSSysImage, IPSLanguageRes, IPSSysMap, IPSDEChart, IPSNavigateContext, IPSNavigateParam } from '@ibiz/dynamic-model-api';
 import { CodeListServiceBase, throttle, ExpBarControlInterface, LogUtil, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service';
 import { MainControlBase } from './main-control-base';
@@ -230,9 +230,18 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
         this.showMode = this.sideBarlayout && this.sideBarlayout == "LEFT" ? "horizontal" : "vertical";
         this.showBusyIndicator = this.controlInstance?.showBusyIndicator;
         this.ctrlWidth = this.controlInstance?.width;
-        //TODO  待补充
-        this.navigateContext = null;
-        this.navigateParams = null;
+        if (
+            (this.$xDataControl as any)?.getPSNavigateContexts?.() &&
+            ((this.$xDataControl as any)?.getPSNavigateContexts?.() as IPSNavigateContext[])?.length > 0
+        ) {
+            this.navigateContext = Util.formatNavParam((this.$xDataControl as any).getPSNavigateContexts());
+        }
+        if (
+            (this.$xDataControl as any)?.getPSNavigateParams?.() &&
+            ((this.$xDataControl as any).getPSNavigateParams?.() as IPSNavigateParam[])?.length > 0
+        ) {
+            this.navigateParams = Util.formatNavParam((this.$xDataControl as any).getPSNavigateParams());
+        }
         await this.handleXDataCtrlOptions();
     }
 

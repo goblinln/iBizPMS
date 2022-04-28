@@ -1,30 +1,36 @@
 {
+  "codeListTag" : "ibizpro__Ibizpro_storymodule__type",
   "codeListType" : "STATIC",
   "codeName" : "Ibizpro_storymodule__type",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSCODELISTS/Ibizpro_storymodule__type.json",
   "emptyText" : "未定义",
+  "name" : "需求模块类型",
   "getPSCodeItems" : [ {
     "codeName" : "Pmsstorymodule",
     "text" : "PMS需求模块",
-    "value" : "pmsStoryModule",
-    "includeBeginValue" : true
+    "value" : "pmsStoryModule"
   }, {
     "codeName" : "Ibizsysmodule",
     "text" : "iBiz系统模块",
-    "value" : "iBizSysModule",
-    "includeBeginValue" : true
+    "value" : "iBizSysModule"
   }, {
     "codeName" : "Ibizreqmodule",
     "text" : "iBiz需求模块",
-    "value" : "iBizReqModule",
-    "includeBeginValue" : true
+    "value" : "iBizReqModule"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

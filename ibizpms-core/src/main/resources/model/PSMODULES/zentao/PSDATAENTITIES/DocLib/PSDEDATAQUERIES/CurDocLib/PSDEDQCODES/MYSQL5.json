@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.orgid = #{srf.sessioncontext.srforgid}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACL`,\nt1.`DELETED`,\n'doc' AS `DOCLIBTYPE`,\nt1.`GROUPS`,\nt1.`ID`,\nt1.`MAIN`,\n CONCAT_WS('',case when t1.type = 'product' then '/[产品]/' when t1.type = 'project' then '/[项目]/' else '/' end,case when t1.type = 'product' then t21.`name` when t1.type = 'project' then t11.`name` else '' end,case when t1.type = 'product' then '/' when t1.type = 'project' then '/' else '' end,t1.`name`)  as `NAME`,\nt1.`ORDER`,\nt1.`PRODUCT`,\nt21.`NAME` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt11.`NAME` AS `PROJECTNAME`,\nt1.`TYPE`,\nt1.orgid,\nt1.MDEPTID,\n t1.doclibsn\nFROM `zt_doclib` t1 \nLEFT JOIN zt_project t11 ON t1.PROJECT = t11.ID\nLEFT JOIN zt_product t21 ON t1.PRODUCT = t21.ID",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEDATAQUERIES/CurDocLib/PSDEDQCODES/MYSQL5.json"
+}

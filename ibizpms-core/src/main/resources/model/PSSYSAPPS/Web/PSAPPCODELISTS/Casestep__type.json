@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Casestep__type",
   "codeListType" : "STATIC",
   "codeName" : "Casestep__type",
   "dynaInstMode" : 1,
@@ -12,18 +13,15 @@
   "getPSCodeItems" : [ {
     "codeName" : "Step",
     "text" : "步骤",
-    "value" : "step",
-    "includeBeginValue" : true
+    "value" : "step"
   }, {
     "codeName" : "Group",
     "text" : "分组",
-    "value" : "group",
-    "includeBeginValue" : true
+    "value" : "group"
   }, {
     "codeName" : "Item",
     "text" : "分组步骤",
-    "value" : "item",
-    "includeBeginValue" : true
+    "value" : "item"
   } ],
   "enableCache" : true
 }

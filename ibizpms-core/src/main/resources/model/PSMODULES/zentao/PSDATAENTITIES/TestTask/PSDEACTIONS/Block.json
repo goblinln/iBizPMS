@@ -6,13 +6,15 @@
   "logicName" : "阻塞",
   "name" : "Block",
   "getPSDEActionInput" : {
-    "codeName" : "BlockInput",
-    "name" : "输入对象",
+    "name" : "BlockInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TestTaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BlockResult",
-    "name" : "返回对象",
+    "name" : "BlockResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

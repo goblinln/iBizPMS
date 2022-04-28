@@ -199,22 +199,22 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         if (_context.product && _context.project && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Collect');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/collect`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}/collect`, _data);
             return res;
         }
         if (_context.project && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Collect');
-            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/collect`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}/collect`, _data);
             return res;
         }
         if (_context.product && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Collect');
-            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/collect`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/doclibs/${encodeURIComponent(_context.doclib)}/collect`, _data);
             return res;
         }
-        const res = await this.http.post(`/doclibs/${_context.doclib}/collect`, _data);
+        const res = await this.http.post(`/doclibs/${encodeURIComponent(_context.doclib)}/collect`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -239,7 +239,7 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs`, _data);
             return res;
         }
         if (_context.project && true) {
@@ -251,7 +251,7 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/projects/${_context.project}/doclibs`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/doclibs`, _data);
             return res;
         }
         if (_context.product && true) {
@@ -263,7 +263,7 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/doclibs`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/doclibs`, _data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
@@ -291,21 +291,21 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.doclib) {
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.doclib) {
-            const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}`);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.product && _context.doclib) {
-            const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/doclibs/${encodeURIComponent(_context.doclib)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
-        const res = await this.http.get(`/doclibs/${_context.doclib}`);
+        const res = await this.http.get(`/doclibs/${encodeURIComponent(_context.doclib)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -325,19 +325,19 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         if (_context.product && _context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/getdraft`, _data);
             return res;
         }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/doclibs/getdraft`, _data);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/doclibs/getdraft`, _data);
             return res;
         }
         if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/doclibs/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/doclibs/getdraft`, _data);
             return res;
         }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
@@ -359,18 +359,18 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.doclib) {
-            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}`);
             return res;
         }
         if (_context.project && _context.doclib) {
-            const res = await this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}`);
+            const res = await this.http.delete(`/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}`);
             return res;
         }
         if (_context.product && _context.doclib) {
-            const res = await this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/doclibs/${encodeURIComponent(_context.doclib)}`);
             return res;
         }
-        const res = await this.http.delete(`/doclibs/${_context.doclib}`);
+        const res = await this.http.delete(`/doclibs/${encodeURIComponent(_context.doclib)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -389,22 +389,22 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         if (_context.product && _context.project && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/uncollect`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}/uncollect`, _data);
             return res;
         }
         if (_context.project && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
-            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/uncollect`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}/uncollect`, _data);
             return res;
         }
         if (_context.product && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
-            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/uncollect`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/doclibs/${encodeURIComponent(_context.doclib)}/uncollect`, _data);
             return res;
         }
-        const res = await this.http.post(`/doclibs/${_context.doclib}/uncollect`, _data);
+        const res = await this.http.post(`/doclibs/${encodeURIComponent(_context.doclib)}/uncollect`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -423,24 +423,24 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         if (_context.product && _context.project && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}`, _data);
             return res;
         }
         if (_context.project && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}`, _data);
+            const res = await this.http.put(`/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}`, _data);
             return res;
         }
         if (_context.product && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/doclibs/${encodeURIComponent(_context.doclib)}`, _data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/doclibs/${_context.doclib}`, _data);
+        const res = await this.http.put(`/doclibs/${encodeURIComponent(_context.doclib)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -457,17 +457,17 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
     async FetchByCustom(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/fetchbycustom`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/fetchbycustom`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchByCustom');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/doclibs/fetchbycustom`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/doclibs/fetchbycustom`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchByCustom');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/doclibs/fetchbycustom`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/doclibs/fetchbycustom`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchByCustom');
             return res;
         }
@@ -489,17 +489,17 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
     async FetchByProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/fetchbyproduct`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/fetchbyproduct`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchByProduct');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/doclibs/fetchbyproduct`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/doclibs/fetchbyproduct`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchByProduct');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/doclibs/fetchbyproduct`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/doclibs/fetchbyproduct`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchByProduct');
             return res;
         }
@@ -521,17 +521,17 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
     async FetchByProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/fetchbyproject`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/fetchbyproject`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchByProject');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/doclibs/fetchbyproject`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/doclibs/fetchbyproject`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchByProject');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/doclibs/fetchbyproject`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/doclibs/fetchbyproject`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchByProject');
             return res;
         }
@@ -553,17 +553,17 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/doclibs/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/doclibs/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/doclibs/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/doclibs/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
@@ -585,17 +585,17 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
     async FetchMyFavourites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/fetchmyfavourites`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/doclibs/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/doclibs/fetchmyfavourites`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/doclibs/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/doclibs/fetchmyfavourites`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
             return res;
         }

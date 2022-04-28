@@ -6,13 +6,15 @@
   "logicName" : "unlinkCases",
   "name" : "unlinkCases",
   "getPSDEActionInput" : {
-    "codeName" : "UnlinkCasesInput",
-    "name" : "输入对象",
+    "name" : "UnlinkCasesInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UnlinkCasesResult",
-    "name" : "返回对象",
+    "name" : "UnlinkCasesResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

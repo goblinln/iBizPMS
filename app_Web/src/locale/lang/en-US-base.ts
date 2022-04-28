@@ -42,6 +42,7 @@ function getAppLocale(){
             local:{
                 new: "New",
                 add: "Add",
+                delete: "Delete",
             },
             grid: {
                 choicecolumns: "Choice columns",

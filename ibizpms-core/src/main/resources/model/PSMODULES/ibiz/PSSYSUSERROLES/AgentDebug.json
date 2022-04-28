@@ -1,0 +1,12 @@
+{
+  "codeName" : "AgentDebug",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSUSERROLES/AgentDebug.json",
+  "name" : "代理服务用户（不留痕）",
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
+  "roleTag" : "AgentDebug",
+  "roleType" : "CUSTOM",
+  "globalRole" : true
+}

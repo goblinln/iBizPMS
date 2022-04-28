@@ -96,7 +96,7 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/pssysapps/${_context.pssysapp}`);
+        const res = await this.http.get(`/pssysapps/${encodeURIComponent(_context.pssysapp)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/pssysapps/${_context.pssysapp}`);
+        const res = await this.http.delete(`/pssysapps/${encodeURIComponent(_context.pssysapp)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/pssysapps/${_context.pssysapp}`, _data);
+        const res = await this.http.put(`/pssysapps/${encodeURIComponent(_context.pssysapp)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -199,7 +199,7 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/pssysapps/${_context.pssysapp}/select`);
+        const res = await this.http.get(`/pssysapps/${encodeURIComponent(_context.pssysapp)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

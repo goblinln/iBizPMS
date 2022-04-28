@@ -1,56 +1,58 @@
 {
+  "codeListTag" : "zentao__TestCaseStatusGrid",
   "codeListType" : "STATIC",
   "codeName" : "TestCaseStatusGrid",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TestCaseStatusGrid.json",
   "emptyText" : "未定义",
+  "name" : "测试用例状态（表格）",
   "getPSCodeItems" : [ {
     "codeName" : "Wait",
     "text" : "未开始",
     "value" : "wait",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Normal",
     "color" : "rgba(84, 238, 19, 1)",
     "text" : "正常",
-    "value" : "normal",
-    "includeBeginValue" : true
+    "value" : "normal"
   }, {
     "codeName" : "Blocked",
     "color" : "rgba(230, 242, 3, 0.97)",
     "text" : "被阻塞",
-    "value" : "blocked",
-    "includeBeginValue" : true
+    "value" : "blocked"
   }, {
     "codeName" : "Investigate",
     "color" : "rgba(245, 12, 12, 1)",
     "text" : "研究中",
-    "value" : "investigate",
-    "includeBeginValue" : true
+    "value" : "investigate"
   }, {
     "codeName" : "Done",
     "text" : "已完成",
-    "value" : "done",
-    "includeBeginValue" : true
+    "value" : "done"
   }, {
     "codeName" : "Storychange",
     "color" : "rgba(254, 8, 8, 1)",
     "text" : "需求变更",
-    "value" : "storychange",
-    "includeBeginValue" : true
+    "value" : "storychange"
   }, {
     "codeName" : "Casechange",
     "color" : "rgba(247, 31, 7, 1)",
     "text" : "原用例更新",
-    "value" : "casechange",
-    "includeBeginValue" : true
+    "value" : "casechange"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

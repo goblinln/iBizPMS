@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`ACL`,\n\tt1.`DELETED`,\n\t'doc' AS `DOCLIBTYPE`,\n\tt1.`GROUPS`,\n\tt1.`ID`,\n\t'1' AS `ISFAVOURITES`,\n\tt1.`MAIN`,\n\tt1.`MDEPTID`,\n\tt1.`NAME`,\n\tt1.`ORDER`,\n\tt1.`ORGID`,\n\tt1.`PRODUCT`,\n\tt1.`PROJECT`,\n\tt1.`TYPE` ,\n        t1.doclibsn\nFROM\n\tzt_doclib t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEDATAQUERIES/MyFavourites/PSDEDQCODES/MYSQL5.json"
+}

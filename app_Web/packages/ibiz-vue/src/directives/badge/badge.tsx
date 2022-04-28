@@ -78,7 +78,7 @@ export const Badge: any = {
    */
   public init(el: HTMLDivElement, binding: any): void {
     const item: any = binding.value;
-    if (Object.keys(item).length > 0 && Util.isExistAndNotEmpty(item.count)) {
+    if (item && Object.keys(item).length > 0 && Util.isExistAndNotEmpty(item.count)) {
       if(!item.showZero && item.count == 0) {
         return;
       }
@@ -102,7 +102,7 @@ export const Badge: any = {
    */
    public update(el: HTMLDivElement, binding: any): void {
     const item: any = binding.value;
-    if (Object.keys(item).length > 0 && Util.isExistAndNotEmpty(item.count)) {
+    if (item && Object.keys(item).length > 0 && Util.isExistAndNotEmpty(item.count)) {
       if(!item.showZero && item.count == 0) {
         return;
       }

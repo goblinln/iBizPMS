@@ -1,0 +1,54 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BUGS`",
+    "name" : "BUGS"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`STORIES`",
+    "name" : "STORIES"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`BUILDER`",
+    "name" : "BUILDER"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`FILEPATH`",
+    "name" : "FILEPATH"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t1.`SCMPATH`",
+    "name" : "SCMPATH"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`BUILDER`,\nt1.`DATE`,\nt1.`DELETED`,\nt1.`FILEPATH`,\nt1.`ID`,\ncase when (select t2.`name` from zt_release t2 where t2.build = t1.id and t2.deleted = '0' ORDER BY t2.date desc LIMIT 0,1) is null then t1.`name` else (select t2.`name` from zt_release t2 where t2.build = t1.id and t2.deleted = '0' ORDER BY t2.date desc LIMIT 0,1) end as `NAME`,\nt1.`PRODUCT`,\nt11.`NAME` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt1.`SCMPATH`,\nt1.BUILDSN\nFROM `zt_build` t1 \nLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.PRODUCTSN",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEDATAQUERIES/TestBuild/PSDEDQCODES/MYSQL5.json"
+}

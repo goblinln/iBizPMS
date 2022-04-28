@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__ExpiredPlan",
   "codeListType" : "STATIC",
   "codeName" : "ExpiredPlan",
   "dynaInstMode" : 1,
@@ -12,8 +13,7 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "过期计划",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   } ],
   "enableCache" : true
 }

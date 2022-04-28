@@ -429,6 +429,7 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "ProductModule",
+  "dEAPITag" : "IBZ_API__PRODUCT_MODULE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductModule.json",
@@ -438,10 +439,14 @@
     "actionRSMode" : 1,
     "codeName" : "ProductModules",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "ProductModule",
+    "minorDEName" : "IBZ_PRODUCTMODULE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductModule.json"
@@ -454,12 +459,17 @@
     "rSMode" : 2
   } ],
   "name" : "IBZ_PRODUCTMODULE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "IBZ_PRODUCTMODULE",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "NAME",
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

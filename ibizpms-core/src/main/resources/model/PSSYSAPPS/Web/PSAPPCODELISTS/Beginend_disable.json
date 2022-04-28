@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Beginend_disable",
   "codeListType" : "STATIC",
   "codeName" : "Beginend_disable",
   "dynaInstMode" : 1,
@@ -12,8 +13,7 @@
   "getPSCodeItems" : [ {
     "codeName" : "On",
     "text" : "暂时不设定时间",
-    "value" : "on",
-    "includeBeginValue" : true
+    "value" : "on"
   } ],
   "enableCache" : true
 }

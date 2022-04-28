@@ -5,43 +5,6 @@
   "logicName" : "更新需求版本",
   "name" : "更新需求版本",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "重置需求版本",
-    "getPSDELogicNodeParams" : [ {
-      "dstFieldName" : "STORYVERSION",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "name" : "直接值[1] ==> Default[STORYVERSION]",
-      "paramAction" : "SETPARAMVALUE",
-      "srcValue" : "1",
-      "srcValueType" : "SRCVALUE"
-    } ],
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall1",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取需求版本",
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[STORY]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "STORY",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select version as STORYVERSION from zt_story where id = ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始",
@@ -84,8 +47,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     }, {
       "getDstPSDELogicNode" : {
         "modelref" : true,
@@ -120,19 +82,57 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "重置需求版本",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "STORYVERSION",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "直接值[1] ==> Default[STORYVERSION]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "1",
+      "srcValueType" : "SRCVALUE"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取需求版本",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[STORY]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "STORY",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select version as STORYVERSION from zt_story where id = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

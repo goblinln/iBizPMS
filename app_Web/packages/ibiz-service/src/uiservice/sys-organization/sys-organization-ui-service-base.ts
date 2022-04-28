@@ -51,7 +51,7 @@ export class SysOrganizationUIServiceBase extends UIServiceBase {
     protected initBasicData(){
         this.isEnableDEMainState = false;
         this.dynaInstTag = "";
-        this.tempOrgIdDEField ="orgid";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

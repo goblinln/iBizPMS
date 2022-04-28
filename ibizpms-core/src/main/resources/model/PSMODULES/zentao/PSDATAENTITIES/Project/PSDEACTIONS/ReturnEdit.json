@@ -6,13 +6,15 @@
   "logicName" : "退出",
   "name" : "ReturnEdit",
   "getPSDEActionInput" : {
-    "codeName" : "ReturnEditInput",
-    "name" : "输入对象",
+    "name" : "ReturnEditInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ReturnEditResult",
-    "name" : "返回对象",
+    "name" : "ReturnEditResult",
     "type" : "VOID"
   }
 }

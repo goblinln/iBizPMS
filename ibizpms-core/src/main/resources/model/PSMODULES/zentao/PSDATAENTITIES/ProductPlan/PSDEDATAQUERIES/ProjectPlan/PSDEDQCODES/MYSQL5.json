@@ -1,0 +1,49 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0' and ( t21.`PROJECT` = #{srf.datacontext.srfparentkey}\n   or t1.parent in ( \tselect  t.plan from zt_projectproduct t where t.project = #{srf.datacontext.srfparentkey} and t.plan <> 0\t) \n )",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`BEGIN`",
+    "name" : "BEGIN"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`END`",
+    "name" : "END"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t11.`TITLE`",
+    "name" : "PARENTNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`BEGIN`,\n\t( CASE WHEN t1.`begin` = '2030-01-01' THEN '待定' ELSE t1.`begin` END ) AS `BEGINSTR`,\n\tt1.`BRANCH`,\n\tt1.`DELETED`,\n\tt1.`END`,\n\t( CASE WHEN t1.`end` = '2030-01-01' THEN '待定' ELSE t1.`end` END ) AS `ENDSTR`,\n\tt1.`ID`,\n\tt1.`PARENT`,\n\tt11.`TITLE` AS `PARENTNAME`,\n\tt1.`PRODUCT`,\n\t(\n\tCONCAT(\n\tt31.`name`,\n\t'/',\n\tt1.title,\n\t'[',\nCASE\n\t\n\tWHEN t1.`begin` IS NOT NULL THEN\n\tt1.`begin` ELSE '' \n\tEND,\n\t'~',\nCASE\n\t\t\n\t\tWHEN t1.`end` IS NOT NULL THEN\n\t\tt1.`end` ELSE '' \n\tEND,\n\t']' \n\t) \n\t) AS `TITLE` ,\n\tt1.PRODUCTPLANSN\nFROM\n\t`zt_productplan` t1\n\tLEFT JOIN zt_productplan t11 ON t1.PARENT = t11.ID\n\tLEFT JOIN zt_product t31 ON t1.product = t31.ID\n\tLEFT JOIN zt_projectproduct t21 ON t1.ID = t21.plan and t1.product = t21.product\n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/ProjectPlan/PSDEDQCODES/MYSQL5.json"
+}

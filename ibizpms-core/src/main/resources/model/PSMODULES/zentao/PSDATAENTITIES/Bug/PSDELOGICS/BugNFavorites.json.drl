@@ -12,6 +12,13 @@ package cn.ibizlab.pms.zentao.logic.buglogic.bugnfavorites;
 
     no-loop
 
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "bugbugnfavoritesbegin"
+            when
+            then
+            end
+
             //逻辑处理节点[取消收藏]
             rule "rawsqlcall1"
             ruleflow-group "bugbugnfavoritesrawsqlcall1"
@@ -23,11 +30,4 @@ package cn.ibizlab.pms.zentao.logic.buglogic.bugnfavorites;
     String strSql="delete from T_IBZ_FAVORITES where type = 'bug' and account = #{et.param0} and objectid = #{et.param1}";
                         iBzSysBugDefaultService.execute(strSql,param);//SQL调用
                         update(bugbugnfavoritesdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "bugbugnfavoritesbegin"
-            when
-            then
             end

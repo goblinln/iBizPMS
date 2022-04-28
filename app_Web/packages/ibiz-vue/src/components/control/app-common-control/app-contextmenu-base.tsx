@@ -1,5 +1,6 @@
 import { throttle, Util } from 'ibiz-core';
 import { Prop, Watch, Emit } from 'vue-property-decorator';
+import { IPSDETBUIActionItem } from '@ibiz/dynamic-model-api';
 import { ContextMenuBase } from '../../../widgets/contextmenu-base';
 import { AppControlBase } from './app-controlbase';
 
@@ -149,10 +150,10 @@ export class AppContextMenuBase extends ContextMenuBase {
      * @param item 
      * @memberof AppContextMenuBase
      */
-    public renderItemIcon(item: any) {
-        if(item.showIcon && item.getPSSysImage){
-            let img = item.getPSSysImage;
-            if(img.cssClass){
+    public renderItemIcon(item: IPSDETBUIActionItem) {
+        if(item.showIcon && item.getPSSysImage()){
+            let img = item.getPSSysImage();
+            if(img && img.cssClass){
                 return (
                     <i class={img.cssClass}></i>
                 )

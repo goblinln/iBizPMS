@@ -6,13 +6,15 @@
   "logicName" : "变更",
   "name" : "Change",
   "getPSDEActionInput" : {
-    "codeName" : "ChangeInput",
-    "name" : "输入对象",
+    "name" : "ChangeInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ChangeResult",
-    "name" : "返回对象",
+    "name" : "ChangeResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1",

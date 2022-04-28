@@ -243,7 +243,9 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo3.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
@@ -712,12 +714,17 @@
     "id" : "ProjectTeam__UPDATE"
   } ],
   "codeName" : "IBZPROJECTTEAM",
+  "dEAPITag" : "IBZ_PROJECTTEAMNEST",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM.json",
   "enableUIActions" : 15,
   "logicName" : "项目团队",
   "name" : "IBZ_PROJECTTEAMNEST",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "IBZ_PROJECTTEAM",
   "getPSSysImage" : {
     "glyph" : "xf0c0@FontAwesome",
@@ -728,6 +735,7 @@
     "codeName" : "Account"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : false,
   "enableFilterActions" : true,
   "enableTempData" : true,

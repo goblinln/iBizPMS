@@ -1,0 +1,37 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t21.`LOGINNAME`",
+    "name" : "LOGINNAME"
+  }, {
+    "expression" : "t21.`MDEPTNAME`",
+    "name" : "MDEPTNAME"
+  }, {
+    "expression" : "t21.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`SYS_ROLEID`",
+    "name" : "SYS_ROLEID"
+  }, {
+    "expression" : "t11.`SYS_ROLENAME`",
+    "name" : "SYS_ROLENAME"
+  }, {
+    "expression" : "t1.`SYS_USERID`",
+    "name" : "SYS_USERID"
+  }, {
+    "expression" : "t21.`PERSONNAME`",
+    "name" : "SYS_USERNAME"
+  }, {
+    "expression" : "t1.`SYS_USER_ROLEID`",
+    "name" : "SYS_USER_ROLEID"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt21.`LOGINNAME`,\nt21.`MDEPTNAME`,\nt21.`ORGNAME`,\nt1.`SYS_ROLEID`,\nt11.`SYS_ROLENAME`,\nt1.`SYS_USERID`,\nt21.`PERSONNAME` AS `SYS_USERNAME`,\nt1.`SYS_USER_ROLEID`,\nt1.`UPDATEDATE`\nFROM `IBZUSER_ROLE` t1 \nLEFT JOIN `IBZROLE` t11 ON t1.`SYS_ROLEID` = t11.`SYS_ROLEID` \nLEFT JOIN `IBZUSER` t21 ON t1.`SYS_USERID` = t21.`USERID` \n",
+  "id" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

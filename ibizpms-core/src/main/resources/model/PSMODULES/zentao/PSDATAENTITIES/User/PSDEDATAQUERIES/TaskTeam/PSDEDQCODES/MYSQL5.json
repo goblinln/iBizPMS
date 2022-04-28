@@ -1,0 +1,118 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "(t1.`account` in (select t.`account` from zt_team t where t.`type` = 'task' and ${srfdatacontext('multiple','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} = '1'  and t.`root` = ${srfdatacontext('id','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}) or \nt1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and ${srfdatacontext('multiple','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} = '0'  and t.`root` = (select tt.`project` from zt_task tt where tt.`TASKSN` = ${srfdatacontext('id','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))\n)",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`ADDRESS`",
+    "name" : "ADDRESS"
+  }, {
+    "expression" : "t1.`AVATAR`",
+    "name" : "AVATAR"
+  }, {
+    "expression" : "t1.`BIRTHDAY`",
+    "name" : "BIRTHDAY"
+  }, {
+    "expression" : "t1.`CLIENTLANG`",
+    "name" : "CLIENTLANG"
+  }, {
+    "expression" : "t1.`CLIENTSTATUS`",
+    "name" : "CLIENTSTATUS"
+  }, {
+    "expression" : "t1.`COMMITER`",
+    "name" : "COMMITER"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DINGDING`",
+    "name" : "DINGDING"
+  }, {
+    "expression" : "t1.`EMAIL`",
+    "name" : "EMAIL"
+  }, {
+    "expression" : "t1.`FAILS`",
+    "name" : "FAILS"
+  }, {
+    "expression" : "t1.`GENDER`",
+    "name" : "GENDER"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`IP`",
+    "name" : "IP"
+  }, {
+    "expression" : "t1.`JOIN`",
+    "name" : "JOIN"
+  }, {
+    "expression" : "t1.`LAST`",
+    "name" : "LAST"
+  }, {
+    "expression" : "t1.`LOCKED`",
+    "name" : "LOCKED"
+  }, {
+    "expression" : "t1.`MOBILE`",
+    "name" : "MOBILE"
+  }, {
+    "expression" : "t1.`NICKNAME`",
+    "name" : "NICKNAME"
+  }, {
+    "expression" : "t1.`PASSWORD`",
+    "name" : "PASSWORD"
+  }, {
+    "expression" : "t1.`PHONE`",
+    "name" : "PHONE"
+  }, {
+    "expression" : "t1.`QQ`",
+    "name" : "QQ"
+  }, {
+    "expression" : "t1.`RANZHI`",
+    "name" : "RANZHI"
+  }, {
+    "expression" : "t1.`REALNAME`",
+    "name" : "REALNAME"
+  }, {
+    "expression" : "t1.`ROLE`",
+    "name" : "ROLE"
+  }, {
+    "expression" : "t1.`SCORE`",
+    "name" : "SCORE"
+  }, {
+    "expression" : "t1.`SCORELEVEL`",
+    "name" : "SCORELEVEL"
+  }, {
+    "expression" : "t1.`SKYPE`",
+    "name" : "SKYPE"
+  }, {
+    "expression" : "t1.`SLACK`",
+    "name" : "SLACK"
+  }, {
+    "expression" : "t1.`VISITS`",
+    "name" : "VISITS"
+  }, {
+    "expression" : "t1.`WEIXIN`",
+    "name" : "WEIXIN"
+  }, {
+    "expression" : "t1.`WHATSAPP`",
+    "name" : "WHATSAPP"
+  }, {
+    "expression" : "t1.`ZIPCODE`",
+    "name" : "ZIPCODE"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`ACCOUNT`,\n\tt1.`ADDRESS`,\n\tt1.`AVATAR`,\n\tt1.`BIRTHDAY`,\n\tt1.`CLIENTLANG`,\n\tt1.`CLIENTSTATUS`,\n\tt1.`COMMITER`,\n\tt1.`DELETED`,\n\tt1.`DEPT`,\n\tt1.`DINGDING`,\n\tt1.`EMAIL`,\n\tt1.`FAILS`,\n\tt1.`GENDER`,\n\tt1.`USERSN`,\n        t1.`id`,\n\tt1.`IP`,\n\tt1.`JOIN`,\n\tt1.`LAST`,\n\tt1.`LOCKED`,\n\tt1.`MOBILE`,\n\tt1.`NICKNAME`,\n\tt1.`PASSWORD`,\n\tt1.`PHONE`,\n\tt1.`QQ`,\n\tt1.`RANZHI`,\n\tt1.`REALNAME`,\n\tt1.`ROLE`,\n\tt1.`SCORE`,\n\tt1.`SCORELEVEL`,\n\tt1.`SKYPE`,\n\tt1.`SLACK`,\n\tt1.`VISITS`,\n\tt1.`WEIXIN`,\n\tt1.`WHATSAPP`,\n\tt1.`ZIPCODE` \nFROM\n\t`zt_user` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEDATAQUERIES/TaskTeam/PSDEDQCODES/MYSQL5.json"
+}

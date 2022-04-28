@@ -1,0 +1,141 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.`DELETED` = '0' \nAND FIND_IN_SET ( t1.ID, ( SELECT STORIES FROM ZT_TESTREPORT WHERE ID = $ { srfdatacontext ( 'srfparentkey', '{\"defname\":\"ID\",\"dename\":\"ZT_TESTREPORT \"}' ) } ) )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`MAILTO`",
+    "name" : "MAILTO"
+  }, {
+    "expression" : "t1.`ASSIGNEDDATE`",
+    "name" : "ASSIGNEDDATE"
+  }, {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`CHILDSTORIES`",
+    "name" : "CHILDSTORIES"
+  }, {
+    "expression" : "t1.`CLOSEDBY`",
+    "name" : "CLOSEDBY"
+  }, {
+    "expression" : "t1.`CLOSEDDATE`",
+    "name" : "CLOSEDDATE"
+  }, {
+    "expression" : "t1.`CLOSEDREASON`",
+    "name" : "CLOSEDREASON"
+  }, {
+    "expression" : "t1.`COLOR`",
+    "name" : "COLOR"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DUPLICATESTORY`",
+    "name" : "DUPLICATESTORY"
+  }, {
+    "expression" : "t1.`ESTIMATE`",
+    "name" : "ESTIMATE"
+  }, {
+    "expression" : "t1.`FROMBUG`",
+    "name" : "FROMBUG"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`KEYWORDS`",
+    "name" : "KEYWORDS"
+  }, {
+    "expression" : "t1.`LASTEDITEDBY`",
+    "name" : "LASTEDITEDBY"
+  }, {
+    "expression" : "t1.`LASTEDITEDDATE`",
+    "name" : "LASTEDITEDDATE"
+  }, {
+    "expression" : "t1.`LINKSTORIES`",
+    "name" : "LINKSTORIES"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "MODULENAME"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`OPENEDDATE`",
+    "name" : "OPENEDDATE"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t21.`TITLE`",
+    "name" : "PARENTNAME"
+  }, {
+    "expression" : "t11.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`PLAN`",
+    "name" : "PLAN"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t31.`NAME`",
+    "name" : "PRODOCTNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`REVIEWEDBY`",
+    "name" : "REVIEWEDBY"
+  }, {
+    "expression" : "t1.`REVIEWEDDATE`",
+    "name" : "REVIEWEDDATE"
+  }, {
+    "expression" : "t1.`SOURCE`",
+    "name" : "SOURCE"
+  }, {
+    "expression" : "t1.`SOURCENOTE`",
+    "name" : "SOURCENOTE"
+  }, {
+    "expression" : "(select spec from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`)",
+    "name" : "SPEC"
+  }, {
+    "expression" : "t1.`STAGE`",
+    "name" : "STAGE"
+  }, {
+    "expression" : "t1.`STAGEDBY`",
+    "name" : "STAGEDBY"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`SUBSTATUS`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`TOBUG`",
+    "name" : "TOBUG"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "(select verify from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`)",
+    "name" : "VERIFY"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`ASSIGNEDTO`,\n\tt1.`COLOR`,\n\tt1.`ESTIMATE`,\t\n\tt1.`ID`,\t\n\tt1.`OPENEDBY`,\t\n\tt1.`PRI`,\n\tt1.`STAGE`,\t\n\tt1.`STATUS`,\t\n\tt1.`TITLE`\t,\n\tt1.STORYSN \nFROM\n\t`zt_story` t1\n\tLEFT JOIN zt_module t11 ON t1.MODULE = t11.ID\n\tLEFT JOIN zt_story t21 ON t1.PARENT = t21.ID\n\tLEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID\n\tLEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID\n\t\n\t",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEDATAQUERIES/ReportStories/PSDEDQCODES/MYSQL5.json"
+}

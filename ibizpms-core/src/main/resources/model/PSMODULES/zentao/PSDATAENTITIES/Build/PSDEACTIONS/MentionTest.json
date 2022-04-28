@@ -6,13 +6,15 @@
   "logicName" : "提交测试",
   "name" : "mentionTest",
   "getPSDEActionInput" : {
-    "codeName" : "MentionTestInput",
-    "name" : "输入对象",
+    "name" : "MentionTestInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BuildDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MentionTestResult",
-    "name" : "返回对象",
+    "name" : "MentionTestResult",
     "type" : "VOID"
   }
 }

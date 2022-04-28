@@ -182,7 +182,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans`, _data);
             return res;
         }
         if (_context.project && true) {
@@ -194,7 +194,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/projects/${_context.project}/productplans`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/productplans`, _data);
             return res;
         }
         if (_context.product && true) {
@@ -206,7 +206,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/productplans`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productplans`, _data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[Create函数]异常`]);
@@ -226,17 +226,17 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.productplan) {
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.productplan) {
-            const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}`);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.product && _context.productplan) {
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/productplans/${encodeURIComponent(_context.productplan)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -259,19 +259,19 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         if (_context.product && _context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/productplans/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans/getdraft`, _data);
             return res;
         }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/productplans/getdraft`, _data);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/productplans/getdraft`, _data);
             return res;
         }
         if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productplans/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/productplans/getdraft`, _data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[GetDraft函数]异常`]);
@@ -293,19 +293,19 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ImportPlanTemplet');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/importplantemplet`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}/importplantemplet`, _data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ImportPlanTemplet');
-            const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/importplantemplet`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}/importplantemplet`, _data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ImportPlanTemplet');
-            const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/importplantemplet`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productplans/${encodeURIComponent(_context.productplan)}/importplantemplet`, _data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[ImportPlanTemplet函数]异常`]);
@@ -327,19 +327,19 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/linkbug`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}/linkbug`, _data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
-            const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/linkbug`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}/linkbug`, _data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
-            const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/linkbug`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productplans/${encodeURIComponent(_context.productplan)}/linkbug`, _data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[LinkBug函数]异常`]);
@@ -361,19 +361,19 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/linkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}/linkstory`, _data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
-            const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/linkstory`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}/linkstory`, _data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
-            const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/linkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productplans/${encodeURIComponent(_context.productplan)}/linkstory`, _data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[LinkStory函数]异常`]);
@@ -393,15 +393,15 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.productplan) {
-            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}`);
             return res;
         }
         if (_context.project && _context.productplan) {
-            const res = await this.http.delete(`/projects/${_context.project}/productplans/${_context.productplan}`);
+            const res = await this.http.delete(`/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}`);
             return res;
         }
         if (_context.product && _context.productplan) {
-            const res = await this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/productplans/${encodeURIComponent(_context.productplan)}`);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[Remove函数]异常`]);
@@ -423,19 +423,19 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}`, _data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/projects/${_context.project}/productplans/${_context.productplan}`, _data);
+            const res = await this.http.put(`/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}`, _data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/productplans/${_context.productplan}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/productplans/${encodeURIComponent(_context.productplan)}`, _data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[Update函数]异常`]);
@@ -455,17 +455,17 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     async FetchProductQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/fetchproductquery`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans/fetchproductquery`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductQuery');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/productplans/fetchproductquery`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/productplans/fetchproductquery`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductQuery');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/productplans/fetchproductquery`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productplans/fetchproductquery`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductQuery');
             return res;
         }
@@ -486,17 +486,17 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     async FetchProjectPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/fetchprojectplan`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans/fetchprojectplan`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectPlan');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/productplans/fetchprojectplan`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/productplans/fetchprojectplan`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectPlan');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/productplans/fetchprojectplan`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productplans/fetchprojectplan`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectPlan');
             return res;
         }

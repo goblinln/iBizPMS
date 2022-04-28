@@ -96,7 +96,7 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/systeammembers/${_context.systeammember}`);
+        const res = await this.http.get(`/systeammembers/${encodeURIComponent(_context.systeammember)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/systeammembers/${_context.systeammember}`);
+        const res = await this.http.delete(`/systeammembers/${encodeURIComponent(_context.systeammember)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/systeammembers/${_context.systeammember}`, _data);
+        const res = await this.http.put(`/systeammembers/${encodeURIComponent(_context.systeammember)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/systeammembers/${_context.systeammember}/select`);
+        const res = await this.http.get(`/systeammembers/${encodeURIComponent(_context.systeammember)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

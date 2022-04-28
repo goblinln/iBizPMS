@@ -16,12 +16,8 @@
     }
 }
 .dewfdynaexpgridview {
-    .el-tree {
-        padding-right: 10px;
-    }
     .el-tree-node__content {
         height: 40px;
-        border-left: solid var(--view-font-color);
     }
     .el-tree-node {
         margin-top: 10px;
@@ -30,14 +26,15 @@
         margin-top: 0px;
     }
     .el-tree--highlight-current {
-        background-color: var(--view-background-color-bright);
-        border-color: var(--view-font-color-light);
-    }
-    .el-tree-node.is-current > .el-tree-node__content {
-        background-color: var(--view-background-color-bright);
-        border-color: var(--view-font-color-light);
+        background-color: #f6f6f6;
+        .el-tree-node.is-current > .el-tree-node__content {
+            background-color: #cfe8ff;
+        }
     }
     .custom-tree-node {
+        .tree-node-icon {
+            margin-right: 5px;
+        }
         .tree-node-label {
             font-size: 15px;
         }
@@ -51,5 +48,71 @@
         .ivu-card-extra {
             top: 6px;
         }
+        > .ivu-card-head{
+          > .header-container{
+            >.toolbar-container{
+              // 标题栏右侧工具栏
+              flex: auto;
+              margin-bottom: 4px;
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              .app-quick-search.width-filter input{
+                border-bottom-right-radius: 0px;
+                border-top-right-radius: 0px;
+              }
+              .app-quick-search{
+                width: auto;
+                height: 28px;
+                margin-top: 2px !important;
+                .ivu-input.ivu-input-default {
+                  height: 28px;
+                }
+                .ivu-icon{
+                  color: #999999;
+                  font-size: 17px;
+                  height: 28px;
+                  line-height: 28px;
+                }
+              }
+              .filter{
+                border-bottom-left-radius: 0px;
+                border-top-left-radius: 0px;
+                margin: 2px 0px 0px -1px;
+                height: 28px;
+                background: var(--button-background-color);
+                color: var(--button-font-color);
+                border-color: var(--button-font-color-light);
+                &:hover {
+                  background: var(--button-background-color-bright);
+                  color: var(--button-font-color-bright);
+                  border-color: var(--button-font-color-bright);
+                }
+                &:disabled, &:disabled:hover {
+                  background: var(--button-background-color-light);
+                  color: var(--button-font-color-light);
+                  border-color: var(--button-font-color-light);
+                  cursor: no-drop;
+                }
+                .ivu-icon{
+                  font-size: 14px;
+                }
+                border-color: #dcdee2;
+                &:focus {
+                  box-shadow: none;
+                }
+              }
+              .filter.is-expand {
+                color: var(--ctrl-font-color-bright);
+              }
+            }
+          }
+        }
+    }
+    .content-container{
+      .app-search-form{
+        height: auto;
+      }
     }
 }
+

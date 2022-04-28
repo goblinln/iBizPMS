@@ -1,4 +1,20 @@
 {
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACMODES/Default.json"
+  } ],
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
@@ -8,14 +24,16 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
-      "codeName" : "CreateInput",
-      "name" : "输入对象",
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateResult",
-      "name" : "返回对象",
+      "name" : "CreateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -28,14 +46,16 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateInput",
-      "name" : "输入对象",
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateResult",
-      "name" : "返回对象",
+      "name" : "UpdateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -49,13 +69,15 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveResult",
-      "name" : "返回对象",
+      "name" : "RemoveResult",
       "type" : "VOID"
     },
     "batchAction" : true,
@@ -69,13 +91,19 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
-      "codeName" : "GetInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetResult",
-      "name" : "返回对象",
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -88,13 +116,19 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftInput",
-      "name" : "输入对象",
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftResult",
-      "name" : "返回对象",
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -106,13 +140,15 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
-      "codeName" : "CheckKeyInput",
-      "name" : "输入对象",
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CheckKeyResult",
-      "name" : "返回对象",
+      "name" : "CheckKeyResult",
       "stdDataType" : 9,
       "type" : "SIMPLE"
     },
@@ -125,21 +161,51 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
-      "codeName" : "SaveInput",
-      "name" : "输入对象",
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "SaveResult",
-      "name" : "返回对象",
+      "name" : "SaveResult",
       "type" : "VOID"
     },
     "builtinAction" : true
   } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`zt_product`",
+    "tableName" : "zt_product",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "PO",
+      "codeName" : "PO"
+    }, {
+      "name" : "ID",
+      "codeName" : "Id"
+    }, {
+      "name" : "NAME",
+      "codeName" : "Name"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDETABLES/Table.json",
+    "name" : "ZT_PRODUCT",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "zt_product"
+    },
+    "tableType" : "MAIN"
+  } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
@@ -152,12 +218,28 @@
       "joinType" : "MAIN",
       "name" : "IBZ_PRODUCTSUM"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true,
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEDATAQUERIES/ProductBugcnt_QA/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProductBugcnt_QA",
     "logicName" : "产品创建bug数_测试人员",
@@ -170,11 +252,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_PRODUCTSUM"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProductBugcnt_QAInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProductBugcnt_QAResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEDATAQUERIES/ProductCreateStory/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProductCreateStory",
     "logicName" : "产品创建需求占比",
@@ -187,11 +285,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_PRODUCTSUM"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProductCreateStoryInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProductCreateStoryResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEDATAQUERIES/ProductPlancntAndStorycnt_PO/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProductPlancntAndStorycnt_PO",
     "logicName" : "产品计划数和需求数_产品经理",
@@ -204,11 +318,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_PRODUCTSUM"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProductPlancntAndStorycnt_POInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProductPlancntAndStorycnt_POResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEDATAQUERIES/ProductStoryHoursSum/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProductStoryHoursSum",
     "logicName" : "产品需求工时汇总",
@@ -221,11 +351,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_PRODUCTSUM"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProductStoryHoursSumInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProductStoryHoursSumResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEDATAQUERIES/ProductStorySum/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProductStorySum",
     "logicName" : "产品需求汇总查询",
@@ -238,11 +384,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_PRODUCTSUM"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProductStorySumInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProductStorySumResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEDATAQUERIES/ProductSumBugType/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "ProductSumBugType",
     "logicName" : "产品Bug类型统计",
@@ -255,11 +417,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_PRODUCTSUM"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "ProductSumBugTypeInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ProductSumBugTypeResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
@@ -271,7 +449,24 @@
       },
       "joinType" : "MAIN",
       "name" : "IBZ_PRODUCTSUM"
-    }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -282,13 +477,19 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultInput",
-      "name" : "输入对象",
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultResult",
-      "name" : "返回对象",
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "PAGE"
     },
     "defaultMode" : true,
@@ -303,13 +504,19 @@
       "id" : "ProductBugcnt_QA"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProductBugcnt_QAInput",
-      "name" : "输入对象",
+      "name" : "ProductBugcnt_QAInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProductBugcnt_QAResult",
-      "name" : "返回对象",
+      "name" : "ProductBugcnt_QAResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -323,13 +530,19 @@
       "id" : "ProductCreateStory"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProductCreateStoryInput",
-      "name" : "输入对象",
+      "name" : "ProductCreateStoryInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProductCreateStoryResult",
-      "name" : "返回对象",
+      "name" : "ProductCreateStoryResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -343,13 +556,19 @@
       "id" : "ProductStoryHoursSum"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProductStoryHoursSumInput",
-      "name" : "输入对象",
+      "name" : "ProductStoryHoursSumInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProductStoryHoursSumResult",
-      "name" : "返回对象",
+      "name" : "ProductStoryHoursSumResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -363,13 +582,19 @@
       "id" : "ProductStorySum"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProductStorySumInput",
-      "name" : "输入对象",
+      "name" : "ProductStorySumInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProductStorySumResult",
-      "name" : "返回对象",
+      "name" : "ProductStorySumResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -383,13 +608,19 @@
       "id" : "ProductPlancntAndStorycnt_PO"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProductStorycntAndPlancntInput",
-      "name" : "输入对象",
+      "name" : "ProductStorycntAndPlancntInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProductStorycntAndPlancntResult",
-      "name" : "返回对象",
+      "name" : "ProductStorycntAndPlancntResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -403,19 +634,48 @@
       "id" : "ProductSumBugType"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "ProductSumBugTypeInput",
-      "name" : "输入对象",
+      "name" : "ProductSumBugTypeInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "ProductSumBugTypeResult",
-      "name" : "返回对象",
+      "name" : "ProductSumBugTypeResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
     "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DESIGNDEFECT][设计缺陷]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DESIGNDEFECT][设计缺陷]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DESIGNDEFECT][设计缺陷]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DESIGNDEFECT][设计缺陷]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -423,10 +683,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DESIGNDEFECT",
-        "codeName" : "Designdefect"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -442,6 +698,7 @@
     "name" : "DESIGNDEFECT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -451,6 +708,29 @@
       "name" : "CHANGEDSTORYCNT",
       "standardColumnName" : "`CHANGEDSTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CHANGEDSTORYCNT][变更]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CHANGEDSTORYCNT][变更]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CHANGEDSTORYCNT][变更]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CHANGEDSTORYCNT][变更]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -458,10 +738,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CHANGEDSTORYCNT",
-        "codeName" : "Changedstorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -472,11 +748,13 @@
     "codeName" : "Changedstorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已变更",
     "name" : "CHANGEDSTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -486,6 +764,29 @@
       "name" : "DEVELOPINGSTAGESTORYHOURS",
       "standardColumnName" : "`DEVELOPINGSTAGESTORYHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DEVELOPINGSTAGESTORYHOURS][研发中阶段需求工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[DEVELOPINGSTAGESTORYHOURS][研发中阶段需求工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DEVELOPINGSTAGESTORYHOURS][研发中阶段需求工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[DEVELOPINGSTAGESTORYHOURS][研发中阶段需求工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -493,10 +794,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DEVELOPINGSTAGESTORYHOURS",
-        "codeName" : "Developingstagestoryhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -507,11 +804,13 @@
     "codeName" : "Developingstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "研发中阶段需求工时",
     "name" : "DEVELOPINGSTAGESTORYHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -521,6 +820,29 @@
       "name" : "STORYCNT",
       "standardColumnName" : "`STORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[STORYCNT][总计]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[STORYCNT][总计]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[STORYCNT][总计]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[STORYCNT][总计]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -528,10 +850,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "STORYCNT",
-        "codeName" : "StoryCnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -542,14 +860,39 @@
     "codeName" : "StoryCnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "总计",
     "name" : "STORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[OTHERS][其他]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[OTHERS][其他]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[OTHERS][其他]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[OTHERS][其他]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -557,10 +900,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "OTHERS",
-        "codeName" : "Others"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -576,9 +915,33 @@
     "name" : "OTHERS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CONFIG][配置相关]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CONFIG][配置相关]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CONFIG][配置相关]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CONFIG][配置相关]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -586,10 +949,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CONFIG",
-        "codeName" : "Config"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -605,9 +964,33 @@
     "name" : "CONFIG",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CODEERROR][代码错误]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CODEERROR][代码错误]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CODEERROR][代码错误]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CODEERROR][代码错误]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -615,10 +998,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CODEERROR",
-        "codeName" : "Codeerror"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -634,9 +1013,33 @@
     "name" : "CODEERROR",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[BUGSUM][bug总计]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[BUGSUM][bug总计]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[BUGSUM][bug总计]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[BUGSUM][bug总计]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -644,10 +1047,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BUGSUM",
-        "codeName" : "Bugsum"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -663,9 +1062,33 @@
     "name" : "BUGSUM",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PERFORMANCE][性能相关]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PERFORMANCE][性能相关]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PERFORMANCE][性能相关]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PERFORMANCE][性能相关]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -673,10 +1096,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PERFORMANCE",
-        "codeName" : "Performance"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -692,9 +1111,35 @@
     "name" : "PERFORMANCE",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[END][结束日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[END][结束日期]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[END][结束日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[END][结束日期]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -714,10 +1159,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "END",
-        "codeName" : "End"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -734,6 +1175,7 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -743,6 +1185,29 @@
       "name" : "CLOSEDSTORYCNT",
       "standardColumnName" : "`CLOSEDSTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CLOSEDSTORYCNT][关闭]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CLOSEDSTORYCNT][关闭]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CLOSEDSTORYCNT][关闭]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CLOSEDSTORYCNT][关闭]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -750,10 +1215,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CLOSEDSTORYCNT",
-        "codeName" : "ClosedStoryCnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -764,11 +1225,13 @@
     "codeName" : "ClosedStoryCnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已关闭",
     "name" : "CLOSEDSTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -778,6 +1241,29 @@
       "name" : "CLOSEDSTAGESTORYHOURS",
       "standardColumnName" : "`CLOSEDSTAGESTORYHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CLOSEDSTAGESTORYHOURS][已关闭阶段需求工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CLOSEDSTAGESTORYHOURS][已关闭阶段需求工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CLOSEDSTAGESTORYHOURS][已关闭阶段需求工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CLOSEDSTAGESTORYHOURS][已关闭阶段需求工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -785,10 +1271,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CLOSEDSTAGESTORYHOURS",
-        "codeName" : "Closedstagestoryhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -799,11 +1281,13 @@
     "codeName" : "Closedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已关闭阶段需求工时",
     "name" : "CLOSEDSTAGESTORYHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -813,6 +1297,29 @@
       "name" : "TESTEDSTAGESTORYHOURS",
       "standardColumnName" : "`TESTEDSTAGESTORYHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TESTEDSTAGESTORYHOURS][测试完毕阶段需求工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TESTEDSTAGESTORYHOURS][测试完毕阶段需求工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TESTEDSTAGESTORYHOURS][测试完毕阶段需求工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TESTEDSTAGESTORYHOURS][测试完毕阶段需求工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -820,10 +1327,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TESTEDSTAGESTORYHOURS",
-        "codeName" : "Testedstagestoryhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -834,11 +1337,13 @@
     "codeName" : "Testedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "测试完毕阶段需求工时",
     "name" : "TESTEDSTAGESTORYHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -848,6 +1353,29 @@
       "name" : "WAITSTAGESTORYHOURS",
       "standardColumnName" : "`WAITSTAGESTORYHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[WAITSTAGESTORYHOURS][未开始阶段需求工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[WAITSTAGESTORYHOURS][未开始阶段需求工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[WAITSTAGESTORYHOURS][未开始阶段需求工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[WAITSTAGESTORYHOURS][未开始阶段需求工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -855,10 +1383,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "WAITSTAGESTORYHOURS",
-        "codeName" : "Waitstagestoryhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -869,11 +1393,13 @@
     "codeName" : "Waitstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "未开始阶段需求工时",
     "name" : "WAITSTAGESTORYHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -888,6 +1414,33 @@
       "name" : "N_PO_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PO][产品负责人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[PO][产品负责人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PO][产品负责人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[PO][产品负责人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -908,10 +1461,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
       },
-      "getPSDEField" : {
-        "name" : "PO",
-        "codeName" : "PO"
-      },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -929,6 +1478,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "PO"
+    },
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s"
@@ -939,6 +1496,29 @@
       "name" : "TESTINGSTAGESTORYHOURS",
       "standardColumnName" : "`TESTINGSTAGESTORYHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TESTINGSTAGESTORYHOURS][测试中阶段需求工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TESTINGSTAGESTORYHOURS][测试中阶段需求工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TESTINGSTAGESTORYHOURS][测试中阶段需求工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TESTINGSTAGESTORYHOURS][测试中阶段需求工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -946,10 +1526,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TESTINGSTAGESTORYHOURS",
-        "codeName" : "Testingstagestoryhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -960,11 +1536,13 @@
     "codeName" : "Testingstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "测试中阶段需求工时",
     "name" : "TESTINGSTAGESTORYHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -974,6 +1552,29 @@
       "name" : "PROJECTEDSTAGESTORYHOURS",
       "standardColumnName" : "`PROJECTEDSTAGESTORYHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PROJECTEDSTAGESTORYHOURS][已立项阶段需求工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[PROJECTEDSTAGESTORYHOURS][已立项阶段需求工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PROJECTEDSTAGESTORYHOURS][已立项阶段需求工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[PROJECTEDSTAGESTORYHOURS][已立项阶段需求工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -981,10 +1582,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PROJECTEDSTAGESTORYHOURS",
-        "codeName" : "Projectedstagestoryhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -995,11 +1592,13 @@
     "codeName" : "Projectedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已立项阶段需求工时",
     "name" : "PROJECTEDSTAGESTORYHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1009,6 +1608,29 @@
       "name" : "PROJECTEDSTAGESTORYCNT",
       "standardColumnName" : "`PROJECTEDSTAGESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PROJECTEDSTAGESTORYCNT][已立项阶段需求数量]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[PROJECTEDSTAGESTORYCNT][已立项阶段需求数量]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PROJECTEDSTAGESTORYCNT][已立项阶段需求数量]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[PROJECTEDSTAGESTORYCNT][已立项阶段需求数量]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1016,10 +1638,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PROJECTEDSTAGESTORYCNT",
-        "codeName" : "Projectedstagestorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1030,11 +1648,13 @@
     "codeName" : "Projectedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已立项阶段需求数量",
     "name" : "PROJECTEDSTAGESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1044,6 +1664,29 @@
       "name" : "VERIFIEDSTAGESTORYCNT",
       "standardColumnName" : "`VERIFIEDSTAGESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[VERIFIEDSTAGESTORYCNT][已验收阶段需求数量]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[VERIFIEDSTAGESTORYCNT][已验收阶段需求数量]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[VERIFIEDSTAGESTORYCNT][已验收阶段需求数量]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[VERIFIEDSTAGESTORYCNT][已验收阶段需求数量]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1051,10 +1694,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "VERIFIEDSTAGESTORYCNT",
-        "codeName" : "Verifiedstagestorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1065,11 +1704,13 @@
     "codeName" : "Verifiedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已验收阶段需求数量",
     "name" : "VERIFIEDSTAGESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1085,6 +1726,29 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ID][主键标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ID][主键标识]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ID][主键标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ID][主键标识]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1092,10 +1756,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1110,6 +1770,14 @@
     "length" : 20,
     "logicName" : "主键标识",
     "name" : "ID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ID"
+    },
     "getPSSysSequence" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProductSeq.json"
@@ -1126,6 +1794,29 @@
       "name" : "TOTALHOURS",
       "standardColumnName" : "`TOTALHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TOTALHOURS][总工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TOTALHOURS][总工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TOTALHOURS][总工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TOTALHOURS][总工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1133,10 +1824,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TOTALHOURS",
-        "codeName" : "Totalhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1147,11 +1834,13 @@
     "codeName" : "Totalhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "总工时",
     "name" : "TOTALHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1161,6 +1850,29 @@
       "name" : "PLANEDSTAGESTORYCNT",
       "standardColumnName" : "`PLANEDSTAGESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PLANEDSTAGESTORYCNT][已计划阶段需求数量]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[PLANEDSTAGESTORYCNT][已计划阶段需求数量]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PLANEDSTAGESTORYCNT][已计划阶段需求数量]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[PLANEDSTAGESTORYCNT][已计划阶段需求数量]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1168,10 +1880,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PLANEDSTAGESTORYCNT",
-        "codeName" : "Planedstagestorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1182,11 +1890,13 @@
     "codeName" : "Planedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已计划阶段需求数量",
     "name" : "PLANEDSTAGESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1196,6 +1906,29 @@
       "name" : "DEVELOPINGSTAGESTORYCNT",
       "standardColumnName" : "`DEVELOPINGSTAGESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DEVELOPINGSTAGESTORYCNT][研发中阶段需求数量]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[DEVELOPINGSTAGESTORYCNT][研发中阶段需求数量]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DEVELOPINGSTAGESTORYCNT][研发中阶段需求数量]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[DEVELOPINGSTAGESTORYCNT][研发中阶段需求数量]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1203,10 +1936,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DEVELOPINGSTAGESTORYCNT",
-        "codeName" : "Developingstagestorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1217,11 +1946,13 @@
     "codeName" : "Developingstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "研发中阶段需求数量",
     "name" : "DEVELOPINGSTAGESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1231,6 +1962,29 @@
       "name" : "ACTIVESTORYCNT",
       "standardColumnName" : "`ACTIVESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ACTIVESTORYCNT][激活]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[ACTIVESTORYCNT][激活]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ACTIVESTORYCNT][激活]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[ACTIVESTORYCNT][激活]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1238,10 +1992,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ACTIVESTORYCNT",
-        "codeName" : "ActiveStoryCnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1252,11 +2002,13 @@
     "codeName" : "ActiveStoryCnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "激活",
     "name" : "ACTIVESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1266,6 +2018,29 @@
       "name" : "BUGCNT",
       "standardColumnName" : "`BUGCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[BUGCNT][Bug数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[BUGCNT][Bug数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[BUGCNT][Bug数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[BUGCNT][Bug数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1273,10 +2048,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BUGCNT",
-        "codeName" : "BugCnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1287,11 +2058,13 @@
     "codeName" : "BugCnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "Bug数",
     "name" : "BUGCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1301,6 +2074,29 @@
       "name" : "WAITSTAGESTORYCNT",
       "standardColumnName" : "`WAITSTAGESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[WAITSTAGESTORYCNT][等待阶段需求数量]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[WAITSTAGESTORYCNT][等待阶段需求数量]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[WAITSTAGESTORYCNT][等待阶段需求数量]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[WAITSTAGESTORYCNT][等待阶段需求数量]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1308,10 +2104,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "WAITSTAGESTORYCNT",
-        "codeName" : "Waitstagestorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1322,11 +2114,13 @@
     "codeName" : "Waitstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "未开始阶段需求数量",
     "name" : "WAITSTAGESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1336,6 +2130,29 @@
       "name" : "VERIFIEDSTAGESTORYHOURS",
       "standardColumnName" : "`VERIFIEDSTAGESTORYHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[VERIFIEDSTAGESTORYHOURS][已验收阶段需求工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[VERIFIEDSTAGESTORYHOURS][已验收阶段需求工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[VERIFIEDSTAGESTORYHOURS][已验收阶段需求工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[VERIFIEDSTAGESTORYHOURS][已验收阶段需求工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1343,10 +2160,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "VERIFIEDSTAGESTORYHOURS",
-        "codeName" : "Verifiedstagestoryhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1357,11 +2170,13 @@
     "codeName" : "Verifiedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已验收阶段需求工时",
     "name" : "VERIFIEDSTAGESTORYHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1371,6 +2186,29 @@
       "name" : "WAITSTORYCNT",
       "standardColumnName" : "`WAITSTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[WAITSTORYCNT][草稿]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[WAITSTORYCNT][草稿]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[WAITSTORYCNT][草稿]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[WAITSTORYCNT][草稿]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1378,10 +2216,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "WAITSTORYCNT",
-        "codeName" : "WaitStoryCnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1392,11 +2226,13 @@
     "codeName" : "WaitStoryCnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "草稿",
     "name" : "WAITSTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1406,6 +2242,29 @@
       "name" : "TESTINGSTAGESTORYCNT",
       "standardColumnName" : "`TESTINGSTAGESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TESTINGSTAGESTORYCNT][测试中阶段需求数量]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TESTINGSTAGESTORYCNT][测试中阶段需求数量]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TESTINGSTAGESTORYCNT][测试中阶段需求数量]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TESTINGSTAGESTORYCNT][测试中阶段需求数量]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1413,10 +2272,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TESTINGSTAGESTORYCNT",
-        "codeName" : "Testingstagestorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1427,14 +2282,41 @@
     "codeName" : "Testingstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "测试中阶段需求数量",
     "name" : "TESTINGSTAGESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[BEGIN][开始日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[BEGIN][开始日期]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[BEGIN][开始日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[BEGIN][开始日期]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1454,10 +2336,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1474,6 +2352,7 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1489,6 +2368,29 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PLAN][计划]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[PLAN][计划]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PLAN][计划]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[PLAN][计划]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1496,10 +2398,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PLAN",
-        "codeName" : "Plan"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1510,6 +2408,7 @@
     "codeName" : "Plan",
     "dEFType" : 2,
     "dataType" : "BIGINT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "计划",
     "name" : "PLAN",
@@ -1519,6 +2418,7 @@
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1528,6 +2428,29 @@
       "name" : "RELEASEDSTAGESTORYHOURS",
       "standardColumnName" : "`RELEASEDSTAGESTORYHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[RELEASEDSTAGESTORYHOURS][已发布阶段需求工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[RELEASEDSTAGESTORYHOURS][已发布阶段需求工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[RELEASEDSTAGESTORYHOURS][已发布阶段需求工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[RELEASEDSTAGESTORYHOURS][已发布阶段需求工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1535,10 +2458,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "RELEASEDSTAGESTORYHOURS",
-        "codeName" : "Releasedstagestoryhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1549,11 +2468,13 @@
     "codeName" : "Releasedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已发布阶段需求工时",
     "name" : "RELEASEDSTAGESTORYHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1563,6 +2484,29 @@
       "name" : "DEVELOPEDSTAGESTORYHOURS",
       "standardColumnName" : "`DEVELOPEDSTAGESTORYHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DEVELOPEDSTAGESTORYHOURS][研发完毕阶段需求工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[DEVELOPEDSTAGESTORYHOURS][研发完毕阶段需求工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DEVELOPEDSTAGESTORYHOURS][研发完毕阶段需求工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[DEVELOPEDSTAGESTORYHOURS][研发完毕阶段需求工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1570,10 +2514,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DEVELOPEDSTAGESTORYHOURS",
-        "codeName" : "Developedstagestoryhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1584,11 +2524,13 @@
     "codeName" : "Developedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "研发完毕阶段需求工时",
     "name" : "DEVELOPEDSTAGESTORYHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1597,6 +2539,31 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "standardColumnName" : "`NAME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[NAME][产品名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[NAME][产品名称]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[NAME][产品名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[NAME][产品名称]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1617,10 +2584,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1634,6 +2597,14 @@
     "length" : 100,
     "logicName" : "产品名称",
     "name" : "NAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "NAME"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
@@ -1646,6 +2617,29 @@
       "name" : "DEVELOPEDSTAGESTORYCNT",
       "standardColumnName" : "`DEVELOPEDSTAGESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DEVELOPEDSTAGESTORYCNT][研发完毕阶段需求数量]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[DEVELOPEDSTAGESTORYCNT][研发完毕阶段需求数量]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DEVELOPEDSTAGESTORYCNT][研发完毕阶段需求数量]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[DEVELOPEDSTAGESTORYCNT][研发完毕阶段需求数量]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1653,10 +2647,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DEVELOPEDSTAGESTORYCNT",
-        "codeName" : "Developedstagestorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1667,14 +2657,39 @@
     "codeName" : "Developedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "研发完毕阶段需求数量",
     "name" : "DEVELOPEDSTAGESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[AUTOMATION][测试脚本]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[AUTOMATION][测试脚本]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[AUTOMATION][测试脚本]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[AUTOMATION][测试脚本]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1682,10 +2697,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "AUTOMATION",
-        "codeName" : "Automation"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1701,6 +2712,7 @@
     "name" : "AUTOMATION",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1710,6 +2722,29 @@
       "name" : "PLANEDSTAGESTORYHOURS",
       "standardColumnName" : "`PLANEDSTAGESTORYHOURS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PLANEDSTAGESTORYHOURS][已计划阶段需求工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[PLANEDSTAGESTORYHOURS][已计划阶段需求工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PLANEDSTAGESTORYHOURS][已计划阶段需求工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[PLANEDSTAGESTORYHOURS][已计划阶段需求工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1717,10 +2752,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PLANEDSTAGESTORYHOURS",
-        "codeName" : "Planedstagestoryhours"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1731,14 +2762,39 @@
     "codeName" : "Planedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已计划阶段需求工时",
     "name" : "PLANEDSTAGESTORYHOURS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[INSTALL][安装部署]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[INSTALL][安装部署]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[INSTALL][安装部署]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[INSTALL][安装部署]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1746,10 +2802,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "INSTALL",
-        "codeName" : "Install"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1765,9 +2817,33 @@
     "name" : "INSTALL",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[SECURITY][安全相关]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SECURITY][安全相关]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[SECURITY][安全相关]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SECURITY][安全相关]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1775,10 +2851,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SECURITY",
-        "codeName" : "Security"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1794,6 +2866,7 @@
     "name" : "SECURITY",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1803,6 +2876,29 @@
       "name" : "RELEASEDSTAGESTORYCNT",
       "standardColumnName" : "`RELEASEDSTAGESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[RELEASEDSTAGESTORYCNT][已发布阶段需求数量]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[RELEASEDSTAGESTORYCNT][已发布阶段需求数量]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[RELEASEDSTAGESTORYCNT][已发布阶段需求数量]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[RELEASEDSTAGESTORYCNT][已发布阶段需求数量]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1810,10 +2906,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "RELEASEDSTAGESTORYCNT",
-        "codeName" : "Releasedstagestorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1824,11 +2916,13 @@
     "codeName" : "Releasedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已发布阶段需求数量",
     "name" : "RELEASEDSTAGESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1838,6 +2932,29 @@
       "name" : "TESTEDSTAGESTORYCNT",
       "standardColumnName" : "`TESTEDSTAGESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[TESTEDSTAGESTORYCNT][测试完毕阶段需求数量]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TESTEDSTAGESTORYCNT][测试完毕阶段需求数量]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[TESTEDSTAGESTORYCNT][测试完毕阶段需求数量]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TESTEDSTAGESTORYCNT][测试完毕阶段需求数量]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1845,10 +2962,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TESTEDSTAGESTORYCNT",
-        "codeName" : "Testedstagestorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1859,14 +2972,39 @@
     "codeName" : "Testedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "测试完毕阶段需求数量",
     "name" : "TESTEDSTAGESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[STANDARD][标准规范]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[STANDARD][标准规范]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[STANDARD][标准规范]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[STANDARD][标准规范]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1874,10 +3012,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "STANDARD",
-        "codeName" : "Standard"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1893,6 +3027,7 @@
     "name" : "STANDARD",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
@@ -1902,6 +3037,29 @@
       "name" : "CLOSEDSTAGESTORYCNT",
       "standardColumnName" : "`CLOSEDSTAGESTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CLOSEDSTAGESTORYCNT][已关闭状态需求数量]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CLOSEDSTAGESTORYCNT][已关闭状态需求数量]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CLOSEDSTAGESTORYCNT][已关闭状态需求数量]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CLOSEDSTAGESTORYCNT][已关闭状态需求数量]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1909,10 +3067,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CLOSEDSTAGESTORYCNT",
-        "codeName" : "Closedstagestorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1923,13 +3077,505 @@
     "codeName" : "Closedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "已关闭阶段需求数量",
     "name" : "CLOSEDSTAGESTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "ProductSumDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "激活",
+      "name" : "ActiveStoryCnt",
+      "getPSDEField" : {
+        "name" : "ACTIVESTORYCNT",
+        "codeName" : "ActiveStoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "测试脚本",
+      "name" : "Automation",
+      "getPSDEField" : {
+        "name" : "AUTOMATION",
+        "codeName" : "Automation"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "开始日期",
+      "name" : "Begin",
+      "getPSDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "Bug数",
+      "name" : "BugCnt",
+      "getPSDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "bug总计",
+      "name" : "Bugsum",
+      "getPSDEField" : {
+        "name" : "BUGSUM",
+        "codeName" : "Bugsum"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已变更",
+      "name" : "Changedstorycnt",
+      "getPSDEField" : {
+        "name" : "CHANGEDSTORYCNT",
+        "codeName" : "Changedstorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已关闭",
+      "name" : "ClosedStoryCnt",
+      "getPSDEField" : {
+        "name" : "CLOSEDSTORYCNT",
+        "codeName" : "ClosedStoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已关闭阶段需求数量",
+      "name" : "Closedstagestorycnt",
+      "getPSDEField" : {
+        "name" : "CLOSEDSTAGESTORYCNT",
+        "codeName" : "Closedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已关闭阶段需求工时",
+      "name" : "Closedstagestoryhours",
+      "getPSDEField" : {
+        "name" : "CLOSEDSTAGESTORYHOURS",
+        "codeName" : "Closedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "代码错误",
+      "name" : "Codeerror",
+      "getPSDEField" : {
+        "name" : "CODEERROR",
+        "codeName" : "Codeerror"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "配置相关",
+      "name" : "Config",
+      "getPSDEField" : {
+        "name" : "CONFIG",
+        "codeName" : "Config"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "设计缺陷",
+      "name" : "Designdefect",
+      "getPSDEField" : {
+        "name" : "DESIGNDEFECT",
+        "codeName" : "Designdefect"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "研发完毕阶段需求数量",
+      "name" : "Developedstagestorycnt",
+      "getPSDEField" : {
+        "name" : "DEVELOPEDSTAGESTORYCNT",
+        "codeName" : "Developedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "研发完毕阶段需求工时",
+      "name" : "Developedstagestoryhours",
+      "getPSDEField" : {
+        "name" : "DEVELOPEDSTAGESTORYHOURS",
+        "codeName" : "Developedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "研发中阶段需求数量",
+      "name" : "Developingstagestorycnt",
+      "getPSDEField" : {
+        "name" : "DEVELOPINGSTAGESTORYCNT",
+        "codeName" : "Developingstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "研发中阶段需求工时",
+      "name" : "Developingstagestoryhours",
+      "getPSDEField" : {
+        "name" : "DEVELOPINGSTAGESTORYHOURS",
+        "codeName" : "Developingstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "结束日期",
+      "name" : "End",
+      "getPSDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "主键标识",
+      "name" : "Id",
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "安装部署",
+      "name" : "Install",
+      "getPSDEField" : {
+        "name" : "INSTALL",
+        "codeName" : "Install"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "产品名称",
+      "name" : "Name",
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "其他",
+      "name" : "Others",
+      "getPSDEField" : {
+        "name" : "OTHERS",
+        "codeName" : "Others"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "产品负责人",
+      "name" : "PO",
+      "getPSDEField" : {
+        "name" : "PO",
+        "codeName" : "PO"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "性能问题",
+      "name" : "Performance",
+      "getPSDEField" : {
+        "name" : "PERFORMANCE",
+        "codeName" : "Performance"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "计划",
+      "name" : "Plan",
+      "getPSDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已计划阶段需求数量",
+      "name" : "Planedstagestorycnt",
+      "getPSDEField" : {
+        "name" : "PLANEDSTAGESTORYCNT",
+        "codeName" : "Planedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已计划阶段需求工时",
+      "name" : "Planedstagestoryhours",
+      "getPSDEField" : {
+        "name" : "PLANEDSTAGESTORYHOURS",
+        "codeName" : "Planedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已立项阶段需求数量",
+      "name" : "Projectedstagestorycnt",
+      "getPSDEField" : {
+        "name" : "PROJECTEDSTAGESTORYCNT",
+        "codeName" : "Projectedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已立项阶段需求工时",
+      "name" : "Projectedstagestoryhours",
+      "getPSDEField" : {
+        "name" : "PROJECTEDSTAGESTORYHOURS",
+        "codeName" : "Projectedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已发布阶段需求数量",
+      "name" : "Releasedstagestorycnt",
+      "getPSDEField" : {
+        "name" : "RELEASEDSTAGESTORYCNT",
+        "codeName" : "Releasedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已发布阶段需求工时",
+      "name" : "Releasedstagestoryhours",
+      "getPSDEField" : {
+        "name" : "RELEASEDSTAGESTORYHOURS",
+        "codeName" : "Releasedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "安全相关",
+      "name" : "Security",
+      "getPSDEField" : {
+        "name" : "SECURITY",
+        "codeName" : "Security"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "标准规范",
+      "name" : "Standard",
+      "getPSDEField" : {
+        "name" : "STANDARD",
+        "codeName" : "Standard"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "总计",
+      "name" : "StoryCnt",
+      "getPSDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "测试完毕阶段需求数量",
+      "name" : "Testedstagestorycnt",
+      "getPSDEField" : {
+        "name" : "TESTEDSTAGESTORYCNT",
+        "codeName" : "Testedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "测试完毕阶段需求工时",
+      "name" : "Testedstagestoryhours",
+      "getPSDEField" : {
+        "name" : "TESTEDSTAGESTORYHOURS",
+        "codeName" : "Testedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "测试中阶段需求数量",
+      "name" : "Testingstagestorycnt",
+      "getPSDEField" : {
+        "name" : "TESTINGSTAGESTORYCNT",
+        "codeName" : "Testingstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "测试中阶段需求工时",
+      "name" : "Testingstagestoryhours",
+      "getPSDEField" : {
+        "name" : "TESTINGSTAGESTORYHOURS",
+        "codeName" : "Testingstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "总工时",
+      "name" : "Totalhours",
+      "getPSDEField" : {
+        "name" : "TOTALHOURS",
+        "codeName" : "Totalhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已验收阶段需求数量",
+      "name" : "Verifiedstagestorycnt",
+      "getPSDEField" : {
+        "name" : "VERIFIEDSTAGESTORYCNT",
+        "codeName" : "Verifiedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "已验收阶段需求工时",
+      "name" : "Verifiedstagestoryhours",
+      "getPSDEField" : {
+        "name" : "VERIFIEDSTAGESTORYHOURS",
+        "codeName" : "Verifiedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "草稿",
+      "name" : "WaitStoryCnt",
+      "getPSDEField" : {
+        "name" : "WAITSTORYCNT",
+        "codeName" : "WaitStoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "未开始阶段需求数量",
+      "name" : "Waitstagestorycnt",
+      "getPSDEField" : {
+        "name" : "WAITSTAGESTORYCNT",
+        "codeName" : "Waitstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "未开始阶段需求工时",
+      "name" : "Waitstagestoryhours",
+      "getPSDEField" : {
+        "name" : "WAITSTAGESTORYHOURS",
+        "codeName" : "Waitstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "ProductSumFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "主键标识",
+      "name" : "N_ID_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ID_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "计划",
+      "name" : "N_PLAN_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PLAN_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "产品负责人",
+      "name" : "N_PO_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PO_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "PO",
+        "codeName" : "PO"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -1943,6 +3589,103 @@
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "RedirectView",
+    "logicName" : "产品汇总表实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "产品汇总表实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "QaChartView9",
+    "logicName" : "产品汇总表实体图表视图（部件视图）（测试）",
+    "name" : "产品汇总表实体图表视图（部件视图）（测试）",
+    "realModelSubType" : "DECHARTVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "StoryHoursSumGridView",
+    "logicName" : "产品汇总表实体表格视图（需求工时汇总）",
+    "name" : "产品汇总表实体表格视图（需求工时汇总）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProductBugTypeSumUsr4GridView",
+    "logicName" : "产品汇总表实体Bug类型统计表格视图",
+    "name" : "产品汇总表实体Bug类型统计表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "StorySumGridView",
+    "logicName" : "产品汇总表实体表格视图（需求汇总）",
+    "name" : "产品汇总表实体表格视图（需求汇总）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "产品汇总表实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "产品汇总表实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "产品汇总表实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "产品汇总表实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PoChartView9",
+    "logicName" : "产品汇总表实体图表视图（部件视图）（产品经理）",
+    "name" : "产品汇总表实体图表视图（部件视图）（产品经理）",
+    "realModelSubType" : "DECHARTVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "产品汇总表实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "产品汇总表实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2GridView",
+    "logicName" : "产品计划数和需求数实体表格视图_产品经理",
+    "name" : "产品计划数和需求数实体表格视图_产品经理",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "产品汇总表实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "产品汇总表实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "产品汇总表实体编辑视图（左右关系）",
+    "name" : "产品汇总表实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3GridView",
+    "logicName" : "产品创建bug数实体表格视图_测试",
+    "name" : "产品创建bug数实体表格视图_测试",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "产品汇总表实体选择表格视图（部件视图）",
+    "name" : "产品汇总表实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "ProductSum",
   "dEType" : 1,
@@ -1961,8 +3704,24 @@
   "enableUIActions" : 15,
   "enableViewLevel" : 0,
   "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "产品汇总表",
+  "getMajorPSDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
+  },
   "name" : "IBZ_PRODUCTSUM",
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Auto1.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
@@ -1971,7 +3730,6 @@
   "storageMode" : 1,
   "systemTag" : "iBizPMS",
   "tableName" : "zt_product",
-  "virtualMode" : 0,
   "enableAPIStorage" : false,
   "enableCreate" : true,
   "enableDataVer" : false,

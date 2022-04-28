@@ -69,43 +69,6 @@
         },
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
-            "actionName" : "Update",
-            "actionType" : "DEACTION",
-            "dataAccessAction" : "UPDATE",
-            "name" : "update",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Update"
-            },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
-            }
-          }, {
-            "actionType" : "DEDATASET",
-            "name" : "fetch",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "FetchDefault"
-            },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
-            }
-          }, {
-            "actionName" : "Remove",
-            "actionType" : "DEACTION",
-            "dataAccessAction" : "DELETE",
-            "name" : "remove",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Remove"
-            },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
-            }
-          }, {
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "dataAccessAction" : "READ",
@@ -126,6 +89,43 @@
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
+            }
+          }, {
+            "actionName" : "Update",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "UPDATE",
+            "name" : "update",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
+            }
+          }, {
+            "actionName" : "Remove",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "DELETE",
+            "name" : "remove",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
+            }
+          }, {
+            "actionType" : "DEDATASET",
+            "name" : "fetch",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -231,10 +231,14 @@
         "actionRSMode" : 1,
         "codeName" : "TestModules",
         "dataRSMode" : 0,
+        "majorDECodeName" : "Test",
+        "majorDEName" : "IBZ_API__TEST",
         "getMajorPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
         },
+        "minorDECodeName" : "TestModule",
+        "minorDEName" : "IBZ_TESTMODULE",
         "getMinorPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
@@ -295,10 +299,14 @@
     "actionRSMode" : 1,
     "codeName" : "TestModules",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Test",
+    "majorDEName" : "IBZ_API__TEST",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
     },
+    "minorDECodeName" : "TestModule",
+    "minorDEName" : "IBZ_TESTMODULE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"

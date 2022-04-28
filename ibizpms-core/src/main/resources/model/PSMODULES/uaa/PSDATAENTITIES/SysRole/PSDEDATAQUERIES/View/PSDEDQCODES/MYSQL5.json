@@ -1,0 +1,34 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`PROLEID`",
+    "name" : "PROLEID"
+  }, {
+    "expression" : "t11.`SYS_ROLENAME`",
+    "name" : "PROLENAME"
+  }, {
+    "expression" : "t1.`SYS_ROLEID`",
+    "name" : "SYS_ROLEID"
+  }, {
+    "expression" : "t1.`SYS_ROLENAME`",
+    "name" : "SYS_ROLENAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`MEMO`,\nt1.`PROLEID`,\nt11.`SYS_ROLENAME` AS `PROLENAME`,\nt1.`SYS_ROLEID`,\nt1.`SYS_ROLENAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `IBZROLE` t1 \nLEFT JOIN `IBZROLE` t11 ON t1.`PROLEID` = t11.`SYS_ROLEID` \n",
+  "id" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

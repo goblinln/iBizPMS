@@ -5,25 +5,25 @@
                 <tns:import name="java.util.Map" />
                 <tns:import name="org.springframework.util.StringUtils"/>
                 <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
-                                <tns:metaData express="new cn.ibizlab.pms.core.ibiz.domain.IbzTop()" name="projectprojecttopibztop" type="refentity"/>
                                 <tns:metaData express="" name="projectprojecttopdefault" type="entity"/>
+                                <tns:metaData express="new cn.ibizlab.pms.core.ibiz.domain.IbzTop()" name="projectprojecttopibztop" type="refentity"/>
                                     <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.ibiz.service.IIbzTopService))" name="ibztopservice" type="service"/>
                     <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.IProjectService))" name="iBzSysProjectDefaultService" type="service"/>
                     <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
-                            <tns:global identifier="projectprojecttopibztop" type="cn.ibizlab.pms.core.ibiz.domain.IbzTop" />
                             <tns:global identifier="projectprojecttopdefault" type="cn.ibizlab.pms.core.zentao.domain.Project" />
+                            <tns:global identifier="projectprojecttopibztop" type="cn.ibizlab.pms.core.ibiz.domain.IbzTop" />
             </extensionElements>
+                        <startEvent id="begin" isInterrupting="true"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttopprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置参数"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttoprawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取置顶最大排序值"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttopdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="Save"/>
                         <endEvent id="deaction1_end" name="end"/>
                         <sequenceFlow id="deaction1_end_line" sourceRef="deaction1" targetRef="deaction1_end"/>
-                        <startEvent id="begin" isInterrupting="true"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectprojecttoprawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取置顶最大排序值"/>
+                    <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+                    </sequenceFlow>
                     <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">
                     </sequenceFlow>
                     <sequenceFlow id="rawsqlcall1_prepareparam1" sourceRef="rawsqlcall1" targetRef="prepareparam1">
-                    </sequenceFlow>
-                    <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
                     </sequenceFlow>
         </process>
     </definitions>

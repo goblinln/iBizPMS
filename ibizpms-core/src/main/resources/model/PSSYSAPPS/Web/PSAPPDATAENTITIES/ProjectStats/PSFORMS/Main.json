@@ -514,6 +514,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;昨日完成任务数&amp;nbsp;&lt;b&gt;{{data.yesterdayctaskcnt ? data.yesterdayctaskcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem1"
+          },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -528,6 +533,11 @@
             "colLG" : 6,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;总任务&amp;nbsp;:&amp;nbsp;{{data.taskcnt ? data.taskcnt : 0}}&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem6"
           },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -679,6 +689,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;未完成&amp;nbsp;:&amp;nbsp;{{data.undonetaskcnt ? data.undonetaskcnt : 0}}&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem7"
+          },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -743,6 +758,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;已发布需求数&amp;nbsp;&lt;b&gt;{{data.releasedstorycnt ? data.releasedstorycnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem2"
+          },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -757,6 +777,11 @@
             "colLG" : 6,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;总需求&amp;nbsp;:&amp;nbsp;{{data.storycnt ? data.storycnt : 0}}&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem5"
           },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -908,6 +933,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;未关闭&amp;nbsp;:&amp;nbsp;{{data.unclosedstorycnt ? data.unclosedstorycnt : 0}}&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem8"
+          },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -972,6 +1002,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;昨日解决Bug数&amp;nbsp;&lt;b&gt;{{data.yesterdayrbugcnt ? data.yesterdayrbugcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem3"
+          },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -1014,6 +1049,11 @@
             "colLG" : 6,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 31px;\"&gt;&amp;nbsp;所有&amp;nbsp;:&amp;nbsp;{{data.bugcnt ? data.bugcnt : 0}}&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem4"
           },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -1136,6 +1176,11 @@
             "colLG" : 6,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;未解决&amp;nbsp;:&amp;nbsp;{{data.activebugcnt ? data.activebugcnt : 0}}&lt;/div&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem9"
           },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,

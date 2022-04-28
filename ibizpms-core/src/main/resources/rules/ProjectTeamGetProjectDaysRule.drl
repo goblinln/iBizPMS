@@ -5,8 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.util.StringUtils;
 import org.springframework.util.ObjectUtils;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
-global cn.ibizlab.pms.core.ibiz.domain.ProjectTeam projectteamgetprojectdaysdefault;
 global cn.ibizlab.pms.core.zentao.domain.Project projectteamgetprojectdaysproject;
+global cn.ibizlab.pms.core.ibiz.domain.ProjectTeam projectteamgetprojectdaysdefault;
 global cn.ibizlab.pms.core.zentao.service.IProjectService projectservice;
 global cn.ibizlab.pms.core.ibiz.service.IProjectTeamService iBzSysProjectteamDefaultService;
 global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
@@ -21,24 +21,14 @@ ruleflow-group "projectteamgetprojectdaysbegin"
     then
     end
 
-//逻辑处理节点[设置项目参数]
-rule "prepareparam1"
-ruleflow-group "projectteamgetprojectdaysprepareparam1"
-    when
-    then
-    projectteamgetprojectdaysproject.set("id",projectteamgetprojectdaysdefault.get("root"));
-    update(projectteamgetprojectdaysdefault);//更新fact中变量值
-    update(projectteamgetprojectdaysproject);//更新fact中变量值
-    end
-
 //逻辑处理节点[获取项目详情]
 rule "deaction1"
 ruleflow-group "projectteamgetprojectdaysdeaction1"
     when
     then
     cn.ibizlab.pms.util.helper.CachedBeanCopier.copy(projectservice.get(projectteamgetprojectdaysproject.getId()),projectteamgetprojectdaysproject);
-    update(projectteamgetprojectdaysdefault);//更新fact中变量值
     update(projectteamgetprojectdaysproject);//更新fact中变量值
+    update(projectteamgetprojectdaysdefault);//更新fact中变量值
     end
 
 //逻辑处理节点[回填]
@@ -47,7 +37,17 @@ ruleflow-group "projectteamgetprojectdaysprepareparam2"
     when
     then
     projectteamgetprojectdaysdefault.set("days",projectteamgetprojectdaysproject.get("days"));
-    update(projectteamgetprojectdaysdefault);//更新fact中变量值
     update(projectteamgetprojectdaysproject);//更新fact中变量值
+    update(projectteamgetprojectdaysdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[设置项目参数]
+rule "prepareparam1"
+ruleflow-group "projectteamgetprojectdaysprepareparam1"
+    when
+    then
+    projectteamgetprojectdaysproject.set("id",projectteamgetprojectdaysdefault.get("root"));
+    update(projectteamgetprojectdaysproject);//更新fact中变量值
+    update(projectteamgetprojectdaysdefault);//更新fact中变量值
     end
 

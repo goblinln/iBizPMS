@@ -6,13 +6,15 @@
   "logicName" : "手动生成产品日报",
   "name" : "ManualCreateDaily",
   "getPSDEActionInput" : {
-    "codeName" : "ManualCreateDailyInput",
-    "name" : "输入对象",
+    "name" : "ManualCreateDailyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbizproProductDailyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ManualCreateDailyResult",
-    "name" : "返回对象",
+    "name" : "ManualCreateDailyResult",
     "type" : "VOID"
   }
 }

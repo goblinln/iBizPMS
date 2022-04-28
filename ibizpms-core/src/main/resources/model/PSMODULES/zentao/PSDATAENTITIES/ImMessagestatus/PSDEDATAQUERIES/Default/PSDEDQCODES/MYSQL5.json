@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`MESSAGE`",
+    "name" : "MESSAGE"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`USER`",
+    "name" : "USER"
+  } ],
+  "queryCode" : "SELECT\nt1.`ID`,\nt1.`MESSAGE`,\nt1.`STATUS`,\nt1.`USER`\nFROM `zt_im_messagestatus` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ImMessagestatus/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

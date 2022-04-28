@@ -5,23 +5,6 @@
   "logicName" : "任务收藏",
   "name" : "任务收藏",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Deaction1",
-    "getDstPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites/PSDEACTIONS/Create.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "IbzFavorites"
-    },
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
-    },
-    "logicNodeType" : "DEACTION",
-    "name" : "创建收藏信息",
-    "parallelOutput" : true
-  }, {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始",
@@ -34,8 +17,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
     "parallelOutput" : true
   }, {
@@ -51,8 +33,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "OBJECTID",
@@ -90,17 +71,37 @@
       "srcValueType" : "SRCVALUE"
     } ],
     "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction1",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites/PSDEACTIONS/Create.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "IbzFavorites"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
+    },
+    "logicNodeType" : "DEACTION",
+    "name" : "创建收藏信息",
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   }, {
     "codeName" : "IbzFavorites",
+    "logicName" : "收藏",
     "name" : "收藏",
     "getParamPSDataEntity" : {
       "modelref" : true,

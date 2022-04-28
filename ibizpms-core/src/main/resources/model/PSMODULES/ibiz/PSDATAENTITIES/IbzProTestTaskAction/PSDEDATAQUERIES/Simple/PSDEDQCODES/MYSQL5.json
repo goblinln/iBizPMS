@@ -1,0 +1,55 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACTION`",
+    "name" : "ACTION"
+  }, {
+    "expression" : "t1.`ACTIONSN`",
+    "name" : "ACTIONSN"
+  }, {
+    "expression" : "t1.`ACTOR`",
+    "name" : "ACTOR"
+  }, {
+    "expression" : "t1.`EXTRA`",
+    "name" : "EXTRA"
+  }, {
+    "expression" : "t1.`OBJECTID`",
+    "name" : "OBJECTID"
+  }, {
+    "expression" : "t1.`OBJECTTYPE`",
+    "name" : "OBJECTTYPE"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t1.`READ`",
+    "name" : "READ"
+  }, {
+    "expression" : "t1.`COMMENT`",
+    "name" : "COMMENT"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  } ],
+  "queryCode" : "SELECT\nt1.`COMMENT`,\nt1.`DATE`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`ID`,\nt1.`ORG`,\nt1.`ORGNAME`\nFROM `zt_action` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEDATAQUERIES/Simple/PSDEDQCODES/MYSQL5.json"
+}

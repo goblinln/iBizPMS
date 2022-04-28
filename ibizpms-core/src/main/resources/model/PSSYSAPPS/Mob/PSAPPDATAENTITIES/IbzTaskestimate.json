@@ -34,6 +34,7 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -107,6 +108,7 @@
     "actionMode" : "CUSTOM",
     "codeName" : "PMEvaluation",
     "methodType" : "DEACTION",
+    "name" : "PMEvaluation",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -141,6 +143,7 @@
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -169,10 +172,12 @@
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchActionMonth",
     "methodType" : "FETCH",
+    "name" : "FetchActionMonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchActionYear",
     "methodType" : "FETCH",
+    "name" : "FetchActionYear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
@@ -182,18 +187,22 @@
   }, {
     "codeName" : "FetchDefaults",
     "methodType" : "FETCH",
+    "name" : "FetchDefaults",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionMonth",
     "methodType" : "FETCH",
+    "name" : "FetchProjectActionMonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionYear",
     "methodType" : "FETCH",
+    "name" : "FetchProjectActionYear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskEstimate",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTaskEstimate",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -388,6 +397,7 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -461,6 +471,7 @@
     "actionMode" : "CUSTOM",
     "codeName" : "PMEvaluation",
     "methodType" : "DEACTION",
+    "name" : "PMEvaluation",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -495,6 +506,7 @@
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -522,10 +534,12 @@
   }, {
     "codeName" : "FetchActionMonth",
     "methodType" : "FETCH",
+    "name" : "FetchActionMonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchActionYear",
     "methodType" : "FETCH",
+    "name" : "FetchActionYear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
@@ -535,18 +549,22 @@
   }, {
     "codeName" : "FetchDefaults",
     "methodType" : "FETCH",
+    "name" : "FetchDefaults",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionMonth",
     "methodType" : "FETCH",
+    "name" : "FetchProjectActionMonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionYear",
     "methodType" : "FETCH",
+    "name" : "FetchProjectActionYear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskEstimate",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTaskEstimate",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempActionMonth",
@@ -635,6 +653,7 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -678,18 +697,24 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "IbzTaskestimate",
+  "dEAPITag" : "ZT_TASKESTIMATE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json",
   "enableUIActions" : 15,
   "logicName" : "任务预计",
   "name" : "IBZ_TASKESTIMATE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_TASKESTIMATE",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "ID",
     "codeName" : "Id"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : false,
   "enableFilterActions" : true,
   "enableTempData" : true,

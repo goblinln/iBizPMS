@@ -1,0 +1,166 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`ACL` = 'private'  AND  ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_PROJECT\"}')}  OR  t1.`UPDATEBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"UPDATEBY\",\"dename\":\"ZT_PROJECT\"}')}  OR  t1.`PM` =  ${srfsessioncontext('srfloginname','{\"defname\":\"PM\",\"dename\":\"ZT_PROJECT\"}')}  OR  t1.`RD` =  ${srfsessioncontext('srfloginname','{\"defname\":\"RD\",\"dename\":\"ZT_PROJECT\"}')}  OR  t1.`PO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"PO\",\"dename\":\"ZT_PROJECT\"}')}  OR  t1.`QD` =  ${srfsessioncontext('srfloginname','{\"defname\":\"QD\",\"dename\":\"ZT_PROJECT\"}')} ) )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`PMSEEPROJECTINFO`",
+    "name" : "PMSEEPROJECTINFO"
+  }, {
+    "expression" : "t1.`WHITELIST`",
+    "name" : "WHITELIST"
+  }, {
+    "expression" : "t1.`ACL`",
+    "name" : "ACL"
+  }, {
+    "expression" : "t1.`BEGIN`",
+    "name" : "BEGIN"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0'  )",
+    "name" : "BUGCNT"
+  }, {
+    "expression" : "t1.`CANCELEDBY`",
+    "name" : "CANCELEDBY"
+  }, {
+    "expression" : "t1.`CANCELEDDATE`",
+    "name" : "CANCELEDDATE"
+  }, {
+    "expression" : "t1.`CATID`",
+    "name" : "CATID"
+  }, {
+    "expression" : "t1.`CLOSEDBY`",
+    "name" : "CLOSEDBY"
+  }, {
+    "expression" : "t1.`CLOSEDDATE`",
+    "name" : "CLOSEDDATE"
+  }, {
+    "expression" : "t1.`CODE`",
+    "name" : "CODE"
+  }, {
+    "expression" : "t1.`DAYS`",
+    "name" : "DAYS"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`END`",
+    "name" : "END"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`ISCAT`",
+    "name" : "ISCAT"
+  }, {
+    "expression" : "'0'",
+    "name" : "ISTOP"
+  }, {
+    "expression" : "t1.`MDEPTID`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "t1.`MDEPTNAME`",
+    "name" : "MDEPTNAME"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`OPENEDDATE`",
+    "name" : "OPENEDDATE"
+  }, {
+    "expression" : "t1.`OPENEDVERSION`",
+    "name" : "OPENEDVERSION"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`order`",
+    "name" : "ORDER1"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PARENTNAME"
+  }, {
+    "expression" : "t1.`PM`",
+    "name" : "PM"
+  }, {
+    "expression" : "t1.`PO`",
+    "name" : "PO"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t1.`PROJECTSN`",
+    "name" : "PROJECTSN"
+  }, {
+    "expression" : "t1.`QD`",
+    "name" : "QD"
+  }, {
+    "expression" : "t1.`RD`",
+    "name" : "RD"
+  }, {
+    "expression" : "t1.`STATGE`",
+    "name" : "STATGE"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = t1.`ID` AND DELETED = '0')",
+    "name" : "STORYCNT"
+  }, {
+    "expression" : "t1.`SUBSTATUS`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`SUPPROREPORT`",
+    "name" : "SUPPROREPORT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' )",
+    "name" : "TASKCNT"
+  }, {
+    "expression" : "t1.`TEAM`",
+    "name" : "TEAM"
+  }, {
+    "expression" : "(SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1') )",
+    "name" : "TOTALCONSUMED"
+  }, {
+    "expression" : "(SELECT round(SUM(ESTIMATE),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED =  '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+    "name" : "TOTALESTIMATE"
+  }, {
+    "expression" : "(select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id )",
+    "name" : "TOTALHOURS"
+  }, {
+    "expression" : "(SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1') )",
+    "name" : "TOTALLEFT"
+  }, {
+    "expression" : "((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause') ) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )))",
+    "name" : "TOTALWH"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACL`,\nt1.`BEGIN`,\n(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0'  ) AS `BUGCNT`,\nt1.`CANCELEDBY`,\nt1.`CANCELEDDATE`,\nt1.`CATID`,\nt1.`CLOSEDBY`,\nt1.`CLOSEDDATE`,\nt1.`CODE`,\nt1.`DAYS`,\nt1.`DELETED`,\nt1.`END`,\nt1.`ID`,\nt1.`ISCAT`,\n'0' AS `ISTOP`,\nt1.`MDEPTID`,\nt1.`MDEPTNAME`,\nt1.`NAME`,\nt1.`OPENEDBY`,\nt1.`OPENEDDATE`,\nt1.`OPENEDVERSION`,\nt1.`ORDER`,\nt1.`order` AS `ORDER1`,\nt1.`ORGID`,\nt1.`ORGNAME`,\nt1.`PARENT`,\nt11.`NAME` AS `PARENTNAME`,\nt1.`PM`,\nt1.`PO`,\nt1.`PRI`,\nt1.`PROJECTSN`,\nt1.`QD`,\nt1.`RD`,\nt1.`STATGE`,\nt1.`STATUS`,\n(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `STORYCNT`,\nt1.`SUBSTATUS`,\nt1.`SUPPROREPORT`,\n(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `TASKCNT`,\nt1.`TEAM`,\n(SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1') ) AS `TOTALCONSUMED`,\n(SELECT round(SUM(ESTIMATE),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED =  '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALESTIMATE`,\n(select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id ) AS `TOTALHOURS`,\n(SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1') ) AS `TOTALLEFT`,\n((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause') ) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ))) AS `TOTALWH`,\nt1.`TYPE`,\nt1.`UPDATEBY`\nFROM `zt_project` t1 \nLEFT JOIN `zt_project` t11 ON t1.`PARENT` = t11.`ID` \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEDATAQUERIES/OpenByQuery/PSDEDQCODES/MYSQL5.json"
+}

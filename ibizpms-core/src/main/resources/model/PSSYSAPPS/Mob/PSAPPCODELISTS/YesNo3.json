@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__YesNo3",
   "codeListType" : "STATIC",
   "codeName" : "YesNo3",
   "dynaInstMode" : 1,
@@ -8,13 +9,11 @@
   "getPSCodeItems" : [ {
     "codeName" : "Yes",
     "text" : "是",
-    "value" : "yes",
-    "includeBeginValue" : true
+    "value" : "yes"
   }, {
     "codeName" : "No",
     "text" : "否",
-    "value" : "no",
-    "includeBeginValue" : true
+    "value" : "no"
   } ],
   "enableCache" : true
 }

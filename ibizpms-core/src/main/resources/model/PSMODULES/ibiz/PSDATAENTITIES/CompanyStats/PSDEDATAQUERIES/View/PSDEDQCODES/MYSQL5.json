@@ -1,0 +1,43 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "0",
+    "name" : "CLOSEDSTORYCNT"
+  }, {
+    "expression" : "t1.`COMMENT`",
+    "name" : "COMMENT"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "0",
+    "name" : "DYNAMICCNT"
+  }, {
+    "expression" : "0",
+    "name" : "FINISHEDTASKCNT"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "0",
+    "name" : "LOGHOURS"
+  }, {
+    "expression" : "0",
+    "name" : "LOGINCNT"
+  }, {
+    "expression" : "0",
+    "name" : "OPENEDBUGCNT"
+  }, {
+    "expression" : "0",
+    "name" : "OPENEDSTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "OPENEDTASKCNT"
+  }, {
+    "expression" : "0",
+    "name" : "RESOLVEDBUGCNT"
+  } ],
+  "queryCode" : "SELECT\n0 AS `CLOSEDSTORYCNT`,\nt1.`COMMENT`,\nt1.`DATE`,\n0 AS `DYNAMICCNT`,\n0 AS `FINISHEDTASKCNT`,\nt1.`ID`,\n0 AS `LOGHOURS`,\n0 AS `LOGINCNT`,\n0 AS `OPENEDBUGCNT`,\n0 AS `OPENEDSTORYCNT`,\n0 AS `OPENEDTASKCNT`,\n0 AS `RESOLVEDBUGCNT`\nFROM `zt_action` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

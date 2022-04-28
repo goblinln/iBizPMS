@@ -1,31 +1,33 @@
 {
+  "codeListTag" : "zentao__Team__type",
   "codeListType" : "STATIC",
   "codeName" : "Team__type",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Team__type.json",
   "emptyText" : "未定义",
+  "name" : "团队类型",
   "getPSCodeItems" : [ {
     "codeName" : "Project",
     "text" : "项目团队",
     "value" : "project",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Task",
     "text" : "任务团队",
-    "value" : "task",
-    "includeBeginValue" : true
+    "value" : "task"
   }, {
     "codeName" : "Product",
     "text" : "产品团队",
-    "value" : "product",
-    "includeBeginValue" : true
+    "value" : "product"
   } ],
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

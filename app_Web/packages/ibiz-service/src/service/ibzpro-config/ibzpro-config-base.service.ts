@@ -96,7 +96,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzproconfigs/${_context.ibzproconfig}`);
+        const res = await this.http.get(`/ibzproconfigs/${encodeURIComponent(_context.ibzproconfig)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      */
     async GetSystemConfig(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.put(`/ibzproconfigs/${_context.ibzproconfig}/getsystemconfig`, _data);
+        const res = await this.http.put(`/ibzproconfigs/${encodeURIComponent(_context.ibzproconfig)}/getsystemconfig`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -147,7 +147,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibzproconfigs/${_context.ibzproconfig}`);
+        const res = await this.http.delete(`/ibzproconfigs/${encodeURIComponent(_context.ibzproconfig)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -165,7 +165,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibzproconfigs/${_context.ibzproconfig}`, _data);
+        const res = await this.http.put(`/ibzproconfigs/${encodeURIComponent(_context.ibzproconfig)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -198,7 +198,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzproconfigs/${_context.ibzproconfig}/select`);
+        const res = await this.http.get(`/ibzproconfigs/${encodeURIComponent(_context.ibzproconfig)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

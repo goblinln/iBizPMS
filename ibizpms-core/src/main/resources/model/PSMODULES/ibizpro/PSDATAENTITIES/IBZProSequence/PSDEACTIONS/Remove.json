@@ -8,13 +8,15 @@
   "name" : "Remove",
   "orderValue" : 21,
   "getPSDEActionInput" : {
-    "codeName" : "RemoveInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "IBZPRO_SEQUENCEID",
+      "codeName" : "IBZProSequenceId"
+    },
+    "name" : "RemoveInput",
     "type" : "KEYFIELDS"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "RemoveResult",
-    "name" : "返回对象",
+    "name" : "RemoveResult",
     "type" : "VOID"
   },
   "batchAction" : true,

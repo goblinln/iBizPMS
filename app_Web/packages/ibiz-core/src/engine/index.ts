@@ -55,3 +55,4 @@ export { ReportViewEngine } from './report-view-engine';
 export { MapExpViewEngine } from './map-exp-view-engine';
 export { CommonViewEngine } from './common-view-engine';
 export * from './trigger-engine';
+export { DeIndexViewEngine } from './deindex-view-engine';

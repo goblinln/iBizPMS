@@ -278,7 +278,7 @@ export class CodeListServiceBase {
                         if (CodeListServiceBase.codelistCached.get(key)) {
                             let items: any = CodeListServiceBase.codelistCached.get(key).items;
                             if (items.length > 0) {
-                                if (new Date().getTime() <= codelist.getExpirationTime()) {
+                                if (codelist.getExpirationTime() == -1 || new Date().getTime() <= codelist.getExpirationTime()) {
                                     return resolve(items);
                                 }
                             }
@@ -290,7 +290,7 @@ export class CodeListServiceBase {
                             } else {
                                 let result: Promise<any> = codelist.getItems(context, data, isloading);
                                 CodeListServiceBase.codelistCache.set(key, result);
-                                codelist.setExpirationTime(new Date().getTime() + cacheTimeout);
+                                codelist.setExpirationTime(cacheTimeout == -1 ? -1 : new Date().getTime() + cacheTimeout);
                                 callback(context, data, tag, result);
                             }
                         }

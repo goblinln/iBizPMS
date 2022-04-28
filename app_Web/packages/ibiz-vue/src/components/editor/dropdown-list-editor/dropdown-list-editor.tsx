@@ -63,7 +63,7 @@ export default class DropdownListEditor extends EditorBase {
                 break;
         }
         let codeList: any= this.editorInstance?.getPSAppCodeList();
-        if(codeList.isFill) {
+        if(codeList && codeList?.isFill) {
             Object.assign(this.customProps, {
                 valueSeparator:codeList.valueSeparator,
                 tag: codeList.codeName,

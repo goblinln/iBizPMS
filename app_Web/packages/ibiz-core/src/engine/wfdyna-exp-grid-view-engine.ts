@@ -25,9 +25,6 @@ export class WFDynaExpGridViewEngine extends GridViewEngine {
      */
     public load(opts: any = {}): void {
         this.view.getWFStepModel().then((res:any) =>{
-            if(!res || res.length === 0) {
-                return;
-            }
             super.load(opts);
         })
     }

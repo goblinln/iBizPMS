@@ -40,6 +40,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "MonthFinishTaskAndBug",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchMonthFinishTaskAndBug"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -95,14 +103,7 @@
     "index" : 0,
     "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
     "getPSChartCoordinateSystem" : {
-      "eChartsType" : "cartesian2d",
-      "index" : 0,
-      "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-      "getPSChartGrid" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "type" : "XY",
+      "modelref" : true,
       "id" : "0"
     },
     "getPSChartGridXAxis0" : {

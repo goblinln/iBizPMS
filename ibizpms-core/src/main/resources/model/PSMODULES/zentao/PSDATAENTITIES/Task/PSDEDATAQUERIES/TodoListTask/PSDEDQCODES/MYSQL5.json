@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.* \nFROM\n\t(\nSELECT\n        t1.id ,\n\tt1.TASKSN,\n\tt1.`name`,\n\tt1.pri,\n\tt1.assignedTo,\n\tt1.finishedBy,\n\tt1.finishedDate,\n\tt1.estStarted,\nCASE\n\t\n\tWHEN t1.`status` IN ( 'done', 'closed' ) THEN\n\t'1' ELSE '0' \n\tEND AS isfinished,\n\t( SELECT count( 1 ) FROM zt_action WHERE objectType = 'task' AND action = 'commented' AND objectid = t1.id ) AS ReplyCount,\nCASE\n\t\t\n\t\tWHEN t1.`desc` IS NULL \n\t\tOR t1.`desc` = '' THEN\n\t\t\t'0' ELSE '1' \n\t\tEND AS hasDetail,\n\t\tt1.project,\n\t\tt1.`TYPE`,\n\t\tt1.`status`,\n\t\tt1.deleted,\n\t\tt1.openeddate,\n\t\tt1.closeddate,\n\t\tt1.assigneddate,\n\t\tt1.consumed,\n\t\tt1.deadline,\n\t\tt11.`name` AS projectname,\n\t\tt1.canceleddate,\n\t\tt1.lastediteddate,\n\t\tDATE_FORMAT( t1.lastediteddate, '%Y-%m-%d' ) AS updatedate,\n\t\tt1.lasteditedby,\n\t\tt1.openedby,\n\t\tt1.closedby,\n\t\tt1.canceledby \n\tFROM\n\t\t`zt_task` t1\n\t\tLEFT JOIN zt_project t11 ON t1.project = t11.id  \n\t) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEDATAQUERIES/TodoListTask/PSDEDQCODES/MYSQL5.json"
+}

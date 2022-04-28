@@ -1,0 +1,70 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "0",
+    "name" : "BUGBYDESIGN"
+  }, {
+    "expression" : "0",
+    "name" : "BUGCNT"
+  }, {
+    "expression" : "0",
+    "name" : "BUGDUPLICATE"
+  }, {
+    "expression" : "0%",
+    "name" : "BUGEFFICIENT"
+  }, {
+    "expression" : "0",
+    "name" : "BUGEXTERNAL"
+  }, {
+    "expression" : "0",
+    "name" : "BUGFIXED"
+  }, {
+    "expression" : "0",
+    "name" : "BUGNOTREPRO"
+  }, {
+    "expression" : "0",
+    "name" : "BUGPOSTPONED"
+  }, {
+    "expression" : "0",
+    "name" : "BUGTOSTORY"
+  }, {
+    "expression" : "0",
+    "name" : "BUGTOTAL"
+  }, {
+    "expression" : "0",
+    "name" : "BUGWILLNOTFIX"
+  }, {
+    "expression" : "0",
+    "name" : "BUGWJJ"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t2.`PROJECTNAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`RESOLVEDBY`",
+    "name" : "RESOLVEDBY"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  } ],
+  "queryCode" : "SELECT\n\tt1.project,\n\tt1.projectname,\n\t\tsum( IF ( t1.`status` = 'resolved', t1.ss, 0 ) ) AS bugresolved,\n\t\tsum( IF ( t1.`status` = 'closed', t1.ss, 0 ) ) AS bugclosed,\n\t\tsum( IF ( t1.`status` = 'active', t1.ss, 0 ) ) AS bugactive,\n\tcount(1) as bugcnt\nFROM\n\t(\n\tSELECT\n\t\tt1.`status`,\n\t\tt1.project,\n\t\tt11.`name` AS projectname,\n\t\t1 AS ss,\n\t\tt11.deleted\n\tFROM\n\t\tzt_bug t1\n\t\tLEFT JOIN zt_project t11 ON t1.project = t11.id \n\t\twhere t1.deleted = '0' and t1.project <> 0\n\t) t1 \nGROUP BY\n\tt1.project,\n\tt1.projectname",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEDATAQUERIES/ProjectBugStatusCount/PSDEDQCODES/MYSQL5.json"
+}

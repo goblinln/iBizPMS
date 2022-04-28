@@ -762,6 +762,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
@@ -1221,19 +1225,31 @@
     "id" : "Zt_doclib__UPDATE"
   } ],
   "codeName" : "Doc",
+  "dEAPITag" : "IBZ_API__DOC",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json",
   "enableUIActions" : 15,
   "logicName" : "文档",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "DOCQTYPE",
+    "codeName" : "Docqtype"
+  }, {
+    "name" : "ISFAVOURITES",
+    "codeName" : "Isfavourites"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "Docs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "SysAccount",
+    "majorDEName" : "SYS_USER",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
+    "minorDECodeName" : "Doc",
+    "minorDEName" : "ZT_DOC",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
@@ -1244,10 +1260,14 @@
     "actionRSMode" : 1,
     "codeName" : "Docs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "DocLib",
+    "majorDEName" : "ZT_DOCLIB",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
+    "minorDECodeName" : "Doc",
+    "minorDEName" : "ZT_DOC",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
@@ -1260,13 +1280,19 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_DOC",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_DOC",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "TITLE",
     "codeName" : "Title"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

@@ -6,13 +6,15 @@
   "logicName" : "删除任务",
   "name" : "delete",
   "getPSDEActionInput" : {
-    "codeName" : "DeleteInput",
-    "name" : "输入对象",
+    "name" : "DeleteInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "DeleteResult",
-    "name" : "返回对象",
+    "name" : "DeleteResult",
     "type" : "VOID"
   }
 }

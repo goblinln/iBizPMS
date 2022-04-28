@@ -1,6 +1,7 @@
 .action-timeline{
   height: 100%;
   overflow: scroll;
+  min-width:1000px;
   .extend-action-timeline-table {
       border-collapse: separate;
       border-spacing: 0px 40px;
@@ -21,38 +22,34 @@
           .timeline-content .authorname {
               color: #57a3fd;
           }
-  
-          .timeline.timeline-head {
-              padding: 8px 16px;
-              height: 45px;
-              line-height: 45px;
-              padding: 0 16px;
-  
-              .timeline-wrapper>div {
-                  height: 45px;
-                  line-height: 45px;
-              }
-  
-              .type {
-                  padding-left: 16px;
-              }
-          }
-  
+
           .timeline {
               .timeline-wrapper {
                   display: flex;
                   width: 100%;
-  
+                  height: 100%;
+                  align-items: center;
                   .usertaskname,
                   .authorname,
                   .last-time,
-                  .type,
-                  .fullmessage {
+                  .type {
+                      height: 100%;
                       overflow: hidden;
                       white-space: nowrap;
                       text-overflow: ellipsis;
+                      flex-shrink: 1;
                   }
-  
+                  .fullmessage{
+                      width: 40%;
+                      height: 100%;
+                      padding-top: 21px;
+                      line-height: 1.5;                     
+                      overflow-y: scroll;
+                      text-overflow: clip;
+                      white-space: normal;
+                      text-align: left;  
+                      flex-shrink: 1;
+                  }
                   >div {
                       text-align: center;
                       margin: 0 5px;
@@ -83,10 +80,10 @@
               font-size: 14px;
   
               .timeline-index {
-                  width: 50px;
+                  width: 5%;
                   height: 65px;
                   position: relative;
-  
+                  flex-shrink: 1;
                   span {
                       display: inline-block;
                       width: 25px;
@@ -171,6 +168,27 @@
               }
           }
   
+          .timeline.timeline-head {
+            padding: 8px 16px;
+            height: 45px;
+            line-height: 45px;
+            padding: 0 16px;
+
+            .timeline-wrapper>div {
+                height: 45px;
+                line-height: 45px;
+            }
+
+            .type {
+                padding-left: 16px;
+            }
+
+            .fullmessage{
+              padding-top: 0;
+              overflow: hidden;
+            }
+        }
+
           .tooltips {
               width: 214px;
               display: flex;

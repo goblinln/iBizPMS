@@ -6,13 +6,15 @@
   "logicName" : "暂停",
   "name" : "Pause",
   "getPSDEActionInput" : {
-    "codeName" : "PauseInput",
-    "name" : "输入对象",
+    "name" : "PauseInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "PauseResult",
-    "name" : "返回对象",
+    "name" : "PauseResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

@@ -1,0 +1,247 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.project in (select t.project from zt_projectproduct t left join zt_productplan tt on tt.product = t.product where tt.id = ${srfwebcontext('productplan','{\"defname\":\"PLAN\",\"dename\":\"ZT_TASK\"}')})  AND  ( t1.`PLAN` <> ${srfwebcontext('productplan','{\"defname\":\"PLAN\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`PLAN` IS NULL ) )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`FINISHEDLIST`",
+    "name" : "FINISHEDLIST"
+  }, {
+    "expression" : "t1.`ASSIGN`",
+    "name" : "ASSIGN"
+  }, {
+    "expression" : "t1.`ASSIGNEDDATE`",
+    "name" : "ASSIGNEDDATE"
+  }, {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "t1.`CANCELEDBY`",
+    "name" : "CANCELEDBY"
+  }, {
+    "expression" : "t1.`CANCELEDDATE`",
+    "name" : "CANCELEDDATE"
+  }, {
+    "expression" : "t1.`CLOSEDBY`",
+    "name" : "CLOSEDBY"
+  }, {
+    "expression" : "t1.`CLOSEDDATE`",
+    "name" : "CLOSEDDATE"
+  }, {
+    "expression" : "t1.`CLOSEDREASON`",
+    "name" : "CLOSEDREASON"
+  }, {
+    "expression" : "t1.`COLOR`",
+    "name" : "COLOR"
+  }, {
+    "expression" : "t1.`CONFIG_BEFOREDAYS`",
+    "name" : "CONFIG_BEFOREDAYS"
+  }, {
+    "expression" : "t1.`CONFIG_BEGIN`",
+    "name" : "CONFIG_BEGIN"
+  }, {
+    "expression" : "t1.`CONFIG_DAY`",
+    "name" : "CONFIG_DAY"
+  }, {
+    "expression" : "t1.`CONFIG_END`",
+    "name" : "CONFIG_END"
+  }, {
+    "expression" : "t1.`CONFIG_MONTH`",
+    "name" : "CONFIG_MONTH"
+  }, {
+    "expression" : "t1.`CONFIG_TYPE`",
+    "name" : "CONFIG_TYPE"
+  }, {
+    "expression" : "t1.`CONFIG_WEEK`",
+    "name" : "CONFIG_WEEK"
+  }, {
+    "expression" : "t1.`CONSUMED`",
+    "name" : "CONSUMED"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`CYCLE`",
+    "name" : "CYCLE"
+  }, {
+    "expression" : "t1.`DEADLINE`",
+    "name" : "DEADLINE"
+  }, {
+    "expression" : "(case when t1.deadline is null or t1.deadline = '0000-00-00' or t1.deadline = '1970-01-01' then '' when t1.`status` in ('wait','doing') and t1.deadline <DATE_FORMAT(now(),'%y-%m-%d')  then CONCAT_WS('','延期',TIMESTAMPDIFF(DAY, t1.deadline, now()),'天') else '' end)",
+    "name" : "DELAY"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "(To_Days(t1.`DEADLINE`)-To_Days(t1.`ESTSTARTED`))",
+    "name" : "DURATION"
+  }, {
+    "expression" : "t1.`ESTIMATE`",
+    "name" : "ESTIMATE"
+  }, {
+    "expression" : "t1.`ESTSTARTED`",
+    "name" : "ESTSTARTED"
+  }, {
+    "expression" : "t1.`FINISHEDBY`",
+    "name" : "FINISHEDBY"
+  }, {
+    "expression" : "t1.`FINISHEDDATE`",
+    "name" : "FINISHEDDATE"
+  }, {
+    "expression" : "t1.`FROMBUG`",
+    "name" : "FROMBUG"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`IDVALUE`",
+    "name" : "IDVALUE"
+  }, {
+    "expression" : "t1.`INPUTCOST`",
+    "name" : "INPUTCOST"
+  }, {
+    "expression" : "0",
+    "name" : "ISFAVORITES"
+  }, {
+    "expression" : "( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END )",
+    "name" : "ISLEAF"
+  }, {
+    "expression" : "t1.`LASTEDITEDBY`",
+    "name" : "LASTEDITEDBY"
+  }, {
+    "expression" : "t1.`LASTEDITEDDATE`",
+    "name" : "LASTEDITEDDATE"
+  }, {
+    "expression" : "t1.`LEFT`",
+    "name" : "LEFT"
+  }, {
+    "expression" : "t1.`MAILTO`",
+    "name" : "MAILTO"
+  }, {
+    "expression" : "''",
+    "name" : "MAILTOPK"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "MODULENAME"
+  }, {
+    "expression" : "(case when t1.module = '0' then '/' else (SELECT case when tt.type = 'task' then GROUP_CONCAT( tt.NAME SEPARATOR '>' ) else CONCAT_WS('',t2.`name`,'>',GROUP_CONCAT( tt.NAME SEPARATOR '>' )) end as `name` FROM zt_module tt left join zt_product t2 on tt.root = t2.id WHERE FIND_IN_SET( tt.id, t11.path ) and tt.deleted = '0'  GROUP BY tt.root limit 0,1) end)",
+    "name" : "MODULENAME1"
+  }, {
+    "expression" : "( SELECT count( t.`id` ) FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` )",
+    "name" : "MULTIPLE"
+  }, {
+    "expression" : "t1.CONSUMED",
+    "name" : "MYCONSUMED"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`OPENEDDATE`",
+    "name" : "OPENEDDATE"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t61.`NAME`",
+    "name" : "PARENTNAME"
+  }, {
+    "expression" : "t11.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`PLAN`",
+    "name" : "PLAN"
+  }, {
+    "expression" : "t31.`TITLE`",
+    "name" : "PLANNAME"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t21.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t51.`name`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "CONCAT_WS('',case when t1.consumed = 0 or t1.consumed is null then '0' when t1.`left` = 0 or t1.`left` is null then '100' else ROUND((ROUND(t1.`consumed`/(t1.`left` + t1.consumed),2)) * 100) end ,'%')",
+    "name" : "PROGRESSRATE"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t41.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`REALSTARTED`",
+    "name" : "REALSTARTED"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "(case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end )",
+    "name" : "STATUS1"
+  }, {
+    "expression" : "CASE WHEN t1.`status` = 'wait' THEN \tCONCAT_WS( '', 60, LPAD( t1.id, 12, 0 ) )  \tWHEN t1.`status` = 'doing' THEN \tCONCAT_WS( '', 50, LPAD( t1.id, 12, 0 ) )  \tWHEN t1.`status` = 'done' THEN \tCONCAT_WS( '', 40, LPAD( t1.id, 12, 0 ) )  \tWHEN t1.`status` = 'closed' THEN \tCONCAT_WS( '', 30, LPAD( t1.id, 12, 0 ) )  \tWHEN t1.`status` = 'cancel' THEN \tCONCAT_WS( '', 20, LPAD( t1.id, 12, 0 ) ) ELSE CONCAT_WS( '', 10, LPAD( t1.id, 12, 0 ) )  \tEND",
+    "name" : "STATUSORDER"
+  }, {
+    "expression" : "t1.`STORY`",
+    "name" : "STORY"
+  }, {
+    "expression" : "t21.`TITLE`",
+    "name" : "STORYNAME"
+  }, {
+    "expression" : "t1.`STORYVERSION`",
+    "name" : "STORYVERSION"
+  }, {
+    "expression" : "t1.`SUBSTATUS`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`TASKSN`",
+    "name" : "TASKSN"
+  }, {
+    "expression" : "t1.`TASKSPECIES`",
+    "name" : "TASKSPECIES"
+  }, {
+    "expression" : "( CASE WHEN ( SELECT CASE\t WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_team` t  WHERE t.`type` = 'task'  AND t.`root` = t1.`id`  ) = 1 THEN '10'  WHEN t1.parent = - 1 THEN'20'   WHEN t1.parent = 0 THEN '30' ELSE '40' END)",
+    "name" : "TASKTYPE"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "DATE_FORMAT(t1.lastediteddate,'%Y-%m-%d')",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`ASSIGN`,\nt1.`ASSIGNEDDATE`,\nt1.`ASSIGNEDTO`,\nt1.`CANCELEDBY`,\nt1.`CANCELEDDATE`,\nt1.`CLOSEDBY`,\nt1.`CLOSEDDATE`,\nt1.`CLOSEDREASON`,\nt1.`COLOR`,\nt1.`CONFIG_BEFOREDAYS`,\nt1.`CONFIG_BEGIN`,\nt1.`CONFIG_DAY`,\nt1.`CONFIG_END`,\nt1.`CONFIG_MONTH`,\nt1.`CONFIG_TYPE`,\nt1.`CONFIG_WEEK`,\nt1.`CONSUMED`,\nt1.`CREATEMAN`,\nt1.`CYCLE`,\nt1.`DEADLINE`,\n(case when t1.deadline is null or t1.deadline = '0000-00-00' or t1.deadline = '1970-01-01' then '' when t1.`status` in ('wait','doing') and t1.deadline <DATE_FORMAT(now(),'%y-%m-%d')  then CONCAT_WS('','延期',TIMESTAMPDIFF(DAY, t1.deadline, now()),'天') else '' end) AS `DELAY`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\n(To_Days(t1.`DEADLINE`)-To_Days(t1.`ESTSTARTED`)) AS `DURATION`,\nt1.`ESTIMATE`,\nt1.`ESTSTARTED`,\nt1.`FINISHEDBY`,\nt1.`FINISHEDDATE`,\nt1.`FROMBUG`,\nt1.`ID`,\nt1.`IDVALUE`,\nt1.`INPUTCOST`,\n0 AS `ISFAVORITES`,\n( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`,\nt1.`LASTEDITEDBY`,\nt1.`LASTEDITEDDATE`,\nt1.`LEFT`,\nt1.`MAILTO`,\n'' AS `MAILTOPK`,\nt1.`MODULE`,\nt11.`NAME` AS `MODULENAME`,\n(case when t1.module = '0' then '/' else (SELECT case when tt.type = 'task' then GROUP_CONCAT( tt.NAME SEPARATOR '>' ) else CONCAT_WS('',t2.`name`,'>',GROUP_CONCAT( tt.NAME SEPARATOR '>' )) end as `name` FROM zt_module tt left join zt_product t2 on tt.root = t2.id WHERE FIND_IN_SET( tt.id, t11.path ) and tt.deleted = '0'  GROUP BY tt.root limit 0,1) end) AS `MODULENAME1`,\n( SELECT count( t.`id` ) FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` ) AS `MULTIPLE`,\nt1.CONSUMED AS `MYCONSUMED`,\nt1.`NAME`,\nt1.`OPENEDBY`,\nt1.`OPENEDDATE`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PARENT`,\nt61.`NAME` AS `PARENTNAME`,\nt11.`PATH`,\nt1.`PLAN`,\nt31.`TITLE` AS `PLANNAME`,\nt1.`PRI`,\nt21.`PRODUCT`,\nt51.`name` AS `PRODUCTNAME`,\nCONCAT_WS('',case when t1.consumed = 0 or t1.consumed is null then '0' when t1.`left` = 0 or t1.`left` is null then '100' else ROUND((ROUND(t1.`consumed`/(t1.`left` + t1.consumed),2)) * 100) end ,'%') AS `PROGRESSRATE`,\nt1.`PROJECT`,\nt41.`NAME` AS `PROJECTNAME`,\nt1.`REALSTARTED`,\nt1.`STATUS`,\n(case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end ) AS `STATUS1`,\nCASE WHEN t1.`status` = 'wait' THEN \tCONCAT_WS( '', 60, LPAD( t1.id, 12, 0 ) )  \tWHEN t1.`status` = 'doing' THEN \tCONCAT_WS( '', 50, LPAD( t1.id, 12, 0 ) )  \tWHEN t1.`status` = 'done' THEN \tCONCAT_WS( '', 40, LPAD( t1.id, 12, 0 ) )  \tWHEN t1.`status` = 'closed' THEN \tCONCAT_WS( '', 30, LPAD( t1.id, 12, 0 ) )  \tWHEN t1.`status` = 'cancel' THEN \tCONCAT_WS( '', 20, LPAD( t1.id, 12, 0 ) ) ELSE CONCAT_WS( '', 10, LPAD( t1.id, 12, 0 ) )  \tEND AS `STATUSORDER`,\nt1.`STORY`,\nt21.`TITLE` AS `STORYNAME`,\nt1.`STORYVERSION`,\nt1.`SUBSTATUS`,\nt1.`TASKSN`,\nt1.`TASKSPECIES`,\n( CASE WHEN ( SELECT CASE\t WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_team` t  WHERE t.`type` = 'task'  AND t.`root` = t1.`id`  ) = 1 THEN '10'  WHEN t1.parent = - 1 THEN'20'   WHEN t1.parent = 0 THEN '30' ELSE '40' END) AS `TASKTYPE`,\nt1.`TYPE`,\nDATE_FORMAT(t1.lastediteddate,'%Y-%m-%d') AS `UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `zt_task` t1 \nLEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`ID` \nLEFT JOIN `zt_story` t21 ON t1.`STORY` = t21.`ID` \nLEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID` \nLEFT JOIN `zt_project` t41 ON t1.`PROJECT` = t41.`ID` \nLEFT JOIN `zt_product` t51 ON t21.`PRODUCT` = t51.`id` \nLEFT JOIN `zt_task` t61 ON t1.`PARENT` = t61.`ID` \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEDATAQUERIES/TaskLinkPlan/PSDEDQCODES/MYSQL5.json"
+}

@@ -188,7 +188,9 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
@@ -659,11 +661,16 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "Weekly",
+  "dEAPITag" : "IBZ_API__WEEKLY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json",
   "enableUIActions" : 15,
   "logicName" : "个人周报",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "ISSUBMIT",
+    "codeName" : "Issubmit"
+  } ],
   "name" : "IBZ_WEEKLY",
   "getPSDEName" : "IBZ_WEEKLY",
   "getQuickSearchPSAppDEFields" : [ {
@@ -671,7 +678,9 @@
     "codeName" : "IbzWeeklyName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

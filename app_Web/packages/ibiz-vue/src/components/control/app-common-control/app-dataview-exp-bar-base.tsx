@@ -74,6 +74,9 @@ export class AppDataViewExpBarBase extends DataViewExpBarControlBase {
      * @memberof AppDataViewExpBarBase
      */
     public render() {
+        if(!this.controlIsLoaded) {
+            return null;
+        }
         return this.renderMainContent();
     }
 }

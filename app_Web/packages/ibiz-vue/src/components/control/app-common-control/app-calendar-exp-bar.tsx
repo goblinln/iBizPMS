@@ -81,6 +81,9 @@ export class AppCalendarExpBarBase extends CalendarExpBarControlBase{
      * @memberof AppCalendarExpBarBase
      */
     public render(){
+        if(!this.controlIsLoaded) {
+            return null;
+        }
         return this.renderMainContent();
     }
 

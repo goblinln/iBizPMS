@@ -6,13 +6,19 @@
   "logicName" : "标记已完成",
   "name" : "MarkDone",
   "getPSDEActionInput" : {
-    "codeName" : "MarkDoneInput",
-    "name" : "输入对象",
+    "name" : "MarkDoneInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IBIZProMessageDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MarkDoneResult",
-    "name" : "返回对象",
+    "name" : "MarkDoneResult",
     "type" : "VOID"
+  },
+  "getPSSubSysServiceAPIDEMethod" : {
+    "modelref" : true,
+    "id" : "MarkDone"
   }
 }

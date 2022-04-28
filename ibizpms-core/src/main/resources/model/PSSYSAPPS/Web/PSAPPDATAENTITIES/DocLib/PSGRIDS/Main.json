@@ -225,6 +225,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UPDATE"
+          },
           "getPSNavigateParams" : [ {
             "key" : "project",
             "name" : "project",
@@ -263,6 +267,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "MANAGE"
           },
           "getPSNavigateContexts" : [ {
             "key" : "PROJECT",
@@ -327,6 +335,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "COLLECT"
+          },
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
@@ -360,6 +372,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UNCOLLECT"
           },
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",

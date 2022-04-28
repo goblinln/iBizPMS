@@ -1,0 +1,73 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CODENAME`",
+    "name" : "CODENAME"
+  }, {
+    "expression" : "t1.`CODENAME2`",
+    "name" : "CODENAME2"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DETAG`",
+    "name" : "DETAG"
+  }, {
+    "expression" : "t1.`DETAG2`",
+    "name" : "DETAG2"
+  }, {
+    "expression" : "t1.`LOGICNAME`",
+    "name" : "LOGICNAME"
+  }, {
+    "expression" : "t1.`MAJORFLAG`",
+    "name" : "MAJORFLAG"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`PSSUBSYSSADEID`",
+    "name" : "PSSUBSYSSADEID"
+  }, {
+    "expression" : "t1.`PSSUBSYSSADENAME`",
+    "name" : "PSSUBSYSSADENAME"
+  }, {
+    "expression" : "t1.`PSSUBSYSSERVICEAPIID`",
+    "name" : "PSSUBSYSSERVICEAPIID"
+  }, {
+    "expression" : "t11.`PSSUBSYSSERVICEAPINAME`",
+    "name" : "PSSUBSYSSERVICEAPINAME"
+  }, {
+    "expression" : "t1.`SYNCMODELMODE`",
+    "name" : "SYNCMODELMODE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`USERCAT`",
+    "name" : "USERCAT"
+  }, {
+    "expression" : "t1.`USERTAG`",
+    "name" : "USERTAG"
+  }, {
+    "expression" : "t1.`USERTAG2`",
+    "name" : "USERTAG2"
+  }, {
+    "expression" : "t1.`USERTAG3`",
+    "name" : "USERTAG3"
+  }, {
+    "expression" : "t1.`USERTAG4`",
+    "name" : "USERTAG4"
+  }, {
+    "expression" : "t1.`VALIDFLAG`",
+    "name" : "VALIDFLAG"
+  } ],
+  "queryCode" : "SELECT\nt1.`CODENAME`,\nt1.`CODENAME2`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DETAG`,\nt1.`DETAG2`,\nt1.`LOGICNAME`,\nt1.`MAJORFLAG`,\nt1.`MEMO`,\nt1.`PSSUBSYSSADEID`,\nt1.`PSSUBSYSSADENAME`,\nt1.`PSSUBSYSSERVICEAPIID`,\nt11.`PSSUBSYSSERVICEAPINAME`,\nt1.`SYNCMODELMODE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`USERCAT`,\nt1.`USERTAG`,\nt1.`USERTAG2`,\nt1.`USERTAG3`,\nt1.`USERTAG4`,\nt1.`VALIDFLAG`\nFROM `T_PSSUBSYSSADE` t1 \nLEFT JOIN `T_PSSUBSYSSERVICEAPI` t11 ON t1.`PSSUBSYSSERVICEAPIID` = t11.`PSSUBSYSSERVICEAPIID` \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysSADE/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

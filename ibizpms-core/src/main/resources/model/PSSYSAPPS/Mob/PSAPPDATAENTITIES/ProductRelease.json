@@ -219,7 +219,9 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
@@ -405,7 +407,8 @@
     "codeName" : "Builddate",
     "logicName" : "打包日期",
     "name" : "BUILDDATE",
-    "stdDataType" : 5
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
   }, {
     "codeName" : "Product",
     "logicName" : "产品",
@@ -645,65 +648,6 @@
     "id" : "quickCreateMob@Release"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
-    "caption" : "关联需求",
-    "codeName" : "linkstory",
-    "dataAccessAction" : "LINKSTORY",
-    "dialogResult" : "OK",
-    "frontPSAppView" : "无法获取指定应用视图，标识为[e3b17a7400c9716b07464aaff64fa87b]，请确认实体视图[ZT_STORY][发布下属需求实体数据多项选择视图]已经添加到应用[iBiz软件生产管理（Mob）]中",
-    "fullCodeName" : "Release_linkstory",
-    "name" : "关联需求",
-    "getNextPSUIAction" : {
-      "modelref" : true,
-      "id" : "Refresh"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "LinkStory"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "RELEASE",
-      "name" : "RELEASE",
-      "value" : "id",
-      "rawValue" : false
-    }, {
-      "key" : "PRODUCT",
-      "name" : "PRODUCT",
-      "value" : "product",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "product",
-      "name" : "product",
-      "value" : "product",
-      "rawValue" : false
-    }, {
-      "key" : "release",
-      "name" : "release",
-      "value" : "id",
-      "rawValue" : false
-    } ],
-    "getPSSysImage" : {
-      "glyph" : "xf0c1@FontAwesome",
-      "cssClass" : "fa fa-link"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "linkstory",
-    "uIActionType" : "DEUIACTION",
-    "closeEditView" : true,
-    "closePopupView" : true,
-    "enableConfirm" : true,
-    "globalUIAction" : true,
-    "reloadData" : true,
-    "id" : "linkstory@Release"
-  }, {
-    "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "MobEdit",
     "dataAccessAction" : "SRFUR__RELEASE_COMMON",
@@ -718,6 +662,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__RELEASE_COMMON"
     },
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
@@ -916,19 +864,28 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ProductRelease",
+  "dEAPITag" : "IBZ_API__PRODUCT_RELEASE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json",
   "enableUIActions" : 15,
   "logicName" : "发布",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "ProductReleases",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "ProductRelease",
+    "minorDEName" : "ZT_RELEASE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
@@ -941,6 +898,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_RELEASE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_RELEASE",
   "getPSSysImage" : {
     "glyph" : "xf11d@FontAwesome",
@@ -951,7 +912,9 @@
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

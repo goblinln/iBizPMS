@@ -176,7 +176,7 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/productmodules`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productmodules`, _data);
             return res;
         }
     this.log.warn([`[ProductModule]>>>[Create函数]异常`]);
@@ -196,7 +196,7 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.productmodule) {
-            const res = await this.http.get(`/products/${_context.product}/productmodules/${_context.productmodule}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/productmodules/${encodeURIComponent(_context.productmodule)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -219,7 +219,7 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productmodules/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/productmodules/getdraft`, _data);
             return res;
         }
     this.log.warn([`[ProductModule]>>>[GetDraft函数]异常`]);
@@ -239,7 +239,7 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.productmodule) {
-            const res = await this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/productmodules/${encodeURIComponent(_context.productmodule)}`);
             return res;
         }
     this.log.warn([`[ProductModule]>>>[Remove函数]异常`]);
@@ -261,7 +261,7 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         if (_context.product && _context.productmodule) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/productmodules/${_context.productmodule}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/productmodules/${encodeURIComponent(_context.productmodule)}`, _data);
             return res;
         }
     this.log.warn([`[ProductModule]>>>[Update函数]异常`]);
@@ -281,7 +281,7 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/productmodules/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productmodules/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
@@ -290,5 +290,24 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
             } catch (error) {
                 return this.handleResponseError(error);
             }
+    }
+
+    /**
+     * SaveBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductModuleServiceBase
+     */
+    public async SaveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            const res = await this.http.post(`/products/${_context.product}/productmodules/savebatch`,_data);
+            return res;
+        }
+        this.log.warn([`[ProductModule]>>>[SaveBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

@@ -6,13 +6,15 @@
   "logicName" : "bug转需求",
   "name" : "BugToStory",
   "getPSDEActionInput" : {
-    "codeName" : "BugToStoryInput",
-    "name" : "输入对象",
+    "name" : "BugToStoryInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BugToStoryResult",
-    "name" : "返回对象",
+    "name" : "BugToStoryResult",
     "type" : "VOID"
   }
 }

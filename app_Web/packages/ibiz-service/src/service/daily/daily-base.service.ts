@@ -114,7 +114,7 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/dailies/${_context.daily}/autocreate`, _data);
+        const res = await this.http.post(`/dailies/${encodeURIComponent(_context.daily)}/autocreate`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -154,7 +154,7 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/dailies/${_context.daily}`);
+        const res = await this.http.get(`/dailies/${encodeURIComponent(_context.daily)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -189,7 +189,7 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/dailies/${_context.daily}/notice`, _data);
+        const res = await this.http.post(`/dailies/${encodeURIComponent(_context.daily)}/notice`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -205,7 +205,7 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/dailies/${_context.daily}/read`, _data);
+        const res = await this.http.post(`/dailies/${encodeURIComponent(_context.daily)}/read`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -221,7 +221,7 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/dailies/${_context.daily}/submit`, _data);
+        const res = await this.http.post(`/dailies/${encodeURIComponent(_context.daily)}/submit`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -239,7 +239,7 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/dailies/${_context.daily}`, _data);
+        const res = await this.http.put(`/dailies/${encodeURIComponent(_context.daily)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

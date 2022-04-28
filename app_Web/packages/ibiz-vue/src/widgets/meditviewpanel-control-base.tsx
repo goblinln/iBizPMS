@@ -160,15 +160,13 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
      * @param {*} data 额外参数
      * @memberof MEditViewPanelControlBase
      */
-    public load(data: any): void {
+    public load(data: any, isReplace:boolean = false): void {
         if(!this.fetchAction){
             this.$throw(this.$t('app.multieditview.notconfig.fetchaction'),'load');
             return;
         }
         let arg: any = {};
         Object.assign(arg, data,{viewparams:this.viewparams});
-        // 清空数据
-        this.items = [];
         if (this.service) {
             let tempContext:any = JSON.parse(JSON.stringify(this.context));
             this.onControlRequset('load', tempContext, arg);
@@ -179,6 +177,10 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
                     this.$throw(response,'load');
                     return;
                 }
+                if (isReplace) {
+                  // 清空数据
+                  this.items = [];
+                }                  
                 if (response?.data?.length > 0) {
                     const items = Util.deepCopy(response.data);
                     this.doItems(items);
@@ -222,6 +224,51 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
         });
     }
 
+    /**
+     * 删除数据
+     * 
+     * @memberof MEditViewPanelControlBase
+     */
+    handleDelete(item:any){
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
+        // 新建的界面上删除即可
+        if (item.data.srfuf == "0") {
+              //删除items中已删除的项
+              let index = this.items.findIndex((value:any, index:any, arr:any) => {
+                return value === item;
+              });
+              this.items.splice(index,1);              
+        } else {
+          // 原有的走接口删除
+          let tempContext: any = JSON.parse(JSON.stringify(this.context));
+          Object.assign(tempContext, { [this.appDeCodeName.toLowerCase()]: item.id });
+          let viewparams: any = JSON.parse(JSON.stringify(this.viewparams));
+          const arg = { [this.appDeCodeName.toLowerCase()]: item.id };
+          Object.assign(arg, { viewparams: this.viewparams })
+          this.onControlRequset('handleDelete', tempContext, viewparams);
+          const promice: Promise<any> = this.service.delete(this.removeAction, tempContext, arg, this.showBusyIndicator);
+          promice.then((response: any) => {
+              this.onControlResponse('handleDelete', response);
+              if (!response.status || response.status !== 200) {
+                  this.$throw(response,'handleDelete');
+                  return;
+              }
+              const data: any = response.data;
+              //删除items中已删除的项
+              let index = this.items.findIndex((value:any, index:any, arr:any) => {
+                return value.id === data.srfkey;
+              });
+              this.items.splice(index,1);
+          }).catch((response: any) => {
+              this.onControlResponse('handleDelete', response);
+              this.$throw(response,'handleDelete');
+          });
+        }
+
+    }
+
      /**
      * 视图数据变更事件
      *
@@ -258,6 +305,23 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
         }            
     }
 
+     /**
+     * 视图数据变更事件
+     *
+     * @param {*} $event 回调对象
+     * @return {*} 
+     * @memberof MEditViewPanelControlBase
+     */    
+    public viewStateChange($event:any){
+      if ($event[0].isSave) {
+        const _this= this;
+        _this.count++;
+        if (_this.items.length === _this.count) {
+            this.ctrlEvent({ controlname: this.controlInstance.name, action: "drdatasaved", data: {action:'save'} });
+        }        
+      }
+    }
+
     /**
      * 视图加载完成
      *
@@ -275,7 +339,7 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
      * @memberof MEditViewPanelControlBase
      */
     public refresh(args?: any) {
-        this.load(args);
+        this.load(args, true);
     }
 
     /**
@@ -290,7 +354,7 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
         const [{ pathName, parameterName }] = this.parameters;
         datas.forEach((arg: any) => {
             let id: string = arg[parameterName] ? arg[parameterName] : this.$util.createUUID();
-            let item: any = { id: id, viewdata: {}, viewparam: {} };
+            let item: any = { id: id, viewdata: {}, viewparam: {}, data: arg};
             Object.assign(item.viewdata, ViewTool.getIndexViewParam());
             Object.assign(item.viewdata, this.context);
 

@@ -1,0 +1,187 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "EXISTS(SELECT * FROM zt_projectstory t51 \n WHERE \n t1.ID = t51.STORY  AND  ( t51.`PROJECT` = #{srf.datacontext.srfparentkey}) )",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ASSIGNEDDATE`",
+    "name" : "ASSIGNEDDATE"
+  }, {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "t1.ASSIGNEDTO",
+    "name" : "ASSIGNEDTOPK"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t41.`NAME`",
+    "name" : "BRANCHNAME"
+  }, {
+    "expression" : "t1.`CHILDSTORIES`",
+    "name" : "CHILDSTORIES"
+  }, {
+    "expression" : "t1.`CLOSEDBY`",
+    "name" : "CLOSEDBY"
+  }, {
+    "expression" : "t1.`CLOSEDDATE`",
+    "name" : "CLOSEDDATE"
+  }, {
+    "expression" : "t1.`CLOSEDREASON`",
+    "name" : "CLOSEDREASON"
+  }, {
+    "expression" : "t1.`COLOR`",
+    "name" : "COLOR"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DUPLICATESTORY`",
+    "name" : "DUPLICATESTORY"
+  }, {
+    "expression" : "t1.`ESTIMATE`",
+    "name" : "ESTIMATE"
+  }, {
+    "expression" : "t1.`FROMBUG`",
+    "name" : "FROMBUG"
+  }, {
+    "expression" : "t1.`IBIZ_ID`",
+    "name" : "IBIZ_ID"
+  }, {
+    "expression" : "t1.`IBIZ_SOURCEID`",
+    "name" : "IBIZ_SOURCEID"
+  }, {
+    "expression" : "t1.`IBIZ_SOURCENAME`",
+    "name" : "IBIZ_SOURCENAME"
+  }, {
+    "expression" : "t1.`IBIZ_SOURCEOBJECT`",
+    "name" : "IBIZ_SOURCEOBJECT"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "(case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end)",
+    "name" : "ISCHILD"
+  }, {
+    "expression" : "'0'",
+    "name" : "ISFAVORITES"
+  }, {
+    "expression" : "( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END )",
+    "name" : "ISLEAF"
+  }, {
+    "expression" : "t1.`KEYWORDS`",
+    "name" : "KEYWORDS"
+  }, {
+    "expression" : "t1.`LASTEDITEDBY`",
+    "name" : "LASTEDITEDBY"
+  }, {
+    "expression" : "t1.`LASTEDITEDDATE`",
+    "name" : "LASTEDITEDDATE"
+  }, {
+    "expression" : "t1.`LINKSTORIES`",
+    "name" : "LINKSTORIES"
+  }, {
+    "expression" : "t1.`MAILTO`",
+    "name" : "MAILTO"
+  }, {
+    "expression" : "''",
+    "name" : "MAILTOPK"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "MODULENAME"
+  }, {
+    "expression" : "(case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY\ttt.root limit 0,1) end)",
+    "name" : "MODULENAME1"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`OPENEDDATE`",
+    "name" : "OPENEDDATE"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t21.`TITLE`",
+    "name" : "PARENTNAME"
+  }, {
+    "expression" : "t11.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`PLAN`",
+    "name" : "PLAN"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t31.`NAME`",
+    "name" : "PRODOCTNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`REVIEWEDBY`",
+    "name" : "REVIEWEDBY"
+  }, {
+    "expression" : "t1.`REVIEWEDDATE`",
+    "name" : "REVIEWEDDATE"
+  }, {
+    "expression" : "t1.`SOURCE`",
+    "name" : "SOURCE"
+  }, {
+    "expression" : "t1.`SOURCEID`",
+    "name" : "SOURCEID"
+  }, {
+    "expression" : "t1.`SOURCENAME`",
+    "name" : "SOURCENAME"
+  }, {
+    "expression" : "t1.`SOURCENOTE`",
+    "name" : "SOURCENOTE"
+  }, {
+    "expression" : "t1.`SOURCEOBJECT`",
+    "name" : "SOURCEOBJECT"
+  }, {
+    "expression" : "t1.`STAGE`",
+    "name" : "STAGE"
+  }, {
+    "expression" : "t1.`STAGEDBY`",
+    "name" : "STAGEDBY"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`STORYPOINTS`",
+    "name" : "STORYPOINTS"
+  }, {
+    "expression" : "t1.`SUBSTATUS`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`TOBUG`",
+    "name" : "TOBUG"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSIONC"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`ASSIGNEDTO`,\n\tt1.`ESTIMATE`,\n\tt1.`ID`,\n\t'' AS `ISCHILD`,\n\t'0' AS `ISFAVORITES`,\n\tt1.`MODULE`,\n\tt11.`NAME` AS `MODULENAME`,\n\tt1.`OPENEDBY`,\n\tt1.`PLAN`,\n        (select GROUP_CONCAT(t.title)  from zt_productplan t where t.deleted = '0' and t.id = t1.plan) as planname,\n\tt1.`PRI`,\n\tt1.`STAGE`,\n\tt1.`STATUS`,\n\tt1.`TITLE`,\n\t#{srf.datacontext.srfparentkey} AS project ,\n\tt1.STORYSN \nFROM\n\t`zt_story` t1\n\tLEFT JOIN zt_module t11 ON t1.MODULE = t11.id\n\tLEFT JOIN zt_story t21 ON t1.PARENT = t21.id\n\tLEFT JOIN zt_product t31 ON t1.PRODUCT = t31.id\n\tLEFT JOIN zt_branch t41 ON t1.BRANCH = t41.id",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEDATAQUERIES/ProjectStories/PSDEDQCODES/MYSQL5.json"
+}

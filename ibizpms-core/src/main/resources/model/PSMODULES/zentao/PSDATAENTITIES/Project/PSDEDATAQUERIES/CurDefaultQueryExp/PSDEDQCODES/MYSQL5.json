@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.MDEPTID,\nt1.orgid,\nt1.`CODE`,\nt1.`DELETED`,\nt1.`ID`,\nt1.`NAME`,\nt1.OPENEDDATE,\n(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) AS `ORDER`,\n(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) as `ORDER1`,\n(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END) as `ISTOP`,\nt1.PROJECTSN\nFROM `zt_project` t1 \nleft join t_ibz_top t2 on t1.id = t2.OBJECTID and t2.type = 'project' and t2.ACCOUNT =#{srf.sessioncontext.srfloginname}\nLEFT JOIN zt_project t11 ON t1.PARENT = t11.ID",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEDATAQUERIES/CurDefaultQueryExp/PSDEDQCODES/MYSQL5.json"
+}

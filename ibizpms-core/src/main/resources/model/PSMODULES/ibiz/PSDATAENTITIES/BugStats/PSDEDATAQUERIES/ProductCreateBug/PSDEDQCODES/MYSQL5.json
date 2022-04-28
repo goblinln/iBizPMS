@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT t1.*,t2.productallbug, CONCAT(ROUND(t1.createbugcnt/(case when t2.productallbug = 0 or t2.productallbug is null then 1 else t2.productallbug end)*100,1),'%') from (\nSELECT t1.openedBy,t1.productid,t1.productname,COUNT(1) as createbugcnt from (\nSELECT t1.id ,t1.openedBy,t2.id as productid,t1.product,t2.`name` as productname from zt_bug t1\nLEFT JOIN zt_product t2 on t2.id = t1.product\n) t1 GROUP BY t1.openedBy,t1.productid  )t1\nLEFT JOIN ( select t1.productid,t1.productname,count(1) as productallbug from (\nSELECT t1.id ,t1.openedBy,t2.id as productid,t1.product,t2.`name` as productname from zt_bug t1\nLEFT JOIN zt_product t2 on t2.id = t1.product\n) t1 GROUP BY t1.productid ) t2 on t2.productid = t1.productid HAVING t1.openedBy = #{srf.sessioncontext.srfloginname}",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEDATAQUERIES/ProductCreateBug/PSDEDQCODES/MYSQL5.json"
+}

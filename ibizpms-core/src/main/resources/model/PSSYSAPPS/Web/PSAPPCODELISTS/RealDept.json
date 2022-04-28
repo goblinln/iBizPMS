@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__RealDept",
   "codeListType" : "DYNAMIC",
   "codeName" : "RealDept",
   "dynaInstMode" : 1,

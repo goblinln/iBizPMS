@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__User__gender",
   "codeListType" : "STATIC",
   "codeName" : "User__gender",
   "dynaInstMode" : 1,
@@ -8,13 +9,11 @@
   "getPSCodeItems" : [ {
     "codeName" : "F",
     "text" : "女",
-    "value" : "f",
-    "includeBeginValue" : true
+    "value" : "f"
   }, {
     "codeName" : "M",
     "text" : "男",
-    "value" : "m",
-    "includeBeginValue" : true
+    "value" : "m"
   } ],
   "enableCache" : true
 }

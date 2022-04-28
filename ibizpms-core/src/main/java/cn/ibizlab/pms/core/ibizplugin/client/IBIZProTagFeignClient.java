@@ -21,10 +21,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.pmspro-pluginserviceapi:pmspro-pluginserviceapi}", contextId = "IBIZProTag", fallback = IBIZProTagFallback.class)
 public interface IBIZProTagFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/select")
-    Page<IBIZProTag> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprotags")
     IBIZProTag create(@RequestBody IBIZProTag ibizprotag);
 
@@ -32,11 +28,8 @@ public interface IBIZProTagFeignClient {
     Boolean createBatch(@RequestBody List<IBIZProTag> ibizprotags);
 
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/{id}")
-    IBIZProTag update(@PathVariable("id") String id,@RequestBody IBIZProTag ibizprotag);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/batch")
-    Boolean updateBatch(@RequestBody List<IBIZProTag> ibizprotags);
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/{id}")
+    IBIZProTag get(@PathVariable("id") String id);
 
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/ibizprotags/{id}")
@@ -46,16 +39,24 @@ public interface IBIZProTagFeignClient {
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/{id}")
-    IBIZProTag get(@PathVariable("id") String id);
+    @RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/{id}")
+    IBIZProTag update(@PathVariable("id") String id,@RequestBody IBIZProTag ibizprotag);
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/getdraft")
-    IBIZProTag getDraft(IBIZProTag entity);
+    @RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/batch")
+    Boolean updateBatch(@RequestBody List<IBIZProTag> ibizprotags);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/checkkey")
     Boolean checkKey(@RequestBody IBIZProTag ibizprotag);
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/fetchdefault")
+    Page<IBIZProTag> searchDefault(@SpringQueryMap IBIZProTagSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/getdraft")
+    IBIZProTag getDraft(IBIZProTag entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/save")
@@ -67,9 +68,8 @@ public interface IBIZProTagFeignClient {
     Boolean saveBatch(@RequestBody List<IBIZProTag> ibizprotags);
 
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/fetchdefault")
-    Page<IBIZProTag> searchDefault(@SpringQueryMap IBIZProTagSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/select")
+    Page<IBIZProTag> select();
 
 
 

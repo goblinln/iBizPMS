@@ -96,7 +96,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/projectweeklies/${_context.projectweekly}`);
+        const res = await this.http.get(`/projectweeklies/${encodeURIComponent(_context.projectweekly)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
      */
     async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/projectweeklies/${_context.projectweekly}/summary`, _data);
+        const res = await this.http.post(`/projectweeklies/${encodeURIComponent(_context.projectweekly)}/summary`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/projectweeklies/${_context.projectweekly}`, _data);
+        const res = await this.http.put(`/projectweeklies/${encodeURIComponent(_context.projectweekly)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

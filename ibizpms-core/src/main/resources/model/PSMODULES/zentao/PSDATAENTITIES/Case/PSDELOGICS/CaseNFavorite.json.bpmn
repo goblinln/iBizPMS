@@ -12,10 +12,10 @@
                             <tns:global identifier="casecasenfavoritedefault" type="cn.ibizlab.pms.core.zentao.domain.Case" />
                             <tns:global identifier="casecasenfavoriteibzfavorite" type="cn.ibizlab.pms.core.ibiz.domain.IbzFavorites" />
             </extensionElements>
+                        <startEvent id="begin" isInterrupting="true"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="casecasenfavoritecasenfavrite" id="casenfavrite" implementation="http://www.jboss.org/drools/rule" name="用例取消收藏"/>
                         <endEvent id="casenfavrite_end" name="end"/>
                         <sequenceFlow id="casenfavrite_end_line" sourceRef="casenfavrite" targetRef="casenfavrite_end"/>
-                        <startEvent id="begin" isInterrupting="true"/>
                     <sequenceFlow id="begin_casenfavrite" sourceRef="begin" targetRef="casenfavrite">
                     </sequenceFlow>
         </process>

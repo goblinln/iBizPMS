@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__PlanCodeList",
   "codeListType" : "DYNAMIC",
   "codeName" : "PlanCodeList",
   "dynaInstMode" : 1,

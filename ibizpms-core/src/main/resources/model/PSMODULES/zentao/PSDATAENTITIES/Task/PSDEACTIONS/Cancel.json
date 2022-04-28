@@ -6,13 +6,15 @@
   "logicName" : "取消",
   "name" : "Cancel",
   "getPSDEActionInput" : {
-    "codeName" : "CancelInput",
-    "name" : "输入对象",
+    "name" : "CancelInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CancelResult",
-    "name" : "返回对象",
+    "name" : "CancelResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

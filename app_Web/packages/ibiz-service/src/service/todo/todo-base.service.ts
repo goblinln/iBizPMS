@@ -123,7 +123,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/todos`, _data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
@@ -153,10 +153,10 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         if (_context.sysaccount && _context.todo) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Finish');
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/finish`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/todos/${encodeURIComponent(_context.todo)}/finish`, _data);
             return res;
         }
-        const res = await this.http.post(`/todos/${_context.todo}/finish`, _data);
+        const res = await this.http.post(`/todos/${encodeURIComponent(_context.todo)}/finish`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -173,11 +173,11 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && _context.todo) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}`);
+            const res = await this.http.get(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/todos/${encodeURIComponent(_context.todo)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
-        const res = await this.http.get(`/todos/${_context.todo}`);
+        const res = await this.http.get(`/todos/${encodeURIComponent(_context.todo)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -197,7 +197,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         if (_context.sysaccount && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/todos/getdraft`, _data);
+            const res = await this.http.get(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/todos/getdraft`, _data);
             return res;
         }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
@@ -219,10 +219,10 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && _context.todo) {
-            const res = await this.http.delete(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}`);
+            const res = await this.http.delete(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/todos/${encodeURIComponent(_context.todo)}`);
             return res;
         }
-        const res = await this.http.delete(`/todos/${_context.todo}`);
+        const res = await this.http.delete(`/todos/${encodeURIComponent(_context.todo)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -241,10 +241,10 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         if (_context.sysaccount && _context.todo) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Start');
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/start`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/todos/${encodeURIComponent(_context.todo)}/start`, _data);
             return res;
         }
-        const res = await this.http.post(`/todos/${_context.todo}/start`, _data);
+        const res = await this.http.post(`/todos/${encodeURIComponent(_context.todo)}/start`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -263,12 +263,12 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         if (_context.sysaccount && _context.todo) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}`, _data);
+            const res = await this.http.put(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/todos/${encodeURIComponent(_context.todo)}`, _data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/todos/${_context.todo}`, _data);
+        const res = await this.http.put(`/todos/${encodeURIComponent(_context.todo)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -285,7 +285,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/todos/fetchaccount`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
             return res;
         }
@@ -307,7 +307,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.sysaccount && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/todos/fetchmy`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
             return res;
         }

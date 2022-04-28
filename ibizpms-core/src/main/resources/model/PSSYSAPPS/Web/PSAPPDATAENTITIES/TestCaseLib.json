@@ -383,6 +383,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "TestCaseLib",
+  "dEAPITag" : "IBZ_API__TEST_CASE_LIB",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json",
@@ -395,6 +396,7 @@
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

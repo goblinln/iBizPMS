@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`EXPECT`",
+    "name" : "EXPECT"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`DESC`,\nt1.`EXPECT`,\nt1.`ID`,\nt1.`TYPE`\nFROM `ZT_CASESTEP` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

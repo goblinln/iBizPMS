@@ -96,7 +96,7 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/testruns/${_context.testrun}`);
+        const res = await this.http.get(`/testruns/${encodeURIComponent(_context.testrun)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/testruns/${_context.testrun}`);
+        const res = await this.http.delete(`/testruns/${encodeURIComponent(_context.testrun)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/testruns/${_context.testrun}`, _data);
+        const res = await this.http.put(`/testruns/${encodeURIComponent(_context.testrun)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/testruns/${_context.testrun}/select`);
+        const res = await this.http.get(`/testruns/${encodeURIComponent(_context.testrun)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

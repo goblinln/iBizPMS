@@ -1,12 +1,11 @@
 import { ElMessage } from 'element-ui/types/message';
-import { UIServiceRegister, AuthServiceRegister, UtilServiceRegister, CounterServiceRegister, CodeListRegister, MessageServiceRegister} from 'ibiz-service';
+import { UIServiceRegister, AuthServiceRegister, UtilServiceRegister, CodeListRegister, MessageServiceRegister} from 'ibiz-service';
 import { FooterItemsService, TopItemsService, UIStateService } from 'ibiz-vue';
 declare global {
     interface Window {
         uiServiceRegister: UIServiceRegister,
         authServiceRegister: AuthServiceRegister,
         utilServiceRegister: UtilServiceRegister,
-        counterServiceRegister: CounterServiceRegister,
         codeListRegister:CodeListRegister,
         messageServiceRegister:MessageServiceRegister
     }

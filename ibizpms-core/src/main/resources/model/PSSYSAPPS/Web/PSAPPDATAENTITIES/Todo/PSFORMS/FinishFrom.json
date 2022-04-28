@@ -98,6 +98,11 @@
         "colMDOffset" : 4,
         "layout" : "TABLE_24COL"
       },
+      "getPSRawItem" : {
+        "caption" : "您确定这条待办已经完成了吗？",
+        "contentType" : "RAW",
+        "name" : "rawitem1"
+      },
       "rawContent" : "您确定这条待办已经完成了吗？",
       "rawItemHeight" : -1.0,
       "rawItemWidth" : -1.0,

@@ -95,11 +95,25 @@
     "name" : "FetchByCustom",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchByProduct",
     "methodType" : "FETCH",
     "name" : "FetchByProductNotFiles",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchByProduct",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -376,11 +390,25 @@
     "name" : "FetchByCustom",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchByProduct",
     "methodType" : "FETCH",
     "name" : "FetchByProductNotFiles",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchByProduct",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -476,6 +504,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "COLLECT"
+    },
     "getPSSysImage" : {
       "glyph" : "xf006@FontAwesome",
       "cssClass" : "fa fa-star-o"
@@ -502,6 +534,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNCOLLECT"
     },
     "getPSSysImage" : {
       "glyph" : "xf005@FontAwesome",
@@ -752,19 +788,31 @@
     "id" : "Zt_project__UPDATE"
   } ],
   "codeName" : "DocLib",
+  "dEAPITag" : "IBZ_API__DOC_LIB",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json",
   "enableUIActions" : 15,
   "logicName" : "文档库",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "DOCLIBTYPE",
+    "codeName" : "Doclibtype"
+  }, {
+    "name" : "ISFAVOURITES",
+    "codeName" : "Isfavourites"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "DocLibs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "DocLib",
+    "minorDEName" : "ZT_DOCLIB",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -779,10 +827,14 @@
     "actionRSMode" : 1,
     "codeName" : "DocLibs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "DocLib",
+    "minorDEName" : "ZT_DOCLIB",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
@@ -795,6 +847,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_DOCLIB",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "ZT_DOCLIB",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "NAME",
@@ -807,7 +863,9 @@
     "codeName" : "ProjectName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

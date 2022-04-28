@@ -280,7 +280,7 @@ export class MDViewBase extends MainViewBase implements MDViewInterface {
             //  搜索表单以弹框展示
             if (this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) {
                 this.$nextTick(() => {
-                    const element = document.querySelector('button.filter');
+                    const element = (this.$refs['filterButton'] as any)?.$el;
                     if (element) {
                         (element as HTMLElement).click();
                     }
@@ -373,7 +373,7 @@ export class MDViewBase extends MainViewBase implements MDViewInterface {
         return  <template slot="quickSearch">
             <i-input class={{'app-quick-search': true, 'width-filter': enableFilter}} style='max-width: 400px;margin-top:4px;padding-left: 24px' search on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
             {<el-popover placement="bottom" popper-class={popoverClass} trigger="click" visible-arrow={false} on-hide={() => this.isExpandSearchForm = !this.isExpandSearchForm}>
-                <i-button slot="reference" class={{'filter': true, 'is-expand': this.isExpandSearchForm, 'hidden-searchbtn': !enableFilter}} icon="ios-funnel" on-click={(e:any)=>{
+                <i-button slot="reference" ref="filterButton" class={{'filter': true, 'is-expand': this.isExpandSearchForm, 'hidden-searchbtn': !enableFilter}} icon="ios-funnel" on-click={(e:any)=>{
                     if (!this.isExpandSearchForm) {
                         throttle(() => (AppGlobalService.getInstance() as any).executeGlobalAction('ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined),[],this);
                     }}} />

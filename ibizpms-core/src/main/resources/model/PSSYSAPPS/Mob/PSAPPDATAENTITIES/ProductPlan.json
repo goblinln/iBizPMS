@@ -296,7 +296,9 @@
         "name" : "STATUSS",
         "codeName" : "Statuss"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchChildPlan",
@@ -305,6 +307,19 @@
     "name" : "ChildPlan",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "products",
+      "name" : "PRODUCT 等于(=) 数据上下文(products)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurProductPlan",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -352,6 +367,13 @@
     "name" : "ProjectApp",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchProjectPlan",
     "methodType" : "FETCH",
     "name" : "FetchProjectPlan",
@@ -789,6 +811,19 @@
     "name" : "ChildPlan",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "products",
+      "name" : "PRODUCT 等于(=) 数据上下文(products)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurProductPlan",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -836,6 +871,13 @@
     "name" : "ProjectApp",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchProjectPlan",
     "methodType" : "FETCH",
     "name" : "FetchProjectPlan",
@@ -889,54 +931,6 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEUIActions" : [ {
-    "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
-    "caption" : "关联Bug",
-    "codeName" : "RelationBug",
-    "dataAccessAction" : "LINKBUG",
-    "frontPSAppView" : "无法获取指定应用视图，标识为[bd6a3b865835b3f7436487e4cfd30393]，请确认实体视图[ZT_BUG][bug实体数据多项选择视图]已经添加到应用[iBiz软件生产管理（Mob）]中",
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "ProductPlan_RelationBug",
-    "name" : "关联Bug（计划）",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "LinkBug"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "TEST",
-      "name" : "TEST",
-      "value" : "product",
-      "rawValue" : false
-    }, {
-      "key" : "ID",
-      "name" : "ID",
-      "value" : "id",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "id",
-      "name" : "id",
-      "value" : "id",
-      "rawValue" : false
-    } ],
-    "getPSSysImage" : {
-      "glyph" : "xf188@FontAwesome",
-      "cssClass" : "fa fa-bug"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "RelationBug",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "globalUIAction" : true,
-    "reloadData" : true,
-    "id" : "RelationBug@ProductPlan"
-  }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "MobMainEdit",
@@ -1014,42 +1008,6 @@
     "enableConfirm" : true,
     "reloadData" : true,
     "id" : "MobDelete@ProductPlan"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
-    "caption" : "关联需求",
-    "codeName" : "RelationStory",
-    "dataAccessAction" : "LINKSTORY",
-    "frontPSAppView" : "无法获取指定应用视图，标识为[e1fa5ae78ef36b0bc617e2317c9f7940]，请确认实体视图[ZT_STORY][计划下属需求实体数据多项选择视图]已经添加到应用[iBiz软件生产管理（Mob）]中",
-    "fullCodeName" : "ProductPlan_RelationStory",
-    "name" : "关联需求（计划）",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "LinkStory"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
-    },
-    "getPSNavigateParams" : [ {
-      "key" : "id",
-      "name" : "id",
-      "value" : "srfparentkey",
-      "rawValue" : false
-    } ],
-    "getPSSysImage" : {
-      "glyph" : "xf0c1@FontAwesome",
-      "cssClass" : "fa fa-link"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "RelationStory",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "globalUIAction" : true,
-    "reloadData" : true,
-    "id" : "RelationStory@ProductPlan"
   } ],
   "getAllPSDEMainStates" : [ {
     "codeName" : "chlid",
@@ -1200,19 +1158,28 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "ProductPlan",
+  "dEAPITag" : "IBZ_API__PRODUCT_PLAN",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json",
   "enableUIActions" : 15,
   "logicName" : "产品计划",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUSS",
+    "codeName" : "Statuss"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "ProductPlan",
+    "minorDEName" : "ZT_PRODUCTPLAN",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
@@ -1227,10 +1194,14 @@
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "ProductPlan",
+    "minorDEName" : "ZT_PRODUCTPLAN",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
@@ -1239,6 +1210,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_PRODUCTPLAN",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_PRODUCTPLAN",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "TITLE",
@@ -1248,7 +1223,9 @@
     "codeName" : "Productplansn"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

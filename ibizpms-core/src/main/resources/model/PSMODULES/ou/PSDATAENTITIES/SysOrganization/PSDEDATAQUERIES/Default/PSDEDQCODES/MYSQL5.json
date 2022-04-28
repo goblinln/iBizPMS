@@ -1,0 +1,48 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.ENABLE = 1",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`DOMAINS`",
+    "name" : "DOMAINS"
+  }, {
+    "expression" : "t1.`ENABLE`",
+    "name" : "ENABLE"
+  }, {
+    "expression" : "t1.`ORGCODE`",
+    "name" : "ORGCODE"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`ORGLEVEL`",
+    "name" : "ORGLEVEL"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PORGID`",
+    "name" : "PORGID"
+  }, {
+    "expression" : "t11.`ORGNAME`",
+    "name" : "PORGNAME"
+  }, {
+    "expression" : "t1.`SHORTNAME`",
+    "name" : "SHORTNAME"
+  }, {
+    "expression" : "t1.`SHOWORDER`",
+    "name" : "SHOWORDER"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`DOMAINS`,\nt1.`ENABLE`,\nt1.`ORGCODE`,\nt1.`ORGID`,\nt1.`ORGLEVEL`,\nt1.`ORGNAME`,\nt1.`PORGID`,\nt11.`ORGNAME` AS `PORGNAME`,\nt1.`SHORTNAME`,\nt1.`SHOWORDER`,\nt1.`UPDATEDATE`\nFROM `T_SYS_ORG` t1 \nLEFT JOIN `T_SYS_ORG` t11 ON t1.`PORGID` = t11.`ORGID` \n",
+  "id" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

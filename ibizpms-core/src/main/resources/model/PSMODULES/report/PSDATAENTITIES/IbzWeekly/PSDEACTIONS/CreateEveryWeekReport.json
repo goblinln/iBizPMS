@@ -6,14 +6,16 @@
   "logicName" : "定时生成每周周报",
   "name" : "createEveryWeekReport",
   "getPSDEActionInput" : {
-    "codeName" : "CreateEveryWeekReportInput",
-    "name" : "输入对象",
+    "name" : "CreateEveryWeekReportInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzWeeklyDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CreateEveryWeekReportResult",
-    "name" : "返回对象",
+    "name" : "CreateEveryWeekReportResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

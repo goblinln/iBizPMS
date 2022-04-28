@@ -1,0 +1,73 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`ADDEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ADDEDBY\",\"dename\":\"ZT_FILE\"}')} )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ADDEDBY`",
+    "name" : "ADDEDBY"
+  }, {
+    "expression" : "t1.`ADDEDDATE`",
+    "name" : "ADDEDDATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`DOWNLOADS`",
+    "name" : "DOWNLOADS"
+  }, {
+    "expression" : "t1.`EXTENSION`",
+    "name" : "EXTENSION"
+  }, {
+    "expression" : "t1.`EXTRA`",
+    "name" : "EXTRA"
+  }, {
+    "expression" : "t1.`FILESN`",
+    "name" : "FILESN"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`OBJECTID`",
+    "name" : "OBJECTID"
+  }, {
+    "expression" : "t1.`OBJECTTYPE`",
+    "name" : "OBJECTTYPE"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PATHNAME`",
+    "name" : "PATHNAME"
+  }, {
+    "expression" : "t1.`SIZE`",
+    "name" : "SIZE"
+  }, {
+    "expression" : "CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end)",
+    "name" : "STRSIZE"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`ADDEDBY`,\nt1.`ADDEDDATE`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`DOWNLOADS`,\nt1.`EXTENSION`,\nt1.`EXTRA`,\nt1.`FILESN`,\nt1.`ID`,\nt1.`OBJECTID`,\nt1.`OBJECTTYPE`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PATHNAME`,\nt1.`SIZE`,\nCONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`,\nt1.`TITLE`,\nt1.`UPDATEBY`\nFROM `zt_file` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEDATAQUERIES/MySubmitFile/PSDEDQCODES/MYSQL5.json"
+}

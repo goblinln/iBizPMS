@@ -298,6 +298,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "RELEASELINK"
+        },
         "getPSNavigateContexts" : [ {
           "key" : "RELEASE",
           "name" : "RELEASE",

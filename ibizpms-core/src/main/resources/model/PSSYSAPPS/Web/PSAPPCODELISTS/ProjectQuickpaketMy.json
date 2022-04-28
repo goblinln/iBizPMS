@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__ProjectQuickpaketMy",
   "codeListType" : "STATIC",
   "codeName" : "ProjectQuickpaketMy",
   "dynaInstMode" : 1,
@@ -14,8 +15,7 @@
     "data" : "{\"n_account_eq\":\"%srfloginname%\"}",
     "text" : "我的项目",
     "value" : "All",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   } ],
   "enableCache" : true
 }

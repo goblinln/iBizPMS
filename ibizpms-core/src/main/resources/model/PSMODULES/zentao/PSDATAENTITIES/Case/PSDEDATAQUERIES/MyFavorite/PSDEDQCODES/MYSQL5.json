@@ -1,0 +1,175 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "(\n\t\t\tt1.CASESN IN (\n\t\t\tSELECT\n\t\t\t\tt.OBJECTID \n\t\t\tFROM\n\t\t\t\tT_IBZ_FAVORITES t \n\t\t\tWHERE\n\t\t\tt.type = 'case' \n\tAND t.account = #{srf.sessioncontext.srfloginname})  AND  t1.DELETED = '0' )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`PRECONDITION`",
+    "name" : "PRECONDITION"
+  }, {
+    "expression" : "t1.`AUTO`",
+    "name" : "AUTO"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`COLOR`",
+    "name" : "COLOR"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`FRAME`",
+    "name" : "FRAME"
+  }, {
+    "expression" : "t1.`FREQUENCY`",
+    "name" : "FREQUENCY"
+  }, {
+    "expression" : "t1.`FROMBUG`",
+    "name" : "FROMBUG"
+  }, {
+    "expression" : "t1.`FROMCASEID`",
+    "name" : "FROMCASEID"
+  }, {
+    "expression" : "t1.`FROMCASEVERSION`",
+    "name" : "FROMCASEVERSION"
+  }, {
+    "expression" : "t1.`HOWRUN`",
+    "name" : "HOWRUN"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "0",
+    "name" : "ISFAVORITES"
+  }, {
+    "expression" : "t1.`KEYWORDS`",
+    "name" : "KEYWORDS"
+  }, {
+    "expression" : "t1.`LASTEDITEDBY`",
+    "name" : "LASTEDITEDBY"
+  }, {
+    "expression" : "t1.`LASTEDITEDDATE`",
+    "name" : "LASTEDITEDDATE"
+  }, {
+    "expression" : "t1.`LASTRUNDATE`",
+    "name" : "LASTRUNDATE"
+  }, {
+    "expression" : "t1.`LASTRUNNER`",
+    "name" : "LASTRUNNER"
+  }, {
+    "expression" : "t1.`LASTRUNRESULT`",
+    "name" : "LASTRUNRESULT"
+  }, {
+    "expression" : "(case when t1.`LASTRUNRESULT` = '' or t1.`LASTRUNRESULT` is null then 'no' else t1.`LASTRUNRESULT` end)",
+    "name" : "LASTRUNRESULT1"
+  }, {
+    "expression" : "t1.`LIB`",
+    "name" : "LIB"
+  }, {
+    "expression" : "t41.`NAME`",
+    "name" : "LIBNAME"
+  }, {
+    "expression" : "t1.`LINKCASE`",
+    "name" : "LINKCASE"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "MODULENAME"
+  }, {
+    "expression" : "(case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' )  FROM zt_module tt WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story'  GROUP BY tt.root limit 0,1) end)",
+    "name" : "MODULENAME1"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`OPENEDDATE`",
+    "name" : "OPENEDDATE"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t31.`NAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM zt_testresult WHERE `case` = t1.`ID` )",
+    "name" : "RESULTCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM zt_testresult WHERE `case` = t1.`ID`  and caseResult in('fail','blocked') )",
+    "name" : "RESULTFALICNT"
+  }, {
+    "expression" : "t1.`REVIEWEDBY`",
+    "name" : "REVIEWEDBY"
+  }, {
+    "expression" : "t1.`REVIEWEDDATE`",
+    "name" : "REVIEWEDDATE"
+  }, {
+    "expression" : "t1.`SCRIPTEDBY`",
+    "name" : "SCRIPTEDBY"
+  }, {
+    "expression" : "t1.`SCRIPTEDDATE`",
+    "name" : "SCRIPTEDDATE"
+  }, {
+    "expression" : "t1.`SCRIPTLOCATION`",
+    "name" : "SCRIPTLOCATION"
+  }, {
+    "expression" : "t1.`SCRIPTSTATUS`",
+    "name" : "SCRIPTSTATUS"
+  }, {
+    "expression" : "t1.`STAGE`",
+    "name" : "STAGE"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "(case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end )",
+    "name" : "STATUS1"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM zt_casestep WHERE `case` = t1.`ID` AND version = t1.`VERSION` )",
+    "name" : "STEPCNT"
+  }, {
+    "expression" : "t1.`STORY`",
+    "name" : "STORY"
+  }, {
+    "expression" : "t21.`TITLE`",
+    "name" : "STORYNAME"
+  }, {
+    "expression" : "t1.`STORYVERSION`",
+    "name" : "STORYVERSION"
+  }, {
+    "expression" : "t1.`SUBSTATUS`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM zt_bug WHERE `case` = t1.`ID` )",
+    "name" : "TOBUGCNT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`AUTO`,\n        t1.`id`,\n\tt1.`BRANCH`,\n\tt1.`COLOR`,\n\tt1.`DELETED`,\n\tt1.`FRAME`,\n\tt1.`FREQUENCY`,\n\tt1.`FROMBUG`,\n\tt1.`FROMCASEID`,\n\tt1.`FROMCASEVERSION`,\n\tt1.`HOWRUN`,\n\tt1.`CASESN`,\n\t1 AS `ISFAVORITES`,\n\tt1.`KEYWORDS`,\n\tt1.`LASTEDITEDBY`,\n\tt1.`LASTEDITEDDATE`,\n\tt1.`LASTRUNDATE`,\n\tt1.`LASTRUNNER`,\n\tt1.`LASTRUNRESULT`,\n\t( CASE WHEN t1.`LASTRUNRESULT` = '' OR t1.`LASTRUNRESULT` IS NULL THEN 'no' ELSE t1.`LASTRUNRESULT` END ) AS `LASTRUNRESULT1`,\n\tt1.`LIB`,\n\tt41.`NAME` AS `LIBNAME`,\n\tt1.`LINKCASE`,\n\tt1.`MODULE`,\n\tt11.`NAME` AS `MODULENAME`,\n\t(\n\tCASE\n\t\t\t\n\t\t\tWHEN t1.module = '0' THEN\n\t\t\t'/' ELSE (\n\t\t\tSELECT\n\t\t\t\tGROUP_CONCAT( tt.NAME SEPARATOR '>' ) \n\t\t\tFROM\n\t\t\t\tzt_module tt \n\t\t\tWHERE\n\t\t\t\tFIND_IN_SET( tt.ID, t11.path )  and tt.deleted = '0' \n\t\t\t\tAND tt.type = 'story' \n\t\t\tGROUP BY\n\t\t\t\ttt.root \n\t\t\t\tLIMIT 0,\n\t\t\t\t1 \n\t\t\t) \n\t\tEND \n\t\t) AS `MODULENAME1`,\n\t\tt1.`OPENEDBY`,\n\t\tt1.`OPENEDDATE`,\n\t\tt1.`ORDER`,\n\t\tt1.`PATH`,\n\t\tt1.`PRI`,\n\t\tt1.`PRODUCT`,\n\t\tt31.`NAME` AS `PRODUCTNAME`,\n\t\t( SELECT COUNT( 1 ) FROM zt_testresult WHERE `case` = t1.`id` ) AS `RESULTCNT`,\n\t\t( SELECT COUNT( 1 ) FROM zt_testresult WHERE `case` = t1.`id` AND caseResult IN ( 'fail', 'blocked' ) ) AS `RESULTFALICNT`,\n\t\tt1.`REVIEWEDBY`,\n\t\tt1.`REVIEWEDDATE`,\n\t\tt1.`SCRIPTEDBY`,\n\t\tt1.`SCRIPTEDDATE`,\n\t\tt1.`SCRIPTLOCATION`,\n\t\tt1.`SCRIPTSTATUS`,\n\t\tt1.`STAGE`,\n\t\tt1.`STATUS`,\n\t\t( CASE WHEN t1.storyVersion < t21.version AND t21.`status` <> 'changed' THEN 'storychange' ELSE t1.`status` END ) AS `STATUS1`,\n\t\t( SELECT COUNT( 1 ) FROM zt_casestep WHERE `case` = t1.`id` AND version = t1.`VERSION` ) AS `STEPCNT`,\n\t\tt1.`STORY`,\n\t\tt21.`TITLE` AS `STORYNAME`,\n\t\tt1.`STORYVERSION`,\n\t\tt1.`SUBSTATUS`,\n\t\tt1.`TITLE`,\n\t\t( SELECT COUNT( 1 ) FROM zt_bug WHERE `case` = t1.`id` ) AS `TOBUGCNT`,\n\t\tt1.`TYPE`,\n\t\tt1.`VERSION` \n\tFROM\n\t\t`zt_case` t1\n\t\tLEFT JOIN zt_module t11 ON t1.MODULE = t11.id \n\t\tLEFT JOIN zt_story t21 ON t1.STORY = t21.id \n\t\tLEFT JOIN zt_product t31 ON t1.PRODUCT = t31.id \n\t\tLEFT JOIN zt_testsuite t41 ON t1.LIB = t41.id",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEDATAQUERIES/MyFavorite/PSDEDQCODES/MYSQL5.json"
+}

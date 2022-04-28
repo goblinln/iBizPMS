@@ -6,13 +6,15 @@
   "logicName" : "移动端项目计数器",
   "name" : "MobProjectCount",
   "getPSDEActionInput" : {
-    "codeName" : "MobProjectCountInput",
-    "name" : "输入对象",
+    "name" : "MobProjectCountInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MobProjectCountResult",
-    "name" : "返回对象",
+    "name" : "MobProjectCountResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

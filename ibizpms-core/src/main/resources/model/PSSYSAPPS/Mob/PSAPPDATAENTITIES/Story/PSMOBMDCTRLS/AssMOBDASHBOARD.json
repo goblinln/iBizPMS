@@ -285,6 +285,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "FAVORITES"
+        },
         "getPSSysImage" : {
           "cssClass" : "star-outline"
         },
@@ -317,6 +321,10 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "NFAVORITES"
         },
         "getPSSysImage" : {
           "cssClass" : "star-half-outline"

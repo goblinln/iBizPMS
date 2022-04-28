@@ -1,35 +1,36 @@
 {
+  "codeListTag" : "zentao__User__clientStatus",
   "codeListType" : "STATIC",
   "codeName" : "User__clientStatus",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/User__clientStatus.json",
   "emptyText" : "未定义",
+  "name" : "ZT_USER__CLIENTSTATUS",
   "getPSCodeItems" : [ {
     "codeName" : "Online",
     "text" : "online",
-    "value" : "online",
-    "includeBeginValue" : true
+    "value" : "online"
   }, {
     "codeName" : "Away",
     "text" : "away",
-    "value" : "away",
-    "includeBeginValue" : true
+    "value" : "away"
   }, {
     "codeName" : "Busy",
     "text" : "busy",
-    "value" : "busy",
-    "includeBeginValue" : true
+    "value" : "busy"
   }, {
     "codeName" : "Offline",
     "text" : "offline",
-    "value" : "offline",
-    "includeBeginValue" : true
+    "value" : "offline"
   } ],
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

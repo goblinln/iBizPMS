@@ -346,7 +346,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/activate`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/activate`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -362,7 +362,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async AllPush(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/allpush`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/allpush`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -378,7 +378,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/assignto`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/assignto`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -394,7 +394,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BatchAssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/batchassignto`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/batchassignto`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -410,7 +410,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BatchChangeBranch(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/batchchangebranch`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/batchchangebranch`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -426,7 +426,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BatchChangeModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/batchchangemodule`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/batchchangemodule`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -442,7 +442,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BatchChangePlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/batchchangeplan`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/batchchangeplan`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -458,7 +458,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BatchChangeStage(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/batchchangestage`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/batchchangestage`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -474,7 +474,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BatchClose(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/batchclose`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/batchclose`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -490,7 +490,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BatchReview(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/batchreview`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/batchreview`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -506,7 +506,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BatchUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/batchunlinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/batchunlinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -522,7 +522,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BugToStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/bugtostory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/bugtostory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -538,7 +538,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BuildBatchUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/buildbatchunlinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/buildbatchunlinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -554,7 +554,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BuildLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/buildlinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/buildlinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -570,7 +570,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BuildUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/buildunlinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/buildunlinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -586,7 +586,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async BuildUnlinkStorys(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/buildunlinkstorys`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/buildunlinkstorys`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -602,7 +602,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async Change(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/change`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/change`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -618,7 +618,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/close`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/close`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -658,7 +658,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async CreateTasks(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/createtasks`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/createtasks`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -674,7 +674,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/substories/${_context.substory}`);
+        const res = await this.http.get(`/substories/${encodeURIComponent(_context.substory)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -709,7 +709,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async GetStorySpec(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/getstoryspec`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/getstoryspec`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -725,7 +725,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async GetStorySpecs(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/substories/${_context.substory}/getstoryspecs`);
+        const res = await this.http.get(`/substories/${encodeURIComponent(_context.substory)}/getstoryspecs`);
         res.data = await this.afterExecuteAction(_context,res?.data,'GetStorySpecs');
         return res;
             } catch (error) {
@@ -764,7 +764,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async ImportPlanStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/importplanstories`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/importplanstories`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -780,7 +780,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/linkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/linkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -796,7 +796,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async ProjectBatchUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/projectbatchunlinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/projectbatchunlinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -812,7 +812,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async ProjectLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/projectlinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/projectlinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -828,7 +828,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async ProjectUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/projectunlinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/projectunlinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -844,7 +844,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async ProjectUnlinkStorys(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/projectunlinkstorys`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/projectunlinkstorys`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -860,7 +860,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async Push(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/push`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/push`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -876,7 +876,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async ReleaseBatchUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/releasebatchunlinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/releasebatchunlinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -892,7 +892,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async ReleaseLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/releaselinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/releaselinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -908,7 +908,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async ReleaseUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/releaseunlinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/releaseunlinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -924,7 +924,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/substories/${_context.substory}`);
+        const res = await this.http.delete(`/substories/${encodeURIComponent(_context.substory)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -940,7 +940,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async ResetReviewedBy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/resetreviewedby`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/resetreviewedby`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -956,7 +956,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/review`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/review`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -972,7 +972,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async SendMessage(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/sendmessage`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/sendmessage`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -988,7 +988,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async SendMsgPreProcess(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/sendmsgpreprocess`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/sendmsgpreprocess`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -1004,7 +1004,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async SetStage(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/setstage`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/setstage`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -1020,7 +1020,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async StoryFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/storyfavorites`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/storyfavorites`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -1036,7 +1036,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/storynfavorites`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/storynfavorites`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -1052,7 +1052,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async SyncFromIbiz(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/syncfromibiz`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/syncfromibiz`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -1068,7 +1068,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async UnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/substories/${_context.substory}/unlinkstory`, _data);
+        const res = await this.http.post(`/substories/${encodeURIComponent(_context.substory)}/unlinkstory`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -1086,7 +1086,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/substories/${_context.substory}`, _data);
+        const res = await this.http.put(`/substories/${encodeURIComponent(_context.substory)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -1612,7 +1612,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/substories/${_context.substory}/select`);
+        const res = await this.http.get(`/substories/${encodeURIComponent(_context.substory)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -2066,6 +2066,21 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
     public async ReviewBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         const res = await this.http.post(`/substories/reviewbatch`,_data);
+        return res;
+    }
+
+    /**
+     * SaveBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubStoryServiceBase
+     */
+    public async SaveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        const res = await this.http.post(`/substories/savebatch`,_data);
         return res;
     }
 

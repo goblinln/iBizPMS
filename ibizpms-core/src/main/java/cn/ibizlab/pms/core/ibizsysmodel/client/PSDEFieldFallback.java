@@ -33,10 +33,6 @@ public class PSDEFieldFallback implements FallbackFactory<PSDEFieldFeignClient> 
         String finalErrorMessage = errorMessage;
         return new PSDEFieldFeignClient(){
 
-            public Page<PSDEField> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSDEField create(PSDEField psdefield) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSDEFieldFallback implements FallbackFactory<PSDEFieldFeignClient> 
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSDEField update(String psdefieldid, PSDEField psdefield) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSDEField> psdefields) {
+            public PSDEField get(String psdefieldid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class PSDEFieldFallback implements FallbackFactory<PSDEFieldFeignClient> 
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSDEField get(String psdefieldid) {
+            public PSDEField update(String psdefieldid, PSDEField psdefield) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSDEField> psdefields) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSDEField psdefield) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSDEField> searchDefault(PSDEFieldSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class PSDEFieldFallback implements FallbackFactory<PSDEFieldFeignClient> 
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSDEField psdefield) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSDEField psdefield) {
@@ -86,10 +87,9 @@ public class PSDEFieldFallback implements FallbackFactory<PSDEFieldFeignClient> 
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSDEField> searchDefault(PSDEFieldSearchContext context) {
+            public Page<PSDEField> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

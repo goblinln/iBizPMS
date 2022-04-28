@@ -6,13 +6,15 @@
   "logicName" : "移动端菜单计数器",
   "name" : "MobMenuCount",
   "getPSDEActionInput" : {
-    "codeName" : "MobMenuCountInput",
-    "name" : "输入对象",
+    "name" : "MobMenuCountInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzMyTerritoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MobMenuCountResult",
-    "name" : "返回对象",
+    "name" : "MobMenuCountResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

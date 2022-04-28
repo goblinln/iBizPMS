@@ -80,6 +80,7 @@ export class AppWfDynaExpGridViewBase extends WfDynaExpGridViewBase {
         return h(targetViewLayoutComponent, {
             props: { viewInstance: this.viewInstance, model: this.model, modelService: this.modelService, viewparams: this.viewparams, context: this.context }
         }, [
+            this.renderQuickSearch(),
             this.renderToolBar(),
             this.renderMainContent()
         ]);

@@ -350,7 +350,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     protected async executeAppDELogic(tag: string, _context: any, _data: any) {
         try {
             return await this.appDeLogicService.onExecute(this.appDeLogicMap.get(tag), _context, _data);
-        } catch (error) {
+        } catch (error:any) {
             throw new Error(`执行实体处理逻辑异常，[逻辑错误]${error.message}`);
         }
     }
@@ -367,7 +367,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     protected async executeAppDEFieldLogic(model: any, _context: any, _data: any) {
         try {
             return await this.appDeLogicService.onExecute(model, _context, _data);
-        } catch (error) {
+        } catch (error:any) {
             throw new Error(`执行实体属性处理逻辑异常，[逻辑错误]${error.message}`);
         }
     }
@@ -1672,7 +1672,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         return Http.getInstance().get(
             `/wfcore/${
                 context.srfsystemid
-            }-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions-nodes`,
+            }-app-${this.APPNAME.toLowerCase()}/${data.srfinsttag}/${data.srfinsttag2}/${this.APPDENAME.toLowerCase()}/process-definitions-nodes`,
         );
     }
 
@@ -1819,6 +1819,24 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
             `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
                 context[this.APPDENAME.toLowerCase()]
             }/tasks/${data.taskId}/sendback`,
+            data,
+        );
+    }
+
+    /**
+     * 撤回
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof EntityService
+     */
+     public async WithDraw(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+        return Http.getInstance().post(
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
+                context[this.APPDENAME.toLowerCase()]
+            }/tasks/${data.taskId}/withdraw`,
             data,
         );
     }

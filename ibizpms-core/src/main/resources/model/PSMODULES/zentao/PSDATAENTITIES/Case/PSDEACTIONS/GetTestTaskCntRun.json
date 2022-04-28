@@ -6,13 +6,19 @@
   "logicName" : "获取测试单执行结果",
   "name" : "GetTestTaskCntRun",
   "getPSDEActionInput" : {
-    "codeName" : "GetTestTaskCntRunInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetTestTaskCntRunInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetTestTaskCntRunResult",
-    "name" : "返回对象",
+    "name" : "GetTestTaskCntRunResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTO"
   }
 }

@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Task__type",
   "codeListType" : "STATIC",
   "codeName" : "Task__type",
   "dynaInstMode" : 1,
@@ -12,48 +13,39 @@
   "getPSCodeItems" : [ {
     "codeName" : "Design",
     "text" : "设计",
-    "value" : "design",
-    "includeBeginValue" : true
+    "value" : "design"
   }, {
     "codeName" : "Devel",
     "text" : "开发",
-    "value" : "devel",
-    "includeBeginValue" : true
+    "value" : "devel"
   }, {
     "codeName" : "Test",
     "text" : "测试",
-    "value" : "test",
-    "includeBeginValue" : true
+    "value" : "test"
   }, {
     "codeName" : "Study",
     "text" : "研究",
-    "value" : "study",
-    "includeBeginValue" : true
+    "value" : "study"
   }, {
     "codeName" : "Discuss",
     "text" : "讨论",
-    "value" : "discuss",
-    "includeBeginValue" : true
+    "value" : "discuss"
   }, {
     "codeName" : "Ui",
     "text" : "界面",
-    "value" : "ui",
-    "includeBeginValue" : true
+    "value" : "ui"
   }, {
     "codeName" : "Affair",
     "text" : "事务",
-    "value" : "affair",
-    "includeBeginValue" : true
+    "value" : "affair"
   }, {
     "codeName" : "Serve",
     "text" : "服务",
-    "value" : "serve",
-    "includeBeginValue" : true
+    "value" : "serve"
   }, {
     "codeName" : "Misc",
     "text" : "其他",
-    "value" : "misc",
-    "includeBeginValue" : true
+    "value" : "misc"
   } ],
   "enableCache" : true
 }

@@ -14,6 +14,7 @@
             :staticProps="{ ...this.staticProps, viewDefaultUsage:false}"
             :dynamicProps="{ ...this.dynamicProps }"
             @viewdataschange="dataChange($event)"
+            @viewstatechange="stateChange($event)"
             @viewdatasactivated="viewDatasActivated($event)"
             @close="close($event)"
             :ref="viewname">
@@ -108,6 +109,14 @@ export default class AppDrawerCompponent extends Vue {
      * @memberof AppDrawerCompponent
      */ 
     public zIndex:any = null;
+
+    /**
+     * 是否视图数据改变
+     *
+     * @type {any}
+     * @memberof AppDrawerCompponent
+     */ 
+    public isViewDataChange:boolean = false;
 
     /**
      * 获取数据传递对象
@@ -231,6 +240,17 @@ export default class AppDrawerCompponent extends Vue {
     }
 
     /**
+     * 状态变化回调
+     *
+     * @memberof AppDrawerCompponent
+     */ 
+    public stateChange(result: any) {
+        if(result.length > 0 && result[0].hasOwnProperty('viewDataChange')){
+          this.isViewDataChange = result[0].viewDataChange;
+        }
+    }
+
+    /**
      * 抽屉显示隐藏回调
      *
      * @memberof AppDrawerCompponent
@@ -238,24 +258,24 @@ export default class AppDrawerCompponent extends Vue {
     public onVisibleChange($event: any) {
         const component: any = this.$refs[this.viewname];
         if (component) {
-            // todo viewDataChange确认提示
-            // if (this.isViewdatachange) {
-            //     this.isShow = true;
-            //     const title: any = this.$t('app.tabpage.sureclosetip.title');
-            //     const contant: any = this.$t('app.tabpage.sureclosetip.content');
-            //     this.$Modal.confirm({
-            //         title: title,
-            //         content: contant,
-            //         onOk: () => {
-            //             this.isShow = false;
-            //         },
-            //         onCancel: () => {
-            //             this.isShow = true;
-            //         }
-            //     });
-            // } else {
+            if (this.isViewDataChange) {
+                this.isShow = true;
+                const title: any = this.$t('app.tabpage.sureclosetip.title');
+                const contant: any = this.$t('app.tabpage.sureclosetip.content');
+                this.$Modal.confirm({
+                    title: title,
+                    content: contant,
+                    onOk: () => {
+                        this.isShow = false;
+                        this.isViewDataChange = false;
+                    },
+                    onCancel: () => {
+                        this.isShow = true;
+                    }
+                });
+            } else {
                 this.handleShowState($event);
-            // }
+            }
         }
     }
 

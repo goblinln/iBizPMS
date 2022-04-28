@@ -1,0 +1,84 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`COLLECTOR`",
+    "name" : "COLLECTOR"
+  }, {
+    "expression" : "t1.`USERS`",
+    "name" : "USERS"
+  }, {
+    "expression" : "t1.`ACL`",
+    "name" : "ACL"
+  }, {
+    "expression" : "t1.`ADDEDBY`",
+    "name" : "ADDEDBY"
+  }, {
+    "expression" : "t1.`ADDEDDATE`",
+    "name" : "ADDEDDATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "'doc'",
+    "name" : "DOCQTYPE"
+  }, {
+    "expression" : "t1.`EDITEDBY`",
+    "name" : "EDITEDBY"
+  }, {
+    "expression" : "t1.`EDITEDDATE`",
+    "name" : "EDITEDDATE"
+  }, {
+    "expression" : "t1.`GROUPS`",
+    "name" : "GROUPS"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`KEYWORDS`",
+    "name" : "KEYWORDS"
+  }, {
+    "expression" : "t1.`LIB`",
+    "name" : "LIB"
+  }, {
+    "expression" : "t31.`NAME`",
+    "name" : "LIBNAME"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "t41.`NAME`",
+    "name" : "MODULENAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t21.`NAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  }, {
+    "expression" : "t1.`VIEWS`",
+    "name" : "VIEWS"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACL`,\nt1.`ADDEDBY`,\nt1.`ADDEDDATE`,\nt1.`DELETED`,\n'doc' AS `DOCQTYPE`,\nt1.`EDITEDBY`,\nt1.`EDITEDDATE`,\nt1.`GROUPS`,\nt1.`ID`,\n( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}\n, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`,\nt1.`KEYWORDS`,\nt1.`LIB`,\nt31.`NAME` AS `LIBNAME`,\nt1.`MODULE`,\nt41.`NAME` AS `MODULENAME`,\nt1.`PRODUCT`,\nt21.`NAME` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt11.`NAME` AS `PROJECTNAME`,\nt1.`TITLE`,\nt1.`TYPE`,\nt1.`VERSION`,\nt1.`VIEWS`,\nt1.docsn\nFROM `zt_doc` t1 \nLEFT JOIN zt_project t11 ON t1.PROJECT = t11.ID\nLEFT JOIN zt_product t21 ON t1.PRODUCT = t21.ID\nLEFT JOIN zt_doclib t31 ON t1.LIB = t31.ID\nLEFT JOIN zt_module t41 ON t1.MODULE = t41.ID\n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

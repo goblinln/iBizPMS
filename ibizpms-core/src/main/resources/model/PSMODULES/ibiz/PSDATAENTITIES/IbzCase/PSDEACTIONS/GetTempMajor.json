@@ -7,13 +7,19 @@
   "name" : "GetTempMajor",
   "orderValue" : 33,
   "getPSDEActionInput" : {
-    "codeName" : "GetTempMajorInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetTempMajorInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetTempMajorResult",
-    "name" : "返回对象",
+    "name" : "GetTempMajorResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzCaseDTO"
+    },
     "type" : "DTO"
   },
   "tempDataMode" : 1,

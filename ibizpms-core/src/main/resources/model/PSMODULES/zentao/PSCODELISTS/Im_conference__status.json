@@ -1,25 +1,28 @@
 {
+  "codeListTag" : "zentao__Im_conference__status",
   "codeListType" : "STATIC",
   "codeName" : "Im_conference__status",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_conference__status.json",
   "emptyText" : "未定义",
+  "name" : "ZT_IM_CONFERENCE__STATUS",
   "getPSCodeItems" : [ {
     "codeName" : "Closed",
     "text" : "closed",
-    "value" : "closed",
-    "includeBeginValue" : true
+    "value" : "closed"
   }, {
     "codeName" : "Open",
     "text" : "open",
-    "value" : "open",
-    "includeBeginValue" : true
+    "value" : "open"
   } ],
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

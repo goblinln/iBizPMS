@@ -6,14 +6,16 @@
   "logicName" : "排序",
   "name" : "UpdateOrder",
   "getPSDEActionInput" : {
-    "codeName" : "UpdateOrderInput",
-    "name" : "输入对象",
+    "name" : "UpdateOrderInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UpdateOrderResult",
-    "name" : "返回对象",
+    "name" : "UpdateOrderResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

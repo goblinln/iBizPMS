@@ -18,10 +18,10 @@
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetinfodeaction2" id="deaction2" implementation="http://www.jboss.org/drools/rule" name="获取研发用户信息"/>
      <endEvent id="deaction2_end" name="end"/>
      <sequenceFlow id="deaction2_end_line" sourceRef="deaction2" targetRef="deaction2_end"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetinfodeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="获取用户信息"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetinfodeaction3" id="deaction3" implementation="http://www.jboss.org/drools/rule" name="获取测试用户信息"/>
      <endEvent id="deaction3_end" name="end"/>
      <sequenceFlow id="deaction3_end_line" sourceRef="deaction3" targetRef="deaction3_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetinfodeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="获取用户信息"/>
      <sequenceFlow id="begin_deaction1" sourceRef="begin" targetRef="deaction1">
      </sequenceFlow>
      <sequenceFlow id="gateway-deaction1_deaction4" sourceRef="gateway-deaction1" targetRef="deaction4">

@@ -118,7 +118,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}`);
+        const res = await this.http.get(`/ibzplantemplets/${encodeURIComponent(_context.ibzplantemplet)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
@@ -159,7 +159,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      */
     async GetPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}/getplan`);
+        const res = await this.http.get(`/ibzplantemplets/${encodeURIComponent(_context.ibzplantemplet)}/getplan`);
         res.data = await this.afterExecuteAction(_context,res?.data,'GetPlan');
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
@@ -179,7 +179,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibzplantemplets/${_context.ibzplantemplet}`);
+        const res = await this.http.delete(`/ibzplantemplets/${encodeURIComponent(_context.ibzplantemplet)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -197,7 +197,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibzplantemplets/${_context.ibzplantemplet}`, _data);
+        const res = await this.http.put(`/ibzplantemplets/${encodeURIComponent(_context.ibzplantemplet)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -247,7 +247,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}/select`);
+        const res = await this.http.get(`/ibzplantemplets/${encodeURIComponent(_context.ibzplantemplet)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

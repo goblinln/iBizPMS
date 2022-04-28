@@ -26,6 +26,14 @@ export class FormItemModel extends FormDetailModel {
     public error: string = '';
 
     /**
+     * 是否为后台错误提示
+     *
+     * @type {string}
+     * @memberof FormItemModel
+     */
+    public isBackendError: boolean = false;
+
+    /**
      * 表单项启用条件
      * 
      * 0 不启用
@@ -47,6 +55,13 @@ export class FormItemModel extends FormDetailModel {
     public required:boolean = false;
 
     /**
+     * @description 忽略输入值
+     * @type {(number | null)}
+     * @memberof FormItemModel
+     */
+    public ignoreInput?: number | null;
+
+    /**
      * Creates an instance of FormItemModel.
      * FormItemModel 实例
      * 
@@ -58,6 +73,7 @@ export class FormItemModel extends FormDetailModel {
         this.disabled = opts.disabled ? true : false;
         this.enableCond = opts.enableCond;
         this.required = opts.required;
+        this.ignoreInput = opts.ignoreInput;
     }
 
     /**
@@ -78,6 +94,16 @@ export class FormItemModel extends FormDetailModel {
      */
     public setError(error: string): void {
         this.error = error;
+    }
+
+    /**
+     * 设置是否为后台错误提示
+     *
+     * @param {boolean} isBackendError
+     * @memberof FormItemModel
+     */
+    public setIsBackendError(isBackendError: boolean) {
+        this.isBackendError = isBackendError;
     }
 
     /**

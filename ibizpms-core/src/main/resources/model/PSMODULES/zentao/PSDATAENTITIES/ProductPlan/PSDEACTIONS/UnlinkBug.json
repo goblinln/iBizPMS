@@ -6,13 +6,15 @@
   "logicName" : "解除关联Bug",
   "name" : "UnlinkBug",
   "getPSDEActionInput" : {
-    "codeName" : "UnlinkBugInput",
-    "name" : "输入对象",
+    "name" : "UnlinkBugInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UnlinkBugResult",
-    "name" : "返回对象",
+    "name" : "UnlinkBugResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

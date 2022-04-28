@@ -8,6 +8,7 @@ import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import { LogUtil  } from 'ibiz-core';
 import {CodeListService} from "ibiz-service";
 import axios from 'axios';
+import qs from "qs";
 
 @Component({})
 export default class AppOrgSelect extends Vue {
@@ -25,6 +26,31 @@ export default class AppOrgSelect extends Vue {
    * @memberof AppOrgSelect
    */
   @Prop() public context!:any;
+
+  /**
+   * 视图参数
+   * 
+   * @type {*}
+   * @memberof AppOrgSelect
+   */
+  @Prop()
+  public viewparams!: any;
+
+  /**
+   * 局部上下文导航参数
+   * 
+   * @type {any}
+   * @memberof AppOrgSelect
+   */
+  @Prop() public localContext!:any;
+
+  /**
+   * 局部导航参数
+   * 
+   * @type {any}
+   * @memberof AppOrgSelect
+   */
+  @Prop() public localParam!:any;
 
   /**
    * 填充对象
@@ -101,14 +127,7 @@ export default class AppOrgSelect extends Vue {
   onDataChange(newVal: any, oldVal: any) {
     if(newVal){
       this.computedSelectedData();
-      if(this.filter){
-        let tempFilterValue:any = this.initBasicData();
-        // filter值变化才去请求数据
-        if(tempFilterValue && (this.copyFilterValue !== tempFilterValue)){
-          this.loadTreeData(this.url.replace('${orgid}',tempFilterValue));
-          this.copyFilterValue = tempFilterValue;
-        }
-      }
+      this.computeUrlParams()
     }
   }
 
@@ -127,11 +146,11 @@ export default class AppOrgSelect extends Vue {
   public NodesData:any = [];
 
   /**
-   * 备份过滤值
+   * 备份请求
    * 
    * @memberof AppOrgSelect
    */
-  public copyFilterValue:any;
+  public copyActualUrl:any;
 
   /**
    * vue生命周期
@@ -139,9 +158,7 @@ export default class AppOrgSelect extends Vue {
    * @memberof AppOrgSelect
    */
   public created(){
-    if(!this.filter){
-      this.loadTreeData(this.url);
-    }
+    this.computeUrlParams();
   }
 
   /**
@@ -230,26 +247,57 @@ export default class AppOrgSelect extends Vue {
   }
 
   /**
+   * 计算URL参数
+   * 
+   * @memberof AppOrgSelect
+   */
+  public computeUrlParams(){
+    let requestUrl = this.url;
+    if(this.filter){
+        let tempFilterValue:any = this.initBasicData();
+        if(tempFilterValue){
+          requestUrl = this.url.replace('${orgid}',tempFilterValue);
+        }
+    }
+    // 参数处理
+    let data: any = {};
+    this.handlePublicParams(data);
+    let context = data.context;
+    let viewparam = data.param;
+    this.loadTreeData(requestUrl, viewparam);
+  }
+
+  /**
    * 加载树数据
    * 
    * @memberof AppOrgSelect
    */
-  public loadTreeData(requestUrl:string){
+  public loadTreeData(requestUrl:string, params = {}){
+    // 最终请求路径，作为缓存的key值
+    let tempActualUrl: string = requestUrl + "?"+ qs.stringify(params);
+    if(!requestUrl || (this.copyActualUrl == tempActualUrl)){
+      return;
+    }
+    this.copyActualUrl = tempActualUrl;
+
+    // 全局缓存
     if(this.filter){
-      const result:any = this.$store.getters.getOrgData(requestUrl);
+      const result:any = this.$store.getters.getOrgData(tempActualUrl);
       if(result){
         this.NodesData = result;
         return;
       }
     }
-    axios({method: this.requestMode, url: requestUrl, data: {}}).then((res:any) =>{
+    this.$http[this.requestMode](requestUrl, params).then((res:any) =>{
       if(!res.status && res.status !== 200){
         this.$throw((this.$t('components.apporgselect.loadfail') as string),'loadTreeData');
         return;
       }
       this.NodesData = res.data;
+      
+      // 全局缓存
       if(this.filter){
-        this.$store.commit('addOrgData', { srfkey: requestUrl, orgData: res.data });
+        this.$store.commit('addOrgData', { srfkey: tempActualUrl, orgData: res.data });
       }
     })
   }
@@ -332,6 +380,28 @@ export default class AppOrgSelect extends Vue {
         LogUtil.log(error);
       })
     }
+  }
+  
+  /**
+   * 公共参数处理
+   *
+   * @param {*} arg
+   * @returns
+   * @memberof AppOrgSelect
+   */
+  public handlePublicParams(arg: any) {
+      // 合并表单参数
+      arg.param = this.viewparams ? JSON.parse(JSON.stringify(this.viewparams)) : {};
+      arg.context = this.context ? JSON.parse(JSON.stringify(this.context)) : {};
+      // 附加参数处理
+      if (this.localContext && Object.keys(this.localContext).length >0) {
+          let _context = this.$util.computedNavData(this.data,arg.context,arg.param,this.localContext);
+          Object.assign(arg.context,_context);
+      }
+      if (this.localParam && Object.keys(this.localParam).length >0) {
+          let _param = this.$util.computedNavData(this.data,arg.param,arg.param,this.localParam);
+          Object.assign(arg.param,_param);
+      }
   }
 
 }

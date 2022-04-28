@@ -124,7 +124,7 @@ export class AppTreeViewBase extends TreeControlBase {
         } else if (data.iconcls) {
             iconElement = <i class={data.iconcls}></i>
         } else if (data.icon) {
-            iconElement = <img src={data.icon} style='width:14px;height:14px;vertical-align: bottom;'/>
+            iconElement = <img src={data.icon} style='width:14px;height:14px;vertical-align: bottom;' />
         } else if (this.controlInstance.outputIconDefault) {
             iconElement = <i class="ivu-icon ivu-icon-ios-paper-outline"></i>
         }
@@ -159,12 +159,6 @@ export class AppTreeViewBase extends TreeControlBase {
             let counterService = Util.findElementByField(this.counterServiceArray, 'id', this.controlInstance.getPSAppCounterRef()?.id)?.service;
             nodeCount = counterService?.counterData?.[data.counterId];
         }
-        let nodeCountStyle = {
-            count: nodeCount,
-            showZero: data.counterMode !== 1,
-            offset:[4,7]
-        }
-
         return (
             <context-menu
                 ref={data.id}
@@ -176,23 +170,24 @@ export class AppTreeViewBase extends TreeControlBase {
                     this.showContext(data, e);
                 }}
             >
-                <tooltip transfer style='width: 100%;' max-width={2000} placement='right'>
-                    <div
-                        class={['tree-node', cssName]}
-                        v-badge={nodeCountStyle}
-                        on-dblclick={() => {
-                            throttle(this.doDefaultAction, [node], this);
-                        }}
-                    >
-                        {iconElement ? <span class='icon'>{iconElement}</span> : null}
+                <div
+                    class={['tree-node', cssName]}
+                    title={data.tooltip ? data.tooltip : Object.is(data.nodeType, "STATIC") ? this.$tl(data.lanResTag, data.text) : data.text}
+                    on-dblclick={() => {
+                        throttle(this.doDefaultAction, [node], this);
+                    }}
+                >
+                    {iconElement ? <span class='icon'>{iconElement}</span> : null}
+                    {nodeCount ?
                         <span class='text'>
-                            {textElement}
+                            <el-badge value={nodeCount}>
+                                {textElement}
+                            </el-badge>
                         </span>
-                    </div>
-                    <template slot='content'>
-                        {data.tooltip ? data.tooltip : textElement}
-                    </template>
-                </tooltip>
+                        : <span class='text'>
+                            {textElement}
+                        </span>}
+                </div>
             </context-menu>
         );
     }

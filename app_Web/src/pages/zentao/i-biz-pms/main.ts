@@ -66,6 +66,12 @@ Vue.prototype.$tl = function (key: string, value?: string) {
   return translate(key,this,value);
 };
 
+// 解决75版本浏览器不支持replaceAll方法
+String.prototype.replaceAll = function (FindText:any, RepText:any) {
+  let regExp = new RegExp(FindText, "g");
+  return this.replace(regExp, RepText as any);
+}
+
 Vue.config.productionTip = false;
 Vue.use(Print);
 Vue.use(ibizLab);

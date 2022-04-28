@@ -5,6 +5,22 @@
   "logicName" : "置顶",
   "name" : "置顶",
   "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接2211",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      }
+    } ],
+    "parallelOutput" : true
+  }, {
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置参数",
@@ -17,8 +33,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "OBJECTID",
@@ -57,35 +72,6 @@
     } ],
     "parallelOutput" : true
   }, {
-    "codeName" : "Rawsqlcall1",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "IbzTop"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取置顶最大排序值",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接5143",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    } ],
-    "sql" : "select (case when max(t1.`objectorder`) >= 16000000  then max(t1.`objectorder`) + 1 else 16000000 end) as `objectorder` from T_IBZ_TOP t1 where t1.type = 'project' and t1.account= ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
     "codeName" : "Deaction1",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -103,39 +89,53 @@
     "name" : "Save",
     "parallelOutput" : true
   }, {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "IbzTop"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取置顶最大排序值",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall1"
+        "id" : "Prepareparam1"
       },
-      "name" : "连接2211",
+      "name" : "连接5143",
       "getSrcPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
+        "id" : "Rawsqlcall1"
+      }
     } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "sql" : "select (case when max(t1.`objectorder`) >= 16000000  then max(t1.`objectorder`) + 1 else 16000000 end) as `objectorder` from T_IBZ_TOP t1 where t1.type = 'project' and t1.account= ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "logicName" : "传入变量",
+    "name" : "传入变量",
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "default" : true,
+    "entityParam" : true
+  }, {
     "codeName" : "IbzTop",
+    "logicName" : "置顶",
     "name" : "置顶",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
     },
     "sessionParam" : true
-  }, {
-    "codeName" : "Default",
-    "name" : "传入变量",
-    "getParamPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-    },
-    "default" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

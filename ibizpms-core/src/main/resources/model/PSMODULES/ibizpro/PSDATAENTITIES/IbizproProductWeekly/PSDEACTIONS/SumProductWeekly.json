@@ -6,13 +6,15 @@
   "logicName" : "统计产品周报",
   "name" : "SUMPRODUCTWEEKLY",
   "getPSDEActionInput" : {
-    "codeName" : "SumProductWeeklyInput",
-    "name" : "输入对象",
+    "name" : "SumProductWeeklyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbizproProductWeeklyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SumProductWeeklyResult",
-    "name" : "返回对象",
+    "name" : "SumProductWeeklyResult",
     "type" : "VOID"
   }
 }

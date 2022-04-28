@@ -1,5 +1,6 @@
     {
     "systemid":"iBizPMS",
+    "systemname":"iBiz软件生产管理",
     "unires":[
         
        {
@@ -1568,7 +1569,7 @@
     "sysmoudle":{"id":"OU","name":"ou组织用户管理模块"},
     "dedataset":[{"id":"Default" , "name":"数据集"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} ]
+    "datascope":[{"id":"all","name":"全部数据"}]
     }
     ,    {
     "dename":"SysPost",

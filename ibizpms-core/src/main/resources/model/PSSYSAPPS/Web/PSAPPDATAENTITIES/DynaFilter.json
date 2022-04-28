@@ -266,18 +266,24 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "DynaFilter",
+  "dEAPITag" : "IBZ_API__DYNAFILTER",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 0,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DynaFilter.json",
   "enableUIActions" : 15,
   "logicName" : "动态搜索栏",
   "name" : "DYNAFILTER",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "DYNAFILTER",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "DYNAFILTERNAME",
     "codeName" : "DynaFilterName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

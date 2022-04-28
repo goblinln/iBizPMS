@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "(t1.assignedTo = #{srf.sessioncontext.srfloginname} or t1.openedBy = #{srf.sessioncontext.srfloginname} or t1.finishedBy = #{srf.sessioncontext.srfloginname} or t1.closedBy = #{srf.sessioncontext.srfloginname} or t1.canceledBy = #{srf.sessioncontext.srfloginname})",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "((#{srf.webcontext.calendar} = '1'  and t1.assigneddate is not null and t1.assigneddate <> '0000-00-00 00:00:00' and t1.estStarted is not null and t1.estStarted <> '0000-00-00' and t1.estStarted <> '1970-01-01') or (#{srf.webcontext.calendar} is null))",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.id ,\nt1.`ASSIGN`,\nt1.`ASSIGNEDDATE`,\nt1.`ASSIGNEDTO`,\nt1.`CANCELEDBY`,\nt1.`CANCELEDDATE`,\nt1.`CLOSEDBY`,\nt1.`CLOSEDDATE`,\nt1.`CLOSEDREASON`,\nt1.`COLOR`,\nt1.`CONSUMED`,\nt1.`DEADLINE`,\n'' AS `DELAY`,\nt1.`DELETED`,\nt1.`ESTIMATE`,\nt1.`ESTSTARTED`,\nt1.`FINISHEDBY`,\nt1.`FINISHEDDATE`,\n( SELECT count( t.`id` ) FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` ) AS `MULTIPLE`,\ncase when t1.`status` = 'wait' then CONCAT_WS('',60,LPAD(t1.id,12,0)) when t1.`status` = 'doing' then  CONCAT_WS('',50,LPAD(t1.id,12,0)) when  t1.`status` = 'done' then  CONCAT_WS('',40,LPAD(t1.id,12,0)) when  t1.`status` = 'closed' then  CONCAT_WS('',30,LPAD(t1.id,12,0)) when  t1.`status` = 'cancel' then  CONCAT_WS('',20,LPAD(t1.id,12,0))  else  CONCAT_WS('',10,LPAD(t1.id,12,0)) end   as `TASKSN`,\n\t(\n\tSELECT\n\t\t( COUNT( t.IBZ_FAVORITESID ) ) AS ISFAVORITES \n\tFROM\n\t\tT_IBZ_FAVORITES t \n\tWHERE\n\t\tt.TYPE = 'task' \n\t\tAND t.ACCOUNT = #{srf.sessioncontext.srfloginname}\n\t\tAND t.OBJECTID = t1.id\n\t) AS `ISFAVORITES`,\nt1.`LASTEDITEDBY`,\nt1.`LASTEDITEDDATE`,\nt1.`LEFT`,\nt1.`MODULE`,\nt11.`NAME` AS `MODULENAME`,\nt1.`NAME`,\nt1.`PARENT`,\nt1.`PRI`,\n '' AS `PROGRESSRATE`,\nt1.`PROJECT`,\nt1.`REALSTARTED`,\nt1.`STATUS`,\n'' AS `STATUS1`,\n0 AS `STATUSORDER`,\nt1.`STORY`,\nt21.`TITLE` AS `STORYNAME`,\n'' AS `TASKTYPE`,\nt21.`version` as `storyVersions`,\nt1.`storyVersion` as `storyVersion`,\nt21.`status` as `storyStatus`,\nt41.`name` as projectname,\nt51.`name` as productname\nFROM `zt_task` t1 \nLEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`ID` \nLEFT JOIN `zt_story` t21 ON t1.`STORY` = t21.`ID` \nLEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID` \nLEFT JOIN `zt_project` t41 ON t1.`PROJECT` = t41.`ID` \nLEFT JOIN `zt_product` t51 ON t21.`PRODUCT` = t51.`ID` \nLEFT JOIN `zt_task` t61 ON t1.`PARENT` = t61.`ID`",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEDATAQUERIES/My/PSDEDQCODES/MYSQL5.json"
+}

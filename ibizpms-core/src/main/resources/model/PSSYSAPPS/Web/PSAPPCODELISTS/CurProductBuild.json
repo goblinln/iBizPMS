@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__CurProductBuild",
   "codeListType" : "DYNAMIC",
   "codeName" : "CurProductBuild",
   "dynaInstMode" : 1,

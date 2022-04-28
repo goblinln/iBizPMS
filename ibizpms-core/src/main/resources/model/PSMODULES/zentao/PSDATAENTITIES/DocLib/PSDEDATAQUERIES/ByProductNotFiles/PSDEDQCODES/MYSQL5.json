@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.type = 'product'  AND t1.deleted = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : " t1.`PRODUCT` = #{srf.datacontext.product}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.* \nFROM\n\t(\n\tSELECT\n\t\t( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`,\n\t\tt1.`ACL`,\n\t\tt1.`DELETED`,\n\t\tt1.`GROUPS`,\n\t\tt1.`ID`,\n(select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) as modulecnt,\n(select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') as openedDate,\n\t\tt1.`MAIN`,\n\t\tt1.`NAME`,\n\t\tt1.`ORDER`,\n\t\tt1.`PRODUCT`,\n\t\tt1.`PROJECT`,\n\t\tt1.`TYPE`,\n\t\t'doc' AS DOCLIBTYPE,\n\t\t(\n\t\tSELECT\n\t\t\tcount( 1 ) \n\t\tFROM\n\t\t\tzt_doc t \n\t\tWHERE\n\t\t\tt.lib = t1.id\n\t\t\tAND t.product = t1.product \n\t\t\tAND t.deleted = '0' \n\t\t) AS DOCCNT,\n t1.doclibsn \n\tFROM\n\t`zt_doclib` t1 \n\t) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEDATAQUERIES/ByProductNotFiles/PSDEDQCODES/MYSQL5.json"
+}

@@ -654,6 +654,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "IbzCase",
+  "dEAPITag" : "IBZ_API__TEST_CASE_LIB_CASE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json",
@@ -666,6 +667,7 @@
     "codeName" : "Title"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableTempData" : true,

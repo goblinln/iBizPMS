@@ -1,28 +1,35 @@
 {
+  "codeListTag" : "zentao__CaseQuickpacketMy",
   "codeListType" : "STATIC",
   "codeName" : "CaseQuickpacketMy",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/CaseQuickpacketMy.json",
   "emptyText" : "未定义",
+  "name" : "功能测试快速分组（我的地盘）",
   "getPSCodeItems" : [ {
     "codeName" : "Tome",
     "data" : "{\"n_lastrunner_eq\":\"%srfloginname%\"}",
     "text" : "给我的用例",
     "value" : "TOME",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Icreate",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "text" : "我建的用例",
-    "value" : "ICREATE",
-    "includeBeginValue" : true
+    "value" : "ICREATE"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

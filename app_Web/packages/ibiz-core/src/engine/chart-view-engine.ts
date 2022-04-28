@@ -75,19 +75,34 @@ export class ChartViewEngine extends SearchViewEngine {
         }
     }
 
-
     /**
      * 搜索表单加载完成
      *
-     * @memberof ChartViewEngine
+     * @param {*} [args={}]
+     * @memberof MDViewEngine
      */
-    public onSearchFormLoad(): void {
-        super.onSearchFormLoad();
+    public onSearchFormLoad(args: any = {}): void {
         if (this.getDataCtrl() && this.isLoadDefault) {
             const tag = this.getDataCtrl().name;
-            this.setViewState2({ tag: tag, action: 'load', viewdata: {} });
+            this.setViewState2({ tag: tag, action: 'load', viewdata: args });
         }
         this.isLoadDefault = true;
+    }
+
+    /**
+     * 搜索表单事件
+     *
+     * @param {string} eventName
+     * @param {*} [args={}]
+     * @memberof ChartViewEngine
+     */
+    public searchFormEvent(eventName: string, args: any = {}): void {
+        if (Object.is(eventName, 'load')) {
+            this.onSearchFormLoad(args);
+        }
+        if (Object.is(eventName, 'search')) {
+            this.onSearchFormLoad(args);
+        }
     }
 
     /**

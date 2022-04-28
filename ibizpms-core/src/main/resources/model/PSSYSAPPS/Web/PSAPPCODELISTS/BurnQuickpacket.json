@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__BurnQuickpacket",
   "codeListType" : "STATIC",
   "codeName" : "BurnQuickpacket",
   "dynaInstMode" : 1,
@@ -14,14 +15,12 @@
     "data" : "{\"n_isweekend_in\":\"1;2;3;4;5\"}",
     "text" : "去除周末",
     "value" : "exWeek",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Week",
     "data" : "{}",
     "text" : "显示周末",
-    "value" : "Week",
-    "includeBeginValue" : true
+    "value" : "Week"
   } ],
   "enableCache" : true
 }

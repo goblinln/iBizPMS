@@ -192,6 +192,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "PROJECTLINK"
+        },
         "getPSNavigateContexts" : [ {
           "key" : "PROJECT",
           "name" : "PROJECT",

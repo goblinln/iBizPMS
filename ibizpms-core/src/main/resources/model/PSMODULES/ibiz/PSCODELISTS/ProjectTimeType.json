@@ -1,24 +1,31 @@
 {
+  "codeListTag" : "ibiz__ProjectTimeType",
   "codeListType" : "STATIC",
   "codeName" : "ProjectTimeType",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProjectTimeType.json",
+  "name" : "项目时间类型",
   "getPSCodeItems" : [ {
     "codeName" : "Consumed",
     "text" : "消耗时间",
-    "value" : "CONSUMED",
-    "includeBeginValue" : true
+    "value" : "CONSUMED"
   }, {
     "codeName" : "Left",
     "text" : "剩余时间",
-    "value" : "LEFT",
-    "includeBeginValue" : true
+    "value" : "LEFT"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

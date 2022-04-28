@@ -47,13 +47,13 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "Update",
+        "actionName" : "GetDraft",
         "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "Update"
+          "id" : "GetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -64,32 +64,6 @@
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraftfrom",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateLog.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateLog.json"
-        }
-      }, {
-        "actionName" : "GetDraft",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateLog.json"
@@ -115,6 +89,32 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateLog.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateLog.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -457,43 +457,6 @@
                 },
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
-                    "actionName" : "Update",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "UPDATE",
-                    "name" : "update",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Update"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
-                    }
-                  }, {
-                    "actionType" : "DEDATASET",
-                    "name" : "fetch",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "FetchDefault"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
-                    }
-                  }, {
-                    "actionName" : "Remove",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "DELETE",
-                    "name" : "remove",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Remove"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
-                    }
-                  }, {
                     "actionName" : "Get",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "READ",
@@ -514,6 +477,43 @@
                     "getPSAppDEMethod" : {
                       "modelref" : true,
                       "id" : "Create"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
+                    }
+                  }, {
+                    "actionName" : "Update",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "UPDATE",
+                    "name" : "update",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Update"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
+                    }
+                  }, {
+                    "actionName" : "Remove",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "DELETE",
+                    "name" : "remove",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Remove"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
+                    }
+                  }, {
+                    "actionType" : "DEDATASET",
+                    "name" : "fetch",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "FetchDefault"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -631,10 +631,14 @@
                 "codeName" : "sysUpdateLog",
                 "codeName2" : "sysUpdateFeatures",
                 "dataRSMode" : 0,
+                "majorDECodeName" : "SysUpdateLog",
+                "majorDEName" : "SYS_UPDATE_LOG",
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateLog.json"
                 },
+                "minorDECodeName" : "SysUpdateFeatures",
+                "minorDEName" : "SYS_UPDATE_FEATURES",
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
@@ -820,43 +824,6 @@
                 },
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
-                    "actionName" : "Update",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "UPDATE",
-                    "name" : "update",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Update"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
-                    }
-                  }, {
-                    "actionType" : "DEDATASET",
-                    "name" : "fetch",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "FetchDefault"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
-                    }
-                  }, {
-                    "actionName" : "Remove",
-                    "actionType" : "DEACTION",
-                    "dataAccessAction" : "DELETE",
-                    "name" : "remove",
-                    "getPSAppDEMethod" : {
-                      "modelref" : true,
-                      "id" : "Remove"
-                    },
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
-                    }
-                  }, {
                     "actionName" : "Get",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "READ",
@@ -877,6 +844,43 @@
                     "getPSAppDEMethod" : {
                       "modelref" : true,
                       "id" : "Create"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
+                    }
+                  }, {
+                    "actionName" : "Update",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "UPDATE",
+                    "name" : "update",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Update"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
+                    }
+                  }, {
+                    "actionName" : "Remove",
+                    "actionType" : "DEACTION",
+                    "dataAccessAction" : "DELETE",
+                    "name" : "remove",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "Remove"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
+                    }
+                  }, {
+                    "actionType" : "DEDATASET",
+                    "name" : "fetch",
+                    "getPSAppDEMethod" : {
+                      "modelref" : true,
+                      "id" : "FetchDefault"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -994,10 +998,14 @@
                 "codeName" : "sysUpdateLog",
                 "codeName2" : "sysUpdateFeatures",
                 "dataRSMode" : 0,
+                "majorDECodeName" : "SysUpdateLog",
+                "majorDEName" : "SYS_UPDATE_LOG",
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateLog.json"
                 },
+                "minorDECodeName" : "SysUpdateFeatures",
+                "minorDEName" : "SYS_UPDATE_FEATURES",
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
@@ -1067,6 +1075,7 @@
       "id" : "update"
     },
     "infoFormMode" : true,
+    "mobileControl" : true,
     "noTabHeader" : true,
     "name" : "form",
     "modelid" : "a6a143e645c1038769a30b24c88f6184",

@@ -6,13 +6,15 @@
   "logicName" : "删除",
   "name" : "hasDeleted",
   "getPSDEActionInput" : {
-    "codeName" : "HasDeletedInput",
-    "name" : "输入对象",
+    "name" : "HasDeletedInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "UserTplDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "HasDeletedResult",
-    "name" : "返回对象",
+    "name" : "HasDeletedResult",
     "type" : "VOID"
   }
 }

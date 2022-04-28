@@ -6,13 +6,19 @@
   "logicName" : "获取计划",
   "name" : "getPlan",
   "getPSDEActionInput" : {
-    "codeName" : "GetPlanInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "IBZ_PLANTEMPLETID",
+      "codeName" : "IbzPlanTempletId"
+    },
+    "name" : "GetPlanInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetPlanResult",
-    "name" : "返回对象",
+    "name" : "GetPlanResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzPlanTempletDTO"
+    },
     "type" : "DTO"
   }
 }

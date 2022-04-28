@@ -358,6 +358,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "UNLINKCASE"
+        },
         "getPSNavigateContexts" : [ {
           "key" : "TASK",
           "name" : "TASK",

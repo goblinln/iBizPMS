@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Bug__status",
   "codeListType" : "STATIC",
   "codeName" : "Bug__status",
   "dynaInstMode" : 1,
@@ -14,20 +15,17 @@
     "color" : "rgba(0, 157, 255, 1)",
     "text" : "激活",
     "value" : "active",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Resolved",
     "color" : "rgba(1, 217, 19, 1)",
     "text" : "已解决",
-    "value" : "resolved",
-    "includeBeginValue" : true
+    "value" : "resolved"
   }, {
     "codeName" : "Closed",
     "color" : "rgba(151, 152, 141, 1)",
     "text" : "已关闭",
-    "value" : "closed",
-    "includeBeginValue" : true
+    "value" : "closed"
   } ],
   "enableCache" : true
 }

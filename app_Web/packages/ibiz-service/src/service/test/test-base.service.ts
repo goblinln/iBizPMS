@@ -186,7 +186,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
      */
     async CancelTestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/tests/${_context.test}/canceltesttop`, _data);
+        const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/canceltesttop`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -202,7 +202,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/tests/${_context.test}`);
+        const res = await this.http.get(`/tests/${encodeURIComponent(_context.test)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -219,7 +219,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
      */
     async TestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/tests/${_context.test}/testtop`, _data);
+        const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testtop`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

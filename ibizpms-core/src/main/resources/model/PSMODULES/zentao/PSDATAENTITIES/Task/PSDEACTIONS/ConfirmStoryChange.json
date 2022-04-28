@@ -6,13 +6,15 @@
   "logicName" : "需求变更确认",
   "name" : "ConfirmStoryChange",
   "getPSDEActionInput" : {
-    "codeName" : "ConfirmStoryChangeInput",
-    "name" : "输入对象",
+    "name" : "ConfirmStoryChangeInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ConfirmStoryChangeResult",
-    "name" : "返回对象",
+    "name" : "ConfirmStoryChangeResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

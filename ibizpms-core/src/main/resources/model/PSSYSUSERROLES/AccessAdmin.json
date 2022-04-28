@@ -1,0 +1,8 @@
+{
+  "codeName" : "AccessAdmin",
+  "defaultUser" : "ACCESSADMIN",
+  "dynaModelFilePath" : "PSSYSUSERROLES/AccessAdmin.json",
+  "name" : "PMS管理用户",
+  "roleTag" : "AccessAdmin",
+  "roleType" : "CUSTOM"
+}

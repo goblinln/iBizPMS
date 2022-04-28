@@ -7,14 +7,16 @@
   "name" : "UpdateTempMajor",
   "orderValue" : 13,
   "getPSDEActionInput" : {
-    "codeName" : "UpdateTempMajorInput",
-    "name" : "输入对象",
+    "name" : "UpdateTempMajorInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectTeamDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UpdateTempMajorResult",
-    "name" : "返回对象",
+    "name" : "UpdateTempMajorResult",
     "type" : "VOID"
   },
   "tempDataMode" : 1,

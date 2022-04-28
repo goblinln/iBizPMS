@@ -10,10 +10,10 @@
             <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
         <tns:global identifier="actioncommentdefault" type="cn.ibizlab.pms.core.zentao.domain.Action" />
         </extensionElements>
+     <startEvent id="begin" isInterrupting="true"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="actioncommentprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置默认参数"/>
      <endEvent id="prepareparam1_end" name="end"/>
      <sequenceFlow id="prepareparam1_end_line" sourceRef="prepareparam1" targetRef="prepareparam1_end"/>
-     <startEvent id="begin" isInterrupting="true"/>
      <sequenceFlow id="begin_prepareparam1" sourceRef="begin" targetRef="prepareparam1">
      </sequenceFlow>
     </process>

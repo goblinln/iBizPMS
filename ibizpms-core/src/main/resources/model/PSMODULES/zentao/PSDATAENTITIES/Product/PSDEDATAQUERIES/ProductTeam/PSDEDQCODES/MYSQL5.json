@@ -1,0 +1,143 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t21.type = 'product'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : " t21.account = #{srf.sessioncontext.srfloginname}",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`WHITELIST`",
+    "name" : "WHITELIST"
+  }, {
+    "expression" : "t1.`ACL`",
+    "name" : "ACL"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0')",
+    "name" : "ACTIVEBUGCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0')",
+    "name" : "ACTIVESTORYCNT"
+  }, {
+    "expression" : "(select count(1) from zt_build t where t.product = t1.id and t.deleted = '0')",
+    "name" : "BUILDCNT"
+  }, {
+    "expression" : "(select count(1) from zt_case t where t.product = t1.id and t.deleted = '0')",
+    "name" : "CASECNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0')",
+    "name" : "CHANGEDSTORYCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0')",
+    "name" : "CLOSEDSTORYCNT"
+  }, {
+    "expression" : "t1.`CODE`",
+    "name" : "CODE"
+  }, {
+    "expression" : "t1.`CREATEDBY`",
+    "name" : "CREATEDBY"
+  }, {
+    "expression" : "t1.`CREATEDDATE`",
+    "name" : "CREATEDDATE"
+  }, {
+    "expression" : "t1.`CREATEDVERSION`",
+    "name" : "CREATEDVERSION"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "(select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0')",
+    "name" : "DOCCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0')",
+    "name" : "DRAFTSTORYCNT"
+  }, {
+    "expression" : "t1.`IBIZ_ID`",
+    "name" : "IBIZ_ID"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "'0'",
+    "name" : "ISTOP"
+  }, {
+    "expression" : "t1.`LINE`",
+    "name" : "LINE"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "LINENAME"
+  }, {
+    "expression" : "t1.`MDEPTID`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0')",
+    "name" : "NOTCLOSEDBUGCNT"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`order`",
+    "name" : "ORDER1"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`PO`",
+    "name" : "PO"
+  }, {
+    "expression" : "t1.PO",
+    "name" : "POPK"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0')",
+    "name" : "PRODUCTPLANCNT"
+  }, {
+    "expression" : "t1.`QD`",
+    "name" : "QD"
+  }, {
+    "expression" : "t1.QD",
+    "name" : "QDPK"
+  }, {
+    "expression" : "t1.`RD`",
+    "name" : "RD"
+  }, {
+    "expression" : "t1.RD",
+    "name" : "RDPK"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
+    "name" : "RELATEDBUGCNT"
+  }, {
+    "expression" : "(select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0')",
+    "name" : "RELATEDPROJECTS"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0')",
+    "name" : "RELEASECNT"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`SUBSTATUS`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0')",
+    "name" : "UNCONFIRMBUGCNT"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACL`,\n(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`,\n(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`,\n(select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`,\n(select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`,\n(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`,\n(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`,\nt1.`CODE`,\nt1.`CREATEDBY`,\nt1.`CREATEDDATE`,\nt1.`CREATEDVERSION`,\nt1.`DELETED`,\n(select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`,\n(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`,\nt1.`IBIZ_ID`,\nt1.`ID`,\n'0' AS `ISTOP`,\nt1.`LINE`,\nt11.`NAME` AS `LINENAME`,\nt1.`MDEPTID`,\nt1.`NAME`,\n(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`,\nt1.`ORDER`,\nt1.`order` AS `ORDER1`,\nt1.`ORGID`,\nt1.`PO`,\nt1.PO AS `POPK`,\n(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`,\nt1.`QD`,\nt1.QD AS `QDPK`,\nt1.`RD`,\nt1.RD AS `RDPK`,\n(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`,\n(select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`,\n(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`,\nt1.`STATUS`,\nt1.`SUBSTATUS`,\nt1.`TYPE`,\n(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`,\nt1.productsn\nFROM `zt_product` t1 \nLEFT JOIN zt_module t11 ON t1.LINE = t11.id",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATAQUERIES/ProductTeam/PSDEDQCODES/MYSQL5.json"
+}

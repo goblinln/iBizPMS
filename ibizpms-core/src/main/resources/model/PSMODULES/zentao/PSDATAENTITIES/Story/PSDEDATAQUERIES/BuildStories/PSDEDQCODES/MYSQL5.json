@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.`DELETED` = '0' \nAND FIND_IN_SET ( t1.ID, ( SELECT STORIES FROM ZT_BUILD WHERE ID = #{srf.datacontext.srfparentkey}  ) )",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`COLOR`,\t\n\tt1.`ESTIMATE`,\n\tt1.`ID`,\n\t(\nSELECT\n\t( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES \nFROM\n\tT_IBZ_FAVORITES t \nWHERE\n\tt.TYPE = 'story' \n\tAND t.ACCOUNT = #{srf.sessioncontext.srfloginname} \n\tAND t.OBJECTID = t1.id \n\t) AS `ISFAVORITES`,\t\n\tt11.`NAME` AS `MODULENAME`,\n\tt1.`OPENEDBY`,\t\n\tt1.`PRI`,\t\n\tt1.`STAGE`,\n\tt1.`STATUS`,\t\n\tt1.`TITLE`,\n\t'' AS isChild ,\n\tt1.STORYSN \nFROM\n\t`zt_story` t1\n\tLEFT JOIN zt_module t11 ON t1.MODULE = t11.MODULESN \n\tLEFT JOIN zt_story t21 ON t1.PARENT = t21.STORYSN \n\tLEFT JOIN zt_product t31 ON t1.PRODUCT = t31.productsn \n\tLEFT JOIN zt_branch t41 ON t1.BRANCH = t41.BRANCHSN\n\t\n\t",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEDATAQUERIES/BuildStories/PSDEDQCODES/MYSQL5.json"
+}

@@ -13,9 +13,6 @@
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json"
     },
     "name" : "附加逻辑",
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : false
   } ],
   "codeName" : "GetDraft",
@@ -24,13 +21,19 @@
   "name" : "GetDraft",
   "orderValue" : 41,
   "getPSDEActionInput" : {
-    "codeName" : "GetDraftInput",
-    "name" : "输入对象",
+    "name" : "GetDraftInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzWeeklyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetDraftResult",
-    "name" : "返回对象",
+    "name" : "GetDraftResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzWeeklyDTO"
+    },
     "type" : "DTO"
   },
   "builtinAction" : true

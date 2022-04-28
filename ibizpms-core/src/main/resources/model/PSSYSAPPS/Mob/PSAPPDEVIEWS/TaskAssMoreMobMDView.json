@@ -130,10 +130,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterGetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -141,10 +141,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "loaddraft",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGetDraft"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -367,6 +367,7 @@
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
+    "mobileControl" : true,
     "noTabHeader" : true,
     "name" : "searchform",
     "modelid" : "688525aeddf3ee62b32ef0636a35de03",
@@ -525,8 +526,13 @@
               "name" : "assignedto 不等于(<>) (closed)",
               "value" : "closed"
             } ],
+            "relatedItemNames" : [ "assignedto" ],
             "notMode" : false
-          } ]
+          } ],
+          "getPSRawItem" : {
+            "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
+            "name" : "rawitem1"
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "RAWITEM",
@@ -548,8 +554,12 @@
               "name" : "assignedto 等于(=) (closed)",
               "value" : "closed"
             } ],
+            "relatedItemNames" : [ "assignedto" ],
             "notMode" : false
-          } ]
+          } ],
+          "getPSRawItem" : {
+            "name" : "rawitem3"
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "RAWITEM",
@@ -570,8 +580,12 @@
               "logicType" : "SINGLE",
               "name" : "assignedto 值为空(Nil)"
             } ],
+            "relatedItemNames" : [ "assignedto" ],
             "notMode" : false
-          } ]
+          } ],
+          "getPSRawItem" : {
+            "name" : "rawitem2"
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -758,43 +772,6 @@
     } ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
-        }
-      }, {
-        "actionType" : "DEDATASET",
-        "name" : "fetch",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
-        }
-      }, {
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "dataAccessAction" : "READ",
@@ -815,6 +792,43 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -966,6 +980,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "START"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "TASK",
             "name" : "TASK",
@@ -1004,6 +1022,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ASSIGNTO"
+          },
           "getPSSysImage" : {
             "cssClass" : "people"
           },
@@ -1037,6 +1059,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "FINISH"
           },
           "getPSNavigateContexts" : [ {
             "key" : "TASK",
@@ -1082,6 +1108,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "PAUSE"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "TASK",
             "name" : "TASK",
@@ -1122,6 +1152,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CANCEL"
+          },
           "getPSSysImage" : {
             "cssClass" : "power"
           },
@@ -1159,6 +1193,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CLOSE"
           },
           "getPSSysImage" : {
             "cssClass" : "backspace"
@@ -1232,10 +1270,14 @@
     "actionRSMode" : 1,
     "codeName" : "Projects",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Project",
+    "minorDEName" : "ZT_PROJECT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -1246,10 +1288,14 @@
     "actionRSMode" : 1,
     "codeName" : "Tasks",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Task",
+    "minorDEName" : "ZT_TASK",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
@@ -1264,10 +1310,14 @@
     "actionRSMode" : 1,
     "codeName" : "Tasks",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Task",
+    "minorDEName" : "ZT_TASK",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"

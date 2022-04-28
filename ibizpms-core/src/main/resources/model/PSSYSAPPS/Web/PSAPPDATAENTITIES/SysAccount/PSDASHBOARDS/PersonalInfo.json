@@ -158,13 +158,13 @@
             },
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
-                "actionName" : "Update",
+                "actionName" : "GetDraft",
                 "actionType" : "DEACTION",
-                "dataAccessAction" : "UPDATE",
-                "name" : "update",
+                "dataAccessAction" : "CREATE",
+                "name" : "loaddraft",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "Update"
+                  "id" : "GetDraft"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -175,32 +175,6 @@
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "CREATE",
                 "name" : "loaddraftfrom",
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-                }
-              }, {
-                "actionName" : "Remove",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "DELETE",
-                "name" : "remove",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Remove"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-                }
-              }, {
-                "actionName" : "GetDraft",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "CREATE",
-                "name" : "loaddraft",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "GetDraft"
-                },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
@@ -226,6 +200,32 @@
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Create"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+                }
+              }, {
+                "actionName" : "Update",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "UPDATE",
+                "name" : "update",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Update"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+                }
+              }, {
+                "actionName" : "Remove",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "DELETE",
+                "name" : "remove",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Remove"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -903,6 +903,11 @@
                         "height" : 40,
                         "layout" : "FLEX"
                       },
+                      "getPSRawItem" : {
+                        "caption" : "个人贡献",
+                        "contentType" : "RAW",
+                        "name" : "rawitem1"
+                      },
                       "rawContent" : "个人贡献",
                       "rawItemHeight" : 40.0
                     } ],
@@ -947,6 +952,11 @@
                           "grow" : -1,
                           "height" : 30,
                           "layout" : "FLEX"
+                        },
+                        "getPSRawItem" : {
+                          "caption" : "创建的待办数",
+                          "contentType" : "RAW",
+                          "name" : "rawitem2"
                         },
                         "rawContent" : "创建的待办数",
                         "rawItemHeight" : 30.0
@@ -996,6 +1006,11 @@
                           "height" : 30,
                           "layout" : "FLEX"
                         },
+                        "getPSRawItem" : {
+                          "caption" : "创建的需求数",
+                          "contentType" : "RAW",
+                          "name" : "rawitem3"
+                        },
                         "rawContent" : "创建的需求数",
                         "rawItemHeight" : 30.0
                       }, {
@@ -1043,6 +1058,11 @@
                           "grow" : -1,
                           "height" : 30,
                           "layout" : "FLEX"
+                        },
+                        "getPSRawItem" : {
+                          "caption" : "完成的任务数",
+                          "contentType" : "RAW",
+                          "name" : "rawitem4"
                         },
                         "rawContent" : "完成的任务数",
                         "rawItemHeight" : 30.0
@@ -1109,6 +1129,11 @@
                           "height" : 30,
                           "layout" : "FLEX"
                         },
+                        "getPSRawItem" : {
+                          "caption" : "解决的bug数",
+                          "contentType" : "RAW",
+                          "name" : "rawitem5"
+                        },
                         "rawContent" : "解决的bug数",
                         "rawItemHeight" : 30.0
                       }, {
@@ -1157,6 +1182,11 @@
                           "height" : 30,
                           "layout" : "FLEX"
                         },
+                        "getPSRawItem" : {
+                          "caption" : "创建的用例数",
+                          "contentType" : "RAW",
+                          "name" : "rawitem6"
+                        },
                         "rawContent" : "创建的用例数",
                         "rawItemHeight" : 30.0
                       }, {
@@ -1197,43 +1227,6 @@
             },
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
-                "actionName" : "Update",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "UPDATE",
-                "name" : "update",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Update"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-                }
-              }, {
-                "actionType" : "DEDATASET",
-                "name" : "fetch",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "CountMyContribution"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-                }
-              }, {
-                "actionName" : "Remove",
-                "actionType" : "DEACTION",
-                "dataAccessAction" : "DELETE",
-                "name" : "remove",
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Remove"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-                }
-              }, {
                 "actionName" : "Get",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "READ",
@@ -1254,6 +1247,43 @@
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Create"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+                }
+              }, {
+                "actionName" : "Update",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "UPDATE",
+                "name" : "update",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Update"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+                }
+              }, {
+                "actionName" : "Remove",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "DELETE",
+                "name" : "remove",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Remove"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+                }
+              }, {
+                "actionType" : "DEDATASET",
+                "name" : "fetch",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "CountMyContribution"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,

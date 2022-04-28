@@ -24,6 +24,16 @@ export class LayoutTool {
         return cssStyle;
     }
 
+    public static clacStyleSize(size: number) {
+        if (Util.isNumber(size)) {
+            if (size > 0 && size <= 1) {
+                return `${size * 100}%`
+            } else if (size > 1) {
+                return `${size}px`
+            }
+        }
+    }
+
     /**
      * 获取flex布局样式2(子)
      *
@@ -35,8 +45,8 @@ export class LayoutTool {
     public static getFlexStyle2(layoutPos: any): string {
         if(layoutPos?.layout == 'FLEX'){
             let grow = !layoutPos?.grow || layoutPos.grow < 0 ? 0 : layoutPos.grow;
-            let width = Util.isNumber(layoutPos.width) && layoutPos.width > 0 ? layoutPos.width + 'px' : 'auto';
-            let height = Util.isNumber(layoutPos.height) && layoutPos.height > 0 ? layoutPos.height + 'px' : 'auto';
+            let width = this.clacStyleSize(layoutPos.width);
+            let height = this.clacStyleSize(layoutPos.height);
             return `flex-grow: ${grow}; width: ${width}; height: ${height}`;
         }
         return ''

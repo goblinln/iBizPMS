@@ -33,10 +33,6 @@ public class SysUserFallback implements FallbackFactory<SysUserFeignClient> {
         String finalErrorMessage = errorMessage;
         return new SysUserFeignClient(){
 
-            public Page<SysUser> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public SysUser create(SysUser sysuser) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class SysUserFallback implements FallbackFactory<SysUserFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysUser update(String userid, SysUser sysuser) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<SysUser> sysusers) {
+            public SysUser get(String userid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,15 +52,12 @@ public class SysUserFallback implements FallbackFactory<SysUserFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysUser get(String userid) {
+            public SysUser update(String userid, SysUser sysuser) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
-
-            public SysUser getDraft(SysUser entity){
+            public Boolean updateBatch(List<SysUser> sysusers) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
             public SysUser changePwd( String userid, SysUser sysuser) {
@@ -78,17 +68,6 @@ public class SysUserFallback implements FallbackFactory<SysUserFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-            public Object saveEntity(SysUser sysuser) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
-            public Boolean save(SysUser sysuser) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean saveBatch(List<SysUser> sysusers) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
             public Page<SysUser> searchDefault(SysUserSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
@@ -104,6 +83,27 @@ public class SysUserFallback implements FallbackFactory<SysUserFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
+
+            public SysUser getDraft(SysUser entity){
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+
+            public Object saveEntity(SysUser sysuser) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Boolean save(SysUser sysuser) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean saveBatch(List<SysUser> sysusers) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Page<SysUser> select() {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
 
 
         };

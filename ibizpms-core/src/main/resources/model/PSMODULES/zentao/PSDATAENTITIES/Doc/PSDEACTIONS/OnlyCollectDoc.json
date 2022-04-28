@@ -6,13 +6,15 @@
   "logicName" : "仅收藏文档",
   "name" : "OnlyCollectDoc",
   "getPSDEActionInput" : {
-    "codeName" : "OnlyCollectDocInput",
-    "name" : "输入对象",
+    "name" : "OnlyCollectDocInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "DocDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "OnlyCollectDocResult",
-    "name" : "返回对象",
+    "name" : "OnlyCollectDocResult",
     "type" : "VOID"
   }
 }

@@ -181,7 +181,9 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
@@ -740,11 +742,16 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "Monthly",
+  "dEAPITag" : "IBZ_API__MONTHLY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json",
   "enableUIActions" : 15,
   "logicName" : "月报",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "ISSUBMIT",
+    "codeName" : "Issubmit"
+  } ],
   "name" : "IBZ_MONTHLY",
   "getPSDEName" : "IBZ_MONTHLY",
   "getQuickSearchPSAppDEFields" : [ {
@@ -752,7 +759,9 @@
     "codeName" : "IbzMonthlyName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

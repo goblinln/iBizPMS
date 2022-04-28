@@ -130,7 +130,7 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/productbranches`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productbranches`, _data);
             return res;
         }
     this.log.warn([`[ProductBranch]>>>[Create函数]异常`]);
@@ -150,7 +150,7 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.productbranch) {
-            const res = await this.http.get(`/products/${_context.product}/productbranches/${_context.productbranch}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/productbranches/${encodeURIComponent(_context.productbranch)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -173,7 +173,7 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
         if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productbranches/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/productbranches/getdraft`, _data);
             return res;
         }
     this.log.warn([`[ProductBranch]>>>[GetDraft函数]异常`]);
@@ -193,7 +193,7 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.productbranch) {
-            const res = await this.http.delete(`/products/${_context.product}/productbranches/${_context.productbranch}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/productbranches/${encodeURIComponent(_context.productbranch)}`);
             return res;
         }
     this.log.warn([`[ProductBranch]>>>[Remove函数]异常`]);
@@ -215,7 +215,7 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
         if (_context.product && _context.productbranch) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/productbranches/${_context.productbranch}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/productbranches/${encodeURIComponent(_context.productbranch)}`, _data);
             return res;
         }
     this.log.warn([`[ProductBranch]>>>[Update函数]异常`]);
@@ -235,7 +235,7 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
     async FetchCurProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/productbranches/fetchcurproduct`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productbranches/fetchcurproduct`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCurProduct');
             return res;
         }
@@ -256,7 +256,7 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/productbranches/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productbranches/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
@@ -265,5 +265,24 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
             } catch (error) {
                 return this.handleResponseError(error);
             }
+    }
+
+    /**
+     * SaveBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductBranchServiceBase
+     */
+    public async SaveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            const res = await this.http.post(`/products/${_context.product}/productbranches/savebatch`,_data);
+            return res;
+        }
+        this.log.warn([`[ProductBranch]>>>[SaveBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

@@ -1,0 +1,55 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BCC`",
+    "name" : "BCC"
+  }, {
+    "expression" : "t1.`CC`",
+    "name" : "CC"
+  }, {
+    "expression" : "t1.`CONTENT`",
+    "name" : "CONTENT"
+  }, {
+    "expression" : "t1.`FROM`",
+    "name" : "FROM"
+  }, {
+    "expression" : "t1.`IBIZPRO_MESSAGEID`",
+    "name" : "IBIZPRO_MESSAGEID"
+  }, {
+    "expression" : "t1.`IBIZPRO_MESSAGENAME`",
+    "name" : "IBIZPRO_MESSAGENAME"
+  }, {
+    "expression" : "t1.`ISLINK`",
+    "name" : "ISLINK"
+  }, {
+    "expression" : "t1.`ISRETRY`",
+    "name" : "ISRETRY"
+  }, {
+    "expression" : "t1.`ISSYNC`",
+    "name" : "ISSYNC"
+  }, {
+    "expression" : "t1.`LINKURL`",
+    "name" : "LINKURL"
+  }, {
+    "expression" : "t1.`PARAM`",
+    "name" : "PARAM"
+  }, {
+    "expression" : "t1.`RETRYINTERVALTIME`",
+    "name" : "RETRYINTERVALTIME"
+  }, {
+    "expression" : "t1.`RETRYTIMES`",
+    "name" : "RETRYTIMES"
+  }, {
+    "expression" : "t1.`SUBJECT`",
+    "name" : "SUBJECT"
+  }, {
+    "expression" : "t1.`TO`",
+    "name" : "TO"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`BCC`,\nt1.`CC`,\nt1.`CONTENT`,\nt1.`FROM`,\nt1.`IBIZPRO_MESSAGEID`,\nt1.`IBIZPRO_MESSAGENAME`,\nt1.`ISLINK`,\nt1.`ISRETRY`,\nt1.`ISSYNC`,\nt1.`LINKURL`,\nt1.`PARAM`,\nt1.`RETRYINTERVALTIME`,\nt1.`RETRYTIMES`,\nt1.`SUBJECT`,\nt1.`TO`,\nt1.`TYPE`\nFROM `T_IBIZPRO_MESSAGE` t1 \n",
+  "id" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`ACCOUNT`,\n\tt1.`CREATEDATE`,\n\tt1.`CREATEMAN`,\n\tt1.`CREATEMANNAME`,\n\tt1.`DATE`,\n\tt1.`IBZ_MONTHLYID`,\n\tt1.`IBZ_MONTHLYNAME`,\n\tt1.`ISSUBMIT`,\n\tt1.`MAILTO`,\n\t( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`,\n\tt1.`REPORTTO`,\n\tt1.`THISMONTHTASK`,\n\tt1.`NEXTMONTHPLANSTASK`,\n\tt1.`UPDATEDATE`,\n\tt1.`UPDATEMAN`,\n\tt1.`UPDATEMANNAME` \nFROM\n\t`t_ibz_monthly` t1\n\tLEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_MONTHLYID \n\tAND t11.objectType = 'monthly' \n\tAND t11.action = 'read' \n\tAND t11.actor = #{srf.sessioncontext.srfloginname}",
+  "id" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEDATAQUERIES/MyMonthly/PSDEDQCODES/MYSQL5.json"
+}

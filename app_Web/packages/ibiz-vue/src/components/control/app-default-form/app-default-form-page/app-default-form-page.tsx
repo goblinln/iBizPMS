@@ -56,8 +56,8 @@ export class AppDefaultFormPage extends AppDefaultFormDetail {
         const { codeName } = this.detailsInstance;
         const { codeName: formCodeName, controlType } = this.controlInstance;
         const tabsName = `${this.controlInstance.getPSAppDataEntity()?.codeName?.toLowerCase()}_${controlType?.toLowerCase()}_${formCodeName?.toLowerCase()}`;
-        return  <tab-pane label={this.renderLabel} name={codeName} index={this.index} tab={tabsName} class={detailClassNames} style={this.runtimeModel.visible ? '' : 'display: none;'}>
-            {this.$slots.default}
+        return  <tab-pane label={this.renderLabel} name={codeName} index={this.index} tab={tabsName} class={detailClassNames} >
+            {this.runtimeModel.visible ? this.$slots.default : null}
         </tab-pane>
     }
 }

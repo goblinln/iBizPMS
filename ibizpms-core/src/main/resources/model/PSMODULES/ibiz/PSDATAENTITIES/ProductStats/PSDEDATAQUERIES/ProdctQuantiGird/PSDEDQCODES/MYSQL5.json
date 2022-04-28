@@ -1,0 +1,97 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED ='0')",
+    "name" : "ACTIVEBUGCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0')",
+    "name" : "ACTIVESTORYCNT"
+  }, {
+    "expression" : "1",
+    "name" : "ASSIGNTOMEBUGCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
+    "name" : "BUGCNT"
+  }, {
+    "expression" : "t1.`CODE`",
+    "name" : "CODE"
+  }, {
+    "expression" : "(SELECT t.name FROM zt_project t,zt_projectproduct t2 WHERE t.id=t2.project and t2.product = t1.id limit 1)",
+    "name" : "CURRPROJECT"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'developing' AND DELETED = '0')",
+    "name" : "DEVELOPINGSTORYCNT"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND  `STATUS`= 'normal' AND DELETED = '0')",
+    "name" : "NORMALRELEASECNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0')",
+    "name" : "NOTCLOSEDBUGCNT"
+  }, {
+    "expression" : "t1.`order`",
+    "name" : "ORDER1"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'planned' AND DELETED ='0')",
+    "name" : "PLANNEDSTORYCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_PROJECT t2 LEFT JOIN ZT_PROJECTPRODUCT t ON t2.ID = t.project WHERE t.PRODUCT = t1.id AND t2.DELETED = '0' and t2.`status` in( 'wait','doing') and t2.`END` < now() )",
+    "name" : "POSTPONEDPROJECTCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0')",
+    "name" : "PRODUCTPLANCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0')",
+    "name" : "RELEASECNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'released' AND DELETED = '0')",
+    "name" : "RELEASEDSTORYCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_PROJECT LEFT JOIN ZT_PROJECTPRODUCT ON  ZT_PROJECT.ID = ZT_PROJECTPRODUCT.project WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
+    "name" : "RESPROJECTCNT"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
+    "name" : "STORYCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'testing' AND DELETED = '0')",
+    "name" : "TESTINGSTORYCNT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0')",
+    "name" : "UNCONFIRMBUGCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_PROJECT LEFT JOIN ZT_PROJECTPRODUCT ON  ZT_PROJECT.ID = ZT_PROJECTPRODUCT.project WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0')",
+    "name" : "UNDONERESPROJECTCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID`  AND `END` > CURDATE() AND DELETED = '0')",
+    "name" : "UNENDPRODUCTPLANCNT"
+  }, {
+    "expression" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'wait' AND DELETED = '0')",
+    "name" : "WAITSTORYCNT"
+  }, {
+    "expression" : "(SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID`  AND DELETED = '0' and resolvedDate BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59'))",
+    "name" : "YESTERDAYCLOSEDBUGCNT"
+  }, {
+    "expression" : "5",
+    "name" : "YESTERDAYCONFIRMBUGCNT"
+  }, {
+    "expression" : "(SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'closed' AND DELETED = '0' and CLOSEDDATE BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59'))",
+    "name" : "YESTERDAYRESOLVEDBUGCNT"
+  } ],
+  "queryCode" : "SELECT t1.id,t1.`name`,IFNULL(t2.storycnt,0) as storycnt,IFNULL(t2.finishedStory,0) as finishedStorycnt,IFNULL(t3.bugcnt,0) as bugcnt,IFNULL(t3.resolvedBugCnt,0) as resolvedBugCnt,IFNULL(t3.importantbugcnt,0) as importantbugcnt,IFNULL(t4.bugstory,0)  as bugstory , CONCAT(IFNULL(ROUND(t3.importantbugcnt/t3.bugcnt,2)*100,0),'%') as ImportantBugpercent\nfrom zt_product t1 LEFT JOIN (\nSELECT t1.product,t1.`name`,\nIFNULL(COUNT(1),0) as storycnt ,\nSUM(IF(t1.stage in ('tested','developing','developed'),t1.num,0)) as finishedStory\nfrom (\nselect t1.`stage`,t1.closedReason,t1.id as storyid,t1.product,t2.`name`, 1 as num from zt_story t1 LEFT JOIN zt_product t2 on t1.product = t2.id where t2.id <> '0' and t1.deleted = '0' and t2.deleted = '0') t1 GROUP BY t1.product  ) t2 on t1.id = t2.product LEFT JOIN (\nSELECT t1.product,t1.`name`,\nIFNULL(COUNT(1),0) as bugcnt,\nSUM(IF(t1.`STATUS` = 'closed' and t1.resolution in ('fixed'),t1.num,0)) as resolvedBugCnt,\nSUM(IF(t1.pri >= 1 and t1.pri <= 3,t1.num,0)) as importantbugcnt from \n (\nSELECT t1.`STATUS`,t1.resolution,t1.pri,t1.id,t1.product,t2.`name`,1 as num from zt_bug t1 LEFT JOIN zt_product t2 on t1.product = t2.id where t2.id <> '0' and t1.deleted = '0' and t2.deleted = '0'\n) t1 GROUP BY t1.product) t3 on t1.id = t3.product  LEFT JOIN (\nSELECT t2.product,t2.`name`,COUNT(1) as bugstory from (\nSELECT t1.story,t1.product,t2.`name`,1 as num from zt_bug t1 LEFT JOIN zt_product t2 on t1.product = t2.id where t1.story <> 0 and t1.deleted = '0' and t2.deleted = '0' ) t2\nGROUP BY t2.product ) t4 on t1.id = t4.product where t1.deleted = '0'",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEDATAQUERIES/ProdctQuantiGird/PSDEDQCODES/MYSQL5.json"
+}

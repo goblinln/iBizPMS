@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Cycle_enable",
   "codeListType" : "STATIC",
   "codeName" : "Cycle_enable",
   "dynaInstMode" : 1,
@@ -12,8 +13,7 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "周期",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   } ],
   "enableCache" : true
 }

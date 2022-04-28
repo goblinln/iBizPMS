@@ -22,6 +22,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "ProductCreateStory",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchProductCreateStory"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {

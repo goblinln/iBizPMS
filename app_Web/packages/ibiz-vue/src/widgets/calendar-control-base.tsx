@@ -12,7 +12,7 @@ import { AppCalendarService } from '../ctrl-service';
 import { ContextMenu } from '../components/common/context-menu/context-menu';
 import { AppDefaultContextMenu } from '../components/control/app-default-contextmenu/app-default-contextmenu';
 import { AppViewLogicService } from '../app-service';
-import { IPSAppDataEntity, IPSDECalendar, IPSDECMUIActionItem, IPSDEContextMenu, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
+import { IPSAppDataEntity, IPSAppDECalendarView, IPSAppView, IPSAppViewRef, IPSDECalendar, IPSDECMUIActionItem, IPSDEContextMenu, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
 import moment from 'moment';
 
 /**
@@ -62,6 +62,14 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
      * @memberof CalendarControlBase
      */
     public thisRef: any = this;
+
+    /**
+     * 组件key值（用于刷新日历）
+     *
+     * @type {any}
+     * @memberof CalendarControlBase
+     */
+    public UUKey: string = Util.createUUID();
 
     /**
      * 引用插件集合
@@ -542,7 +550,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         // 处理请求参数
         let start = (fetchInfo && fetchInfo.start) ? Util.dateFormat(fetchInfo.start) : null;
         let end = (fetchInfo && fetchInfo.end) ? Util.dateFormat(fetchInfo.end) : null;
-        let arg = { start: start, end: end };
+        let arg = { query_start: start, query_end: end };
         if(fetchInfo && fetchInfo.query){
             Object.assign(arg,{query : fetchInfo.query});
         }
@@ -677,7 +685,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
      * @param {*} $event timeline事件对象
      * @memberof CalendarControlBase
      */
-    public onEventClick($event: any, isOriginData:boolean = false, $event2?: any) {
+    public async onEventClick($event: any, isOriginData:boolean = false, $event2?: any) {
         // 处理event数据
         let event: any = {};
         if(isOriginData){
@@ -706,7 +714,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         this.handleEventSelectStyle($event);
         // 处理上下文数据
         let _this: any = this;
-        let view: any = {};
+        let view: IPSAppView | null | undefined;
         let _context: any = Object.assign({},this.context);
         let _viewparams:any = Object.assign({start:event.start,end:event.end},this.viewparams);
         const item: IPSSysCalendarItem = (((this.controlInstance as IPSSysCalendar).getPSSysCalendarItems() || []) as Array<IPSSysCalendarItem>).find((_item: IPSSysCalendarItem) => {
@@ -716,27 +724,31 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
             const codeName = ((item.getPSAppDataEntity() as IPSAppDataEntity)?.codeName as string).toLowerCase();
             if(codeName) {
                 _context[codeName] = event[codeName];
-                view = this.getEditView(codeName);
             }
+            view = this.getEditView(item);
         }
+        await view?.fill();
         // 导航栏中不需要打开视图，只要抛出选中数据
         this.$emit("ctrl-event", {controlname: this.controlInstance.name, action: "selectionchange", data: this.selections});
         if (this.isSelectFirstDefault) {
             return;
         }
         // 根据打开模式打开视图
-        if(!view.viewname){
+        if(!view){
             return;
-        } else if (Object.is(view.placement, 'INDEXVIEWTAB') || Util.isEmpty(view.placement)) {
-            const routePath = ViewTool.buildUpRoutePath(_this.$route, this.context, view.deResParameters, view.parameters, [Util.deepCopy(_context)] , _viewparams);
+        } else if (Object.is(view.openMode, 'INDEXVIEWTAB') || Util.isEmpty(view.openMode)) {
+            const deResParameters: any[] = [];
+            const parameters: any[] = [];
+            await this.processingParameter(this.context, view, deResParameters, parameters);
+            const routePath = ViewTool.buildUpRoutePath(_this.$route, this.context, deResParameters, parameters, [Util.deepCopy(_context)] , _viewparams);
             _this.$router.push(routePath);
         } else {
             let container: Subject<any> = new Subject();
-            if (Object.is(view.placement, 'POPOVER')) {
+            if (Object.is(view.openMode, 'POPOVER')) {
                 container = _this.$apppopover.openPop(isOriginData ? $event2 : $event.jsEvent, view,Util.deepCopy(_context), _viewparams);
-            } else if (Object.is(view.placement, 'POPUPMODAL')) {
+            } else if (Object.is(view.openMode, 'POPUPMODAL')) {
                 container = _this.$appmodal.openModal(view, Util.deepCopy(_context), _viewparams);
-            } else if (view.placement.startsWith('DRAWER')) {
+            } else if (view.openMode.startsWith('DRAWER')) {
                 container = _this.$appdrawer.openDrawer(view,  Util.getViewProps(_context, _viewparams));
             }
             container.subscribe((result: any) => {
@@ -748,6 +760,45 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
             });
         }
     }
+
+    /**
+     * 整合参数
+     *
+     * @memberof AppFuncService
+     */
+     public async processingParameter(context: any, appView: any, deResParameters: any[], parameters: any[]) {
+      let params = [];
+      if (appView.getPSAppDataEntity()) {
+          let result: IPSAppDataEntity = appView.getPSAppDataEntity();
+          await result.fill();
+          if (!result) {
+              console.error('未找到应用实体');
+              return;
+          }
+          if (
+              (appView.openMode && (appView.openMode == 'INDEXVIEWTAB' || appView.openMode == 'POPUPAPP' || appView.openMode == '')) ||
+              !appView.openMode
+          ) {
+              params = [
+                  {
+                      pathName: Util.srfpluralize(result.codeName).toLowerCase(),
+                      parameterName: result.codeName.toLowerCase(),
+                  },
+                  { pathName: 'views', parameterName: appView.getPSDEViewCodeName().toLowerCase() },
+              ];
+          } else {
+              params = [
+                  {
+                      pathName: Util.srfpluralize(result.codeName).toLowerCase(),
+                      parameterName: result.codeName.toLowerCase(),
+                  },
+              ];
+          }
+      } else {
+          params = [{ pathName: 'views', parameterName: appView.name.toLowerCase() }];
+      }
+      Object.assign(parameters, params);
+  }
 
     /**
      * 日历刷新
@@ -766,7 +817,9 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
             }
         } else {
             let calendarApi = (this.$refs[this.controlInstance?.codeName] as any).getApi();
-            calendarApi.refetchEvents();
+            calendarApi.refetchEvents().then(()=>{
+                this.UUKey = Util.createUUID();
+            });
         }
         this.$forceUpdate();
     }
@@ -1097,10 +1150,14 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
      * @return {*} 
      * @memberof CalendarControlBase
      */
-    public getEditView(deName: string) {
-        let view: any = {};
-        //TODO
-        return view;
+    public getEditView(item: IPSSysCalendarItem) {
+        let parentModel: IPSAppDECalendarView = (this.controlInstance as any).parentModel;
+        if (parentModel && parentModel?.getPSAppViewRefs?.()?.length) {
+          const viewRef: IPSAppViewRef = (parentModel as any).getPSAppViewRefs().find((element: any) => {
+              return element.id.endsWith(`@${item.id}`)
+          })
+          return viewRef.getRefPSAppView();
+        }
     }
 
     /**

@@ -7,6 +7,10 @@ logging:
 #zuul网关路由设置
 zuul:
   routes:
+    wfcore:
+      path: /wfcore/**
+      serviceId: ${ibiz.ref.service.wf:ibzwf-api}
+      stripPrefix: true
     appdata:
       path: /appdata
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
@@ -62,10 +66,6 @@ zuul:
     lite-core:
       path: /lite/**
       serviceId: ${ibiz.ref.service.lite:ibzlite-api}
-      stripPrefix: false
-    sysauthlog:
-      path: /sysauthlogs
-      serviceId: ${ibiz.ref.service.uaa:ibzuaa-api}
       stripPrefix: false
     ibz_monthly:
       path: /monthlies/**

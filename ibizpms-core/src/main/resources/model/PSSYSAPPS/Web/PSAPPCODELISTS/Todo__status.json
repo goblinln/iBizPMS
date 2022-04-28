@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Todo__status",
   "codeListType" : "STATIC",
   "codeName" : "Todo__status",
   "dynaInstMode" : 1,
@@ -8,25 +9,21 @@
   "getPSCodeItems" : [ {
     "codeName" : "Wait",
     "text" : "未开始",
-    "value" : "wait",
-    "includeBeginValue" : true
+    "value" : "wait"
   }, {
     "codeName" : "Doing",
     "color" : "rgba(245, 18, 18, 1)",
     "text" : "进行中",
-    "value" : "doing",
-    "includeBeginValue" : true
+    "value" : "doing"
   }, {
     "codeName" : "Done",
     "color" : "rgba(4, 251, 17, 1)",
     "text" : "已完成",
-    "value" : "done",
-    "includeBeginValue" : true
+    "value" : "done"
   }, {
     "codeName" : "Closed",
     "text" : "已关闭",
-    "value" : "closed",
-    "includeBeginValue" : true
+    "value" : "closed"
   } ],
   "enableCache" : true
 }

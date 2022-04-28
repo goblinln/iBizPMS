@@ -1,20 +1,28 @@
 {
+  "codeListTag" : "zentao__NeedNotReview",
   "codeListType" : "STATIC",
   "codeName" : "NeedNotReview",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/NeedNotReview.json",
   "emptyText" : "未定义",
+  "name" : "不需要评审",
   "getPSCodeItems" : [ {
     "codeName" : "Item_0",
     "text" : "不需要评审",
-    "value" : "0",
-    "includeBeginValue" : true
+    "value" : "0"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

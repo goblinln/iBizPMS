@@ -1,0 +1,37 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`AGENTBEGIN`",
+    "name" : "AGENTBEGIN"
+  }, {
+    "expression" : "t1.`AGENTEND`",
+    "name" : "AGENTEND"
+  }, {
+    "expression" : "t1.`AGENTUSER`",
+    "name" : "AGENTUSER"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`CREATEMANNAME`",
+    "name" : "CREATEMANNAME"
+  }, {
+    "expression" : "t1.`IBZ_AGENTID`",
+    "name" : "IBZ_AGENTID"
+  }, {
+    "expression" : "t1.`IBZ_AGENTNAME`",
+    "name" : "IBZ_AGENTNAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`AGENTBEGIN`,\nt1.`AGENTEND`,\nt1.`AGENTUSER`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CREATEMANNAME`,\nt1.`IBZ_AGENTID`,\nt1.`IBZ_AGENTNAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_IBZ_AGENT` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

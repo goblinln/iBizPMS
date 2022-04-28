@@ -1,0 +1,100 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "0",
+    "name" : "ACTIVESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "BUGCNT"
+  }, {
+    "expression" : "0",
+    "name" : "CHANGEDSTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "CLOSEDSTAGESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "CLOSEDSTAGESTORYHOURS"
+  }, {
+    "expression" : "0",
+    "name" : "CLOSEDSTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "DEVELOPEDSTAGESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "DEVELOPEDSTAGESTORYHOURS"
+  }, {
+    "expression" : "0",
+    "name" : "DEVELOPINGSTAGESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "DEVELOPINGSTAGESTORYHOURS"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "0",
+    "name" : "PLAN"
+  }, {
+    "expression" : "0",
+    "name" : "PLANEDSTAGESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "PLANEDSTAGESTORYHOURS"
+  }, {
+    "expression" : "t1.`PO`",
+    "name" : "PO"
+  }, {
+    "expression" : "0",
+    "name" : "PROJECTEDSTAGESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "PROJECTEDSTAGESTORYHOURS"
+  }, {
+    "expression" : "0",
+    "name" : "RELEASEDSTAGESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "RELEASEDSTAGESTORYHOURS"
+  }, {
+    "expression" : "0",
+    "name" : "STORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "TESTEDSTAGESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "TESTEDSTAGESTORYHOURS"
+  }, {
+    "expression" : "0",
+    "name" : "TESTINGSTAGESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "TESTINGSTAGESTORYHOURS"
+  }, {
+    "expression" : "0",
+    "name" : "TOTALHOURS"
+  }, {
+    "expression" : "0",
+    "name" : "VERIFIEDSTAGESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "VERIFIEDSTAGESTORYHOURS"
+  }, {
+    "expression" : "0",
+    "name" : "WAITSTAGESTORYCNT"
+  }, {
+    "expression" : "0",
+    "name" : "WAITSTAGESTORYHOURS"
+  }, {
+    "expression" : "0",
+    "name" : "WAITSTORYCNT"
+  } ],
+  "queryCode" : "SELECT\n0 AS `ACTIVESTORYCNT`,\n0 AS `BUGCNT`,\n0 AS `CHANGEDSTORYCNT`,\n0 AS `CLOSEDSTAGESTORYCNT`,\n0 AS `CLOSEDSTAGESTORYHOURS`,\n0 AS `CLOSEDSTORYCNT`,\n0 AS `DEVELOPEDSTAGESTORYCNT`,\n0 AS `DEVELOPEDSTAGESTORYHOURS`,\n0 AS `DEVELOPINGSTAGESTORYCNT`,\n0 AS `DEVELOPINGSTAGESTORYHOURS`,\nt1.`ID`,\nt1.`NAME`,\n0 AS `PLAN`,\n0 AS `PLANEDSTAGESTORYCNT`,\n0 AS `PLANEDSTAGESTORYHOURS`,\nt1.`PO`,\n0 AS `PROJECTEDSTAGESTORYCNT`,\n0 AS `PROJECTEDSTAGESTORYHOURS`,\n0 AS `RELEASEDSTAGESTORYCNT`,\n0 AS `RELEASEDSTAGESTORYHOURS`,\n0 AS `STORYCNT`,\n0 AS `TESTEDSTAGESTORYCNT`,\n0 AS `TESTEDSTAGESTORYHOURS`,\n0 AS `TESTINGSTAGESTORYCNT`,\n0 AS `TESTINGSTAGESTORYHOURS`,\n0 AS `TOTALHOURS`,\n0 AS `VERIFIEDSTAGESTORYCNT`,\n0 AS `VERIFIEDSTAGESTORYHOURS`,\n0 AS `WAITSTAGESTORYCNT`,\n0 AS `WAITSTAGESTORYHOURS`,\n0 AS `WAITSTORYCNT`\nFROM `zt_product` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -6,13 +6,15 @@
   "logicName" : "定时推送待阅提醒用户日报",
   "name" : "PushUserDaily",
   "getPSDEActionInput" : {
-    "codeName" : "PushUserDailyInput",
-    "name" : "输入对象",
+    "name" : "PushUserDailyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzDailyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "PushUserDailyResult",
-    "name" : "返回对象",
+    "name" : "PushUserDailyResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

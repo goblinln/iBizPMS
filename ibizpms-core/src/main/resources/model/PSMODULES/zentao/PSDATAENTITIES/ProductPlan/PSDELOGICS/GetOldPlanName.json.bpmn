@@ -11,13 +11,13 @@
                             <tns:global identifier="productplangetoldplannamedefault" type="cn.ibizlab.pms.core.zentao.domain.ProductPlan" />
             </extensionElements>
                         <startEvent id="begin" isInterrupting="true"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productplangetoldplannamerawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取名称"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productplangetoldplannameprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="重置主键"/>
                         <endEvent id="prepareparam1_end" name="end"/>
                         <sequenceFlow id="prepareparam1_end_line" sourceRef="prepareparam1" targetRef="prepareparam1_end"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productplangetoldplannamerawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取名称"/>
-                    <sequenceFlow id="rawsqlcall1_prepareparam1" sourceRef="rawsqlcall1" targetRef="prepareparam1">
-                    </sequenceFlow>
                     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+                    </sequenceFlow>
+                    <sequenceFlow id="rawsqlcall1_prepareparam1" sourceRef="rawsqlcall1" targetRef="prepareparam1">
                     </sequenceFlow>
         </process>
     </definitions>

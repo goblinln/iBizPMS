@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\nt1.`ID`,\n(SELECT SUM(CONSUMED) FROM ZT_TASK WHERE PROJECT = t1.`ID`) AS `TIME`,\n'CONSUMED' AS `TYPE`\nFROM `zt_project` t1 WHERE t1.`ID` =  ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECTSTATS\",\"dename\":\"IBZ_PROJECTSTATS\"}')} AND t1.DELETED = 0\nUNION ALL \nSELECT\nt2.`ID`,\n(SELECT SUM(`LEFT`) FROM ZT_TASK WHERE PROJECT = t2.`ID` AND t1.DELETED = 0) AS `TIME`,\n'LEFT' AS `TYPE`\nFROM `zt_project` t2 WHERE t2.`ID` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECTSTATS\",\"dename\":\"IBZ_PROJECTSTATS\"}')}  AND t1.DELETED = 0\n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEDATAQUERIES/TaskTime/PSDEDQCODES/MYSQL5.json"
+}

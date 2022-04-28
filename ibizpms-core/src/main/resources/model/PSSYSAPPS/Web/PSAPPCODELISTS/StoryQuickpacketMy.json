@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__StoryQuickpacketMy",
   "codeListType" : "STATIC",
   "codeName" : "StoryQuickpacketMy",
   "dynaInstMode" : 1,
@@ -14,26 +15,22 @@
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指给我",
     "value" : "TOME",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Icreate",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "text" : "由我创建",
-    "value" : "ICREATE",
-    "includeBeginValue" : true
+    "value" : "ICREATE"
   }, {
     "codeName" : "Ireview",
     "data" : "{\"n_reviewedby_eq\":\"%srfloginname%\"}",
     "text" : "由我评审",
-    "value" : "IREVIEW",
-    "includeBeginValue" : true
+    "value" : "IREVIEW"
   }, {
     "codeName" : "Iclose",
     "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
     "text" : "由我关闭",
-    "value" : "ICLOSE",
-    "includeBeginValue" : true
+    "value" : "ICLOSE"
   } ],
   "enableCache" : true
 }

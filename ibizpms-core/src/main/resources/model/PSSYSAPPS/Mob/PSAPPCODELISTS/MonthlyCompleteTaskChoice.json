@@ -1,5 +1,6 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "ibiz__MonthlyCompleteTaskChoice",
   "codeListType" : "DYNAMIC",
   "codeName" : "MonthlyCompleteTaskChoice",
   "dynaInstMode" : 1,

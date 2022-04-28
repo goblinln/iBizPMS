@@ -7,14 +7,16 @@
   "name" : "CreateTemp",
   "orderValue" : 2,
   "getPSDEActionInput" : {
-    "codeName" : "CreateTempInput",
-    "name" : "输入对象",
+    "name" : "CreateTempInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CreateTempResult",
-    "name" : "返回对象",
+    "name" : "CreateTempResult",
     "type" : "VOID"
   },
   "tempDataMode" : 2,

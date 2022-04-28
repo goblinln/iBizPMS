@@ -21,10 +21,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibzou-api:ibzou-api}", contextId = "SysOrganization", fallback = SysOrganizationFallback.class)
 public interface SysOrganizationFeignClient {
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/select")
-    Page<SysOrganization> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations")
     SysOrganization create(@RequestBody SysOrganization sysorganization);
 
@@ -32,11 +28,8 @@ public interface SysOrganizationFeignClient {
     Boolean createBatch(@RequestBody List<SysOrganization> sysorganizations);
 
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/{orgid}")
-    SysOrganization update(@PathVariable("orgid") String orgid,@RequestBody SysOrganization sysorganization);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/batch")
-    Boolean updateBatch(@RequestBody List<SysOrganization> sysorganizations);
+    @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/{orgid}")
+    SysOrganization get(@PathVariable("orgid") String orgid);
 
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/{orgid}")
@@ -46,16 +39,24 @@ public interface SysOrganizationFeignClient {
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/{orgid}")
-    SysOrganization get(@PathVariable("orgid") String orgid);
+    @RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/{orgid}")
+    SysOrganization update(@PathVariable("orgid") String orgid,@RequestBody SysOrganization sysorganization);
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/getdraft")
-    SysOrganization getDraft(SysOrganization entity);
+    @RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/batch")
+    Boolean updateBatch(@RequestBody List<SysOrganization> sysorganizations);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/checkkey")
     Boolean checkKey(@RequestBody SysOrganization sysorganization);
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/fetchdefault")
+    Page<SysOrganization> searchDefault(@SpringQueryMap SysOrganizationSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/getdraft")
+    SysOrganization getDraft(SysOrganization entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/save")
@@ -67,9 +68,8 @@ public interface SysOrganizationFeignClient {
     Boolean saveBatch(@RequestBody List<SysOrganization> sysorganizations);
 
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/fetchdefault")
-    Page<SysOrganization> searchDefault(@SpringQueryMap SysOrganizationSearchContext context);
+    @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/select")
+    Page<SysOrganization> select();
 
 
 

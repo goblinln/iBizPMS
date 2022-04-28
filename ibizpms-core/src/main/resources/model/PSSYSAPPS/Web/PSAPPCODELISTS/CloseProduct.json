@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__CloseProduct",
   "codeListType" : "STATIC",
   "codeName" : "CloseProduct",
   "dynaInstMode" : 1,
@@ -12,8 +13,7 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "关闭产品",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   } ],
   "enableCache" : true
 }

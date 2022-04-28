@@ -6,13 +6,15 @@
   "logicName" : "编辑时获取完成任务",
   "name" : "EditGetCompleteTask",
   "getPSDEActionInput" : {
-    "codeName" : "EditGetCompleteTaskInput",
-    "name" : "输入对象",
+    "name" : "EditGetCompleteTaskInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzMonthlyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "EditGetCompleteTaskResult",
-    "name" : "返回对象",
+    "name" : "EditGetCompleteTaskResult",
     "type" : "VOID"
   }
 }

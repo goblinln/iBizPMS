@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "(t1.Today = #{srf.n_today_eq} or t1.yesterday = #{srf.n_yesterday_eq} or t1.thisweek= #{srf.n_thisweek_eq} or t1.lastweek= #{srf.n_lastweek_eq} or t1.thismonth = #{srf.n_thismonth_eq} or t1.lastmonth= #{srf.n_lastmonth_eq} or (#{srf.n_today_eq} is null and #{srf.n_yesterday_eq} is null and #{srf.n_thisweek_eq} is null and #{srf.n_lastweek_eq} is null and #{srf.n_thismonth_eq} is null and  \n #{srf.n_lastmonth_eq} is null))",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "select t1.* from (\nSELECT\n\tt1.`ACTION`,\n\tt1.actor AS actor,\n\tt1.`DATE`,\n\tt1.`ID`,\n\tt1.`OBJECTID`,\n\tt1.`OBJECTTYPE`,\n\tt1.`PRODUCT`,\n\tt1.`PROJECT`,\n\tt1.`READ`,\n\tt1.extra,\nCASE\n\t\n\tWHEN t1.objectType IN ( 'bug', 'story', 'release' ) \n\tAND t1.action IN ( 'changestatus', 'resolved', 'closed', 'reviewed' ) \n\tAND t1.extra <> '' THEN\n\t\tCONCAT_WS( '_', t1.objectType, t1.action, t1.extra ) ELSE '' \n\tEND AS ActionManner,\n\t( CASE WHEN DATE_FORMAT( t1.date, '%Y-%m-%d' ) = DATE_FORMAT( now( ), '%Y-%m-%d' ) THEN '1' END ) AS Today,\n\tt1.id AS srfkey,\n\t(\n\tCASE\n\t\t\t\n\t\t\tWHEN DATE_FORMAT( t1.date, '%Y-%m-%d' ) = DATE_FORMAT( DATE_ADD( now( ), INTERVAL - 1 DAY ), '%Y-%m-%d' ) THEN\n\t\t\t'1' \n\t\tEND \n\t\t) AS yesterday,\n\t\t( CASE WHEN YEARWEEK( now( ) ) = YEARWEEK( t1.date ) THEN '1' END ) AS thisweek,\n\t\t(\n\t\tCASE\n\t\t\t\t\n\t\t\t\tWHEN YEARWEEK( DATE_ADD( now( ), INTERVAL - 1 WEEK ) ) = YEARWEEK( t1.date ) THEN\n\t\t\t\t'1' \n\t\t\tEND \n\t\t\t) AS lastweek,\n\t\t\t( CASE WHEN DATE_FORMAT( t1.date, '%Y-%m' ) = DATE_FORMAT( now( ), '%Y-%m' ) THEN '1' END ) AS thismonth,\n\t\t\t(\n\t\t\tCASE\n\t\t\t\t\t\n\t\t\t\t\tWHEN DATE_FORMAT( t1.date, '%Y-%m' ) = DATE_FORMAT( DATE_ADD( now( ), INTERVAL - 1 MONTH ), '%Y-%m' ) THEN\n\t\t\t\t\t'1' \n\t\t\t\tEND \n\t\t\t\t) AS lastmonth ,\n                               t1.ACTIONSN,\nt1.SRFDCID\n\t\t\tFROM\n\t\t\t\t`zt_action` t1 where ( t1.`PROJECT` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_ACTION\"}')} ) ) t1\n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEDATAQUERIES/ProjectTrends/PSDEDQCODES/MYSQL5.json"
+}

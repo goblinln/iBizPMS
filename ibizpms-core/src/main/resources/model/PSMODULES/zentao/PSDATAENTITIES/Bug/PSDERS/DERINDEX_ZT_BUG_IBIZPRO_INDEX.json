@@ -55,6 +55,5 @@
     "name" : "project=project"
   } ],
   "typeValue" : "bug",
-  "inherit" : false,
   "virtual" : true
 }

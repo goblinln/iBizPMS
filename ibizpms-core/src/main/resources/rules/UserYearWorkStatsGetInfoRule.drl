@@ -38,21 +38,21 @@ ruleflow-group "useryearworkstatsgetinfodeaction2"
     update(useryearworkstatsgetinfodefault);//更新fact中变量值
     end
 
-//逻辑处理节点[获取用户信息]
-rule "deaction1"
-ruleflow-group "useryearworkstatsgetinfodeaction1"
-    when
-    then
-    cn.ibizlab.pms.util.helper.CachedBeanCopier.copy(useryearworkstatsservice.get(useryearworkstatsgetinfodefault.getId()),useryearworkstatsgetinfodefault);
-    update(useryearworkstatsgetinfodefault);//更新fact中变量值
-    end
-
 //逻辑处理节点[获取测试用户信息]
 rule "deaction3"
 ruleflow-group "useryearworkstatsgetinfodeaction3"
     when
     then
     useryearworkstatsservice.getQaInfomation(useryearworkstatsgetinfodefault);
+    update(useryearworkstatsgetinfodefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[获取用户信息]
+rule "deaction1"
+ruleflow-group "useryearworkstatsgetinfodeaction1"
+    when
+    then
+    cn.ibizlab.pms.util.helper.CachedBeanCopier.copy(useryearworkstatsservice.get(useryearworkstatsgetinfodefault.getId()),useryearworkstatsgetinfodefault);
     update(useryearworkstatsgetinfodefault);//更新fact中变量值
     end
 

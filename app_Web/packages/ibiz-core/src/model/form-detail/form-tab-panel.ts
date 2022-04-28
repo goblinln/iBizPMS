@@ -44,7 +44,12 @@ export class FormTabPanelModel extends FormDetailModel {
         super(opts);
         this.tabPages = [...opts.tabPages];
         if (this.tabPages.length > 0) {
-            this.activatedPage = this.tabPages[0].name;
+            const activate = this.form.viewparams?.srftabactivate?.toLowerCase() || this.form.viewparams?.srfnavtag?.toLowerCase();
+            if (activate) {
+              this.activatedPage = activate;
+            } else {
+              this.activatedPage = this.tabPages[0].name;
+            }
         }
     }
 

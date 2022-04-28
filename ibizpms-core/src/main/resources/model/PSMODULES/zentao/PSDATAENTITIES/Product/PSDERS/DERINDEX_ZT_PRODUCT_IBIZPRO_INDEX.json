@@ -45,6 +45,5 @@
     "name" : "PRODUCT=ID"
   } ],
   "typeValue" : "product",
-  "inherit" : false,
   "virtual" : true
 }

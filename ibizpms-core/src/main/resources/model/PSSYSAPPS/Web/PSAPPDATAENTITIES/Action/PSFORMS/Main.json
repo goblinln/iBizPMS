@@ -235,6 +235,7 @@
               "glyph" : "xf08b@FontAwesome",
               "cssClass" : "fa fa-sign-out"
             },
+            "predefinedType" : "EDITVIEW_EXITACTION",
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
               "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
@@ -279,6 +280,7 @@
             "getPSSysImage" : {
               "cssClass" : "sx-tb-saveandclose"
             },
+            "predefinedType" : "EDITVIEW_SAVEANDEXITACTION",
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
               "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"

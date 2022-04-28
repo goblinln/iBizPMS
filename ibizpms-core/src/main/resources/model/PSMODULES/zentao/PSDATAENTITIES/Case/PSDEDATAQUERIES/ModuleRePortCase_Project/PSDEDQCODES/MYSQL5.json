@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t61.ID= ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT \nt1.`AUTO`,\nt1.`id`,\nt1.`BRANCH`,\nt1.`COLOR`,\nt1.`DELETED`,\nt1.`FRAME`,\nt1.`FREQUENCY`,\nt1.`FROMBUG`,\nt1.`FROMCASEID`,\nt1.`FROMCASEVERSION`,\nt1.`HOWRUN`,\nt1.`CASESN`,\n0 AS `ISFAVORITES`,\nt1.`KEYWORDS`,\nt1.`LASTEDITEDBY`,\nt1.`LASTEDITEDDATE`,\nt1.LASTRUNDATE AS `LASTRUNDATE`,\nt1.`LASTRUNNER`,\nt1.LASTRUNRESULT AS `LASTRUNRESULT`,\n(case when t1.`LASTRUNRESULT` = '' or t1.`LASTRUNRESULT` is null then 'no' else t1.`LASTRUNRESULT` end) AS `LASTRUNRESULT1`,\nt1.`LIB`,\nt41.`NAME` AS `LIBNAME`,\nt1.`LINKCASE`,\nt1.`MODULE`,\n\tCONCAT(\n\t'/',\n case when\t(\nSELECT\n\tGROUP_CONCAT( tt.NAME SEPARATOR '/' ) \nFROM\n\tzt_module tt \nWHERE\n\tFIND_IN_SET( tt.ID, t11.path )  and tt.deleted = '0' \n\tAND tt.type = 'story' \nGROUP BY\n\ttt.root \n\tLIMIT 0,1\n\t) is not null then (\nSELECT\n\tGROUP_CONCAT( tt.NAME SEPARATOR '/' ) \nFROM\n\tzt_module tt \nWHERE\n\tFIND_IN_SET( tt.ID, t11.path ) \n\tAND tt.type = 'story' \nGROUP BY\n\ttt.root \n\tLIMIT 0,1\n\t) when t11.`name` is null then '' else t11.`name` end\n\t) AS `MODULENAME`,\nt1.`OPENEDBY`,\nt1.`OPENEDDATE`,\nt1.`ORDER`,\nt1.`PATH`,\nt1.`PRI`,\nt1.`PRODUCT`,\nt31.`NAME` AS `PRODUCTNAME`,\n(SELECT COUNT(1) FROM zt_testresult WHERE `case` = t1.`ID` ) AS `RESULTCNT`,\n(SELECT COUNT(1) FROM zt_testresult WHERE `case` = t1.`ID`  and caseResult in('fail','blocked') ) AS `RESULTFALICNT`,\nt1.`REVIEWEDBY`,\nt1.`REVIEWEDDATE`,\nt1.`SCRIPTEDBY`,\nt1.`SCRIPTEDDATE`,\nt1.`SCRIPTLOCATION`,\nt1.`SCRIPTSTATUS`,\nt1.`STAGE`,\nt1.`STATUS`,\n(case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end ) AS `STATUS1`,\n(SELECT COUNT(1) FROM zt_casestep WHERE `case` = t1.`ID` AND version = t1.`VERSION` ) AS `STEPCNT`,\nt1.`STORY`,\nt21.`TITLE` AS `STORYNAME`,\nt1.`STORYVERSION`,\nt1.`SUBSTATUS`,\nt1.`TITLE`,\n(SELECT COUNT(1) FROM zt_bug WHERE `case` = t1.`ID` ) AS `TOBUGCNT`,\nt1.`TYPE`,\nt1.`VERSION`\nFROM `zt_case` t1 \nLEFT JOIN zt_module t11 ON t1.MODULE = t11.ID\nLEFT JOIN zt_story t21 ON t1.STORY = t21.ID\nLEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID\nLEFT JOIN zt_testsuite t41 ON t1.LIB = t41.ID\nLEFT JOIN zt_testrun t51 on t51.`case` = t1.ID\nLEFT JOIN zt_testreport t61 on FIND_IN_SET(t51.task, t61.tasks)",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEDATAQUERIES/ModuleRePortCase_Project/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,20 +1,28 @@
 {
+  "codeListTag" : "ibizpro__Ibz__systpl__type",
   "codeListType" : "STATIC",
   "codeName" : "Ibz__systpl__type",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSCODELISTS/Ibz__systpl__type.json",
   "emptyText" : "未定义",
+  "name" : "IBIZ模板类型",
   "getPSCodeItems" : [ {
     "codeName" : "Tpltype__freemarker",
     "text" : "Freemarker",
-    "value" : "tpltype__freemarker",
-    "includeBeginValue" : true
+    "value" : "tpltype__freemarker"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

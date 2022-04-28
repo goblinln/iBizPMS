@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.module = ${srfdatacontext('id','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "select t1.* from (select null as `ACL`,\n( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, \nnull as `ADDEDBY`,\nnull as `ADDEDDATE`,\n'0' as `DELETED`,\nnull as `EDITEDBY`,\nnull as `EDITEDDATE`,\nnull as  `GROUPS`,\nt1.`ID`,\n''`KEYWORDS`,\n${srfdatacontext('lib','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')} as `LIB`,\n'' AS `LIBNAME`,\n${srfdatacontext('id','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')} as `MODULE`,\n'' AS `MODULENAME`,\n0 as `PRODUCT`,\n'' AS `PRODUCTNAME`,\n0 as `PROJECT`,\n'' AS `PROJECTNAME`,\nt1.`name` as `TITLE`,\n'text' as `TYPE`,\n1 as `VERSION`,\n'' as `VIEWS`,'module' as DOCQTYPE, t1.MODULESN as DOCSN from zt_module t1 where t1.deleted = '0' and t1.type = 'doc' and t1.root = ${srfdatacontext('lib','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')} and t1.parent = ${srfdatacontext('id','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')}\nUNION\nSELECT\nt1.`ACL`,\n( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, \nt1.`ADDEDBY`,\nt1.`ADDEDDATE`,\nt1.`DELETED`,\nt1.`EDITEDBY`,\nt1.`EDITEDDATE`,\nt1.`GROUPS`,\nt1.`ID`,\nt1.`KEYWORDS`,\nt1.`LIB`,\nt31.`NAME` AS `LIBNAME`,\nt1.`MODULE`,\nt41.`NAME` AS `MODULENAME`,\nt1.`PRODUCT`,\nt21.`NAME` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt11.`NAME` AS `PROJECTNAME`,\nt1.`TITLE`,\nt1.`TYPE`,\nt1.`VERSION`,\nt1.`VIEWS`,\n'doc' as DOCQTYPE,\nt1.DOCSN\nFROM `zt_doc` t1 \nLEFT JOIN zt_project t11 ON t1.PROJECT = t11.ID\nLEFT JOIN zt_product t21 ON t1.PRODUCT = t21.ID\nLEFT JOIN zt_doclib t31 ON t1.LIB = t31.ID\nLEFT JOIN zt_module t41 ON t1.MODULE = t41.ID) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEDATAQUERIES/DocModuleDoc/PSDEDQCODES/MYSQL5.json"
+}

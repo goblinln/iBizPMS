@@ -1,17 +1,38 @@
 {
+  "codeListTag" : "zentao__TaskTeamUserTemp",
   "codeListType" : "DYNAMIC",
   "codeName" : "TaskTeamUserTemp",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TaskTeamUserTemp.json",
   "emptyText" : "未定义",
+  "name" : "用户真实名称（任务团队临时）",
   "orMode" : "STR",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "TaskMTeam"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getTextPSDEField" : {
+    "name" : "PERSONNAME",
+    "codeName" : "PersonName"
+  },
   "textSeparator" : ",",
+  "getValuePSDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
+  },
   "valueSeparator" : ",",
   "codeItemValueNumber" : false,
   "enableCache" : false,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

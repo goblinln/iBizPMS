@@ -403,9 +403,9 @@ export class AppFormBase extends EditFormControlBase {
     public renderButton(modelJson: IPSDEFormButton, index: number): any {
         const { width, height, showCaption, caption } = modelJson;
         const uiAction = modelJson.getPSUIAction() as IPSAppDEUIAction;
-        const sysImage = modelJson.getPSSysImage();
         const sysCss = modelJson.getPSSysCss();
-        let btnClass = width > 0 && height > 0 ? { width: `${width}px`, height: `${height}px` } : '';
+        let btnClass = width > 0 && height > 0 ? { width: `${width}px`, height: `${height}px` } : {};
+        this.detailsModel[modelJson.name].visible ? '' : Object.assign(btnClass,{ display : 'none'});
         let badge = null;
         // TODO计数器徽章
         // if (uiAction) {
@@ -420,8 +420,20 @@ export class AppFormBase extends EditFormControlBase {
             Object.assign(controlClassNames, { [sysCss.cssName]: true });
         }
         let labelCaption: any = this.$tl((modelJson.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
+        // 计算图标绘制参数
+        const sysImage = modelJson.getPSSysImage();
+        const actionImage = uiAction?.getPSSysImage();
+        let iconItem = {
+            iconcls: sysImage?.cssClass || actionImage?.cssClass,
+            icon: sysImage?.imagePath || actionImage?.imagePath,
+        }
+        
+        // 由detailsModel控制按钮显示与否
+        if(!this.detailsModel[modelJson.name]?.visible){
+            return null;
+        }
         return (
-            <div>
+            <div class="form-button-container">
                 {badge}
                 <i-button
                     type='primary'
@@ -430,11 +442,7 @@ export class AppFormBase extends EditFormControlBase {
                     on-click={($event: any) => throttle(this.onFormItemActionClick,[{formdetail:modelJson, event: $event }],this)}
                     disabled={this.detailsModel[modelJson.name]?.disabled}
                 >
-                    {sysImage ? (
-                        <i class={sysImage?.cssClass} style='margin-right: 2px;'></i>
-                    ) : (
-                        <menu-icon item={{ iconcls: uiAction?.getPSSysImage()?.cssClass }} />
-                    )}
+                    <menu-icon item={iconItem} />
                     {showCaption && <span>{labelCaption}</span>}
                 </i-button>
             </div>
@@ -461,6 +469,7 @@ export class AppFormBase extends EditFormControlBase {
                 refFormItem.push(formItem?.id);
             });
         }
+        const isDebounce: boolean = !Object.is(this.controlInstance.controlType,"FORM");
         return (
             <app-default-form-item
                 detailsInstance={modelJson}
@@ -492,6 +501,7 @@ export class AppFormBase extends EditFormControlBase {
                         contextState={this.formState}
                         service={this.service}
                         disabled={this.detailsModel[modelJson.name]?.disabled}
+                        isDebounce={isDebounce}
                         ignorefieldvaluechange={this.ignorefieldvaluechange}
                         on-change={(value: any) => {
                             this.onFormItemValueChange(value);

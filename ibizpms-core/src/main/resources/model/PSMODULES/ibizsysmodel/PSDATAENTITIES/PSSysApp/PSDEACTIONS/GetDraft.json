@@ -7,14 +7,24 @@
   "name" : "GetDraft",
   "orderValue" : 41,
   "getPSDEActionInput" : {
-    "codeName" : "GetDraftInput",
-    "name" : "输入对象",
+    "name" : "GetDraftInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "PSSysAppDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetDraftResult",
-    "name" : "返回对象",
+    "name" : "GetDraftResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "PSSysAppDTO"
+    },
     "type" : "DTO"
+  },
+  "getPSSubSysServiceAPIDEMethod" : {
+    "modelref" : true,
+    "id" : "GetDraft"
   },
   "builtinAction" : true
 }

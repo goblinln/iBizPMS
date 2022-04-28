@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibizpro__IndexType",
   "codeListType" : "STATIC",
   "codeName" : "IndexType",
   "dynaInstMode" : 1,
@@ -12,38 +13,31 @@
   "getPSCodeItems" : [ {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug",
-    "includeBeginValue" : true
+    "value" : "bug"
   }, {
     "codeName" : "Product",
     "text" : "产品",
-    "value" : "product",
-    "includeBeginValue" : true
+    "value" : "product"
   }, {
     "codeName" : "Task",
     "text" : "任务",
-    "value" : "task",
-    "includeBeginValue" : true
+    "value" : "task"
   }, {
     "codeName" : "Case",
     "text" : "功能测试",
-    "value" : "case",
-    "includeBeginValue" : true
+    "value" : "case"
   }, {
     "codeName" : "Doc",
     "text" : "文档",
-    "value" : "doc",
-    "includeBeginValue" : true
+    "value" : "doc"
   }, {
     "codeName" : "Story",
     "text" : "需求",
-    "value" : "story",
-    "includeBeginValue" : true
+    "value" : "story"
   }, {
     "codeName" : "Project",
     "text" : "项目",
-    "value" : "project",
-    "includeBeginValue" : true
+    "value" : "project"
   } ],
   "enableCache" : true
 }

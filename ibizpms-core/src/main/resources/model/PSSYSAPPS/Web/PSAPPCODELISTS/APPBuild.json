@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibizsysmodel__APPBuild",
   "codeListType" : "DYNAMIC",
   "codeName" : "APPBuild",
   "dynaInstMode" : 1,

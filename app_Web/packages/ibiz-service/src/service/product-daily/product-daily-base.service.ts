@@ -72,7 +72,7 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/productdailies/${_context.productdaily}/autocreate`, _data);
+        const res = await this.http.post(`/productdailies/${encodeURIComponent(_context.productdaily)}/autocreate`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -112,7 +112,7 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/productdailies/${_context.productdaily}`);
+        const res = await this.http.get(`/productdailies/${encodeURIComponent(_context.productdaily)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -149,7 +149,7 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/productdailies/${_context.productdaily}`, _data);
+        const res = await this.http.put(`/productdailies/${encodeURIComponent(_context.productdaily)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

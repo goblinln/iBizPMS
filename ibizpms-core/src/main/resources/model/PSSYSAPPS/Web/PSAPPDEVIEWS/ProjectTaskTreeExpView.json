@@ -297,39 +297,6 @@
       } ],
       "getPSControlHandler" : {
         "getPSHandlerActions" : [ {
-          "actionName" : "Update",
-          "actionType" : "DEACTION",
-          "dataAccessAction" : "UPDATE",
-          "name" : "update",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
-          }
-        }, {
-          "actionType" : "DEDATASET",
-          "name" : "fetch",
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
-          }
-        }, {
-          "actionName" : "Remove",
-          "actionType" : "DEACTION",
-          "dataAccessAction" : "DELETE",
-          "name" : "remove",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
-          }
-        }, {
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "dataAccessAction" : "READ",
@@ -351,6 +318,39 @@
             "modelref" : true,
             "id" : "Create"
           },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+          }
+        }, {
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "UPDATE",
+          "name" : "update",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+          }
+        }, {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+          }
+        }, {
+          "actionType" : "DEDATASET",
+          "name" : "fetch",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
@@ -423,6 +423,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -481,6 +482,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -539,6 +541,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -597,6 +600,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -655,6 +659,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -713,6 +718,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -771,6 +777,7 @@
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
             "timeout" : 60000,
             "uIActionMode" : "SYS",
             "uIActionTag" : "RefreshParent",
@@ -1137,6 +1144,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -1243,6 +1251,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -1468,6 +1477,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -1616,6 +1626,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -1764,6 +1775,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -1912,6 +1924,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -2060,6 +2073,7 @@
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -2188,10 +2202,14 @@
     "actionRSMode" : 1,
     "codeName" : "Projects",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Project",
+    "minorDEName" : "ZT_PROJECT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"

@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DATE`,\nt1.`IBZ_REPORTLYID`,\nt1.`IBZ_REPORTLYNAME`,\nt1.`ISSUBMIT`,\nt1.`MAILTO`,\nt1.`REPORTSTATUS`,\nt1.`REPORTTO`,\nt1.`SUBMITTIME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_IBZ_REPORTLY` t1",
+  "id" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEDATAQUERIES/MyAllReportly/PSDEDQCODES/MYSQL5.json"
+}

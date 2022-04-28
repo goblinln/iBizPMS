@@ -1,20 +1,28 @@
 {
+  "codeListTag" : "zentao__Cycle_enable",
   "codeListType" : "STATIC",
   "codeName" : "Cycle_enable",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Cycle_enable.json",
   "emptyText" : "未定义",
+  "name" : "周期选择_启用",
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "周期",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

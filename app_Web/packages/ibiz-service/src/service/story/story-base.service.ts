@@ -366,19 +366,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Activate');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/activate`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/activate`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Activate');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/activate`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/activate`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Activate');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/activate`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/activate`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[Activate函数]异常`]);
@@ -400,19 +400,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/assignto`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/assignto`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/assignto`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/assignto`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[AssignTo函数]异常`]);
@@ -434,19 +434,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'BuildUnlinkStory');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/buildunlinkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/buildunlinkstory`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'BuildUnlinkStory');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/buildunlinkstory`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/buildunlinkstory`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'BuildUnlinkStory');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/buildunlinkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/buildunlinkstory`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[BuildUnlinkStory函数]异常`]);
@@ -468,19 +468,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Change');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/change`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/change`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Change');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/change`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/change`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Change');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/change`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/change`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[Change函数]异常`]);
@@ -502,19 +502,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Close');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/close`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/close`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Close');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/close`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/close`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Close');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/close`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/close`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[Close函数]异常`]);
@@ -542,7 +542,7 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories`, _data);
             return res;
         }
         if (_context.project && true) {
@@ -554,7 +554,7 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/projects/${_context.project}/stories`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories`, _data);
             return res;
         }
         if (_context.product && true) {
@@ -566,7 +566,7 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/stories`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[Create函数]异常`]);
@@ -586,17 +586,17 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.story) {
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.story) {
-            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}`);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.product && _context.story) {
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -617,15 +617,15 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     async GetByVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.story) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/getbyversion`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/getbyversion`, _data);
             return res;
         }
         if (_context.project && _context.story) {
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/getbyversion`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/getbyversion`, _data);
             return res;
         }
         if (_context.product && _context.story) {
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/getbyversion`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/getbyversion`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[GetByVersion函数]异常`]);
@@ -647,19 +647,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/stories/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/getdraft`, _data);
             return res;
         }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/stories/getdraft`, _data);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/stories/getdraft`, _data);
             return res;
         }
         if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/stories/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/stories/getdraft`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[GetDraft函数]异常`]);
@@ -703,19 +703,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'PlanUnlinkStory');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/planunlinkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/planunlinkstory`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'PlanUnlinkStory');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/planunlinkstory`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/planunlinkstory`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'PlanUnlinkStory');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/planunlinkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/planunlinkstory`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[PlanUnlinkStory函数]异常`]);
@@ -737,19 +737,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ProjectUnlinkStory');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/projectunlinkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/projectunlinkstory`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ProjectUnlinkStory');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/projectunlinkstory`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/projectunlinkstory`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ProjectUnlinkStory');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/projectunlinkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/projectunlinkstory`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[ProjectUnlinkStory函数]异常`]);
@@ -771,19 +771,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ReleaseUnlinkStory');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/releaseunlinkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/releaseunlinkstory`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ReleaseUnlinkStory');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/releaseunlinkstory`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/releaseunlinkstory`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ReleaseUnlinkStory');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/releaseunlinkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/releaseunlinkstory`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[ReleaseUnlinkStory函数]异常`]);
@@ -803,15 +803,15 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.story) {
-            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}`);
             return res;
         }
         if (_context.project && _context.story) {
-            const res = await this.http.delete(`/projects/${_context.project}/stories/${_context.story}`);
+            const res = await this.http.delete(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}`);
             return res;
         }
         if (_context.product && _context.story) {
-            const res = await this.http.delete(`/products/${_context.product}/stories/${_context.story}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}`);
             return res;
         }
     this.log.warn([`[Story]>>>[Remove函数]异常`]);
@@ -833,19 +833,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Review');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/review`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/review`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Review');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/review`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/review`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Review');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/review`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/review`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[Review函数]异常`]);
@@ -867,19 +867,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'StoryFavorites');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storyfavorites`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/storyfavorites`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'StoryFavorites');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/storyfavorites`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/storyfavorites`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'StoryFavorites');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/storyfavorites`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/storyfavorites`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[StoryFavorites函数]异常`]);
@@ -901,19 +901,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'StoryNFavorites');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storynfavorites`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/storynfavorites`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'StoryNFavorites');
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/storynfavorites`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/storynfavorites`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'StoryNFavorites');
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/storynfavorites`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/storynfavorites`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[StoryNFavorites函数]异常`]);
@@ -935,19 +935,19 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}`, _data);
             return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/projects/${_context.project}/stories/${_context.story}`, _data);
+            const res = await this.http.put(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}`, _data);
             return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/stories/${_context.story}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}`, _data);
             return res;
         }
     this.log.warn([`[Story]>>>[Update函数]异常`]);
@@ -967,17 +967,17 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/stories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/stories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
@@ -998,17 +998,17 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     async FetchParentDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchparentdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/fetchparentdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchParentDefault');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/stories/fetchparentdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/fetchparentdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchParentDefault');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/stories/fetchparentdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/fetchparentdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchParentDefault');
             return res;
         }
@@ -1029,17 +1029,17 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     async FetchProjectStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchprojectstories`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/fetchprojectstories`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectStories');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/stories/fetchprojectstories`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/fetchprojectstories`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectStories');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/stories/fetchprojectstories`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/fetchprojectstories`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectStories');
             return res;
         }
@@ -1060,17 +1060,17 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     async FetchStoryRelated(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchstoryrelated`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/fetchstoryrelated`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchStoryRelated');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/stories/fetchstoryrelated`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/fetchstoryrelated`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchStoryRelated');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/fetchstoryrelated`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchStoryRelated');
             return res;
         }

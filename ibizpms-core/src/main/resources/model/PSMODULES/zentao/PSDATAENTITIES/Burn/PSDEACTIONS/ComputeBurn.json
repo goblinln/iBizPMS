@@ -6,13 +6,15 @@
   "logicName" : "更新燃尽图",
   "name" : "ComputeBurn",
   "getPSDEActionInput" : {
-    "codeName" : "ComputeBurnInput",
-    "name" : "输入对象",
+    "name" : "ComputeBurnInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BurnDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ComputeBurnResult",
-    "name" : "返回对象",
+    "name" : "ComputeBurnResult",
     "type" : "VOID"
   }
 }

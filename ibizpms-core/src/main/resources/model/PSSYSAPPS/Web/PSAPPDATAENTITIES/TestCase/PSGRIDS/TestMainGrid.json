@@ -450,6 +450,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CONFIRMCHANGE"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "TASK",
             "name" : "TASK",
@@ -503,6 +507,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "TOBUG"
           },
           "getPSNavigateContexts" : [ {
             "key" : "TASK",
@@ -595,6 +603,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "RUNCASE"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "TASK",
             "name" : "TASK",
@@ -633,6 +645,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UNLINKCASE"
           },
           "getPSNavigateContexts" : [ {
             "key" : "TASK",

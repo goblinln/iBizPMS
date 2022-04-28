@@ -12,22 +12,11 @@ global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
 
 no-loop
 
-//逻辑处理节点[计划数]
-rule "rawsqlcall3"
-ruleflow-group "productmobproductcounterrawsqlcall3"
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "productmobproductcounterbegin"
     when
     then
-    Map param =new HashMap();
-    param.put("param0",productmobproductcounterdefault.get("id"));
-    String strSql="select count(t1.id) as PRODUCTPLANCNT from zt_productplan t1 where t1.deleted = '0' and t1.product = #{et.param0}";
-    java.util.List<JSONObject> entities=iBzSysProductDefaultService.select(strSql,param);//SQL调用
-    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
-        JSONObject entity=entities.get(0);
-        for (Map.Entry entry : entity.entrySet()) {
-            productmobproductcounterdefault.set(String.valueOf(entry.getKey()),entry.getValue());
-        }
-    }
-    update(productmobproductcounterdefault);//更新fact中变量值
     end
 
 //逻辑处理节点[发布数]
@@ -66,11 +55,22 @@ ruleflow-group "productmobproductcounterrawsqlcall1"
     update(productmobproductcounterdefault);//更新fact中变量值
     end
 
-//逻辑处理节点[开始]
-rule "begin"
-ruleflow-group "productmobproductcounterbegin"
+//逻辑处理节点[计划数]
+rule "rawsqlcall3"
+ruleflow-group "productmobproductcounterrawsqlcall3"
     when
     then
+    Map param =new HashMap();
+    param.put("param0",productmobproductcounterdefault.get("id"));
+    String strSql="select count(t1.id) as PRODUCTPLANCNT from zt_productplan t1 where t1.deleted = '0' and t1.product = #{et.param0}";
+    java.util.List<JSONObject> entities=iBzSysProductDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            productmobproductcounterdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(productmobproductcounterdefault);//更新fact中变量值
     end
 
 //逻辑处理节点[获取需求数]

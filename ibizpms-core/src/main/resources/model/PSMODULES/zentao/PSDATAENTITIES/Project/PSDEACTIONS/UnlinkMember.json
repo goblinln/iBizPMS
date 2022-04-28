@@ -6,13 +6,15 @@
   "logicName" : "移除成员",
   "name" : "UnlinkMember",
   "getPSDEActionInput" : {
-    "codeName" : "UnlinkMemberInput",
-    "name" : "输入对象",
+    "name" : "UnlinkMemberInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UnlinkMemberResult",
-    "name" : "返回对象",
+    "name" : "UnlinkMemberResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

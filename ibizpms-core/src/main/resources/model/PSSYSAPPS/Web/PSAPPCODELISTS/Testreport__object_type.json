@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Testreport__object_type",
   "codeListType" : "STATIC",
   "codeName" : "Testreport__object_type",
   "dynaInstMode" : 1,
@@ -12,13 +13,11 @@
   "getPSCodeItems" : [ {
     "codeName" : "Testtask",
     "text" : "测试单",
-    "value" : "testtask",
-    "includeBeginValue" : true
+    "value" : "testtask"
   }, {
     "codeName" : "Project",
     "text" : "项目",
-    "value" : "project",
-    "includeBeginValue" : true
+    "value" : "project"
   } ],
   "enableCache" : true
 }

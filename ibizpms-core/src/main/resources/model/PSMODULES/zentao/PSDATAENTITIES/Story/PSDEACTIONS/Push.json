@@ -6,13 +6,15 @@
   "logicName" : "推送",
   "name" : "Push",
   "getPSDEActionInput" : {
-    "codeName" : "PushInput",
-    "name" : "输入对象",
+    "name" : "PushInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "PushResult",
-    "name" : "返回对象",
+    "name" : "PushResult",
     "type" : "VOID"
   }
 }

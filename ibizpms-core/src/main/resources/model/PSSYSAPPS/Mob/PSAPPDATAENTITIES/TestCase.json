@@ -450,7 +450,9 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__color.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
@@ -471,11 +473,25 @@
     "name" : "CurOpenedCase",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "SUITE 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurSuite",
     "methodType" : "FETCH",
     "name" : "FetchCurSuite",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "testtask",
+      "name" : "TASK 等于(=) 数据上下文(testtask)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurTestTask",
     "methodType" : "FETCH",
     "name" : "FetchCurTestTask",
@@ -985,8 +1001,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
+        }
       } ],
       "parallelOutput" : true
     }, {
@@ -1022,12 +1037,14 @@
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -1306,11 +1323,25 @@
     "name" : "CurOpenedCase",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "SUITE 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurSuite",
     "methodType" : "FETCH",
     "name" : "FetchCurSuite",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "testtask",
+      "name" : "TASK 等于(=) 数据上下文(testtask)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurTestTask",
     "methodType" : "FETCH",
     "name" : "FetchCurTestTask",
@@ -1460,6 +1491,13 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "SUITE 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchTempCurSuite",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
@@ -1467,6 +1505,13 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "testtask",
+      "name" : "TASK 等于(=) 数据上下文(testtask)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchTempCurTestTask",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
@@ -1673,6 +1718,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
     "getPSNavigateParams" : [ {
       "key" : "product",
       "name" : "product",
@@ -1696,6 +1745,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNLINKCASE"
     },
     "getPSNavigateContexts" : [ {
       "key" : "TASK",
@@ -1732,6 +1785,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNLINKSUITCASE"
     },
     "getPSNavigateContexts" : [ {
       "key" : "SUITE",
@@ -5556,19 +5613,34 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "TestCase",
+  "dEAPITag" : "IBZ_API__TEST_CASE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json",
   "enableUIActions" : 15,
   "logicName" : "测试用例",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS1",
+    "codeName" : "Status1"
+  }, {
+    "name" : "LASTRUNRESULT1",
+    "codeName" : "Lastrunresult1"
+  }, {
+    "name" : "ISFAVORITES",
+    "codeName" : "Isfavorites"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "TestCases",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Test",
+    "majorDEName" : "IBZ_API__TEST",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
     },
+    "minorDECodeName" : "TestCase",
+    "minorDEName" : "ZT_CASE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
@@ -5581,6 +5653,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_CASE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_CASE",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
@@ -5591,7 +5667,9 @@
     "codeName" : "Title"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableTempData" : true,
   "enableUICreate" : true,

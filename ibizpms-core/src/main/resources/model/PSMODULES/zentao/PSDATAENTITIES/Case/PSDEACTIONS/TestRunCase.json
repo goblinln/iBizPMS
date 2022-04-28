@@ -6,13 +6,15 @@
   "logicName" : "执行测试",
   "name" : "TestRunCase",
   "getPSDEActionInput" : {
-    "codeName" : "TestRunCaseInput",
-    "name" : "输入对象",
+    "name" : "TestRunCaseInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "TestRunCaseResult",
-    "name" : "返回对象",
+    "name" : "TestRunCaseResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

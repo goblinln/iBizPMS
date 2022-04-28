@@ -19,6 +19,24 @@ ruleflow-group "buildmobprojectbuildcounterbegin"
     then
     end
 
+//逻辑处理节点[获取解决的bug]
+rule "rawsqlcall2"
+ruleflow-group "buildmobprojectbuildcounterrawsqlcall2"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",buildmobprojectbuildcounterdefault.get("id"));
+    String strSql="select count(1) as bugs from zt_bug t1 where  t1.deleted = '0'  and FIND_IN_SET(t1.id,(select bugs from zt_build where id = #{et.param0})) ";
+    java.util.List<JSONObject> entities=iBzSysBuildDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            buildmobprojectbuildcounterdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(buildmobprojectbuildcounterdefault);//更新fact中变量值
+    end
+
 //逻辑处理节点[获取完成的需求数]
 rule "rawsqlcall1"
 ruleflow-group "buildmobprojectbuildcounterrawsqlcall1"
@@ -45,24 +63,6 @@ ruleflow-group "buildmobprojectbuildcounterrawsqlcall3"
     Map param =new HashMap();
     param.put("param0",buildmobprojectbuildcounterdefault.get("id"));
     String strSql="select count(1) as createbugcnt from zt_bug t1 where t1.deleted = '0' and Find_IN_SET(#{et.param0},(select openedbuild from zt_bug where id = t1.id))";
-    java.util.List<JSONObject> entities=iBzSysBuildDefaultService.select(strSql,param);//SQL调用
-    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
-        JSONObject entity=entities.get(0);
-        for (Map.Entry entry : entity.entrySet()) {
-            buildmobprojectbuildcounterdefault.set(String.valueOf(entry.getKey()),entry.getValue());
-        }
-    }
-    update(buildmobprojectbuildcounterdefault);//更新fact中变量值
-    end
-
-//逻辑处理节点[获取解决的bug]
-rule "rawsqlcall2"
-ruleflow-group "buildmobprojectbuildcounterrawsqlcall2"
-    when
-    then
-    Map param =new HashMap();
-    param.put("param0",buildmobprojectbuildcounterdefault.get("id"));
-    String strSql="select count(1) as bugs from zt_bug t1 where  t1.deleted = '0'  and FIND_IN_SET(t1.id,(select bugs from zt_build where id = #{et.param0})) ";
     java.util.List<JSONObject> entities=iBzSysBuildDefaultService.select(strSql,param);//SQL调用
     if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
         JSONObject entity=entities.get(0);

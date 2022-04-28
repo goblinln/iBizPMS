@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`BUGS`,\nt1.`BUILDER`,\nt1.`DATE`,\nt1.`DELETED`,\nt1.`DESC`,\nt1.`FILEPATH`,\nt1.`ID`,\nCONCAT_WS('','PMS ',t1.`name`,' 主要更新') as `NAME`,\nt1.`PRODUCT`,\nt11.`NAME` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt1.`SCMPATH`,\nt1.`STORIES`,\nt1.BUILDSN\nFROM `zt_build` t1 \nLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.productsn",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEDATAQUERIES/UpdateLog/PSDEDQCODES/MYSQL5.json"
+}

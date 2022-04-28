@@ -1,0 +1,52 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CONTENT`",
+    "name" : "CONTENT"
+  }, {
+    "expression" : "t1.`FILES`",
+    "name" : "FILES"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`DIGEST`",
+    "name" : "DIGEST"
+  }, {
+    "expression" : "t1.`DOC`",
+    "name" : "DOC"
+  }, {
+    "expression" : "t1.`DOCCONTENTSN`",
+    "name" : "DOCCONTENTSN"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEBY`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`DIGEST`,\nt1.`DOC`,\nt1.`DOCCONTENTSN`,\nt1.`ID`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`TITLE`,\nt1.`TYPE`,\nt1.`UPDATEBY`,\nt1.`VERSION`\nFROM `zt_doccontent` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

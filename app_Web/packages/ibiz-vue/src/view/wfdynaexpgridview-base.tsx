@@ -1,6 +1,7 @@
-import { IPSAppDEWFDynaExpGridView, IPSDEGrid, IPSDESearchForm } from '@ibiz/dynamic-model-api';
+import { IPSAppDEField, IPSAppDEWFDynaExpGridView, IPSDEDataView, IPSDEGrid, IPSDESearchForm } from '@ibiz/dynamic-model-api';
 import { WFDynaExpGridViewEngine, Util, ModelTool, throttle, WFDynaExpGridInterface } from 'ibiz-core';
 import { GlobalService } from 'ibiz-service';
+import { AppGlobalService } from '../app-service/logic-service/app-global-action-service';
 import { MainViewBase } from './mainview-base';
 
 /**
@@ -43,6 +44,13 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
      */
     public engine: WFDynaExpGridViewEngine = new WFDynaExpGridViewEngine();
 
+    /**
+     * 可搜索字段名称
+     * 
+     * @type {(string)}
+     * @memberof WfDynaExpGridViewBase
+     */
+     public placeholder: string = "";
 
     /**
      * 分割宽度
@@ -65,7 +73,23 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
      * @type {any}
      * @memberof WfDynaExpGridViewBase
      */
-    public wfStepModel: Array<any> = [];
+    public wfStepModel: Array<any> = [{ userTaskName:'我的处理',userTaskId: "all", children: [] }];
+
+    /**
+     * 快速搜索值
+     *
+     * @type {string}
+     * @memberof WfDynaExpGridViewBase
+     */
+     public query: string = '';
+
+    /**
+     * 是否展开搜索表单（接收参数）
+     * 
+     * @type {boolean}
+     * @memberof WfDynaExpGridViewBase
+     */
+    public expandSearchForm: boolean = false;
 
     /**
      * 是否展开搜索表单
@@ -73,7 +97,7 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
      * @type {any}
      * @memberof  WfDynaExpGridViewBase
      */
-    public isExpandSearchForm: boolean = true;
+    public isExpandSearchForm: boolean = false;
 
     /**
      * 是否单选
@@ -154,6 +178,69 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
     }
 
     /**
+     * @description 视图初始化
+     * @memberof WfDynaExpGridViewBase
+     */
+    public viewInit(){
+      super.viewInit();
+      // 初始化属性值
+      this.query = '';
+      this.expandSearchForm = this.viewInstance?.expandSearchForm ? true : false;
+      this.initQuickSearchPlaceholder();
+    }
+
+    
+    /**
+     * 视图挂载
+     * 
+     * @memberof WfDynaExpGridViewBase
+     */
+     public viewMounted() {
+        super.viewMounted();
+        this.handleDefaultExpandSearchForm()
+    }
+
+    /**
+     * 处理默认展开搜索表单
+     * 
+     * @memberof WfDynaExpGridViewBase
+     */
+    public handleDefaultExpandSearchForm() {
+        //  默认展开搜索表单
+        if (this.expandSearchForm) {
+            //  搜索表单以弹框展示
+            if (this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) {
+                this.$nextTick(() => {
+                    const element = document.querySelector('button.filter');
+                    debugger
+                    if (element) {
+                        (element as HTMLElement).click();
+                    }
+                })
+            } else {
+                this.isExpandSearchForm = this.expandSearchForm;
+            }
+        }
+    }
+    
+    /**
+     *  初始化快速搜索栏空白填充内容
+     *
+     * @memberof WfDynaExpGridViewBase
+     */
+     public initQuickSearchPlaceholder() {
+        const quickSearchFields: Array<IPSAppDEField> = (this.viewInstance as any).getPSAppDataEntity()?.getQuickSearchPSAppDEFields() || [];
+        if (quickSearchFields.length > 0) {
+            quickSearchFields.forEach((field: IPSAppDEField, index: number) => {
+                const _field: IPSAppDEField | null | undefined = (this.viewInstance as any).getPSAppDataEntity()?.findPSAppDEField(field.codeName);
+                if (_field) {
+                    this.placeholder += (this.$tl(_field.getLNPSLanguageRes()?.lanResTag, _field.logicName) + (index === quickSearchFields.length-1 ? '' : ', '));
+                }
+            })
+        }
+    }
+
+    /**
      * 渲染视图工作流工具栏
      * 
      * @memberof WfDynaExpGridViewBase
@@ -162,7 +249,7 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
         return (<span slot='toolbar'>
             {
                 this.linkModel.map((linkItem: any, index: number) => {
-                    return <tooltip transfer={true} max-width={600} key="index">
+                    return <tooltip transfer={true} max-width={600} key={linkItem.codeName}>
                         <i-button disabled={linkItem.disabled} on-click={($event: any) => { throttle(this.dynamic_toolbar_click, [linkItem, $event], this) }} loading={this.viewLoadingService.isLoading}>
                             <span class='caption'>{linkItem.sequenceFlowName}</span>
                         </i-button>
@@ -182,9 +269,12 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
         const { codeName } = this.viewInstance;
         return <split id={codeName.toLowerCase()} v-model={this.split} mode="horizontal">
             <div slot='left'>
-                <el-tree ref="tree" data={this.wfStepModel} node-key="userTaskId" highlight-current={true} props={this.defaultProps} on-node-click={(...params: any[]) => throttle(this.handleNodeClick, params, this)} scopedSlots={{
+                <el-tree ref="tree" data={this.wfStepModel} default-expanded-keys={["all"]} node-key="userTaskId" highlight-current={true} props={this.defaultProps} on-node-click={(...params: any[]) => throttle(this.handleNodeClick, params, this)} scopedSlots={{
                     default: ({ node, data }: any) => {
+                        let iconClass = "tree-node-icon";
+                        iconClass += data?.children?.length > 0 ? " fa fa-folder-open" : " fa fa-sitemap";
                         return <span class="custom-tree-node">
+                            <i class={iconClass} />
                             <span class="tree-node-label">{data.userTaskName}</span>
                             <span class="tree-node-count"><badge count={data.cnt}></badge></span>
                         </span>
@@ -194,7 +284,7 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
             </div>
             <div slot="right">
                 <div class="content-container">
-                    {this.renderSearchForm()}
+                    {!(this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) ? this.renderSearchForm() : null}
                     {this.rednderGrid()}
                 </div>
             </div>
@@ -212,7 +302,11 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
             return
         }
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.searchFormInstance);
-        return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.searchFormInstance.name, on: targetCtrlEvent });
+        if (this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) {
+          return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.searchFormInstance?.name, on: targetCtrlEvent });
+        } else {
+            return this.$createElement(targetCtrlName, { slot: 'searchForm', props: targetCtrlParam, ref: this.searchFormInstance?.name, on: targetCtrlEvent });
+        }
     }
 
     /**
@@ -226,6 +320,9 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
             return
         }
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.gridInstance);
+        if(!targetCtrlParam.dynamicProps.viewparams.hasOwnProperty('srfwf')){
+          targetCtrlParam.dynamicProps.viewparams.srfwf = 'todo';
+        }
         return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.gridInstance.name, on: targetCtrlEvent });
     }
 
@@ -234,12 +331,12 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
      *
      * @param {string} [controlType]
      * @returns
-     * @memberof GridViewBase
+     * @memberof WfDynaExpGridViewBase
      */
     public computeTargetCtrlData(controlInstance: any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
         if (controlInstance.controlType == 'SEARCHFORM') {
-            Object.assign(targetCtrlParam.staticProps, {
+            Object.assign(targetCtrlParam.dynamicProps, {
                 isExpandSearchForm: this.isExpandSearchForm
             });
         } else {
@@ -259,23 +356,22 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
      */
     public getWFStepModel(): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
-            this.appEntityService.WFGetWFStep().then((response: any) => {
+            this.appEntityService.WFGetWFStep(Util.deepCopy(this.context),Util.deepCopy(this.viewparams)).then((response: any) => {
                 if (response && response.status === 200) {
-                    this.wfStepModel = response.data;
-                    if (this.wfStepModel && this.wfStepModel.length > 0) {
-                        if (!this.curSelectedNode) {
-                            this.curSelectedNode = this.wfStepModel[0];
-                        } else {
-                            let tempCopySelectedNode: any = Util.deepCopy(this.curSelectedNode);
-                            this.curSelectedNode = this.wfStepModel.find((item: any) => {
-                                return item.userTaskId === tempCopySelectedNode.userTaskId && item.processDefinitionKey === tempCopySelectedNode.processDefinitionKey;
-                            })
-                        }
+                    this.wfStepModel[0].children = [...response.data];
+                    if (!this.curSelectedNode) {
+                        this.curSelectedNode = this.wfStepModel[0];
+                    } else {
+                        let tempCopySelectedNode: any = Util.deepCopy(this.curSelectedNode);
+                        this.curSelectedNode = this.wfStepModel[0].children.find((item: any) => {
+                            return item.userTaskId === tempCopySelectedNode.userTaskId && item.processDefinitionKey === tempCopySelectedNode.processDefinitionKey;
+                        })
                     }
                     if (this.curSelectedNode) {
-                        Object.assign(this.viewparams, { 'userTaskId': this.curSelectedNode['userTaskId'], 'processDefinitionKey': this.curSelectedNode['processDefinitionKey'] });
+                        let userTaskId = this.curSelectedNode['userTaskId'] == "all" ? undefined : this.curSelectedNode['userTaskId'];
+                        Object.assign(this.viewparams, { 'taskDefinitionKey': userTaskId,'srfwfstep': userTaskId, 'processDefinitionKey': this.curSelectedNode['processDefinitionKey'] });
                         this.setTreeNodeHighLight(this.curSelectedNode);
-                        this.getWFLinkModel({ 'userTaskId': this.curSelectedNode['userTaskId'], 'processDefinitionKey': this.curSelectedNode['processDefinitionKey'] });
+                        this.getWFLinkModel({ 'taskDefinitionKey': userTaskId, 'processDefinitionKey': this.curSelectedNode['processDefinitionKey'] });
                     }
                     resolve(response.data);
                 }
@@ -292,6 +388,10 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
      * @memberof WfDynaExpGridViewBase
      */
     public getWFLinkModel(data: any) {
+        if(!data.taskDefinitionKey){
+          this.linkModel = [];
+          return;
+        }
         this.appEntityService.getWFLinks(JSON.parse(JSON.stringify(this.context)), data, true).then((response: any) => {
             if (response && response.status === 200) {
                 this.linkModel = response.data;
@@ -364,8 +464,9 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
     public handleNodeClick(data: any) {
         this.curSelectedNode = data;
         this.setTreeNodeHighLight(this.curSelectedNode);
-        Object.assign(this.viewparams, { 'userTaskId': data['userTaskId'], 'processDefinitionKey': data['processDefinitionKey'] });
-        this.getWFLinkModel({ 'userTaskId': this.curSelectedNode['userTaskId'], 'processDefinitionKey': this.curSelectedNode['processDefinitionKey'] });
+        let userTaskId = data['userTaskId'] == "all" ? undefined : data['userTaskId'];
+        Object.assign(this.viewparams, { 'taskDefinitionKey': userTaskId,'srfwfstep': userTaskId, 'processDefinitionKey': data['processDefinitionKey'] });
+        this.getWFLinkModel({ 'taskDefinitionKey': userTaskId, 'processDefinitionKey': this.curSelectedNode['processDefinitionKey'] });
         (this.$refs[this.searchFormInstance.name] as any).ctrl.onSearch();
     }
 
@@ -384,4 +485,37 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
         })
     }
 
+    /**
+     * @description 快速搜索点击事件
+     * @param {*} $event
+     * @memberof WfDynaExpGridViewBase
+     */
+    public onQuickSearchClick($event: any){
+        const refs: any = this.$refs;
+        if (refs[this.gridInstance?.name] && refs[this.gridInstance.name].ctrl) {
+            refs[this.gridInstance?.name].ctrl.load(this.context, true);
+        }
+    }
+
+    /**
+     * 渲染快速搜索(DEFAULT)
+     *
+     * @return {*} 
+     * @memberof WfDynaExpGridViewBase
+     */
+     public renderQuickSearch(){
+        const searchformItem: Array<any> = this.searchFormInstance?.getPSDEFormItems() || [];
+        let enableFilter = this.viewInstance?.enableFilter === true && searchformItem.length > 0;
+        const popoverClass: string = this.searchFormInstance ? 'searchform-popover' : '';
+        return  <template slot="quickSearch">
+            <i-input class={{'app-quick-search': true, 'width-filter': enableFilter}} style='max-width: 400px;margin-top:4px;padding-left: 24px' search on-on-search={($event: any) => this.onQuickSearchClick($event)} v-model={this.query} placeholder={this.placeholder} />
+            {<el-popover placement="bottom" popper-class={popoverClass} trigger="click" visible-arrow={false} on-hide={() => this.isExpandSearchForm = !this.isExpandSearchForm}>
+                <i-button slot="reference" class={{'filter': true, 'is-expand': this.isExpandSearchForm, 'hidden-searchbtn': !enableFilter}} icon="ios-funnel" on-click={(e:any)=>{
+                    if (!this.isExpandSearchForm) {
+                        throttle(() => (AppGlobalService.getInstance() as any).executeGlobalAction('ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined),[],this);
+                    }}} />
+                {popoverClass && popoverClass != '' ? this.renderSearchForm() : null}
+            </el-popover>}
+        </template>
+    }
 }

@@ -1,0 +1,43 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`PSMODULEID`",
+    "name" : "PSMODULEID"
+  }, {
+    "expression" : "t21.`PSMODULENAME`",
+    "name" : "PSMODULENAME"
+  }, {
+    "expression" : "t1.`PSSUBSYSSERVICEAPIID`",
+    "name" : "PSSUBSYSSERVICEAPIID"
+  }, {
+    "expression" : "t1.`PSSUBSYSSERVICEAPINAME`",
+    "name" : "PSSUBSYSSERVICEAPINAME"
+  }, {
+    "expression" : "t1.`PSSYSSERVICEAPIID`",
+    "name" : "PSSYSSERVICEAPIID"
+  }, {
+    "expression" : "t11.`PSSYSSERVICEAPINAME`",
+    "name" : "PSSYSSERVICEAPINAME"
+  }, {
+    "expression" : "t1.`PSSYSTEMID`",
+    "name" : "PSSYSTEMID"
+  }, {
+    "expression" : "t1.`PSSYSTEMNAME`",
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`PSMODULEID`,\nt21.`PSMODULENAME`,\nt1.`PSSUBSYSSERVICEAPIID`,\nt1.`PSSUBSYSSERVICEAPINAME`,\nt1.`PSSYSSERVICEAPIID`,\nt11.`PSSYSSERVICEAPINAME`,\nt1.`PSSYSTEMID`,\nt1.`PSSYSTEMNAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_PSSUBSYSSERVICEAPI` t1 \nLEFT JOIN `T_PSSYSSERVICEAPI` t11 ON t1.`PSSYSSERVICEAPIID` = t11.`PSSYSSERVICEAPIID` \nLEFT JOIN `T_PSMODULE` t21 ON t1.`PSMODULEID` = t21.`PSMODULEID` \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,31 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( ( t1.`PRODUCT` = ${srfwebcontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BRANCH\"}')}  OR  t1.`PRODUCT` = ${srfdatacontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BRANCH\"}')}  OR  t1.`PRODUCT` = ${srfdatacontext('products','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BRANCH\"}')}  or t1.`product` is null) )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  } ],
+  "queryCode" : "select t1.* from (select '0' as `DELETED`,0 as `ID`,'所有平台' AS `NAME`, -1000 as `order`, -1000 as `REALORDER`,(case when #{srf.webcontext.product} is not null then #{srf.webcontext.product} else #{srf.webcontext.products} end  ) as product from dual union all SELECT t1.`DELETED`, t1.`ID`, t1.`NAME`, t1.`ORDER`, t1.`order` as `REALORDER`,t1.`PRODUCT` FROM `zt_branch` t1) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDEDATAQUERIES/CurProduct/PSDEDQCODES/MYSQL5.json"
+}

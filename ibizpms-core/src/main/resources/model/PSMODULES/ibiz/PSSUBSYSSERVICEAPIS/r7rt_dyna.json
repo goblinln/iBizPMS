@@ -1,0 +1,261 @@
+{
+  "aPISource" : "NONE",
+  "aPIType" : "RESTFUL",
+  "getAllPSSubSysServiceAPIDEs" : [ {
+    "aPIMode" : 1,
+    "codeName" : "DynaDashboard",
+    "logicName" : "动态数据看板",
+    "name" : "DYNADASHBOARD",
+    "getPSSubSysServiceAPIDEFields" : [ {
+      "codeName" : "UserId",
+      "length" : 100,
+      "logicName" : "用户标识",
+      "name" : "USERID",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "DynaDashboardId",
+      "length" : 100,
+      "logicName" : "动态数据看板标识",
+      "name" : "DYNADASHBOARDID",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : true,
+      "majorDEField" : false
+    }, {
+      "codeName" : "DynaDashboardName",
+      "length" : 200,
+      "logicName" : "动态数据看板名称",
+      "name" : "DYNADASHBOARDNAME",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : true
+    }, {
+      "codeName" : "CreateMan",
+      "length" : 60,
+      "logicName" : "建立人",
+      "name" : "CREATEMAN",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "length" : 60,
+      "logicName" : "更新人",
+      "name" : "UPDATEMAN",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "ModelId",
+      "length" : 100,
+      "logicName" : "模型标识",
+      "name" : "MODELID",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "UpdateDate",
+      "length" : 8,
+      "logicName" : "更新时间",
+      "name" : "UPDATEDATE",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 5,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "AppId",
+      "length" : 100,
+      "logicName" : "应用标识",
+      "name" : "APPID",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "CreateDate",
+      "length" : 8,
+      "logicName" : "建立时间",
+      "name" : "CREATEDATE",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 5,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "Model",
+      "length" : 1048576,
+      "logicName" : "模型",
+      "name" : "MODEL",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 21,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    } ],
+    "major" : true
+  }, {
+    "aPIMode" : 1,
+    "codeName" : "DynaFilter",
+    "logicName" : "动态搜索栏",
+    "name" : "DYNAFILTER",
+    "getPSSubSysServiceAPIDEFields" : [ {
+      "codeName" : "DynaFilterId",
+      "length" : 100,
+      "logicName" : "动态搜索栏标识",
+      "name" : "DYNAFILTERID",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : true,
+      "majorDEField" : false
+    }, {
+      "codeName" : "DeptId",
+      "length" : 60,
+      "logicName" : "组织部门标识",
+      "name" : "DEPTID",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "length" : 60,
+      "logicName" : "更新人",
+      "name" : "UPDATEMAN",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "Formname",
+      "length" : 100,
+      "logicName" : "表单名称",
+      "name" : "FORMNAME",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "UpdateDate",
+      "length" : 8,
+      "logicName" : "更新时间",
+      "name" : "UPDATEDATE",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 5,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "OrgId",
+      "length" : 60,
+      "logicName" : "组织机构标识",
+      "name" : "ORGID",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "CreateDate",
+      "length" : 8,
+      "logicName" : "建立时间",
+      "name" : "CREATEDATE",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 5,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "Dename",
+      "length" : 100,
+      "logicName" : "实体名称",
+      "name" : "DENAME",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "DynaFilterName",
+      "length" : 200,
+      "logicName" : "动态搜索栏名称",
+      "name" : "DYNAFILTERNAME",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : true
+    }, {
+      "codeName" : "Data",
+      "length" : 1048576,
+      "logicName" : "数据",
+      "name" : "DATA",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 21,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "CreateMan",
+      "length" : 60,
+      "logicName" : "建立人",
+      "name" : "CREATEMAN",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    } ],
+    "major" : true
+  } ],
+  "authMode" : "NONE",
+  "codeName" : "r7rt_dyna",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSUBSYSSERVICEAPIS/r7rt_dyna.json",
+  "name" : "[R7RT标准接口]动态模型",
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
+  "serviceCodeName" : "r7rt-dyna",
+  "serviceType" : "DEFAULT",
+  "enableServiceAPIDTO" : true
+}

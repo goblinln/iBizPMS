@@ -25,6 +25,7 @@ export default class SliderEditor extends EditorBase {
         }
         this.customProps.max = this.editorInstance.editorParams?.['max'] ? parseInt(this.editorInstance.editorParams?.['max']) : 100;
         this.customProps.min = this.editorInstance.editorParams?.['min'] ? parseInt(this.editorInstance.editorParams?.['min']) : 0;
+        this.customProps.step = this.editorInstance.editorParams?.['step'] ? parseInt(this.editorInstance.editorParams?.['step']) : 1;
         return this.$createElement(this.editorComponentName,{
             props: {
                 name: this.editorInstance.name,

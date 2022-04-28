@@ -14,6 +14,10 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
   },
   "name" : "DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK",
+  "getNestedPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "TASK",

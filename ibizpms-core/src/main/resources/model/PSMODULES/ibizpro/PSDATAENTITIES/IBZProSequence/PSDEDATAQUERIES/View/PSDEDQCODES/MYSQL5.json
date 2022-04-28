@@ -1,0 +1,43 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BEGINSEQ`",
+    "name" : "BEGINSEQ"
+  }, {
+    "expression" : "t1.`CATEGORY`",
+    "name" : "CATEGORY"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`CURSEQ`",
+    "name" : "CURSEQ"
+  }, {
+    "expression" : "t1.`IBZPRO_SEQUENCEID`",
+    "name" : "IBZPRO_SEQUENCEID"
+  }, {
+    "expression" : "t1.`IBZPRO_SEQUENCENAME`",
+    "name" : "IBZPRO_SEQUENCENAME"
+  }, {
+    "expression" : "t1.`INCREMENT`",
+    "name" : "INCREMENT"
+  }, {
+    "expression" : "t1.`ISENABLE`",
+    "name" : "ISENABLE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`YEAR`",
+    "name" : "YEAR"
+  } ],
+  "queryCode" : "SELECT\nt1.`BEGINSEQ`,\nt1.`CATEGORY`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CURSEQ`,\nt1.`IBZPRO_SEQUENCEID`,\nt1.`IBZPRO_SEQUENCENAME`,\nt1.`INCREMENT`,\nt1.`ISENABLE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`YEAR`\nFROM `T_IBZPRO_SEQUENCE` t1 \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,25 +1,32 @@
 {
+  "codeListTag" : "ibiz__DOCLIBTYPE",
   "codeListType" : "STATIC",
   "codeName" : "DOCLIBTYPE",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/DOCLIBTYPE.json",
   "emptyText" : "未定义",
+  "name" : "文件库类型",
   "getPSCodeItems" : [ {
     "codeName" : "Doc",
     "text" : "文档",
-    "value" : "doc",
-    "includeBeginValue" : true
+    "value" : "doc"
   }, {
     "codeName" : "File",
     "text" : "附件",
-    "value" : "file",
-    "includeBeginValue" : true
+    "value" : "file"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

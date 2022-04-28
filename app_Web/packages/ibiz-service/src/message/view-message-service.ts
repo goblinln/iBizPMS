@@ -103,6 +103,7 @@ export class ViewMessageService {
         }
         for (let i = 0; i<viewMsgGroupDetails.length; i++) {
             const viewMsg = viewMsgGroupDetails[i].getPSAppViewMsg() as IPSAppViewMsg;
+            await viewMsg.fill(true);
             let items: any[] = [];
             if (viewMsg.dynamicMode == 0) { //  动态模式为 静态
                 items = await this.initStaticViewMessage(viewMsg);

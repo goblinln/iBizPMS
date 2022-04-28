@@ -5,27 +5,6 @@
   "logicName" : "获取团队成员",
   "name" : "获取团队成员",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Rawsqlcall2",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "项目团队",
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[PROJECT]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "PROJECT",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select GROUP_CONCAT(tt.account separator ';') as USERNAMES from zt_team tt where tt.type = 'project' and tt.root = ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始",
@@ -54,8 +33,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     }, {
       "getDstPSDELogicNode" : {
         "modelref" : true,
@@ -81,8 +59,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
     "parallelOutput" : true
   }, {
@@ -106,15 +83,38 @@
     "sql" : "select GROUP_CONCAT(tt.account separator ';') as USERNAMES from zt_team tt where tt.type = 'task' and tt.root = ?",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall2",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "项目团队",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[PROJECT]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "PROJECT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select GROUP_CONCAT(tt.account separator ';') as USERNAMES from zt_team tt where tt.type = 'project' and tt.root = ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

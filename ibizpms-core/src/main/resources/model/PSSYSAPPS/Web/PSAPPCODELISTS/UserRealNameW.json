@@ -1,5 +1,6 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "zentao__UserRealNameW",
   "codeListType" : "DYNAMIC",
   "codeName" : "UserRealNameW",
   "dynaInstMode" : 1,

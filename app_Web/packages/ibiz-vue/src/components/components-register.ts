@@ -271,6 +271,7 @@ import { AppDefaultMapExpBar } from './control/app-default-map-exp-bar/app-defau
 import { AppDefaultViewPanel } from './control/app-default-viewpanel/app-default-viewpanel';
 import { NotificationSignal } from '../directives';
 import { Badge } from '../directives';
+import { AppDefaultDeIndexView } from './view/app-default-view/app-default-deindexview';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
         v.component('app-list-box', AppListBox);
@@ -450,6 +451,7 @@ export const ComponentsRegister = {
         v.component('app-default-dereportview', AppDefaultDeReportView);
         v.component('app-default-mapexpview', AppDefaultMapExpView);
         v.component('app-default-depanelview', AppDefaultDePanelView);
+        v.component('app-default-deindexview', AppDefaultDeIndexView);
         v.component('app-style2-indexview', AppStyle2IndexView);
         v.component('app-style2-editview', AppStyle2EditView);
         v.component('app-style2-editview2', AppStyle2EditView2);

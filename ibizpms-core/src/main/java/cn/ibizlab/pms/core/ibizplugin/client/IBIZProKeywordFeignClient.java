@@ -21,10 +21,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.pmspro-pluginserviceapi:pmspro-pluginserviceapi}", contextId = "IBIZProKeyword", fallback = IBIZProKeywordFallback.class)
 public interface IBIZProKeywordFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/select")
-    Page<IBIZProKeyword> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords")
     IBIZProKeyword create(@RequestBody IBIZProKeyword ibizprokeyword);
 
@@ -32,11 +28,8 @@ public interface IBIZProKeywordFeignClient {
     Boolean createBatch(@RequestBody List<IBIZProKeyword> ibizprokeywords);
 
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/{id}")
-    IBIZProKeyword update(@PathVariable("id") String id,@RequestBody IBIZProKeyword ibizprokeyword);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/batch")
-    Boolean updateBatch(@RequestBody List<IBIZProKeyword> ibizprokeywords);
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/{id}")
+    IBIZProKeyword get(@PathVariable("id") String id);
 
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/ibizprokeywords/{id}")
@@ -46,16 +39,24 @@ public interface IBIZProKeywordFeignClient {
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/{id}")
-    IBIZProKeyword get(@PathVariable("id") String id);
+    @RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/{id}")
+    IBIZProKeyword update(@PathVariable("id") String id,@RequestBody IBIZProKeyword ibizprokeyword);
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/getdraft")
-    IBIZProKeyword getDraft(IBIZProKeyword entity);
+    @RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/batch")
+    Boolean updateBatch(@RequestBody List<IBIZProKeyword> ibizprokeywords);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/checkkey")
     Boolean checkKey(@RequestBody IBIZProKeyword ibizprokeyword);
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/fetchdefault")
+    Page<IBIZProKeyword> searchDefault(@SpringQueryMap IBIZProKeywordSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/getdraft")
+    IBIZProKeyword getDraft(IBIZProKeyword entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/save")
@@ -67,9 +68,8 @@ public interface IBIZProKeywordFeignClient {
     Boolean saveBatch(@RequestBody List<IBIZProKeyword> ibizprokeywords);
 
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/fetchdefault")
-    Page<IBIZProKeyword> searchDefault(@SpringQueryMap IBIZProKeywordSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/select")
+    Page<IBIZProKeyword> select();
 
 
 

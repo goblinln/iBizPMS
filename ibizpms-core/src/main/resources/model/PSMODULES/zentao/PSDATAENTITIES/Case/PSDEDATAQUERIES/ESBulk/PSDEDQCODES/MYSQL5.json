@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\n\tt1.CASESN,\n        t1.`id`,\n\tt1.title,\n\tt1.precondition,\n\tt1.PRODUCT,\n\tt1.deleted\nFROM\n\tzt_case t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEDATAQUERIES/ESBulk/PSDEDQCODES/MYSQL5.json"
+}

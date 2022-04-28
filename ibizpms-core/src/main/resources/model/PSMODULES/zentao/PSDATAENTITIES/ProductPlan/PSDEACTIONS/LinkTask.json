@@ -6,13 +6,15 @@
   "logicName" : "关联任务",
   "name" : "LinkTask",
   "getPSDEActionInput" : {
-    "codeName" : "LinkTaskInput",
-    "name" : "输入对象",
+    "name" : "LinkTaskInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "LinkTaskResult",
-    "name" : "返回对象",
+    "name" : "LinkTaskResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

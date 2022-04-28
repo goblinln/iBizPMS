@@ -4,6 +4,9 @@
     border: 1px solid var(--item-font-color-light);
     height: 32px;
     border-radius: 4px;
+    .ibiz-group-select-tree-content{
+        width: 100%;
+    }
     .ibiz-group-content {
         flex-grow: 1;
         height: 32px;
@@ -45,5 +48,12 @@
     border-color: var(--form-editor-active-color);
     .ibiz-group-open .el-icon-circle-close {
         display: block;
+    }
+}
+.ibiz-group-select-tree.ibiz-group-select{
+    border: none;
+    .ivu-select-dropdown {
+        max-height: 250px;
+        overflow: auto;
     }
 }

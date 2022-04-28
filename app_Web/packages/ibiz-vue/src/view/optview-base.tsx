@@ -38,6 +38,14 @@ export class OptViewBase extends MainViewBase implements OptViewInterface {
     public engine: OptionViewEngine = new OptionViewEngine();
 
     /**
+     * 表单提交状态
+     *
+     * @type {boolean}
+     * @memberof OptViewBase
+     */
+    public isSubmitting:boolean = false;
+
+    /**
      * 引擎初始化
      *
      * @public
@@ -85,7 +93,7 @@ export class OptViewBase extends MainViewBase implements OptViewInterface {
     public renderFooter() {
         return <template slot="footer">
             <div style=" text-align: right " dis-hover bordered={false} class="option-view-footer-actions">
-                <i-button type='primary' on-click={(...params: any[]) => throttle(this.onClickOk,params,this)}>{this.containerModel.view_okbtn.text}</i-button>
+                <i-button type='primary' loading={this.isSubmitting} on-click={(...params: any[]) => throttle(this.onClickOk,params,this)}>{this.containerModel.view_okbtn.text}</i-button>
                     &nbsp;&nbsp;
                     <i-button on-click={(...params: any[]) => throttle(this.onClickCancel,params,this)}>{this.containerModel.view_cancelbtn.text}</i-button>
             </div>
@@ -100,10 +108,14 @@ export class OptViewBase extends MainViewBase implements OptViewInterface {
     public onClickOk(): void {
         const form: any = this.$refs[this.editFormInstance?.name];
         if (!form || !form.ctrl) return;
+        this.isSubmitting = true;
         form.ctrl?.save().then((res: any) => {
+            this.isSubmitting = false;
             if (res.status == 200) {
                 this.$emit('view-event', { viewName: this.viewInstance.name, action: 'close', data: [res.data] });
             }
+        }).catch(()=>{
+            this.isSubmitting = false;
         });
     }
 

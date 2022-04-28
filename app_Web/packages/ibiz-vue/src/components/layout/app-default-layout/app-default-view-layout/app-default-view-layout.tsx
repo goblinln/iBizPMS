@@ -244,7 +244,7 @@ export class AppDefaultViewLayout extends Vue {
             case 'CONTAINER':
                 return this.renderContainer(modelJson);
             case 'TABPANEL':
-                return this.renderTabPanel(modelJson);
+                return this.renderTabPanel(modelJson, parent);
             case 'TABPAGE':
                 return this.renderTabPage(modelJson);
             case 'FIELD':
@@ -374,13 +374,21 @@ export class AppDefaultViewLayout extends Vue {
      *
      * @memberof AppDefaultViewLayout
      */
-     public renderTabPanel(modelJson: IPSPanelTabPanel) {
+     public renderTabPanel(modelJson: IPSPanelTabPanel, parent?: any) {
         const tabPages: IPSPanelTabPage[] = modelJson.getPSPanelTabPages() || [];
         let activedTabPage: any = tabPages.length > 0 ? tabPages[0].name : '';
+        const customStyle = {};
+        if (modelJson.width) {
+            Object.assign(customStyle, { width: modelJson.width + 'px' });
+        }
+        if (modelJson.height) {
+            Object.assign(customStyle, { height: modelJson.height + 'px' });
+        }
         return (
             <el-tabs
                 value={activedTabPage}
                 class={this.renderDetailClass(modelJson)}
+                style={parent ? {} : customStyle}
             >
                 {tabPages.length > 0 ?
                     tabPages.map((item: IPSPanelTabPage, index: number) => {

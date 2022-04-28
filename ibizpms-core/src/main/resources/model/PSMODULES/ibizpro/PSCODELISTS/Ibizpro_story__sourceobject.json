@@ -1,20 +1,28 @@
 {
+  "codeListTag" : "ibizpro__Ibizpro_story__sourceobject",
   "codeListType" : "STATIC",
   "codeName" : "Ibizpro_story__sourceobject",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSCODELISTS/Ibizpro_story__sourceobject.json",
   "emptyText" : "未定义",
+  "name" : "来源对象",
   "getPSCodeItems" : [ {
     "codeName" : "Sourcenote__dataentity",
     "text" : "实体",
-    "value" : "sourcenote__dataentity",
-    "includeBeginValue" : true
+    "value" : "sourcenote__dataentity"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

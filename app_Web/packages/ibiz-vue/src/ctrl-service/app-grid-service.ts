@@ -1,5 +1,5 @@
 import { IPSDEGrid, IPSDEGridEditItem } from '@ibiz/dynamic-model-api';
-import { ControlServiceBase, Util } from 'ibiz-core';
+import { ControlServiceBase, ModelTool, Util } from 'ibiz-core';
 import { GlobalService } from 'ibiz-service';
 import { AppGridModel } from 'ibiz-vue';
 
@@ -127,7 +127,8 @@ export class AppGridService extends ControlServiceBase {
             if(item) {
                 const service: any = await new GlobalService().getService(serviceName);
                 if(service && service[interfaceName] && Util.isFunction(service[interfaceName])) {
-                    return this.doItems(service[interfaceName](JSON.parse(JSON.stringify(context)),data, isloading), item.getPSEditor()?.getPSAppDataEntity()?.keyField?.codeName.toLowerCase(), item.getPSEditor()?.getPSAppDataEntity()?.codeName?.toLowerCase())
+                    const appDeKeyCodeName:any = ModelTool.getAppEntityKeyField(item.getPSEditor()?.getPSAppDataEntity())?.codeName?.toLowerCase();
+                    return this.doItems(service[interfaceName](JSON.parse(JSON.stringify(context)),data, isloading), appDeKeyCodeName, item.getPSEditor()?.getPSAppDataEntity()?.codeName?.toLowerCase())
                 }
             }
         }

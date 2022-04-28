@@ -1,4 +1,5 @@
 import { Provide } from 'vue-property-decorator';
+import { isArray } from 'qx-util';
 import { LogUtil, TreeControlInterface, Util, ViewTool } from 'ibiz-core';
 import { AppTreeService } from '../ctrl-service';
 import { MDControlBase } from './md-control-base';
@@ -120,6 +121,14 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
     public copyActionModel: any;
 
     /**
+     * 节点刷新模式 ['CURRENT'：当前节点，'PARENT'：父节点，'ALL'：全部]
+     *
+     * @type {'CURRENT' | 'PARENT' | 'ALL'}
+     * @memberof TreeControlBase
+     */
+    public refreshMode: 'CURRENT' | 'PARENT' | 'ALL' = 'CURRENT';
+
+    /**
      * 监听动态参数变化
      *
      * @param {*} newVal
@@ -218,7 +227,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         tempItem.caption = toolbarItem.showCaption ? toolbarItem.caption : '';
         tempItem.title = toolbarItem.tooltip;
         tempModel[`${item.nodeType}_${toolbarItem.name}`] = tempItem;
-        const toolbarItems = (toolbarItem as IPSDETBUIActionItem)?.getPSDEToolbarItems() || [];
+        const toolbarItems = (toolbarItem as IPSDETBUIActionItem)?.getPSDEToolbarItems?.() || [];
         if (toolbarItems?.length > 0) {
             for (let toolBarChild of toolbarItems) {
                 this.initActionModelItem(toolBarChild, item, tempModel)
@@ -293,13 +302,14 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
             resolve(node.data.children);
             return;
         }
-        const params: any = {
-            srfnodeid: node.data && node.data.id ? node.data.id : '#',
-            srfnodefilter: this.srfnodefilter,
-        };
         let tempViewParams: any = Util.deepCopy(this.viewparams);
         let curNode: any = {};
         curNode = Util.deepObjectMerge(curNode, node);
+        const params: any = {
+            srfnodeid: node.data && node.data.id ? node.data.id : '#',
+            srfnodefilter: this.srfnodefilter,
+            parentData: curNode.data?.curData
+        };
         let tempContext: any = this.computecurNodeContext(curNode);
         if (curNode.data && curNode.data.srfparentdename) {
             Object.assign(tempContext, { srfparentdename: curNode.data.srfparentdename });
@@ -326,6 +336,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
                 }
                 const _items = response.data;
                 this.formatExpanded(_items);
+                this.formatAppendCaption(_items);
                 resolve([..._items]);
                 let isRoot = Object.is(node.level, 0);
                 let isSelectedAll = node.checked;
@@ -408,7 +419,25 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
      * @memberof TreeControlBase
      */
     public refresh(args?: any): void {
-        this.refresh_all();
+        if (args && isArray(args) && args.length > 0) {
+            const refreshMode = args[0]['refreshMode'];
+            switch (refreshMode) {
+                case 1: //当前节点
+                    this.refresh_current();
+                    break;
+                case 2: //父节点
+                    this.refresh_parent();
+                    break;
+                case 3: //刷新全部
+                    this.refresh_all();
+                    break;
+                default:
+                    this.refresh_current();
+                    break;
+            }
+        } else {
+            this.refresh_current();
+        }
     }
 
     /**
@@ -417,6 +446,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
      * @memberof TreeControlBase
      */
     public refresh_all(): void {
+        this.refreshMode = 'ALL';
         this.inited = false;
         this.$nextTick(() => {
             this.inited = true;
@@ -465,6 +495,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
      * @memberof TreeControlBase
      */
     public refresh_current(): void {
+        this.refreshMode = 'CURRENT';
         if (Object.keys(this.currentselectedNode).length === 0) {
             return;
         }
@@ -492,6 +523,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
      * @memberof TreeControlBase
      */
     public refresh_parent(): void {
+        this.refreshMode = 'PARENT';
         if (Object.keys(this.currentselectedNode).length === 0) {
             return;
         }
@@ -655,6 +687,22 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
             }
         });
         return data;
+    }
+
+    /**
+     * 设置附加标题栏
+     *
+     * @public
+     * @param {any[]} items 节点集合
+     * @returns {any[]}
+     * @memberof TreeControlBase
+     */
+    public formatAppendCaption(items: any[]) {
+        items.forEach(item => {
+            if (item.appendCaption && item.textFormat) {
+                item.text = item.textFormat + item.text;
+            }
+        });
     }
 
     /**
@@ -934,5 +982,28 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         const id: string = _parent.key ? _parent.key : '#';
         const param: any = { srfnodeid: id };
         this.refresh_node(tempContext, param, false);
+    }
+
+    /**
+     * 开始加载
+     *
+     * @memberof TreeControlBase
+     */
+    public ctrlBeginLoading() {
+        if (Object.keys(this.currentselectedNode).length === 0) {
+            super.ctrlBeginLoading();
+        } else {
+            const tree: any = this.$refs[this.name];
+            if (tree) {
+                const node: any = tree.getNode(this.currentselectedNode.id);
+                if (!node || !node.parent) {
+                    super.ctrlBeginLoading();
+                } else {
+                    this.ctrlLoadingService.beginLoading2(`.tree-node-id-${this.refreshMode == 'PARENT' ? node.parent.id : node.id}`);
+                }
+            } else {
+                super.ctrlBeginLoading();
+            }
+        }
     }
 }

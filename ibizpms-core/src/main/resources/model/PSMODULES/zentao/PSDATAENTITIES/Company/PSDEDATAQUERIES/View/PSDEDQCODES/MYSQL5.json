@@ -1,0 +1,48 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ADDRESS`",
+    "name" : "ADDRESS"
+  }, {
+    "expression" : "t1.`ADMINS`",
+    "name" : "ADMINS"
+  }, {
+    "expression" : "t1.`BACKYARD`",
+    "name" : "BACKYARD"
+  }, {
+    "expression" : "t1.`COMPANYSN`",
+    "name" : "COMPANYSN"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`FAX`",
+    "name" : "FAX"
+  }, {
+    "expression" : "t1.`GUEST`",
+    "name" : "GUEST"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`PHONE`",
+    "name" : "PHONE"
+  }, {
+    "expression" : "t1.`WEBSITE`",
+    "name" : "WEBSITE"
+  }, {
+    "expression" : "t1.`ZIPCODE`",
+    "name" : "ZIPCODE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ADDRESS`,\nt1.`ADMINS`,\nt1.`BACKYARD`,\nt1.`COMPANYSN`,\nt1.`DELETED`,\nt1.`FAX`,\nt1.`GUEST`,\nt1.`ID`,\nt1.`NAME`,\nt1.`PHONE`,\nt1.`WEBSITE`,\nt1.`ZIPCODE`\nFROM `zt_company` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

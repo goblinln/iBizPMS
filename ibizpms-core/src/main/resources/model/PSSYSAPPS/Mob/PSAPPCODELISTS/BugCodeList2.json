@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__BugCodeList2",
   "codeListType" : "STATIC",
   "codeName" : "BugCodeList2",
   "dynaInstMode" : 1,
@@ -14,14 +15,12 @@
     "data" : "{}",
     "text" : "所有",
     "value" : "All",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Active",
     "data" : "{\"n_status_eq\":\"active\"}",
     "text" : "未解决",
-    "value" : "active",
-    "includeBeginValue" : true
+    "value" : "active"
   } ],
   "enableCache" : true
 }

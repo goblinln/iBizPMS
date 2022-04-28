@@ -1,0 +1,43 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`AID`",
+    "name" : "AID"
+  }, {
+    "expression" : "t1.`ATYPE`",
+    "name" : "ATYPE"
+  }, {
+    "expression" : "t1.`AVERSION`",
+    "name" : "AVERSION"
+  }, {
+    "expression" : "t1.`BID`",
+    "name" : "BID"
+  }, {
+    "expression" : "t1.`BTYPE`",
+    "name" : "BTYPE"
+  }, {
+    "expression" : "t1.`BVERSION`",
+    "name" : "BVERSION"
+  }, {
+    "expression" : "t1.`EXTRA`",
+    "name" : "EXTRA"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`PROGRAM`",
+    "name" : "PROGRAM"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t1.`RELATION`",
+    "name" : "RELATION"
+  } ],
+  "queryCode" : "SELECT\nt1.`AID`,\nt1.`ATYPE`,\nt1.`AVERSION`,\nt1.`BID`,\nt1.`BTYPE`,\nt1.`BVERSION`,\nt1.`EXTRA`,\nt1.`ID`,\nt1.`PRODUCT`,\nt1.`PROGRAM`,\nt1.`PROJECT`,\nt1.`RELATION`\nFROM `zt_relation` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Relation/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

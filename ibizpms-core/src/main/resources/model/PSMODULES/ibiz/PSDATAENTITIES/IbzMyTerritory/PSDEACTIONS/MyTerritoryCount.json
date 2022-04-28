@@ -6,13 +6,15 @@
   "logicName" : "我的地盘移动端计数器",
   "name" : "MyTerritoryCount",
   "getPSDEActionInput" : {
-    "codeName" : "MyTerritoryCountInput",
-    "name" : "输入对象",
+    "name" : "MyTerritoryCountInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzMyTerritoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "MyTerritoryCountResult",
-    "name" : "返回对象",
+    "name" : "MyTerritoryCountResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

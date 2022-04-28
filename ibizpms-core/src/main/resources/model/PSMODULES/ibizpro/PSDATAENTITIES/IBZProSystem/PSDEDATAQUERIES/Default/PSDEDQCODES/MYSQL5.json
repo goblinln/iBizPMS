@@ -1,0 +1,25 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`IBZPRO_SYSTEMID`",
+    "name" : "IBZPRO_SYSTEMID"
+  }, {
+    "expression" : "t1.`IBZPRO_SYSTEMNAME`",
+    "name" : "IBZPRO_SYSTEMNAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`IBZPRO_SYSTEMID`,\nt1.`IBZPRO_SYSTEMNAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_IBZPRO_SYSTEM` t1 \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSystem/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

@@ -16,6 +16,14 @@ import { EditorBase } from '../editor-base/editor-base';
 export default class TextboxEditor extends EditorBase {
 
     /**
+     * 是否防抖
+     *
+     * @type {boolean}
+     * @memberof TextboxEditor
+     */
+    @Prop() public isDebounce?: boolean;
+
+    /**
      * 编辑器初始化
      *
      * @memberof TextboxEditor
@@ -26,17 +34,21 @@ export default class TextboxEditor extends EditorBase {
         let appDeField: IPSAppDEField = this.parentItem?.getPSAppDEField?.();
         switch (this.editorInstance?.editorType) {
             case 'TEXTBOX':
+                this.customProps.isDebounce = this.isDebounce;
                 this.customProps.type = ModelTool.isNumberField(appDeField) ? 'number' : 'text';
                 this.customProps.unit = unitName;
                 this.customProps.precision = ModelTool.getPrecision(this.editorInstance, appDeField);
                 break;
             case 'PASSWORD':
+                this.customProps.isDebounce = this.isDebounce;
                 this.customProps.type = 'password';
                 break;
             case 'TEXTAREA':
+                this.customProps.isDebounce = this.isDebounce;
                 this.customProps.type = 'textarea';
                 break;
             case 'TEXTAREA_10':
+                this.customProps.isDebounce = this.isDebounce;
                 this.customProps.type = 'textarea';
                 this.customProps.textareaId = Util.createUUID();
                 // todo lxm getEditorCssStyle
@@ -44,6 +56,7 @@ export default class TextboxEditor extends EditorBase {
                 this.customProps.rows = 10;
                 break;
             case 'NUMBER':
+                this.customProps.isDebounce = this.isDebounce;
                 this.customProps.type = 'number';
                 this.customProps.unit = unitName;
                 this.customProps.precision = ModelTool.getPrecision(this.editorInstance, appDeField);
@@ -185,6 +198,12 @@ export default class TextboxEditor extends EditorBase {
             case "TEXTAREA":
             case "TEXTAREA_10":
             case "NUMBER":
+                if(this.editorInstance.editorParams?.['max']){
+                    this.customProps.max = parseInt(this.editorInstance.editorParams?.['max']);
+                }
+                if(this.editorInstance.editorParams?.['min']){
+                    this.customProps.min = parseInt(this.editorInstance.editorParams?.['min']);
+                }
             case 'MARKDOWN':
                 return this.renderTextbox();
             case "TEXTBOX_COLORPICKER":

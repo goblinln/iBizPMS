@@ -42,6 +42,7 @@ import { AppDefaultWFActionViewLayout } from '../../components/layout/app-defaul
 import { AppDefaultDeRedirectViewLayout } from '../../components/layout/app-default-layout/app-default-deredirectview-layout/app-default-deredirectview-layout';
 import { AppDefaultWfStepTraceViewLayout } from '../../components/layout/app-default-layout/app-default-wfsteptraceview-layout/app-default-wfsteptraceview-layout';
 import { AppDefaultMapViewLayout } from '../../components/layout/app-default-layout/app-default-mapview-layout/app-default-mapview-layout';
+import { AppDefaultDeIndexViewLayout } from '../../components/layout/app-default-layout/app-default-deindexview-layout/app-default-deindexview-layout';
 import { AppStyle2IndexViewLayout } from '../../components/layout/app-style2-layout/app-style2-indexview-layout/app-style2-indexview-layout';
 import { AppStyle2GridViewLayout } from '../../components/layout/app-style2-layout/app-style2-gridview-layout/app-style2-gridview-layout';
 import { AppStyle2GridExpViewLayout } from '../../components/layout/app-style2-layout/app-style2-gridexpview-layout/app-style2-gridexpview-layout';
@@ -166,7 +167,9 @@ export class AppLayoutService {
         this.layoutMap.set("DEREPORTVIEW-DEFAULT",AppDefaultDeReportViewLayout);
         this.layoutMap.set("DEMAPEXPVIEW-DEFAULT",AppDefaultMapExpViewLayout);
         this.layoutMap.set("DEPANELVIEW-DEFAULT", AppDefaultDePanelViewLayout);
+        this.layoutMap.set("DEPANELVIEW9-DEFAULT", AppDefaultDePanelViewLayout);
         this.layoutMap.set("DEHTMLVIEW-DEFAULT", AppDefaultHtmlViewLayout);
+        this.layoutMap.set("DEINDEXVIEW-DEFAULT", AppDefaultDeIndexViewLayout);
         // todo 部件视图布局
         this.layoutMap.set("DEEDITVIEW9-DEFAULT", AppDefaultEditViewLayout);
         this.layoutMap.set("DEGRIDVIEW9-DEFAULT", AppDefaultGridViewLayout);
@@ -219,6 +222,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEREPORTVIEW-STYLE2",AppStyle2DeReportViewLayout);
         this.layoutMap.set("DEMAPEXPVIEW-STYLE2",AppStyle2MapExpViewLayout);
         this.layoutMap.set("DEPANELVIEW-STYLE2", AppStyle2DePanelViewLayout);
+        this.layoutMap.set("DEPANELVIEW9-STYLE2", AppStyle2DePanelViewLayout);
         this.layoutMap.set("DEMAPVIEW-STYLE2",AppStyle2MapViewLayout);
         //  STYLE2部件视图
         this.layoutMap.set("DEEDITVIEW9-STYLE2", AppStyle2EditViewLayout);

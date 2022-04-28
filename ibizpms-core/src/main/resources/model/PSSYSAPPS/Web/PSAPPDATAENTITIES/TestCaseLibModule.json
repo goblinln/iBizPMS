@@ -325,6 +325,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "TestCaseLibModule",
+  "dEAPITag" : "IBZ_API__TEST_CASE_LIB_MODULE",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json",
@@ -334,10 +335,14 @@
     "actionRSMode" : 1,
     "codeName" : "TestCaseLibModules",
     "dataRSMode" : 0,
+    "majorDECodeName" : "TestCaseLib",
+    "majorDEName" : "IBZ_LIB",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
     },
+    "minorDECodeName" : "TestCaseLibModule",
+    "minorDEName" : "IBZ_LIBMODULE",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
@@ -350,12 +355,17 @@
     "rSMode" : 2
   } ],
   "name" : "IBZ_LIBMODULE",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "IBZ_LIBMODULE",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "NAME",
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

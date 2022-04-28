@@ -1,0 +1,46 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACTION`",
+    "name" : "ACTION"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`DIFF`",
+    "name" : "DIFF"
+  }, {
+    "expression" : "t1.`FIELD`",
+    "name" : "FIELD"
+  }, {
+    "expression" : "t1.`HISTORYSN`",
+    "name" : "HISTORYSN"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NEW`",
+    "name" : "NEW"
+  }, {
+    "expression" : "t1.`OLD`",
+    "name" : "OLD"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACTION`,\nt1.`CREATEBY`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`DIFF`,\nt1.`FIELD`,\nt1.`HISTORYSN`,\nt1.`ID`,\nt1.`NEW`,\nt1.`OLD`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`UPDATEBY`\nFROM `zt_history` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

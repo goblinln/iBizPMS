@@ -6,13 +6,15 @@
   "logicName" : "Finish",
   "name" : "Finish",
   "getPSDEActionInput" : {
-    "codeName" : "FinishInput",
-    "name" : "输入对象",
+    "name" : "FinishInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TodoDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "FinishResult",
-    "name" : "返回对象",
+    "name" : "FinishResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

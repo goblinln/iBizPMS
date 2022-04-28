@@ -1,34 +1,40 @@
 {
+  "codeListTag" : "ibiz__Zt__productplan",
   "codeListType" : "STATIC",
   "codeName" : "Zt__productplan",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/Zt__productplan.json",
   "emptyText" : "未定义",
+  "name" : "计划快速分组",
   "getPSCodeItems" : [ {
     "codeName" : "All",
     "data" : "{}",
     "text" : "所有",
     "value" : "All",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Unexpired",
     "data" : "{\"n_isexpired_eq\":0}",
     "text" : "未过期",
-    "value" : "UNEXPIRED",
-    "includeBeginValue" : true
+    "value" : "UNEXPIRED"
   }, {
     "codeName" : "Isexpired",
     "data" : "{\"n_isexpired_eq\":1}",
     "text" : "已过期",
-    "value" : "ISEXPIRED",
-    "includeBeginValue" : true
+    "value" : "ISEXPIRED"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Story__pri",
   "codeListType" : "STATIC",
   "codeName" : "Story__pri",
   "dynaInstMode" : 1,
@@ -17,8 +18,7 @@
     },
     "text" : "1",
     "textCls" : "text-red-border-color",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   }, {
     "codeName" : "Item_2",
     "color" : "rgba(225, 228, 33, 1)",
@@ -27,8 +27,7 @@
     },
     "text" : "2",
     "textCls" : "text-pink-border-color",
-    "value" : "2",
-    "includeBeginValue" : true
+    "value" : "2"
   }, {
     "codeName" : "Item_3",
     "color" : "rgba(52, 8, 248, 1)",
@@ -38,8 +37,7 @@
     "text" : "3",
     "textCls" : "text-blue-border-color",
     "value" : "3",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Item_4",
     "color" : "rgba(80, 133, 63, 1)",
@@ -48,8 +46,7 @@
     },
     "text" : "4",
     "textCls" : "text-green-border-color",
-    "value" : "4",
-    "includeBeginValue" : true
+    "value" : "4"
   } ],
   "codeItemValueNumber" : true,
   "enableCache" : true

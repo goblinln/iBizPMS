@@ -740,11 +740,16 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ReportSummary",
+  "dEAPITag" : "IBZ_API__REPORT",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json",
   "enableUIActions" : 15,
   "logicName" : "汇报",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "TYPE",
+    "codeName" : "Type"
+  } ],
   "name" : "IBZ_REPORT",
   "getPSDEName" : "IBZ_REPORT",
   "getQuickSearchPSAppDEFields" : [ {
@@ -752,7 +757,9 @@
     "codeName" : "IbzDailyName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

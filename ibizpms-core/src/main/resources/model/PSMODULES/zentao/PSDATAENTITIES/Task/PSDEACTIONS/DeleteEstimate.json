@@ -6,13 +6,15 @@
   "logicName" : "删除工时",
   "name" : "DeleteEstimate",
   "getPSDEActionInput" : {
-    "codeName" : "DeleteEstimateInput",
-    "name" : "输入对象",
+    "name" : "DeleteEstimateInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "DeleteEstimateResult",
-    "name" : "返回对象",
+    "name" : "DeleteEstimateResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

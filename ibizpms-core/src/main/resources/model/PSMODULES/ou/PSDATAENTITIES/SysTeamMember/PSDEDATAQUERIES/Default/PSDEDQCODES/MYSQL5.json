@@ -1,0 +1,37 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DOMAINS`",
+    "name" : "DOMAINS"
+  }, {
+    "expression" : "t31.`PERSONNAME`",
+    "name" : "PERSONNAME"
+  }, {
+    "expression" : "t1.`POSTID`",
+    "name" : "POSTID"
+  }, {
+    "expression" : "t21.`POSTNAME`",
+    "name" : "POSTNAME"
+  }, {
+    "expression" : "t1.`TEAMID`",
+    "name" : "TEAMID"
+  }, {
+    "expression" : "t1.`TEAMMEMBERID`",
+    "name" : "TEAMMEMBERID"
+  }, {
+    "expression" : "t11.`TEAMNAME`",
+    "name" : "TEAMNAME"
+  }, {
+    "expression" : "t31.`USERICON`",
+    "name" : "USERICON"
+  }, {
+    "expression" : "t1.`USERID`",
+    "name" : "USERID"
+  }, {
+    "expression" : "t31.`USERNAME`",
+    "name" : "USERNAME"
+  } ],
+  "queryCode" : "SELECT\nt1.`DOMAINS`,\nt31.`PERSONNAME`,\nt1.`POSTID`,\nt21.`POSTNAME`,\nt1.`TEAMID`,\nt1.`TEAMMEMBERID`,\nt11.`TEAMNAME`,\nt31.`USERICON`,\nt1.`USERID`,\nt31.`USERNAME`\nFROM `IBZTEAMMEMBER` t1 \nLEFT JOIN `IBZTEAM` t11 ON t1.`TEAMID` = t11.`TEAMID` \nLEFT JOIN `IBZPOST` t21 ON t1.`POSTID` = t21.`POSTID` \nLEFT JOIN `T_IBZEMP` t31 ON t1.`USERID` = t31.`USERID` \n",
+  "id" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

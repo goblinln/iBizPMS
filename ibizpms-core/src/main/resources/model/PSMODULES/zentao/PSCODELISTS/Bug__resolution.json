@@ -1,55 +1,56 @@
 {
+  "codeListTag" : "zentao__Bug__resolution",
   "codeListType" : "STATIC",
   "codeName" : "Bug__resolution",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__resolution.json",
   "emptyText" : "未定义",
+  "name" : "Bug解决方案",
   "getPSCodeItems" : [ {
     "codeName" : "Bydesign",
     "text" : "设计如此",
-    "value" : "bydesign",
-    "includeBeginValue" : true
+    "value" : "bydesign"
   }, {
     "codeName" : "Duplicate",
     "text" : "重复Bug",
-    "value" : "duplicate",
-    "includeBeginValue" : true
+    "value" : "duplicate"
   }, {
     "codeName" : "External",
     "text" : "外部原因",
-    "value" : "external",
-    "includeBeginValue" : true
+    "value" : "external"
   }, {
     "codeName" : "Fixed",
     "text" : "已解决",
-    "value" : "fixed",
-    "includeBeginValue" : true
+    "value" : "fixed"
   }, {
     "codeName" : "Notrepro",
     "text" : "无法重现",
-    "value" : "notrepro",
-    "includeBeginValue" : true
+    "value" : "notrepro"
   }, {
     "codeName" : "Postponed",
     "text" : "延期处理",
-    "value" : "postponed",
-    "includeBeginValue" : true
+    "value" : "postponed"
   }, {
     "codeName" : "Willnotfix",
     "text" : "不予解决",
-    "value" : "willnotfix",
-    "includeBeginValue" : true
+    "value" : "willnotfix"
   }, {
     "codeName" : "Tostory",
     "text" : "转为需求",
-    "value" : "tostory",
-    "includeBeginValue" : true
+    "value" : "tostory"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -6,13 +6,15 @@
   "logicName" : "TestScript",
   "name" : "TestScript",
   "getPSDEActionInput" : {
-    "codeName" : "TestScriptInput",
-    "name" : "输入对象",
+    "name" : "TestScriptInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BugDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "TestScriptResult",
-    "name" : "返回对象",
+    "name" : "TestScriptResult",
     "type" : "VOID"
   },
   "scriptCode" : "var childrenbugs = entity.children(\"ZT_BUG\"); \nif(childrenbugs !=null){\nfor(var i=0 ;i< childrenbugs.length;i++){\nsys.info(childrenbugs[i].get(\"TITLE\"));\n}\n}\nentity.set(\"id\",100).wfstart();\nentity.set(\"status\",\"FINISH\").update();"

@@ -6,13 +6,15 @@
   "logicName" : "发送待阅",
   "name" : "sendToread",
   "getPSDEActionInput" : {
-    "codeName" : "SendToreadInput",
-    "name" : "输入对象",
+    "name" : "SendToreadInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ActionDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SendToreadResult",
-    "name" : "返回对象",
+    "name" : "SendToreadResult",
     "type" : "VOID"
   }
 }

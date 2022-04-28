@@ -7,15 +7,21 @@
   "name" : "Create",
   "orderValue" : 1,
   "getPSDEActionInput" : {
-    "codeName" : "CreateInput",
-    "name" : "输入对象",
+    "name" : "CreateInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "PSDataEntityDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CreateResult",
-    "name" : "返回对象",
+    "name" : "CreateResult",
     "type" : "VOID"
+  },
+  "getPSSubSysServiceAPIDEMethod" : {
+    "modelref" : true,
+    "id" : "Create"
   },
   "builtinAction" : true
 }

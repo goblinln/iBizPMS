@@ -6,13 +6,15 @@
   "logicName" : "任务收藏",
   "name" : "TaskFavorites",
   "getPSDEActionInput" : {
-    "codeName" : "TaskFavoritesInput",
-    "name" : "输入对象",
+    "name" : "TaskFavoritesInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "TaskFavoritesResult",
-    "name" : "返回对象",
+    "name" : "TaskFavoritesResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

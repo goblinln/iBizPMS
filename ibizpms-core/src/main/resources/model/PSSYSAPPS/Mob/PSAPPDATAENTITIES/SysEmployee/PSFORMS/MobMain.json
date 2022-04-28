@@ -553,7 +553,7 @@
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMITEM",
       "enableCond" : 3,
-      "ignoreInput" : 0,
+      "ignoreInput" : 3,
       "labelPos" : "LEFT",
       "labelWidth" : 60,
       "name" : "enable",
@@ -1135,6 +1135,7 @@
     "id" : "update"
   },
   "enableAutoSave" : true,
+  "mobileControl" : true,
   "noTabHeader" : true,
   "modelid" : "77988f4ac810c199f9039c6329534790",
   "modeltype" : "PSDEFORM_EDITFORM"

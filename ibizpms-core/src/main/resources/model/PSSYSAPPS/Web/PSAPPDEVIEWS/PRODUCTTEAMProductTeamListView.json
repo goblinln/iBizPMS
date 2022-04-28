@@ -194,6 +194,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CREATE"
+        },
         "getPSNavigateContexts" : [ {
           "key" : "PRODUCT",
           "name" : "PRODUCT",
@@ -246,6 +250,7 @@
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "predefinedType" : "GRIDVIEW_REFRESHACTION",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "Refresh",
@@ -422,6 +427,7 @@
                 "logicType" : "SINGLE",
                 "name" : "role 值不为空(NotNil)"
               } ],
+              "relatedItemNames" : [ "role" ],
               "notMode" : false
             } ],
             "viewFieldName" : "role",
@@ -447,8 +453,17 @@
                 "logicType" : "SINGLE",
                 "name" : "role 值为空(Nil)"
               } ],
+              "relatedItemNames" : [ "role" ],
               "notMode" : false
             } ],
+            "getPSRawItem" : {
+              "caption" : "未设置角色",
+              "contentType" : "RAW",
+              "name" : "rawitem5",
+              "getPSSysCss" : {
+                "cssName" : "team-wszrole"
+              }
+            },
             "getPSSysCss" : {
               "cssName" : "team-wszrole"
             },
@@ -478,6 +493,11 @@
               "colLG" : 5,
               "colMD" : 24,
               "layout" : "TABLE_24COL"
+            },
+            "getPSRawItem" : {
+              "caption" : "加盟日",
+              "contentType" : "RAW",
+              "name" : "rawitem4"
             },
             "rawContent" : "加盟日"
           }, {
@@ -509,6 +529,11 @@
               "colLG" : 4,
               "colMD" : 24,
               "layout" : "TABLE_24COL"
+            },
+            "getPSRawItem" : {
+              "caption" : "可用工日",
+              "contentType" : "RAW",
+              "name" : "rawitem6"
             },
             "rawContent" : "可用工日"
           }, {
@@ -551,6 +576,11 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "getPSRawItem" : {
+              "caption" : "可用工时/天",
+              "contentType" : "RAW",
+              "name" : "rawitem7"
+            },
             "rawContent" : "可用工时/天"
           }, {
             "itemStyle" : "DEFAULT",
@@ -580,6 +610,11 @@
               "colLG" : 4,
               "colMD" : 24,
               "layout" : "TABLE_24COL"
+            },
+            "getPSRawItem" : {
+              "caption" : "总计",
+              "contentType" : "RAW",
+              "name" : "rawitem8"
             },
             "rawContent" : "总计"
           }, {
@@ -614,6 +649,11 @@
             "colXS" : 2,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "caption" : "消耗",
+            "contentType" : "RAW",
+            "name" : "rawitem1"
+          },
           "rawContent" : "消耗"
         }, {
           "caption" : "消耗",
@@ -647,6 +687,11 @@
             "colXS" : 3,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "caption" : "剩余",
+            "contentType" : "RAW",
+            "name" : "rawitem2"
+          },
           "rawContent" : "剩余"
         }, {
           "caption" : "剩余工时",
@@ -679,6 +724,11 @@
             "colSM" : 3,
             "colXS" : 3,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "caption" : "预计",
+            "contentType" : "RAW",
+            "name" : "rawitem3"
           },
           "rawContent" : "预计"
         }, {
@@ -715,6 +765,7 @@
           },
           "getPSPanelItems" : [ {
             "actionType" : "UIACTION",
+            "buttonStyle" : "DEFAULT",
             "caption" : "移除",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
@@ -748,6 +799,10 @@
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
+              },
+              "getPSDEOPPriv" : {
+                "modelref" : true,
+                "id" : "DELETE"
               },
               "getPSSysImage" : {
                 "glyph" : "xf127@FontAwesome",
@@ -793,43 +848,6 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
-        }
-      }, {
-        "actionType" : "DEDATASET",
-        "name" : "fetch",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchProductTeamInfo"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
-        }
-      }, {
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "dataAccessAction" : "READ",
@@ -850,6 +868,43 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchProductTeamInfo"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -988,10 +1043,14 @@
     "actionRSMode" : 1,
     "codeName" : "ProductTeams",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "ProductTeam",
+    "minorDEName" : "IBZ_PRODUCTTEAM",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"

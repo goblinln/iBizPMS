@@ -6,13 +6,19 @@
   "logicName" : "获取需求描述",
   "name" : "GetStorySpec",
   "getPSDEActionInput" : {
-    "codeName" : "GetStorySpecInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetStorySpecInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetStorySpecResult",
-    "name" : "返回对象",
+    "name" : "GetStorySpecResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   }
 }

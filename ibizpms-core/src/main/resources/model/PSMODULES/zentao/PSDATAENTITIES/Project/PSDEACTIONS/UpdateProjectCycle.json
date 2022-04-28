@@ -6,14 +6,16 @@
   "logicName" : "更新项目周期及可用工作日",
   "name" : "UpdateProjectCycle",
   "getPSDEActionInput" : {
-    "codeName" : "UpdateProjectCycleInput",
-    "name" : "输入对象",
+    "name" : "UpdateProjectCycleInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UpdateProjectCycleResult",
-    "name" : "返回对象",
+    "name" : "UpdateProjectCycleResult",
     "type" : "VOID"
   }
 }

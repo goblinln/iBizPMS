@@ -22,6 +22,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "MyCurOpenedStory",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchMyCurOpenedStory"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {

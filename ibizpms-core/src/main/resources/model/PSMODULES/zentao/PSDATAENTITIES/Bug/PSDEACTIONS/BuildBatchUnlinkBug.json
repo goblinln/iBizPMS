@@ -6,13 +6,15 @@
   "logicName" : "版本批量解除关联Bug",
   "name" : "buildBatchUnlinkBug",
   "getPSDEActionInput" : {
-    "codeName" : "BuildBatchUnlinkBugInput",
-    "name" : "输入对象",
+    "name" : "BuildBatchUnlinkBugInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BugDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BuildBatchUnlinkBugResult",
-    "name" : "返回对象",
+    "name" : "BuildBatchUnlinkBugResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

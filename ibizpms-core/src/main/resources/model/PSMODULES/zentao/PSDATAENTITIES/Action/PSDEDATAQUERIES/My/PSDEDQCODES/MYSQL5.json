@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\nt1.`ACTION`,\n(case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end) AS `ACTIONMANNER`,\nt1.ACTOR AS `ACTOR`,\nt1.`COMMENT`,\nt1.`DATE`,\nDATE_FORMAT(t1.date,'%m月%d日 %H:%i') as `date1`,\nt1.`ID`,\nt1.id as srfkey,\n0 AS `ISACTORSS`,\nt1.`comment` AS `LASTCOMMENT`,\nt1.`OBJECTID`,\nt1.`OBJECTTYPE`,\nt1.`PRODUCT`,\nt1.`PROJECT`,\nt1.`READ`,\nt1.ACTIONSN\nFROM `zt_action` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEDATAQUERIES/My/PSDEDQCODES/MYSQL5.json"
+}

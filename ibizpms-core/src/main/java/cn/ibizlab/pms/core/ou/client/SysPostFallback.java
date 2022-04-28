@@ -33,10 +33,6 @@ public class SysPostFallback implements FallbackFactory<SysPostFeignClient> {
         String finalErrorMessage = errorMessage;
         return new SysPostFeignClient(){
 
-            public Page<SysPost> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public SysPost create(SysPost syspost) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class SysPostFallback implements FallbackFactory<SysPostFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysPost update(String postid, SysPost syspost) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<SysPost> sysposts) {
+            public SysPost get(String postid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class SysPostFallback implements FallbackFactory<SysPostFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysPost get(String postid) {
+            public SysPost update(String postid, SysPost syspost) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<SysPost> sysposts) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(SysPost syspost) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysPost> searchDefault(SysPostSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class SysPostFallback implements FallbackFactory<SysPostFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(SysPost syspost) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(SysPost syspost) {
@@ -86,10 +87,9 @@ public class SysPostFallback implements FallbackFactory<SysPostFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<SysPost> searchDefault(SysPostSearchContext context) {
+            public Page<SysPost> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

@@ -1,26 +1,33 @@
 {
+  "codeListTag" : "zentao__Product__status",
   "codeListType" : "STATIC",
   "codeName" : "Product__status",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Product__status.json",
   "emptyText" : "未定义",
+  "name" : "产品状态",
   "getPSCodeItems" : [ {
     "codeName" : "Normal",
     "color" : "rgba(13, 255, 0, 1)",
     "text" : "正常",
-    "value" : "normal",
-    "includeBeginValue" : true
+    "value" : "normal"
   }, {
     "codeName" : "Closed",
     "text" : "结束",
-    "value" : "closed",
-    "includeBeginValue" : true
+    "value" : "closed"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

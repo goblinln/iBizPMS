@@ -6,13 +6,15 @@
   "logicName" : "更新工作时间",
   "name" : "computeWorkingHours",
   "getPSDEActionInput" : {
-    "codeName" : "ComputeWorkingHoursInput",
-    "name" : "输入对象",
+    "name" : "ComputeWorkingHoursInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ComputeWorkingHoursResult",
-    "name" : "返回对象",
+    "name" : "ComputeWorkingHoursResult",
     "type" : "VOID"
   }
 }

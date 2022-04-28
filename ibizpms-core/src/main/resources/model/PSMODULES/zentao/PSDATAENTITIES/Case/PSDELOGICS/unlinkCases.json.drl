@@ -5,8 +5,8 @@ package cn.ibizlab.pms.zentao.logic.caselogic.unlinkcases;
         import org.springframework.util.StringUtils;
         import org.springframework.util.ObjectUtils;
         import cn.ibizlab.pms.util.errors.BadRequestAlertException;
-                global cn.ibizlab.pms.core.zentao.domain.Case caseunlinkcasesdefault;
                 global cn.ibizlab.pms.core.zentao.domain.TestRun caseunlinkcasestestrun;
+                global cn.ibizlab.pms.core.zentao.domain.Case caseunlinkcasesdefault;
                     global cn.ibizlab.pms.core.zentao.service.ICaseService caseservice;
         global cn.ibizlab.pms.core.zentao.service.ICaseService iBzSysCaseDefaultService;
         global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
@@ -27,18 +27,8 @@ package cn.ibizlab.pms.zentao.logic.caselogic.unlinkcases;
             when
             then
                         caseservice.unlinkCase(caseunlinkcasesdefault);
-                        update(caseunlinkcasesdefault);//更新fact中变量值
                         update(caseunlinkcasestestrun);//更新fact中变量值
-            end
-
-            //逻辑处理节点[重置id]
-            rule "prepareparam1"
-            ruleflow-group "caseunlinkcasesprepareparam1"
-            when
-            then
-                            caseunlinkcasesdefault.set("id",caseunlinkcasestestrun.get("id"));
                         update(caseunlinkcasesdefault);//更新fact中变量值
-                        update(caseunlinkcasestestrun);//更新fact中变量值
             end
 
             //逻辑处理节点[获取数据]
@@ -57,6 +47,16 @@ package cn.ibizlab.pms.zentao.logic.caselogic.unlinkcases;
                                     caseunlinkcasestestrun.set(String.valueOf(entry.getKey()),entry.getValue());
                                     }
                             }
-                        update(caseunlinkcasesdefault);//更新fact中变量值
                         update(caseunlinkcasestestrun);//更新fact中变量值
+                        update(caseunlinkcasesdefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[重置id]
+            rule "prepareparam1"
+            ruleflow-group "caseunlinkcasesprepareparam1"
+            when
+            then
+                            caseunlinkcasesdefault.set("id",caseunlinkcasestestrun.get("id"));
+                        update(caseunlinkcasestestrun);//更新fact中变量值
+                        update(caseunlinkcasesdefault);//更新fact中变量值
             end

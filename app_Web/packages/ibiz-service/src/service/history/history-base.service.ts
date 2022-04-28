@@ -106,217 +106,217 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.doclib && _context.doc && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}/docs/${encodeURIComponent(_context.doc)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && _context.action && true) {
-            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}/docs/${encodeURIComponent(_context.doc)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.project && _context.testtask && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testtasks/${encodeURIComponent(_context.testtask)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.project && _context.testreport && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.project && _context.story && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.project && _context.task && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.project && _context.build && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.project && _context.bug && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/bugs/${encodeURIComponent(_context.bug)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.project && _context.productplan && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.project && _context.doclib && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/doclibs/${encodeURIComponent(_context.doclib)}/docs/${encodeURIComponent(_context.doc)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.test && _context.testreport && _context.action && true) {
-            const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testreports/${encodeURIComponent(_context.testreport)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.test && _context.testcase && _context.action && true) {
-            const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testcases/${encodeURIComponent(_context.testcase)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.test && _context.bug && _context.action && true) {
-            const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/bugs/${encodeURIComponent(_context.bug)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.testtask && _context.action && true) {
-            const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/testtasks/${encodeURIComponent(_context.testtask)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.testreport && _context.action && true) {
-            const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/testreports/${encodeURIComponent(_context.testreport)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.story && _context.action && true) {
-            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/stories/${encodeURIComponent(_context.story)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.task && _context.action && true) {
-            const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/tasks/${encodeURIComponent(_context.task)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.build && _context.action && true) {
-            const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.bug && _context.action && true) {
-            const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/bugs/${encodeURIComponent(_context.bug)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.productplan && _context.action && true) {
-            const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/productplans/${encodeURIComponent(_context.productplan)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.doclib && _context.action && true) {
-            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/doclibs/${encodeURIComponent(_context.doclib)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.project && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.story && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/stories/${encodeURIComponent(_context.story)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.productrelease && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productreleases/${encodeURIComponent(_context.productrelease)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.productplan && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productplans/${encodeURIComponent(_context.productplan)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.build && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/builds/${encodeURIComponent(_context.build)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.doclib && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/doclibs/${encodeURIComponent(_context.doclib)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.test && _context.testtask && _context.action && true) {
-            const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testtasks/${encodeURIComponent(_context.testtask)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.doclib && _context.doc && _context.action && true) {
-            const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/doclibs/${encodeURIComponent(_context.doclib)}/docs/${encodeURIComponent(_context.doc)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.sysaccount && _context.todo && _context.action && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/todos/${encodeURIComponent(_context.todo)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.sysaccount && _context.doc && _context.action && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/docs/${encodeURIComponent(_context.doc)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.weekly && _context.action && true) {
-            const res = await this.http.post(`/weeklies/${_context.weekly}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/weeklies/${encodeURIComponent(_context.weekly)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.todo && _context.action && true) {
-            const res = await this.http.post(`/todos/${_context.todo}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/todos/${encodeURIComponent(_context.todo)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.testsuite && _context.action && true) {
-            const res = await this.http.post(`/testsuites/${_context.testsuite}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/testsuites/${encodeURIComponent(_context.testsuite)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.reportly && _context.action && true) {
-            const res = await this.http.post(`/reportlies/${_context.reportly}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/reportlies/${encodeURIComponent(_context.reportly)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.action && true) {
-            const res = await this.http.post(`/projects/${_context.project}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && _context.action && true) {
-            const res = await this.http.post(`/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.monthly && _context.action && true) {
-            const res = await this.http.post(`/monthlies/${_context.monthly}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/monthlies/${encodeURIComponent(_context.monthly)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.doc && _context.action && true) {
-            const res = await this.http.post(`/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/docs/${encodeURIComponent(_context.doc)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.doclib && _context.action && true) {
-            const res = await this.http.post(`/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/doclibs/${encodeURIComponent(_context.doclib)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.daily && _context.action && true) {
-            const res = await this.http.post(`/dailies/${_context.daily}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/dailies/${encodeURIComponent(_context.daily)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.sysaccount && _context.action && true) {
-            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}/histories/fetchdefault`, _data);
+            const res = await this.http.post(`/sysaccounts/${encodeURIComponent(_context.sysaccount)}/actions/${encodeURIComponent(_context.action)}/histories/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }

@@ -6,14 +6,16 @@
   "logicName" : "定时生成用户月报",
   "name" : "CreateUserMonthly",
   "getPSDEActionInput" : {
-    "codeName" : "CreateUserMonthlyInput",
-    "name" : "输入对象",
+    "name" : "CreateUserMonthlyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzMonthlyDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CreateUserMonthlyResult",
-    "name" : "返回对象",
+    "name" : "CreateUserMonthlyResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

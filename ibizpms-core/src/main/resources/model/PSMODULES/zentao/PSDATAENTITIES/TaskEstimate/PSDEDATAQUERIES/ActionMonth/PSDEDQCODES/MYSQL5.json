@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\n\tt1.`YEAR`,\n\tconcat( t1.`YEAR`, RIGHT ( 100+ t1.`MONTH`, 2 ) ) AS `MONTH`,\n\tt1.`MONTH` as monthorder,\n\tconcat( t1.`MONTH`, '月' ) AS monthname \nFROM\n\t(\nSELECT DISTINCT YEAR\n\t( t1.date ) AS `year`,\n\tMONTH ( t1.date ) AS `MONTH` \nFROM\n\tzt_taskestimate t1 \nWHERE\n\tt1.date <> '0000-00-00' \n\t) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEDATAQUERIES/ActionMonth/PSDEDQCODES/MYSQL5.json"
+}

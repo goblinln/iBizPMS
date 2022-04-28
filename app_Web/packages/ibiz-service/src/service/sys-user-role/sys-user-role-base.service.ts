@@ -96,7 +96,7 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/sysuserroles/${_context.sysuserrole}`);
+        const res = await this.http.get(`/sysuserroles/${encodeURIComponent(_context.sysuserrole)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/sysuserroles/${_context.sysuserrole}`);
+        const res = await this.http.delete(`/sysuserroles/${encodeURIComponent(_context.sysuserrole)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/sysuserroles/${_context.sysuserrole}`, _data);
+        const res = await this.http.put(`/sysuserroles/${encodeURIComponent(_context.sysuserrole)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/sysuserroles/${_context.sysuserrole}/select`);
+        const res = await this.http.get(`/sysuserroles/${encodeURIComponent(_context.sysuserrole)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -11,11 +11,11 @@
         <tns:global identifier="buildmobprojectbuildcounterdefault" type="cn.ibizlab.pms.core.zentao.domain.Build" />
         </extensionElements>
      <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="buildmobprojectbuildcounterrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取解决的bug"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="buildmobprojectbuildcounterrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取完成的需求数"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="buildmobprojectbuildcounterrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="获取产生的bug"/>
      <endEvent id="rawsqlcall3_end" name="end"/>
      <sequenceFlow id="rawsqlcall3_end_line" sourceRef="rawsqlcall3" targetRef="rawsqlcall3_end"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="buildmobprojectbuildcounterrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取解决的bug"/>
      <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
      </sequenceFlow>
      <sequenceFlow id="rawsqlcall2_rawsqlcall3" sourceRef="rawsqlcall2" targetRef="rawsqlcall3">

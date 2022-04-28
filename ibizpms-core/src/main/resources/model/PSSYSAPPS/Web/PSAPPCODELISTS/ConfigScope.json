@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibizpro__ConfigScope",
   "codeListType" : "STATIC",
   "codeName" : "ConfigScope",
   "dynaInstMode" : 1,
@@ -12,28 +13,23 @@
   "getPSCodeItems" : [ {
     "codeName" : "Sys",
     "text" : "全局",
-    "value" : "sys",
-    "includeBeginValue" : true
+    "value" : "sys"
   }, {
     "codeName" : "Org",
     "text" : "当前组织",
-    "value" : "org",
-    "includeBeginValue" : true
+    "value" : "org"
   }, {
     "codeName" : "Dept1",
     "text" : "当前部门（含子部门）",
-    "value" : "dept1",
-    "includeBeginValue" : true
+    "value" : "dept1"
   }, {
     "codeName" : "Dept2",
     "text" : "当前部门（不含子部门）",
-    "value" : "dept2",
-    "includeBeginValue" : true
+    "value" : "dept2"
   }, {
     "codeName" : "User",
     "text" : "个人",
-    "value" : "user",
-    "includeBeginValue" : true
+    "value" : "user"
   } ],
   "enableCache" : true
 }

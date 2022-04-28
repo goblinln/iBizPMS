@@ -75,6 +75,9 @@ export class AppChartExpBarBase extends ChartExpBarControlBase {
      * @memberof AppChartExpBarBase
      */
     public render(h: CreateElement) {
+        if(!this.controlIsLoaded) {
+            return null;
+        }
         return this.renderMainContent();
     }
 }

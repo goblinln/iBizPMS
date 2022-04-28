@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\nt1.*,\nt2.`name` AS taskname,\nt2.deadline,\nt2.ESTSTARTED,\nt2.type AS TASKTYPE,\n(CONCAT_WS('', CASE WHEN t2.consumed = 0 OR t2.consumed IS NULL THEN '0' WHEN t2.`left` = 0 OR t2.`left` IS NULL THEN '100' ELSE ROUND(( ROUND( t2.`consumed` /( t2.`left` + t2.consumed ), 2 )) * 100 ) END, '%')) AS PROGRESSRATE,\n((CASE WHEN t2.deadline IS NULL OR t2.deadline = '0000-00-00' OR t2.deadline = '1970-01-01' THEN '' WHEN t2.`status` IN ( 'wait', 'doing' ) AND t2.deadline < DATE_FORMAT( now(), '%Y-%m-%d' ) THEN CONCAT_WS( '', '延期', TIMESTAMPDIFF( DAY, t2.deadline, now()), '天' ) ELSE '' END )) AS DELAYDAYS \nFROM\n(SELECT\nt1.DATE,\nt1.TASK,\nt1.ACCOUNT,\nROUND(sum(t1.CONSUMED), 2) AS CONSUMED,\ntask AS id \nFROM\n`zt_taskestimate` t1 \nWHERE ${srfdatacontext('yearmonth')} = DATE_FORMAT(t1.date, '%Y-%m')\nGROUP BY t1.DATE, t1.TASK, t1.ACCOUNT \n) t1\nLEFT JOIN zt_task t2 ON t1.task = t2.id\nWHERE FIND_IN_SET(t1.task, ${srfdatacontext('tasks')})",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProductUserTask/PSDEDATAQUERIES/ProductMonthlyUserTaskStats/PSDEDQCODES/MYSQL5.json"
+}

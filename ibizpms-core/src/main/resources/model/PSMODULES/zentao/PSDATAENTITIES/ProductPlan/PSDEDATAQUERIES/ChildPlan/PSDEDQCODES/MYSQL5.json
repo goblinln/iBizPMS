@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`BEGIN`,\n\t( CASE WHEN t1.`begin` = '2030-01-01' THEN '待定' ELSE t1.`begin` END ) AS `BEGINSTR`,\n\tt1.`BRANCH`,\n\t(\n\t(\nSELECT\n\tcount( t.id ) \nFROM\n\tzt_bug t \nWHERE\n\tt.deleted = '0' \n\tAND t.product = t1.product \n\tAND (\n\tt.plan = t1.id \n\tOR (\n\tt.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.deleted = '0' AND t2.parent = t1.id ) \n\t) \n\t) \n\t) \n\t) AS `BUGCNT`,\n\tt1.`CREATEBY`,\n\t'' AS `DELAY`,\n\tt1.`DELETED`,\n\tt1.`DEPT`,\n\t'' AS `DURATION`,\n\tt1.`END`,\n\t(case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,\n\t'' AS `FUTURE`,\n\tt1.`ID`,\n\t'' AS `ISEXPIRED`,\n\tt1.`ORG`,\n\tt1.`PARENT`,\n\tt1.`PRODUCT`,\n\tt1.`STATUS`,\n\t( CASE WHEN t1.parent = - 1 THEN 'parent' WHEN t1.parent > 0 THEN 'chlid' ELSE 'normal' END ) AS `STATUSS`,\n\t(\n\t(\nSELECT\n\tCOUNT( t.id ) \nFROM\n\tzt_story t \nWHERE\n\tt.deleted = '0' \n\tAND t.product = t1.product \n\tAND (\n\tt.plan = t1.id\n\tOR (\n\tt.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' ) \n\t) \n\t) \n\t) \n\t) AS `STORYCNT`,\n\tt1.`TITLE`,\n\tt1.PRODUCTPLANSN\nFROM\n\t`zt_productplan` t1\n\tLEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`id`",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEDATAQUERIES/ChildPlan/PSDEDQCODES/MYSQL5.json"
+}

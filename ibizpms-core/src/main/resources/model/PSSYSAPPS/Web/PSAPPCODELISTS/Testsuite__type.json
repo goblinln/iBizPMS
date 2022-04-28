@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Testsuite__type",
   "codeListType" : "STATIC",
   "codeName" : "Testsuite__type",
   "dynaInstMode" : 1,
@@ -12,18 +13,15 @@
   "getPSCodeItems" : [ {
     "codeName" : "Library",
     "text" : "用例库",
-    "value" : "library",
-    "includeBeginValue" : true
+    "value" : "library"
   }, {
     "codeName" : "Private",
     "text" : "私有",
-    "value" : "private",
-    "includeBeginValue" : true
+    "value" : "private"
   }, {
     "codeName" : "Public",
     "text" : "公开",
-    "value" : "public",
-    "includeBeginValue" : true
+    "value" : "public"
   } ],
   "enableCache" : true
 }

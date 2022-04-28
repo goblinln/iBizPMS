@@ -6,13 +6,15 @@
   "logicName" : "激活",
   "name" : "activate",
   "getPSDEActionInput" : {
-    "codeName" : "ActivateInput",
-    "name" : "输入对象",
+    "name" : "ActivateInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ActivateResult",
-    "name" : "返回对象",
+    "name" : "ActivateResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

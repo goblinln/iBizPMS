@@ -6,13 +6,15 @@
   "logicName" : "其他更新",
   "name" : "OtherUpdate",
   "getPSDEActionInput" : {
-    "codeName" : "OtherUpdateInput",
-    "name" : "输入对象",
+    "name" : "OtherUpdateInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "OtherUpdateResult",
-    "name" : "返回对象",
+    "name" : "OtherUpdateResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

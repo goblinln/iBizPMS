@@ -8,7 +8,8 @@
         <el-upload
           :disabled="disabled || (!this.multiple && files.length > 0) || readonly"
           :file-list="files"
-          :limit="multiple ? 1000 : 1"
+          :limit="multiple ? limit: 1"
+          :accept="accept"
           :action="uploadUrl"
           :multiple="multiple"
           :headers="headers"
@@ -19,6 +20,7 @@
           :on-preview="onDownload"
           :drag="isdrag"
           :show-file-list="!rowPreview"
+          :on-exceed="handleExceed"
           >
             <el-button v-if="!isdrag" size='mini' icon='el-icon-upload' :disabled="disabled || (!this.multiple && files.length > 0) || readonly">{{$t('components.appfileupload.caption')}}</el-button>
           <i v-if="isdrag" class="el-icon-upload"></i>
@@ -93,6 +95,22 @@ export default class AppFileUpload extends Vue {
      * @memberof AppFileUpload
      */
     @Prop({default: true}) public multiple?: boolean;
+
+    /**
+     * 最大允许上传个数
+     *
+     * @type {*}
+     * @memberof AppFileUpload
+     */
+    @Prop({default: 9999}) public limit!: number;
+
+    /**
+     * 接受上传的文件类型
+     *
+     * @type {*}
+     * @memberof AppFileUpload
+     */
+    @Prop({default: '*'}) public accept!: string;
 
     /**
      * 表单状态事件
@@ -258,10 +276,7 @@ export default class AppFileUpload extends Vue {
      * @private
      * @memberof AppFileUpload
      */
-    private setFiles(value:any): void {
-        if (!value) {
-          return
-        }
+    private setFiles(value:any = []): void {
         let _files = JSON.parse(value);
         if (value && Object.prototype.toString.call(_files)=='[object Array]') {
             this.files = _files;
@@ -643,6 +658,15 @@ export default class AppFileUpload extends Vue {
         }).catch((error: any) => {
             console.error(error);
         });
+    }
+
+    /**
+     * 处理多选超出
+     *
+     * @memberof AppFileUpload
+     */
+    public handleExceed(files: any, fileList: any) {
+      this.$warning(`${this.$t('components.appfileupload.limitselect')} ${this.limit}`);
     }
 }
 </script>

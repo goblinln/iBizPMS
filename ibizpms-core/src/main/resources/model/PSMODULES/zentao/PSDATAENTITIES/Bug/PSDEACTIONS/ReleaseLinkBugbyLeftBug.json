@@ -6,13 +6,15 @@
   "logicName" : "关联Bug（遗留Bug）",
   "name" : "ReleaseLinkBugbyLeftBug",
   "getPSDEActionInput" : {
-    "codeName" : "ReleaseLinkBugbyLeftBugInput",
-    "name" : "输入对象",
+    "name" : "ReleaseLinkBugbyLeftBugInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BugDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ReleaseLinkBugbyLeftBugResult",
-    "name" : "返回对象",
+    "name" : "ReleaseLinkBugbyLeftBugResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

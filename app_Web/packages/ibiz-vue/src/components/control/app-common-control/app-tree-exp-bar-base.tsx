@@ -27,6 +27,13 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
     @Prop() public staticProps!: any;
 
     /**
+     * 快速搜索提示
+     *
+     * @memberof AppTreeExpBarBase
+     */
+    public placeholder: string = "";
+
+    /**
      * 监听部件动态参数变化
      *
      * @param {*} newVal
@@ -56,6 +63,33 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
         if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
             super.onStaticPropsChange(newVal,oldVal);
         }
+    }
+
+    /**
+     * 部件模型数据初始化实例
+     *
+     * @memberof ExpBarControlBase
+     */
+    public async ctrlModelInit(args?: any) {
+        await super.ctrlModelInit(args);
+        this.initQuickSearchPlaceholader();
+    }
+
+    /**
+     * 填充节点实体
+     *
+     * @memberof ExpBarControlBase
+     */
+    public async fillNodesEntity() {
+      const allTreeNodes = this.$xDataControl.getPSDETreeNodes() || [];
+      if(allTreeNodes?.length > 0) {
+        for (let index = 0; index < allTreeNodes.length; index++) {
+          const appDataEntity = allTreeNodes[index].getPSAppDataEntity();
+          if (appDataEntity) {
+            await appDataEntity.fill?.();
+          }
+        }
+      }
     }
 
     /**
@@ -170,43 +204,50 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
         );
     }
 
+    /**
+     * 初始化快速搜索提示
+     * 
+     * @memberof AppTreeExpBarBase
+     */
+    public async initQuickSearchPlaceholader() {
+      await this.fillNodesEntity();
+      let placeholder: any = '';
+      const allTreeNodes = this.$xDataControl.getPSDETreeNodes() || [];
+      let placeholders: string[] = [];
+      if(allTreeNodes?.length>0 ) {
+          allTreeNodes.forEach((node: IPSDETreeNode) => {
+              if (Object.is(node.treeNodeType,"DE") && node.enableQuickSearch) {
+                  const quickSearchFields: Array<IPSAppDEField> = node.getPSAppDataEntity()?.getQuickSearchPSAppDEFields() || [];
+                  if (quickSearchFields.length > 0) {
+                      quickSearchFields.forEach((field: IPSAppDEField) => {
+                          const _field = node.getPSAppDataEntity()?.findPSAppDEField(field.codeName);
+                          if (_field) {
+                              placeholders.push(this.$tl(_field.getLNPSLanguageRes()?.lanResTag, _field.logicName));
+                          }
+                      })
+                  }
+              }
+          })
+      }
+      placeholders = [...new Set(placeholders)];
+      placeholders.forEach((_placeholder: string, index: number) => {
+          placeholder += _placeholder + (index == placeholders.length-1 ? '' : '，')
+      })
+      this.placeholder = placeholder;
+    }
+
      /**
      * 绘制快速搜索
      * 
-     * @memberof ExpBarControlBase
+     * @memberof AppTreeExpBarBase
      */
     public renderSearch() {
-        const getQuickSearchPlaceholader = () => {
-            let placeholder: any = '';
-            const allTreeNodes = this.$xDataControl.getPSDETreeNodes() || [];
-            let placeholders: string[] = [];
-            if(allTreeNodes?.length>0 ) {
-                allTreeNodes.forEach((node: IPSDETreeNode) => {
-                    if (Object.is(node.treeNodeType,"DE")) {
-                        const quickSearchFields: Array<IPSAppDEField> = node.getPSAppDataEntity()?.getQuickSearchPSAppDEFields() || [];
-                        if (quickSearchFields.length > 0) {
-                            quickSearchFields.forEach((field: IPSAppDEField) => {
-                                const _field = node.getPSAppDataEntity()?.findPSAppDEField(field.codeName);
-                                if (_field) {
-                                    placeholders.push(this.$tl(_field.getLNPSLanguageRes()?.lanResTag, _field.logicName));
-                                }
-                            })
-                        }
-                    }
-                })
-            }
-            placeholders = [...new Set(placeholders)];
-            placeholders.forEach((_placeholder: string, index: number) => {
-                placeholder += _placeholder + (index == placeholders.length-1 ? '' : '，')
-            })
-            return placeholder;
-        }
         return (
             <div class="search-container">
                 <i-input
                     search={true}
                     on-on-change={($event: any) => { this.searchText = $event.target.value; }}
-                    placeholder={getQuickSearchPlaceholader()}
+                    placeholder={this.placeholder}
                     on-on-search={() => this.onSearch()}>
                 </i-input>
             </div>

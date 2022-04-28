@@ -6,13 +6,15 @@
   "logicName" : "批量解除关联Bug",
   "name" : "BatchUnlinkBug",
   "getPSDEActionInput" : {
-    "codeName" : "BatchUnlinkBugInput",
-    "name" : "输入对象",
+    "name" : "BatchUnlinkBugInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BatchUnlinkBugResult",
-    "name" : "返回对象",
+    "name" : "BatchUnlinkBugResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

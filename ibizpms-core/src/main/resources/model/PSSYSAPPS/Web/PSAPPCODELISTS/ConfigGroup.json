@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibizpro__ConfigGroup",
   "codeListType" : "STATIC",
   "codeName" : "ConfigGroup",
   "dynaInstMode" : 1,
@@ -12,13 +13,11 @@
   "getPSCodeItems" : [ {
     "codeName" : "Group",
     "text" : "分组",
-    "value" : "GROUP",
-    "includeBeginValue" : true
+    "value" : "GROUP"
   }, {
     "codeName" : "Item",
     "text" : "配置项",
-    "value" : "ITEM",
-    "includeBeginValue" : true
+    "value" : "ITEM"
   } ],
   "enableCache" : true
 }

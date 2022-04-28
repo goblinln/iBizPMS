@@ -1,0 +1,62 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`PRODUCT` = ${srfdatacontext('bugproduct','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')}  OR  t1.`PRODUCT` = ${srfwebcontext('bugproduct','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')} \n or t1.`PRODUCT` is null)",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`PROJECT` = ${srfdatacontext('bugproject','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')}  \n or t1.`PROJECT` is null or ${srfdatacontext('bugproject','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')} is null)",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`BUGS`",
+    "name" : "BUGS"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`STORIES`",
+    "name" : "STORIES"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t1.`BUILDER`",
+    "name" : "BUILDER"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`FILEPATH`",
+    "name" : "FILEPATH"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t1.`SCMPATH`",
+    "name" : "SCMPATH"
+  } ],
+  "queryCode" : "select t1.* from (select 0 as `BRANCH`,\n\t'' as `BUILDER`,\n\tnull as `DATE`,\n\t'0' AS `DELETED`,\n\t'' AS `FILEPATH`,\n\t100000000 AS `ID`,\n\t'trunk' AS `IDs`,\n\t'主干' AS `NAME`,\n\tnull AS `PRODUCT`,\n\t'' AS `PRODUCTNAME`,\n\tnull as `PROJECT`,\n\t'' AS `SCMPATH` ,\n   100000000 as BUILDSN from dual \nunion all\n\nSELECT\n\tt1.`BRANCH`,\n\tt1.`BUILDER`,\n\tt1.`DATE`,\n\tt1.`DELETED`,\n\tt1.`FILEPATH`,\n\tt1.`ID`,\n\tt1.`ID` AS `IDS`,\n\t(case when (select tt.`name` from zt_release tt where tt.build = t1.id and tt.deleted = '0'  order by tt.date desc LIMIT 0,1) is null then t1.`name` else (select tt.`name` from zt_release tt where tt.build = t1.id and tt.deleted = '0' order by tt.date desc LIMIT 0,1) end) AS `NAME`,\n\tt1.`PRODUCT`,\n\tt11.`NAME` AS `PRODUCTNAME`,\n\tt1.`PROJECT`,\n\tt1.`SCMPATH` ,\n\tt1.BUILDSN\nFROM\n\t`zt_build` t1\n\tLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.ID where not EXISTS(select 1 from zt_release t2 where t2.build = t1.id and t2.`status` = 'terminate')) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEDATAQUERIES/BugProductBuild/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__IsAssigned",
   "codeListType" : "STATIC",
   "codeName" : "IsAssigned",
   "dynaInstMode" : 1,
@@ -9,13 +10,11 @@
     "codeName" : "Assign",
     "text" : "已指派",
     "value" : "assign",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Noassign",
     "text" : "未指派",
-    "value" : "noassign",
-    "includeBeginValue" : true
+    "value" : "noassign"
   } ],
   "enableCache" : true
 }

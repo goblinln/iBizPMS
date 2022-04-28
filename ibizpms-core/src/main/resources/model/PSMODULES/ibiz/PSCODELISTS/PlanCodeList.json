@@ -1,14 +1,31 @@
 {
+  "codeListTag" : "ibiz__PlanCodeList",
   "codeListType" : "DYNAMIC",
   "codeName" : "PlanCodeList",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/PlanCodeList.json",
   "emptyText" : "未计划",
+  "name" : "计划（动态）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "ProductQuery"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getValuePSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

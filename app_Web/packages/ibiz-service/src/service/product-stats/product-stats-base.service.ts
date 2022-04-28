@@ -130,7 +130,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/productstats/${_context.productstats}`);
+        const res = await this.http.get(`/productstats/${encodeURIComponent(_context.productstats)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -165,7 +165,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      */
     async GetTestStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/productstats/${_context.productstats}/getteststats`);
+        const res = await this.http.get(`/productstats/${encodeURIComponent(_context.productstats)}/getteststats`);
         res.data = await this.afterExecuteAction(_context,res?.data,'GetTestStats');
         return res;
             } catch (error) {
@@ -182,7 +182,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/productstats/${_context.productstats}`);
+        const res = await this.http.delete(`/productstats/${encodeURIComponent(_context.productstats)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -200,7 +200,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/productstats/${_context.productstats}`, _data);
+        const res = await this.http.put(`/productstats/${encodeURIComponent(_context.productstats)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -301,7 +301,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/productstats/${_context.productstats}/select`);
+        const res = await this.http.get(`/productstats/${encodeURIComponent(_context.productstats)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

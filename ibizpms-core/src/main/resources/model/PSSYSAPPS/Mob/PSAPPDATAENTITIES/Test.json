@@ -144,6 +144,13 @@
     "name" : "FetchCurDefault",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -204,6 +211,13 @@
     "name" : "ProductTeam",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "project",
+      "name" : "PROJECT 等于(=) 数据上下文(project)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchStoryCurProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -547,8 +561,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
+        }
       } ],
       "parallelOutput" : true
     }, {
@@ -575,12 +588,14 @@
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -594,44 +609,6 @@
     "logicName" : "置顶",
     "name" : "置顶",
     "getPSDELogicNodes" : [ {
-      "codeName" : "Rawsqlcall1",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "ibzTop"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "获取置顶最大排序值",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Prepareparam1"
-        },
-        "name" : "连接9397",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall1"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "用户全局对象[srfloginname]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "srfloginname",
-        "srcValueType" : "SESSION"
-      } ],
-      "sql" : "select (case when max(t1.`objectorder`) >= 16000000  then max(t1.`objectorder`) + 1 else 16000000 end) as `objectorder` from T_IBZ_TOP t1 where t1.type = 'product' and t1.account= ?",
-      "fillDstLogicParam" : true,
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Deaction1",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "ibzTop"
-      },
-      "logicNodeType" : "DEACTION",
-      "name" : "save置顶",
-      "parallelOutput" : true
-    }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
@@ -644,8 +621,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
+        }
       } ],
       "parallelOutput" : true
     }, {
@@ -661,8 +637,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Prepareparam1"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "dstFieldName" : "OBJECTID",
@@ -700,19 +675,59 @@
         "srcValueType" : "SRCVALUE"
       } ],
       "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall1",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "ibzTop"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "获取置顶最大排序值",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接9397",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "sql" : "select (case when max(t1.`objectorder`) >= 16000000  then max(t1.`objectorder`) + 1 else 16000000 end) as `objectorder` from T_IBZ_TOP t1 where t1.type = 'product' and t1.account= ?",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Deaction1",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "ibzTop"
+      },
+      "logicNodeType" : "DEACTION",
+      "name" : "save置顶",
+      "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "ibzTop",
+      "logicName" : "置顶",
       "name" : "置顶",
       "sessionParam" : true
     }, {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -834,6 +849,13 @@
     "name" : "FetchCurDefault",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -894,6 +916,13 @@
     "name" : "ProductTeam",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "project",
+      "name" : "PROJECT 等于(=) 数据上下文(project)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchStoryCurProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -1087,12 +1116,24 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "Test",
+  "dEAPITag" : "IBZ_API__TEST",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json",
   "enableUIActions" : 15,
   "logicName" : "测试",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  }, {
+    "name" : "ISTOP",
+    "codeName" : "Istop"
+  } ],
   "name" : "IBZ_API__TEST",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "ZT_PRODUCT",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "NAME",
@@ -1105,7 +1146,9 @@
     "codeName" : "Code"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : false,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

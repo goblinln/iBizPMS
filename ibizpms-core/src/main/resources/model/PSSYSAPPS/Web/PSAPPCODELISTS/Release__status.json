@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Release__status",
   "codeListType" : "STATIC",
   "codeName" : "Release__status",
   "dynaInstMode" : 1,
@@ -14,13 +15,11 @@
     "color" : "rgba(13, 255, 0, 1)",
     "text" : "正常",
     "value" : "normal",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Terminate",
     "text" : "停止维护",
-    "value" : "terminate",
-    "includeBeginValue" : true
+    "value" : "terminate"
   } ],
   "enableCache" : true
 }

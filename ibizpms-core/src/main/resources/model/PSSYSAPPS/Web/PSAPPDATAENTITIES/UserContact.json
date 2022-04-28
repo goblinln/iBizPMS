@@ -78,6 +78,13 @@
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "account",
+      "name" : "ACCOUNT 等于(=) 数据上下文(account)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
     "name" : "FetchAccount",
@@ -215,6 +222,13 @@
     "name" : "Update",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "account",
+      "name" : "ACCOUNT 等于(=) 数据上下文(account)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
     "name" : "FetchAccount",
@@ -295,6 +309,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "UserContact",
+  "dEAPITag" : "IBZ_API__USER_CONTACT",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json",
@@ -304,10 +319,14 @@
     "actionRSMode" : 1,
     "codeName" : "UserContacts",
     "dataRSMode" : 0,
+    "majorDECodeName" : "SysAccount",
+    "majorDEName" : "SYS_USER",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
+    "minorDECodeName" : "UserContact",
+    "minorDEName" : "ZT_USERCONTACT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
@@ -316,12 +335,17 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_USERCONTACT",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_USERCONTACT",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "LISTNAME",
     "codeName" : "ListName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

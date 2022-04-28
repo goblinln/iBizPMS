@@ -6,13 +6,15 @@
   "logicName" : "关联需求",
   "name" : "LinkStory",
   "getPSDEActionInput" : {
-    "codeName" : "LinkStoryInput",
-    "name" : "输入对象",
+    "name" : "LinkStoryInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "LinkStoryResult",
-    "name" : "返回对象",
+    "name" : "LinkStoryResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

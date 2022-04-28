@@ -81,6 +81,9 @@ export class AppMapExpBarBase extends MapExpBarControlBase{
      * @memberof AppMapExpBarBase
      */
     public render(){
+        if(!this.controlIsLoaded) {
+            return null;
+        }
         return this.renderMainContent();
     }
 

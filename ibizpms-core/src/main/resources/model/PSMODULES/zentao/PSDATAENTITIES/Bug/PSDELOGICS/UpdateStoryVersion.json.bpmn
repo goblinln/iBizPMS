@@ -10,13 +10,13 @@
                     <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
                             <tns:global identifier="bugupdatestoryversiondefault" type="cn.ibizlab.pms.core.zentao.domain.Bug" />
             </extensionElements>
+                        <startEvent id="begin" isInterrupting="true"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="bugupdatestoryversionprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="重置需求版本"/>
                         <endEvent id="prepareparam1_end" name="end"/>
                         <sequenceFlow id="prepareparam1_end_line" sourceRef="prepareparam1" targetRef="prepareparam1_end"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="bugupdatestoryversionrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取需求版本"/>
                         <endEvent id="rawsqlcall1_end" name="end"/>
                         <sequenceFlow id="rawsqlcall1_end_line" sourceRef="rawsqlcall1" targetRef="rawsqlcall1_end"/>
-                        <startEvent id="begin" isInterrupting="true"/>
                     <sequenceFlow id="gateway-begin_prepareparam1" sourceRef="gateway-begin" targetRef="prepareparam1">
                             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
                                             $bugupdatestoryversiondefault:Bug();

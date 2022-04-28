@@ -1,0 +1,212 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id =  #{srf.datacontext.srfparentkey} \n) and t1.openedDate < (select CONCAT(DATE_FORMAT(tt.`end`,'%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id =  #{srf.datacontext.srfparentkey} \n) and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,(SELECT tasks from zt_testreport where id =  #{srf.datacontext.srfparentkey} )))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0 )",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.openedBy is not null and t1.openedBy <> ''",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`STEPS`",
+    "name" : "STEPS"
+  }, {
+    "expression" : "t1.`ACTIVATEDCOUNT`",
+    "name" : "ACTIVATEDCOUNT"
+  }, {
+    "expression" : "t1.`ACTIVATEDDATE`",
+    "name" : "ACTIVATEDDATE"
+  }, {
+    "expression" : "t1.`ASSIGNEDDATE`",
+    "name" : "ASSIGNEDDATE"
+  }, {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "t1.`BRANCH`",
+    "name" : "BRANCH"
+  }, {
+    "expression" : "t61.`NAME`",
+    "name" : "BRANCHNAME"
+  }, {
+    "expression" : "t1.`BROWSER`",
+    "name" : "BROWSER"
+  }, {
+    "expression" : "t1.`CASE`",
+    "name" : "CASE"
+  }, {
+    "expression" : "t1.`CASEVERSION`",
+    "name" : "CASEVERSION"
+  }, {
+    "expression" : "t1.`CLOSEDBY`",
+    "name" : "CLOSEDBY"
+  }, {
+    "expression" : "t1.`CLOSEDDATE`",
+    "name" : "CLOSEDDATE"
+  }, {
+    "expression" : "t1.`COLOR`",
+    "name" : "COLOR"
+  }, {
+    "expression" : "t1.`CONFIRMED`",
+    "name" : "CONFIRMED"
+  }, {
+    "expression" : "t1.`DEADLINE`",
+    "name" : "DEADLINE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DUPLICATEBUG`",
+    "name" : "DUPLICATEBUG"
+  }, {
+    "expression" : "t1.`ENTRY`",
+    "name" : "ENTRY"
+  }, {
+    "expression" : "t1.`FOUND`",
+    "name" : "FOUND"
+  }, {
+    "expression" : "t1.`HARDWARE`",
+    "name" : "HARDWARE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "0",
+    "name" : "ISFAVORITES"
+  }, {
+    "expression" : "t1.`KEYWORDS`",
+    "name" : "KEYWORDS"
+  }, {
+    "expression" : "t1.`LASTEDITEDBY`",
+    "name" : "LASTEDITEDBY"
+  }, {
+    "expression" : "t1.`LASTEDITEDDATE`",
+    "name" : "LASTEDITEDDATE"
+  }, {
+    "expression" : "t1.`LINES`",
+    "name" : "LINES"
+  }, {
+    "expression" : "t1.`LINKBUG`",
+    "name" : "LINKBUG"
+  }, {
+    "expression" : "t1.`MAILTO`",
+    "name" : "MAILTO"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "t51.`NAME`",
+    "name" : "MODULENAME"
+  }, {
+    "expression" : "(SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' )  FROM zt_module tt WHERE FIND_IN_SET( tt.id, t51.path ) AND tt.type = 'story'  GROUP BY tt.root )",
+    "name" : "MODULENAME1"
+  }, {
+    "expression" : "t1.`OPENEDBUILD`",
+    "name" : "OPENEDBUILD"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`OPENEDDATE`",
+    "name" : "OPENEDDATE"
+  }, {
+    "expression" : "t1.`OS`",
+    "name" : "OS"
+  }, {
+    "expression" : "(case when t1.DEADLINE = '0000-00-00' then 0 else datediff(t1.deadline, now() ) end)",
+    "name" : "OVERDUEBUGS"
+  }, {
+    "expression" : "t1.`PLAN`",
+    "name" : "PLAN"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t21.`NAME`",
+    "name" : "PROJECTNAME"
+  }, {
+    "expression" : "t1.`REPO`",
+    "name" : "REPO"
+  }, {
+    "expression" : "t1.`REPOTYPE`",
+    "name" : "REPOTYPE"
+  }, {
+    "expression" : "t1.`RESOLUTION`",
+    "name" : "RESOLUTION"
+  }, {
+    "expression" : "t1.`RESOLVEDBUILD`",
+    "name" : "RESOLVEDBUILD"
+  }, {
+    "expression" : "t1.`RESOLVEDBY`",
+    "name" : "RESOLVEDBY"
+  }, {
+    "expression" : "t1.`RESOLVEDDATE`",
+    "name" : "RESOLVEDDATE"
+  }, {
+    "expression" : "t1.`RESULT`",
+    "name" : "RESULT"
+  }, {
+    "expression" : "t1.`SEVERITY`",
+    "name" : "SEVERITY"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`STORY`",
+    "name" : "STORY"
+  }, {
+    "expression" : "t31.`TITLE`",
+    "name" : "STORYNAME"
+  }, {
+    "expression" : "t1.`STORYVERSION`",
+    "name" : "STORYVERSION"
+  }, {
+    "expression" : "t1.`SUBSTATUS`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`TASK`",
+    "name" : "TASK"
+  }, {
+    "expression" : "t41.`NAME`",
+    "name" : "TASKNAME"
+  }, {
+    "expression" : "t1.`TESTTASK`",
+    "name" : "TESTTASK"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "t1.`TOSTORY`",
+    "name" : "TOSTORY"
+  }, {
+    "expression" : "t1.`TOTASK`",
+    "name" : "TOTASK"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`V1`",
+    "name" : "V1"
+  }, {
+    "expression" : "t1.`V2`",
+    "name" : "V2"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACTIVATEDCOUNT`,\nt1.`ACTIVATEDDATE`,\nt1.`ASSIGNEDDATE`,\nt1.`ASSIGNEDTO`,\nt1.`BRANCH`,\nt61.`NAME` AS `BRANCHNAME`,\nt1.`BROWSER`,\nt1.`CASE`,\nt1.`CASEVERSION`,\nt1.`CLOSEDBY`,\nt1.`CLOSEDDATE`,\nt1.`COLOR`,\nt1.`CONFIRMED`,\nt1.`DEADLINE`,\nt1.`DELETED`,\nt1.`DUPLICATEBUG`,\nt1.`ENTRY`,\nt1.`FOUND`,\nt1.`HARDWARE`,\nt1.`ID`,\n0 AS `ISFAVORITES`,\nt1.`KEYWORDS`,\nt1.`LASTEDITEDBY`,\nt1.`LASTEDITEDDATE`,\nt1.`LINES`,\nt1.`LINKBUG`,\nt1.`MAILTO`,\nt1.`MODULE`,\nt51.`NAME` AS `MODULENAME`,\n(SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' )  FROM zt_module tt WHERE FIND_IN_SET( tt.id, t51.path )  and tt.deleted = '0'  AND tt.type = 'story'  GROUP BY tt.root ) AS `MODULENAME1`,\nt1.`OPENEDBUILD`,\nt71.realname as `OPENEDBY`,\nt1.`OPENEDDATE`,\nt1.`OS`,\n(case when t1.DEADLINE = '0000-00-00' then 0 else datediff(t1.deadline, now() ) end) AS `OVERDUEBUGS`,\nt1.`PLAN`,\nt1.`PRI`,\nt1.`PRODUCT`,\nt11.`NAME` AS `PRODUCTNAME`,\nt1.`PROJECT`,\nt21.`NAME` AS `PROJECTNAME`,\nt1.`REPO`,\nt1.`REPOTYPE`,\nt1.`RESOLUTION`,\nt1.`RESOLVEDBUILD`,\nt1.`RESOLVEDBY`,\nt1.`RESOLVEDDATE`,\nt1.`RESULT`,\nt1.`SEVERITY`,\nt1.`STATUS`,\nt1.`STORY`,\nt31.`TITLE` AS `STORYNAME`,\nt1.`STORYVERSION`,\nt1.`SUBSTATUS`,\nt1.`TASK`,\nt41.`NAME` AS `TASKNAME`,\nt1.`TESTTASK`,\nt1.`TITLE`,\nt1.`TOSTORY`,\nt1.`TOTASK`,\nt1.`TYPE`,\nt1.`V1`,\nt1.`V2`,\n\tt1.BUGSN\nFROM\n\t`zt_bug` t1\n\tLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.id \n\tLEFT JOIN zt_project t21 ON t1.PROJECT = t21.id \n\tLEFT JOIN zt_story t31 ON t1.STORY = t31.id \n\tLEFT JOIN zt_task t41 ON t1.TASK = t41.id \n\tLEFT JOIN zt_module t51 ON t1.MODULE = t51.id \n\tLEFT JOIN zt_branch t61 ON t1.BRANCH = t61.id \nLEFT JOIN zt_user t71 on t1.openedBy = t71.account\n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,(SELECT tasks from zt_testreport where id = #{srf.datacontext.srfparentkey} )))) t81 on FIND_IN_SET(t81.id,t1.openedBuild)\n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEDATAQUERIES/BuildProduceBugOpenedBy_Project/PSDEDQCODES/MYSQL5.json"
+}

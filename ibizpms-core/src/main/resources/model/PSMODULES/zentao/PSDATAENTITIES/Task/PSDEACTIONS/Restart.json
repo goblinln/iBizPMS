@@ -6,13 +6,15 @@
   "logicName" : "继续",
   "name" : "Restart",
   "getPSDEActionInput" : {
-    "codeName" : "RestartInput",
-    "name" : "输入对象",
+    "name" : "RestartInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "RestartResult",
-    "name" : "返回对象",
+    "name" : "RestartResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

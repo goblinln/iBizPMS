@@ -282,18 +282,24 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "History",
+  "dEAPITag" : "ZT_HISTORY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/History.json",
   "enableUIActions" : 15,
   "logicName" : "操作历史",
   "name" : "ZT_HISTORY",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_HISTORY",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "DIFF",
     "codeName" : "Diff"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

@@ -1,25 +1,28 @@
 {
+  "codeListTag" : "zentao__Company__guest",
   "codeListType" : "STATIC",
   "codeName" : "Company__guest",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Company__guest.json",
   "emptyText" : "未定义",
+  "name" : "ZT_COMPANY__GUEST",
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "允许",
-    "value" : "1",
-    "includeBeginValue" : true
+    "value" : "1"
   }, {
     "codeName" : "Item_0",
     "text" : "不允许",
-    "value" : "0",
-    "includeBeginValue" : true
+    "value" : "0"
   } ],
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

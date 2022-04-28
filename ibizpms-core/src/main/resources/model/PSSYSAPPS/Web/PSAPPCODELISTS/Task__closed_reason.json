@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Task__closed_reason",
   "codeListType" : "STATIC",
   "codeName" : "Task__closed_reason",
   "dynaInstMode" : 1,
@@ -12,13 +13,11 @@
   "getPSCodeItems" : [ {
     "codeName" : "Done",
     "text" : "已完成",
-    "value" : "done",
-    "includeBeginValue" : true
+    "value" : "done"
   }, {
     "codeName" : "Cancel",
     "text" : "已取消",
-    "value" : "cancel",
-    "includeBeginValue" : true
+    "value" : "cancel"
   } ],
   "enableCache" : true
 }

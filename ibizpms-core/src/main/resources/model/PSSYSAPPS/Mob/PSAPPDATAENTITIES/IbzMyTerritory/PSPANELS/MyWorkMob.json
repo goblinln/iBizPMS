@@ -59,6 +59,11 @@
         "colMD" : 4,
         "layout" : "TABLE_12COL"
       },
+      "getPSRawItem" : {
+        "caption" : "我的任务",
+        "contentType" : "RAW",
+        "name" : "rawitem2"
+      },
       "rawContent" : "我的任务"
     }, {
       "itemStyle" : "DEFAULT",
@@ -91,6 +96,11 @@
         "colLG" : 4,
         "colMD" : 4,
         "layout" : "TABLE_12COL"
+      },
+      "getPSRawItem" : {
+        "caption" : "已延期任务",
+        "contentType" : "RAW",
+        "name" : "rawitem1"
       },
       "rawContent" : "已延期任务"
     }, {
@@ -125,6 +135,11 @@
         "colLG" : 4,
         "colMD" : 4,
         "layout" : "TABLE_12COL"
+      },
+      "getPSRawItem" : {
+        "content" : "我的bug",
+        "contentType" : "HTML",
+        "name" : "rawitem3"
       }
     }, {
       "itemStyle" : "DEFAULT",
@@ -158,6 +173,11 @@
         "colLG" : 4,
         "colMD" : 4,
         "layout" : "TABLE_12COL"
+      },
+      "getPSRawItem" : {
+        "content" : "已延期的Bug",
+        "contentType" : "HTML",
+        "name" : "rawitem9"
       }
     }, {
       "itemStyle" : "DEFAULT",
@@ -191,6 +211,11 @@
         "colLG" : 4,
         "colMD" : 4,
         "layout" : "TABLE_12COL"
+      },
+      "getPSRawItem" : {
+        "content" : "我的需求",
+        "contentType" : "HTML",
+        "name" : "rawitem4"
       }
     }, {
       "itemStyle" : "DEFAULT",
@@ -223,6 +248,11 @@
         "colLG" : 4,
         "colMD" : 4,
         "layout" : "TABLE_12COL"
+      },
+      "getPSRawItem" : {
+        "caption" : "{{userCustom.mywork.noCloseProject}}",
+        "contentType" : "RAW",
+        "name" : "rawitem5"
       },
       "rawContent" : "{{userCustom.mywork.noCloseProject}}"
     }, {
@@ -257,6 +287,11 @@
         "colMD" : 4,
         "layout" : "TABLE_12COL"
       },
+      "getPSRawItem" : {
+        "caption" : "{{userCustom.mywork.deferredProjects}}",
+        "contentType" : "RAW",
+        "name" : "rawitem7"
+      },
       "rawContent" : "{{userCustom.mywork.deferredProjects}}"
     }, {
       "itemStyle" : "DEFAULT",
@@ -289,6 +324,11 @@
         "colLG" : 4,
         "colMD" : 4,
         "layout" : "TABLE_12COL"
+      },
+      "getPSRawItem" : {
+        "caption" : "{{userCustom.mywork.noCloseProduct}}",
+        "contentType" : "RAW",
+        "name" : "rawitem6"
       },
       "rawContent" : "{{userCustom.mywork.noCloseProduct}}"
     }, {

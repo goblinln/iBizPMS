@@ -6,13 +6,15 @@
   "logicName" : "置顶",
   "name" : "projectTop",
   "getPSDEActionInput" : {
-    "codeName" : "ProjectTopInput",
-    "name" : "输入对象",
+    "name" : "ProjectTopInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ProjectTopResult",
-    "name" : "返回对象",
+    "name" : "ProjectTopResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

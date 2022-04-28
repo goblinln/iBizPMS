@@ -6,13 +6,15 @@
   "logicName" : "开始",
   "name" : "Start",
   "getPSDEActionInput" : {
-    "codeName" : "StartInput",
-    "name" : "输入对象",
+    "name" : "StartInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "StartResult",
-    "name" : "返回对象",
+    "name" : "StartResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

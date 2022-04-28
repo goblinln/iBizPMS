@@ -29,6 +29,11 @@ export default class RateEditor extends EditorBase {
     public async initEditor() {
         await super.initEditor();
         let codeList: any = (this.editorInstance as IPSCodeListEditor)?.getPSAppCodeList?.();
+        if (this.editorInstance.editorParams?.['MAXVALUE']) {
+            Object.assign(this.customProps, {
+                max: !isNaN(Number(this.editorInstance.editorParams?.['MAXVALUE'])) ? Number(this.editorInstance.editorParams?.['MAXVALUE']) : 5,
+            });
+        }
         if(codeList) {
             Object.assign(this.customProps, {
                 tag: codeList.codeName,

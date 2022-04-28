@@ -178,7 +178,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/employees/${_context.employee}`);
+        const res = await this.http.get(`/employees/${encodeURIComponent(_context.employee)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -213,7 +213,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/employees/${_context.employee}`);
+        const res = await this.http.delete(`/employees/${encodeURIComponent(_context.employee)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -231,7 +231,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/employees/${_context.employee}`, _data);
+        const res = await this.http.put(`/employees/${encodeURIComponent(_context.employee)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -468,7 +468,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/employees/${_context.employee}/select`);
+        const res = await this.http.get(`/employees/${encodeURIComponent(_context.employee)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

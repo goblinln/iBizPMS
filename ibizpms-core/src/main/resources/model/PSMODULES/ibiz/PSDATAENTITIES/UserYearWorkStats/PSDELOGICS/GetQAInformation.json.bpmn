@@ -10,18 +10,18 @@
                     <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
                             <tns:global identifier="useryearworkstatsgetqainformationdefault" type="cn.ibizlab.pms.core.ibiz.domain.UserYearWorkStats" />
             </extensionElements>
+                        <startEvent id="begin" isInterrupting="true"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetqainformationrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取创建bug数"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetqainformationrawsqlcall4" id="rawsqlcall4" implementation="http://www.jboss.org/drools/rule" name="获取登录次数"/>
                         <endEvent id="rawsqlcall4_end" name="end"/>
                         <sequenceFlow id="rawsqlcall4_end_line" sourceRef="rawsqlcall4" targetRef="rawsqlcall4_end"/>
-                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetqainformationrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取创建bug数"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetqainformationrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="获取创建用例数"/>
-                        <startEvent id="begin" isInterrupting="true"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetqainformationrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取动态数"/>
+                    <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+                    </sequenceFlow>
                     <sequenceFlow id="rawsqlcall2_rawsqlcall3" sourceRef="rawsqlcall2" targetRef="rawsqlcall3">
                     </sequenceFlow>
                     <sequenceFlow id="rawsqlcall3_rawsqlcall4" sourceRef="rawsqlcall3" targetRef="rawsqlcall4">
-                    </sequenceFlow>
-                    <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
                     </sequenceFlow>
                     <sequenceFlow id="rawsqlcall1_rawsqlcall2" sourceRef="rawsqlcall1" targetRef="rawsqlcall2">
                     </sequenceFlow>

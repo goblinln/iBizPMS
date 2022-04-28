@@ -1,0 +1,34 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "0",
+    "name" : "BLOCKEDCASE"
+  }, {
+    "expression" : "0",
+    "name" : "FAILCASE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "0",
+    "name" : "PASSCASE"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`TITLE`",
+    "name" : "TITLE"
+  }, {
+    "expression" : "0",
+    "name" : "TOTALCASE"
+  }, {
+    "expression" : "0",
+    "name" : "TOTALRUNCASE"
+  } ],
+  "queryCode" : "SELECT\n0 AS `BLOCKEDCASE`,\n0 AS `FAILCASE`,\nt1.`ID`,\nt1.`MODULE`,\n0 AS `PASSCASE`,\nt1.`PRODUCT`,\nt1.`TITLE`,\n0 AS `TOTALCASE`,\n0 AS `TOTALRUNCASE`\nFROM `zt_case` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

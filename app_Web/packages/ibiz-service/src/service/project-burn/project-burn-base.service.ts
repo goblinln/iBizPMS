@@ -90,13 +90,13 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
         if (_context.product && _context.project && _context.projectburn) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ComputeBurn');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectburns/${_context.projectburn}/computeburn`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/projectburns/${encodeURIComponent(_context.projectburn)}/computeburn`, _data);
             return res;
         }
         if (_context.project && _context.projectburn) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'ComputeBurn');
-            const res = await this.http.post(`/projects/${_context.project}/projectburns/${_context.projectburn}/computeburn`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/projectburns/${encodeURIComponent(_context.projectburn)}/computeburn`, _data);
             return res;
         }
     this.log.warn([`[ProjectBurn]>>>[ComputeBurn函数]异常`]);
@@ -116,12 +116,12 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
     async FetchEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectburns/fetchestimate`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/projectburns/fetchestimate`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchEstimate');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/projectburns/fetchestimate`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/projectburns/fetchestimate`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchEstimate');
             return res;
         }

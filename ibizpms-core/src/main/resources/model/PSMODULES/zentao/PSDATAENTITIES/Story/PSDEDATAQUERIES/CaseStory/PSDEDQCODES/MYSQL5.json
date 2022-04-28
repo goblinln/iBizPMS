@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "(t1.product = #{srf.datacontext.product} or t1.id = #{srf.datacontext.story})",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`COLOR`,\nt1.`DELETED`,\nt1.`ID`,\nt1.`MODULE`,\nt1.`OPENEDBY`,\nt1.`PARENT`,\nt11.`PATH`,\nt1.`PLAN`,\nt1.`PRI`,\nt1.`PRODUCT`,\nt1.`STATUS`,\nCONCAT(t1.id,':',t1.title,'(优先级:',t1.pri,',预计工时:',t1.estimate,')') AS `TITLE`,\nt1.`TYPE`,\nt1.`VERSION`,\nt1.STORYSN\nFROM `zt_story` t1 \nLEFT JOIN zt_module t11 ON t1.MODULE = t11.id\nLEFT JOIN zt_story t21 ON t1.PARENT = t21.id\nLEFT JOIN zt_product t31 ON t1.PRODUCT = t31.id\nLEFT JOIN zt_branch t41 ON t1.BRANCH = t41.id",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEDATAQUERIES/CaseStory/PSDEDQCODES/MYSQL5.json"
+}

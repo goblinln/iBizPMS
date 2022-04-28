@@ -1,0 +1,37 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACL`",
+    "name" : "ACL"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`CREATEMANNAME`",
+    "name" : "CREATEMANNAME"
+  }, {
+    "expression" : "t1.`IBZ_PLANTEMPLETID`",
+    "name" : "IBZ_PLANTEMPLETID"
+  }, {
+    "expression" : "t1.`IBZ_PLANTEMPLETNAME`",
+    "name" : "IBZ_PLANTEMPLETNAME"
+  }, {
+    "expression" : "t1.`PLANS`",
+    "name" : "PLANS"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACL`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CREATEMANNAME`,\nt1.`IBZ_PLANTEMPLETID`,\nt1.`IBZ_PLANTEMPLETNAME`,\nt1.`PLANS`,\nt1.`PRODUCT`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_IBZ_PLANTEMPLET` t1 \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

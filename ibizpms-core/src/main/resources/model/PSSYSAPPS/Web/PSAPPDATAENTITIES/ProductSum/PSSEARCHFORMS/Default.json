@@ -57,6 +57,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "getPSRawItem" : {
+        "caption" : "<div style=\" padding-top: 6px;  padding-left: 20px;\"> 筛选条件： </div>",
+        "contentType" : "RAW",
+        "name" : "rawitem1"
+      },
       "rawContent" : "<div style=\" padding-top: 6px;  padding-left: 20px;\"> 筛选条件： </div>",
       "rawItemHeight" : -1.0,
       "rawItemWidth" : -1.0,

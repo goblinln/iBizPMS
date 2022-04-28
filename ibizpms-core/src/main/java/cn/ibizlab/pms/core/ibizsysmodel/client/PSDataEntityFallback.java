@@ -33,10 +33,6 @@ public class PSDataEntityFallback implements FallbackFactory<PSDataEntityFeignCl
         String finalErrorMessage = errorMessage;
         return new PSDataEntityFeignClient(){
 
-            public Page<PSDataEntity> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSDataEntity create(PSDataEntity psdataentity) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSDataEntityFallback implements FallbackFactory<PSDataEntityFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSDataEntity update(String psdataentityid, PSDataEntity psdataentity) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSDataEntity> psdataentities) {
+            public PSDataEntity get(String psdataentityid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class PSDataEntityFallback implements FallbackFactory<PSDataEntityFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSDataEntity get(String psdataentityid) {
+            public PSDataEntity update(String psdataentityid, PSDataEntity psdataentity) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSDataEntity> psdataentities) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSDataEntity psdataentity) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSDataEntity> searchDefault(PSDataEntitySearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class PSDataEntityFallback implements FallbackFactory<PSDataEntityFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSDataEntity psdataentity) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSDataEntity psdataentity) {
@@ -86,10 +87,9 @@ public class PSDataEntityFallback implements FallbackFactory<PSDataEntityFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSDataEntity> searchDefault(PSDataEntitySearchContext context) {
+            public Page<PSDataEntity> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

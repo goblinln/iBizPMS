@@ -45,6 +45,5 @@
     "name" : "PROJECT=ID"
   } ],
   "typeValue" : "project",
-  "inherit" : false,
   "virtual" : true
 }

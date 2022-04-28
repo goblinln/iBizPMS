@@ -33,10 +33,6 @@ public class SysUserRoleFallback implements FallbackFactory<SysUserRoleFeignClie
         String finalErrorMessage = errorMessage;
         return new SysUserRoleFeignClient(){
 
-            public Page<SysUserRole> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public SysUserRole create(SysUserRole sysuserrole) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class SysUserRoleFallback implements FallbackFactory<SysUserRoleFeignClie
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysUserRole update(String userroleid, SysUserRole sysuserrole) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<SysUserRole> sysuserroles) {
+            public SysUserRole get(String userroleid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class SysUserRoleFallback implements FallbackFactory<SysUserRoleFeignClie
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysUserRole get(String userroleid) {
+            public SysUserRole update(String userroleid, SysUserRole sysuserrole) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<SysUserRole> sysuserroles) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(SysUserRole sysuserrole) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysUserRole> searchDefault(SysUserRoleSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class SysUserRoleFallback implements FallbackFactory<SysUserRoleFeignClie
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(SysUserRole sysuserrole) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(SysUserRole sysuserrole) {
@@ -86,10 +87,9 @@ public class SysUserRoleFallback implements FallbackFactory<SysUserRoleFeignClie
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<SysUserRole> searchDefault(SysUserRoleSearchContext context) {
+            public Page<SysUserRole> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

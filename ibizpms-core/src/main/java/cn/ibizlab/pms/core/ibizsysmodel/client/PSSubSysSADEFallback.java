@@ -33,10 +33,6 @@ public class PSSubSysSADEFallback implements FallbackFactory<PSSubSysSADEFeignCl
         String finalErrorMessage = errorMessage;
         return new PSSubSysSADEFeignClient(){
 
-            public Page<PSSubSysSADE> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSSubSysSADE create(PSSubSysSADE pssubsyssade) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSSubSysSADEFallback implements FallbackFactory<PSSubSysSADEFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSubSysSADE update(String pssubsyssadeid, PSSubSysSADE pssubsyssade) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSSubSysSADE> pssubsyssades) {
+            public PSSubSysSADE get(String pssubsyssadeid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class PSSubSysSADEFallback implements FallbackFactory<PSSubSysSADEFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSubSysSADE get(String pssubsyssadeid) {
+            public PSSubSysSADE update(String pssubsyssadeid, PSSubSysSADE pssubsyssade) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSSubSysSADE> pssubsyssades) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSSubSysSADE pssubsyssade) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSubSysSADE> searchDefault(PSSubSysSADESearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class PSSubSysSADEFallback implements FallbackFactory<PSSubSysSADEFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSSubSysSADE pssubsyssade) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSSubSysSADE pssubsyssade) {
@@ -86,10 +87,9 @@ public class PSSubSysSADEFallback implements FallbackFactory<PSSubSysSADEFeignCl
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSSubSysSADE> searchDefault(PSSubSysSADESearchContext context) {
+            public Page<PSSubSysSADE> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

@@ -1,0 +1,40 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACL`",
+    "name" : "ACL"
+  }, {
+    "expression" : "t1.`ACLLIST`",
+    "name" : "ACLLIST"
+  }, {
+    "expression" : "t1.`COLOR`",
+    "name" : "COLOR"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`INDEXDESC`",
+    "name" : "INDEXDESC"
+  }, {
+    "expression" : "t1.`INDEXID`",
+    "name" : "INDEXID"
+  }, {
+    "expression" : "t1.`INDEXNAME`",
+    "name" : "INDEXNAME"
+  }, {
+    "expression" : "t1.`INDEX_TYPE`",
+    "name" : "INDEX_TYPE"
+  }, {
+    "expression" : "t1.`MDEPTID`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACL`,\nt1.`ACLLIST`,\nt1.`COLOR`,\nt1.`DELETED`,\nt1.`INDEXDESC`,\nt1.`INDEXID`,\nt1.`INDEXNAME`,\nt1.`INDEX_TYPE`,\nt1.`MDEPTID`,\nt1.`ORGID`,\nt1.`PROJECT`\nFROM (SELECT\n'bug' AS `INDEX_TYPE`,v1.`ID` AS `INDEXID`\n,NULL AS `ACL`\n,v1.`TITLE` AS `INDEXNAME`\n,NULL AS `COLOR`\n,v1.`DELETED` AS `DELETED`\n,NULL AS `ACLLIST`\n,v1.`STEPS` AS `INDEXDESC`\n,NULL AS `MDEPTID`\n,v1.`PROJECT` AS `PROJECT`\n,NULL AS `ORGID`\nFROM\n(SELECT\nt1.`DELETED`,\nt1.`ID`,\nt1.`PRODUCT`,\nt1.`PROJECT`,\nt1.`TITLE`\nFROM `zt_bug` t1 \n) v1\nUNION ALL\nSELECT\n'case' AS `INDEX_TYPE`,v2.`ID` AS `INDEXID`\n,NULL AS `ACL`\n,v2.`TITLE` AS `INDEXNAME`\n,NULL AS `COLOR`\n,v2.`DELETED` AS `DELETED`\n,NULL AS `ACLLIST`\n,v2.`PRECONDITION` AS `INDEXDESC`\n,NULL AS `MDEPTID`\n,NULL AS `PROJECT`\n,NULL AS `ORGID`\nFROM\n(SELECT\nt1.`DELETED`,\nt1.`ID`,\nt1.`PRODUCT`,\nt1.`TITLE`\nFROM `zt_case` t1 \n) v2\nUNION ALL\nSELECT\n'product' AS `INDEX_TYPE`,v3.`id` AS `INDEXID`\n,NULL AS `ACL`\n,v3.`name` AS `INDEXNAME`\n,NULL AS `COLOR`\n,v3.`deleted` AS `DELETED`\n,NULL AS `ACLLIST`\n,v3.`desc` AS `INDEXDESC`\n,NULL AS `MDEPTID`\n,NULL AS `PROJECT`\n,NULL AS `ORGID`\nFROM\n(SELECT\nt1.`deleted`,\nt1.`id`,\nt1.`name`\nFROM `zt_product` t1 \n) v3\nUNION ALL\nSELECT\n'project' AS `INDEX_TYPE`,v4.`ID` AS `INDEXID`\n,NULL AS `ACL`\n,v4.`NAME` AS `INDEXNAME`\n,NULL AS `COLOR`\n,v4.`DELETED` AS `DELETED`\n,NULL AS `ACLLIST`\n,v4.`DESC` AS `INDEXDESC`\n,NULL AS `MDEPTID`\n,v4.`ID` AS `PROJECT`\n,NULL AS `ORGID`\nFROM\n(SELECT\nt1.`DELETED`,\nt1.`ID`,\nt1.`NAME`\nFROM `zt_project` t1 \n) v4\nUNION ALL\nSELECT\n'story' AS `INDEX_TYPE`,v5.`ID` AS `INDEXID`\n,NULL AS `ACL`\n,v5.`TITLE` AS `INDEXNAME`\n,v5.`COLOR` AS `COLOR`\n,v5.`DELETED` AS `DELETED`\n,NULL AS `ACLLIST`\n,v5.`SPEC` AS `INDEXDESC`\n,NULL AS `MDEPTID`\n,NULL AS `PROJECT`\n,NULL AS `ORGID`\nFROM\n(SELECT\nt1.`COLOR`,\nt1.`DELETED`,\nt1.`ID`,\nt1.`PRODUCT`,\nt1.`TITLE`\nFROM `zt_story` t1 \n) v5\nUNION ALL\nSELECT\n'task' AS `INDEX_TYPE`,v6.`ID` AS `INDEXID`\n,NULL AS `ACL`\n,v6.`NAME` AS `INDEXNAME`\n,NULL AS `COLOR`\n,v6.`DELETED` AS `DELETED`\n,NULL AS `ACLLIST`\n,v6.`DESC` AS `INDEXDESC`\n,NULL AS `MDEPTID`\n,v6.`PROJECT` AS `PROJECT`\n,NULL AS `ORGID`\nFROM\n(SELECT\nt1.`DELETED`,\nt1.`ID`,\nt1.`NAME`,\nt1.`PROJECT`\nFROM `zt_task` t1 \n) v6\n) t1 \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

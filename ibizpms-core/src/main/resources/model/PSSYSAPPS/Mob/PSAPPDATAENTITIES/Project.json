@@ -326,6 +326,13 @@
     "name" : "CurPlanProject",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "n_product_eq",
+      "name" : "PRODUCT 等于(=) 数据上下文(n_product_eq)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurProduct",
     "methodType" : "FETCH",
     "name" : "FetchCurProduct",
@@ -903,42 +910,8 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
+        }
       } ],
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Rawsqlcall8",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "进行中的任务",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall6"
-        },
-        "name" : "连接8042",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall8"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "Default[ID]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ID",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select count(t.id) as YSTARTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'doing' and t.project = ?\nand t.parent <= '0'",
-      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall10",
@@ -957,8 +930,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall10"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ID]",
@@ -971,209 +943,6 @@
         "srcValueType" : "SRCDLPARAM"
       } ],
       "sql" : "select count(t.id) as UNCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` in( 'wait','cancel','doing') and t.project = ? and t.parent <= '0'",
-      "fillDstLogicParam" : true,
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Rawsqlcall1",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "未关闭任务数",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall2"
-        },
-        "name" : "连接8155",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall1"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "Default[ID]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ID",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select count(t.id) as UNCLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` <> 'closed' and t.project = ? and t.parent <= '0'",
-      "fillDstLogicParam" : true,
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Rawsqlcall7",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "已关闭的任务数",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall11"
-        },
-        "name" : "连接1312",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall7"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "Default[ID]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ID",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select count(t.id) as CLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'closed' and t.project = ? and t.parent <= '0'",
-      "fillDstLogicParam" : true,
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Rawsqlcall2",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "指派给我的任务数",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall3"
-        },
-        "name" : "连接7725",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall2"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "用户全局对象[srfloginname]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "srfloginname",
-        "srcValueType" : "SESSION"
-      }, {
-        "name" : "Default[ID]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ID",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select count(t.id) as ASSTOMYTASKCNT from zt_task t where t.deleted = '0' and t.assignedTo = ? and t.project = ? and t.parent <= '0'",
-      "fillDstLogicParam" : true,
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Rawsqlcall5",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "所有任务",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall8"
-        },
-        "name" : "连接7225",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall5"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "Default[ID]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ID",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select count(t.id) as ALLTASKCNT from zt_task t where t.deleted = '0'  and t.project = ? and t.parent <= '0'",
-      "fillDstLogicParam" : true,
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Rawsqlcall3",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "已完成的任务数",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall4"
-        },
-        "name" : "连接299",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall3"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "Default[ID]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ID",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select count(t.id) as YCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'done' and t.project = ? and t.parent <= '0'",
-      "fillDstLogicParam" : true,
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Rawsqlcall6",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "已取消任务",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall7"
-        },
-        "name" : "连接7826",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall6"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "Default[ID]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ID",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select count(t.id) as CANCELTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'cancel' and t.project = ? and t.parent <= '0'",
       "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
@@ -1193,8 +962,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall9"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ID]",
@@ -1210,24 +978,87 @@
       "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
-      "codeName" : "Rawsqlcall4",
+      "codeName" : "Rawsqlcall7",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
       "logicNodeType" : "RAWSQLCALL",
-      "name" : "我完成的任务数",
+      "name" : "已关闭的任务数",
       "getPSDELogicLinks" : [ {
         "getDstPSDELogicNode" : {
           "modelref" : true,
-          "id" : "Rawsqlcall9"
+          "id" : "Rawsqlcall11"
         },
-        "name" : "连接4450",
+        "name" : "连接1312",
         "getSrcPSDELogicNode" : {
           "modelref" : true,
-          "id" : "Rawsqlcall4"
+          "id" : "Rawsqlcall7"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[ID]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
         },
-        "defaultLink" : false
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select count(t.id) as CLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'closed' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall8",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "进行中的任务",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall6"
+        },
+        "name" : "连接8042",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall8"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[ID]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select count(t.id) as YSTARTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'doing' and t.project = ?\nand t.parent <= '0'",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall2",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "指派给我的任务数",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "name" : "连接7725",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "用户全局对象[srfloginname]",
@@ -1244,7 +1075,7 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
-      "sql" : "select count(t.id) as MYCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`finishedby` = ? and t.project = ? and t.parent <= '0'",
+      "sql" : "select count(t.id) as ASSTOMYTASKCNT from zt_task t where t.deleted = '0' and t.assignedTo = ? and t.project = ? and t.parent <= '0'",
       "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
@@ -1268,15 +1099,182 @@
       "sql" : "select count(t.id) as STORYCHANGECNT from zt_task t left join zt_story t21 on t.story = t21.id where t.deleted = '0'  and t.project = ? and t.storyVersion < t21.version and t21.`status` <> 'changed' and t.parent <= '0'",
       "fillDstLogicParam" : true,
       "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall1",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "未关闭任务数",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "name" : "连接8155",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[ID]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select count(t.id) as UNCLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` <> 'closed' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall4",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "我完成的任务数",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall9"
+        },
+        "name" : "连接4450",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall4"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "Default[ID]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select count(t.id) as MYCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`finishedby` = ? and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall6",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "已取消任务",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall7"
+        },
+        "name" : "连接7826",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall6"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[ID]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select count(t.id) as CANCELTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'cancel' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall3",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "已完成的任务数",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall4"
+        },
+        "name" : "连接299",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[ID]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select count(t.id) as YCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'done' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall5",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "所有任务",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall8"
+        },
+        "name" : "连接7225",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall5"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[ID]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select count(t.id) as ALLTASKCNT from zt_task t where t.deleted = '0'  and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -1580,6 +1578,13 @@
     "name" : "CurPlanProject",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "n_product_eq",
+      "name" : "PRODUCT 等于(=) 数据上下文(n_product_eq)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchCurProduct",
     "methodType" : "FETCH",
     "name" : "FetchCurProduct",
@@ -1704,6 +1709,13 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "n_product_eq",
+      "name" : "PRODUCT 等于(=) 数据上下文(n_product_eq)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchTempCurProduct",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
@@ -1861,6 +1873,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__PROJ_CREATE_BUT"
+    },
     "getPSSysImage" : {
       "cssClass" : "add"
     },
@@ -1886,6 +1902,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TOP"
+    },
     "getPSSysImage" : {
       "glyph" : "xf0a7@FontAwesome",
       "cssClass" : "fa fa-hand-o-down"
@@ -1899,43 +1919,6 @@
     "globalUIAction" : true,
     "reloadData" : true,
     "id" : "CancelProjectTop@Project"
-  }, {
-    "actionTarget" : "NONE",
-    "caption" : "关联需求",
-    "codeName" : "projectLinkStories",
-    "dataAccessAction" : "LINKSTORY",
-    "frontPSAppView" : "无法获取指定应用视图，标识为[0f77d6eb94feef2c2184619a48d890b3]，请确认实体视图[ZT_STORY][项目下属需求实体数据多项选择视图]已经添加到应用[iBiz软件生产管理（Mob）]中",
-    "fullCodeName" : "Project_projectLinkStories",
-    "name" : "关联需求（项目—需求）",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "LinkStory"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "PROJECT",
-      "name" : "PROJECT",
-      "value" : "project",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "project",
-      "name" : "project",
-      "value" : "project",
-      "rawValue" : false
-    } ],
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "projectLinkStories",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "globalUIAction" : true,
-    "reloadData" : true,
-    "id" : "projectLinkStories@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
@@ -1953,6 +1936,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    },
     "getPSSysImage" : {
       "cssClass" : "play"
     },
@@ -1963,38 +1950,6 @@
     "uIActionType" : "DEUIACTION",
     "reloadData" : true,
     "id" : "ProjectStartMob@Project"
-  }, {
-    "actionTarget" : "NONE",
-    "caption" : "按照计划关联",
-    "codeName" : "ProjecPlanLink",
-    "frontPSAppView" : "无法获取指定应用视图，标识为[14cc9f3ab15e2a170161b0997e604d48]，请确认实体视图[ZT_PROJECT][项目实体选项操作视图（按照计划关联）]已经添加到应用[iBiz软件生产管理（Mob）]中",
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Project_ProjecPlanLink",
-    "name" : "按照计划关联",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "PROJECT",
-      "name" : "PROJECT",
-      "value" : "project",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "project",
-      "name" : "project",
-      "value" : "project",
-      "rawValue" : false
-    } ],
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "ProjecPlanLink",
-    "uIActionType" : "DEUIACTION",
-    "globalUIAction" : true,
-    "reloadData" : true,
-    "id" : "ProjecPlanLink@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "详情",
@@ -2034,6 +1989,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NOTOP"
+    },
     "getPSSysImage" : {
       "glyph" : "xf0a6@FontAwesome",
       "cssClass" : "fa fa-hand-o-up"
@@ -2063,6 +2022,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
     },
     "getPSSysImage" : {
       "cssClass" : "close"
@@ -2095,6 +2058,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
     "getPSSysImage" : {
       "cssClass" : "power"
     },
@@ -2121,6 +2088,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
     },
     "getPSSysImage" : {
       "cssClass" : "color-wand"
@@ -2149,6 +2120,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__PROJ_CREATE_BUT"
+    },
     "getPSSysImage" : {
       "glyph" : "xf0c0@FontAwesome",
       "cssClass" : "fa fa-users"
@@ -2174,6 +2149,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SUSPEND"
     },
     "getPSSysImage" : {
       "cssClass" : "pause"
@@ -2540,19 +2519,31 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "Project",
+  "dEAPITag" : "IBZ_API__PROJECT",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json",
   "enableUIActions" : 15,
   "logicName" : "项目",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  }, {
+    "name" : "ISTOP",
+    "codeName" : "Istop"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Product",
+    "majorDEName" : "ZT_PRODUCT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
     },
+    "minorDECodeName" : "Project",
+    "minorDEName" : "ZT_PROJECT",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -2561,6 +2552,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_PROJECT",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "ZT_PROJECT",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "ID",
@@ -2573,7 +2568,9 @@
     "codeName" : "Code"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableTempData" : true,
   "enableUICreate" : true,

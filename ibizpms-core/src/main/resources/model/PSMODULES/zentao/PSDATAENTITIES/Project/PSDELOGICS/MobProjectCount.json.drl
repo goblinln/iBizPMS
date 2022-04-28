@@ -12,40 +12,11 @@ package cn.ibizlab.pms.zentao.logic.projectlogic.mobprojectcount;
 
     no-loop
 
-            //逻辑处理节点[获取bug数]
-            rule "rawsqlcall3"
-            ruleflow-group "projectmobprojectcountrawsqlcall3"
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "projectmobprojectcountbegin"
             when
             then
-    Map param =new HashMap();
-        param.put("param0",projectmobprojectcountdefault.get("id"));
-    String strSql="select count(t1.id) as BUGCNT from zt_bug t1 where t1.deleted = '0' and t1.project = #{et.param0}";
-                        java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
-                            if(entities.size()>0){
-                            JSONObject entity=entities.get(0);
-                                    for (Map.Entry entry : entity.entrySet()) {
-                                    projectmobprojectcountdefault.set(String.valueOf(entry.getKey()),entry.getValue());
-                                    }
-                            }
-                        update(projectmobprojectcountdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[获取需求数]
-            rule "rawsqlcall1"
-            ruleflow-group "projectmobprojectcountrawsqlcall1"
-            when
-            then
-    Map param =new HashMap();
-        param.put("param0",projectmobprojectcountdefault.get("id"));
-    String strSql="select count(t1.id) as STORYCNT from zt_story t1 where t1.deleted = '0' and t1.id in (select t.story from zt_projectstory t where t.project = #{et.param0})";
-                        java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
-                            if(entities.size()>0){
-                            JSONObject entity=entities.get(0);
-                                    for (Map.Entry entry : entity.entrySet()) {
-                                    projectmobprojectcountdefault.set(String.valueOf(entry.getKey()),entry.getValue());
-                                    }
-                            }
-                        update(projectmobprojectcountdefault);//更新fact中变量值
             end
 
             //逻辑处理节点[团队成员]
@@ -84,13 +55,6 @@ package cn.ibizlab.pms.zentao.logic.projectlogic.mobprojectcount;
                         update(projectmobprojectcountdefault);//更新fact中变量值
             end
 
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "projectmobprojectcountbegin"
-            when
-            then
-            end
-
             //逻辑处理节点[获取任务数]
             rule "rawsqlcall2"
             ruleflow-group "projectmobprojectcountrawsqlcall2"
@@ -99,6 +63,42 @@ package cn.ibizlab.pms.zentao.logic.projectlogic.mobprojectcount;
     Map param =new HashMap();
         param.put("param0",projectmobprojectcountdefault.get("id"));
     String strSql="select count(t1.id) as TASKCNT from zt_task t1 where t1.deleted = '0' and t1.project = #{et.param0} and `STATUS` in('doing','wait','pause')";
+                        java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+                            if(entities.size()>0){
+                            JSONObject entity=entities.get(0);
+                                    for (Map.Entry entry : entity.entrySet()) {
+                                    projectmobprojectcountdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+                                    }
+                            }
+                        update(projectmobprojectcountdefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[获取需求数]
+            rule "rawsqlcall1"
+            ruleflow-group "projectmobprojectcountrawsqlcall1"
+            when
+            then
+    Map param =new HashMap();
+        param.put("param0",projectmobprojectcountdefault.get("id"));
+    String strSql="select count(t1.id) as STORYCNT from zt_story t1 where t1.deleted = '0' and t1.id in (select t.story from zt_projectstory t where t.project = #{et.param0})";
+                        java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+                            if(entities.size()>0){
+                            JSONObject entity=entities.get(0);
+                                    for (Map.Entry entry : entity.entrySet()) {
+                                    projectmobprojectcountdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+                                    }
+                            }
+                        update(projectmobprojectcountdefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[获取bug数]
+            rule "rawsqlcall3"
+            ruleflow-group "projectmobprojectcountrawsqlcall3"
+            when
+            then
+    Map param =new HashMap();
+        param.put("param0",projectmobprojectcountdefault.get("id"));
+    String strSql="select count(t1.id) as BUGCNT from zt_bug t1 where t1.deleted = '0' and t1.project = #{et.param0}";
                         java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
                             if(entities.size()>0){
                             JSONObject entity=entities.get(0);

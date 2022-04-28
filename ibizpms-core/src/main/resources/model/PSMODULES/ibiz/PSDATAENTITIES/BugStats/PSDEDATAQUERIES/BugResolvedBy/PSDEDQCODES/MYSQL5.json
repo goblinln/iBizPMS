@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\n\tt1.resolvedBy,\n\tt1.product,\n\tt1.productname,\n\tt1.bugcnt,\n\tt11.bugcnt AS bugtotal \nFROM\n\t(\n\tSELECT\n\t\tt1.resolvedBy,\n\t\tt1.product,\n\t\tt11.`name` AS productname,\n\t\tCOUNT( t1.id ) AS bugcnt \n\tFROM\n\t\t`zt_bug` t1\n\t\tLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.ID \n\tWHERE\n\t\tt1.deleted = '0' \n\t\tAND t1.resolvedBy <> '' \n\t\tAND t1.product <> 0 \n\t\tAND t11.deleted = '0' \n\tGROUP BY\n\t\tt1.resolvedBy,\n\t\tt1.product,\n\t\tt11.`name` \n\t) t1\n\tINNER JOIN (\n\tSELECT\n\t\tt1.resolvedBy,\n\t\tCOUNT( t1.id ) AS bugcnt \n\tFROM\n\t\t`zt_bug` t1\n\t\tLEFT JOIN zt_product t11 ON t1.PRODUCT = t11.ID \n\tWHERE\n\t\tt1.deleted = '0' \n\t\tAND t1.resolvedBy <> '' \n\t\tAND t1.product <> 0 \n\t\tAND t11.deleted = '0' \n\tGROUP BY\n\t\tt1.resolvedBy \n\t) t11 ON t1.resolvedBy = t11.resolvedBy \nORDER BY\n\tt1.resolvedBy ASC",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEDATAQUERIES/BugResolvedBy/PSDEDQCODES/MYSQL5.json"
+}

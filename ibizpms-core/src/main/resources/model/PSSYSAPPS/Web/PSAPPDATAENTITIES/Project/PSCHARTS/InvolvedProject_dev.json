@@ -22,6 +22,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "InvolvedProject",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchInvolvedProject"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {

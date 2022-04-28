@@ -1,0 +1,60 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`ADDEDBY`",
+    "name" : "ADDEDBY"
+  }, {
+    "expression" : "t1.`ADDEDDATE`",
+    "name" : "ADDEDDATE"
+  }, {
+    "expression" : "0",
+    "name" : "CASECNT"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`LASTEDITEDBY`",
+    "name" : "LASTEDITEDBY"
+  }, {
+    "expression" : "t1.`LASTEDITEDDATE`",
+    "name" : "LASTEDITEDDATE"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`TESTSUITESN`",
+    "name" : "TESTSUITESN"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ADDEDBY`,\nt1.`ADDEDDATE`,\n0 AS `CASECNT`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`ID`,\nt1.`LASTEDITEDBY`,\nt1.`LASTEDITEDDATE`,\nt1.`NAME`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PRODUCT`,\nt1.`TESTSUITESN`,\nt1.`TYPE`\nFROM `zt_testsuite` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

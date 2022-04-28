@@ -279,6 +279,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UNLINKSUITCASE"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "SUITE",
             "name" : "SUITE",
@@ -358,6 +362,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "RUNCASE"
           },
           "getPSSysImage" : {
             "glyph" : "xf01d@FontAwesome",

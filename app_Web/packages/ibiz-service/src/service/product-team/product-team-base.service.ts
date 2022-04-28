@@ -138,7 +138,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/productteams`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productteams`, _data);
             return res;
         }
     this.log.warn([`[ProductTeam]>>>[Create函数]异常`]);
@@ -158,7 +158,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.productteam) {
-            const res = await this.http.get(`/products/${_context.product}/productteams/${_context.productteam}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/productteams/${encodeURIComponent(_context.productteam)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -181,7 +181,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productteams/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/productteams/getdraft`, _data);
             return res;
         }
     this.log.warn([`[ProductTeam]>>>[GetDraft函数]异常`]);
@@ -201,7 +201,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.productteam) {
-            const res = await this.http.delete(`/products/${_context.product}/productteams/${_context.productteam}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/productteams/${encodeURIComponent(_context.productteam)}`);
             return res;
         }
     this.log.warn([`[ProductTeam]>>>[Remove函数]异常`]);
@@ -223,7 +223,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         if (_context.product && _context.productteam) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/productteams/${_context.productteam}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/productteams/${encodeURIComponent(_context.productteam)}`, _data);
             return res;
         }
     this.log.warn([`[ProductTeam]>>>[Update函数]异常`]);
@@ -243,7 +243,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
     async FetchProductTeamInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productteams/fetchproductteaminfo`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductTeamInfo');
             return res;
         }
@@ -264,7 +264,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
     async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/productteams/fetchspecifyteam`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchSpecifyTeam');
             return res;
         }
@@ -273,5 +273,24 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
             } catch (error) {
                 return this.handleResponseError(error);
             }
+    }
+
+    /**
+     * SaveBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductTeamServiceBase
+     */
+    public async SaveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            const res = await this.http.post(`/products/${_context.product}/productteams/savebatch`,_data);
+            return res;
+        }
+        this.log.warn([`[ProductTeam]>>>[SaveBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

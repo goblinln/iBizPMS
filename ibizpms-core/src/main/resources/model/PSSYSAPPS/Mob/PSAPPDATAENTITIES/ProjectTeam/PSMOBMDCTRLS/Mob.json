@@ -60,6 +60,10 @@
           "colLG" : 1,
           "colMD" : 1,
           "layout" : "TABLE_12COL"
+        },
+        "getPSRawItem" : {
+          "htmlContent" : "<ion-icon name=\"person-add-sharp\" style=\"font-size: 18px;\"></ion-icon>",
+          "name" : "rawitem1"
         }
       }, {
         "itemStyle" : "DEFAULT",

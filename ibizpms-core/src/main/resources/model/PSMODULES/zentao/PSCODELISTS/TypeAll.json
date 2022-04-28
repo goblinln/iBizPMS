@@ -1,40 +1,44 @@
 {
+  "codeListTag" : "zentao__TypeAll",
   "codeListType" : "STATIC",
   "codeName" : "TypeAll",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TypeAll.json",
   "emptyText" : "未定义",
+  "name" : "待办类型（全部）",
   "getPSCodeItems" : [ {
     "codeName" : "Custom",
     "text" : "自定义",
-    "value" : "custom",
-    "includeBeginValue" : true
+    "value" : "custom"
   }, {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug",
-    "includeBeginValue" : true
+    "value" : "bug"
   }, {
     "codeName" : "Task",
     "text" : "项目任务",
-    "value" : "task",
-    "includeBeginValue" : true
+    "value" : "task"
   }, {
     "codeName" : "Story",
     "text" : "项目需求",
-    "value" : "story",
-    "includeBeginValue" : true
+    "value" : "story"
   }, {
     "codeName" : "Cycle",
     "text" : "周期",
-    "value" : "cycle",
-    "includeBeginValue" : true
+    "value" : "cycle"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

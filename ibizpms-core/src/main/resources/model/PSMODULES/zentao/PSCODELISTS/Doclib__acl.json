@@ -1,20 +1,28 @@
 {
+  "codeListTag" : "zentao__Doclib__acl",
   "codeListType" : "STATIC",
   "codeName" : "Doclib__acl",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doclib__acl.json",
   "emptyText" : "未定义",
+  "name" : "文档库权限",
   "getPSCodeItems" : [ {
     "codeName" : "Default",
     "text" : "默认",
-    "value" : "default",
-    "includeBeginValue" : true
+    "value" : "default"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

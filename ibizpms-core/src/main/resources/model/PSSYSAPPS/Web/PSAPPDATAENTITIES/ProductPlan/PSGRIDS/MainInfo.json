@@ -319,6 +319,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ADDPROJ"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "PLANID",
             "name" : "PLANID",
@@ -410,6 +414,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__LINKSTORY"
+          },
           "getPSNavigateParams" : [ {
             "key" : "id",
             "name" : "id",
@@ -457,6 +465,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__LINKBUG"
           },
           "getPSNavigateContexts" : [ {
             "key" : "TEST",
@@ -513,6 +525,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UPDATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -546,6 +562,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CHILDPLAN"
           },
           "getPSNavigateContexts" : [ {
             "key" : "PARENT",
@@ -598,10 +618,15 @@
           "dataAccessAction" : "CREATE",
           "fullCodeName" : "Copy",
           "name" : "表格界面_拷贝操作",
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CREATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf0c5@FontAwesome",
             "cssClass" : "fa fa-copy"
           },
+          "predefinedType" : "GRIDVIEW_COPYACTION",
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
             "lanResTag" : "TBB.TOOLTIP.*.COPY"
@@ -632,6 +657,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "DELETE"
           },
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",

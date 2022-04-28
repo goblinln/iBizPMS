@@ -1,4 +1,4 @@
-import { ViewTool, Util, ListControlInterface } from 'ibiz-core';
+import { ViewTool, Util, ListControlInterface, LogUtil } from 'ibiz-core';
 import { MDControlBase } from "./md-control-base";
 import { AppViewLogicService } from '../app-service';
 import { AppListService } from '../ctrl-service';
@@ -266,6 +266,9 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
                     } else {
                         _this.handleClick(_this.items[0]);
                     }
+                }
+                if (this.isEnableGroup) {
+                    this.group();
                 }
             },
             (response: any) => {
@@ -606,6 +609,82 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
                 time = now;
             }
         };
+    }
+
+    public drawGroup() {
+        let data:Array<any> = [...this.items];
+        let groups:Array<any> = [];
+        data.forEach((item: any)=>{
+            if(item.hasOwnProperty(this.groupField)){
+                groups.push(item[this.groupField]);
+            }
+        });
+        groups = [...new Set(groups)];
+        if(groups.length == 0){
+            LogUtil.warn('分组数据无效')
+        }
+        let groupTree:Array<any> = [];
+        groups.forEach((group: any,i: number)=>{
+            let children:Array<any> = [];
+            data.forEach((item: any,j: number)=>{
+                if(Object.is(group,item[this.groupField])){
+                    children.push(item);
+                }
+            });
+            group = group ? group : this.$t('app.commonWords.other');
+            const tree: any ={
+                group: group,
+                children: children
+            }
+            groupTree.push(tree);
+        });
+        this.groupData = [...groupTree];
+    }
+
+    public async drawCodelistGroup() {
+        if (!this.groupCodeList || !this.groupCodeList.codeName) {
+            return;
+        }
+        let groupTree:Array<any> = [];
+        let data:Array<any> = [...this.items];
+        let groupCodelist: any = await this.codeListService.getDataItems({
+            tag: this.groupCodeList.codeName,
+            type: this.groupCodeList.codeListType,
+            context: this.context,
+            viewparams: this.viewparams 
+        });
+        if(groupCodelist.length == 0){
+            console.warn("分组数据无效");
+        }
+        groupCodelist.forEach((group: any,i: number)=>{
+            let children:Array<any> = [];
+            data.forEach((item: any,j: number)=>{
+                if (Object.is(group.value, item[this.groupField])) {
+                    children.push(item);
+                }
+            });
+            const tree: any ={
+                group: group.label,
+                children: children
+            }
+            groupTree.push(tree);
+        });
+        let child:Array<any> = [];
+        data.forEach((item: any)=>{
+            let i: number = 0;
+                i = groupCodelist.findIndex((group: any) => Object.is(group.value, item[this.groupField]));
+            if(i < 0){
+                child.push(item);
+            }
+        })
+        const Tree: any = {
+            group: this.$t('app.commonWords.other'),
+            children: child
+        }
+        if(child && child.length > 0){
+            groupTree.push(Tree);
+        }
+        this.groupData = [...groupTree];
     }
 
 }

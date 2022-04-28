@@ -1,0 +1,19 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.type = 'doc'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.parent = ${srfdatacontext('srfparent','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\nt1.`BRANCH`,\nt1.`DELETED`,\nt11.`NAME` AS `DOCLIBNAME`,\nt1.`GRADE`,\nt1.`ID`,\n(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`,\nt21.`NAME` AS `MODULENAME`,\nt1.`NAME`,\nt1.`ORDER`,\nt1.`OWNER`,\nt1.`PARENT`,\nt1.`PATH`,\nt1.`ROOT`,\nt1.`SHORT`,\nt1.`TYPE`, \n'module' AS `DOCQTYPE`,\n( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`\nFROM `zt_module` t1 \nLEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID \nLEFT JOIN zt_module t21 ON t1.PARENT = t21.ID",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEDATAQUERIES/ChildModuleByRealParent/PSDEDQCODES/MYSQL5.json"
+}

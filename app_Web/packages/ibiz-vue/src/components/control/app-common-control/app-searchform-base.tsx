@@ -393,7 +393,9 @@ export class AppSearchFormBase extends SearchFormControlBase {
                 {editor && (
                     <app-default-editor
                         editorInstance={editor}
+                        containerCtrl={this.controlInstance}
                         value={this.data[editor?.name]}
+                        parentItem={modelJson}                              
                         contextData={this.data}
                         context={Util.deepCopy(this.context)}
                         viewparams={Util.deepCopy(this.viewparams)}
@@ -535,7 +537,11 @@ export class AppSearchFormBase extends SearchFormControlBase {
         if (searchButtonPos && searchButtonPos == 'RIGHT') {
             switch (searchButtonStyle) {
                 case 'DEFAULT':
-                    return position == 'content' ? { width: 'calc(100% - 220px)' } : { width: '220px' };
+                    if (this.enableSaveFilter) {
+                        return position == 'content' ? { width: 'calc(100% - 220px)' } : { width: '220px' };
+                    } else {
+                        return position == 'content' ? { width: 'calc(100% - 138px' } : { width: '138px' };
+                    }
                 case 'SEARCHONLY':
                     return position == 'content' ? { width: 'calc(100% - 88px)' } : { width: '88px' };
                 case 'NONE':
@@ -554,7 +560,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
      * @memberof AppSearchFormBase
      */
     public render(): any {
-        const isShow = this.controlInstance.formStyle != 'SEARCHBAR' ? this.isExpandSearchForm : true;
+        const isShow = this.controlInstance.formStyle != 'SEARCHBAR' && this.controlInstance.name != 'quicksearchform' ? this.isExpandSearchForm : true;
         if (!(this.controlIsLoaded && isShow)) {
             return
         }
@@ -570,7 +576,8 @@ export class AppSearchFormBase extends SearchFormControlBase {
                 class={{ 
                     ...controlClassNames,
                     'app-search-form': true,
-                    'no-search-action': this.controlInstance.formStyle != 'SEARCHBAR' && searchButtonStyle != 'NONE' ? false : true,
+                    'app-quick-search-form': this.controlInstance.name == 'quicksearchform',
+                    'no-search-action': this.controlInstance.formStyle != 'SEARCHBAR' && this.controlInstance.name != 'quicksearchform' && searchButtonStyle != 'NONE' ? false : true,
                     [`${searchButtonPos && searchButtonPos == 'RIGHT' ? 'right' : 'bottom'}-button`]: true
                 }}
                 ref={this.controlInstance.name}
@@ -585,7 +592,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
                             {this.renderFormContent()}
                         </row>
                     </i-col>
-                {this.controlInstance.formStyle != 'SEARCHBAR' && searchButtonStyle != 'NONE' &&
+                {this.controlInstance.formStyle != 'SEARCHBAR' && this.controlInstance.name != 'quicksearchform' && searchButtonStyle != 'NONE' &&
                     <i-col
                         style={this.getColStyle('button')}
                         class="search-action-footer">

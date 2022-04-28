@@ -5,225 +5,6 @@
   "logicName" : "根据测试单获取相应信息",
   "name" : "根据测试单获取相应信息",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Rawsqlcall13",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "产生的bug",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall14"
-      },
-      "name" : "连接6366",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall13"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "SELECT\nCOUNT(1) as bugcnt\nFROM `zt_bug` t1 \nwhere t1.OPENEDBUILD = (select build from  zt_testtask  where id = ?)  and t1.openedDate > (select `begin` from  zt_testtask   where id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?)",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall11",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "有效bug数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall12"
-      },
-      "name" : "连接8948",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall11"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "SELECT\nCOUNT(1) as effective\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t  where t.id = ?)  and t1.openedDate > (select tt.`begin` from  zt_testtask tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?\n) and t1.`status` in ('resolved','closed') and t1.resolution in ('fixed','postponed')",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall3",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取用例数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall4"
-      },
-      "name" : "连接324",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "SELECT\nCOUNT(1) as casecnt\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nLEFT JOIN zt_testtask t21 on t11.task = t21.id\nWHERE  t1.`DELETED` = '0' and t21.id = ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall5",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "失败的用例数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall6"
-      },
-      "name" : "连接6927",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall5"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select COUNT(1) as failcase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nleft join zt_testresult t21 on t21.run = t11.id\nLEFT JOIN zt_testtask t31 on t31.id = t11.task\nWHERE  t1.`DELETED` = '0'  and t21.date > (SELECT `BEGIN` from zt_testtask where id =  ? ) and t21.date < (SELECT CONCAT(DATE_FORMAT(`end`,'%Y-%m-%d'),' 23:59:59') from zt_testtask where id = ? ) and t31.id = ?  and t21.caseResult = 'fail') t",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall15",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取参与人员",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall16"
-      },
-      "name" : "连接6052",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall15"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select case when t.members is null then '' else t.members  end as members from (SELECT  GROUP_CONCAT(DISTINCT t1.lastRunner) as members from zt_testrun t1  LEFT JOIN zt_testtask t21 on t21.id = t1.task where t21.id = ?) t\n",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始",
@@ -236,162 +17,8 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall12",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "解决的bug",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall13"
-      },
-      "name" : "连接4883",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall12"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "SELECT\nCOUNT(1) as resolvedcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t where t.id = ?)   and t1.openedDate > (select tt.`begin` from  zt_testtask tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?\n)  and t1.`status` in ('resolved','closed')",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall4",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "执行的用例数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall5"
-      },
-      "name" : "连接8909",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall4"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select COUNT(1) as rencase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nINNER join zt_testresult t21 on t21.run = t11.id\nLEFT JOIN zt_testtask t31 on t31.id = t11.task\nWHERE  t1.`DELETED` = '0' and t21.date > (SELECT `BEGIN` from zt_testtask where id = ?) and t21.date < (SELECT CONCAT(DATE_FORMAT(`end`,'%Y-%m-%d'),' 23:59:59') from zt_testtask where id = ?) and t31.id =  ? ) t",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall9",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "用例产生的bug",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall10"
-      },
-      "name" : "连接7101",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall9"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    }, {
-      "name" : "Default[TASKS]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "TASKS",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "SELECT\nCOUNT(1) as casebugcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select tt.build from zt_testtask tt where tt.id = ?)   and t1.openedDate > (select tt.`begin` from zt_testtask tt where tt.id = ? and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?\n)\n)  and t1.`case` > 0",
-    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall14",
@@ -410,8 +37,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall14"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[storycnt]",
@@ -616,6 +242,241 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
+    "codeName" : "Rawsqlcall15",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取参与人员",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall16"
+      },
+      "name" : "连接6052",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall15"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select case when t.members is null then '' else t.members  end as members from (SELECT  GROUP_CONCAT(DISTINCT t1.lastRunner) as members from zt_testrun t1  LEFT JOIN zt_testtask t21 on t21.id = t1.task where t21.id = ?) t\n",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall11",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "有效bug数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall12"
+      },
+      "name" : "连接8948",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall11"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "SELECT\nCOUNT(1) as effective\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t  where t.id = ?)  and t1.openedDate > (select tt.`begin` from  zt_testtask tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?\n) and t1.`status` in ('resolved','closed') and t1.resolution in ('fixed','postponed')",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall2",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取需求数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "name" : "连接9595",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "SELECT\nCOUNT(1) as storycnt, sum(t1.ESTIMATE) as storyestimate,GROUP_CONCAT(DISTINCT t1.id ORDER BY t1.id asc) as stories\nFROM `zt_story` t1 \nLEFT JOIN zt_build t11 on FIND_IN_SET(t1.id,t11.stories)\nLEFT JOIN zt_testtask t21 on t21.build = t11.id\nWHERE t1.`DELETED` = '0' and t21.id = ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall5",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "失败的用例数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall6"
+      },
+      "name" : "连接6927",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall5"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select COUNT(1) as failcase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nleft join zt_testresult t21 on t21.run = t11.id\nLEFT JOIN zt_testtask t31 on t31.id = t11.task\nWHERE  t1.`DELETED` = '0'  and t21.date > (SELECT `BEGIN` from zt_testtask where id =  ? ) and t21.date < (SELECT CONCAT(DATE_FORMAT(`end`,'%Y-%m-%d'),' 23:59:59') from zt_testtask where id = ? ) and t31.id = ?  and t21.caseResult = 'fail') t",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall12",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "解决的bug",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall13"
+      },
+      "name" : "连接4883",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall12"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "SELECT\nCOUNT(1) as resolvedcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t where t.id = ?)   and t1.openedDate > (select tt.`begin` from  zt_testtask tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?\n)  and t1.`status` in ('resolved','closed')",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall16",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取项目名",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[PROJECT]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "PROJECT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select name  as projectname from zt_project where id = ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
     "codeName" : "Rawsqlcall10",
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -632,8 +493,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall10"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[TASKS]",
@@ -667,6 +527,70 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取数据",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接9257",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select CONCAT_WS(' ',DATE_FORMAT(now(),'%Y-%m-%d'),concat('TESTTASK#',t.id),t.`name`,'测试报告') as TITLE,t.`begin`,t.`end`,t.project,t.build as builds,(select GROUP_CONCAT(DISTINCT tt.`case` order by tt.`case` asc Separator ',') from zt_testrun tt where tt.task = t.id GROUP BY tt.task) as cases,t.id as objectID,'TESTTASK' as objectType,t.`OWNER` as `OWNER` from zt_testtask t where t.deleted = '0' and t.id = ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall6",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "有效需求数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall7"
+      },
+      "name" : "连接9430",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall6"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "SELECT\nCOUNT(1) as storycnts\nFROM `zt_story` t1 \nLEFT JOIN zt_build t21 on FIND_IN_SET(t1.id,t21.stories)\nLEFT JOIN zt_testtask t31 on t31.build = t21.id\nWHERE t1.`DELETED` = '0' and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed'))) and t31.id = ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
     "codeName" : "Rawsqlcall7",
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -683,8 +607,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall7"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[TASKS]",
@@ -700,24 +623,73 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
-    "codeName" : "Rawsqlcall2",
+    "codeName" : "Rawsqlcall4",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
     "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取需求数",
+    "name" : "执行的用例数",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall3"
+        "id" : "Rawsqlcall5"
       },
-      "name" : "连接9595",
+      "name" : "连接8909",
       "getSrcPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall2"
+        "id" : "Rawsqlcall4"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
       },
-      "defaultLink" : false
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "select COUNT(1) as rencase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nINNER join zt_testresult t21 on t21.run = t11.id\nLEFT JOIN zt_testtask t31 on t31.id = t11.task\nWHERE  t1.`DELETED` = '0' and t21.date > (SELECT `BEGIN` from zt_testtask where id = ?) and t21.date < (SELECT CONCAT(DATE_FORMAT(`end`,'%Y-%m-%d'),' 23:59:59') from zt_testtask where id = ?) and t31.id =  ? ) t",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall3",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取用例数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall4"
+      },
+      "name" : "连接324",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[TASKS]",
@@ -729,7 +701,57 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
-    "sql" : "SELECT\nCOUNT(1) as storycnt, sum(t1.ESTIMATE) as storyestimate,GROUP_CONCAT(DISTINCT t1.id ORDER BY t1.id asc) as stories\nFROM `zt_story` t1 \nLEFT JOIN zt_build t11 on FIND_IN_SET(t1.id,t11.stories)\nLEFT JOIN zt_testtask t21 on t21.build = t11.id\nWHERE t1.`DELETED` = '0' and t21.id = ?",
+    "sql" : "SELECT\nCOUNT(1) as casecnt\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nLEFT JOIN zt_testtask t21 on t11.task = t21.id\nWHERE  t1.`DELETED` = '0' and t21.id = ?",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall13",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "产生的bug",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall14"
+      },
+      "name" : "连接6366",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall13"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "sql" : "SELECT\nCOUNT(1) as bugcnt\nFROM `zt_bug` t1 \nwhere t1.OPENEDBUILD = (select build from  zt_testtask  where id = ?)  and t1.openedDate > (select `begin` from  zt_testtask   where id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?)",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
@@ -749,8 +771,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall8"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[TASKS]",
@@ -793,24 +814,23 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
-    "codeName" : "Rawsqlcall1",
+    "codeName" : "Rawsqlcall9",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
     "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取数据",
+    "name" : "用例产生的bug",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall2"
+        "id" : "Rawsqlcall10"
       },
-      "name" : "连接9257",
+      "name" : "连接7101",
       "getSrcPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
+        "id" : "Rawsqlcall9"
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[TASKS]",
@@ -821,31 +841,16 @@
         "id" : "Default"
       },
       "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select CONCAT_WS(' ',DATE_FORMAT(now(),'%Y-%m-%d'),concat('TESTTASK#',t.id),t.`name`,'测试报告') as TITLE,t.`begin`,t.`end`,t.project,t.build as builds,(select GROUP_CONCAT(DISTINCT tt.`case` order by tt.`case` asc Separator ',') from zt_testrun tt where tt.task = t.id GROUP BY tt.task) as cases,t.id as objectID,'TESTTASK' as objectType,t.`OWNER` as `OWNER` from zt_testtask t where t.deleted = '0' and t.id = ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall6",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "有效需求数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "TASKS",
+      "getSrcPSDELogicParam" : {
         "modelref" : true,
-        "id" : "Rawsqlcall7"
+        "id" : "Default"
       },
-      "name" : "连接9430",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall6"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "name" : "Default[TASKS]",
       "paramAction" : "SQLPARAM",
       "srcFieldName" : "TASKS",
@@ -855,46 +860,29 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
-    "sql" : "SELECT\nCOUNT(1) as storycnts\nFROM `zt_story` t1 \nLEFT JOIN zt_build t21 on FIND_IN_SET(t1.id,t21.stories)\nLEFT JOIN zt_testtask t31 on t31.build = t21.id\nWHERE t1.`DELETED` = '0' and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed'))) and t31.id = ?",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall16",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取项目名",
-    "getPSDELogicNodeParams" : [ {
-      "name" : "Default[PROJECT]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "PROJECT",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCDLPARAM"
-    } ],
-    "sql" : "select name  as projectname from zt_project where id = ?",
+    "sql" : "SELECT\nCOUNT(1) as casebugcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select tt.build from zt_testtask tt where tt.id = ?)   and t1.openedDate > (select tt.`begin` from zt_testtask tt where tt.id = ? and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?\n)\n)  and t1.`case` > 0",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
+    "codeName" : "testtask",
+    "logicName" : "测试版本",
+    "name" : "测试版本",
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+    },
+    "entityParam" : true
+  }, {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
     },
-    "default" : true
-  }, {
-    "codeName" : "testtask",
-    "name" : "测试版本",
-    "getParamPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
-    }
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

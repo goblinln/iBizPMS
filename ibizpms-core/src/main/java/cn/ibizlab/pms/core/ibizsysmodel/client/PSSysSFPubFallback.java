@@ -33,10 +33,6 @@ public class PSSysSFPubFallback implements FallbackFactory<PSSysSFPubFeignClient
         String finalErrorMessage = errorMessage;
         return new PSSysSFPubFeignClient(){
 
-            public Page<PSSysSFPub> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSSysSFPub create(PSSysSFPub pssyssfpub) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSSysSFPubFallback implements FallbackFactory<PSSysSFPubFeignClient
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSysSFPub update(String pssyssfpubid, PSSysSFPub pssyssfpub) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSSysSFPub> pssyssfpubs) {
+            public PSSysSFPub get(String pssyssfpubid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,25 @@ public class PSSysSFPubFallback implements FallbackFactory<PSSysSFPubFeignClient
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSysSFPub get(String pssyssfpubid) {
+            public PSSysSFPub update(String pssyssfpubid, PSSysSFPub pssyssfpub) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSSysSFPub> pssyssfpubs) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSSysSFPub pssyssfpub) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSysSFPub> searchBuild(PSSysSFPubSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSysSFPub> searchDefault(PSSysSFPubSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +79,6 @@ public class PSSysSFPubFallback implements FallbackFactory<PSSysSFPubFeignClient
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSSysSFPub pssyssfpub) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSSysSFPub pssyssfpub) {
@@ -86,15 +92,9 @@ public class PSSysSFPubFallback implements FallbackFactory<PSSysSFPubFeignClient
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSSysSFPub> searchBuild(PSSysSFPubSearchContext context) {
+            public Page<PSSysSFPub> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
-
-            public Page<PSSysSFPub> searchDefault(PSSysSFPubSearchContext context) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
 
 
         };

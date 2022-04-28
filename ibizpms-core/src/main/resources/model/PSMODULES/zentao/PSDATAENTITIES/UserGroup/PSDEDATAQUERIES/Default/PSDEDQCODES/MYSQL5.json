@@ -1,0 +1,16 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`GROUP`",
+    "name" : "GROUP"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`GROUP`,\nt1.`ID`\nFROM `zt_usergroup` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

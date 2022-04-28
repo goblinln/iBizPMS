@@ -13,14 +13,14 @@
                             <tns:global identifier="doclibmodulefixpathdefault" type="cn.ibizlab.pms.core.ibiz.domain.DocLibModule" />
                             <tns:global identifier="doclibmodulefixpathzt_module" type="cn.ibizlab.pms.core.zentao.domain.Module" />
             </extensionElements>
+                        <startEvent id="begin" isInterrupting="true"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="doclibmodulefixpathprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="准备参数"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="doclibmodulefixpathdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="执行重建模型路径"/>
                         <endEvent id="deaction1_end" name="end"/>
                         <sequenceFlow id="deaction1_end_line" sourceRef="deaction1" targetRef="deaction1_end"/>
-                        <startEvent id="begin" isInterrupting="true"/>
-                    <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">
-                    </sequenceFlow>
                     <sequenceFlow id="begin_prepareparam1" sourceRef="begin" targetRef="prepareparam1">
+                    </sequenceFlow>
+                    <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">
                     </sequenceFlow>
         </process>
     </definitions>

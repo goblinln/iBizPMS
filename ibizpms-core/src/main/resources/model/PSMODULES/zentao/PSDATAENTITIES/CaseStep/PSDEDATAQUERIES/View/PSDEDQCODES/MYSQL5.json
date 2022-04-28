@@ -1,0 +1,52 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CASE`",
+    "name" : "CASE"
+  }, {
+    "expression" : "t1.id",
+    "name" : "CASESTEPID"
+  }, {
+    "expression" : "t1.`CASESTEPSN`",
+    "name" : "CASESTEPSN"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`EXPECT`",
+    "name" : "EXPECT"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  } ],
+  "queryCode" : "SELECT\nt1.`CASE`,\nt1.id AS `CASESTEPID`,\nt1.`CASESTEPSN`,\nt1.`CREATEBY`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`DESC`,\nt1.`EXPECT`,\nt1.`ID`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`PARENT`,\nt1.`TYPE`,\nt1.`UPDATEBY`,\nt1.`VERSION`\nFROM `zt_casestep` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

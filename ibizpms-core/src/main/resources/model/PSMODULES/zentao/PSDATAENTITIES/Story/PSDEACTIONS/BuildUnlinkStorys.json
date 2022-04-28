@@ -6,13 +6,15 @@
   "logicName" : "版本解除关联需求",
   "name" : "buildUnlinkStorys",
   "getPSDEActionInput" : {
-    "codeName" : "BuildUnlinkStorysInput",
-    "name" : "输入对象",
+    "name" : "BuildUnlinkStorysInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BuildUnlinkStorysResult",
-    "name" : "返回对象",
+    "name" : "BuildUnlinkStorysResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

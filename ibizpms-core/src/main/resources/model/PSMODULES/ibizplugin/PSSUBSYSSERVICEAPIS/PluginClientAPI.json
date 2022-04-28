@@ -1,0 +1,2148 @@
+{
+  "aPISource" : "NONE",
+  "aPIType" : "RESTFUL",
+  "getAllPSSubSysServiceAPIDEs" : [ {
+    "aPIMode" : 1,
+    "codeName" : "IBIZProKeyword",
+    "logicName" : "关键字",
+    "name" : "IBIZPRO_KEYWORD",
+    "getPSSubSysServiceAPIDEFields" : [ {
+      "codeName" : "Id",
+      "length" : 60,
+      "logicName" : "ID",
+      "name" : "ID",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : true,
+      "majorDEField" : true
+    } ],
+    "getPSSubSysServiceAPIDEMethods" : [ {
+      "actionType" : "DEACTION",
+      "codeName" : "Create",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "Create",
+      "getPSDECodeName" : "IBIZProKeyword",
+      "getPSDELogicName" : "关键字",
+      "getPSDEName" : "IBIZPRO_KEYWORD",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProKeyword"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProKeywordDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizprokeyword",
+      "uniqueTag" : "IBIZPRO_KEYWORD__DEACTION__CREATE",
+      "autoPath" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Get",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "Get",
+      "getPSDECodeName" : "IBIZProKeyword",
+      "getPSDELogicName" : "关键字",
+      "getPSDEName" : "IBIZPRO_KEYWORD",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProKeyword"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "getKeyPSSubSysServiceAPIField" : {
+          "modelref" : true,
+          "id" : "Id"
+        },
+        "name" : "输入对象",
+        "type" : "KEYFIELD"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProKeywordDTO"
+        },
+        "type" : "DTO"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "GET",
+      "requestParamType" : "FIELD",
+      "requestPath" : "/ibizprokeyword",
+      "uniqueTag" : "IBIZPRO_KEYWORD__DEACTION__GET",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Remove",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "Remove",
+      "getPSDECodeName" : "IBIZProKeyword",
+      "getPSDELogicName" : "关键字",
+      "getPSDEName" : "IBIZPRO_KEYWORD",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProKeyword"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "getKeyPSSubSysServiceAPIField" : {
+          "modelref" : true,
+          "id" : "Id"
+        },
+        "name" : "输入对象",
+        "type" : "KEYFIELDS"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "DELETE",
+      "requestParamType" : "FIELD",
+      "requestPath" : "/ibizprokeyword",
+      "uniqueTag" : "IBIZPRO_KEYWORD__DEACTION__REMOVE",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Update",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "Update",
+      "getPSDECodeName" : "IBIZProKeyword",
+      "getPSDELogicName" : "关键字",
+      "getPSDEName" : "IBIZPRO_KEYWORD",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProKeyword"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProKeywordDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "PUT",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizprokeyword",
+      "uniqueTag" : "IBIZPRO_KEYWORD__DEACTION__UPDATE",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "CheckKey",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "CheckKey",
+      "getPSDECodeName" : "IBIZProKeyword",
+      "getPSDELogicName" : "关键字",
+      "getPSDEName" : "IBIZPRO_KEYWORD",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProKeyword"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProKeywordDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "SIMPLE"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizprokeyword/checkkey",
+      "uniqueTag" : "IBIZPRO_KEYWORD__DEACTION__CHECKKEY",
+      "autoPath" : true
+    }, {
+      "actionType" : "FETCH",
+      "codeName" : "FetchDefault",
+      "keyField" : "ID",
+      "methodType" : "FETCH",
+      "name" : "DEFAULT",
+      "getPSDECodeName" : "IBIZProKeyword",
+      "getPSDELogicName" : "关键字",
+      "getPSDEName" : "IBIZPRO_KEYWORD",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProKeyword"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProKeywordFilterDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProKeywordDTO"
+        },
+        "type" : "PAGE"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "GET",
+      "requestPath" : "/ibizprokeyword/fetchdefault",
+      "uniqueTag" : "IBIZPRO_KEYWORD__FETCH__DEFAULT",
+      "autoPath" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "GetDraft",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "GetDraft",
+      "getPSDECodeName" : "IBIZProKeyword",
+      "getPSDELogicName" : "关键字",
+      "getPSDEName" : "IBIZPRO_KEYWORD",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProKeyword"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProKeywordDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProKeywordDTO"
+        },
+        "type" : "DTO"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "GET",
+      "requestParamType" : "NONE",
+      "requestPath" : "/ibizprokeyword/getdraft",
+      "uniqueTag" : "IBIZPRO_KEYWORD__DEACTION__GETDRAFT",
+      "autoPath" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Save",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "Save",
+      "getPSDECodeName" : "IBIZProKeyword",
+      "getPSDELogicName" : "关键字",
+      "getPSDEName" : "IBIZPRO_KEYWORD",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProKeyword"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProKeywordDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizprokeyword/save",
+      "uniqueTag" : "IBIZPRO_KEYWORD__DEACTION__SAVE",
+      "autoPath" : true,
+      "needResourceKey" : true
+    }, {
+      "actionType" : "SELECT",
+      "codeName" : "Select",
+      "keyField" : "ID",
+      "methodType" : "SELECT",
+      "name" : "Select",
+      "getPSDECodeName" : "IBIZProKeyword",
+      "getPSDELogicName" : "关键字",
+      "getPSDEName" : "IBIZPRO_KEYWORD",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProKeyword"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "type" : "UNKNOWN"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "UNKNOWN"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "GET",
+      "requestPath" : "/ibizprokeyword/select",
+      "uniqueTag" : "IBIZPRO_KEYWORD__SELECT"
+    } ],
+    "major" : true
+  }, {
+    "aPIMode" : 1,
+    "codeName" : "IBIZProMessage",
+    "name" : "IBIZPRO_MESSAGE",
+    "getPSSubSysServiceAPIDEFields" : [ {
+      "codeName" : "BCC",
+      "dataType" : "LONGTEXT",
+      "length" : 0,
+      "name" : "BCC",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "CC",
+      "dataType" : "LONGTEXT",
+      "length" : 0,
+      "name" : "CC",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "CONTENT",
+      "dataType" : "LONGTEXT",
+      "length" : 0,
+      "name" : "CONTENT",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "FROM",
+      "dataType" : "LONGTEXT",
+      "length" : 0,
+      "name" : "FROM",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "IBIZPRO_MESSAGEID",
+      "dataType" : "GUID",
+      "length" : 0,
+      "name" : "IBIZPRO_MESSAGEID",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : true,
+      "majorDEField" : false
+    }, {
+      "codeName" : "IBIZPRO_MESSAGENAME",
+      "dataType" : "TEXT",
+      "length" : 0,
+      "name" : "IBIZPRO_MESSAGENAME",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 21,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : true
+    }, {
+      "codeName" : "ISDONE",
+      "dataType" : "INT",
+      "length" : 0,
+      "name" : "ISDONE",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 9,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "ISLINK",
+      "dataType" : "NSCODELIST",
+      "length" : 0,
+      "name" : "ISLINK",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "ISRETRY",
+      "dataType" : "NSCODELIST",
+      "length" : 0,
+      "name" : "ISRETRY",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "ISSYNC",
+      "dataType" : "NSCODELIST",
+      "length" : 0,
+      "name" : "ISSYNC",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "LINKURL",
+      "dataType" : "TEXT",
+      "length" : 0,
+      "name" : "LINKURL",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 21,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "PARAM",
+      "dataType" : "LONGTEXT",
+      "length" : 0,
+      "name" : "PARAM",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "RETRYINTERVALTIME",
+      "dataType" : "INT",
+      "length" : 0,
+      "name" : "RETRYINTERVALTIME",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 9,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "RETRYTIMES",
+      "dataType" : "INT",
+      "length" : 0,
+      "name" : "RETRYTIMES",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 9,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "SENDPROXYID",
+      "dataType" : "TEXT",
+      "length" : 0,
+      "name" : "SENDPROXYID",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 21,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "SENDTIME",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "name" : "SENDTIME",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 5,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "SUBJECT",
+      "dataType" : "TEXT",
+      "length" : 0,
+      "name" : "SUBJECT",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 21,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "TO",
+      "dataType" : "LONGTEXT",
+      "length" : 0,
+      "name" : "TO",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "TYPE",
+      "dataType" : "SSCODELIST",
+      "length" : 0,
+      "name" : "TYPE",
+      "orderValue" : 0,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    } ],
+    "getPSSubSysServiceAPIDEMethods" : [ {
+      "actionType" : "DEACTION",
+      "codeName" : "Create",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "DEACTION",
+      "name" : "Create",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizpromessage",
+      "uniqueTag" : "IBIZPRO_MESSAGE__DEACTION__CREATE",
+      "autoPath" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Get",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "DEACTION",
+      "name" : "Get",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "getKeyPSSubSysServiceAPIField" : {
+          "modelref" : true,
+          "id" : "IBIZPRO_MESSAGEID"
+        },
+        "name" : "输入对象",
+        "type" : "KEYFIELD"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "DTO"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "GET",
+      "requestParamType" : "FIELD",
+      "requestPath" : "/ibizpromessage",
+      "uniqueTag" : "IBIZPRO_MESSAGE__DEACTION__GET",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Remove",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "DEACTION",
+      "name" : "Remove",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "getKeyPSSubSysServiceAPIField" : {
+          "modelref" : true,
+          "id" : "IBIZPRO_MESSAGEID"
+        },
+        "name" : "输入对象",
+        "type" : "KEYFIELDS"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "DELETE",
+      "requestParamType" : "FIELD",
+      "requestPath" : "/ibizpromessage",
+      "uniqueTag" : "IBIZPRO_MESSAGE__DEACTION__REMOVE",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Update",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "DEACTION",
+      "name" : "Update",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "PUT",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizpromessage",
+      "uniqueTag" : "IBIZPRO_MESSAGE__DEACTION__UPDATE",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "CheckKey",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "DEACTION",
+      "name" : "CheckKey",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "SIMPLE"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizpromessage/checkkey",
+      "uniqueTag" : "IBIZPRO_MESSAGE__DEACTION__CHECKKEY",
+      "autoPath" : true
+    }, {
+      "actionType" : "FETCH",
+      "codeName" : "FetchDefault",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "FETCH",
+      "name" : "DEFAULT",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageFilterDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "PAGE"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "GET",
+      "requestPath" : "/ibizpromessage/fetchdefault",
+      "uniqueTag" : "IBIZPRO_MESSAGE__FETCH__DEFAULT",
+      "autoPath" : true
+    }, {
+      "actionType" : "FETCH",
+      "codeName" : "FetchUserAllMessages",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "FETCH",
+      "name" : "UserAllMessages",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageFilterDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "PAGE"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "GET",
+      "requestPath" : "/ibizpromessage/fetchuserallmessages",
+      "uniqueTag" : "IBIZPRO_MESSAGE__FETCH__USERALLMESSAGES",
+      "autoPath" : true
+    }, {
+      "actionType" : "FETCH",
+      "codeName" : "FetchUserUnreadMessages",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "FETCH",
+      "name" : "UserUnreadMessages",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageFilterDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "PAGE"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "GET",
+      "requestPath" : "/ibizpromessage/fetchuserunreadmessages",
+      "uniqueTag" : "IBIZPRO_MESSAGE__FETCH__USERUNREADMESSAGES",
+      "autoPath" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "GetDraft",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "DEACTION",
+      "name" : "GetDraft",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "DTO"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "GET",
+      "requestParamType" : "NONE",
+      "requestPath" : "/ibizpromessage/getdraft",
+      "uniqueTag" : "IBIZPRO_MESSAGE__DEACTION__GETDRAFT",
+      "autoPath" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "MarkDone",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "DEACTION",
+      "name" : "MarkDone",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizpromessage/markdone",
+      "uniqueTag" : "IBIZPRO_MESSAGE__DEACTION__MARKDONE",
+      "autoPath" : true,
+      "needResourceKey" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "MarkRead",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "DEACTION",
+      "name" : "MarkRead",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizpromessage/markread",
+      "uniqueTag" : "IBIZPRO_MESSAGE__DEACTION__MARKREAD",
+      "autoPath" : true,
+      "needResourceKey" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Save",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "DEACTION",
+      "name" : "Save",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizpromessage/save",
+      "uniqueTag" : "IBIZPRO_MESSAGE__DEACTION__SAVE",
+      "autoPath" : true,
+      "needResourceKey" : true
+    }, {
+      "actionType" : "SELECT",
+      "codeName" : "Select",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "SELECT",
+      "name" : "Select",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "type" : "UNKNOWN"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "UNKNOWN"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "GET",
+      "requestPath" : "/ibizpromessage/select",
+      "uniqueTag" : "IBIZPRO_MESSAGE__SELECT"
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Send",
+      "keyField" : "IBIZPRO_MESSAGEID",
+      "methodType" : "DEACTION",
+      "name" : "Send",
+      "getPSDECodeName" : "IBIZProMessage",
+      "getPSDELogicName" : "消息",
+      "getPSDEName" : "IBIZPRO_MESSAGE",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProMessage"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProMessageDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_MESSAGEID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizpromessage/send",
+      "uniqueTag" : "IBIZPRO_MESSAGE__DEACTION__SEND",
+      "autoPath" : true,
+      "needResourceKey" : true
+    } ],
+    "major" : true
+  }, {
+    "aPIMode" : 1,
+    "codeName" : "IBIZProPlugin",
+    "logicName" : "系统插件",
+    "name" : "IBIZPRO_PLUGIN",
+    "getPSSubSysServiceAPIDEFields" : [ {
+      "codeName" : "Version",
+      "length" : 0,
+      "logicName" : "版本",
+      "name" : "VERSION",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 9,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "Type",
+      "length" : 10,
+      "logicName" : "类型",
+      "name" : "TYPE",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "CreateMan",
+      "length" : 60,
+      "logicName" : "建立人",
+      "name" : "CREATEMAN",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "Downloadcount",
+      "length" : 0,
+      "logicName" : "总下载量",
+      "name" : "DOWNLOADCOUNT",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 9,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "CreateDate",
+      "length" : 8,
+      "logicName" : "建立时间",
+      "name" : "CREATEDATE",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 5,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "Downloadurl",
+      "length" : 100,
+      "logicName" : "最新版本下载地址",
+      "name" : "DOWNLOADURL",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "UpdateDate",
+      "length" : 8,
+      "logicName" : "更新时间",
+      "name" : "UPDATEDATE",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 5,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "Tag",
+      "length" : 2000,
+      "logicName" : "标签",
+      "name" : "TAG",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "Score",
+      "length" : 0,
+      "logicName" : "总评分",
+      "name" : "SCORE",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 9,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "IBIZProPluginName",
+      "length" : 200,
+      "logicName" : "系统插件名称",
+      "name" : "IBIZPRO_PLUGINNAME",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : true
+    }, {
+      "codeName" : "IBIZProPluginId",
+      "length" : 100,
+      "logicName" : "系统插件标识",
+      "name" : "IBIZPRO_PLUGINID",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : true,
+      "majorDEField" : false
+    }, {
+      "codeName" : "Keyword",
+      "length" : 2000,
+      "logicName" : "关键字",
+      "name" : "KEYWORD",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "length" : 60,
+      "logicName" : "更新人",
+      "name" : "UPDATEMAN",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : false,
+      "majorDEField" : false
+    }, {
+      "codeName" : "Commentcount",
+      "length" : 0,
+      "logicName" : "总评论数",
+      "name" : "COMMENTCOUNT",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 9,
+      "allowEmpty" : true,
+      "keyDEField" : false,
+      "majorDEField" : false
+    } ],
+    "getPSSubSysServiceAPIDEMethods" : [ {
+      "actionType" : "DEACTION",
+      "codeName" : "Create",
+      "keyField" : "IBIZPRO_PLUGINID",
+      "methodType" : "DEACTION",
+      "name" : "Create",
+      "getPSDECodeName" : "IBIZProPlugin",
+      "getPSDELogicName" : "系统插件",
+      "getPSDEName" : "IBIZPRO_PLUGIN",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProPlugin"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_PLUGINID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizproplugin",
+      "uniqueTag" : "IBIZPRO_PLUGIN__DEACTION__CREATE",
+      "autoPath" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Get",
+      "keyField" : "IBIZPRO_PLUGINID",
+      "methodType" : "DEACTION",
+      "name" : "Get",
+      "getPSDECodeName" : "IBIZProPlugin",
+      "getPSDELogicName" : "系统插件",
+      "getPSDEName" : "IBIZPRO_PLUGIN",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProPlugin"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "getKeyPSSubSysServiceAPIField" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginId"
+        },
+        "name" : "输入对象",
+        "type" : "KEYFIELD"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginDTO"
+        },
+        "type" : "DTO"
+      },
+      "requestField" : "IBIZPRO_PLUGINID",
+      "requestMethod" : "GET",
+      "requestParamType" : "FIELD",
+      "requestPath" : "/ibizproplugin",
+      "uniqueTag" : "IBIZPRO_PLUGIN__DEACTION__GET",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Remove",
+      "keyField" : "IBIZPRO_PLUGINID",
+      "methodType" : "DEACTION",
+      "name" : "Remove",
+      "getPSDECodeName" : "IBIZProPlugin",
+      "getPSDELogicName" : "系统插件",
+      "getPSDEName" : "IBIZPRO_PLUGIN",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProPlugin"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "getKeyPSSubSysServiceAPIField" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginId"
+        },
+        "name" : "输入对象",
+        "type" : "KEYFIELDS"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_PLUGINID",
+      "requestMethod" : "DELETE",
+      "requestParamType" : "FIELD",
+      "requestPath" : "/ibizproplugin",
+      "uniqueTag" : "IBIZPRO_PLUGIN__DEACTION__REMOVE",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Update",
+      "keyField" : "IBIZPRO_PLUGINID",
+      "methodType" : "DEACTION",
+      "name" : "Update",
+      "getPSDECodeName" : "IBIZProPlugin",
+      "getPSDELogicName" : "系统插件",
+      "getPSDEName" : "IBIZPRO_PLUGIN",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProPlugin"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_PLUGINID",
+      "requestMethod" : "PUT",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizproplugin",
+      "uniqueTag" : "IBIZPRO_PLUGIN__DEACTION__UPDATE",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "CheckKey",
+      "keyField" : "IBIZPRO_PLUGINID",
+      "methodType" : "DEACTION",
+      "name" : "CheckKey",
+      "getPSDECodeName" : "IBIZProPlugin",
+      "getPSDELogicName" : "系统插件",
+      "getPSDEName" : "IBIZPRO_PLUGIN",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProPlugin"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "SIMPLE"
+      },
+      "requestField" : "IBIZPRO_PLUGINID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizproplugin/checkkey",
+      "uniqueTag" : "IBIZPRO_PLUGIN__DEACTION__CHECKKEY",
+      "autoPath" : true
+    }, {
+      "actionType" : "FETCH",
+      "codeName" : "FetchDefault",
+      "keyField" : "IBIZPRO_PLUGINID",
+      "methodType" : "FETCH",
+      "name" : "DEFAULT",
+      "getPSDECodeName" : "IBIZProPlugin",
+      "getPSDELogicName" : "系统插件",
+      "getPSDEName" : "IBIZPRO_PLUGIN",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProPlugin"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginFilterDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginDTO"
+        },
+        "type" : "PAGE"
+      },
+      "requestField" : "IBIZPRO_PLUGINID",
+      "requestMethod" : "GET",
+      "requestPath" : "/ibizproplugin/fetchdefault",
+      "uniqueTag" : "IBIZPRO_PLUGIN__FETCH__DEFAULT",
+      "autoPath" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "GetDraft",
+      "keyField" : "IBIZPRO_PLUGINID",
+      "methodType" : "DEACTION",
+      "name" : "GetDraft",
+      "getPSDECodeName" : "IBIZProPlugin",
+      "getPSDELogicName" : "系统插件",
+      "getPSDEName" : "IBIZPRO_PLUGIN",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProPlugin"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginDTO"
+        },
+        "type" : "DTO"
+      },
+      "requestField" : "IBIZPRO_PLUGINID",
+      "requestMethod" : "GET",
+      "requestParamType" : "NONE",
+      "requestPath" : "/ibizproplugin/getdraft",
+      "uniqueTag" : "IBIZPRO_PLUGIN__DEACTION__GETDRAFT",
+      "autoPath" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Save",
+      "keyField" : "IBIZPRO_PLUGINID",
+      "methodType" : "DEACTION",
+      "name" : "Save",
+      "getPSDECodeName" : "IBIZProPlugin",
+      "getPSDELogicName" : "系统插件",
+      "getPSDEName" : "IBIZPRO_PLUGIN",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProPlugin"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProPluginDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "IBIZPRO_PLUGINID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizproplugin/save",
+      "uniqueTag" : "IBIZPRO_PLUGIN__DEACTION__SAVE",
+      "autoPath" : true,
+      "needResourceKey" : true
+    }, {
+      "actionType" : "SELECT",
+      "codeName" : "Select",
+      "keyField" : "IBIZPRO_PLUGINID",
+      "methodType" : "SELECT",
+      "name" : "Select",
+      "getPSDECodeName" : "IBIZProPlugin",
+      "getPSDELogicName" : "系统插件",
+      "getPSDEName" : "IBIZPRO_PLUGIN",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProPlugin"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "type" : "UNKNOWN"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "UNKNOWN"
+      },
+      "requestField" : "IBIZPRO_PLUGINID",
+      "requestMethod" : "GET",
+      "requestPath" : "/ibizproplugin/select",
+      "uniqueTag" : "IBIZPRO_PLUGIN__SELECT"
+    } ],
+    "major" : true
+  }, {
+    "aPIMode" : 1,
+    "codeName" : "IBIZProTag",
+    "logicName" : "标签",
+    "name" : "IBIZPRO_TAG",
+    "getPSSubSysServiceAPIDEFields" : [ {
+      "codeName" : "Id",
+      "length" : 60,
+      "logicName" : "ID",
+      "name" : "ID",
+      "orderValue" : 1000,
+      "precision" : 0,
+      "stdDataType" : 25,
+      "allowEmpty" : false,
+      "keyDEField" : true,
+      "majorDEField" : true
+    } ],
+    "getPSSubSysServiceAPIDEMethods" : [ {
+      "actionType" : "DEACTION",
+      "codeName" : "Create",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "Create",
+      "getPSDECodeName" : "IBIZProTag",
+      "getPSDELogicName" : "标签",
+      "getPSDEName" : "IBIZPRO_TAG",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProTag"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProTagDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizprotag",
+      "uniqueTag" : "IBIZPRO_TAG__DEACTION__CREATE",
+      "autoPath" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Get",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "Get",
+      "getPSDECodeName" : "IBIZProTag",
+      "getPSDELogicName" : "标签",
+      "getPSDEName" : "IBIZPRO_TAG",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProTag"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "getKeyPSSubSysServiceAPIField" : {
+          "modelref" : true,
+          "id" : "Id"
+        },
+        "name" : "输入对象",
+        "type" : "KEYFIELD"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProTagDTO"
+        },
+        "type" : "DTO"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "GET",
+      "requestParamType" : "FIELD",
+      "requestPath" : "/ibizprotag",
+      "uniqueTag" : "IBIZPRO_TAG__DEACTION__GET",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Remove",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "Remove",
+      "getPSDECodeName" : "IBIZProTag",
+      "getPSDELogicName" : "标签",
+      "getPSDEName" : "IBIZPRO_TAG",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProTag"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "getKeyPSSubSysServiceAPIField" : {
+          "modelref" : true,
+          "id" : "Id"
+        },
+        "name" : "输入对象",
+        "type" : "KEYFIELDS"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "DELETE",
+      "requestParamType" : "FIELD",
+      "requestPath" : "/ibizprotag",
+      "uniqueTag" : "IBIZPRO_TAG__DEACTION__REMOVE",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Update",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "Update",
+      "getPSDECodeName" : "IBIZProTag",
+      "getPSDELogicName" : "标签",
+      "getPSDEName" : "IBIZPRO_TAG",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProTag"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProTagDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "PUT",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizprotag",
+      "uniqueTag" : "IBIZPRO_TAG__DEACTION__UPDATE",
+      "autoPath" : true,
+      "needResourceKey" : true,
+      "noServiceCodeName" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "CheckKey",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "CheckKey",
+      "getPSDECodeName" : "IBIZProTag",
+      "getPSDELogicName" : "标签",
+      "getPSDEName" : "IBIZPRO_TAG",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProTag"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProTagDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "SIMPLE"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizprotag/checkkey",
+      "uniqueTag" : "IBIZPRO_TAG__DEACTION__CHECKKEY",
+      "autoPath" : true
+    }, {
+      "actionType" : "FETCH",
+      "codeName" : "FetchDefault",
+      "keyField" : "ID",
+      "methodType" : "FETCH",
+      "name" : "DEFAULT",
+      "getPSDECodeName" : "IBIZProTag",
+      "getPSDELogicName" : "标签",
+      "getPSDEName" : "IBIZPRO_TAG",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProTag"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProTagFilterDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProTagDTO"
+        },
+        "type" : "PAGE"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "GET",
+      "requestPath" : "/ibizprotag/fetchdefault",
+      "uniqueTag" : "IBIZPRO_TAG__FETCH__DEFAULT",
+      "autoPath" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "GetDraft",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "GetDraft",
+      "getPSDECodeName" : "IBIZProTag",
+      "getPSDELogicName" : "标签",
+      "getPSDEName" : "IBIZPRO_TAG",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProTag"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProTagDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProTagDTO"
+        },
+        "type" : "DTO"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "GET",
+      "requestParamType" : "NONE",
+      "requestPath" : "/ibizprotag/getdraft",
+      "uniqueTag" : "IBIZPRO_TAG__DEACTION__GETDRAFT",
+      "autoPath" : true
+    }, {
+      "actionType" : "DEACTION",
+      "codeName" : "Save",
+      "keyField" : "ID",
+      "methodType" : "DEACTION",
+      "name" : "Save",
+      "getPSDECodeName" : "IBIZProTag",
+      "getPSDELogicName" : "标签",
+      "getPSDEName" : "IBIZPRO_TAG",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProTag"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "getPSSubSysServiceAPIDTO" : {
+          "modelref" : true,
+          "id" : "IBIZProTagDTO"
+        },
+        "type" : "DTO"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "VOID"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "POST",
+      "requestParamType" : "ENTITY",
+      "requestPath" : "/ibizprotag/save",
+      "uniqueTag" : "IBIZPRO_TAG__DEACTION__SAVE",
+      "autoPath" : true,
+      "needResourceKey" : true
+    }, {
+      "actionType" : "SELECT",
+      "codeName" : "Select",
+      "keyField" : "ID",
+      "methodType" : "SELECT",
+      "name" : "Select",
+      "getPSDECodeName" : "IBIZProTag",
+      "getPSDELogicName" : "标签",
+      "getPSDEName" : "IBIZPRO_TAG",
+      "getPSSubSysServiceAPIDE" : {
+        "modelref" : true,
+        "id" : "IBIZProTag"
+      },
+      "getPSSubSysServiceAPIMethodInput" : {
+        "name" : "输入对象",
+        "type" : "UNKNOWN"
+      },
+      "getPSSubSysServiceAPIMethodReturn" : {
+        "name" : "返回对象",
+        "type" : "UNKNOWN"
+      },
+      "requestField" : "ID",
+      "requestMethod" : "GET",
+      "requestPath" : "/ibizprotag/select",
+      "uniqueTag" : "IBIZPRO_TAG__SELECT"
+    } ],
+    "major" : true
+  } ],
+  "getAllPSSubSysServiceAPIDTOs" : [ {
+    "codeName" : "IBIZProKeywordDTO",
+    "name" : "IBIZProKeywordDTO",
+    "getPSSubSysServiceAPIDTOFields" : [ {
+      "codeName" : "Id",
+      "name" : "Id",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    } ],
+    "type" : "DEMETHODDTO"
+  }, {
+    "codeName" : "IBIZProKeywordFilterDTO",
+    "name" : "IBIZProKeywordFilterDTO",
+    "getPSSubSysServiceAPIDTOFields" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "type" : "DEMETHODDTO"
+  }, {
+    "codeName" : "IBIZProMessageDTO",
+    "name" : "IBIZProMessageDTO",
+    "getPSSubSysServiceAPIDTOFields" : [ {
+      "codeName" : "Bcc",
+      "name" : "Bcc",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Cc",
+      "name" : "Cc",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Content",
+      "name" : "Content",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "From",
+      "name" : "From",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "IBIZProMessageId",
+      "name" : "IBIZProMessageId",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "IBIZProMessageName",
+      "name" : "IBIZProMessageName",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Isdone",
+      "name" : "Isdone",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Islink",
+      "name" : "Islink",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Isread",
+      "name" : "Isread",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Isretry",
+      "name" : "Isretry",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Issync",
+      "name" : "Issync",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Linkurl",
+      "name" : "Linkurl",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Param",
+      "name" : "Param",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Retryintervaltime",
+      "name" : "Retryintervaltime",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Retrytimes",
+      "name" : "Retrytimes",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "SendTime",
+      "name" : "SendTime",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Sendproxyid",
+      "name" : "Sendproxyid",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Subject",
+      "name" : "Subject",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "To",
+      "name" : "To",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Type",
+      "name" : "Type",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "type" : "DEMETHODDTO"
+  }, {
+    "codeName" : "IBIZProMessageFilterDTO",
+    "name" : "IBIZProMessageFilterDTO",
+    "getPSSubSysServiceAPIDTOFields" : [ {
+      "codeName" : "N_IBIZPRO_MESSAGEID_EQ",
+      "name" : "N_IBIZPRO_MESSAGEID_EQ",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_IBIZPRO_MESSAGENAME_LIKE",
+      "name" : "N_IBIZPRO_MESSAGENAME_LIKE",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ISLINK_EQ",
+      "name" : "N_ISLINK_EQ",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ISRETRY_EQ",
+      "name" : "N_ISRETRY_EQ",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ISSYNC_EQ",
+      "name" : "N_ISSYNC_EQ",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_SENDPROXYID_EQ",
+      "name" : "N_SENDPROXYID_EQ",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "type" : "DEMETHODDTO"
+  }, {
+    "codeName" : "IBIZProPluginDTO",
+    "name" : "IBIZProPluginDTO",
+    "getPSSubSysServiceAPIDTOFields" : [ {
+      "codeName" : "Commentcount",
+      "name" : "Commentcount",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreateDate",
+      "name" : "CreateDate",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "CreateMan",
+      "name" : "CreateMan",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Downloadcount",
+      "name" : "Downloadcount",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Downloadurl",
+      "name" : "Downloadurl",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "IBIZProPluginId",
+      "name" : "IBIZProPluginId",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "IBIZProPluginName",
+      "name" : "IBIZProPluginName",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Keyword",
+      "name" : "Keyword",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Score",
+      "name" : "Score",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Tag",
+      "name" : "Tag",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Type",
+      "name" : "Type",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateDate",
+      "name" : "UpdateDate",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "name" : "UpdateMan",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Version",
+      "name" : "Version",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    } ],
+    "type" : "DEMETHODDTO"
+  }, {
+    "codeName" : "IBIZProPluginFilterDTO",
+    "name" : "IBIZProPluginFilterDTO",
+    "getPSSubSysServiceAPIDTOFields" : [ {
+      "codeName" : "N_IBIZPRO_PLUGINID_EQ",
+      "name" : "N_IBIZPRO_PLUGINID_EQ",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_IBIZPRO_PLUGINNAME_LIKE",
+      "name" : "N_IBIZPRO_PLUGINNAME_LIKE",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "type" : "DEMETHODDTO"
+  }, {
+    "codeName" : "IBIZProTagDTO",
+    "name" : "IBIZProTagDTO",
+    "getPSSubSysServiceAPIDTOFields" : [ {
+      "codeName" : "Id",
+      "name" : "Id",
+      "orderValue" : 1000,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    } ],
+    "type" : "DEMETHODDTO"
+  }, {
+    "codeName" : "IBIZProTagFilterDTO",
+    "name" : "IBIZProTagFilterDTO",
+    "getPSSubSysServiceAPIDTOFields" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "orderValue" : 99999,
+      "sourceType" : "DEMETHODDTOFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "type" : "DEMETHODDTO"
+  } ],
+  "authMode" : "NONE",
+  "codeName" : "PluginClientAPI",
+  "dynaModelFilePath" : "PSMODULES/ibizplugin/PSSUBSYSSERVICEAPIS/PluginClientAPI.json",
+  "name" : "插件接入接口",
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin.json"
+  },
+  "serviceCodeName" : "pmspro-pluginserviceapi",
+  "serviceType" : "DEFAULT",
+  "enableServiceAPIDTO" : true
+}

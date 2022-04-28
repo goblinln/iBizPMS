@@ -1,20 +1,28 @@
 {
+  "codeListTag" : "zentao__Datecheckbox",
   "codeListType" : "STATIC",
   "codeName" : "Datecheckbox",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Datecheckbox.json",
   "emptyText" : "未定义",
+  "name" : "日期选择",
   "getPSCodeItems" : [ {
     "codeName" : "On",
     "text" : "待定",
-    "value" : "on",
-    "includeBeginValue" : true
+    "value" : "on"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

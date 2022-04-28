@@ -6,13 +6,15 @@
   "logicName" : "排序",
   "name" : "Sort",
   "getPSDEActionInput" : {
-    "codeName" : "SortInput",
-    "name" : "输入对象",
+    "name" : "SortInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BranchDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SortResult",
-    "name" : "返回对象",
+    "name" : "SortResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

@@ -353,11 +353,16 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ProjectDaily",
+  "dEAPITag" : "IBZ_API__PROJECTDAILY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json",
   "enableUIActions" : 15,
   "logicName" : "项目日报",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "IBIZPRO_PROJECTDAILYID",
+    "codeName" : "IbizproProjectDailyId"
+  } ],
   "name" : "IBIZPRO_PROJECTDAILY",
   "getPSDEName" : "IBIZPRO_PROJECTDAILY",
   "getQuickSearchPSAppDEFields" : [ {
@@ -365,7 +370,9 @@
     "codeName" : "IbizproProjectDailyName"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

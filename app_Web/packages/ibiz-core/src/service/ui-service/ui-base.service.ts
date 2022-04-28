@@ -348,6 +348,12 @@ export class UIServiceBase {
         } else {
             result = await this.dataService.Get(context);
         }
+        if (result.status != 200) {
+            return {
+                isError:true,
+                response:result
+            };
+        }
         const curData: any = result.data;
         // 设置原始数据
         if (curData && Object.keys(curData).length > 0) {
@@ -355,7 +361,7 @@ export class UIServiceBase {
         }
         //判断当前数据模式,默认为true，todo
         const iRealDEModel: boolean = true;
-        
+
         let bDataInWF: boolean = false;
         let bWFMode: any = false;
         // 计算数据模式
@@ -380,8 +386,11 @@ export class UIServiceBase {
             Object.assign(returnData, { 'param': strPDTViewParam });
             return returnData;
         }
-        if (this.multiFormDEField || this.indexTypeDEField) {
-            Object.assign(returnData, { 'param': strPDTViewParam });
+        if (this.multiFormDEField) {
+            Object.assign(returnData, { 'param': strPDTViewParam, 'multiform': true });
+            return returnData;
+        } else if (this.indexTypeDEField) {
+            Object.assign(returnData, { 'param': strPDTViewParam, 'indextype': true });
             return returnData;
         } else {
             //返回视图功能数据
@@ -440,10 +449,19 @@ export class UIServiceBase {
         if (this.multiFormDEField) {
             const formFieldValue: string = curData[this.multiFormDEField] ? curData[this.multiFormDEField] : '';
             if (formFieldValue) {
+                // 非流程中数据支持多实例
                 if (!Environment.isAppMode) {
-                    return 'MOBEDITVIEW:' + formFieldValue;
+                    let tempParam = 'MOBEDITVIEW:' + formFieldValue;
+                    if (this.dynaInstTag) {
+                        tempParam += `:${this.dynaInstTag}`;
+                    }
+                    return tempParam;
                 }
-                return 'EDITVIEW:' + formFieldValue;
+                let tempParam = 'EDITVIEW:' + formFieldValue;
+                if (this.dynaInstTag) {
+                    tempParam += `:${this.dynaInstTag}`;
+                }
+                return tempParam;
             }
         }
         // 存在索引类型属性
@@ -451,9 +469,9 @@ export class UIServiceBase {
             const indexTypeValue: string = curData[this.indexTypeDEField] ? curData[this.indexTypeDEField] : '';
             if (indexTypeValue) {
                 if (!Environment.isAppMode) {
-                    return 'MOBEDITVIEW:' + indexTypeValue;
+                    return indexTypeValue;
                 }
-                return 'EDITVIEW:' + indexTypeValue;
+                return indexTypeValue;
             }
         }
         if (!Environment.isAppMode) {

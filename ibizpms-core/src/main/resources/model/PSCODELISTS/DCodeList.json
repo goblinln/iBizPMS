@@ -1,0 +1,66 @@
+{
+  "codeListTag" : "DCodeList",
+  "codeListType" : "STATIC",
+  "codeName" : "DCodeList",
+  "dynaInstMode" : 0,
+  "dynaModelFilePath" : "PSCODELISTS/DCodeList.json",
+  "emptyText" : "未定义",
+  "name" : "月份（01～12）",
+  "getPSCodeItems" : [ {
+    "codeName" : "Item_01",
+    "text" : "一月",
+    "value" : "01"
+  }, {
+    "codeName" : "Item_02",
+    "text" : "二月",
+    "value" : "02"
+  }, {
+    "codeName" : "Item_03",
+    "text" : "三月",
+    "value" : "03"
+  }, {
+    "codeName" : "Item_04",
+    "text" : "四月",
+    "value" : "04"
+  }, {
+    "codeName" : "Item_05",
+    "text" : "五月",
+    "value" : "05"
+  }, {
+    "codeName" : "Item_06",
+    "text" : "六月",
+    "value" : "06"
+  }, {
+    "codeName" : "Item_07",
+    "text" : "七月",
+    "value" : "07"
+  }, {
+    "codeName" : "Item_08",
+    "text" : "八月",
+    "value" : "08"
+  }, {
+    "codeName" : "Item_09",
+    "text" : "九月",
+    "value" : "09"
+  }, {
+    "codeName" : "Item_10",
+    "text" : "十月",
+    "value" : "10"
+  }, {
+    "codeName" : "Item_11",
+    "text" : "十一月",
+    "value" : "11"
+  }, {
+    "codeName" : "Item_12",
+    "text" : "十二月",
+    "value" : "12"
+  } ],
+  "getPSCodeListTemplId" : "CODELIST_00089",
+  "refFlag" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

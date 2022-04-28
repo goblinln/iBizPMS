@@ -1,14 +1,35 @@
 {
+  "codeListTag" : "ibizpro__PlanTemplet",
   "codeListType" : "DYNAMIC",
   "codeName" : "PlanTemplet",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSCODELISTS/PlanTemplet.json",
   "emptyText" : "未定义",
+  "name" : "计划模板",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "CurUserTemplet"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
+  "getTextPSDEField" : {
+    "name" : "IBZ_PLANTEMPLETNAME",
+    "codeName" : "IbzPlanTempletName"
+  },
+  "getValuePSDEField" : {
+    "name" : "IBZ_PLANTEMPLETID",
+    "codeName" : "IbzPlanTempletId"
+  },
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

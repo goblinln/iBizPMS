@@ -110,6 +110,11 @@
         "colMD" : 3,
         "layout" : "TABLE_24COL"
       },
+      "getPSRawItem" : {
+        "caption" : "<div style=\"margin-right: 10px;float: right;margin-top: 6px;\"> 团队管理 </div>",
+        "contentType" : "RAW",
+        "name" : "rawitem1"
+      },
       "rawContent" : "<div style=\"margin-right: 10px;float: right;margin-top: 6px;\"> 团队管理 </div>",
       "rawItemHeight" : -1.0,
       "rawItemWidth" : -1.0,
@@ -347,10 +352,15 @@
               "dataAccessAction" : "CREATE",
               "fullCodeName" : "NewRow",
               "name" : "表格界面_新建行",
+              "getPSDEOPPriv" : {
+                "modelref" : true,
+                "id" : "CREATE"
+              },
               "getPSSysImage" : {
                 "glyph" : "xf067@FontAwesome",
                 "cssClass" : "fa fa-plus"
               },
+              "predefinedType" : "GRIDVIEW_NEWROWACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "NewRow",
@@ -379,10 +389,15 @@
               "dataAccessAction" : "CREATE",
               "fullCodeName" : "SaveRow",
               "name" : "表格界面_保存行",
+              "getPSDEOPPriv" : {
+                "modelref" : true,
+                "id" : "CREATE"
+              },
               "getPSSysImage" : {
                 "glyph" : "xf0c7@FontAwesome",
                 "cssClass" : "fa fa-save"
               },
+              "predefinedType" : "GRIDVIEW_SAVEROWACTION",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "SaveRow",
@@ -493,6 +508,32 @@
           } ],
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
+              "actionName" : "Get",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "READ",
+              "name" : "load",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Get"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+              }
+            }, {
+              "actionName" : "Create",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "CREATE",
+              "name" : "create",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Create"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+              }
+            }, {
               "actionName" : "Update",
               "actionType" : "DEACTION",
               "dataAccessAction" : "UPDATE",
@@ -500,17 +541,6 @@
               "getPSAppDEMethod" : {
                 "modelref" : true,
                 "id" : "Update"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
-              }
-            }, {
-              "actionType" : "DEDATASET",
-              "name" : "fetch",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "FetchCntEst"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -530,19 +560,6 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
               }
             }, {
-              "actionName" : "Get",
-              "actionType" : "DEACTION",
-              "dataAccessAction" : "READ",
-              "name" : "load",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Get"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
-              }
-            }, {
               "actionName" : "GetDraft",
               "actionType" : "DEACTION",
               "dataAccessAction" : "CREATE",
@@ -556,13 +573,11 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
               }
             }, {
-              "actionName" : "Create",
-              "actionType" : "DEACTION",
-              "dataAccessAction" : "CREATE",
-              "name" : "create",
+              "actionType" : "DEDATASET",
+              "name" : "fetch",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "Create"
+                "id" : "FetchCntEst"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -705,10 +720,15 @@
                   "dataAccessAction" : "CREATE",
                   "fullCodeName" : "NewRow",
                   "name" : "表格界面_新建行",
+                  "getPSDEOPPriv" : {
+                    "modelref" : true,
+                    "id" : "CREATE"
+                  },
                   "getPSSysImage" : {
                     "glyph" : "xf067@FontAwesome",
                     "cssClass" : "fa fa-plus"
                   },
+                  "predefinedType" : "GRIDVIEW_NEWROWACTION",
                   "timeout" : 60000,
                   "uIActionMode" : "SYS",
                   "uIActionTag" : "NewRow",
@@ -731,10 +751,15 @@
                   "dataAccessAction" : "DELETE",
                   "fullCodeName" : "Remove",
                   "name" : "表格界面_删除操作",
+                  "getPSDEOPPriv" : {
+                    "modelref" : true,
+                    "id" : "DELETE"
+                  },
                   "getPSSysImage" : {
                     "glyph" : "xf00d@FontAwesome",
                     "cssClass" : "fa fa-remove"
                   },
+                  "predefinedType" : "GRIDVIEW_REMOVEACTION",
                   "timeout" : 60000,
                   "getTooltipPSLanguageRes" : {
                     "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
@@ -1125,10 +1150,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "load",
+              "name" : "loaddraft",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGet"
+                "id" : "FilterGetDraft"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -1136,10 +1161,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "loaddraft",
+              "name" : "load",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGetDraft"
+                "id" : "FilterGet"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -1316,10 +1341,14 @@
           "actionRSMode" : 1,
           "codeName" : "Projects",
           "dataRSMode" : 0,
+          "majorDECodeName" : "Product",
+          "majorDEName" : "ZT_PRODUCT",
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
           },
+          "minorDECodeName" : "Project",
+          "minorDEName" : "ZT_PROJECT",
           "getMinorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -1330,10 +1359,14 @@
           "actionRSMode" : 1,
           "codeName" : "ProjectTeams",
           "dataRSMode" : 0,
+          "majorDECodeName" : "Project",
+          "majorDEName" : "ZT_PROJECT",
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
           },
+          "minorDECodeName" : "ProjectTeam",
+          "minorDEName" : "IBZ_PROJECTTEAM",
           "getMinorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
@@ -1348,10 +1381,14 @@
           "actionRSMode" : 1,
           "codeName" : "ProjectTeams",
           "dataRSMode" : 0,
+          "majorDECodeName" : "Project",
+          "majorDEName" : "ZT_PROJECT",
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
           },
+          "minorDECodeName" : "ProjectTeam",
+          "minorDEName" : "IBZ_PROJECTTEAM",
           "getMinorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"

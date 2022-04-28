@@ -1,20 +1,28 @@
 {
+  "codeListTag" : "zentao__Date_disable",
   "codeListType" : "STATIC",
   "codeName" : "Date_disable",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Date_disable.json",
   "emptyText" : "未定义",
+  "name" : "日期_待定",
   "getPSCodeItems" : [ {
     "codeName" : "On",
     "text" : "待定",
-    "value" : "on",
-    "includeBeginValue" : true
+    "value" : "on"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

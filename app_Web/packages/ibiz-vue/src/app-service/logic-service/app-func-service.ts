@@ -1,5 +1,5 @@
 import { IPSAppDataEntity } from '@ibiz/dynamic-model-api';
-import { ViewTool, Util, LogUtil } from 'ibiz-core';
+import { ViewTool, Util, LogUtil, StringUtil } from 'ibiz-core';
 
 /**
  * 应用功能服务
@@ -145,7 +145,7 @@ export class AppFuncService {
                 return;
             }
             if (
-                (appView.openMode && (appView.openMode == 'INDEXVIEWTAB' || appView.openMode == '')) ||
+                (appView.openMode && (appView.openMode == 'INDEXVIEWTAB' || appView.openMode == 'POPUPAPP' || appView.openMode == '')) ||
                 !appView.openMode
             ) {
                 params = [
@@ -295,7 +295,7 @@ export class AppFuncService {
      * @memberof AppFuncService
      */
     public openHtmlPage(appFunc: any, context: any, viewparam: any) {
-        const url = appFunc.htmlPageUrl;
+        const url = StringUtil.fillStrData(appFunc.htmlPageUrl,context);
         window.open(url, '_blank');
     }
 

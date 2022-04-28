@@ -1,0 +1,81 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "( t31.`TASK` = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')} )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`STEPRESULTS`",
+    "name" : "STEPRESULTS"
+  }, {
+    "expression" : "t1.`XML`",
+    "name" : "XML"
+  }, {
+    "expression" : "t1.`CASE`",
+    "name" : "CASE"
+  }, {
+    "expression" : "t1.`CASERESULT`",
+    "name" : "CASERESULT"
+  }, {
+    "expression" : "t1.`COMPILE`",
+    "name" : "COMPILE"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`DURATION`",
+    "name" : "DURATION"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`JOB`",
+    "name" : "JOB"
+  }, {
+    "expression" : "t1.`LASTRUNNER`",
+    "name" : "LASTRUNNER"
+  }, {
+    "expression" : "t11.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "t21.`NAME`",
+    "name" : "MODULENAME"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t11.`PRODUCT`",
+    "name" : "PRODUCT"
+  }, {
+    "expression" : "t1.`RUN`",
+    "name" : "RUN"
+  }, {
+    "expression" : "t11.`STORY`",
+    "name" : "STORY"
+  }, {
+    "expression" : "t1.`TESTRESULTSN`",
+    "name" : "TESTRESULTSN"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  } ],
+  "queryCode" : "SELECT\nt1.`CASE`,\nt1.`CASERESULT`,\nt1.`COMPILE`,\nt1.`CREATEBY`,\nt1.`DATE`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`DURATION`,\nt1.`ID`,\nt1.`JOB`,\nt1.`LASTRUNNER`,\nt11.`MODULE`,\nt21.`NAME` AS `MODULENAME`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt11.`PRODUCT`,\nt1.`RUN`,\nt11.`STORY`,\nt1.`TESTRESULTSN`,\nt1.`UPDATEBY`,\nt1.`VERSION`\nFROM `zt_testresult` t1 \nLEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID` \nLEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID` \nRIGHT JOIN `zt_testrun` t31 ON t1.`RUN` = t31.`ID` \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDEDATAQUERIES/CurTestRun/PSDEDQCODES/MYSQL5.json"
+}

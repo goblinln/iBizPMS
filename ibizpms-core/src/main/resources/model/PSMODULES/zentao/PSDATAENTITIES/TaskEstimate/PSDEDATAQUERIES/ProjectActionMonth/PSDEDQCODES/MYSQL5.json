@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.project =#{srf.webcontext.project}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`YEAR`,\n\tconcat( t1.`YEAR`, RIGHT ( 100+ t1.`MONTH`, 2 ) ) AS `MONTH`,\n\tt1.`MONTH` as monthorder,\n\tconcat( t1.`MONTH`, '月' ) AS monthname ,\n\tt1.project\nFROM\n\t(\nSELECT DISTINCT YEAR\n\t( t1.date ) AS `year`,\n\tMONTH ( t1.date ) AS `MONTH` ,\n\tt.project\nFROM\n\tzt_taskestimate t1 left join zt_task t on t.ID= t1.task\nWHERE\n\tt1.date <> '0000-00-00' \n\t) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEDATAQUERIES/ProjectActionMonth/PSDEDQCODES/MYSQL5.json"
+}

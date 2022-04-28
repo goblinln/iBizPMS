@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Story__review_result_draft",
   "codeListType" : "STATIC",
   "codeName" : "Story__review_result_draft",
   "dynaInstMode" : 1,
@@ -12,20 +13,17 @@
   "getPSCodeItems" : [ {
     "codeName" : "Pass",
     "text" : "确认通过",
-    "value" : "pass",
-    "includeBeginValue" : true
+    "value" : "pass"
   }, {
     "codeName" : "Clarify",
     "color" : "rgba(49, 27, 146, 1)",
     "text" : "有待明确",
     "value" : "clarify",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Reject",
     "text" : "拒绝",
-    "value" : "reject",
-    "includeBeginValue" : true
+    "value" : "reject"
   } ],
   "enableCache" : true
 }

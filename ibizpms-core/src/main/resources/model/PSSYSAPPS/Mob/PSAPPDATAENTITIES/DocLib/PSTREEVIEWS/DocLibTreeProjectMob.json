@@ -371,6 +371,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "UNCOLLECT"
+        },
         "getPSSysImage" : {
           "glyph" : "xf005@FontAwesome",
           "cssClass" : "fa fa-star"
@@ -414,6 +418,10 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "COLLECT"
         },
         "getPSSysImage" : {
           "glyph" : "xf006@FontAwesome",
@@ -497,6 +505,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "UNCOLLECT"
+        },
         "getPSSysImage" : {
           "glyph" : "xf005@FontAwesome",
           "cssClass" : "fa fa-star"
@@ -540,6 +552,10 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "COLLECT"
         },
         "getPSSysImage" : {
           "glyph" : "xf006@FontAwesome",
@@ -759,6 +775,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "UNCOLLECT"
+        },
         "getPSSysImage" : {
           "glyph" : "xf005@FontAwesome",
           "cssClass" : "fa fa-star"
@@ -802,6 +822,10 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "COLLECT"
         },
         "getPSSysImage" : {
           "glyph" : "xf006@FontAwesome",
@@ -1735,6 +1759,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UNCOLLECT"
+          },
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
@@ -1778,6 +1806,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "COLLECT"
           },
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
@@ -1901,6 +1933,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UNCOLLECT"
+          },
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
@@ -1944,6 +1980,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "COLLECT"
           },
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
@@ -2243,6 +2283,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UNCOLLECT"
+          },
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
@@ -2286,6 +2330,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "COLLECT"
           },
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",

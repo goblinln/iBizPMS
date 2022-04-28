@@ -1,0 +1,28 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CONTENT`",
+    "name" : "CONTENT"
+  }, {
+    "expression" : "t1.`RESULT`",
+    "name" : "RESULT"
+  }, {
+    "expression" : "t1.`ADDDATE`",
+    "name" : "ADDDATE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`PROCESSDATE`",
+    "name" : "PROCESSDATE"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ADDDATE`,\nt1.`ID`,\nt1.`PROCESSDATE`,\nt1.`STATUS`,\nt1.`TYPE`\nFROM `zt_im_queue` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ImQueue/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

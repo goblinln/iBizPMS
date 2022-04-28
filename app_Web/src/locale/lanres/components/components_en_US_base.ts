@@ -68,6 +68,7 @@ function getLocaleResourceBase(){
           filetypeerrorinfo: 'Please select files with picture types，such as JPEG，GIF，PNG，BMP',
           downloaderror: "Image download failed!",
           caption: "upload",
+          limitselect: 'The current number of restricted choices is ',
         },
         camera: {
           dev: "developing",

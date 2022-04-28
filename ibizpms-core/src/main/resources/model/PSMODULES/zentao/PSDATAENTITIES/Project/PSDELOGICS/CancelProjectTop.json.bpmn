@@ -10,10 +10,10 @@
                     <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
                             <tns:global identifier="projectcancelprojecttopdefault" type="cn.ibizlab.pms.core.zentao.domain.Project" />
             </extensionElements>
+                        <startEvent id="begin" isInterrupting="true"/>
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectcancelprojecttoprawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="删除置顶"/>
                         <endEvent id="rawsqlcall1_end" name="end"/>
                         <sequenceFlow id="rawsqlcall1_end_line" sourceRef="rawsqlcall1" targetRef="rawsqlcall1_end"/>
-                        <startEvent id="begin" isInterrupting="true"/>
                     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
                     </sequenceFlow>
         </process>

@@ -35,3 +35,7 @@ export { AppWizardViewBase } from './app-wizardview-base';
 export { AppWFActionViewBase } from './app-wfactionview-base';
 export { AppDeReportViewBase } from './app-dereportview-base';
 export { AppMapExpViewBase } from './app-mapexpview-base';
+export { AppChartExpViewBase } from './app-chartexpview-base';
+export { AppListViewBase } from "./app-listview-base";
+export { AppDEIndexViewBase } from './app-deindexview-base';
+export { AppEditView3Base } from './app-editview3-base';

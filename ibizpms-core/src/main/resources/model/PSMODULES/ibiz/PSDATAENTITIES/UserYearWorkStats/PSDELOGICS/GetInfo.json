@@ -17,8 +17,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
     "parallelOutput" : true
   }, {
@@ -54,6 +53,23 @@
     },
     "logicNodeType" : "DEACTION",
     "name" : "获取研发用户信息",
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction3",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+    },
+    "logicNodeType" : "DEACTION",
+    "name" : "获取测试用户信息",
     "parallelOutput" : true
   }, {
     "codeName" : "Deaction1",
@@ -96,8 +112,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Deaction1"
-      },
-      "defaultLink" : false
+      }
     }, {
       "getDstPSDELogicNode" : {
         "modelref" : true,
@@ -123,8 +138,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Deaction1"
-      },
-      "defaultLink" : false
+      }
     }, {
       "getDstPSDELogicNode" : {
         "modelref" : true,
@@ -150,36 +164,20 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Deaction1"
-      },
-      "defaultLink" : false
+      }
     } ],
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Deaction3",
-    "getDstPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
-    },
-    "logicNodeType" : "DEACTION",
-    "name" : "获取测试用户信息",
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

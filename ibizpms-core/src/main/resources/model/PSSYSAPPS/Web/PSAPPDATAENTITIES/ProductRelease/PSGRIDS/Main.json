@@ -312,6 +312,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__LINKSTORY"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "RELEASE",
             "name" : "RELEASE",
@@ -377,6 +381,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__LINKBUG"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "TEST",
             "name" : "TEST",
@@ -439,6 +447,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__TERMINATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf04c@FontAwesome",
             "cssClass" : "fa fa-pause"
@@ -472,6 +484,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__ACTIVATE"
           },
           "getPSSysImage" : {
             "glyph" : "xf04b@FontAwesome",
@@ -510,6 +526,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__UPDATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -539,10 +559,15 @@
           "dataAccessAction" : "CREATE",
           "fullCodeName" : "Copy",
           "name" : "表格界面_拷贝操作",
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "CREATE"
+          },
           "getPSSysImage" : {
             "glyph" : "xf0c5@FontAwesome",
             "cssClass" : "fa fa-copy"
           },
+          "predefinedType" : "GRIDVIEW_COPYACTION",
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
             "lanResTag" : "TBB.TOOLTIP.*.COPY"
@@ -573,6 +598,10 @@
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__DELETE"
           },
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",

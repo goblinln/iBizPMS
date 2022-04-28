@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'  \n\tAND\nFIND_IN_SET(\n ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_BUILD\"}')},(SELECT OPENEDBUILD FROM `zt_bug` WHERE ID=t1.ID))",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\t\n\tt1.`ASSIGNEDTO`,\t\n\tt1.`CONFIRMED`,\t\n\tt1.`ID`,\n\t(\nSELECT\n\t( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES \nFROM\n\tT_IBZ_FAVORITES t \nWHERE\n\tt.TYPE = 'bug' \n\tAND t.ACCOUNT = #{srf.sessioncontext.srfloginname} \n\tAND t.OBJECTID = t1.id \n\t) AS `ISFAVORITES`,\t\n\tt1.`OPENEDBY`,\t\n\tt1.`PRI`,\t\n\tt1.`RESOLUTION`,\t\n\tt1.`RESOLVEDBY`,\n\tt1.`STATUS`,\n\tt1.`TITLE`,\n\tt1.BUGSN\nFROM\n\t`zt_bug` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEDATAQUERIES/BuildOpenBugs/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,109 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`ADDRESS`",
+    "name" : "ADDRESS"
+  }, {
+    "expression" : "t1.`AVATAR`",
+    "name" : "AVATAR"
+  }, {
+    "expression" : "t1.`BIRTHDAY`",
+    "name" : "BIRTHDAY"
+  }, {
+    "expression" : "t1.`CLIENTLANG`",
+    "name" : "CLIENTLANG"
+  }, {
+    "expression" : "t1.`CLIENTSTATUS`",
+    "name" : "CLIENTSTATUS"
+  }, {
+    "expression" : "t1.`COMMITER`",
+    "name" : "COMMITER"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DINGDING`",
+    "name" : "DINGDING"
+  }, {
+    "expression" : "t1.`EMAIL`",
+    "name" : "EMAIL"
+  }, {
+    "expression" : "t1.`FAILS`",
+    "name" : "FAILS"
+  }, {
+    "expression" : "t1.`GENDER`",
+    "name" : "GENDER"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`IP`",
+    "name" : "IP"
+  }, {
+    "expression" : "t1.`JOIN`",
+    "name" : "JOIN"
+  }, {
+    "expression" : "t1.`LAST`",
+    "name" : "LAST"
+  }, {
+    "expression" : "t1.`LOCKED`",
+    "name" : "LOCKED"
+  }, {
+    "expression" : "t1.`MOBILE`",
+    "name" : "MOBILE"
+  }, {
+    "expression" : "t1.`NICKNAME`",
+    "name" : "NICKNAME"
+  }, {
+    "expression" : "t1.`PASSWORD`",
+    "name" : "PASSWORD"
+  }, {
+    "expression" : "t1.`PHONE`",
+    "name" : "PHONE"
+  }, {
+    "expression" : "t1.`QQ`",
+    "name" : "QQ"
+  }, {
+    "expression" : "t1.`RANZHI`",
+    "name" : "RANZHI"
+  }, {
+    "expression" : "t1.`REALNAME`",
+    "name" : "REALNAME"
+  }, {
+    "expression" : "t1.`ROLE`",
+    "name" : "ROLE"
+  }, {
+    "expression" : "t1.`SCORE`",
+    "name" : "SCORE"
+  }, {
+    "expression" : "t1.`SCORELEVEL`",
+    "name" : "SCORELEVEL"
+  }, {
+    "expression" : "t1.`SKYPE`",
+    "name" : "SKYPE"
+  }, {
+    "expression" : "t1.`SLACK`",
+    "name" : "SLACK"
+  }, {
+    "expression" : "t1.`VISITS`",
+    "name" : "VISITS"
+  }, {
+    "expression" : "t1.`WEIXIN`",
+    "name" : "WEIXIN"
+  }, {
+    "expression" : "t1.`WHATSAPP`",
+    "name" : "WHATSAPP"
+  }, {
+    "expression" : "t1.`ZIPCODE`",
+    "name" : "ZIPCODE"
+  } ],
+  "queryCode" : "SELECT #{srf.sessioncontext.srfloginname} as account, (SELECT count(1) from zt_todo where account = #{srf.sessioncontext.srfloginname} ) as mytodocnt,(SELECT count(1) from zt_story where deleted = '0' and openedBy = #{srf.sessioncontext.srfloginname}) as mystorys, (SELECT count(1) from zt_task where deleted = '0' and (`status` = 'done' or (`status` = 'closed' and closedReason = 'done') ) and parent >= 0 and ((finishedBy = #{srf.sessioncontext.srfloginname} and not EXISTS (SELECT 1 from zt_team t where t.root = id and t.type = 'task')) \nor FIND_IN_SET(#{srf.sessioncontext.srfloginname},finishedList)\n)) as mytasks, (SELECT count(1) from zt_bug where `status` in ('closed','resolved') and resolution = 'fixed' and resolvedBy = #{srf.sessioncontext.srfloginname}) as mybugs,\n(SELECT count(1) from zt_case where deleted = '0' and openedBy = \n#{srf.sessioncontext.srfloginname}) as MYFAVORITEBUGS",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEDATAQUERIES/PersonInfo/PSDEDQCODES/MYSQL5.json"
+}

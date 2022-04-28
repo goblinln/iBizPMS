@@ -96,7 +96,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/productsums/${_context.productsum}`);
+        const res = await this.http.get(`/productsums/${encodeURIComponent(_context.productsum)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/productsums/${_context.productsum}`);
+        const res = await this.http.delete(`/productsums/${encodeURIComponent(_context.productsum)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/productsums/${_context.productsum}`, _data);
+        const res = await this.http.put(`/productsums/${encodeURIComponent(_context.productsum)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -284,7 +284,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/productsums/${_context.productsum}/select`);
+        const res = await this.http.get(`/productsums/${encodeURIComponent(_context.productsum)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -34,38 +34,45 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataExports" : [ {
@@ -176,43 +183,54 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchBugCountInResolution",
     "methodType" : "FETCH",
+    "name" : "FetchBugCountInResolution",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugResolvedBy",
     "methodType" : "FETCH",
+    "name" : "FetchBugResolvedBy",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugResolvedGird",
     "methodType" : "FETCH",
+    "name" : "FetchBugResolvedGird",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugassignedTo",
     "methodType" : "FETCH",
+    "name" : "FetchBugassignedTo",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductBugResolutionStats",
     "methodType" : "FETCH",
+    "name" : "FetchProductBugResolutionStats",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductBugStatusSum",
     "methodType" : "FETCH",
+    "name" : "FetchProductBugStatusSum",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductCreateBug",
     "methodType" : "FETCH",
+    "name" : "FetchProductCreateBug",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectBugStatusCount",
     "methodType" : "FETCH",
+    "name" : "FetchProjectBugStatusCount",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -425,74 +443,90 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugCountInResolution",
     "methodType" : "FETCH",
+    "name" : "FetchBugCountInResolution",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugResolvedBy",
     "methodType" : "FETCH",
+    "name" : "FetchBugResolvedBy",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugResolvedGird",
     "methodType" : "FETCH",
+    "name" : "FetchBugResolvedGird",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugassignedTo",
     "methodType" : "FETCH",
+    "name" : "FetchBugassignedTo",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductBugResolutionStats",
     "methodType" : "FETCH",
+    "name" : "FetchProductBugResolutionStats",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductBugStatusSum",
     "methodType" : "FETCH",
+    "name" : "FetchProductBugStatusSum",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductCreateBug",
     "methodType" : "FETCH",
+    "name" : "FetchProductCreateBug",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectBugStatusCount",
     "methodType" : "FETCH",
+    "name" : "FetchProjectBugStatusCount",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -532,6 +566,7 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -608,6 +643,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "BugStats",
+  "dEAPITag" : "bug统计",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json",
@@ -620,6 +656,7 @@
     "codeName" : "Title"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

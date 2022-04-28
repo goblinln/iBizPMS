@@ -6,13 +6,15 @@
   "logicName" : "建用例",
   "name" : "bugCreateCase",
   "getPSDEActionInput" : {
-    "codeName" : "BugCreateCaseInput",
-    "name" : "输入对象",
+    "name" : "BugCreateCaseInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BugCreateCaseResult",
-    "name" : "返回对象",
+    "name" : "BugCreateCaseResult",
     "type" : "VOID"
   }
 }

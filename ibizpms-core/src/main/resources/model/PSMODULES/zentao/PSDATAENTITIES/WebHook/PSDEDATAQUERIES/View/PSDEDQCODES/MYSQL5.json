@@ -1,0 +1,66 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACTIONS`",
+    "name" : "ACTIONS"
+  }, {
+    "expression" : "t1.`CONTENTTYPE`",
+    "name" : "CONTENTTYPE"
+  }, {
+    "expression" : "t1.`CREATEDBY`",
+    "name" : "CREATEDBY"
+  }, {
+    "expression" : "t1.`CREATEDDATE`",
+    "name" : "CREATEDDATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`DOMAIN`",
+    "name" : "DOMAIN"
+  }, {
+    "expression" : "t1.`EDITEDBY`",
+    "name" : "EDITEDBY"
+  }, {
+    "expression" : "t1.`EDITEDDATE`",
+    "name" : "EDITEDDATE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`PARAMS`",
+    "name" : "PARAMS"
+  }, {
+    "expression" : "t1.`PRODUCTS`",
+    "name" : "PRODUCTS"
+  }, {
+    "expression" : "t1.`PROJECTS`",
+    "name" : "PROJECTS"
+  }, {
+    "expression" : "t1.`SECRET`",
+    "name" : "SECRET"
+  }, {
+    "expression" : "t1.`SENDTYPE`",
+    "name" : "SENDTYPE"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`URL`",
+    "name" : "URL"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACTIONS`,\nt1.`CONTENTTYPE`,\nt1.`CREATEDBY`,\nt1.`CREATEDDATE`,\nt1.`DELETED`,\nt1.`DESC`,\nt1.`DOMAIN`,\nt1.`EDITEDBY`,\nt1.`EDITEDDATE`,\nt1.`ID`,\nt1.`NAME`,\nt1.`PARAMS`,\nt1.`PRODUCTS`,\nt1.`PROJECTS`,\nt1.`SECRET`,\nt1.`SENDTYPE`,\nt1.`TYPE`,\nt1.`URL`\nFROM `zt_webhook` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/WebHook/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

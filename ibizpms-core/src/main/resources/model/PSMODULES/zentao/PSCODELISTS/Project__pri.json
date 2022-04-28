@@ -1,9 +1,11 @@
 {
+  "codeListTag" : "zentao__Project__pri",
   "codeListType" : "STATIC",
   "codeName" : "Project__pri",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Project__pri.json",
   "emptyText" : "未定义",
+  "name" : "项目优先级",
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "getPSSysCss" : {
@@ -12,8 +14,7 @@
     "text" : "1",
     "textCls" : "text-red-border-color",
     "value" : "1",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Item_2",
     "getPSSysCss" : {
@@ -21,8 +22,7 @@
     },
     "text" : "2",
     "textCls" : "text-pink-border-color",
-    "value" : "2",
-    "includeBeginValue" : true
+    "value" : "2"
   }, {
     "codeName" : "Item_3",
     "getPSSysCss" : {
@@ -30,8 +30,7 @@
     },
     "text" : "3",
     "textCls" : "text-blue-border-color",
-    "value" : "3",
-    "includeBeginValue" : true
+    "value" : "3"
   }, {
     "codeName" : "Item_4",
     "getPSSysCss" : {
@@ -39,14 +38,20 @@
     },
     "text" : "4",
     "textCls" : "text-green-border-color",
-    "value" : "4",
-    "includeBeginValue" : true
+    "value" : "4"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

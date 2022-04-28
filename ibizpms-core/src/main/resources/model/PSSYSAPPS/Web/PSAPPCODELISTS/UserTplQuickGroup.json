@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__UserTplQuickGroup",
   "codeListType" : "STATIC",
   "codeName" : "UserTplQuickGroup",
   "dynaInstMode" : 1,
@@ -13,27 +14,23 @@
     "codeName" : "All",
     "data" : "{}",
     "text" : "所有",
-    "value" : "all",
-    "includeBeginValue" : true
+    "value" : "all"
   }, {
     "codeName" : "Story",
     "data" : "{\"n_type_eq\":\"story\"}",
     "text" : "需求",
     "value" : "story",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Task",
     "data" : "{\"n_type_eq\":\"task\"}",
     "text" : "任务",
-    "value" : "task",
-    "includeBeginValue" : true
+    "value" : "task"
   }, {
     "codeName" : "Bug",
     "data" : "{\"n_type_eq\":\"bug\"}",
     "text" : "Bug",
-    "value" : "bug",
-    "includeBeginValue" : true
+    "value" : "bug"
   } ],
   "enableCache" : true
 }

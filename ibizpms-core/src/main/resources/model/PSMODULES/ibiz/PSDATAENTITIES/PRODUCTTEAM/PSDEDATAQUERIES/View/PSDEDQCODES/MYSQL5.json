@@ -1,0 +1,79 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`CONSUMED`",
+    "name" : "CONSUMED"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DAYS`",
+    "name" : "DAYS"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`END`",
+    "name" : "END"
+  }, {
+    "expression" : "t1.`ESTIMATE`",
+    "name" : "ESTIMATE"
+  }, {
+    "expression" : "t1.`HOURS`",
+    "name" : "HOURS"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`JOIN`",
+    "name" : "JOIN"
+  }, {
+    "expression" : "t1.`LEADINGCADRE`",
+    "name" : "LEADINGCADRE"
+  }, {
+    "expression" : "t1.`LEFT`",
+    "name" : "LEFT"
+  }, {
+    "expression" : "t1.`LIMITED`",
+    "name" : "LIMITED"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`ROLE`",
+    "name" : "ROLE"
+  }, {
+    "expression" : "t1.`ROOT`",
+    "name" : "ROOT"
+  }, {
+    "expression" : "t1.`TEAMSTATUS`",
+    "name" : "TEAMSTATUS"
+  }, {
+    "expression" : "(t1.`DAYS` * t1.`HOURS`)",
+    "name" : "TOTAL"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  }, {
+    "expression" : "(select t.realname from zt_user t where t.account = t1.account)",
+    "name" : "USERNAME"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`CONSUMED`,\nt1.`CREATEBY`,\nt1.`DAYS`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`END`,\nt1.`ESTIMATE`,\nt1.`HOURS`,\nt1.`ID`,\nt1.`JOIN`,\nt1.`LEADINGCADRE`,\nt1.`LEFT`,\nt1.`LIMITED`,\nt1.`ORDER`,\nt1.`ORG`,\nt1.`ORGNAME`,\nt1.`ROLE`,\nt1.`ROOT`,\nt1.`TEAMSTATUS`,\n(t1.`DAYS` * t1.`HOURS`) AS `TOTAL`,\nt1.`TYPE`,\nt1.`UPDATEBY`,\n(select t.realname from zt_user t where t.account = t1.account) AS `USERNAME`\nFROM `zt_team` t1 \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

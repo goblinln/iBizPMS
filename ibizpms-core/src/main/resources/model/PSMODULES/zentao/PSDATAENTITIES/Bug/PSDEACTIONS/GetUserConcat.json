@@ -6,13 +6,19 @@
   "logicName" : "获取联系人",
   "name" : "GetUserConcat",
   "getPSDEActionInput" : {
-    "codeName" : "GetUserConcatInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetUserConcatInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetUserConcatResult",
-    "name" : "返回对象",
+    "name" : "GetUserConcatResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "BugDTO"
+    },
     "type" : "DTO"
   },
   "getPSDELogic" : {

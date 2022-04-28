@@ -245,7 +245,7 @@ export default class DropDownListHidden extends Vue {
             let result:any = list.find((item:any) =>{
                 return item.value == this.itemValue;
             })
-            return JSON.stringify([result]);
+            return !result ? null : JSON.stringify([result]);
         }
         return this.value;
     }

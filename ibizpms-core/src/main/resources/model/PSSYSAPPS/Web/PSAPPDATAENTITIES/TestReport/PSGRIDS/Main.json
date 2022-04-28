@@ -136,6 +136,7 @@
         "glyph" : "xf044@FontAwesome",
         "cssClass" : "fa fa-edit"
       },
+      "predefinedType" : "GRIDVIEW_EDITACTION",
       "timeout" : 60000,
       "getTooltipPSLanguageRes" : {
         "lanResTag" : "TBB.TOOLTIP.*.EDIT"

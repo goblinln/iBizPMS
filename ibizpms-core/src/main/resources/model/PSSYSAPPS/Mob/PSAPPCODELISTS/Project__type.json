@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Project__type",
   "codeListType" : "STATIC",
   "codeName" : "Project__type",
   "dynaInstMode" : 1,
@@ -13,18 +14,15 @@
     "codeName" : "Sprint",
     "text" : "短期项目",
     "value" : "sprint",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Waterfall",
     "text" : "长期项目",
-    "value" : "waterfall",
-    "includeBeginValue" : true
+    "value" : "waterfall"
   }, {
     "codeName" : "Ops",
     "text" : "运维项目",
-    "value" : "ops",
-    "includeBeginValue" : true
+    "value" : "ops"
   } ],
   "enableCache" : true
 }

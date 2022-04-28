@@ -1,39 +1,44 @@
 {
+  "codeListTag" : "zentao__Testcase__result",
   "codeListType" : "STATIC",
   "codeName" : "Testcase__result",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testcase__result.json",
   "emptyText" : "未执行",
+  "name" : "测试用例结果",
   "getPSCodeItems" : [ {
     "codeName" : "N_a",
     "color" : "rgba(190, 184, 184, 1)",
     "text" : "忽略",
-    "value" : "n/a",
-    "includeBeginValue" : true
+    "value" : "n/a"
   }, {
     "codeName" : "Pass",
     "color" : "rgba(93, 238, 9, 1)",
     "text" : "通过",
-    "value" : "pass",
-    "includeBeginValue" : true
+    "value" : "pass"
   }, {
     "codeName" : "Fail",
     "color" : "rgba(251, 12, 12, 1)",
     "text" : "失败",
-    "value" : "fail",
-    "includeBeginValue" : true
+    "value" : "fail"
   }, {
     "codeName" : "Blocked",
     "color" : "rgba(228, 15, 15, 1)",
     "text" : "阻塞",
-    "value" : "blocked",
-    "includeBeginValue" : true
+    "value" : "blocked"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

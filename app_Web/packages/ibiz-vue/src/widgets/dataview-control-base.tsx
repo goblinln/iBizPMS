@@ -19,7 +19,7 @@ import { notNilEmpty } from 'qx-util';
  * @class DataViewControlBase
  * @extends {MDControlBase}
  */
-export class DataViewControlBase extends MDControlBase implements DataViewControlInterface{
+export class DataViewControlBase extends MDControlBase implements DataViewControlInterface {
     /**
      * 部件行为--submit
      *
@@ -181,7 +181,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @type {boolean}
      * @memberof DataViewControlBase
      */
-    public hasSortBar:boolean = false;
+    public hasSortBar: boolean = false;
 
     /**
      * this引用
@@ -197,46 +197,39 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @type {boolean}
      * @memberof DataViewControlBase
      */
-     public dragEle: any;
+    public dragEle: any;
 
-     /**
-      * 拖拽后位置left
-      *
-      * @type {boolean}
-      * @memberof DataViewControlBase
-      */
-     public leftP: any;
- 
-     /**
-      * 拖拽后位置top
-      *
-      * @type {boolean}
-      * @memberof DataViewControlBase
-      */
-     public topP: any;
- 
-     /**
-      * 拖拽标识
-      *
-      * @type {boolean}
-      * @memberof DataViewControlBase
-      */
-     public dragflag: boolean = false;
- 
-     /**
-      * 为拖拽不是点击
-      *
-      * @type {boolean}
-      * @memberof DataViewControlBase
-      */
-     public moveflag: boolean = false;
-    
     /**
-     * 数据项代码表数据
-     * 
+     * 拖拽后位置left
+     *
+     * @type {boolean}
      * @memberof DataViewControlBase
      */
-    public codelistMap: Map<string, any[]> = new Map();
+    public leftP: any;
+
+    /**
+     * 拖拽后位置top
+     *
+     * @type {boolean}
+     * @memberof DataViewControlBase
+     */
+    public topP: any;
+
+    /**
+     * 拖拽标识
+     *
+     * @type {boolean}
+     * @memberof DataViewControlBase
+     */
+    public dragflag: boolean = false;
+
+    /**
+     * 为拖拽不是点击
+     *
+     * @type {boolean}
+     * @memberof DataViewControlBase
+     */
+    public moveflag: boolean = false;
 
     /**
      * 监听静态参数变化
@@ -298,23 +291,23 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
         this.sortModel = [];
         this.controlInstance.getPSDEDataViewItems()?.forEach((cardViewItem: IPSDEDataViewItem) => {
             if (cardViewItem.enableSort) {
-              this.sortModel.push(this.$tl(cardViewItem.getCapPSLanguageRes()?.lanResTag, cardViewItem.caption));
+                this.sortModel.push(this.$tl(cardViewItem.getCapPSLanguageRes()?.lanResTag, cardViewItem.caption));
             }
         });
     }
 
     /**
      * 初始化数据映射
-     * 
+     *
      * @memberof ListControlBase
      */
-     public initDataMap() {
+    public initDataMap() {
         const dataItems: IPSDEDataViewDataItem[] | null = this.controlInstance.getPSDEDataViewDataItems();
         if (dataItems && dataItems.length > 0) {
             dataItems.forEach((dataItem: IPSDEDataViewDataItem) => {
-                this.dataMap.set(dataItem.name,{ customCode: dataItem.customCode ? true : false });
+                this.dataMap.set(dataItem.name, { customCode: dataItem.customCode ? true : false });
             });
-        };
+        }
     }
 
     /**
@@ -344,24 +337,6 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                 }
             });
         }
-        this.initDataItemCodelist();
-    }
-
-    /**
-     * 初始化数据项代码表
-     * 
-     * @memberof DataViewControlBase
-     */
-     public initDataItemCodelist() {
-        let cardViewItems: IPSDEDataViewItem[] | null = this.controlInstance.getPSDEDataViewItems();
-        if (cardViewItems && cardViewItems.length > 0) {
-            cardViewItems.forEach(async (item: IPSDEDataViewItem) => {
-                if (item.getPSCodeList()) {
-                    const codelistItems: any[] = await this.codeListService.getDataItems({tag: item.getPSCodeList()?.codeName, type: item.getPSCodeList()?.codeListType, context: this.context});
-                    this.codelistMap.set(item.name.toLowerCase(), codelistItems);
-                }
-            });
-        }
     }
 
     /**
@@ -370,7 +345,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @type {*}
      * @memberof DataViewControlBase
      */
-     public initCtrlActionModel() {
+    public initCtrlActionModel() {
         let cardViewItems = this.controlInstance.getPSDEDataViewItems() || [];
         if (cardViewItems?.length > 0) {
             for (let cardItem of cardViewItems) {
@@ -382,8 +357,8 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                             this.actionModel[appUIAction.uIActionTag] = Object.assign(appUIAction, {
                                 disabled: false,
                                 visabled: true,
-                                getNoPrivDisplayMode: appUIAction.getNoPrivDisplayMode
-                                    ? appUIAction.getNoPrivDisplayMode
+                                getNoPrivDisplayMode: appUIAction.noPrivDisplayMode
+                                    ? appUIAction.noPrivDisplayMode
                                     : 6,
                             });
                         }
@@ -398,12 +373,15 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      *
      * @param {*} [opt={}] 额外参数
      * @param {boolean} [isReset=false] 是否重置数据，默认加载到的数据附加在已有的之后
-     * @return {*} 
+     * @return {*}
      * @memberof DataViewControlBase
      */
     public load(opt: any = {}, isReset: boolean = false) {
         if (!this.fetchAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.fetchaction') as string),'load');
+            this.$throw(
+                `${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.fetchaction') as string),
+                'load',
+            );
             return;
         }
         const arg: any = {};
@@ -412,8 +390,8 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
             Object.assign(page, { page: this.curPage - 1, size: this.limit });
         }
         // 设置排序
-        if (!this.isNoSort && !Object.is(this.minorSortDir, '') && !Object.is(this.minorSortPSDEF, '')) {
-            const sort: string = this.minorSortPSDEF + ',' + this.minorSortDir;
+        if (!this.isNoSort && !Object.is(this.sortDir, '') && !Object.is(this.sortField, '')) {
+            const sort: string = this.sortField + ',' + this.sortDir;
             Object.assign(page, { sort: sort });
         }
         Object.assign(arg, page);
@@ -424,19 +402,14 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
         Object.assign(tempViewParams, Util.deepCopy(this.viewparams));
         Object.assign(arg, { viewparams: tempViewParams }, opt);
         if (this.service) {
-            let tempContext:any = Util.deepCopy(this.context);
+            let tempContext: any = Util.deepCopy(this.context);
             this.onControlRequset('load', tempContext, arg);
-            const post: Promise<any> = this.service.search(
-                this.fetchAction,
-                tempContext,
-                arg,
-                this.showBusyIndicator,
-            );
+            const post: Promise<any> = this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
             post.then(
                 (response: any) => {
                     this.onControlResponse('load', response);
                     if (!response || response.status !== 200) {
-                        this.$throw(response,'load');
+                        this.$throw(response, 'load');
                         return;
                     }
                     const data: any = response.data;
@@ -461,7 +434,6 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                     this.items.forEach((item: any) => {
                         Object.assign(item, this.getActionState(item));
                     });
-                    this.codelistTranslator();
                     this.$emit('ctrl-event', {
                         controlname: this.controlInstance.name,
                         action: 'load',
@@ -488,7 +460,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                 },
                 (response: any) => {
                     this.onControlResponse('load', response);
-                    this.$throw(response,'load');
+                    this.$throw(response, 'load');
                 },
             );
         }
@@ -503,7 +475,10 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      */
     public async remove(datas: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.grid.notconfig.removeaction') as string),'remove');
+            this.$throw(
+                `${this.controlInstance.codeName}` + (this.$t('app.grid.notconfig.removeaction') as string),
+                'remove',
+            );
             return;
         }
         let _datas: any[] = [];
@@ -562,17 +537,16 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
             const appDeCodeName = this.appDeCodeName.toLowerCase();
             Object.assign(tempContext, { [appDeCodeName]: keys.join(';') });
             const arg = { [appDeCodeName]: keys.join(';') };
-            Object.assign(arg, { viewparams: this.viewparams }),
-            this.onControlRequset('remove', tempContext, arg);
+            Object.assign(arg, { viewparams: this.viewparams }), this.onControlRequset('remove', tempContext, arg);
             const post: Promise<any> = this.service.delete(_removeAction, tempContext, arg, this.showBusyIndicator);
             return new Promise((resolve: any, reject: any) => {
                 post.then((response: any) => {
                     this.onControlResponse('remove', response);
                     if (!response || response.status !== 200) {
-                        this.$throw(response,'remove');
+                        this.$throw(response, 'remove');
                         return;
                     } else {
-                        this.$success(this.$t('app.commonwords.deletesuccess') as string,'remove');
+                        this.$success(this.$t('app.commonwords.deletesuccess') as string, 'remove');
                     }
                     //删除items中已删除的项
                     _datas.forEach((data: any) => {
@@ -591,7 +565,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                     resolve(response);
                 }).catch((response: any) => {
                     this.onControlResponse('remove', response);
-                    this.$throw(response,'remove');
+                    this.$throw(response, 'remove');
                     reject(response);
                 });
             });
@@ -621,7 +595,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * 保存
      *
      * @param {any[]} args 额外参数
-     * @return {*} 
+     * @return {*}
      * @memberof DataViewControlBase
      */
     public async save(args: any) {
@@ -633,32 +607,42 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
             try {
                 if (Object.is(item.rowDataState, 'create')) {
                     if (!this.createAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.createaction') as string),'save');
+                        this.$throw(
+                            `${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.createaction') as string),
+                            'save',
+                        );
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
-                        let tempContext:any = Util.deepCopy(this.context);
+                        let tempContext: any = Util.deepCopy(this.context);
                         this.onControlRequset('create', tempContext, item);
-                        let response = await this.service.add(this.createAction, tempContext, item, this.showBusyIndicator);
+                        let response = await this.service.add(
+                            this.createAction,
+                            tempContext,
+                            item,
+                            this.showBusyIndicator,
+                        );
                         this.onControlResponse('create', response);
                         successItems.push(Util.deepCopy(response.data));
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.updateaction') as string),'save');
+                        this.$throw(
+                            `${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.updateaction') as string),
+                            'save',
+                        );
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
-                        //<#if de??>            if(this.controlInstance.getPSAppDataEntity){}
-                        //if(item.${appde.getCodeName()?lower_case}){
-                        // Object.assign(this.context,{${appde.getCodeName()?lower_case}:item.${appde.getCodeName()?lower_case}});
-                        // }
-                        //</#if>
-                        // let de: any = this.controlInstance.getPSAppDataEntity;
-                        // if(de){
-                        //     Object.assign(this.context,{de.getCodeName():item.de.getCodeName()})
-                        // }
-                        let tempContext:any = Util.deepCopy(this.context);
+                        if (item[this.appDeCodeName?.toLowerCase()]) {
+                            Object.assign(this.context, { [this.appDeCodeName?.toLowerCase()]: item[this.appDeCodeName?.toLowerCase()] });
+                        }
+                        let tempContext: any = Util.deepCopy(this.context);
                         this.onControlRequset('update', tempContext, item);
-                        let response = await this.service.add(this.updateAction, tempContext, item, this.showBusyIndicator);
+                        let response = await this.service.add(
+                            this.updateAction,
+                            tempContext,
+                            item,
+                            this.showBusyIndicator,
+                        );
                         this.onControlResponse('update', response);
                         successItems.push(Util.deepCopy(response.data));
                     }
@@ -672,12 +656,12 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
         this.$emit('ctrl-event', { controlname: this.controlInstance.name, action: 'save', data: successItems });
         this.refresh();
         if (errorItems.length === 0) {
-            if(args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))){
-                this.$success(this.$t('app.commonwords.savesuccess') as string,'save');
+            if (args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))) {
+                this.$success(this.$t('app.commonwords.savesuccess') as string, 'save');
             }
         } else {
             errorItems.forEach((item: any, index: number) => {
-                this.$throw(item.majorentityname + (this.$t('app.commonwords.savefailed') as string) + '!','save');
+                this.$throw(item.majorentityname + (this.$t('app.commonwords.savefailed') as string) + '!', 'save');
             });
         }
         return successItems;
@@ -796,7 +780,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      *
      * @memberof DataViewControlBase
      */
-     public sortClick(field: string) {
+    public sortClick(field: string) {
         if (this.sortField !== field) {
             this.sortField = field;
             this.sortDir = 'asc';
@@ -815,7 +799,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      *
      * @memberof DataViewControlBase
      */
-     public group() {
+    public group() {
         if (Object.is(this.groupMode, 'AUTO')) {
             this.drawGroup();
         } else if (Object.is(this.groupMode, 'CODELIST')) {
@@ -904,11 +888,12 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
             return (
                 <div class='drag-filed' on-mousedown={($event: any) => this.down($event)}>
                     <row class='dataview-pagination'>
-                        <div v-show={this.flag}>
-                            {super.renderBatchToolbar()}
-                        </div>
+                        <div v-show={this.flag}>{super.renderBatchToolbar()}</div>
                         <div class='dataview-pagination-icon'>
-                            <icon type='md-code-working' on-click={($event: any) => throttle(this.onClick,[$event],this)} />
+                            <icon
+                                type='md-code-working'
+                                on-click={($event: any) => throttle(this.onClick, [$event], this)}
+                            />
                         </div>
                     </row>
                 </div>
@@ -922,7 +907,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @param $event 时间源
      * @memberof DataViewControlBase
      */
-     public onClick($event: any) {
+    public onClick($event: any) {
         if (!this.moveflag) {
             this.flag = !this.flag;
         }
@@ -935,7 +920,11 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      */
     public renderLoadDataTip() {
         return (
-            <div v-show={this.items.length == 0} class='app-data-empty' style={{height: this.hasSortBar ? "calc(100% - 42px)" : "100%"}}>
+            <div
+                v-show={this.items.length == 0}
+                class='app-data-empty'
+                style={{ height: this.hasSortBar ? 'calc(100% - 42px)' : '100%' }}
+            >
                 {super.renderLoadDataTip()}
             </div>
         );
@@ -948,7 +937,11 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      */
     public renderEmptyDataTip() {
         return (
-            <div v-show={this.items.length == 0} class='app-data-empty' style={{height: this.hasSortBar ? "calc(100% - 42px)" : "100%"}}>
+            <div
+                v-show={this.items.length == 0}
+                class='app-data-empty'
+                style={{ height: this.hasSortBar ? 'calc(100% - 42px)' : '100%' }}
+            >
                 {super.renderEmptyDataTip()}
             </div>
         );
@@ -959,7 +952,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      *
      */
     public renderGroup(h: any) {
-        this.groupData.map((group: any, index: number) => {
+       return  this.groupData.map((group: any, index: number) => {
             let cardViewItems = this.controlInstance.getPSDEDataViewItems() || [];
             let dataViewItem: any = cardViewItems[index] ? cardViewItems[index] : null;
             return (
@@ -981,7 +974,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      */
     public hasChildrenRender(h: any, group: any, dataViewItem: IPSDEDataViewItem) {
         if (group.children.length > 0) {
-            group.children.map((groupChild: any, index: number) => {
+            return group.children.map((groupChild: any, index: number) => {
                 return (
                     <a href={groupChild.starturl}>
                         <i-col style='min-height: 170px;margin-bottom: 10px;'>
@@ -1008,14 +1001,14 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
         const style: any = {
             width: this.controlInstance.cardWidth > 0 ? `${this.controlInstance.cardWidth}px` : false,
             height: this.controlInstance.cardHeight > 0 ? `${this.controlInstance.cardHeight}px` : false,
-        }
+        };
         return (
             <el-card
                 shadow='always'
                 body-style={style}
                 class={[args.srfchecked === 1 ? 'isselected' : false, 'single-card-data']}
-                nativeOnClick={() => throttle(this.handleClick,[args],this)}
-                nativeOnDblclick={() => throttle(this.handleDblClick,[args],this)}
+                nativeOnClick={() => throttle(this.handleClick, [args], this)}
+                nativeOnDblclick={() => throttle(this.handleDblClick, [args], this)}
             >
                 {this.controlInstance.getItemPSLayoutPanel()
                     ? this.renderItemPSLayoutPanel(args)
@@ -1042,14 +1035,23 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
             return [
                 <div class='data-view-item'>
                     <div class='single-card-default'>
-                        <div calss="item-title">
-                            <tooltip content={item.srfmajortext}>{item.srfmajortext}</tooltip>
+                        <div calss='item-title'>
+                            {dataViewItem.getPSCodeList() ? (
+                                <codelist
+                                    codeList={dataViewItem.getPSCodeList()}
+                                    value={item.srfmajortext}
+                                    data={item}
+                                    context={this.context}
+                                    viewparams={this.viewparams}
+                                ></codelist>
+                            ) : (
+                              <tooltip>
+                                  <p v-format={dataViewItem.valueFormat}>{item.srfmajortext}</p>
+                                  <p slot="content" v-format={dataViewItem.valueFormat}>{item.srfmajortext}</p>
+                              </tooltip>
+                            )}
                         </div>
-                        {
-                            item.content && (
-                                <div class='item-content'>{item.content}</div>
-                            )
-                        }
+                        {item.content && <div class='item-content'>{item.content}</div>}
                     </div>
                 </div>,
                 <div class='data-view-item-action'>
@@ -1100,7 +1102,11 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                                 type='info'
                                 disabled={args[uiaction.uIActionTag].disabled}
                                 on-click={($event: any) => {
-                                    throttle(this.handleActionClick,[args, $event, dataViewItem, uiactionDetail],this);
+                                    throttle(
+                                        this.handleActionClick,
+                                        [args, $event, dataViewItem, uiactionDetail],
+                                        this,
+                                    );
                                 }}
                             >
                                 {uiactionDetail.showIcon ? (
@@ -1109,7 +1115,12 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                                     ''
                                 )}
                                 <span>
-                                {uiactionDetail.showCaption ? (this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag, uiaction?.caption ? uiaction.caption : '')) : ''}
+                                    {uiactionDetail.showCaption
+                                        ? this.$tl(
+                                              uiaction.getCapPSLanguageRes()?.lanResTag,
+                                              uiaction?.caption ? uiaction.caption : '',
+                                          )
+                                        : ''}
                                 </span>
                             </button>
                         );
@@ -1133,7 +1144,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                     sortField={this.sortField}
                     sortDir={this.sortDir}
                     entityName={appDataEntity?.codeName}
-                    on-clickSort={(val: any) => throttle(this.sortClick,[val],this)}
+                    on-clickSort={(val: any) => throttle(this.sortClick, [val], this)}
                 ></app-sort-bar>
             );
         }
@@ -1144,7 +1155,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      *
      * @memberof DataViewControlBase
      */
-     public async drawCodeListGroup() {
+    public async drawCodeListGroup() {
         let groups: Array<any> = [];
         const groupTree: Array<any> = [];
         const data: Array<any> = [...this.items];
@@ -1239,7 +1250,6 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
         });
         this.groupData = groupTree;
     }
-    
 
     /**
      * 排序class变更
@@ -1247,7 +1257,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      *
      * @memberof DataViewControlBase
      */
-     public getsortClass(field: string) {
+    public getsortClass(field: string) {
         if (this.sortField !== field || this.sortDir === '') {
             return '';
         } else if (this.sortDir === 'asc') {
@@ -1296,33 +1306,10 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @param {*} data 当前列表行数据
      * @memberof DataViewControlBase
      */
-     public getActionState(data: any) {
+    public getActionState(data: any) {
         let tempActionModel: any = Util.deepCopy(this.actionModel);
         let targetData: any = this.transformData(data);
         ViewTool.calcActionItemAuthState(targetData, tempActionModel, this.appUIService);
         return tempActionModel;
-    }
-
-    /**
-     * 代码表翻译
-     * 
-     * @memberof DataViewControlBase
-     */
-    public codelistTranslator() {
-        if (this.items?.length > 0) {
-            this.items.forEach((item: any) => {
-                for (const key in item) {
-                    if (item.hasOwnProperty(key)) {
-                        const codelistItems: any[] | undefined= this.codelistMap.get(key);
-                        if (codelistItems && codelistItems.length > 0) {
-                            const codelistItem = codelistItems.find((_codelistItem: any) => Object.is(_codelistItem.value,item[key]));
-                            if (codelistItem) {
-                                item[key] = codelistItem.text;
-                            }
-                        }
-                    }
-                }
-            })
-        }
     }
 }

@@ -1,14 +1,19 @@
 {
+  "codeListTag" : "zentao__TimeEvaluationStatuts",
   "codeListType" : "STATIC",
   "codeName" : "TimeEvaluationStatuts",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TimeEvaluationStatuts.json",
   "emptyText" : "未定义",
+  "name" : "工时评估",
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

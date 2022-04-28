@@ -223,7 +223,7 @@ export class AppTreeGridExService extends ControlServiceBase {
                     enablecheck: nodeJson?.enableCheck,
                     disabled: nodeJson?.disableSelect,
                     expanded: nodeJson?.expanded || filter.isAutoexpand,
-                    leaf: nodeJson?.hasPSDETreeNodeRSs,
+                    leaf: nodeJson?.hasPSDETreeNodeRSs(),
                     selected: nodeJson?.selected,
                     navfilter: nodeJson?.navFilter,
                 };
@@ -354,12 +354,14 @@ export class AppTreeGridExService extends ControlServiceBase {
                                 } else {
                                     Object.assign(treeNode, { expanded: filter.isautoexpand });
                                 }
-                                Object.assign(treeNode, { leaf: nodeJson.hasPSDETreeNodeRSs });
+                                Object.assign(treeNode, { leaf: nodeJson.hasPSDETreeNodeRSs() });
                                 if ((nodeJson as IPSDETreeDataSetNode)?.getLeafFlagPSAppDEField()) {
                                     let objLeafFlag = entity[(nodeJson as IPSDETreeDataSetNode)?.getLeafFlagPSAppDEField()?.codeName.toLowerCase() as string];
                                     if (objLeafFlag != null) {
                                         let strLeafFlag: string = objLeafFlag.toString().toLowerCase();
                                         if (Object.is(strLeafFlag, '1') || Object.is(strLeafFlag, 'true')) {
+                                            Object.assign(treeNode, { leaf: false });
+                                        } else {
                                             Object.assign(treeNode, { leaf: true });
                                         }
                                     }

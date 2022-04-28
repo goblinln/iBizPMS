@@ -12,42 +12,11 @@ package cn.ibizlab.pms.ibiz.logic.useryearworkstatslogic.getdevinfomation;
 
     no-loop
 
-            //逻辑处理节点[获取工时数]
-            rule "rawsqlcall3"
-            ruleflow-group "useryearworkstatsgetdevinfomationrawsqlcall3"
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "useryearworkstatsgetdevinfomationbegin"
             when
             then
-    Map param =new HashMap();
-        param.put("param0",useryearworkstatsgetdevinfomationdefault.get("account"));
-        param.put("param1",useryearworkstatsgetdevinfomationdefault.get("curyear"));
-    String strSql="select IFNULL(sum(t.consumed),0) as `YEARESTIMATECNT` from zt_taskestimate t where t.ACCOUNT = #{et.param0} and DATE_FORMAT(t.date,'%Y') = #{et.param1}";
-                        java.util.List<JSONObject> entities=iBzSysUseryearworkstatsDefaultService.select(strSql,param);//SQL调用
-                            if(entities.size()>0){
-                            JSONObject entity=entities.get(0);
-                                    for (Map.Entry entry : entity.entrySet()) {
-                                    useryearworkstatsgetdevinfomationdefault.set(String.valueOf(entry.getKey()),entry.getValue());
-                                    }
-                            }
-                        update(useryearworkstatsgetdevinfomationdefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[获取登录数]
-            rule "rawsqlcall4"
-            ruleflow-group "useryearworkstatsgetdevinfomationrawsqlcall4"
-            when
-            then
-    Map param =new HashMap();
-        param.put("param0",useryearworkstatsgetdevinfomationdefault.get("account"));
-        param.put("param1",useryearworkstatsgetdevinfomationdefault.get("curyear"));
-    String strSql="select count(1) as `YEARVISITS` from zt_action t where t.actor = #{et.param0} and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = #{et.param1}";
-                        java.util.List<JSONObject> entities=iBzSysUseryearworkstatsDefaultService.select(strSql,param);//SQL调用
-                            if(entities.size()>0){
-                            JSONObject entity=entities.get(0);
-                                    for (Map.Entry entry : entity.entrySet()) {
-                                    useryearworkstatsgetdevinfomationdefault.set(String.valueOf(entry.getKey()),entry.getValue());
-                                    }
-                            }
-                        update(useryearworkstatsgetdevinfomationdefault);//更新fact中变量值
             end
 
             //逻辑处理节点[获取动态数]
@@ -88,9 +57,40 @@ package cn.ibizlab.pms.ibiz.logic.useryearworkstatslogic.getdevinfomation;
                         update(useryearworkstatsgetdevinfomationdefault);//更新fact中变量值
             end
 
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "useryearworkstatsgetdevinfomationbegin"
+            //逻辑处理节点[获取工时数]
+            rule "rawsqlcall3"
+            ruleflow-group "useryearworkstatsgetdevinfomationrawsqlcall3"
             when
             then
+    Map param =new HashMap();
+        param.put("param0",useryearworkstatsgetdevinfomationdefault.get("account"));
+        param.put("param1",useryearworkstatsgetdevinfomationdefault.get("curyear"));
+    String strSql="select IFNULL(sum(t.consumed),0) as `YEARESTIMATECNT` from zt_taskestimate t where t.ACCOUNT = #{et.param0} and DATE_FORMAT(t.date,'%Y') = #{et.param1}";
+                        java.util.List<JSONObject> entities=iBzSysUseryearworkstatsDefaultService.select(strSql,param);//SQL调用
+                            if(entities.size()>0){
+                            JSONObject entity=entities.get(0);
+                                    for (Map.Entry entry : entity.entrySet()) {
+                                    useryearworkstatsgetdevinfomationdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+                                    }
+                            }
+                        update(useryearworkstatsgetdevinfomationdefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[获取登录数]
+            rule "rawsqlcall4"
+            ruleflow-group "useryearworkstatsgetdevinfomationrawsqlcall4"
+            when
+            then
+    Map param =new HashMap();
+        param.put("param0",useryearworkstatsgetdevinfomationdefault.get("account"));
+        param.put("param1",useryearworkstatsgetdevinfomationdefault.get("curyear"));
+    String strSql="select count(1) as `YEARVISITS` from zt_action t where t.actor = #{et.param0} and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = #{et.param1}";
+                        java.util.List<JSONObject> entities=iBzSysUseryearworkstatsDefaultService.select(strSql,param);//SQL调用
+                            if(entities.size()>0){
+                            JSONObject entity=entities.get(0);
+                                    for (Map.Entry entry : entity.entrySet()) {
+                                    useryearworkstatsgetdevinfomationdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+                                    }
+                            }
+                        update(useryearworkstatsgetdevinfomationdefault);//更新fact中变量值
             end

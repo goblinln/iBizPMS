@@ -33,10 +33,6 @@ public class SysDepartmentFallback implements FallbackFactory<SysDepartmentFeign
         String finalErrorMessage = errorMessage;
         return new SysDepartmentFeignClient(){
 
-            public Page<SysDepartment> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public SysDepartment create(SysDepartment sysdepartment) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class SysDepartmentFallback implements FallbackFactory<SysDepartmentFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysDepartment update(String deptid, SysDepartment sysdepartment) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<SysDepartment> sysdepartments) {
+            public SysDepartment get(String deptid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class SysDepartmentFallback implements FallbackFactory<SysDepartmentFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysDepartment get(String deptid) {
+            public SysDepartment update(String deptid, SysDepartment sysdepartment) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<SysDepartment> sysdepartments) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(SysDepartment sysdepartment) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysDepartment> searchDefault(SysDepartmentSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class SysDepartmentFallback implements FallbackFactory<SysDepartmentFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(SysDepartment sysdepartment) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(SysDepartment sysdepartment) {
@@ -86,10 +87,9 @@ public class SysDepartmentFallback implements FallbackFactory<SysDepartmentFeign
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<SysDepartment> searchDefault(SysDepartmentSearchContext context) {
+            public Page<SysDepartment> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

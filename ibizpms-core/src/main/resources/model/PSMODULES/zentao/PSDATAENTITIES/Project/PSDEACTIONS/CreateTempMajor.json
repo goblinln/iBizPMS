@@ -7,14 +7,16 @@
   "name" : "CreateTempMajor",
   "orderValue" : 3,
   "getPSDEActionInput" : {
-    "codeName" : "CreateTempMajorInput",
-    "name" : "输入对象",
+    "name" : "CreateTempMajorInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CreateTempMajorResult",
-    "name" : "返回对象",
+    "name" : "CreateTempMajorResult",
     "type" : "VOID"
   },
   "tempDataMode" : 1,

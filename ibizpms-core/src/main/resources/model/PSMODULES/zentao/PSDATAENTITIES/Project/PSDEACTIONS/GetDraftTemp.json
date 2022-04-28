@@ -7,13 +7,19 @@
   "name" : "GetDraftTemp",
   "orderValue" : 43,
   "getPSDEActionInput" : {
-    "codeName" : "GetDraftTempInput",
-    "name" : "输入对象",
+    "name" : "GetDraftTempInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetDraftTempResult",
-    "name" : "返回对象",
+    "name" : "GetDraftTempResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "tempDataMode" : 2,

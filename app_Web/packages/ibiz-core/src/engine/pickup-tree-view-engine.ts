@@ -1,3 +1,4 @@
+import { Util } from '../utils';
 import { TreeViewEngine } from './tree-view-engine';
 
 /**
@@ -50,5 +51,19 @@ export  class PickupTreeViewEngine extends TreeViewEngine {
           return ;
       }
       super.onCtrlEvent(ctrlName, eventName, args);
+    }
+
+    /**
+     * 父数据参数模式
+     *
+     * @param {{ tag: string, action: string, viewdata: any }} { tag, action, viewdata }
+     * @memberof PickupTreeViewEngine
+     */
+     public setViewState2({ tag, action, viewdata }: { tag: string, action: string, viewdata: any }): void {
+        if (Util.isExistAndNotEmpty(this.view.context.query)) {
+            this.view.viewState.next({ tag: tag, action: 'filter', data: { srfnodefilter: this.view.context.query } });
+        } else {
+            this.view.viewState.next({ tag: tag, action: action, data: viewdata });
+        }
     }
 }

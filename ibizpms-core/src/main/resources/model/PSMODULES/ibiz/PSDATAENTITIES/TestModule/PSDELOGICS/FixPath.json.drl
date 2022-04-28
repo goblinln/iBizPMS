@@ -14,16 +14,6 @@ package cn.ibizlab.pms.ibiz.logic.testmodulelogic.fixpath;
 
     no-loop
 
-            //逻辑处理节点[执行重建模块路径行为]
-            rule "deaction1"
-            ruleflow-group "testmodulefixpathdeaction1"
-            when
-            then
-                        moduleservice.update(testmodulefixpathzt_module);
-                        update(testmodulefixpathdefault);//更新fact中变量值
-                        update(testmodulefixpathzt_module);//更新fact中变量值
-            end
-
             //逻辑处理节点[开始]
             rule "begin"
             ruleflow-group "testmodulefixpathbegin"
@@ -46,6 +36,16 @@ package cn.ibizlab.pms.ibiz.logic.testmodulelogic.fixpath;
                             testmodulefixpathzt_module.set("root",testmodulefixpathdefault.get("root"));
                             testmodulefixpathzt_module.set("ibizshort",testmodulefixpathdefault.get("ibizshort"));
                             testmodulefixpathzt_module.set("type",testmodulefixpathdefault.get("type"));
+                        update(testmodulefixpathdefault);//更新fact中变量值
+                        update(testmodulefixpathzt_module);//更新fact中变量值
+            end
+
+            //逻辑处理节点[执行重建模块路径行为]
+            rule "deaction1"
+            ruleflow-group "testmodulefixpathdeaction1"
+            when
+            then
+                        moduleservice.update(testmodulefixpathzt_module);
                         update(testmodulefixpathdefault);//更新fact中变量值
                         update(testmodulefixpathzt_module);//更新fact中变量值
             end

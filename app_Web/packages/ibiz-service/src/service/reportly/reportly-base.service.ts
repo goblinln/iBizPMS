@@ -96,7 +96,7 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/reportlies/${_context.reportly}`);
+        const res = await this.http.get(`/reportlies/${encodeURIComponent(_context.reportly)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/reportlies/${_context.reportly}/read`, _data);
+        const res = await this.http.post(`/reportlies/${encodeURIComponent(_context.reportly)}/read`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -147,7 +147,7 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/reportlies/${_context.reportly}/submit`, _data);
+        const res = await this.http.post(`/reportlies/${encodeURIComponent(_context.reportly)}/submit`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -165,7 +165,7 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/reportlies/${_context.reportly}`, _data);
+        const res = await this.http.put(`/reportlies/${encodeURIComponent(_context.reportly)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

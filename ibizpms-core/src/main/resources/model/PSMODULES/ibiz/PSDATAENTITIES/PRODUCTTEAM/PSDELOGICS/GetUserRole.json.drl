@@ -12,6 +12,13 @@ package cn.ibizlab.pms.ibiz.logic.productteamlogic.getuserrole;
 
     no-loop
 
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "productteamgetuserrolebegin"
+            when
+            then
+            end
+
             //逻辑处理节点[获取角色成员]
             rule "rawsqlcall1"
             ruleflow-group "productteamgetuserrolerawsqlcall1"
@@ -28,11 +35,4 @@ package cn.ibizlab.pms.ibiz.logic.productteamlogic.getuserrole;
                                     }
                             }
                         update(productteamgetuserroledefault);//更新fact中变量值
-            end
-
-            //逻辑处理节点[开始]
-            rule "begin"
-            ruleflow-group "productteamgetuserrolebegin"
-            when
-            then
             end

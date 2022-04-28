@@ -34,128 +34,153 @@
     "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
+    "name" : "Activate",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
+    "name" : "AllPush",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
+    "name" : "AssignTo",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchAssignTo",
     "methodType" : "DEACTION",
+    "name" : "BatchAssignTo",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeBranch",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeBranch",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeModule",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeModule",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchChangePlan",
     "methodType" : "DEACTION",
+    "name" : "BatchChangePlan",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeStage",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeStage",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchClose",
     "methodType" : "DEACTION",
+    "name" : "BatchClose",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchReview",
     "methodType" : "DEACTION",
+    "name" : "BatchReview",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "BatchUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BugToStory",
     "methodType" : "DEACTION",
+    "name" : "BugToStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BuildBatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "BuildBatchUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BuildLinkStory",
     "methodType" : "DEACTION",
+    "name" : "BuildLinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "BuildUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkStorys",
     "methodType" : "DEACTION",
+    "name" : "BuildUnlinkStorys",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Change",
     "methodType" : "DEACTION",
+    "name" : "Change",
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
+    "name" : "Close",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "CreateTasks",
     "methodType" : "DEACTION",
+    "name" : "CreateTasks",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
+    "name" : "GetStorySpec",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetStorySpecs",
     "methodType" : "DEACTION",
+    "name" : "GetStorySpecs",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
@@ -179,105 +204,125 @@
     "actionMode" : "CUSTOM",
     "codeName" : "ImportPlanStories",
     "methodType" : "DEACTION",
+    "name" : "ImportPlanStories",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
+    "name" : "LinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ProjectBatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "ProjectBatchUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ProjectLinkStory",
     "methodType" : "DEACTION",
+    "name" : "ProjectLinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ProjectUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "ProjectUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ProjectUnlinkStorys",
     "methodType" : "DEACTION",
+    "name" : "ProjectUnlinkStorys",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Push",
     "methodType" : "DEACTION",
+    "name" : "Push",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ReleaseBatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "ReleaseBatchUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ReleaseLinkStory",
     "methodType" : "DEACTION",
+    "name" : "ReleaseLinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ReleaseUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "ReleaseUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ResetReviewedBy",
     "methodType" : "DEACTION",
+    "name" : "ResetReviewedBy",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Review",
     "methodType" : "DEACTION",
+    "name" : "Review",
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
+    "name" : "SendMessage",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
+    "name" : "SendMsgPreProcess",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "SetStage",
     "methodType" : "DEACTION",
+    "name" : "SetStage",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "StoryFavorites",
     "methodType" : "DEACTION",
+    "name" : "StoryFavorites",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "StoryNFavorites",
     "methodType" : "DEACTION",
+    "name" : "StoryNFavorites",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "SyncFromIbiz",
     "methodType" : "DEACTION",
+    "name" : "SyncFromIbiz",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -290,11 +335,13 @@
     "actionMode" : "CUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "UnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataExports" : [ {
@@ -453,67 +500,133 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__color.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
+    "name" : "FetchAccount",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyStory",
     "methodType" : "FETCH",
+    "name" : "FetchAssignedToMyStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyStoryCalendar",
     "methodType" : "FETCH",
+    "name" : "FetchAssignedToMyStoryCalendar",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugStory",
     "methodType" : "FETCH",
+    "name" : "FetchBugStory",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchBuildLinkCompletedStories",
     "methodType" : "FETCH",
+    "name" : "FetchBuildLinkCompletedStories",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildLinkableStories",
     "methodType" : "FETCH",
+    "name" : "FetchBuildLinkableStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchBuildStories",
     "methodType" : "FETCH",
+    "name" : "FetchBuildStories",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByModule",
     "methodType" : "FETCH",
+    "name" : "FetchByModule",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCaseStory",
     "methodType" : "FETCH",
+    "name" : "FetchCaseStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildMore",
     "methodType" : "FETCH",
+    "name" : "FetchChildMore",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
     "methodType" : "FETCH",
+    "name" : "FetchESBulk",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchGetProductStories",
     "methodType" : "FETCH",
+    "name" : "FetchGetProductStories",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
+    "name" : "FetchMy",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAgentStory",
     "methodType" : "FETCH",
+    "name" : "FetchMyAgentStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreate",
@@ -530,10 +643,12 @@
   }, {
     "codeName" : "FetchMyCurOpenedStory",
     "methodType" : "FETCH",
+    "name" : "FetchMyCurOpenedStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavorites",
     "methodType" : "FETCH",
+    "name" : "FetchMyFavorites",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReProduct",
@@ -544,54 +659,137 @@
   }, {
     "codeName" : "FetchNotCurPlanLinkStory",
     "methodType" : "FETCH",
+    "name" : "FetchNotCurPlanLinkStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentDefault",
     "methodType" : "FETCH",
+    "name" : "FetchParentDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentDefaultQ",
     "methodType" : "FETCH",
+    "name" : "FetchParentDefaultQ",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectLinkStory",
     "methodType" : "FETCH",
+    "name" : "FetchProjectLinkStory",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchProjectStories",
     "methodType" : "FETCH",
+    "name" : "FetchProjectStories",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseLinkableStories",
     "methodType" : "FETCH",
+    "name" : "FetchReleaseLinkableStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchReleaseStories",
     "methodType" : "FETCH",
+    "name" : "FetchReleaseStories",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReportStories",
     "methodType" : "FETCH",
+    "name" : "FetchReportStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchStoryChild",
     "methodType" : "FETCH",
+    "name" : "FetchStoryChild",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchStoryRelated",
     "methodType" : "FETCH",
+    "name" : "FetchStoryRelated",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchSubStory",
     "methodType" : "FETCH",
+    "name" : "FetchSubStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskRelatedStory",
     "methodType" : "FETCH",
+    "name" : "FetchTaskRelatedStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchView",
     "methodType" : "FETCH",
+    "name" : "FetchView",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -1077,6 +1275,22 @@
     "logicName" : "获取联系人",
     "name" : "获取联系人",
     "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接7428",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
       "name" : "获取参数",
@@ -1096,32 +1310,17 @@
         "srcValueType" : "SRCDLPARAM"
       } ],
       "parallelOutput" : true
-    }, {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Prepareparam1"
-        },
-        "name" : "连接7428",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      } ],
-      "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -1134,128 +1333,153 @@
     "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
+    "name" : "Activate",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
+    "name" : "AllPush",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
+    "name" : "AssignTo",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchAssignTo",
     "methodType" : "DEACTION",
+    "name" : "BatchAssignTo",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeBranch",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeBranch",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeModule",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeModule",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchChangePlan",
     "methodType" : "DEACTION",
+    "name" : "BatchChangePlan",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeStage",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeStage",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchClose",
     "methodType" : "DEACTION",
+    "name" : "BatchClose",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchReview",
     "methodType" : "DEACTION",
+    "name" : "BatchReview",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "BatchUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BugToStory",
     "methodType" : "DEACTION",
+    "name" : "BugToStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BuildBatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "BuildBatchUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BuildLinkStory",
     "methodType" : "DEACTION",
+    "name" : "BuildLinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "BuildUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkStorys",
     "methodType" : "DEACTION",
+    "name" : "BuildUnlinkStorys",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Change",
     "methodType" : "DEACTION",
+    "name" : "Change",
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
+    "name" : "Close",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "CreateTasks",
     "methodType" : "DEACTION",
+    "name" : "CreateTasks",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
+    "name" : "GetStorySpec",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetStorySpecs",
     "methodType" : "DEACTION",
+    "name" : "GetStorySpecs",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
@@ -1279,105 +1503,125 @@
     "actionMode" : "CUSTOM",
     "codeName" : "ImportPlanStories",
     "methodType" : "DEACTION",
+    "name" : "ImportPlanStories",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
+    "name" : "LinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ProjectBatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "ProjectBatchUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ProjectLinkStory",
     "methodType" : "DEACTION",
+    "name" : "ProjectLinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ProjectUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "ProjectUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ProjectUnlinkStorys",
     "methodType" : "DEACTION",
+    "name" : "ProjectUnlinkStorys",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Push",
     "methodType" : "DEACTION",
+    "name" : "Push",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ReleaseBatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "ReleaseBatchUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ReleaseLinkStory",
     "methodType" : "DEACTION",
+    "name" : "ReleaseLinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ReleaseUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "ReleaseUnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ResetReviewedBy",
     "methodType" : "DEACTION",
+    "name" : "ResetReviewedBy",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Review",
     "methodType" : "DEACTION",
+    "name" : "Review",
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
+    "name" : "SendMessage",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
+    "name" : "SendMsgPreProcess",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "SetStage",
     "methodType" : "DEACTION",
+    "name" : "SetStage",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "StoryFavorites",
     "methodType" : "DEACTION",
+    "name" : "StoryFavorites",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "StoryNFavorites",
     "methodType" : "DEACTION",
+    "name" : "StoryNFavorites",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "SyncFromIbiz",
     "methodType" : "DEACTION",
+    "name" : "SyncFromIbiz",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -1390,71 +1634,137 @@
     "actionMode" : "CUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "UnlinkStory",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
+    "name" : "FetchAccount",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyStory",
     "methodType" : "FETCH",
+    "name" : "FetchAssignedToMyStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyStoryCalendar",
     "methodType" : "FETCH",
+    "name" : "FetchAssignedToMyStoryCalendar",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugStory",
     "methodType" : "FETCH",
+    "name" : "FetchBugStory",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchBuildLinkCompletedStories",
     "methodType" : "FETCH",
+    "name" : "FetchBuildLinkCompletedStories",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildLinkableStories",
     "methodType" : "FETCH",
+    "name" : "FetchBuildLinkableStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchBuildStories",
     "methodType" : "FETCH",
+    "name" : "FetchBuildStories",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByModule",
     "methodType" : "FETCH",
+    "name" : "FetchByModule",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCaseStory",
     "methodType" : "FETCH",
+    "name" : "FetchCaseStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildMore",
     "methodType" : "FETCH",
+    "name" : "FetchChildMore",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
     "methodType" : "FETCH",
+    "name" : "FetchESBulk",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchGetProductStories",
     "methodType" : "FETCH",
+    "name" : "FetchGetProductStories",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
+    "name" : "FetchMy",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAgentStory",
     "methodType" : "FETCH",
+    "name" : "FetchMyAgentStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreate",
@@ -1471,10 +1781,12 @@
   }, {
     "codeName" : "FetchMyCurOpenedStory",
     "methodType" : "FETCH",
+    "name" : "FetchMyCurOpenedStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavorites",
     "methodType" : "FETCH",
+    "name" : "FetchMyFavorites",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReProduct",
@@ -1485,54 +1797,137 @@
   }, {
     "codeName" : "FetchNotCurPlanLinkStory",
     "methodType" : "FETCH",
+    "name" : "FetchNotCurPlanLinkStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentDefault",
     "methodType" : "FETCH",
+    "name" : "FetchParentDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentDefaultQ",
     "methodType" : "FETCH",
+    "name" : "FetchParentDefaultQ",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectLinkStory",
     "methodType" : "FETCH",
+    "name" : "FetchProjectLinkStory",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "srfparentkey",
+      "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchProjectStories",
     "methodType" : "FETCH",
+    "name" : "FetchProjectStories",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseLinkableStories",
     "methodType" : "FETCH",
+    "name" : "FetchReleaseLinkableStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchReleaseStories",
     "methodType" : "FETCH",
+    "name" : "FetchReleaseStories",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReportStories",
     "methodType" : "FETCH",
+    "name" : "FetchReportStories",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchStoryChild",
     "methodType" : "FETCH",
+    "name" : "FetchStoryChild",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "branch",
+      "name" : "BRANCH 等于(=) 数据上下文(branch)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    }, {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "nodeid",
+      "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+      "getPSVARTypeId" : "DATACONTEXT",
+      "ignoreEmpty" : true
+    } ],
     "codeName" : "FetchStoryRelated",
     "methodType" : "FETCH",
+    "name" : "FetchStoryRelated",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchSubStory",
     "methodType" : "FETCH",
+    "name" : "FetchSubStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskRelatedStory",
     "methodType" : "FETCH",
+    "name" : "FetchTaskRelatedStory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchView",
     "methodType" : "FETCH",
+    "name" : "FetchView",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -1572,6 +1967,7 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
     "builtinMethod" : false
   } ],
   "getAllPSDEMainStates" : [ {
@@ -3023,12 +3419,27 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "SubStory",
+  "dEAPITag" : "IBZ_SUBSTORY",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json",
   "enableUIActions" : 15,
   "logicName" : "子需求",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  }, {
+    "name" : "ISFAVORITES",
+    "codeName" : "Isfavorites"
+  }, {
+    "name" : "ISCHILD",
+    "codeName" : "Ischild"
+  } ],
   "name" : "IBZ_SUBSTORY",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_STORY",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
@@ -3042,7 +3453,9 @@
     "codeName" : "Id"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : false,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

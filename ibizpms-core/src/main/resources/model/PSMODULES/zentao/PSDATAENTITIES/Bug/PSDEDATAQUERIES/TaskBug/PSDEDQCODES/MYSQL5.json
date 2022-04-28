@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted='0' \n",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.task = ${srfdatacontext('srfparentkey')}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.id,\n\tt1.title,\nt1.bugsn\nFROM\n\tzt_bug t1\n\t",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEDATAQUERIES/TaskBug/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__TodoQuickpacketMy",
   "codeListType" : "STATIC",
   "codeName" : "TodoQuickpacketMy",
   "dynaInstMode" : 1,
@@ -14,32 +15,27 @@
     "data" : "{\"n_cycle_eq\":\"0\"}",
     "text" : "所有待办",
     "value" : "All",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Thisyear",
     "data" : "{\"thisyear\":\"thisyear\",\"n_cycle_eq\":\"0\"}",
     "text" : "本年度",
-    "value" : "thisyear",
-    "includeBeginValue" : true
+    "value" : "thisyear"
   }, {
     "codeName" : "Unfinished",
     "data" : "{\"n_status_eq\":\"wait\",\"n_cycle_eq\":\"0\",\"n_date_noteq\":\"2030-01-01\"}",
     "text" : "未完",
-    "value" : "Unfinished",
-    "includeBeginValue" : true
+    "value" : "Unfinished"
   }, {
     "codeName" : "Byme",
     "data" : "{\"n_date_eq\":\"2030-01-01\",\"n_cycle_eq\":\"0\"}",
     "text" : "待定",
-    "value" : "BYME",
-    "includeBeginValue" : true
+    "value" : "BYME"
   }, {
     "codeName" : "Cycle",
     "data" : "{\"n_cycle_eq\":\"1\"}",
     "text" : "周期",
-    "value" : "cycle",
-    "includeBeginValue" : true
+    "value" : "cycle"
   } ],
   "enableCache" : true
 }

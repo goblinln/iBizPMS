@@ -337,6 +337,7 @@
     "modelref" : true,
     "id" : "update"
   },
+  "mobileControl" : true,
   "noTabHeader" : true,
   "modelid" : "70255d1d769b76de63d2f839a63c7152",
   "modeltype" : "PSDEFORM_EDITFORM"

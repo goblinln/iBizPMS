@@ -461,18 +461,24 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "TestCaseLibCaseStepNested",
+  "dEAPITag" : "IBZ_API__TEST_CASE_LIB_CASE_STEP_NESTED",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibCaseStepNested.json",
   "enableUIActions" : 15,
   "logicName" : "测试用例库测试用例步骤（嵌套）",
   "name" : "IBZ_LIBCASESTEPSTMP",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORGID",
+    "codeName" : "OrgId"
+  },
   "getPSDEName" : "IBZ_LIBCASESTEPS",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "EXPECT",
     "codeName" : "Expect"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : false,
   "enableFilterActions" : true,
   "enableTempData" : true,

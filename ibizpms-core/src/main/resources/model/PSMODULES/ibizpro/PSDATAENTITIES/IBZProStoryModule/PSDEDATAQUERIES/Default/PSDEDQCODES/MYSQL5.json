@@ -1,0 +1,67 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`COLLECTOR`",
+    "name" : "COLLECTOR"
+  }, {
+    "expression" : "t1.`CREATEBY`",
+    "name" : "CREATEBY"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`GRADE`",
+    "name" : "GRADE"
+  }, {
+    "expression" : "t1.`IBIZ_ID`",
+    "name" : "IBIZ_ID"
+  }, {
+    "expression" : "t1.`IBIZ_STORYTYPE`",
+    "name" : "IBIZ_STORYTYPE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`MDEPTID`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "t1.`MDEPTNAME`",
+    "name" : "MDEPTNAME"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "t1.`OWNER`",
+    "name" : "OWNER"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t1.`PATH`",
+    "name" : "PATH"
+  }, {
+    "expression" : "t11.`NAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`ROOT`",
+    "name" : "ROOT"
+  }, {
+    "expression" : "t1.`SHORT`",
+    "name" : "SHORT"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEBY`",
+    "name" : "UPDATEBY"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEBY`,\nt1.`DELETED`,\nt1.`GRADE`,\nt1.`IBIZ_ID`,\nt1.`IBIZ_STORYTYPE`,\nt1.`ID`,\nt1.`MDEPTID`,\nt1.`MDEPTNAME`,\nt1.`NAME`,\nt1.`ORGID`,\nt1.`ORGNAME`,\nt1.`OWNER`,\nt1.`PARENT`,\nt1.`PATH`,\nt11.`NAME` AS `PRODUCTNAME`,\nt1.`ROOT`,\nt1.`SHORT`,\nt1.`TYPE`,\nt1.`UPDATEBY`\nFROM `zt_module` t1 \nLEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`ID` \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

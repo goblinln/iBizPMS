@@ -123,6 +123,7 @@ export class AppCalendarBase extends CalendarControlBase{
                 locale={_this.$i18n?.locale}
                 height="parent"
                 firstDay={1}
+                key={this.UUKey}
                 eventLimit={true}
                 editable={!this.isSelectFirstDefault && true}
                 buttonText={this.buttonText}

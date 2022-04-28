@@ -1273,10 +1273,342 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         }
     }
 
-
     public ITaskService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+
+    @Value("${ibiz.syncImportLimit:1000}")
+    private int syncImportLimit;
+
+    /**
+     * 上传数据检查
+     * @param entities
+     * @param isIgnoreError
+     * @return
+     */
+    private JSONObject testImportData(List<Task> entities,boolean isIgnoreError) {
+
+        JSONObject rs=new JSONObject();
+        Set ids=new HashSet<>();
+        List<String> errorMsgs = new ArrayList<>();
+        List<Integer> errorLines = new ArrayList<>();
+        List<Task> duplicateKeys=new ArrayList<>();
+        String keyField= DEFieldCacheMap.getDEKeyField(Task.class);
+        if(ObjectUtils.isEmpty(keyField)){
+            errorLines.add(1);
+            rs.put("rst", 1);
+            rs.put("msg", "数据导入失败，未能获取到实体[Task]的主键属性");
+            rs.put("errorLines", errorLines);
+            return rs;
+        }
+        //主键重复性判断.外键约束判断（上传数据自身的检查/数据库的检查）
+        for(int i=0;i<entities.size();i++) {
+            Task entity = entities.get(i);
+            Object id = entity.getId();
+            if(ObjectUtils.isEmpty(id)) {
+                id = entity.getDefaultKey(true);
+                if(ObjectUtils.isEmpty(id)){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add("第" + lineNum + "行：无法获取当前数据主键。");
+                    continue;
+                }
+                else{
+                    entity.setId((Long) id);
+                }
+            }
+            if(!ids.contains(id)){
+                ids.add(id);
+            }
+            else{
+                Integer lineNum = i + 1;
+                errorLines.add(lineNum);
+                errorMsgs.add("第" + lineNum + "行：导入数据之间存在重复数据。");
+                if(isIgnoreError){
+                    duplicateKeys.add(entity);
+                    continue;
+                }
+                else{
+                    break;
+                }
+            }
+            //实体关系[DER1N_ZT_TASK_IBZ_PROJECTMODULE_MODULE]
+            if(!ObjectUtils.isEmpty(entity.getModule())){
+                cn.ibizlab.pms.core.ibiz.domain.ProjectModule fkEntity=new cn.ibizlab.pms.core.ibiz.domain.ProjectModule();
+                fkEntity.setId(entity.getModule());
+                if(!projectmoduleService.checkKey(fkEntity)){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add(String.format("第" + lineNum + "行：[%s]父数据有误。",entity.getModule()));
+                    if(isIgnoreError){
+                        entity.setModule(null);
+                        continue;
+                    }
+                    else{
+                       break;
+                    }
+                }
+            }
+            if(ObjectUtils.isEmpty(entity.getModule()) && !ObjectUtils.isEmpty(entity.getModulename())){
+                QueryWrapper<cn.ibizlab.pms.core.ibiz.domain.ProjectModule> projectmoduleWrapper = new QueryWrapper<>();
+                projectmoduleWrapper.eq("name",entity.getModulename());
+                cn.ibizlab.pms.core.ibiz.domain.ProjectModule projectmoduleEntity = projectmoduleService.getOne(projectmoduleWrapper,false);
+                if(projectmoduleEntity == null){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add("第" + lineNum + "行：未能找到[Modulename : "+entity.getModulename()+"]对应的外键值。");
+                    continue;
+                }else{
+                    entity.setModule(projectmoduleEntity.getId());
+                }
+            }
+            //实体关系[DER1N_ZT_TASK_ZT_BUG_FROMBUG]
+            if(!ObjectUtils.isEmpty(entity.getFrombug())){
+                cn.ibizlab.pms.core.zentao.domain.Bug fkEntity=new cn.ibizlab.pms.core.zentao.domain.Bug();
+                fkEntity.setId(entity.getFrombug());
+                if(!bugService.checkKey(fkEntity)){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add(String.format("第" + lineNum + "行：[%s]父数据有误。",entity.getFrombug()));
+                    if(isIgnoreError){
+                        entity.setFrombug(null);
+                        continue;
+                    }
+                    else{
+                       break;
+                    }
+                }
+            }
+            //实体关系[DER1N_ZT_TASK_ZT_PRODUCTPLAN_PLAN]
+            if(!ObjectUtils.isEmpty(entity.getPlan())){
+                cn.ibizlab.pms.core.zentao.domain.ProductPlan fkEntity=new cn.ibizlab.pms.core.zentao.domain.ProductPlan();
+                fkEntity.setId(entity.getPlan());
+                if(!productplanService.checkKey(fkEntity)){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add(String.format("第" + lineNum + "行：[%s]父数据有误。",entity.getPlan()));
+                    if(isIgnoreError){
+                        entity.setPlan(null);
+                        continue;
+                    }
+                    else{
+                       break;
+                    }
+                }
+            }
+            if(ObjectUtils.isEmpty(entity.getPlan()) && !ObjectUtils.isEmpty(entity.getPlanname())){
+                QueryWrapper<cn.ibizlab.pms.core.zentao.domain.ProductPlan> productplanWrapper = new QueryWrapper<>();
+                productplanWrapper.eq("title",entity.getPlanname());
+                cn.ibizlab.pms.core.zentao.domain.ProductPlan productplanEntity = productplanService.getOne(productplanWrapper,false);
+                if(productplanEntity == null){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add("第" + lineNum + "行：未能找到[Planname : "+entity.getPlanname()+"]对应的外键值。");
+                    continue;
+                }else{
+                    entity.setPlan(productplanEntity.getId());
+                }
+            }
+            //实体关系[DER1N_ZT_TASK_ZT_PROJECT_PROJECT]
+            if(!ObjectUtils.isEmpty(entity.getProject())){
+                cn.ibizlab.pms.core.zentao.domain.Project fkEntity=new cn.ibizlab.pms.core.zentao.domain.Project();
+                fkEntity.setId(entity.getProject());
+                if(!projectService.checkKey(fkEntity)){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add(String.format("第" + lineNum + "行：[%s]父数据有误。",entity.getProject()));
+                    if(isIgnoreError){
+                        entity.setProject(null);
+                        continue;
+                    }
+                    else{
+                       break;
+                    }
+                }
+            }
+            if(ObjectUtils.isEmpty(entity.getProject()) && !ObjectUtils.isEmpty(entity.getProjectname())){
+                QueryWrapper<cn.ibizlab.pms.core.zentao.domain.Project> ztprojectWrapper = new QueryWrapper<>();
+                ztprojectWrapper.eq("name",entity.getProjectname());
+                cn.ibizlab.pms.core.zentao.domain.Project ztprojectEntity = projectService.getOne(ztprojectWrapper,false);
+                if(ztprojectEntity == null){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add("第" + lineNum + "行：未能找到[ProjectName : "+entity.getProjectname()+"]对应的外键值。");
+                    continue;
+                }else{
+                    entity.setProject(ztprojectEntity.getId());
+                }
+            }
+            //实体关系[DER1N_ZT_TASK_ZT_STORY_STORY]
+            if(!ObjectUtils.isEmpty(entity.getStory())){
+                cn.ibizlab.pms.core.zentao.domain.Story fkEntity=new cn.ibizlab.pms.core.zentao.domain.Story();
+                fkEntity.setId(entity.getStory());
+                if(!storyService.checkKey(fkEntity)){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add(String.format("第" + lineNum + "行：[%s]父数据有误。",entity.getStory()));
+                    if(isIgnoreError){
+                        entity.setStory(null);
+                        continue;
+                    }
+                    else{
+                       break;
+                    }
+                }
+            }
+            if(ObjectUtils.isEmpty(entity.getStory()) && !ObjectUtils.isEmpty(entity.getStoryname())){
+                QueryWrapper<cn.ibizlab.pms.core.zentao.domain.Story> ztstoryWrapper = new QueryWrapper<>();
+                ztstoryWrapper.eq("title",entity.getStoryname());
+                cn.ibizlab.pms.core.zentao.domain.Story ztstoryEntity = storyService.getOne(ztstoryWrapper,false);
+                if(ztstoryEntity == null){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add("第" + lineNum + "行：未能找到[Storyname : "+entity.getStoryname()+"]对应的外键值。");
+                    continue;
+                }else{
+                    entity.setStory(ztstoryEntity.getId());
+                }
+            }
+            //实体关系[DER1N__ZT_TASK__ZT_TASK__PARENT]
+            if(!ObjectUtils.isEmpty(entity.getParent())){
+                cn.ibizlab.pms.core.zentao.domain.Task fkEntity=new cn.ibizlab.pms.core.zentao.domain.Task();
+                fkEntity.setId(entity.getParent());
+                if(!taskService.checkKey(fkEntity)){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add(String.format("第" + lineNum + "行：[%s]父数据有误。",entity.getParent()));
+                    if(isIgnoreError){
+                        entity.setParent(null);
+                        continue;
+                    }
+                    else{
+                       break;
+                    }
+                }
+            }
+            if(ObjectUtils.isEmpty(entity.getParent()) && !ObjectUtils.isEmpty(entity.getParentname())){
+                QueryWrapper<cn.ibizlab.pms.core.zentao.domain.Task> ztparentWrapper = new QueryWrapper<>();
+                ztparentWrapper.eq("name",entity.getParentname());
+                cn.ibizlab.pms.core.zentao.domain.Task ztparentEntity = taskService.getOne(ztparentWrapper,false);
+                if(ztparentEntity == null){
+                    Integer lineNum = i + 1;
+                    errorLines.add(lineNum);
+                    errorMsgs.add("第" + lineNum + "行：未能找到[ParentName : "+entity.getParentname()+"]对应的外键值。");
+                    continue;
+                }else{
+                    entity.setParent(ztparentEntity.getId());
+                }
+            }
+        }
+        if(duplicateKeys.size()>0){
+            for(Task duplicateKey:duplicateKeys){
+                entities.remove(duplicateKey);
+            }
+        }
+        if (errorMsgs.size() > 0) {
+            rs.put("rst", 1);
+            rs.put("msg", String.join("<br>", errorMsgs));
+            rs.put("errorLines", errorLines);
+            return rs;
+        }
+        rs.put("rst", 0);
+        return rs;
+    }
+
+    /**
+     * 实体数据导入
+     * @param entities
+     * @param batchSize
+     * @param isIgnoreError
+     * @return
+     */
+    @Override
+    @Transactional
+    public JSONObject importData(List<Task> entities, int batchSize ,boolean isIgnoreError) {
+        if(entities.size()>syncImportLimit){
+            getProxyService().asyncImportData(entities,batchSize,isIgnoreError);
+            JSONObject rs=new JSONObject();
+            rs.put("rst", 0);
+            rs.put("msg",String.format("当前导入数据已超过同步导入数量上限[%s]，系统正在进行异步导入，请稍后!",syncImportLimit));
+            rs.put("data",entities);
+            return rs;
+        }
+        else{
+            return syncImportData(entities,batchSize,isIgnoreError);
+        }
+    }
+
+    @Override
+    @Transactional
+    public void asyncImportData(List<Task> entities, int batchSize ,boolean isIgnoreError){
+        executeImportData(entities,batchSize,isIgnoreError);
+    }
+
+    @Transactional
+    public JSONObject syncImportData(List<Task> entities, int batchSize ,boolean isIgnoreError){
+        return executeImportData(entities,batchSize,isIgnoreError);
+    }
+
+    @Transactional
+    public JSONObject executeImportData(List<Task> entities, int batchSize ,boolean isIgnoreError) {
+        JSONObject rs=testImportData(entities,isIgnoreError);
+        if(rs.getInteger("rst")==1 && !isIgnoreError) {
+            return rs;
+        }
+        List<Task> tempDEList=new ArrayList<>();
+        Set tempIds=new HashSet<>();
+
+        for(int i = 0;i < entities.size();i++) {
+            Task entity = entities.get(i);
+            tempDEList.add(entity);
+            Object id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)) {
+                tempIds.add(id);
+            }
+            if(tempDEList.size()>=batchSize || (tempDEList.size()<batchSize && i==entities.size()-1)){
+                commit(tempDEList,tempIds);
+                tempDEList.clear();
+                tempIds.clear();
+                }
+            }
+        rs.put("rst", 0);
+        rs.put("data",entities);
+        return rs;
+    }
+
+    /**
+     * 批量提交
+     * @param entities 数据
+     * @param ids 要提交数据的id
+     */
+    @Transactional
+    public void commit(List<Task> entities, Set ids){
+        List<Task> _create=new ArrayList<>();
+        List<Task> _update=new ArrayList<>();
+        Set oldIds=new HashSet<>();
+        if(ids.size()>0){
+            List<Task> oldEntities=this.listByIds(ids);
+            for(Task entity:oldEntities){
+                oldIds.add(entity.getId());
+            }
+        }
+        for(Task entity:entities){
+            Object id=entity.getId();
+            if(oldIds.contains(id)) {
+                _update.add(entity);
+            }
+            else {
+                _create.add(entity);
+            }
+        }
+        if(_update.size()>0) {
+            getProxyService().updateBatch(_update);
+        }
+        if(_create.size()>0) {
+            getProxyService().createBatch(_create);
+        }
+    }
+
     @Override
     @Transactional
     public Task dynamicCall(Long key, String action, Task et) {

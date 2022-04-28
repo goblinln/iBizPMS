@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT\n\tt1.ID,t1.`case`,t1.VERSION,CONCAT('#',t1.VERSION) as expect\nFROM\n\t(\nSELECT\n\tt1.`ID`,\n\tt1.`CASE`,\n\tt1.`VERSION` \nFROM\n\t`zt_casestep` t1 where t1.version <> 1 \nGROUP BY\n\tt1.`CASE`,\n\tt1.`VERSION` UNION ALL\nSELECT\n\t1 AS ID,\n\tt1.`id` AS `CASE`,\n\t1 AS `VERSION` \nFROM\n\tzt_case t1 \n\n\t) t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEDATAQUERIES/Versions/PSDEDQCODES/MYSQL5.json"
+}

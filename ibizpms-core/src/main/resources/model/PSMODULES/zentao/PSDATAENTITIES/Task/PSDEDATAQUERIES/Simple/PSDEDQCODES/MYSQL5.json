@@ -1,0 +1,189 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ASSIGN`",
+    "name" : "ASSIGN"
+  }, {
+    "expression" : "t1.`ASSIGNEDDATE`",
+    "name" : "ASSIGNEDDATE"
+  }, {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "t1.`CANCELEDBY`",
+    "name" : "CANCELEDBY"
+  }, {
+    "expression" : "t1.`CANCELEDDATE`",
+    "name" : "CANCELEDDATE"
+  }, {
+    "expression" : "t1.`CLOSEDBY`",
+    "name" : "CLOSEDBY"
+  }, {
+    "expression" : "t1.`CLOSEDDATE`",
+    "name" : "CLOSEDDATE"
+  }, {
+    "expression" : "t1.`CLOSEDREASON`",
+    "name" : "CLOSEDREASON"
+  }, {
+    "expression" : "t1.`COLOR`",
+    "name" : "COLOR"
+  }, {
+    "expression" : "t1.`CONFIG_BEFOREDAYS`",
+    "name" : "CONFIG_BEFOREDAYS"
+  }, {
+    "expression" : "t1.`CONFIG_BEGIN`",
+    "name" : "CONFIG_BEGIN"
+  }, {
+    "expression" : "t1.`CONFIG_DAY`",
+    "name" : "CONFIG_DAY"
+  }, {
+    "expression" : "t1.`CONFIG_END`",
+    "name" : "CONFIG_END"
+  }, {
+    "expression" : "t1.`CONFIG_MONTH`",
+    "name" : "CONFIG_MONTH"
+  }, {
+    "expression" : "t1.`CONFIG_TYPE`",
+    "name" : "CONFIG_TYPE"
+  }, {
+    "expression" : "t1.`CONFIG_WEEK`",
+    "name" : "CONFIG_WEEK"
+  }, {
+    "expression" : "t1.`CONSUMED`",
+    "name" : "CONSUMED"
+  }, {
+    "expression" : "t1.`CYCLE`",
+    "name" : "CYCLE"
+  }, {
+    "expression" : "t1.`DEADLINE`",
+    "name" : "DEADLINE"
+  }, {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`ESTIMATE`",
+    "name" : "ESTIMATE"
+  }, {
+    "expression" : "t1.`ESTSTARTED`",
+    "name" : "ESTSTARTED"
+  }, {
+    "expression" : "t1.`FINISHEDBY`",
+    "name" : "FINISHEDBY"
+  }, {
+    "expression" : "t1.`FINISHEDDATE`",
+    "name" : "FINISHEDDATE"
+  }, {
+    "expression" : "t1.`FINISHEDLIST`",
+    "name" : "FINISHEDLIST"
+  }, {
+    "expression" : "t1.`FROMBUG`",
+    "name" : "FROMBUG"
+  }, {
+    "expression" : "t1.`IDVALUE`",
+    "name" : "IDVALUE"
+  }, {
+    "expression" : "t1.`INPUTCOST`",
+    "name" : "INPUTCOST"
+  }, {
+    "expression" : "t1.`LEFT`",
+    "name" : "LEFT"
+  }, {
+    "expression" : "t1.`MAILTO`",
+    "name" : "MAILTO"
+  }, {
+    "expression" : "t1.`MODULE`",
+    "name" : "MODULE"
+  }, {
+    "expression" : "t1.`PARENT`",
+    "name" : "PARENT"
+  }, {
+    "expression" : "t1.`PLAN`",
+    "name" : "PLAN"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t1.`PROJECT`",
+    "name" : "PROJECT"
+  }, {
+    "expression" : "t1.`REALSTARTED`",
+    "name" : "REALSTARTED"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`STORY`",
+    "name" : "STORY"
+  }, {
+    "expression" : "t1.`STORYVERSION`",
+    "name" : "STORYVERSION"
+  }, {
+    "expression" : "t1.`SUBSTATUS`",
+    "name" : "SUBSTATUS"
+  }, {
+    "expression" : "t1.`TASKSN`",
+    "name" : "TASKSN"
+  }, {
+    "expression" : "t1.`TASKSPECIES`",
+    "name" : "TASKSPECIES"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`DEPT`",
+    "name" : "DEPT"
+  }, {
+    "expression" : "t1.`DEPTNAME`",
+    "name" : "DEPTNAME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "0",
+    "name" : "ISFAVORITES"
+  }, {
+    "expression" : "t1.`LASTEDITEDBY`",
+    "name" : "LASTEDITEDBY"
+  }, {
+    "expression" : "t1.`LASTEDITEDDATE`",
+    "name" : "LASTEDITEDDATE"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`OPENEDBY`",
+    "name" : "OPENEDBY"
+  }, {
+    "expression" : "t1.`OPENEDDATE`",
+    "name" : "OPENEDDATE"
+  }, {
+    "expression" : "t1.`ORG`",
+    "name" : "ORG"
+  }, {
+    "expression" : "t1.`ORGNAME`",
+    "name" : "ORGNAME"
+  }, {
+    "expression" : "(case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end )",
+    "name" : "STATUS1"
+  }, {
+    "expression" : "( CASE WHEN ( SELECT CASE\t WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_team` t  WHERE t.`type` = 'task'  AND t.`root` = t1.`id`  ) = 1 THEN '10'  WHEN t1.parent = - 1 THEN'20'   WHEN t1.parent = 0 THEN '30' ELSE '40' END)",
+    "name" : "TASKTYPE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEMAN`,\nt1.`DELETED`,\nt1.`DEPT`,\nt1.`DEPTNAME`,\nt1.`ID`,\n0 AS `ISFAVORITES`,\nt1.`LASTEDITEDBY`,\nt1.`LASTEDITEDDATE`,\nt1.`NAME`,\nt1.`OPENEDBY`,\nt1.`OPENEDDATE`,\nt1.`ORG`,\nt1.`ORGNAME`,\n(case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end ) AS `STATUS1`,\n( CASE WHEN ( SELECT CASE\t WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_team` t  WHERE t.`type` = 'task'  AND t.`root` = t1.`id`  ) = 1 THEN '10'  WHEN t1.parent = - 1 THEN'20'   WHEN t1.parent = 0 THEN '30' ELSE '40' END) AS `TASKTYPE`,\nt1.`UPDATEMAN`\nFROM `zt_task` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEDATAQUERIES/Simple/PSDEDQCODES/MYSQL5.json"
+}

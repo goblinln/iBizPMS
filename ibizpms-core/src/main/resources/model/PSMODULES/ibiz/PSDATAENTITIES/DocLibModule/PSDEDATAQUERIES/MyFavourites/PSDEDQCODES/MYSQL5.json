@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.deleted = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.`BRANCH`,\n\tt1.`DELETED`,\n\tt1.`GRADE`,\n\tt1.`ID`,\n\t'module' AS `DOCQTYPE`,\n\t1 AS `ISFAVOURITES`,\n\t( CASE WHEN EXISTS ( SELECT 1 FROM ZT_MODULE WHERE PARENT = t1.`ID` ) THEN FALSE ELSE TRUE END ) AS `ISLEAF`,\n\tt1.`NAME`,\n\tt1.`ORDER`,\n\tt1.`OWNER`,\n\tt1.`PARENT`,\n\tt1.`PATH`,\n\tt1.`ROOT`,\n\tt1.`SHORT`,\n\tt1.`TYPE` \nFROM\n\t`zt_module` t1",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEDATAQUERIES/MyFavourites/PSDEDQCODES/MYSQL5.json"
+}

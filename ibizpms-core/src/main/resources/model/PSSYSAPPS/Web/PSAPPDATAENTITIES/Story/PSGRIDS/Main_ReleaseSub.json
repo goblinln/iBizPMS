@@ -248,6 +248,10 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
           },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "ZTProduct__RELEASELINK"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "RELEASE",
             "name" : "RELEASE",

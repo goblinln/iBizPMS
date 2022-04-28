@@ -34,43 +34,51 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ProjectQualitySum",
     "methodType" : "DEACTION",
+    "name" : "ProjectQualitySum",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataExports" : [ {
@@ -165,51 +173,64 @@
         "name" : "TASKCNT",
         "codeName" : "TaskCnt"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNoOpenProduct",
     "methodType" : "FETCH",
+    "name" : "FetchNoOpenProduct",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectBugType",
     "methodType" : "FETCH",
+    "name" : "FetchProjectBugType",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectInputStats",
     "methodType" : "FETCH",
+    "name" : "FetchProjectInputStats",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectProgress",
     "methodType" : "FETCH",
+    "name" : "FetchProjectProgress",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectQuality",
     "methodType" : "FETCH",
+    "name" : "FetchProjectQuality",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectStoryStageStats",
     "methodType" : "FETCH",
+    "name" : "FetchProjectStoryStageStats",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectStoryStatusStats",
     "methodType" : "FETCH",
+    "name" : "FetchProjectStoryStatusStats",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskCountByTaskStatus",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTaskCountByTaskStatus",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskCountByType",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTaskCountByType",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskTime",
     "methodType" : "FETCH",
+    "name" : "FetchTaskTime",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -625,87 +646,106 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "ProjectQualitySum",
     "methodType" : "DEACTION",
+    "name" : "ProjectQualitySum",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNoOpenProduct",
     "methodType" : "FETCH",
+    "name" : "FetchNoOpenProduct",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectBugType",
     "methodType" : "FETCH",
+    "name" : "FetchProjectBugType",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectInputStats",
     "methodType" : "FETCH",
+    "name" : "FetchProjectInputStats",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectProgress",
     "methodType" : "FETCH",
+    "name" : "FetchProjectProgress",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectQuality",
     "methodType" : "FETCH",
+    "name" : "FetchProjectQuality",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectStoryStageStats",
     "methodType" : "FETCH",
+    "name" : "FetchProjectStoryStageStats",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectStoryStatusStats",
     "methodType" : "FETCH",
+    "name" : "FetchProjectStoryStatusStats",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskCountByTaskStatus",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTaskCountByTaskStatus",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskCountByType",
     "methodType" : "FETCH",
+    "name" : "FetchProjectTaskCountByType",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskTime",
     "methodType" : "FETCH",
+    "name" : "FetchTaskTime",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -745,6 +785,7 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -761,6 +802,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ProjectStats",
+  "dEAPITag" : "IBZ_PROJECTSTATS",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectStats.json",
@@ -773,6 +815,7 @@
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

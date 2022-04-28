@@ -186,7 +186,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
+        const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/cancelproducttop`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -202,7 +202,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/products/${_context.product}/close`, _data);
+        const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/close`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -242,7 +242,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/products/${_context.product}`);
+        const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -277,7 +277,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async ProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/products/${_context.product}/producttop`, _data);
+        const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/producttop`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -293,7 +293,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/products/${_context.product}`);
+        const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -311,7 +311,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/products/${_context.product}`, _data);
+        const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -1,25 +1,32 @@
 {
+  "codeListTag" : "zentao__PlanAcl",
   "codeListType" : "STATIC",
   "codeName" : "PlanAcl",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/PlanAcl.json",
   "emptyText" : "未定义",
+  "name" : "计划模板权限",
   "getPSCodeItems" : [ {
     "codeName" : "Open",
     "text" : "公开",
-    "value" : "open",
-    "includeBeginValue" : true
+    "value" : "open"
   }, {
     "codeName" : "Private",
     "text" : "私有",
-    "value" : "private",
-    "includeBeginValue" : true
+    "value" : "private"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

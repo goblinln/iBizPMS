@@ -33,10 +33,6 @@ public class SysEmployeeFallback implements FallbackFactory<SysEmployeeFeignClie
         String finalErrorMessage = errorMessage;
         return new SysEmployeeFeignClient(){
 
-            public Page<SysEmployee> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public SysEmployee create(SysEmployee sysemployee) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class SysEmployeeFallback implements FallbackFactory<SysEmployeeFeignClie
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysEmployee update(String userid, SysEmployee sysemployee) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<SysEmployee> sysemployees) {
+            public SysEmployee get(String userid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,32 +52,18 @@ public class SysEmployeeFallback implements FallbackFactory<SysEmployeeFeignClie
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public SysEmployee get(String userid) {
+            public SysEmployee update(String userid, SysEmployee sysemployee) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
-
-            public SysEmployee getDraft(SysEmployee entity){
+            public Boolean updateBatch(List<SysEmployee> sysemployees) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
             public Boolean checkKey(SysEmployee sysemployee) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-            public Object saveEntity(SysEmployee sysemployee) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
-            public Boolean save(SysEmployee sysemployee) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean saveBatch(List<SysEmployee> sysemployees) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
             public Page<SysEmployee> searchBugUser(SysEmployeeSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
@@ -116,6 +95,11 @@ public class SysEmployeeFallback implements FallbackFactory<SysEmployeeFeignClie
             }
 
 
+            public Page<SysEmployee> searchProjectteamPk(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
             public Page<SysEmployee> searchProjectTeamTaskUserTemp(SysEmployeeSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -127,11 +111,6 @@ public class SysEmployeeFallback implements FallbackFactory<SysEmployeeFeignClie
 
 
             public Page<SysEmployee> searchProjectTeamUserTask(SysEmployeeSearchContext context) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
-
-            public Page<SysEmployee> searchProjectteamPk(SysEmployeeSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -150,6 +129,27 @@ public class SysEmployeeFallback implements FallbackFactory<SysEmployeeFeignClie
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
+
+            public SysEmployee getDraft(SysEmployee entity){
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+
+            public Object saveEntity(SysEmployee sysemployee) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Boolean save(SysEmployee sysemployee) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean saveBatch(List<SysEmployee> sysemployees) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Page<SysEmployee> select() {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
 
 
         };

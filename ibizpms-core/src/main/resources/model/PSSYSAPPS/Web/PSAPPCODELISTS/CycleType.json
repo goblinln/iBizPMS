@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__CycleType",
   "codeListType" : "STATIC",
   "codeName" : "CycleType",
   "dynaInstMode" : 1,
@@ -12,18 +13,15 @@
   "getPSCodeItems" : [ {
     "codeName" : "Day",
     "text" : "天",
-    "value" : "day",
-    "includeBeginValue" : true
+    "value" : "day"
   }, {
     "codeName" : "Week",
     "text" : "周",
-    "value" : "week",
-    "includeBeginValue" : true
+    "value" : "week"
   }, {
     "codeName" : "Month",
     "text" : "月度",
-    "value" : "month",
-    "includeBeginValue" : true
+    "value" : "month"
   } ],
   "enableCache" : true
 }

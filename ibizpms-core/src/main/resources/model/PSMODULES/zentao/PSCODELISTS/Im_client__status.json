@@ -1,25 +1,28 @@
 {
+  "codeListTag" : "zentao__Im_client__status",
   "codeListType" : "STATIC",
   "codeName" : "Im_client__status",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_client__status.json",
   "emptyText" : "未定义",
+  "name" : "ZT_IM_CLIENT__STATUS",
   "getPSCodeItems" : [ {
     "codeName" : "Released",
     "text" : "released",
-    "value" : "released",
-    "includeBeginValue" : true
+    "value" : "released"
   }, {
     "codeName" : "Wait",
     "text" : "wait",
-    "value" : "wait",
-    "includeBeginValue" : true
+    "value" : "wait"
   } ],
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

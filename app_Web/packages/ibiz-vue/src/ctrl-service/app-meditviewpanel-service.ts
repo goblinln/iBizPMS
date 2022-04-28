@@ -80,6 +80,34 @@ export class AppMEditViewPanelService extends ControlServiceBase {
     }
 
     /**
+     * 删除数据
+     *
+     * @param {string} action
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AppMEditViewPanelService
+     */
+    public delete(action: string, context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+        const { data: Data, context: Context } = this.handleRequestData(action, context, data);
+        return new Promise((resolve: any, reject: any) => {
+            let result: Promise<any>;
+            const _appEntityService: any = this.appEntityService;
+            if (_appEntityService[action] && _appEntityService[action] instanceof Function) {
+                result = _appEntityService[action](Context, Data);
+            } else {
+                result = this.appEntityService.Remove(Context, Data);
+            }
+            result.then((response) => {
+                resolve(response);
+            }).catch(response => {
+                reject(response);
+            });
+        });
+    }
+
+    /**
      * 加载草稿
      *
      * @param {string} action
@@ -102,9 +130,9 @@ export class AppMEditViewPanelService extends ControlServiceBase {
             result.then((response) => {
                 //处理返回数据，补充判断标识
                 if(response.data){
-                    Object.assign(response.data,{srfuf:0});
+                    Object.assign(response.data,{srfuf:'0'});
                 }
-                this.handleResponse(action, response);       
+                this.handleResponse(action, response, true);       
                 resolve(response);
             }).catch(response => {
                 reject(response);

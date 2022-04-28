@@ -7,13 +7,19 @@
   "name" : "GetDraftTempMajor",
   "orderValue" : 45,
   "getPSDEActionInput" : {
-    "codeName" : "GetDraftTempMajorInput",
-    "name" : "输入对象",
+    "name" : "GetDraftTempMajorInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzLibCaseStepsDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetDraftTempMajorResult",
-    "name" : "返回对象",
+    "name" : "GetDraftTempMajorResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzLibCaseStepsDTO"
+    },
     "type" : "DTO"
   },
   "tempDataMode" : 1,

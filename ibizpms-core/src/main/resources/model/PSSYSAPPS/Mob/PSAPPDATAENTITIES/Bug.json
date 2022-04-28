@@ -393,7 +393,9 @@
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
@@ -603,12 +605,26 @@
     "name" : "ReleaseLeftBugs",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchReleaseLinkableLeftBug",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLinkableLeftBug",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchReleaseLinkableResolvedBug",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -1129,8 +1145,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
+        }
       } ],
       "parallelOutput" : true
     }, {
@@ -1156,12 +1171,14 @@
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -1592,12 +1609,26 @@
     "name" : "ReleaseLeftBugs",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchReleaseLinkableLeftBug",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLinkableLeftBug",
     "builtinMethod" : false
   }, {
+    "getADPSDEDQConditions" : [ {
+      "condOp" : "EQ",
+      "condType" : "SINGLE",
+      "condValue" : "product",
+      "name" : "PRODUCT 等于(=) 数据上下文(product)",
+      "getPSVARTypeId" : "DATACONTEXT"
+    } ],
     "codeName" : "FetchReleaseLinkableResolvedBug",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
@@ -1673,6 +1704,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PLANLINK"
+    },
     "getPSNavigateParams" : [ {
       "key" : "productplan",
       "name" : "productplan",
@@ -1711,6 +1746,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PLANLINK"
     },
     "getPSNavigateContexts" : [ {
       "key" : "BUG",
@@ -1759,6 +1798,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "BUILDLINK"
     },
     "getPSNavigateContexts" : [ {
       "key" : "BUG",
@@ -1830,6 +1873,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    },
     "getPSSysImage" : {
       "glyph" : "xf0a4@FontAwesome",
       "cssClass" : "fa fa-hand-o-right"
@@ -1857,6 +1904,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
     },
     "getPSSysImage" : {
       "cssClass" : "close"
@@ -1909,6 +1960,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RELEASELINK"
+    },
     "getPSNavigateContexts" : [ {
       "key" : "RELEASE",
       "name" : "RELEASE",
@@ -1952,6 +2007,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RELEASELINK"
     },
     "getPSNavigateContexts" : [ {
       "key" : "BUG",
@@ -2013,6 +2072,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
     "getPSSysImage" : {
       "cssClass" : "add"
     },
@@ -2038,6 +2101,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RELEASELINK"
     },
     "getPSNavigateContexts" : [ {
       "key" : "RELEASE",
@@ -2104,6 +2171,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESOLVE"
+    },
     "getPSSysImage" : {
       "glyph" : "xf046@FontAwesome",
       "cssClass" : "fa fa-check-square-o"
@@ -2132,6 +2203,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
+    },
     "getPSSysImage" : {
       "cssClass" : "color-wand"
     },
@@ -2157,6 +2232,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "BUILDLINK"
     },
     "getPSNavigateContexts" : [ {
       "key" : "BUILD",
@@ -2200,6 +2279,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RELEASELINK"
     },
     "getPSNavigateContexts" : [ {
       "key" : "PRODUCT",
@@ -2281,6 +2364,10 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CONFIRM"
     },
     "getPSSysImage" : {
       "glyph" : "xf06e@FontAwesome",
@@ -3067,19 +3154,34 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "Bug",
+  "dEAPITag" : "IBZ_API__BUG",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json",
   "enableUIActions" : 15,
   "logicName" : "Bug",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  }, {
+    "name" : "ISFAVORITES",
+    "codeName" : "Isfavorites"
+  }, {
+    "name" : "CONFIRMED",
+    "codeName" : "Confirmed"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "Bugs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Project",
+    "majorDEName" : "ZT_PROJECT",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
+    "minorDECodeName" : "Bug",
+    "minorDEName" : "ZT_BUG",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
@@ -3094,10 +3196,14 @@
     "actionRSMode" : 1,
     "codeName" : "Bugs",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Test",
+    "majorDEName" : "IBZ_API__TEST",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
     },
+    "minorDECodeName" : "Bug",
+    "minorDEName" : "ZT_BUG",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
@@ -3110,6 +3216,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_BUG",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_BUG",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
@@ -3123,7 +3233,9 @@
     "codeName" : "Title"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

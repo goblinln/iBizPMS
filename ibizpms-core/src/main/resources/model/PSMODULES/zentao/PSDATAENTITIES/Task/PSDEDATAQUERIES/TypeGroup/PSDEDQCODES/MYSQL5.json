@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : " t1.DELETED = '0'  and t1.project = #{srf.datacontext.project}",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\t(\nSELECT\n\tMIN( ESTSTARTED ) \nFROM\n\t`zt_task` \nWHERE\n\tDELETED = '0' \n\tAND TYPE = t1.`TYPE` \n\tAND PROJECT = t1.`PROJECT` \n\tAND ESTSTARTED > '1970-01-01' \n\tAND estStarted > '1970-01-01' \n\t) AS `ESTSTARTED`,\n\t(\nSELECT\n\tMAX( DEADLINE ) \nFROM\n\t`zt_task` \nWHERE\n\tDELETED = '0' \n\tAND TYPE = t1.`TYPE` \n\tAND PROJECT = t1.`PROJECT` \n\tAND ESTSTARTED > '1970-01-01' \n\tAND estStarted > '1970-01-01' \n\t) AS `DEADLINE`,\n\t(\nSELECT\n\tDATEDIFF( MAX( DEADLINE ), MIN( ESTSTARTED ) ) + 1 \nFROM\n\t`zt_task` \nWHERE\n\tDELETED = '0' \n\tAND TYPE = t1.`TYPE` \n\tAND PROJECT = t1.`PROJECT` \n\tAND ESTSTARTED > '1970-01-01' \n\tAND estStarted > '1970-01-01' \n\t) AS `DURATION`,\n\tt1.`TYPE`,\n\tt1.`PLAN`,\n\tt1.project\n\tFROM\n\t\t`zt_task` t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEDATAQUERIES/TypeGroup/PSDEDQCODES/MYSQL5.json"
+}

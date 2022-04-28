@@ -6,13 +6,15 @@
   "logicName" : "Save",
   "name" : "Save",
   "getPSDEActionInput" : {
-    "codeName" : "SaveInput",
-    "name" : "输入对象",
+    "name" : "SaveInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzReportDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SaveResult",
-    "name" : "返回对象",
+    "name" : "SaveResult",
     "type" : "VOID"
   },
   "builtinAction" : true

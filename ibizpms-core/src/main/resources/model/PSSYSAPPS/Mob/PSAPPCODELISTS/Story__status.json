@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__Story__status",
   "codeListType" : "STATIC",
   "codeName" : "Story__status",
   "dynaInstMode" : 1,
@@ -13,25 +14,21 @@
     "codeName" : "Draft",
     "color" : "rgba(185, 111, 241, 1)",
     "text" : "草稿",
-    "value" : "draft",
-    "includeBeginValue" : true
+    "value" : "draft"
   }, {
     "codeName" : "Active",
     "text" : "激活",
-    "value" : "active",
-    "includeBeginValue" : true
+    "value" : "active"
   }, {
     "codeName" : "Closed",
     "color" : "rgba(203, 198, 198, 0.84)",
     "text" : "已关闭",
-    "value" : "closed",
-    "includeBeginValue" : true
+    "value" : "closed"
   }, {
     "codeName" : "Changed",
     "color" : "rgba(217, 68, 68, 1)",
     "text" : "已变更",
-    "value" : "changed",
-    "includeBeginValue" : true
+    "value" : "changed"
   } ],
   "enableCache" : true
 }

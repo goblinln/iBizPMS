@@ -17,25 +17,35 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Begin"
-      },
-      "defaultLink" : false
+      }
     } ],
     "parallelOutput" : true
   }, {
-    "codeName" : "Rawsqlcall3",
+    "codeName" : "Rawsqlcall2",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
     "logicNodeType" : "RAWSQLCALL",
-    "name" : "我的收藏任务数",
+    "name" : "我的收藏Bug数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "name" : "连接7826",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      }
+    } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
       "paramAction" : "SQLPARAM",
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
-    "sql" : "select count(t1.id) AS MYFAVORITETASKS from zt_task t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'task' and t.account = ?)",
+    "sql" : "select count(t1.id) AS MYFAVORITEBUGS from zt_bug t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'bug' and t.account = ?)",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
@@ -55,8 +65,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
@@ -68,43 +77,33 @@
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
-    "codeName" : "Rawsqlcall2",
+    "codeName" : "Rawsqlcall3",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
     "logicNodeType" : "RAWSQLCALL",
-    "name" : "我的收藏Bug数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "name" : "连接7826",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
-    } ],
+    "name" : "我的收藏任务数",
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
       "paramAction" : "SQLPARAM",
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
-    "sql" : "select count(t1.id) AS MYFAVORITEBUGS from zt_bug t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'bug' and t.account = ?)",
+    "sql" : "select count(t1.id) AS MYFAVORITETASKS from zt_task t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'task' and t.account = ?)",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

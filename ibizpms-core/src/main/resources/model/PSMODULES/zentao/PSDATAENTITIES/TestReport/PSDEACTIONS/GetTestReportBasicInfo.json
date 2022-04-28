@@ -6,13 +6,19 @@
   "logicName" : "根据测试报告获取基本信息",
   "name" : "GetTestReportBasicInfo",
   "getPSDEActionInput" : {
-    "codeName" : "GetTestReportBasicInfoInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetTestReportBasicInfoInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetTestReportBasicInfoResult",
-    "name" : "返回对象",
+    "name" : "GetTestReportBasicInfoResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TestReportDTO"
+    },
     "type" : "DTO"
   },
   "getPSDELogic" : {

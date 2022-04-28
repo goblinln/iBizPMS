@@ -22,7 +22,7 @@ export default class DatePickerEditor extends EditorBase {
      * @type {*}
      * @memberof DatePickerEditor
      */
-    public valueFormat: any;
+    public dateValueFormat: any;
 
     /**
      * 编辑器初始化
@@ -33,7 +33,7 @@ export default class DatePickerEditor extends EditorBase {
         await super.initEditor();
         this.initValueFormat();
         this.customProps.placeholder = this.editorInstance.placeHolder || '请选择时间...';
-        this.customProps.transfer = true;
+        this.customProps.transfer = Object.is('SEARCHFORM', this.containerCtrl?.controlType) ? false : true;
         this.customStyle.minWidth = '150px';
         switch (this.editorInstance?.editorType) {
             // 时间选择控件
@@ -86,7 +86,7 @@ export default class DatePickerEditor extends EditorBase {
     public initValueFormat() {
         const entity: IPSAppDataEntity = this.containerCtrl?.getPSAppDataEntity?.() as IPSAppDataEntity;
         if (entity) {
-            this.valueFormat = entity.findPSAppDEField(this.parentItem?.getPSAppDEField?.()?.codeName)?.valueFormat;
+            this.dateValueFormat = entity.findPSAppDEField(this.parentItem?.getPSAppDEField?.()?.codeName)?.valueFormat;
         }
     }
 
@@ -98,8 +98,8 @@ export default class DatePickerEditor extends EditorBase {
      */
     public handleChange(value1: any, value2?: any) {
         let tempFormat: string = this.customProps.format.replace("yyyy", "YYYY").replace("dd", "DD");
-        if (this.valueFormat && this.valueFormat != tempFormat) {
-            value1 = this.formatDate(value1, tempFormat, this.valueFormat);
+        if (this.dateValueFormat && this.dateValueFormat != tempFormat) {
+            value1 = this.formatDate(value1, tempFormat, this.dateValueFormat);
         }
         this.editorChange({ name: this.editorInstance.name, value: value1 });
     }

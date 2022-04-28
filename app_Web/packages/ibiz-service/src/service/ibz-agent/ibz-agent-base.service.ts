@@ -96,7 +96,7 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzagents/${_context.ibzagent}`);
+        const res = await this.http.get(`/ibzagents/${encodeURIComponent(_context.ibzagent)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/ibzagents/${_context.ibzagent}`);
+        const res = await this.http.delete(`/ibzagents/${encodeURIComponent(_context.ibzagent)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/ibzagents/${_context.ibzagent}`, _data);
+        const res = await this.http.put(`/ibzagents/${encodeURIComponent(_context.ibzagent)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -182,7 +182,7 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/ibzagents/${_context.ibzagent}/select`);
+        const res = await this.http.get(`/ibzagents/${encodeURIComponent(_context.ibzagent)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

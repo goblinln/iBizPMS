@@ -290,7 +290,12 @@ export class AppmenuBase extends AppMenuControlBase {
                         {menus.getPSSysImage?.imagePath ? <img class='app-menu-icon' src={menus.getPSSysImage.imagePath} /> : null}
                         {menus.getPSSysImage?.cssClass ? <i class={[menus.getPSSysImage.cssClass, 'app-menu-icon']}></i> : null}
                         {(!menus.getPSSysImage && isFirst) ? <i class='fa fa-cogs app-menu-icon'></i> : null}
-                        <span ref="circleText" class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={this.$tl(menus.tooltipTag,menus.tooltip)}>
+                        <span on-click={(e: any) => {
+                            if (menus.getPSAppFunc) {
+                                this.click(menus);
+                                e.stopPropagation();
+                            }
+                        }} ref="circleText" class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={this.$tl(menus.tooltipTag,menus.tooltip)}>
                             {this.collapseChange && isFirst ? menus.caption.slice(0, 1) : this.$tl(menus.captionTag,menus.caption)}
                         </span>
                     </template>
@@ -324,12 +329,14 @@ export class AppmenuBase extends AppMenuControlBase {
     public renderAppMenu() {
         return (
             <el-menu
+                ref={this.controlInstance?.codeName}
                 class="app-menu"
-                default-openeds={Object.is(this.mode, 'LEFT') ? this.defaultOpeneds : []}
+                default-openeds={Object.is(this.mode, 'LEFT') ? Util.deepCopy(this.defaultOpeneds) : []}
                 mode={(Object.is(this.mode, 'LEFT') || !this.mode) ? 'vertical' : 'horizontal'}
                 menu-trigger={this.trigger}
                 collapse={this.collapseChange}
                 on-select={(menuName: string) => this.select(menuName)}
+                on-close={(key: any, keyPath: any) => this.handleCloseMenu(key, keyPath)}
                 default-active={this.defaultActive}>
                 <div class="app-menu-item">
                     {this.menus.map((menu: any) => {
@@ -623,6 +630,9 @@ export class AppmenuBase extends AppMenuControlBase {
      * @memberof AppmenuBase
      */
     public render() {
+        if(!this.controlIsLoaded) {
+            return null;
+        }
         const { controlClassNames } = this.renderOptions;
         if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, "CENTER")) {
             return (<div>

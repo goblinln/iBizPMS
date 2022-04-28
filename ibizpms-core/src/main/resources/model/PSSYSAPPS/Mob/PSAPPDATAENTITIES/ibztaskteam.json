@@ -516,6 +516,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ibztaskteam",
+  "dEAPITag" : "IBZ_API__TASK_TEAM_NESTED",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ibztaskteam.json",
@@ -525,10 +526,14 @@
     "actionRSMode" : 1,
     "codeName" : "TaskTeams",
     "dataRSMode" : 0,
+    "majorDECodeName" : "Task",
+    "majorDEName" : "ZT_TASK",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
+    "minorDECodeName" : "ibztaskteam",
+    "minorDEName" : "IBZ_TASKTEAM",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ibztaskteam.json"
@@ -542,12 +547,17 @@
     "tempDataOrder" : 10
   } ],
   "name" : "IBZ_TASKTEAM",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "IBZ_TASKTEAM",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "ACCOUNT",
     "codeName" : "Account"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : false,
   "enableFilterActions" : true,
   "enableTempData" : true,

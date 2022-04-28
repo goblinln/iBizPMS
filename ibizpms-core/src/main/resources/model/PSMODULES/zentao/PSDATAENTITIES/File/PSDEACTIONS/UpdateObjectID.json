@@ -6,14 +6,16 @@
   "logicName" : "更新文件",
   "name" : "updateObjectID",
   "getPSDEActionInput" : {
-    "codeName" : "UpdateObjectIDInput",
-    "name" : "输入对象",
+    "name" : "UpdateObjectIDInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "FileDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UpdateObjectIDResult",
-    "name" : "返回对象",
+    "name" : "UpdateObjectIDResult",
     "type" : "VOID"
   }
 }

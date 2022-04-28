@@ -1,7 +1,8 @@
 import { IPSAppView, IPSAppViewRef } from "@ibiz/dynamic-model-api";
 import { DynamicInstanceConfig } from "@ibiz/dynamic-model-api/dist/types/core";
-import { GetModelService, Util } from "ibiz-core";
+import { AppServiceBase, GetModelService, Util } from "ibiz-core";
 import { NavDataService } from "../common-service/app-navdata-service";
+import { PluginService } from "../common-service/plugin-service";
 
 /**
  * 全局界面行为服务
@@ -22,6 +23,33 @@ export class AppGlobalService {
     private static appGlobalService: AppGlobalService;
 
     /**
+     * 全局界面行为Map
+     *
+     * @private
+     * @type {Map<string,any>}
+     * @memberof AppGlobalService
+     */
+    private globalPluginAction: Map<string, any> = new Map();
+
+    /**
+     * 插件服务
+     *
+     * @private
+     * @type PluginService
+     * @memberof AppGlobalService
+     */
+    private pluginService: PluginService = PluginService.getInstance();
+
+    /**
+     * 初始化AppGlobalService
+     *
+     * @memberof AppGlobalService
+     */
+    constructor() {
+        this.initGlobalPluginAction();
+    }
+
+    /**
      * 获取 AppGlobalService 单例对象
      *
      * @static
@@ -33,6 +61,23 @@ export class AppGlobalService {
             AppGlobalService.appGlobalService = new AppGlobalService();
         }
         return this.appGlobalService;
+    }
+
+    /**
+     * 初始化全局界面行为Map
+     *
+     * @private
+     * @memberof AppGlobalService
+     */
+    private initGlobalPluginAction() {
+        const appDEUIActions = AppServiceBase.getInstance().getAppModelDataObject()?.M?.getAllPSAppDEUIActions;
+        if (appDEUIActions && appDEUIActions.length > 0) {
+            appDEUIActions.forEach((action: any) => {
+                if (action.getPSSysPFPlugin) {
+                    this.globalPluginAction.set(action.codeName, action);
+                }
+            });
+        }
     }
 
     /**
@@ -50,94 +95,105 @@ export class AppGlobalService {
      * @memberof AppGlobalService
      */
     public executeGlobalAction(tag: string, args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-        switch (tag) {
-            case "HELP":
-                this.HELP(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "Save":
-                this.Save(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "SaveAndExit":
-                this.SaveAndExit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "SaveAndNew":
-                this.SaveAndNew(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "SaveRow":
-                this.SaveRow(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "Edit":
-                this.Edit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "View":
-                this.View(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "PRINT":
-                this.PRINT(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "ViewWFStep":
-                this.ViewWFStep(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
+        if (this.globalPluginAction.get(tag)) {
+            const curActionPlugin = this.globalPluginAction.get(tag);
+            const importPlugin: any = this.pluginService.getPluginInstance('UIACTION', curActionPlugin?.getPSSysPFPlugin?.pluginCode);
+            if (importPlugin) {
+                importPlugin().then((importModule: any) => {
+                    const actionPlugin = new importModule.default(curActionPlugin);
+                    actionPlugin.execute(args,contextJO,params,$event,xData,actionContext,srfParentDeName);
+                })
+            }
+        } else {
+            switch (tag) {
+                case "HELP":
+                    this.HELP(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "Save":
+                    this.Save(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "SaveAndExit":
+                    this.SaveAndExit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "SaveAndNew":
+                    this.SaveAndNew(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "SaveRow":
+                    this.SaveRow(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "Edit":
+                    this.Edit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "View":
+                    this.View(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "PRINT":
+                    this.PRINT(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "ViewWFStep":
+                    this.ViewWFStep(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
 
-            case "ExportExcel":
-                this.ExportExcel(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "FirstRecord":
-                this.FirstRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "Exit":
-                this.Exit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "ToggleFilter":
-                this.ToggleFilter(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "Edit":
-                this.Edit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "SaveAndStart":
-                this.SaveAndStart(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "Copy":
-                this.Copy(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "Remove":
-                this.Remove(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "RemoveAndExit":
-                this.RemoveAndExit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "PrevRecord":
-                this.PrevRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "RefreshParent":
-                this.RefreshParent(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "RefreshAll":
-                this.RefreshAll(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "Import":
-                this.Import(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "Refresh":
-                this.Refresh(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "NextRecord":
-                this.NextRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "New":
-                this.New(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "NewRow":
-                this.NewRow(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "ToggleRowEdit":
-                this.ToggleRowEdit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            case "LastRecord":
-                this.LastRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
-                break;
-            default:
-                actionContext.$warning(`${tag}未支持`,'executeGlobalAction');
+                case "ExportExcel":
+                    this.ExportExcel(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "FirstRecord":
+                    this.FirstRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "Exit":
+                    this.Exit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "ToggleFilter":
+                    this.ToggleFilter(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "Edit":
+                    this.Edit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "SaveAndStart":
+                    this.SaveAndStart(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "Copy":
+                    this.Copy(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "Remove":
+                    this.Remove(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "RemoveAndExit":
+                    this.RemoveAndExit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "PrevRecord":
+                    this.PrevRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "RefreshParent":
+                    this.RefreshParent(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "RefreshAll":
+                    this.RefreshAll(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "Import":
+                    this.Import(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "Refresh":
+                    this.Refresh(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "NextRecord":
+                    this.NextRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "New":
+                    this.New(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "NewRow":
+                    this.NewRow(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "ToggleRowEdit":
+                    this.ToggleRowEdit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                case "LastRecord":
+                    this.LastRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                    break;
+                default:
+                    actionContext.$warning(`${tag}未支持`, 'executeGlobalAction');
+            }
         }
     }
 
@@ -154,7 +210,7 @@ export class AppGlobalService {
      * @memberof AppGlobalService
      */
     public HELP(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-        actionContext.$throw('帮助未支持','HELP');
+        actionContext.$throw('帮助未支持', 'HELP');
     }
 
     /**
@@ -278,7 +334,7 @@ export class AppGlobalService {
             }
             actionContext.opendata([{ ...data }], params, $event, xData);
         } else {
-            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!','Edit');
+            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!', 'Edit');
         }
     }
 
@@ -305,7 +361,7 @@ export class AppGlobalService {
             }
             actionContext.opendata([{ ...data }], params, $event, xData);
         } else {
-            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!','View');
+            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!', 'View');
         }
     }
 
@@ -395,7 +451,7 @@ export class AppGlobalService {
             // 获取多数据导航数据
             let navDataService = NavDataService.getInstance(actionContext.$store);
             let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
-            if(!(preNavData.data?.length > 0)){
+            if (!(preNavData.data?.length > 0)) {
                 throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
             }
 
@@ -404,7 +460,7 @@ export class AppGlobalService {
 
             // 用目标数据，刷新当前页面
             navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
-        } catch (error) {
+        } catch (error: any) {
             actionContext.$throw(error.message);
         }
     }
@@ -459,7 +515,7 @@ export class AppGlobalService {
         if (!xData || !(xData.wfstart instanceof Function) || (!_this.appEntityService)) {
             return;
         }
-        if(!(xData && xData.formValidateStatus())){
+        if (!(xData && xData.formValidateStatus())) {
             return;
         }
         const startWorkFlow: Function = (param: any, localdata: any) => {
@@ -479,31 +535,31 @@ export class AppGlobalService {
                     })
                     let targetOpenView: any = targetView.getRefPSAppView();
                     if (targetOpenView) {
-                            await targetOpenView.fill(true);
-                            // 准备参数
-                            let tempContext: any = Util.deepCopy(_this.context);
-                            let tempViewParam: any = { actionView: `WFSTART@${item['wfversion']}`, actionForm: item['process-form'] };
-                            Object.assign(tempContext, { viewpath: targetOpenView.modelFilePath });
-                            const appmodal = _this.$appmodal.openModal({ viewname: 'app-view-shell', title: actionContext.$tl(targetOpenView.getCapPSLanguageRes()?.lanResTag, targetOpenView.caption), height: targetOpenView.height, width: targetOpenView.width }, tempContext, tempViewParam);
-                            appmodal.subscribe((result: any) => {
-                                if (!result || !Object.is(result.ret, 'OK')) {
-                                    return;
+                        await targetOpenView.fill(true);
+                        // 准备参数
+                        let tempContext: any = Util.deepCopy(_this.context);
+                        let tempViewParam: any = { actionView: `WFSTART@${item['wfversion']}`, actionForm: item['process-form'] };
+                        Object.assign(tempContext, { viewpath: targetOpenView.modelFilePath });
+                        const appmodal = _this.$appmodal.openModal({ viewname: 'app-view-shell', title: actionContext.$tl(targetOpenView.getCapPSLanguageRes()?.lanResTag, targetOpenView.caption), height: targetOpenView.height, width: targetOpenView.width }, tempContext, tempViewParam);
+                        appmodal.subscribe((result: any) => {
+                            if (!result || !Object.is(result.ret, 'OK')) {
+                                return;
+                            }
+                            let tempSubmitData: any = Util.deepCopy(args[0]);
+                            if (result.datas && result.datas[0]) {
+                                const resultData: any = result.datas[0];
+                                if (Object.keys(resultData).length > 0) {
+                                    let tempData: any = {};
+                                    Object.keys(resultData).forEach((key: any) => {
+                                        if (resultData[key] || (resultData[key] === 0) || (resultData[key] === false)) {
+                                            tempData[key] = resultData[key];
+                                        }
+                                    })
+                                    Object.assign(tempSubmitData, tempData);
                                 }
-                                let tempSubmitData: any = Util.deepCopy(args[0]);
-                                if (result.datas && result.datas[0]) {
-                                    const resultData: any = result.datas[0];
-                                    if (Object.keys(resultData).length > 0) {
-                                        let tempData: any = {};
-                                        Object.keys(resultData).forEach((key: any) => {
-                                            if (resultData[key] || (resultData[key] === 0) || (resultData[key] === false)) {
-                                                tempData[key] = resultData[key];
-                                            }
-                                        })
-                                        Object.assign(tempSubmitData, tempData);
-                                    }
-                                }
-                                startWorkFlow([tempSubmitData], localdata);
-                            });
+                            }
+                            startWorkFlow([tempSubmitData], localdata);
+                        });
                     }
                 } else {
                     startWorkFlow(args, localdata);
@@ -519,7 +575,7 @@ export class AppGlobalService {
             let dynainstParam: DynamicInstanceConfig = (await GetModelService(copyContext)).getDynaInsConfig();
             Object.assign(copyContext, dynainstParam ? dynainstParam : {});
             requestResult = _this.appEntityService.getCopyWorkflow(copyContext);
-        }else{
+        } else {
             requestResult = _this.appEntityService.getStandWorkflow(copyContext);
         }
         requestResult.then((response: any) => {
@@ -670,16 +726,16 @@ export class AppGlobalService {
             // 获取多数据导航数据
             let navDataService = NavDataService.getInstance(actionContext.$store);
             let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
-            if(!(preNavData.data?.length > 0)){
+            if (!(preNavData.data?.length > 0)) {
                 throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
             }
 
             // 定位当前页面在多数据中的位置,并获取前一个记录的数据
-            let currentIndex: number = preNavData.data.findIndex((item:any) => item.srfkey == args?.[0]?.srfkey);
-            if(currentIndex == -1){
+            let currentIndex: number = preNavData.data.findIndex((item: any) => item.srfkey == args?.[0]?.srfkey);
+            if (currentIndex == -1) {
                 throw new Error('无法定位当前页面!')
             }
-            if(currentIndex == 0){
+            if (currentIndex == 0) {
                 throw new Error('已经是第一个记录了!')
             }
             let preIndex: number = currentIndex == 0 ? currentIndex : currentIndex - 1;
@@ -687,7 +743,7 @@ export class AppGlobalService {
 
             // 用目标数据，刷新当前页面
             navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
-        } catch (error) {
+        } catch (error: any) {
             actionContext.$throw(error.message);
         }
     }
@@ -797,24 +853,24 @@ export class AppGlobalService {
             // 获取多数据导航数据
             let navDataService = NavDataService.getInstance(actionContext.$store);
             let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
-            if(!(preNavData.data?.length > 0)){
+            if (!(preNavData.data?.length > 0)) {
                 throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
             }
 
             // 定位当前页面在多数据中的位置,并获取前一个记录的数据
-            let currentIndex: number = preNavData.data.findIndex((item:any) => item.srfkey == args?.[0]?.srfkey);
-            if(currentIndex == -1){
+            let currentIndex: number = preNavData.data.findIndex((item: any) => item.srfkey == args?.[0]?.srfkey);
+            if (currentIndex == -1) {
                 throw new Error('无法定位当前页面!')
             }
-            if(currentIndex == preNavData.data.length - 1){
+            if (currentIndex == preNavData.data.length - 1) {
                 throw new Error('已经是最后一个记录了!')
             }
-            let nextIndex: number = currentIndex == (preNavData.data.length-1) ? currentIndex : currentIndex + 1;
+            let nextIndex: number = currentIndex == (preNavData.data.length - 1) ? currentIndex : currentIndex + 1;
             let recordData: any = preNavData.data[nextIndex];
 
             // 用目标数据，刷新当前页面
             navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
-        } catch (error) {
+        } catch (error: any) {
             actionContext.$throw(error.message);
         }
     }
@@ -836,7 +892,7 @@ export class AppGlobalService {
             const data: any = {};
             actionContext.newdata([{ ...data }], [{ ...data }], params, $event, xData);
         } else {
-            actionContext.$throw('newdata 视图处理逻辑不存在，请添加!','New');
+            actionContext.$throw('newdata 视图处理逻辑不存在，请添加!', 'New');
         }
     }
 
@@ -859,7 +915,7 @@ export class AppGlobalService {
         } else if (xData.newRow && xData.newRow instanceof Function) {
             xData.newRow([{ ...data }], params, $event, xData);
         } else {
-            actionContext.$throw('newRow 视图处理逻辑不存在，请添加!','NewRow');
+            actionContext.$throw('newRow 视图处理逻辑不存在，请添加!', 'NewRow');
         }
     }
 
@@ -896,7 +952,7 @@ export class AppGlobalService {
             // 获取多数据导航数据
             let navDataService = NavDataService.getInstance(actionContext.$store);
             let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
-            if(!(preNavData.data?.length > 0)){
+            if (!(preNavData.data?.length > 0)) {
                 throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
             }
 
@@ -905,7 +961,7 @@ export class AppGlobalService {
 
             // 用目标数据，刷新当前页面
             navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
-        } catch (error) {
+        } catch (error: any) {
             actionContext.$throw(error.message);
         }
     }

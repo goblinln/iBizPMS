@@ -355,6 +355,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "START"
+        },
         "getPSSysImage" : {
           "cssClass" : "play"
         },

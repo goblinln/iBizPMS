@@ -177,7 +177,7 @@ export default class DropDownListMpicker extends Vue {
             }
         }
         const type: string = this.$util.typeOf(val);
-        val = Object.is(type, 'null') || Object.is(type, 'undefined') ? [] : val;
+        val = Object.is(type, 'null') || Object.is(type, 'undefined') || Object.is(type, 'string') ? [] : val;
         let value = val.length > 0 ? val.join(this.valueSeparator) : '';
         this.$emit('change', value);
     }

@@ -34,43 +34,51 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetTestStats",
     "methodType" : "DEACTION",
+    "name" : "GetTestStats",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataExports" : [ {
@@ -101,7 +109,9 @@
         "name" : "HAVECONSUMED",
         "codeName" : "Haveconsumed"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   }, {
     "codeName" : "ProductQuantityExport",
     "maxRowCount" : 1000,
@@ -170,27 +180,34 @@
         "name" : "IMPORTANTBUGPERCENT",
         "codeName" : "Importantbugpercent"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNoOpenProduct",
     "methodType" : "FETCH",
+    "name" : "FetchNoOpenProduct",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProdctQuantiGird",
     "methodType" : "FETCH",
+    "name" : "FetchProdctQuantiGird",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductInputTable",
     "methodType" : "FETCH",
+    "name" : "FetchProductInputTable",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductcompletionstatistics",
     "methodType" : "FETCH",
+    "name" : "FetchProductcompletionstatistics",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -393,63 +410,76 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetTestStats",
     "methodType" : "DEACTION",
+    "name" : "GetTestStats",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNoOpenProduct",
     "methodType" : "FETCH",
+    "name" : "FetchNoOpenProduct",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProdctQuantiGird",
     "methodType" : "FETCH",
+    "name" : "FetchProdctQuantiGird",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductInputTable",
     "methodType" : "FETCH",
+    "name" : "FetchProductInputTable",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductcompletionstatistics",
     "methodType" : "FETCH",
+    "name" : "FetchProductcompletionstatistics",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -489,6 +519,7 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -505,6 +536,7 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "ProductStats",
+  "dEAPITag" : "IBZ_PRODUCTSTATS",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json",
@@ -517,6 +549,7 @@
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "WebApi",
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

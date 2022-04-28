@@ -1,0 +1,6 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "queryCode" : "SELECT t1.id, t1.`name`, t1.desc, t1.deleted FROM zt_task t1",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEDATAQUERIES/ESBulk/PSDEDQCODES/MYSQL5.json"
+}

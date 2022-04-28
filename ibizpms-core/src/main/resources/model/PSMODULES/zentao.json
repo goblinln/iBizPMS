@@ -633,5 +633,6 @@
   } ],
   "codeName" : "zentao",
   "dynaModelFilePath" : "PSMODULES/zentao.json",
+  "moduleSN" : "ZT",
   "name" : "基础管理模块"
 }

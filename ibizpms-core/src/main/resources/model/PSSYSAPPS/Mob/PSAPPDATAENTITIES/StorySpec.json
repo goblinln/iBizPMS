@@ -306,6 +306,10 @@
   "enableUIActions" : 15,
   "logicName" : "需求描述",
   "name" : "ZT_STORYSPEC",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_STORYSPEC",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "TITLE",

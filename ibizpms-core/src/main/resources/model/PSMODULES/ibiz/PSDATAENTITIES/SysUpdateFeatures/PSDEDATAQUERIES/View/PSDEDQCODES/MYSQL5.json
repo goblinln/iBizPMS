@@ -1,0 +1,43 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DISPLAYORDER`",
+    "name" : "DISPLAYORDER"
+  }, {
+    "expression" : "t1.`FEATURESDESC`",
+    "name" : "FEATURESDESC"
+  }, {
+    "expression" : "t1.`SYS_UPDATE_FEATURESID`",
+    "name" : "SYS_UPDATE_FEATURESID"
+  }, {
+    "expression" : "t1.`SYS_UPDATE_FEATURESNAME`",
+    "name" : "SYS_UPDATE_FEATURESNAME"
+  }, {
+    "expression" : "t1.`SYS_UPDATE_LOGID`",
+    "name" : "SYS_UPDATE_LOGID"
+  }, {
+    "expression" : "t11.`SYS_UPDATE_LOGNAME`",
+    "name" : "SYS_UPDATE_LOGNAME"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`UPFEATURES`",
+    "name" : "UPFEATURES"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DISPLAYORDER`,\nt1.`FEATURESDESC`,\nt1.`SYS_UPDATE_FEATURESID`,\nt1.`SYS_UPDATE_FEATURESNAME`,\nt1.`SYS_UPDATE_LOGID`,\nt11.`SYS_UPDATE_LOGNAME`,\nt1.`TYPE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`UPFEATURES`\nFROM `T_SYS_UPDATE_FEATURES` t1 \nLEFT JOIN `T_SYS_UPDATE_LOG` t11 ON t1.`SYS_UPDATE_LOGID` = t11.`SYS_UPDATE_LOGID` \n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateFeatures/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -167,7 +167,7 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/builds`, _data);
             return res;
         }
         if (_context.project && true) {
@@ -179,7 +179,7 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/projects/${_context.project}/builds`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/builds`, _data);
             return res;
         }
         if (_context.product && true) {
@@ -191,7 +191,7 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/products/${_context.product}/builds`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/builds`, _data);
             return res;
         }
     this.log.warn([`[Build]>>>[Create函数]异常`]);
@@ -211,17 +211,17 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.build) {
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.build) {
-            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}`);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.product && _context.build) {
-            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}`);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/builds/${encodeURIComponent(_context.build)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -244,19 +244,19 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
         if (_context.product && _context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/builds/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/builds/getdraft`, _data);
             return res;
         }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/builds/getdraft`, _data);
+            const res = await this.http.get(`/projects/${encodeURIComponent(_context.project)}/builds/getdraft`, _data);
             return res;
         }
         if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/builds/getdraft`, _data);
+            const res = await this.http.get(`/products/${encodeURIComponent(_context.product)}/builds/getdraft`, _data);
             return res;
         }
     this.log.warn([`[Build]>>>[GetDraft函数]异常`]);
@@ -278,19 +278,19 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
         if (_context.product && _context.project && _context.build) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/linkbug`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}/linkbug`, _data);
             return res;
         }
         if (_context.project && _context.build) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
-            const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/linkbug`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}/linkbug`, _data);
             return res;
         }
         if (_context.product && _context.build) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
-            const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/linkbug`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/builds/${encodeURIComponent(_context.build)}/linkbug`, _data);
             return res;
         }
     this.log.warn([`[Build]>>>[LinkBug函数]异常`]);
@@ -312,19 +312,19 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
         if (_context.product && _context.project && _context.build) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/linkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}/linkstory`, _data);
             return res;
         }
         if (_context.project && _context.build) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
-            const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/linkstory`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}/linkstory`, _data);
             return res;
         }
         if (_context.product && _context.build) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
-            const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/linkstory`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/builds/${encodeURIComponent(_context.build)}/linkstory`, _data);
             return res;
         }
     this.log.warn([`[Build]>>>[LinkStory函数]异常`]);
@@ -344,15 +344,15 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && _context.build) {
-            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}`);
             return res;
         }
         if (_context.project && _context.build) {
-            const res = await this.http.delete(`/projects/${_context.project}/builds/${_context.build}`);
+            const res = await this.http.delete(`/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}`);
             return res;
         }
         if (_context.product && _context.build) {
-            const res = await this.http.delete(`/products/${_context.product}/builds/${_context.build}`);
+            const res = await this.http.delete(`/products/${encodeURIComponent(_context.product)}/builds/${encodeURIComponent(_context.build)}`);
             return res;
         }
     this.log.warn([`[Build]>>>[Remove函数]异常`]);
@@ -374,19 +374,19 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
         if (_context.product && _context.project && _context.build) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}`, _data);
             return res;
         }
         if (_context.project && _context.build) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/projects/${_context.project}/builds/${_context.build}`, _data);
+            const res = await this.http.put(`/projects/${encodeURIComponent(_context.project)}/builds/${encodeURIComponent(_context.build)}`, _data);
             return res;
         }
         if (_context.product && _context.build) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/products/${_context.product}/builds/${_context.build}`, _data);
+            const res = await this.http.put(`/products/${encodeURIComponent(_context.product)}/builds/${encodeURIComponent(_context.build)}`, _data);
             return res;
         }
     this.log.warn([`[Build]>>>[Update函数]异常`]);
@@ -406,17 +406,17 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/builds/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/builds/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/builds/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/builds/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/builds/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
@@ -437,17 +437,17 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     async FetchProductBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.product && _context.project && true) {
-            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/fetchproductbuild`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/projects/${encodeURIComponent(_context.project)}/builds/fetchproductbuild`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductBuild');
             return res;
         }
         if (_context.project && true) {
-            const res = await this.http.post(`/projects/${_context.project}/builds/fetchproductbuild`, _data);
+            const res = await this.http.post(`/projects/${encodeURIComponent(_context.project)}/builds/fetchproductbuild`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductBuild');
             return res;
         }
         if (_context.product && true) {
-            const res = await this.http.post(`/products/${_context.product}/builds/fetchproductbuild`, _data);
+            const res = await this.http.post(`/products/${encodeURIComponent(_context.product)}/builds/fetchproductbuild`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductBuild');
             return res;
         }

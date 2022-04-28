@@ -1,0 +1,79 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "((#{srf.datacontext.thisyear} = 'thisyear' and YEAR(t1.date) = year(now())) or #{srf.datacontext.thisyear} is null)",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`assignedTo` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`finishedBy` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}   )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DESC`",
+    "name" : "DESC"
+  }, {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`ASSIGNEDBY`",
+    "name" : "ASSIGNEDBY"
+  }, {
+    "expression" : "t1.`ASSIGNEDDATE`",
+    "name" : "ASSIGNEDDATE"
+  }, {
+    "expression" : "t1.`ASSIGNEDTO`",
+    "name" : "ASSIGNEDTO"
+  }, {
+    "expression" : "t1.`BEGIN`",
+    "name" : "BEGIN"
+  }, {
+    "expression" : "t1.`CLOSEDBY`",
+    "name" : "CLOSEDBY"
+  }, {
+    "expression" : "t1.`CLOSEDDATE`",
+    "name" : "CLOSEDDATE"
+  }, {
+    "expression" : "t1.`CONFIG`",
+    "name" : "CONFIG"
+  }, {
+    "expression" : "t1.`CYCLE`",
+    "name" : "CYCLE"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`END`",
+    "name" : "END"
+  }, {
+    "expression" : "t1.`FINISHEDBY`",
+    "name" : "FINISHEDBY"
+  }, {
+    "expression" : "t1.`FINISHEDDATE`",
+    "name" : "FINISHEDDATE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`IDVALUE`",
+    "name" : "IDVALUE"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`PRI`",
+    "name" : "PRI"
+  }, {
+    "expression" : "t1.`PRIVATE`",
+    "name" : "PRIVATE"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`ASSIGNEDBY`,\nt1.`ASSIGNEDDATE`,\nt1.`ASSIGNEDTO`,\ncase when t1.`BEGIN` = 2400 then null else t1.`begin` end as `begin`,\nt1.`CLOSEDBY`,\nt1.`CLOSEDDATE`,\nt1.`CONFIG`,\nt1.`CYCLE`,\nt1.`DATE` as `DATE`,\n(case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`,\ncase when t1.`END` = 2400 then null else t1.`END` end as `END`,\nt1.`FINISHEDBY`,\nt1.`FINISHEDDATE`,\nt1.`TODOSN`,\nt1.`id`,\nt1.`IDVALUE`,\ncase when t1.type = 'bug' then t11.`TITLE` when t1.type = 'task' then t21.`name` when t1.type = 'story' then t31.`TITLE` else t1.`NAME` end `name`,\nt1.`PRI`,\nt1.`PRIVATE`,\nt1.`STATUS`,\nt1.`TYPE`\nFROM `zt_todo` t1 \nLEFT JOIN zt_bug t11 on t11.BUGSN = t1.idvalue\nLEFT JOIN zt_task t21 on t21.TASKSN = t1.idvalue\nLEFT JOIN zt_story t31 on t31.STORYSN = t1.idvalue",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

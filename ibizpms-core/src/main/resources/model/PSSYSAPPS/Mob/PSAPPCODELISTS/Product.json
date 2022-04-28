@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "ibiz__Product",
   "codeListType" : "DYNAMIC",
   "codeName" : "Product",
   "dynaInstMode" : 1,

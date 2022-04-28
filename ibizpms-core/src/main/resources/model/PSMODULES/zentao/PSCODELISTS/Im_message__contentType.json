@@ -1,50 +1,48 @@
 {
+  "codeListTag" : "zentao__Im_message__contentType",
   "codeListType" : "STATIC",
   "codeName" : "Im_message__contentType",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_message__contentType.json",
   "emptyText" : "未定义",
+  "name" : "ZT_IM_MESSAGE__CONTENTTYPE",
   "getPSCodeItems" : [ {
     "codeName" : "Text",
     "text" : "text",
-    "value" : "text",
-    "includeBeginValue" : true
+    "value" : "text"
   }, {
     "codeName" : "Plain",
     "text" : "plain",
-    "value" : "plain",
-    "includeBeginValue" : true
+    "value" : "plain"
   }, {
     "codeName" : "Emotion",
     "text" : "emotion",
-    "value" : "emotion",
-    "includeBeginValue" : true
+    "value" : "emotion"
   }, {
     "codeName" : "Image",
     "text" : "image",
-    "value" : "image",
-    "includeBeginValue" : true
+    "value" : "image"
   }, {
     "codeName" : "File",
     "text" : "file",
-    "value" : "file",
-    "includeBeginValue" : true
+    "value" : "file"
   }, {
     "codeName" : "Object",
     "text" : "object",
-    "value" : "object",
-    "includeBeginValue" : true
+    "value" : "object"
   }, {
     "codeName" : "Code",
     "text" : "code",
-    "value" : "code",
-    "includeBeginValue" : true
+    "value" : "code"
   } ],
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

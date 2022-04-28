@@ -9,9 +9,6 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetInfo.json"
     },
-    "cloneParam" : false,
-    "enableBackend" : true,
-    "ignoreException" : false,
     "internalLogic" : true
   } ],
   "codeName" : "GetUserYearAction",
@@ -19,13 +16,19 @@
   "logicName" : "获取用户所选年度的动作",
   "name" : "GetUserYearAction",
   "getPSDEActionInput" : {
-    "codeName" : "GetUserYearActionInput",
-    "name" : "输入对象",
+    "getKeyPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "GetUserYearActionInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "GetUserYearActionResult",
-    "name" : "返回对象",
+    "name" : "GetUserYearActionResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "UserYearWorkStatsDTO"
+    },
     "type" : "DTO"
   }
 }

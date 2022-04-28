@@ -96,7 +96,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}`);
+        const res = await this.http.get(`/useryearworkstats/${encodeURIComponent(_context.useryearworkstats)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -113,7 +113,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     async GetDevInfomation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/getdevinfomation`);
+        const res = await this.http.get(`/useryearworkstats/${encodeURIComponent(_context.useryearworkstats)}/getdevinfomation`);
         res.data = await this.afterExecuteAction(_context,res?.data,'GetDevInfomation');
         return res;
             } catch (error) {
@@ -148,7 +148,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     async GetPoInfomation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/getpoinfomation`);
+        const res = await this.http.get(`/useryearworkstats/${encodeURIComponent(_context.useryearworkstats)}/getpoinfomation`);
         res.data = await this.afterExecuteAction(_context,res?.data,'GetPoInfomation');
         return res;
             } catch (error) {
@@ -165,7 +165,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     async GetQaInfomation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/getqainfomation`);
+        const res = await this.http.get(`/useryearworkstats/${encodeURIComponent(_context.useryearworkstats)}/getqainfomation`);
         res.data = await this.afterExecuteAction(_context,res?.data,'GetQaInfomation');
         return res;
             } catch (error) {
@@ -182,7 +182,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     async GetUserYearAction(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}/getuseryearaction`, _data);
+        const res = await this.http.put(`/useryearworkstats/${encodeURIComponent(_context.useryearworkstats)}/getuseryearaction`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -198,7 +198,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.delete(`/useryearworkstats/${_context.useryearworkstats}`);
+        const res = await this.http.delete(`/useryearworkstats/${encodeURIComponent(_context.useryearworkstats)}`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -216,7 +216,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}`, _data);
+        const res = await this.http.put(`/useryearworkstats/${encodeURIComponent(_context.useryearworkstats)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -232,7 +232,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     async UpdateTitleByYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}/updatetitlebyyear`, _data);
+        const res = await this.http.put(`/useryearworkstats/${encodeURIComponent(_context.useryearworkstats)}/updatetitlebyyear`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -316,7 +316,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/select`);
+        const res = await this.http.get(`/useryearworkstats/${encodeURIComponent(_context.useryearworkstats)}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

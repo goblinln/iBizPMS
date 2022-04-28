@@ -1,5 +1,6 @@
 {
   "cacheTimeout" : 600,
+  "codeListTag" : "ibiz__MyPlanTask",
   "codeListType" : "DYNAMIC",
   "codeName" : "MyPlanTask",
   "dynaInstMode" : 1,

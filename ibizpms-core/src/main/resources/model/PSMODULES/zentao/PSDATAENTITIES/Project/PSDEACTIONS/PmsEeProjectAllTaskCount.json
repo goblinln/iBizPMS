@@ -6,13 +6,15 @@
   "logicName" : "项目立项任务快速分组计数器",
   "name" : "PmsEeProjectAllTaskCount",
   "getPSDEActionInput" : {
-    "codeName" : "PmsEeProjectAllTaskCountInput",
-    "name" : "输入对象",
+    "name" : "PmsEeProjectAllTaskCountInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "PmsEeProjectAllTaskCountResult",
-    "name" : "返回对象",
+    "name" : "PmsEeProjectAllTaskCountResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

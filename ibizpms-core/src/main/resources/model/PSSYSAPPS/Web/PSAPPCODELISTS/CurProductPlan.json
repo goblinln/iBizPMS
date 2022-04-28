@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "zentao__CurProductPlan",
   "codeListType" : "DYNAMIC",
   "codeName" : "CurProductPlan",
   "dynaInstMode" : 1,

@@ -6,13 +6,15 @@
   "logicName" : "预览",
   "name" : "Preview",
   "getPSDEActionInput" : {
-    "codeName" : "PreviewInput",
-    "name" : "输入对象",
+    "name" : "PreviewInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "FileDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "PreviewResult",
-    "name" : "返回对象",
+    "name" : "PreviewResult",
     "type" : "VOID"
   }
 }

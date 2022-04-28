@@ -31,21 +31,23 @@
     </ul>
     <!-- 文件上传 -->
     <el-upload 
-      v-if = "!readonly && (multiple || files.length === 0)" 
-      :class = "{'el-upload-disabled':disabled}"
-      :disabled = "disabled"
-      :action = "uploadUrl"
-      :multiple="multipleSelect"
-      :headers = "headers"
-      :show-file-list = "false"
-      list-type =  "picture-card"
-      :file-list =  "files"
-      accept="image/*"
-      :before-upload = "beforeUpload"
-      :on-success = "onSuccess"
-      :before-remove = "onRemove"
-      :on-error = "onError"
-      :on-preview = "onDownload"
+      v-if="!readonly && (multiple || files.length === 0)" 
+      :class="{'el-upload-disabled':disabled}"
+      :limit="multiple ? limit: 1"
+      :disabled="disabled"
+      :action="uploadUrl"
+      :multiple="multiple"
+      :headers="headers"
+      :show-file-list="false"
+      list-type="picture-card"
+      :file-list="files"
+      :accept="accept"
+      :before-upload="beforeUpload"
+      :on-success="onSuccess"
+      :before-remove="onRemove"
+      :on-error="onError"
+      :on-preview="onDownload"
+      :on-exceed="handleExceed"
       >
       <i class="el-icon-plus"></i>
     </el-upload>
@@ -159,12 +161,28 @@ export default class AppImageUpload extends Vue {
      */
     @Prop() public disabled?: boolean;
 
-	/**
-	 * 只读模式
-	 * 
-	 * @type {boolean}
-	 */
-	@Prop({default: false}) public readonly?: boolean;
+    /**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
+
+    /**
+     * 最大允许上传个数
+     *
+     * @type {*}
+     * @memberof AppImageUpload
+     */
+    @Prop({default: 9999}) public limit!: number;
+
+    /**
+     * 接受上传的文件类型
+     *
+     * @type {*}
+     * @memberof AppImageUpload
+     */
+    @Prop({default: 'image/*'}) public accept!: string;
 
     /**
      * 上传参数
@@ -517,14 +535,6 @@ export default class AppImageUpload extends Vue {
     @Prop({ default: true }) public multiple?: boolean;
 
     /**
-     * 是否多选
-     *
-     * @type {boolean}
-     * @memberof AppFileUpload
-     */
-    @Prop({default: true}) public multipleSelect?: boolean;
-
-    /**
      * 预览
      *
      * @param {*} file
@@ -533,6 +543,15 @@ export default class AppImageUpload extends Vue {
     public onPreview(file: any) {
         this.dialogImageUrl = file.url;
         this.dialogVisible = true;
+    }
+
+    /**
+     * 处理多选超出
+     *
+     * @memberof AppImageUpload
+     */
+    public handleExceed(files: any, fileList: any) {
+      this.$warning(`${this.$t('components.appfileupload.limitselect')} ${this.limit}`);
     }
 }
 </script>

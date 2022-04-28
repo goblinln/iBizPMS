@@ -33,10 +33,6 @@ public class PSSysRunSessionFallback implements FallbackFactory<PSSysRunSessionF
         String finalErrorMessage = errorMessage;
         return new PSSysRunSessionFeignClient(){
 
-            public Page<PSSysRunSession> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSSysRunSession create(PSSysRunSession pssysrunsession) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSSysRunSessionFallback implements FallbackFactory<PSSysRunSessionF
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSysRunSession update(String pssysrunsessionid, PSSysRunSession pssysrunsession) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSSysRunSession> pssysrunsessions) {
+            public PSSysRunSession get(String pssysrunsessionid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,20 @@ public class PSSysRunSessionFallback implements FallbackFactory<PSSysRunSessionF
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSysRunSession get(String pssysrunsessionid) {
+            public PSSysRunSession update(String pssysrunsessionid, PSSysRunSession pssysrunsession) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSSysRunSession> pssysrunsessions) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSSysRunSession pssysrunsession) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSysRunSession> searchDefault(PSSysRunSessionSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +74,6 @@ public class PSSysRunSessionFallback implements FallbackFactory<PSSysRunSessionF
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSSysRunSession pssysrunsession) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSSysRunSession pssysrunsession) {
@@ -86,10 +87,9 @@ public class PSSysRunSessionFallback implements FallbackFactory<PSSysRunSessionF
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSSysRunSession> searchDefault(PSSysRunSessionSearchContext context) {
+            public Page<PSSysRunSession> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
 
 
         };

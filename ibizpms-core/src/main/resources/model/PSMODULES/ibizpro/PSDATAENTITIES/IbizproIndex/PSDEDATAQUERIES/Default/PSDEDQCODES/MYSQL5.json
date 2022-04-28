@@ -1,0 +1,38 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.orgid = #{srf.sessioncontext.srforgid}",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "((t1.acl = 'open') or (FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t1.acllist)) or (EXISTS(select 1 from zt_team t where t.type = 'project' and t.account = #{srf.sessioncontext.srfloginname} and FIND_IN_SET(t.root, t1.project))))",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`INDEXID`",
+    "name" : "INDEXID"
+  }, {
+    "expression" : "t1.`INDEXNAME`",
+    "name" : "INDEXNAME"
+  }, {
+    "expression" : "t1.`INDEX_TYPE`",
+    "name" : "INDEX_TYPE"
+  }, {
+    "expression" : "t1.`MDEPTID`",
+    "name" : "MDEPTID"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  } ],
+  "queryCode" : "SELECT\nt1.`DELETED`,\nt1.`INDEXID`,\nt1.`INDEXNAME`,\nt1.`INDEX_TYPE`,\nt1.`MDEPTID`,\nt1.`ORGID`,\nt1.INDEXDESC,\nt1.color,\nt1.project,\nt1.acllist,\nt1.acl\nFROM (SELECT\n'bug' AS `INDEX_TYPE`,v1.`ID` AS `INDEXID`\n,v1.`TITLE` AS `INDEXNAME`\n,v1.deleted AS `DELETED`\n,v1.orgid AS `ORGID`\n,v1.MDEPTID AS `MDEPTID`\n,v1.steps as INDEXDESC\n,v1.color\n,v1.project\n,v1.acllist\n,v1.acl\nFROM\n(SELECT\nt1.`ID`,\nt1.`TITLE`,\nt11.orgid,\nt11.MDEPTID,\nt1.deleted,\nt1.steps,\nt1.color,\nt11.acl,\nCONCAT_WS(',',t11.CREATEDBY,t11.qd,t11.po,t11.rd) as acllist,\n(select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.product GROUP BY t.product) as project\nFROM `zt_bug` t1 left join zt_product t11 on t11.id = t1.product \nwhere t11.deleted = '0'\n) v1\nUNION ALL\nSELECT\n'case' AS `INDEX_TYPE`,v2.`ID` AS `INDEXID`\n,v2.`TITLE` AS `INDEXNAME`\n,v2.deleted AS `DELETED`\n,v2.orgid AS `ORGID`\n,v2.MDEPTID AS `MDEPTID`\n,v2.precondition as INDEXDESC\n,v2.color\n,v2.project\n,v2.acllist\n,v2.acl\nFROM\n(SELECT\nt1.`ID`,\nt1.`TITLE`,\nt11.orgid,\nt11.MDEPTID,\nt1.deleted,\nt1.`PRECONDITION`,\nt1.color,\nt11.acl,\nCONCAT_WS(',',t11.CREATEDBY,t11.qd,t11.po,t11.rd) as acllist,\n(select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.product GROUP BY t.product) as project\nFROM `zt_case` t1 left join zt_product t11 on t11.id = t1.product \nwhere t11.deleted = '0'\n) v2\nUNION ALL\nSELECT\n'product' AS `INDEX_TYPE`\n,v3.`ID` AS `INDEXID`\n,v3.`NAME` AS `INDEXNAME`\n,v3.deleted AS `DELETED`\n,v3.orgid AS `ORGID`\n,v3.MDEPTID AS `MDEPTID`\n,v3.`desc` as INDEXDESC\n, null as color\n,v3.project\n,v3.acllist\n,v3.acl\nFROM\n(SELECT\nt1.`ID`,\nt1.`NAME`,\nt1.orgid,\nt1.MDEPTID,\nt1.deleted,\nt1.`desc`,\nt1.acl,\nCONCAT_WS(',',t1.CREATEDBY,t1.qd,t1.po,t1.rd) as acllist,\n(select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.id GROUP BY t.product) as project\nFROM `zt_product` t1 \n) v3\nUNION ALL\nSELECT\n'project' AS `INDEX_TYPE`,v4.`ID` AS `INDEXID`\n,v4.`NAME` AS `INDEXNAME`\n,v4.deleted AS `DELETED`\n,v4.orgid AS `ORGID`\n,v4.MDEPTID AS `MDEPTID`\n,v4.`desc` as INDEXDESC\n,null as color\n,v4.project\n,v4.acllist\n,v4.acl\nFROM\n(SELECT\nt1.`ID`,\nt1.`NAME`,\nt1.orgid,\nt1.MDEPTID,\nt1.deleted,\nt1.`desc`,\nt1.acl,\nCONCAT_WS(',',t1.openedBy,t1.pm,t1.qd,t1.po,t1.rd) as acllist,\nt1.id as project\nFROM `zt_project` t1 \n) v4\nUNION ALL\nSELECT\n'story' AS `INDEX_TYPE`,v5.`ID` AS `INDEXID`\n,v5.`TITLE` AS `INDEXNAME`\n,v5.deleted AS `DELETED`\n,v5.orgid AS `ORGID`\n,v5.MDEPTID AS `MDEPTID`\n,v5.spec as INDEXDESC\n,v5.color\n,v5.project\n,v5.acllist\n,v5.acl\nFROM\n(SELECT\nt1.`ID`,\nt1.`TITLE`,\nt11.orgid,\nt11.MDEPTID,\nt1.deleted,\nt21.spec,\nt1.color,\nt11.acl,\nCONCAT_WS(',',t11.CREATEDBY,t11.qd,t11.po,t11.rd) as acllist,\n(select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.product GROUP BY t.product) as project\nFROM `zt_story` t1 left join zt_product t11 on t11.id = t1.product \nleft join zt_storyspec t21 on t21.story = t1.id and t1.version = t21.version\nwhere t11.deleted = '0' \n) v5\nUNION ALL\nSELECT\n'task' AS `INDEX_TYPE`\n,v6.`ID` AS `INDEXID`\n,v6.`NAME` AS `INDEXNAME`\n,v6.deleted AS `DELETED`\n,v6.orgid AS `ORGID`\n,v6.MDEPTID AS `MDEPTID`\n,v6.`desc` as INDEXDESC\n,v6.color\n,v6.project\n,v6.acllist\n,v6.acl\nFROM\n(SELECT\nt1.`ID`,\nt1.`NAME`,\nt11.orgid,\nt11.MDEPTID,\nt1.deleted,\nt1.`desc`,\nt1.color,\nt1.project,\nt11.acl,\nCONCAT_WS(',',t11.openedBy,t11.pm,t11.qd,t11.po,t11.rd) as acllist\nFROM `zt_task` t1 left join zt_project t11 on t11.id = t1.project \nwhere t11.deleted = '0'\n) v6\n) t1",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

@@ -6,13 +6,15 @@
   "logicName" : "关联测试用例",
   "name" : "unlinkCase",
   "getPSDEActionInput" : {
-    "codeName" : "UnlinkCaseInput",
-    "name" : "输入对象",
+    "name" : "UnlinkCaseInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "TestTaskDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UnlinkCaseResult",
-    "name" : "返回对象",
+    "name" : "UnlinkCaseResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

@@ -33,10 +33,6 @@ public class PSSysAppFallback implements FallbackFactory<PSSysAppFeignClient> {
         String finalErrorMessage = errorMessage;
         return new PSSysAppFeignClient(){
 
-            public Page<PSSysApp> select() {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
             public PSSysApp create(PSSysApp pssysapp) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
@@ -44,10 +40,7 @@ public class PSSysAppFallback implements FallbackFactory<PSSysAppFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSysApp update(String pssysappid, PSSysApp pssysapp) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-            public Boolean updateBatch(List<PSSysApp> pssysapps) {
+            public PSSysApp get(String pssysappid) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -59,7 +52,25 @@ public class PSSysAppFallback implements FallbackFactory<PSSysAppFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public PSSysApp get(String pssysappid) {
+            public PSSysApp update(String pssysappid, PSSysApp pssysapp) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSSysApp> pssysapps) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean checkKey(PSSysApp pssysapp) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSysApp> searchBuild(PSSysAppSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<PSSysApp> searchDefault(PSSysAppSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
@@ -68,11 +79,6 @@ public class PSSysAppFallback implements FallbackFactory<PSSysAppFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-
-
-            public Boolean checkKey(PSSysApp pssysapp) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
 
 
             public Object saveEntity(PSSysApp pssysapp) {
@@ -86,15 +92,9 @@ public class PSSysAppFallback implements FallbackFactory<PSSysAppFeignClient> {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
-            public Page<PSSysApp> searchBuild(PSSysAppSearchContext context) {
+            public Page<PSSysApp> select() {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
-
-
-            public Page<PSSysApp> searchDefault(PSSysAppSearchContext context) {
-                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
-            }
-
 
 
         };

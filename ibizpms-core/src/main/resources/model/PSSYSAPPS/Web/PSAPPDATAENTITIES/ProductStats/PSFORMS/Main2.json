@@ -402,6 +402,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;br /&gt;&lt;br /&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem1"
+          },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -415,6 +420,14 @@
             "colLG" : 22,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "caption" : "需求数",
+            "contentType" : "RAW",
+            "name" : "rawitem3",
+            "getPSSysCss" : {
+              "cssName" : "text-center"
+            }
           },
           "getPSSysCss" : {
             "cssName" : "text-center"
@@ -609,6 +622,11 @@
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
+          },
+          "getPSRawItem" : {
+            "content" : "<p>&lt;br/&gt;</p>",
+            "contentType" : "HTML",
+            "name" : "rawitem2"
           },
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -828,6 +846,11 @@
               "colMDOffset" : 16,
               "layout" : "TABLE_24COL"
             },
+            "getPSRawItem" : {
+              "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有计划&amp;nbsp;:&amp;nbsp;{{data.productplancnt ? data.productplancnt : 0}}&lt;/div&gt;</p>",
+              "contentType" : "HTML",
+              "name" : "rawitem5"
+            },
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
@@ -1014,6 +1037,11 @@
               "colMD" : 8,
               "layout" : "TABLE_24COL"
             },
+            "getPSRawItem" : {
+              "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;未过期&amp;nbsp;:&amp;nbsp;{{data.unendproductplancnt ? data.unendproductplancnt : 0}}&lt;/div&gt;</p>",
+              "contentType" : "HTML",
+              "name" : "rawitem6"
+            },
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
@@ -1069,6 +1097,11 @@
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
+              },
+              "getPSRawItem" : {
+                "content" : "<p>&lt;div style=\"margin-top: 6px;\"&gt;&lt;Icon type=\"md-alert\" color=\"red\"/&gt;&amp;nbsp;已延期&amp;nbsp;&lt;b&gt;{{data.postponedprojectcnt ? data.postponedprojectcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
+                "contentType" : "HTML",
+                "name" : "rawitem4"
               },
               "rawItemHeight" : -1.0,
               "rawItemWidth" : -1.0,
@@ -1189,6 +1222,10 @@
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "getPSRawItem" : {
+                "contentType" : "RAW",
+                "name" : "rawitem11"
+              },
               "rawItemHeight" : 22.0,
               "rawItemWidth" : -1.0,
               "showCaption" : true
@@ -1284,6 +1321,11 @@
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "getPSRawItem" : {
+                "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有项目&amp;nbsp;:&amp;nbsp;{{data.resprojectcnt ? data.resprojectcnt : 0}}&lt;/div&gt;</p>",
+                "contentType" : "HTML",
+                "name" : "rawitem7"
+              },
               "rawItemHeight" : -1.0,
               "rawItemWidth" : -1.0,
               "showCaption" : true
@@ -1297,6 +1339,11 @@
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
+              },
+              "getPSRawItem" : {
+                "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;进行中&amp;nbsp;:&amp;nbsp;{{data.undoneresprojectcnt ? data.undoneresprojectcnt : 0}}&lt;/div&gt;</p>",
+                "contentType" : "HTML",
+                "name" : "rawitem8"
               },
               "rawItemHeight" : -1.0,
               "rawItemWidth" : -1.0,
@@ -1375,6 +1422,11 @@
               "colMD" : 8,
               "colMDOffset" : 16,
               "layout" : "TABLE_24COL"
+            },
+            "getPSRawItem" : {
+              "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有发布&amp;nbsp;:&amp;nbsp;{{data.releasecnt ? data.releasecnt : 0}}&lt;/div&gt;</p>",
+              "contentType" : "HTML",
+              "name" : "rawitem9"
             },
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
@@ -1561,6 +1613,11 @@
               "colLG" : 8,
               "colMD" : 8,
               "layout" : "TABLE_24COL"
+            },
+            "getPSRawItem" : {
+              "content" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;维护中&amp;nbsp;:&amp;nbsp;{{data.normalreleasecnt ? data.normalreleasecnt : 0}}&lt;/div&gt;</p>",
+              "contentType" : "HTML",
+              "name" : "rawitem10"
             },
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,

@@ -132,6 +132,14 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "caption" : "测试结果",
+            "contentType" : "RAW",
+            "name" : "rawitem1",
+            "getPSSysCss" : {
+              "cssName" : "direct-content-line"
+            }
+          },
           "getPSSysCss" : {
             "cssName" : "direct-content-line"
           },
@@ -258,6 +266,14 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSRawItem" : {
+            "caption" : "全部通过",
+            "contentType" : "RAW",
+            "name" : "rawitem2",
+            "getPSSysCss" : {
+              "cssName" : "text-center-green"
+            }
+          },
           "getPSSysCss" : {
             "cssName" : "text-center-green"
           },
@@ -362,6 +378,32 @@
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
+                  "actionName" : "Get",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "READ",
+                  "name" : "load",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Get"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
+                  }
+                }, {
+                  "actionName" : "Create",
+                  "actionType" : "DEACTION",
+                  "dataAccessAction" : "CREATE",
+                  "name" : "create",
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Create"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
+                  }
+                }, {
                   "actionName" : "Update",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "UPDATE",
@@ -369,17 +411,6 @@
                   "getPSAppDEMethod" : {
                     "modelref" : true,
                     "id" : "Update"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
-                  }
-                }, {
-                  "actionType" : "DEDATASET",
-                  "name" : "fetch",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "FetchCurTestRun"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -399,19 +430,6 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
                   }
                 }, {
-                  "actionName" : "Get",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "READ",
-                  "name" : "load",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "Get"
-                  },
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
-                  }
-                }, {
                   "actionName" : "GetDraft",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
@@ -425,13 +443,11 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
                   }
                 }, {
-                  "actionName" : "Create",
-                  "actionType" : "DEACTION",
-                  "dataAccessAction" : "CREATE",
-                  "name" : "create",
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Create"
+                    "id" : "FetchCurTestRun"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -679,10 +695,14 @@
               "actionRSMode" : 1,
               "codeName" : "TestCases",
               "dataRSMode" : 0,
+              "majorDECodeName" : "Test",
+              "majorDEName" : "IBZ_API__TEST",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
               },
+              "minorDECodeName" : "TestCase",
+              "minorDEName" : "ZT_CASE",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
@@ -697,10 +717,14 @@
               "actionRSMode" : 1,
               "codeName" : "TestReults",
               "dataRSMode" : 0,
+              "majorDECodeName" : "TestCase",
+              "majorDEName" : "ZT_CASE",
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
+              "minorDECodeName" : "TestReult",
+              "minorDEName" : "ZT_TESTRESULT",
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"

@@ -96,7 +96,7 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.get(`/projectdailies/${_context.projectdaily}`);
+        const res = await this.http.get(`/projectdailies/${encodeURIComponent(_context.projectdaily)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
@@ -131,7 +131,7 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
      */
     async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
-        const res = await this.http.post(`/projectdailies/${_context.projectdaily}/summary`, _data);
+        const res = await this.http.post(`/projectdailies/${encodeURIComponent(_context.projectdaily)}/summary`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -149,7 +149,7 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
         try {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/projectdailies/${_context.projectdaily}`, _data);
+        const res = await this.http.put(`/projectdailies/${encodeURIComponent(_context.projectdaily)}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

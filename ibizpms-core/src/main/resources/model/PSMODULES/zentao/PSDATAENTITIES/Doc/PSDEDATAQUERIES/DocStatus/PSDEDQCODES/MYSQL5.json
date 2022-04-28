@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "deleted = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "select \ncount(1) as `ALLDOCCNT`,\n(select count(1) from zt_doc where TO_DAYS(DATE_FORMAT(NOW(),'%Y-%m-%d')) - TO_DAYS(DATE_FORMAT(editedDate,'%Y-%m-%d')) < 5 and deleted = '0') as `RECENTUPDATECNT`,\n(select count(1) from zt_doc where DATE_FORMAT(NOW(),'%Y-%m-%d') = DATE_FORMAT(editedDate,'%Y-%m-%d') and deleted = '0') as `TODAYUPDATECNT`,\n(select count(1) from zt_doc where TO_DAYS(DATE_FORMAT(NOW(),'%Y-%m-%d')) - TO_DAYS(DATE_FORMAT(addedDate,'%Y-%m-%d')) < 5 and deleted = '0') as `RECENTADDCNT`,\n(select count(1) from zt_doc where addedBy = #{srf.sessioncontext.srfloginname} and deleted = '0') as `MYDOCCNT`,\n(select count(1) from zt_doc where FIND_IN_SET(#{srf.sessioncontext.srfloginname},collector) > 0) as `MYFAVOURITECNT`,\ndocsn\nfrom zt_doc",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEDATAQUERIES/DocStatus/PSDEDQCODES/MYSQL5.json"
+}

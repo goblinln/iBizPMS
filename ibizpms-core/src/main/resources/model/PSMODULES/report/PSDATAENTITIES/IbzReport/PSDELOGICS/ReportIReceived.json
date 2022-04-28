@@ -5,6 +5,60 @@
   "logicName" : "我收到的汇报（计数器）",
   "name" : "我收到的汇报（计数器）",
   "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接879",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      }
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "统计我收到的日报数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接2143",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "sql" : "SELECT COUNT(1) as dailycnt FROM `t_ibz_daily` t1 where (t1.REPORTTO = ? or FIND_IN_SET(?,t1.mailto)) and not EXISTS(select 1 from zt_action t11 where t11.OBJECTID = t1.ibz_dailyid and t11.objectType = 'daily' and t11.actor = ? and t11.action = 'read') and t1.ISSUBMIT = '1'",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
     "codeName" : "Rawsqlcall3",
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -21,8 +75,7 @@
       "getSrcPSDELogicNode" : {
         "modelref" : true,
         "id" : "Rawsqlcall3"
-      },
-      "defaultLink" : false
+      }
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
@@ -41,6 +94,44 @@
       "srcValueType" : "SESSION"
     } ],
     "sql" : "SELECT COUNT(1) as weeklycnt FROM `t_ibz_weekly` t1 where (t1.REPORTTO = ? or FIND_IN_SET(?,t1.mailto)) and not EXISTS(select 1 from zt_action t11 where t11.OBJECTID = t1.ibz_weeklyid and t11.objectType = 'weekly' and t11.actor = ? and t11.action = 'read') and t1.ISSUBMIT = '1'",
+    "fillDstLogicParam" : true,
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall2",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "统计我收到的月报数（未读）",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "name" : "连接5862",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "sql" : "SELECT\n\tCOUNT( 1 ) AS monthlycnt \nFROM\n\t`t_ibz_monthly` t1 \nWHERE\n\t(\n\t\tt1.REPORTTO = ? \n\tOR FIND_IN_SET(?, t1.mailto )) \n\tAND NOT EXISTS (\n\tSELECT\n\t\t1 \n\tFROM\n\t\tzt_action t11 \n\tWHERE\n\t\tt11.OBJECTID = t1.ibz_monthlyid \n\t\tAND t11.objectType = 'monthly' \n\t\tAND t11.actor = ? \n\t\tAND t11.action = 'read' \n\t) \n\tAND t1.ISSUBMIT = '1'",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
@@ -70,110 +161,17 @@
     "sql" : "SELECT\n\tCOUNT( 1 ) AS reportlycnt \nFROM\n\t`t_ibz_reportly` t1 \nWHERE\n\t(\n\t\tt1.REPORTTO = ? \n\tOR FIND_IN_SET(?, t1.mailto )) \n\tAND NOT EXISTS (\n\tSELECT\n\t\t1 \n\tFROM\n\t\tzt_action t11 \n\tWHERE\n\t\tt11.OBJECTID = t1.IBZ_REPORTLYID\n\t\tAND t11.objectType = 'reportly' \n\t\tAND t11.actor = ? \n\t\tAND t11.action = 'read' \n\t) \n\tAND t1.ISSUBMIT = '1'",
     "fillDstLogicParam" : true,
     "parallelOutput" : true
-  }, {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接879",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall1",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "统计我收到的日报数",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接2143",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    } ],
-    "sql" : "SELECT COUNT(1) as dailycnt FROM `t_ibz_daily` t1 where (t1.REPORTTO = ? or FIND_IN_SET(?,t1.mailto)) and not EXISTS(select 1 from zt_action t11 where t11.OBJECTID = t1.ibz_dailyid and t11.objectType = 'daily' and t11.actor = ? and t11.action = 'read') and t1.ISSUBMIT = '1'",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
-  }, {
-    "codeName" : "Rawsqlcall2",
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "统计我收到的月报数（未读）",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "name" : "连接5862",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    }, {
-      "name" : "用户全局对象[srfloginname]",
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION"
-    } ],
-    "sql" : "SELECT\n\tCOUNT( 1 ) AS monthlycnt \nFROM\n\t`t_ibz_monthly` t1 \nWHERE\n\t(\n\t\tt1.REPORTTO = ? \n\tOR FIND_IN_SET(?, t1.mailto )) \n\tAND NOT EXISTS (\n\tSELECT\n\t\t1 \n\tFROM\n\t\tzt_action t11 \n\tWHERE\n\t\tt11.OBJECTID = t1.ibz_monthlyid \n\t\tAND t11.objectType = 'monthly' \n\t\tAND t11.actor = ? \n\t\tAND t11.action = 'read' \n\t) \n\tAND t1.ISSUBMIT = '1'",
-    "fillDstLogicParam" : true,
-    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "logicName" : "传入变量",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport.json"
     },
-    "default" : true
+    "default" : true,
+    "entityParam" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

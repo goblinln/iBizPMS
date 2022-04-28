@@ -1,0 +1,11 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "\t\n( t1.`TYPE` = 'project' )",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n\tt1.* \nFROM\n\t(\nSELECT\n\tt1.`ACCOUNT`,\n\tt1.`CONSUMED`,\n\tt1.`DAYS`,\n\tt1.`ESTIMATE`,\n\tt1.`HOURS`,\n\tt1.id as `ID`,\n\tt1.`JOIN`,\n\tt1.`LEFT`,\n\tt1.`LIMITED`,\n\tt1.`ORDER`,\n\tt1.`ROLE`,\n\tt1.`ROOT`,\n\t( t1.`DAYS` * t1.`HOURS` ) AS `TOTAL`,\n\tt1.`TYPE`,\n\tt2.`realname` AS `USERNAME` \nFROM\n\t`zt_team` t1\n\tLEFT JOIN `zt_user` t2 ON t2.`account` = t1.`account` \n\tunion \n\tSELECT\n\tt1.`ACCOUNT`,\n\t0 AS `CONSUMED`,\n\t((select tt.days from zt_project tt where tt.id = #{srf.datacontext.root})) AS `DAYS`,\n\t0 AS `ESTIMATE`,\n\t7 AS `HOURS`,\n\tnull as `ID`,\n\t'2020-07-13' AS `JOIN`,\n\t0 AS `LEFT`,\n\t'no' AS `LIMITED`,\n\t0 AS `ORDER`,\n\tt3.`name` as `ROLE`,\n\t#{srf.datacontext.root} as `ROOT`,\n\t90 AS `TOTAL`,\n\t'project' AS `TYPE`,\n\tt2.`realname` AS `USERNAME` \nFROM\n\t`zt_team` t1\n\tLEFT JOIN `zt_user` t2 ON t2.`account` = t1.`account` \n        left join zt_group t3 on t2.role = t3.role\n\twhere t2.deleted = '0' and  t1.type = 'project' and t1.root = #{srf.datacontext.teams} and t1.account not in (select  t.account from zt_team t where t.root = #{srf.datacontext.root} and t.type = 'project')\n\tunion \n\tSELECT\n\tt2.`ACCOUNT`,\n\t0 AS `CONSUMED`,\n\t((select tt.days from zt_project tt where tt.id = #{srf.datacontext.root})) AS `DAYS`,\n\t0 AS `ESTIMATE`,\n\t7 AS `HOURS`,\n\tnull as `ID`,\n\t'2020-07-13' AS `JOIN`,\n\t0 AS `LEFT`,\n\t'no' AS `LIMITED`,\n\t0 AS `ORDER`,\n\tt3.`name` as `ROLE`,\n\t#{srf.datacontext.root} as `ROOT`,\n\t90 AS `TOTAL`,\n\t'project' AS `TYPE`,\n\tt2.`realname` AS `USERNAME` \nFROM\n\t`zt_dept` t1\n\tLEFT JOIN `zt_user` t2 ON t2.`dept` = t1.`id` \n\tleft join zt_group t3 on t2.role = t3.role\n\twhere t2.deleted = '0' and t1.id = #{srf.datacontext.dept} and t2.account is not null and t2.account not in (select  t.account from zt_team t where t.root = #{srf.datacontext.root} and t.type = 'project')\n\t) t1",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEDATAQUERIES/RowEditDefault/PSDEDQCODES/MYSQL5.json"
+}

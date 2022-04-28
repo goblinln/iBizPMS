@@ -1,0 +1,31 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DEPTID`",
+    "name" : "DEPTID"
+  }, {
+    "expression" : "t1.`IBZPRO_TRANSLATORID`",
+    "name" : "IBZPRO_TRANSLATORID"
+  }, {
+    "expression" : "t1.`IBZPRO_TRANSLATORNAME`",
+    "name" : "IBZPRO_TRANSLATORNAME"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DEPTID`,\nt1.`IBZPRO_TRANSLATORID`,\nt1.`IBZPRO_TRANSLATORNAME`,\nt1.`ORGID`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_IBZPRO_TRANSLATOR` t1 \n",
+  "id" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProTranslator/PSDEDATAQUERIES/Simple/PSDEDQCODES/MYSQL5.json"
+}

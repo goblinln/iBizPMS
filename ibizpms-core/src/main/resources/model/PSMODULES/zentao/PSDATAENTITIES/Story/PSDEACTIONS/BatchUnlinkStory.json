@@ -6,13 +6,15 @@
   "logicName" : "计划批量解除关联需求",
   "name" : "BatchUnlinkStory",
   "getPSDEActionInput" : {
-    "codeName" : "BatchUnlinkStoryInput",
-    "name" : "输入对象",
+    "name" : "BatchUnlinkStoryInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "StoryDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BatchUnlinkStoryResult",
-    "name" : "返回对象",
+    "name" : "BatchUnlinkStoryResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

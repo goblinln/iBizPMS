@@ -1,0 +1,40 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CATEGORY`",
+    "name" : "CATEGORY"
+  }, {
+    "expression" : "t1.`CGID`",
+    "name" : "CGID"
+  }, {
+    "expression" : "t1.`FREEZE`",
+    "name" : "FREEZE"
+  }, {
+    "expression" : "t1.`HIDE`",
+    "name" : "HIDE"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`JOIN`",
+    "name" : "JOIN"
+  }, {
+    "expression" : "t1.`MUTE`",
+    "name" : "MUTE"
+  }, {
+    "expression" : "t1.`ORDER`",
+    "name" : "ORDER"
+  }, {
+    "expression" : "t1.`QUIT`",
+    "name" : "QUIT"
+  }, {
+    "expression" : "t1.`STAR`",
+    "name" : "STAR"
+  }, {
+    "expression" : "t1.`USER`",
+    "name" : "USER"
+  } ],
+  "queryCode" : "SELECT\nt1.`CATEGORY`,\nt1.`CGID`,\nt1.`FREEZE`,\nt1.`HIDE`,\nt1.`ID`,\nt1.`JOIN`,\nt1.`MUTE`,\nt1.`ORDER`,\nt1.`QUIT`,\nt1.`STAR`,\nt1.`USER`\nFROM `zt_im_chatuser` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/ImChatuser/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

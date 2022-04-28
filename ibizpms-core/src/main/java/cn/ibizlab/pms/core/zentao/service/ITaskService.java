@@ -183,6 +183,10 @@ public interface ITaskService extends IService<Task> {
     List<Task> selectByParent(Long id);
     void removeByParent(Collection<Long> ids);
     void removeByParent(Long id);
+    JSONObject importData(List<Task> entities, int batchSize, boolean isIgnoreError);
+
+    @Async("asyncExecutor")
+    void asyncImportData(List<Task> entities, int batchSize, boolean isIgnoreError);
     Task dynamicCall(Long key, String action, Task et);
     /**
      *自定义查询SQL

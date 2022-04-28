@@ -6,13 +6,15 @@
   "logicName" : "批关联BUG",
   "name" : "BatchLinkBug",
   "getPSDEActionInput" : {
-    "codeName" : "BatchLinkBugInput",
-    "name" : "输入对象",
+    "name" : "BatchLinkBugInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProductPlanDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "BatchLinkBugResult",
-    "name" : "返回对象",
+    "name" : "BatchLinkBugResult",
     "type" : "VOID"
   }
 }

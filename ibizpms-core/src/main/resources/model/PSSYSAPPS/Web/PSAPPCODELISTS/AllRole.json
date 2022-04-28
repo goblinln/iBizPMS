@@ -1,4 +1,5 @@
 {
+  "codeListTag" : "uaa__AllRole",
   "codeListType" : "DYNAMIC",
   "codeName" : "AllRole",
   "dynaInstMode" : 1,

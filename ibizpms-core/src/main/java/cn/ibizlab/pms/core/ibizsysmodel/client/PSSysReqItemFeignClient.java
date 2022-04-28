@@ -21,10 +21,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysReqItem", fallback = PSSysReqItemFallback.class)
 public interface PSSysReqItemFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/select")
-    Page<PSSysReqItem> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems")
     PSSysReqItem create(@RequestBody PSSysReqItem pssysreqitem);
 
@@ -32,11 +28,8 @@ public interface PSSysReqItemFeignClient {
     Boolean createBatch(@RequestBody List<PSSysReqItem> pssysreqitems);
 
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssysreqitems/{pssysreqitemid}")
-    PSSysReqItem update(@PathVariable("pssysreqitemid") String pssysreqitemid,@RequestBody PSSysReqItem pssysreqitem);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssysreqitems/batch")
-    Boolean updateBatch(@RequestBody List<PSSysReqItem> pssysreqitems);
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/{pssysreqitemid}")
+    PSSysReqItem get(@PathVariable("pssysreqitemid") String pssysreqitemid);
 
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/pssysreqitems/{pssysreqitemid}")
@@ -46,16 +39,24 @@ public interface PSSysReqItemFeignClient {
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/{pssysreqitemid}")
-    PSSysReqItem get(@PathVariable("pssysreqitemid") String pssysreqitemid);
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssysreqitems/{pssysreqitemid}")
+    PSSysReqItem update(@PathVariable("pssysreqitemid") String pssysreqitemid,@RequestBody PSSysReqItem pssysreqitem);
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/getdraft")
-    PSSysReqItem getDraft(PSSysReqItem entity);
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssysreqitems/batch")
+    Boolean updateBatch(@RequestBody List<PSSysReqItem> pssysreqitems);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems/checkkey")
     Boolean checkKey(@RequestBody PSSysReqItem pssysreqitem);
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/fetchdefault")
+    Page<PSSysReqItem> searchDefault(@SpringQueryMap PSSysReqItemSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/getdraft")
+    PSSysReqItem getDraft(PSSysReqItem entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems/save")
@@ -67,9 +68,8 @@ public interface PSSysReqItemFeignClient {
     Boolean saveBatch(@RequestBody List<PSSysReqItem> pssysreqitems);
 
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/fetchdefault")
-    Page<PSSysReqItem> searchDefault(@SpringQueryMap PSSysReqItemSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/select")
+    Page<PSSysReqItem> select();
 
 
 

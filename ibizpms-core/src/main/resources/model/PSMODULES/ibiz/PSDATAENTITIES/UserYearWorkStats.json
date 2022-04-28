@@ -1,4 +1,20 @@
 {
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACMODES/Default.json"
+  } ],
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
@@ -8,14 +24,16 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
-      "codeName" : "CreateInput",
-      "name" : "输入对象",
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CreateResult",
-      "name" : "返回对象",
+      "name" : "CreateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -28,14 +46,16 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
-      "codeName" : "UpdateInput",
-      "name" : "输入对象",
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateResult",
-      "name" : "返回对象",
+      "name" : "UpdateResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -49,13 +69,15 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
-      "codeName" : "RemoveInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "RemoveResult",
-      "name" : "返回对象",
+      "name" : "RemoveResult",
       "type" : "VOID"
     },
     "batchAction" : true,
@@ -69,13 +91,19 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
-      "codeName" : "GetInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetResult",
-      "name" : "返回对象",
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -88,13 +116,19 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
-      "codeName" : "GetDraftInput",
-      "name" : "输入对象",
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDraftResult",
-      "name" : "返回对象",
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO"
     },
     "builtinAction" : true
@@ -106,13 +140,15 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
-      "codeName" : "CheckKeyInput",
-      "name" : "输入对象",
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "CheckKeyResult",
-      "name" : "返回对象",
+      "name" : "CheckKeyResult",
       "stdDataType" : 9,
       "type" : "SIMPLE"
     },
@@ -125,13 +161,19 @@
     "logicName" : "获取研发人员相关数据",
     "name" : "GetDevInfomation",
     "getPSDEActionInput" : {
-      "codeName" : "GetDevInfomationInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetDevInfomationInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetDevInfomationResult",
-      "name" : "返回对象",
+      "name" : "GetDevInfomationResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO"
     },
     "getPSDELogic" : {
@@ -146,13 +188,19 @@
     "logicName" : "获取产品经理相关数据",
     "name" : "GetPoInfomation",
     "getPSDEActionInput" : {
-      "codeName" : "GetPoInfomationInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetPoInfomationInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetPoInfomationResult",
-      "name" : "返回对象",
+      "name" : "GetPoInfomationResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO"
     },
     "getPSDELogic" : {
@@ -167,13 +215,19 @@
     "logicName" : "获取测试人员相关数据",
     "name" : "GetQaInfomation",
     "getPSDEActionInput" : {
-      "codeName" : "GetQaInfomationInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetQaInfomationInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetQaInfomationResult",
-      "name" : "返回对象",
+      "name" : "GetQaInfomationResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO"
     },
     "getPSDELogic" : {
@@ -191,9 +245,6 @@
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetInfo.json"
       },
-      "cloneParam" : false,
-      "enableBackend" : true,
-      "ignoreException" : false,
       "internalLogic" : true
     } ],
     "codeName" : "GetUserYearAction",
@@ -201,13 +252,19 @@
     "logicName" : "获取用户所选年度的动作",
     "name" : "GetUserYearAction",
     "getPSDEActionInput" : {
-      "codeName" : "GetUserYearActionInput",
-      "name" : "输入对象",
+      "getKeyPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetUserYearActionInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "GetUserYearActionResult",
-      "name" : "返回对象",
+      "name" : "GetUserYearActionResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO"
     }
   }, {
@@ -218,13 +275,15 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
-      "codeName" : "SaveInput",
-      "name" : "输入对象",
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
-      "codeName" : "SaveResult",
-      "name" : "返回对象",
+      "name" : "SaveResult",
       "type" : "VOID"
     },
     "builtinAction" : true
@@ -239,9 +298,6 @@
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/UpdateInfo.json"
       },
-      "cloneParam" : false,
-      "enableBackend" : true,
-      "ignoreException" : false,
       "internalLogic" : true
     } ],
     "codeName" : "UpdateTitleByYear",
@@ -249,21 +305,144 @@
     "logicName" : "更新标题",
     "name" : "UpdateTitleByYear",
     "getPSDEActionInput" : {
-      "codeName" : "UpdateTitleByYearInput",
-      "name" : "输入对象",
+      "name" : "UpdateTitleByYearInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
-      "codeName" : "UpdateTitleByYearResult",
-      "name" : "返回对象",
+      "name" : "UpdateTitleByYearResult",
       "type" : "VOID"
     }
   } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`zt_user`",
+    "tableName" : "zt_user",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "PASSWORD",
+      "codeName" : "PASSWORD"
+    }, {
+      "name" : "WEIXIN",
+      "codeName" : "WEIXIN"
+    }, {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    }, {
+      "name" : "QQ",
+      "codeName" : "QQ"
+    }, {
+      "name" : "RANZHI",
+      "codeName" : "RANZHI"
+    }, {
+      "name" : "NICKNAME",
+      "codeName" : "NICKNAME"
+    }, {
+      "name" : "AVATAR",
+      "codeName" : "AVATAR"
+    }, {
+      "name" : "FAILS",
+      "codeName" : "FAILS"
+    }, {
+      "name" : "JOIN",
+      "codeName" : "JOIN"
+    }, {
+      "name" : "DINGDING",
+      "codeName" : "DINGDING"
+    }, {
+      "name" : "IP",
+      "codeName" : "IP"
+    }, {
+      "name" : "MOBILE",
+      "codeName" : "MOBILE"
+    }, {
+      "name" : "WHATSAPP",
+      "codeName" : "WHATSAPP"
+    }, {
+      "name" : "ID",
+      "codeName" : "Id"
+    }, {
+      "name" : "EMAIL",
+      "codeName" : "EMAIL"
+    }, {
+      "name" : "CLIENTLANG",
+      "codeName" : "CLIENTLANG"
+    }, {
+      "name" : "REALNAME",
+      "codeName" : "Realname"
+    }, {
+      "name" : "COMMITER",
+      "codeName" : "COMMITER"
+    }, {
+      "name" : "SLACK",
+      "codeName" : "SLACK"
+    }, {
+      "name" : "DELETED",
+      "codeName" : "DELETED"
+    }, {
+      "name" : "LAST",
+      "codeName" : "LAST"
+    }, {
+      "name" : "SKYPE",
+      "codeName" : "SKYPE"
+    }, {
+      "name" : "BIRTHDAY",
+      "codeName" : "BIRTHDAY"
+    }, {
+      "name" : "PHONE",
+      "codeName" : "PHONE"
+    }, {
+      "name" : "SCORE",
+      "codeName" : "SCORE"
+    }, {
+      "name" : "ROLE",
+      "codeName" : "Role"
+    }, {
+      "name" : "CLIENTSTATUS",
+      "codeName" : "CLIENTSTATUS"
+    }, {
+      "name" : "DEPT",
+      "codeName" : "Dept"
+    }, {
+      "name" : "ADDRESS",
+      "codeName" : "ADDRESS"
+    }, {
+      "name" : "SCORELEVEL",
+      "codeName" : "SCORELEVEL"
+    }, {
+      "name" : "VISITS",
+      "codeName" : "Visits"
+    }, {
+      "name" : "LOCKED",
+      "codeName" : "LOCKED"
+    }, {
+      "name" : "GENDER",
+      "codeName" : "GENDER"
+    }, {
+      "name" : "ZIPCODE",
+      "codeName" : "ZIPCODE"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json",
+    "name" : "ZT_USER",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "zt_user"
+    },
+    "tableType" : "MAIN"
+  } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
@@ -276,16 +455,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_USERYEARWORKSTATS"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
+      "type" : "DTOS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEDATAQUERIES/MonthFinishTaskAndBug/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "MonthFinishTaskAndBug",
     "logicName" : "月完成任务数及累计工时和解决Bug数",
@@ -298,16 +488,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_USERYEARWORKSTATS"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "MonthFinishTaskAndBugInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "MonthFinishTaskAndBugResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEDATAQUERIES/MonthOpenedBugAndCase/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "MonthOpenedBugAndCase",
     "logicName" : "月创建Bug数和创建用例数",
@@ -320,16 +521,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_USERYEARWORKSTATS"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "MonthOpenedBugAndCaseInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "MonthOpenedBugAndCaseResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
-        "name" : "查询条件"
-      } ]
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEDATAQUERIES/MonthOpenedStory/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "MonthOpenedStory",
     "logicName" : "月创建需求数",
@@ -342,11 +554,27 @@
       "joinType" : "MAIN",
       "name" : "IBZ_USERYEARWORKSTATS"
     },
+    "getPSDEDataQueryInput" : {
+      "name" : "MonthOpenedStoryInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "MonthOpenedStoryResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
+      "type" : "DTOS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
@@ -358,7 +586,24 @@
       },
       "joinType" : "MAIN",
       "name" : "IBZ_USERYEARWORKSTATS"
-    }
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -369,13 +614,19 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "DefaultInput",
-      "name" : "输入对象",
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "DefaultResult",
-      "name" : "返回对象",
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "PAGE"
     },
     "defaultMode" : true,
@@ -390,13 +641,19 @@
       "id" : "MonthFinishTaskAndBug"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "MonthFinishTaskAndBugInput",
-      "name" : "输入对象",
+      "name" : "MonthFinishTaskAndBugInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "MonthFinishTaskAndBugResult",
-      "name" : "返回对象",
+      "name" : "MonthFinishTaskAndBugResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -410,13 +667,19 @@
       "id" : "MonthOpenedBugAndCase"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "MonthOpenedBugAndCaseInput",
-      "name" : "输入对象",
+      "name" : "MonthOpenedBugAndCaseInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "MonthOpenedBugAndCaseResult",
-      "name" : "返回对象",
+      "name" : "MonthOpenedBugAndCaseResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -430,13 +693,19 @@
       "id" : "MonthOpenedStory"
     } ],
     "getPSDEDataSetInput" : {
-      "codeName" : "MonthOpenedStoryInput",
-      "name" : "输入对象",
+      "name" : "MonthOpenedStoryInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsFilterDTO"
+      },
       "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
-      "codeName" : "MonthOpenedStoryResult",
-      "name" : "返回对象",
+      "name" : "MonthOpenedStoryResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserYearWorkStatsDTO"
+      },
       "type" : "PAGE"
     },
     "enableBackend" : true,
@@ -449,6 +718,31 @@
       "name" : "PASSWORD",
       "queryCodeExp" : "t1.`PASSWORD`",
       "standardColumnName" : "`PASSWORD`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PASSWORD][密码]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PASSWORD][密码]移动端默认",
+        "stringLength" : 32,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PASSWORD][密码]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PASSWORD][密码]",
+        "stringLength" : 32,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -469,10 +763,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[32]"
       },
-      "getPSDEField" : {
-        "name" : "PASSWORD",
-        "codeName" : "PASSWORD"
-      },
       "ruleInfo" : "内容长度必须小于等于[32]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -486,6 +776,14 @@
     "length" : 32,
     "logicName" : "密码",
     "name" : "PASSWORD",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "PASSWORD"
+    },
     "stdDataType" : 25,
     "stringLength" : 32,
     "valueFormat" : "%1$s"
@@ -497,6 +795,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`YEARPRODUCTCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[YEARPRODUCTCNT][累计参与产品数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[YEARPRODUCTCNT][累计参与产品数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[YEARPRODUCTCNT][累计参与产品数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[YEARPRODUCTCNT][累计参与产品数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -504,10 +825,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "YEARPRODUCTCNT",
-        "codeName" : "Yearproductcnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -518,11 +835,13 @@
     "codeName" : "Yearproductcnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "累计参与产品数",
     "name" : "YEARPRODUCTCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -533,6 +852,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`YEARBUGCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[YEARBUGCNT][累计创建Bug数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[YEARBUGCNT][累计创建Bug数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[YEARBUGCNT][累计创建Bug数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[YEARBUGCNT][累计创建Bug数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -540,10 +882,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "YEARBUGCNT",
-        "codeName" : "Yearbugcnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -554,11 +892,13 @@
     "codeName" : "Yearbugcnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "累计创建Bug数",
     "name" : "YEARBUGCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -568,6 +908,31 @@
       "name" : "WEIXIN",
       "queryCodeExp" : "t1.`WEIXIN`",
       "standardColumnName" : "`WEIXIN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[WEIXIN][微信]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[WEIXIN][微信]",
+        "stringLength" : 90,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[WEIXIN][微信]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[WEIXIN][微信]移动端默认",
+        "stringLength" : 90,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -588,10 +953,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[90]"
       },
-      "getPSDEField" : {
-        "name" : "WEIXIN",
-        "codeName" : "WEIXIN"
-      },
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -605,6 +966,14 @@
     "length" : 90,
     "logicName" : "微信",
     "name" : "WEIXIN",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "WEIXIN"
+    },
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s"
@@ -616,6 +985,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`YEARCASECNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[YEARCASECNT][累计创建用例数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[YEARCASECNT][累计创建用例数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[YEARCASECNT][累计创建用例数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[YEARCASECNT][累计创建用例数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -623,10 +1015,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "YEARCASECNT",
-        "codeName" : "Yearcasecnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -637,11 +1025,13 @@
     "codeName" : "Yearcasecnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "累计创建用例数",
     "name" : "YEARCASECNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -651,6 +1041,31 @@
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
       "standardColumnName" : "`ACCOUNT`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ACCOUNT][账号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ACCOUNT][账号]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ACCOUNT][账号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ACCOUNT][账号]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -671,10 +1086,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -688,6 +1099,14 @@
     "length" : 100,
     "logicName" : "账号",
     "name" : "ACCOUNT",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ACCOUNT"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
@@ -698,6 +1117,31 @@
       "name" : "QQ",
       "queryCodeExp" : "t1.`QQ`",
       "standardColumnName" : "`QQ`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[QQ][QQ]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[QQ][QQ]",
+        "stringLength" : 20,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[QQ][QQ]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[QQ][QQ]移动端默认",
+        "stringLength" : 20,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -718,10 +1162,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[20]"
       },
-      "getPSDEField" : {
-        "name" : "QQ",
-        "codeName" : "QQ"
-      },
       "ruleInfo" : "内容长度必须小于等于[20]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -735,6 +1175,14 @@
     "length" : 20,
     "logicName" : "QQ",
     "name" : "QQ",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "QQ"
+    },
     "stdDataType" : 25,
     "stringLength" : 20,
     "valueFormat" : "%1$s"
@@ -745,6 +1193,31 @@
       "name" : "RANZHI",
       "queryCodeExp" : "t1.`RANZHI`",
       "standardColumnName" : "`RANZHI`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[RANZHI][ranzhi]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[RANZHI][ranzhi]移动端默认",
+        "stringLength" : 30,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[RANZHI][ranzhi]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[RANZHI][ranzhi]",
+        "stringLength" : 30,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -765,10 +1238,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[30]"
       },
-      "getPSDEField" : {
-        "name" : "RANZHI",
-        "codeName" : "RANZHI"
-      },
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -782,6 +1251,14 @@
     "length" : 30,
     "logicName" : "ranzhi",
     "name" : "RANZHI",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "RANZHI"
+    },
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
@@ -792,6 +1269,31 @@
       "name" : "NICKNAME",
       "queryCodeExp" : "t1.`NICKNAME`",
       "standardColumnName" : "`NICKNAME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[NICKNAME][nickname]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[NICKNAME][nickname]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[NICKNAME][nickname]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[NICKNAME][nickname]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -812,10 +1314,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
       },
-      "getPSDEField" : {
-        "name" : "NICKNAME",
-        "codeName" : "NICKNAME"
-      },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -829,6 +1327,14 @@
     "length" : 60,
     "logicName" : "nickname",
     "name" : "NICKNAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "NICKNAME"
+    },
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s"
@@ -839,6 +1345,31 @@
       "name" : "AVATAR",
       "queryCodeExp" : "t1.`AVATAR`",
       "standardColumnName" : "`AVATAR`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[AVATAR][avatar]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[AVATAR][avatar]移动端默认",
+        "stringLength" : 30,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[AVATAR][avatar]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[AVATAR][avatar]",
+        "stringLength" : 30,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -859,10 +1390,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[30]"
       },
-      "getPSDEField" : {
-        "name" : "AVATAR",
-        "codeName" : "AVATAR"
-      },
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -876,6 +1403,14 @@
     "length" : 30,
     "logicName" : "avatar",
     "name" : "AVATAR",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "AVATAR"
+    },
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
@@ -887,6 +1422,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`MONTHFINISHTASK`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[MONTHFINISHTASK][月完成任务数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[MONTHFINISHTASK][月完成任务数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[MONTHFINISHTASK][月完成任务数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[MONTHFINISHTASK][月完成任务数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -894,10 +1452,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "MONTHFINISHTASK",
-        "codeName" : "Monthfinishtask"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -908,11 +1462,13 @@
     "codeName" : "Monthfinishtask",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "月完成任务数",
     "name" : "MONTHFINISHTASK",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -923,6 +1479,29 @@
       "queryCodeExp" : "t1.`FAILS`",
       "standardColumnName" : "`FAILS`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[FAILS][fails]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[FAILS][fails]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[FAILS][fails]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[FAILS][fails]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -930,10 +1509,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FAILS",
-        "codeName" : "FAILS"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -947,6 +1522,14 @@
     "importOrder" : 1000,
     "logicName" : "fails",
     "name" : "FAILS",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "FAILS"
+    },
     "stdDataType" : 9,
     "valueFormat" : "%1$s"
   }, {
@@ -957,6 +1540,31 @@
       "queryCodeExp" : "t1.`JOIN`",
       "standardColumnName" : "`JOIN`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[JOIN][入职日期]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKER",
+        "name" : "[JOIN][入职日期]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[JOIN][入职日期]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[JOIN][入职日期]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -964,10 +1572,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "JOIN",
-        "codeName" : "JOIN"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -981,6 +1585,14 @@
     "importOrder" : 1000,
     "logicName" : "入职日期",
     "name" : "JOIN",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "JOIN"
+    },
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
   }, {
@@ -991,6 +1603,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`YEARSTORYCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[YEARSTORYCNT][累计创建需求数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[YEARSTORYCNT][累计创建需求数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[YEARSTORYCNT][累计创建需求数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[YEARSTORYCNT][累计创建需求数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -998,10 +1633,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "YEARSTORYCNT",
-        "codeName" : "Yearstorycnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1012,11 +1643,13 @@
     "codeName" : "Yearstorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "累计创建需求数",
     "name" : "YEARSTORYCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1027,6 +1660,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`YEARPLANCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[YEARPLANCNT][累计创建计划数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[YEARPLANCNT][累计创建计划数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[YEARPLANCNT][累计创建计划数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[YEARPLANCNT][累计创建计划数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1034,10 +1690,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "YEARPLANCNT",
-        "codeName" : "Yearplancnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1048,11 +1700,13 @@
     "codeName" : "Yearplancnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "累计创建计划数",
     "name" : "YEARPLANCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1062,6 +1716,31 @@
       "name" : "DINGDING",
       "queryCodeExp" : "t1.`DINGDING`",
       "standardColumnName" : "`DINGDING`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DINGDING][钉钉]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DINGDING][钉钉]",
+        "stringLength" : 90,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DINGDING][钉钉]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DINGDING][钉钉]移动端默认",
+        "stringLength" : 90,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1082,10 +1761,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[90]"
       },
-      "getPSDEField" : {
-        "name" : "DINGDING",
-        "codeName" : "DINGDING"
-      },
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1099,6 +1774,14 @@
     "length" : 90,
     "logicName" : "钉钉",
     "name" : "DINGDING",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DINGDING"
+    },
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s"
@@ -1109,6 +1792,31 @@
       "name" : "IP",
       "queryCodeExp" : "t1.`IP`",
       "standardColumnName" : "`IP`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[IP][ip]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[IP][ip]",
+        "stringLength" : 15,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[IP][ip]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[IP][ip]移动端默认",
+        "stringLength" : 15,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1129,10 +1837,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[15]"
       },
-      "getPSDEField" : {
-        "name" : "IP",
-        "codeName" : "IP"
-      },
       "ruleInfo" : "内容长度必须小于等于[15]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1146,6 +1850,14 @@
     "length" : 15,
     "logicName" : "ip",
     "name" : "IP",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "IP"
+    },
     "stdDataType" : 25,
     "stringLength" : 15,
     "valueFormat" : "%1$s"
@@ -1157,6 +1869,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`YEARACTIONCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[YEARACTIONCNT][累计动态数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[YEARACTIONCNT][累计动态数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[YEARACTIONCNT][累计动态数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[YEARACTIONCNT][累计动态数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1164,10 +1899,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "YEARACTIONCNT",
-        "codeName" : "Yearactioncnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1178,11 +1909,13 @@
     "codeName" : "Yearactioncnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "累计动态数",
     "name" : "YEARACTIONCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1192,6 +1925,31 @@
       "name" : "MOBILE",
       "queryCodeExp" : "t1.`MOBILE`",
       "standardColumnName" : "`MOBILE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[MOBILE][手机]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[MOBILE][手机]",
+        "stringLength" : 11,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[MOBILE][手机]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[MOBILE][手机]移动端默认",
+        "stringLength" : 11,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1212,10 +1970,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[11]"
       },
-      "getPSDEField" : {
-        "name" : "MOBILE",
-        "codeName" : "MOBILE"
-      },
       "ruleInfo" : "内容长度必须小于等于[11]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1229,6 +1983,14 @@
     "length" : 11,
     "logicName" : "手机",
     "name" : "MOBILE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "MOBILE"
+    },
     "stdDataType" : 25,
     "stringLength" : 11,
     "valueFormat" : "%1$s"
@@ -1239,6 +2001,31 @@
       "name" : "WHATSAPP",
       "queryCodeExp" : "t1.`WHATSAPP`",
       "standardColumnName" : "`WHATSAPP`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[WHATSAPP][whatsapp]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[WHATSAPP][whatsapp]移动端默认",
+        "stringLength" : 90,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[WHATSAPP][whatsapp]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[WHATSAPP][whatsapp]",
+        "stringLength" : 90,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1259,10 +2046,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[90]"
       },
-      "getPSDEField" : {
-        "name" : "WHATSAPP",
-        "codeName" : "WHATSAPP"
-      },
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1276,6 +2059,14 @@
     "length" : 90,
     "logicName" : "whatsapp",
     "name" : "WHATSAPP",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "WHATSAPP"
+    },
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s"
@@ -1293,6 +2084,29 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ID][用户编号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ID][用户编号]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ID][用户编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ID][用户编号]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1300,10 +2114,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1318,6 +2128,14 @@
     "length" : 20,
     "logicName" : "用户编号",
     "name" : "ID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ID"
+    },
     "getPSSysSequence" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserSeq.json"
@@ -1334,6 +2152,31 @@
       "name" : "EMAIL",
       "queryCodeExp" : "t1.`EMAIL`",
       "standardColumnName" : "`EMAIL`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[EMAIL][邮箱]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EMAIL][邮箱]移动端默认",
+        "stringLength" : 90,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[EMAIL][邮箱]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EMAIL][邮箱]",
+        "stringLength" : 90,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1354,10 +2197,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[90]"
       },
-      "getPSDEField" : {
-        "name" : "EMAIL",
-        "codeName" : "EMAIL"
-      },
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1371,6 +2210,14 @@
     "length" : 90,
     "logicName" : "邮箱",
     "name" : "EMAIL",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "EMAIL"
+    },
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s"
@@ -1382,6 +2229,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`YEARESTIMATECNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[YEARESTIMATECNT][累计工时数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[YEARESTIMATECNT][累计工时数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[YEARESTIMATECNT][累计工时数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[YEARESTIMATECNT][累计工时数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1389,10 +2259,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "YEARESTIMATECNT",
-        "codeName" : "Yearestimatecnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1403,11 +2269,13 @@
     "codeName" : "Yearestimatecnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "累计工时数",
     "name" : "YEARESTIMATECNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1417,6 +2285,31 @@
       "name" : "CLIENTLANG",
       "queryCodeExp" : "t1.`CLIENTLANG`",
       "standardColumnName" : "`CLIENTLANG`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CLIENTLANG][clientLang]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CLIENTLANG][clientLang]移动端默认",
+        "stringLength" : 10,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CLIENTLANG][clientLang]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CLIENTLANG][clientLang]",
+        "stringLength" : 10,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1437,10 +2330,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[10]"
       },
-      "getPSDEField" : {
-        "name" : "CLIENTLANG",
-        "codeName" : "CLIENTLANG"
-      },
       "ruleInfo" : "内容长度必须小于等于[10]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1454,6 +2343,14 @@
     "length" : 10,
     "logicName" : "clientLang",
     "name" : "CLIENTLANG",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CLIENTLANG"
+    },
     "stdDataType" : 25,
     "stringLength" : 10,
     "valueFormat" : "%1$s"
@@ -1465,6 +2362,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`MONTESTIMATE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[MONTESTIMATE][月累计工时]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[MONTESTIMATE][月累计工时]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[MONTESTIMATE][月累计工时]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[MONTESTIMATE][月累计工时]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1472,10 +2392,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "MONTESTIMATE",
-        "codeName" : "Montestimate"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1486,11 +2402,13 @@
     "codeName" : "Montestimate",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "月累计工时",
     "name" : "MONTESTIMATE",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1506,6 +2424,31 @@
       "name" : "N_REALNAME_LIKE",
       "stdDataType" : 25,
       "valueOP" : "LIKE"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[REALNAME][真实用户名]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[REALNAME][真实用户名]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[REALNAME][真实用户名]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[REALNAME][真实用户名]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1526,10 +2469,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "REALNAME",
-        "codeName" : "Realname"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1543,6 +2482,14 @@
     "length" : 100,
     "logicName" : "真实用户名",
     "name" : "REALNAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "REALNAME"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
@@ -1553,6 +2500,31 @@
       "name" : "COMMITER",
       "queryCodeExp" : "t1.`COMMITER`",
       "standardColumnName" : "`COMMITER`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[COMMITER][源代码账户]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[COMMITER][源代码账户]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[COMMITER][源代码账户]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[COMMITER][源代码账户]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1573,10 +2545,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "COMMITER",
-        "codeName" : "COMMITER"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1590,6 +2558,14 @@
     "length" : 100,
     "logicName" : "源代码账户",
     "name" : "COMMITER",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "COMMITER"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
@@ -1600,6 +2576,31 @@
       "name" : "SLACK",
       "queryCodeExp" : "t1.`SLACK`",
       "standardColumnName" : "`SLACK`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SLACK][slack]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SLACK][slack]移动端默认",
+        "stringLength" : 90,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SLACK][slack]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SLACK][slack]",
+        "stringLength" : 90,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1620,10 +2621,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[90]"
       },
-      "getPSDEField" : {
-        "name" : "SLACK",
-        "codeName" : "SLACK"
-      },
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1637,6 +2634,14 @@
     "length" : 90,
     "logicName" : "slack",
     "name" : "SLACK",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "SLACK"
+    },
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s"
@@ -1647,6 +2652,31 @@
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
       "standardColumnName" : "`DELETED`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DELETED][逻辑删除标志]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DELETED][逻辑删除标志]",
+        "stringLength" : 1,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DELETED][逻辑删除标志]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DELETED][逻辑删除标志]移动端默认",
+        "stringLength" : 1,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1667,10 +2697,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[1]"
       },
-      "getPSDEField" : {
-        "name" : "DELETED",
-        "codeName" : "DELETED"
-      },
       "ruleInfo" : "内容长度必须小于等于[1]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1684,6 +2710,14 @@
     "length" : 1,
     "logicName" : "逻辑删除标志",
     "name" : "DELETED",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DELETED"
+    },
     "stdDataType" : 25,
     "stringLength" : 1,
     "valueFormat" : "%1$s"
@@ -1695,6 +2729,29 @@
       "queryCodeExp" : "t1.`LAST`",
       "standardColumnName" : "`LAST`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[LAST][最后登录]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[LAST][最后登录]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[LAST][最后登录]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[LAST][最后登录]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1702,10 +2759,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "LAST",
-        "codeName" : "LAST"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1719,6 +2772,14 @@
     "importOrder" : 1000,
     "logicName" : "最后登录",
     "name" : "LAST",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "LAST"
+    },
     "stdDataType" : 9,
     "valueFormat" : "%1$s"
   }, {
@@ -1728,6 +2789,31 @@
       "name" : "CURYEAR",
       "queryCodeExp" : "(DATE_FORMAT(now(),'%Y'))",
       "standardColumnName" : "`CURYEAR`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CURYEAR][年度]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CURYEAR][年度]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CURYEAR][年度]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CURYEAR][年度]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1748,10 +2834,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "CURYEAR",
-        "codeName" : "Curyear"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1761,6 +2843,7 @@
     "codeName" : "Curyear",
     "dEFType" : 2,
     "dataType" : "TEXT",
+    "formulaFormat" : "(DATE_FORMAT(now(),'%Y'))",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "年度",
@@ -1768,6 +2851,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1777,6 +2861,31 @@
       "name" : "JUDGEROLE",
       "queryCodeExp" : "(case when t1.role in ('dev','td','pm') then 'dev' when t1.role in ('qd','qa') then 'qa' else 'po' end)",
       "standardColumnName" : "`JUDGEROLE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[JUDGEROLE][判断角色]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[JUDGEROLE][判断角色]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[JUDGEROLE][判断角色]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[JUDGEROLE][判断角色]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1797,10 +2906,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "JUDGEROLE",
-        "codeName" : "Judgerole"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1810,6 +2915,7 @@
     "codeName" : "Judgerole",
     "dEFType" : 2,
     "dataType" : "TEXT",
+    "formulaFormat" : "(case when t1.role in ('dev','td','pm') then 'dev' when t1.role in ('qd','qa') then 'qa' else 'po' end)",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "判断角色",
@@ -1817,6 +2923,7 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1826,6 +2933,31 @@
       "name" : "SKYPE",
       "queryCodeExp" : "t1.`SKYPE`",
       "standardColumnName" : "`SKYPE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[SKYPE][skype]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SKYPE][skype]",
+        "stringLength" : 90,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[SKYPE][skype]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SKYPE][skype]移动端默认",
+        "stringLength" : 90,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1846,10 +2978,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[90]"
       },
-      "getPSDEField" : {
-        "name" : "SKYPE",
-        "codeName" : "SKYPE"
-      },
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1863,6 +2991,14 @@
     "length" : 90,
     "logicName" : "skype",
     "name" : "SKYPE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "SKYPE"
+    },
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s"
@@ -1874,6 +3010,31 @@
       "queryCodeExp" : "t1.`BIRTHDAY`",
       "standardColumnName" : "`BIRTHDAY`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[BIRTHDAY][birthday]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[BIRTHDAY][birthday]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[BIRTHDAY][birthday]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKER",
+        "name" : "[BIRTHDAY][birthday]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1881,10 +3042,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BIRTHDAY",
-        "codeName" : "BIRTHDAY"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1898,6 +3055,14 @@
     "importOrder" : 1000,
     "logicName" : "birthday",
     "name" : "BIRTHDAY",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "BIRTHDAY"
+    },
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
   }, {
@@ -1907,6 +3072,31 @@
       "name" : "PHONE",
       "queryCodeExp" : "t1.`PHONE`",
       "standardColumnName" : "`PHONE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PHONE][电话]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PHONE][电话]",
+        "stringLength" : 20,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PHONE][电话]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PHONE][电话]移动端默认",
+        "stringLength" : 20,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1927,10 +3117,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[20]"
       },
-      "getPSDEField" : {
-        "name" : "PHONE",
-        "codeName" : "PHONE"
-      },
       "ruleInfo" : "内容长度必须小于等于[20]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1944,6 +3130,14 @@
     "length" : 20,
     "logicName" : "电话",
     "name" : "PHONE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "PHONE"
+    },
     "stdDataType" : 25,
     "stringLength" : 20,
     "valueFormat" : "%1$s"
@@ -1956,6 +3150,29 @@
       "standardColumnName" : "`YEARVISITS`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[YEARVISITS][累计登录次数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[YEARVISITS][累计登录次数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[YEARVISITS][累计登录次数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[YEARVISITS][累计登录次数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1963,10 +3180,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "YEARVISITS",
-        "codeName" : "Yearvisits"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -1978,11 +3191,13 @@
     "dEFType" : 2,
     "dataType" : "INT",
     "defaultValue" : "0",
+    "formulaFormat" : "(select count(1) from zt_action t where t.actor = t1.account and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = DATE_FORMAT(now(),'%Y'))",
     "importOrder" : 1000,
     "logicName" : "累计登录次数",
     "name" : "YEARVISITS",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1993,6 +3208,29 @@
       "queryCodeExp" : "t1.`SCORE`",
       "standardColumnName" : "`SCORE`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[SCORE][score]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SCORE][score]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[SCORE][score]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SCORE][score]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2000,10 +3238,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SCORE",
-        "codeName" : "SCORE"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2017,6 +3251,14 @@
     "importOrder" : 1000,
     "logicName" : "score",
     "name" : "SCORE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "SCORE"
+    },
     "stdDataType" : 9,
     "valueFormat" : "%1$s"
   }, {
@@ -2026,6 +3268,31 @@
       "name" : "ROLE",
       "queryCodeExp" : "t1.`ROLE`",
       "standardColumnName" : "`ROLE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ROLE][角色]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ROLE][角色]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ROLE][角色]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ROLE][角色]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2046,10 +3313,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
-      "getPSDEField" : {
-        "name" : "ROLE",
-        "codeName" : "Role"
-      },
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2063,6 +3326,14 @@
     "length" : 100,
     "logicName" : "角色",
     "name" : "ROLE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ROLE"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
@@ -2073,6 +3344,31 @@
       "name" : "CLIENTSTATUS",
       "queryCodeExp" : "t1.`CLIENTSTATUS`",
       "standardColumnName" : "`CLIENTSTATUS`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CLIENTSTATUS][clientStatus]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CLIENTSTATUS][clientStatus]移动端默认",
+        "stringLength" : 7,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CLIENTSTATUS][clientStatus]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CLIENTSTATUS][clientStatus]",
+        "stringLength" : 7,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2093,10 +3389,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[7]"
       },
-      "getPSDEField" : {
-        "name" : "CLIENTSTATUS",
-        "codeName" : "CLIENTSTATUS"
-      },
       "ruleInfo" : "内容长度必须小于等于[7]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2110,6 +3402,14 @@
     "length" : 7,
     "logicName" : "clientStatus",
     "name" : "CLIENTSTATUS",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CLIENTSTATUS"
+    },
     "stdDataType" : 25,
     "stringLength" : 7,
     "valueFormat" : "%1$s"
@@ -2126,6 +3426,33 @@
       "name" : "N_DEPT_EQ",
       "stdDataType" : 25,
       "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DEPT][部门编号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[DEPT][部门编号]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DEPT][部门编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[DEPT][部门编号]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2146,10 +3473,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
       },
-      "getPSDEField" : {
-        "name" : "DEPT",
-        "codeName" : "Dept"
-      },
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2167,6 +3490,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/RealDept.json"
     },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DEPT"
+    },
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s"
@@ -2177,6 +3508,31 @@
       "name" : "TITLE",
       "queryCodeExp" : " CONCAT_WS('',(DATE_FORMAT(now(),'%Y')),'年工作内容统计一览表 —— ',t1.realname)",
       "standardColumnName" : "`TITLE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TITLE][标题]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[TITLE][标题]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TITLE][标题]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[TITLE][标题]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2197,10 +3553,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2210,6 +3562,7 @@
     "codeName" : "Title",
     "dEFType" : 2,
     "dataType" : "TEXT",
+    "formulaFormat" : " CONCAT_WS('',(DATE_FORMAT(now(),'%Y')),'年工作内容统计一览表 —— ',t1.realname)",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "标题",
@@ -2217,6 +3570,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "enableQuickSearch" : true,
     "formulaDEField" : true,
     "majorDEField" : true,
@@ -2228,6 +3582,31 @@
       "name" : "CURMONTH",
       "queryCodeExp" : "'一月'",
       "standardColumnName" : "`CURMONTH`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CURMONTH][当前月]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CURMONTH][当前月]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CURMONTH][当前月]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CURMONTH][当前月]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2248,10 +3627,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
-      "getPSDEField" : {
-        "name" : "CURMONTH",
-        "codeName" : "Curmonth"
-      },
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2261,6 +3636,7 @@
     "codeName" : "Curmonth",
     "dEFType" : 2,
     "dataType" : "TEXT",
+    "formulaFormat" : "'一月'",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "当前月",
@@ -2268,6 +3644,7 @@
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2278,6 +3655,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`MONTRESOLVEDBUG`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[MONTRESOLVEDBUG][月解决Bug数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[MONTRESOLVEDBUG][月解决Bug数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[MONTRESOLVEDBUG][月解决Bug数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[MONTRESOLVEDBUG][月解决Bug数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2285,10 +3685,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "MONTRESOLVEDBUG",
-        "codeName" : "Montresolvedbug"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2299,11 +3695,13 @@
     "codeName" : "Montresolvedbug",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "月解决Bug数",
     "name" : "MONTRESOLVEDBUG",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2313,6 +3711,31 @@
       "name" : "ADDRESS",
       "queryCodeExp" : "t1.`ADDRESS`",
       "standardColumnName" : "`ADDRESS`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ADDRESS][通讯地址]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ADDRESS][通讯地址]",
+        "stringLength" : 120,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ADDRESS][通讯地址]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ADDRESS][通讯地址]移动端默认",
+        "stringLength" : 120,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2333,10 +3756,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[120]"
       },
-      "getPSDEField" : {
-        "name" : "ADDRESS",
-        "codeName" : "ADDRESS"
-      },
       "ruleInfo" : "内容长度必须小于等于[120]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2350,6 +3769,14 @@
     "length" : 120,
     "logicName" : "通讯地址",
     "name" : "ADDRESS",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ADDRESS"
+    },
     "stdDataType" : 25,
     "stringLength" : 120,
     "valueFormat" : "%1$s"
@@ -2361,6 +3788,29 @@
       "queryCodeExp" : "t1.`SCORELEVEL`",
       "standardColumnName" : "`SCORELEVEL`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[SCORELEVEL][scoreLevel]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SCORELEVEL][scoreLevel]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[SCORELEVEL][scoreLevel]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SCORELEVEL][scoreLevel]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2368,10 +3818,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SCORELEVEL",
-        "codeName" : "SCORELEVEL"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2385,6 +3831,14 @@
     "importOrder" : 1000,
     "logicName" : "scoreLevel",
     "name" : "SCORELEVEL",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "SCORELEVEL"
+    },
     "stdDataType" : 9,
     "valueFormat" : "%1$s"
   }, {
@@ -2396,6 +3850,29 @@
       "standardColumnName" : "`VISITS`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[VISITS][访问次数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[VISITS][访问次数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[VISITS][访问次数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[VISITS][访问次数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2403,10 +3880,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "VISITS",
-        "codeName" : "Visits"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2421,6 +3894,14 @@
     "importOrder" : 1000,
     "logicName" : "累计登录次数",
     "name" : "VISITS",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "VISITS"
+    },
     "stdDataType" : 9,
     "valueFormat" : "%1$s"
   }, {
@@ -2431,6 +3912,29 @@
       "queryCodeExp" : "0",
       "standardColumnName" : "`YEARLOGCNT`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[YEARLOGCNT][累计日志数]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[YEARLOGCNT][累计日志数]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[YEARLOGCNT][累计日志数]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[YEARLOGCNT][累计日志数]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2438,10 +3942,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "YEARLOGCNT",
-        "codeName" : "Yearlogcnt"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2452,11 +3952,13 @@
     "codeName" : "Yearlogcnt",
     "dEFType" : 2,
     "dataType" : "INT",
+    "formulaFormat" : "0",
     "importOrder" : 1000,
     "logicName" : "累计日志数",
     "name" : "YEARLOGCNT",
     "stdDataType" : 9,
     "valueFormat" : "%1$s",
+    "viewLevel" : 0,
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2467,6 +3969,31 @@
       "queryCodeExp" : "t1.`LOCKED`",
       "standardColumnName" : "`LOCKED`"
     } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[LOCKED][locked]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[LOCKED][locked]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[LOCKED][locked]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKER",
+        "name" : "[LOCKED][locked]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
+      },
+      "type" : "DEFAULT"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2474,10 +4001,6 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "LOCKED",
-        "codeName" : "LOCKED"
       },
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
@@ -2491,6 +4014,14 @@
     "importOrder" : 1000,
     "logicName" : "locked",
     "name" : "LOCKED",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "LOCKED"
+    },
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
   }, {
@@ -2500,6 +4031,31 @@
       "name" : "GENDER",
       "queryCodeExp" : "t1.`GENDER`",
       "standardColumnName" : "`GENDER`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[GENDER][性别]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[GENDER][性别]移动端默认",
+        "stringLength" : 1,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[GENDER][性别]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[GENDER][性别]",
+        "stringLength" : 1,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2520,10 +4076,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[1]"
       },
-      "getPSDEField" : {
-        "name" : "GENDER",
-        "codeName" : "GENDER"
-      },
       "ruleInfo" : "内容长度必须小于等于[1]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2537,6 +4089,14 @@
     "length" : 1,
     "logicName" : "性别",
     "name" : "GENDER",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "GENDER"
+    },
     "stdDataType" : 25,
     "stringLength" : 1,
     "valueFormat" : "%1$s"
@@ -2547,6 +4107,31 @@
       "name" : "ZIPCODE",
       "queryCodeExp" : "t1.`ZIPCODE`",
       "standardColumnName" : "`ZIPCODE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ZIPCODE][zipcode]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ZIPCODE][zipcode]移动端默认",
+        "stringLength" : 10,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ZIPCODE][zipcode]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ZIPCODE][zipcode]",
+        "stringLength" : 10,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2567,10 +4152,6 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[10]"
       },
-      "getPSDEField" : {
-        "name" : "ZIPCODE",
-        "codeName" : "ZIPCODE"
-      },
       "ruleInfo" : "内容长度必须小于等于[10]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -2584,6 +4165,14 @@
     "length" : 10,
     "logicName" : "zipcode",
     "name" : "ZIPCODE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ZIPCODE"
+    },
     "stdDataType" : 25,
     "stringLength" : 10,
     "valueFormat" : "%1$s"
@@ -2595,6 +4184,104 @@
     "logicName" : "获取研发人员相关数据",
     "name" : "获取研发人员相关数据",
     "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接9316",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall1",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "获取动态数",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "name" : "连接4357",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[ACCOUNT]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ACCOUNT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "Default[CURYEAR]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "CURYEAR",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select count(1)  as `YEARACTIONCNT` from zt_action t where t.actor = ?  and DATE_FORMAT(t.date,'%Y') = ?",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall2",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "获取日志数",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "name" : "连接8050",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[ACCOUNT]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ACCOUNT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "Default[CURYEAR]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "CURYEAR",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select COUNT(1) as `YEARLOGCNT` from zt_taskestimate t where t.ACCOUNT = ? and DATE_FORMAT(t.date,'%Y') = ?",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
       "codeName" : "Rawsqlcall3",
       "getDstPSDELogicParam" : {
         "modelref" : true,
@@ -2611,8 +4298,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall3"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ACCOUNT]",
@@ -2666,116 +4352,17 @@
       "sql" : "select count(1) as `YEARVISITS` from zt_action t where t.actor = ? and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = ?",
       "fillDstLogicParam" : true,
       "parallelOutput" : true
-    }, {
-      "codeName" : "Rawsqlcall1",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "获取动态数",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall2"
-        },
-        "name" : "连接4357",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall1"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "Default[ACCOUNT]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ACCOUNT",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      }, {
-        "name" : "Default[CURYEAR]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "CURYEAR",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select count(1)  as `YEARACTIONCNT` from zt_action t where t.actor = ?  and DATE_FORMAT(t.date,'%Y') = ?",
-      "fillDstLogicParam" : true,
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Rawsqlcall2",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "获取日志数",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall3"
-        },
-        "name" : "连接8050",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall2"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "Default[ACCOUNT]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ACCOUNT",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      }, {
-        "name" : "Default[CURYEAR]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "CURYEAR",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select COUNT(1) as `YEARLOGCNT` from zt_taskestimate t where t.ACCOUNT = ? and DATE_FORMAT(t.date,'%Y') = ?",
-      "fillDstLogicParam" : true,
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall1"
-        },
-        "name" : "连接9316",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      } ],
-      "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -2802,8 +4389,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
+        }
       } ],
       "parallelOutput" : true
     }, {
@@ -2839,6 +4425,23 @@
       },
       "logicNodeType" : "DEACTION",
       "name" : "获取研发用户信息",
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Deaction3",
+      "getDstPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
+      },
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getDstPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+      },
+      "logicNodeType" : "DEACTION",
+      "name" : "获取测试用户信息",
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -2881,8 +4484,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Deaction1"
-        },
-        "defaultLink" : false
+        }
       }, {
         "getDstPSDELogicNode" : {
           "modelref" : true,
@@ -2908,8 +4510,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Deaction1"
-        },
-        "defaultLink" : false
+        }
       }, {
         "getDstPSDELogicNode" : {
           "modelref" : true,
@@ -2935,36 +4536,20 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Deaction1"
-        },
-        "defaultLink" : false
+        }
       } ],
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Deaction3",
-      "getDstPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
-      },
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "getDstPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
-      },
-      "logicNodeType" : "DEACTION",
-      "name" : "获取测试用户信息",
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -2979,46 +4564,20 @@
     "logicName" : "获取产品经理相关数据",
     "name" : "获取产品经理相关数据",
     "getPSDELogicNodes" : [ {
-      "codeName" : "Rawsqlcall2",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "获取计划数",
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
       "getPSDELogicLinks" : [ {
         "getDstPSDELogicNode" : {
           "modelref" : true,
-          "id" : "Rawsqlcall3"
+          "id" : "Rawsqlcall1"
         },
-        "name" : "连接2948",
+        "name" : "连接8292",
         "getSrcPSDELogicNode" : {
           "modelref" : true,
-          "id" : "Rawsqlcall2"
-        },
-        "defaultLink" : false
+          "id" : "Begin"
+        }
       } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "Default[CURYEAR]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "CURYEAR",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      }, {
-        "name" : "Default[ACCOUNT]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ACCOUNT",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select count(1) as `yearplancnt` from zt_productplan t left join zt_action t2 on t2.objectID = t.id and t2.objectType = 'productplan' where LEFT(t2.date, 4) = ? and t2.actor = ? and t2.action = 'opened' and t.product <> 0",
-      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -3051,6 +4610,47 @@
       "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
+      "codeName" : "Rawsqlcall2",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "获取计划数",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "name" : "连接2948",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[CURYEAR]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "CURYEAR",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "Default[ACCOUNT]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ACCOUNT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select count(1) as `yearplancnt` from zt_productplan t left join zt_action t2 on t2.objectID = t.id and t2.objectType = 'productplan' where LEFT(t2.date, 4) = ? and t2.actor = ? and t2.action = 'opened' and t.product <> 0",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
       "codeName" : "Rawsqlcall1",
       "getDstPSDELogicParam" : {
         "modelref" : true,
@@ -3067,8 +4667,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall1"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[CURYEAR]",
@@ -3156,23 +4755,6 @@
       "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall1"
-        },
-        "name" : "连接8292",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      } ],
-      "parallelOutput" : true
-    }, {
       "codeName" : "Rawsqlcall3",
       "getDstPSDELogicParam" : {
         "modelref" : true,
@@ -3189,8 +4771,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall3"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ACCOUNT]",
@@ -3217,12 +4798,14 @@
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -3237,6 +4820,63 @@
     "logicName" : "获取测试人员相关数据",
     "name" : "获取测试人员相关数据",
     "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接9789",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall2",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "获取创建bug数",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "name" : "连接8169",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[ACCOUNT]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ACCOUNT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "Default[CURYEAR]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "CURYEAR",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "sql" : "select count(1)  as `YEARBUGCNT` from zt_bug t where t.product > 0 and t.openedBy = ?  and DATE_FORMAT(t.openedDate,'%Y') = ?",
+      "fillDstLogicParam" : true,
+      "parallelOutput" : true
+    }, {
       "codeName" : "Rawsqlcall4",
       "getDstPSDELogicParam" : {
         "modelref" : true,
@@ -3267,48 +4907,6 @@
       "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
-      "codeName" : "Rawsqlcall2",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "logicNodeType" : "RAWSQLCALL",
-      "name" : "获取创建bug数",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall3"
-        },
-        "name" : "连接8169",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall2"
-        },
-        "defaultLink" : false
-      } ],
-      "getPSDELogicNodeParams" : [ {
-        "name" : "Default[ACCOUNT]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "ACCOUNT",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      }, {
-        "name" : "Default[CURYEAR]",
-        "paramAction" : "SQLPARAM",
-        "srcFieldName" : "CURYEAR",
-        "getSrcPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "srcValueType" : "SRCDLPARAM"
-      } ],
-      "sql" : "select count(1)  as `YEARBUGCNT` from zt_bug t where t.product > 0 and t.openedBy = ?  and DATE_FORMAT(t.openedDate,'%Y') = ?",
-      "fillDstLogicParam" : true,
-      "parallelOutput" : true
-    }, {
       "codeName" : "Rawsqlcall3",
       "getDstPSDELogicParam" : {
         "modelref" : true,
@@ -3325,8 +4923,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall3"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ACCOUNT]",
@@ -3351,23 +4948,6 @@
       "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall1"
-        },
-        "name" : "连接9789",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      } ],
-      "parallelOutput" : true
-    }, {
       "codeName" : "Rawsqlcall1",
       "getDstPSDELogicParam" : {
         "modelref" : true,
@@ -3384,8 +4964,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall1"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ACCOUNT]",
@@ -3412,12 +4991,14 @@
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -3432,23 +5013,6 @@
     "logicName" : "更新相关信息",
     "name" : "更新相关信息",
     "getPSDELogicNodes" : [ {
-      "codeName" : "Deaction3",
-      "getDstPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
-      },
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "getDstPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
-      },
-      "logicNodeType" : "DEACTION",
-      "name" : "获取测试用户信息",
-      "parallelOutput" : true
-    }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
@@ -3461,9 +5025,25 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Begin"
-        },
-        "defaultLink" : false
+        }
       } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Deaction4",
+      "getDstPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetPoInfomation.json"
+      },
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getDstPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+      },
+      "logicNodeType" : "DEACTION",
+      "name" : "获取产品经理信息",
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction2",
@@ -3483,10 +5063,10 @@
       "name" : "获取研发用户信息",
       "parallelOutput" : true
     }, {
-      "codeName" : "Deaction4",
+      "codeName" : "Deaction3",
       "getDstPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetPoInfomation.json"
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
       },
       "getDstPSDELogicParam" : {
         "modelref" : true,
@@ -3497,7 +5077,7 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
       },
       "logicNodeType" : "DEACTION",
-      "name" : "获取产品经理信息",
+      "name" : "获取测试用户信息",
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -3532,8 +5112,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall1"
-        },
-        "defaultLink" : false
+        }
       }, {
         "getDstPSDELogicNode" : {
           "modelref" : true,
@@ -3559,8 +5138,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall1"
-        },
-        "defaultLink" : false
+        }
       }, {
         "getDstPSDELogicNode" : {
           "modelref" : true,
@@ -3586,8 +5164,7 @@
         "getSrcPSDELogicNode" : {
           "modelref" : true,
           "id" : "Rawsqlcall1"
-        },
-        "defaultLink" : false
+        }
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[CURYEAR]",
@@ -3614,12 +5191,14 @@
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "logicName" : "传入变量",
       "name" : "传入变量",
       "getParamPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
       },
-      "default" : true
+      "default" : true,
+      "entityParam" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -3627,6 +5206,594 @@
     },
     "enableBackend" : true,
     "enableFront" : false
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "UserYearWorkStatsDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "通讯地址",
+      "name" : "ADDRESS",
+      "getPSDEField" : {
+        "name" : "ADDRESS",
+        "codeName" : "ADDRESS"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 120,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "avatar",
+      "name" : "AVATAR",
+      "getPSDEField" : {
+        "name" : "AVATAR",
+        "codeName" : "AVATAR"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 30,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "账号",
+      "name" : "Account",
+      "getPSDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "birthday",
+      "name" : "BIRTHDAY",
+      "getPSDEField" : {
+        "name" : "BIRTHDAY",
+        "codeName" : "BIRTHDAY"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "clientLang",
+      "name" : "CLIENTLANG",
+      "getPSDEField" : {
+        "name" : "CLIENTLANG",
+        "codeName" : "CLIENTLANG"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 10,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "clientStatus",
+      "name" : "CLIENTSTATUS",
+      "getPSDEField" : {
+        "name" : "CLIENTSTATUS",
+        "codeName" : "CLIENTSTATUS"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "源代码账户",
+      "name" : "COMMITER",
+      "getPSDEField" : {
+        "name" : "COMMITER",
+        "codeName" : "COMMITER"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "当前月",
+      "name" : "Curmonth",
+      "getPSDEField" : {
+        "name" : "CURMONTH",
+        "codeName" : "Curmonth"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "年度",
+      "name" : "Curyear",
+      "getPSDEField" : {
+        "name" : "CURYEAR",
+        "codeName" : "Curyear"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "逻辑删除标志",
+      "name" : "DELETED",
+      "getPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "DELETED"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "钉钉",
+      "name" : "DINGDING",
+      "getPSDEField" : {
+        "name" : "DINGDING",
+        "codeName" : "DINGDING"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "部门编号",
+      "name" : "Dept",
+      "getPSDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "邮箱",
+      "name" : "EMAIL",
+      "getPSDEField" : {
+        "name" : "EMAIL",
+        "codeName" : "EMAIL"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "fails",
+      "name" : "FAILS",
+      "getPSDEField" : {
+        "name" : "FAILS",
+        "codeName" : "FAILS"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "性别",
+      "name" : "GENDER",
+      "getPSDEField" : {
+        "name" : "GENDER",
+        "codeName" : "GENDER"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "ip",
+      "name" : "IP",
+      "getPSDEField" : {
+        "name" : "IP",
+        "codeName" : "IP"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 15,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "用户编号",
+      "name" : "Id",
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "入职日期",
+      "name" : "JOIN",
+      "getPSDEField" : {
+        "name" : "JOIN",
+        "codeName" : "JOIN"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "判断角色",
+      "name" : "Judgerole",
+      "getPSDEField" : {
+        "name" : "JUDGEROLE",
+        "codeName" : "Judgerole"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "最后登录",
+      "name" : "LAST",
+      "getPSDEField" : {
+        "name" : "LAST",
+        "codeName" : "LAST"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "locked",
+      "name" : "LOCKED",
+      "getPSDEField" : {
+        "name" : "LOCKED",
+        "codeName" : "LOCKED"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "手机",
+      "name" : "MOBILE",
+      "getPSDEField" : {
+        "name" : "MOBILE",
+        "codeName" : "MOBILE"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 11,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "月累计工时",
+      "name" : "Montestimate",
+      "getPSDEField" : {
+        "name" : "MONTESTIMATE",
+        "codeName" : "Montestimate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "月完成任务数",
+      "name" : "Monthfinishtask",
+      "getPSDEField" : {
+        "name" : "MONTHFINISHTASK",
+        "codeName" : "Monthfinishtask"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "月解决Bug数",
+      "name" : "Montresolvedbug",
+      "getPSDEField" : {
+        "name" : "MONTRESOLVEDBUG",
+        "codeName" : "Montresolvedbug"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "nickname",
+      "name" : "NICKNAME",
+      "getPSDEField" : {
+        "name" : "NICKNAME",
+        "codeName" : "NICKNAME"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "密码",
+      "name" : "PASSWORD",
+      "getPSDEField" : {
+        "name" : "PASSWORD",
+        "codeName" : "PASSWORD"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 32,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "电话",
+      "name" : "PHONE",
+      "getPSDEField" : {
+        "name" : "PHONE",
+        "codeName" : "PHONE"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 20,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "QQ",
+      "name" : "QQ",
+      "getPSDEField" : {
+        "name" : "QQ",
+        "codeName" : "QQ"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 20,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "ranzhi",
+      "name" : "RANZHI",
+      "getPSDEField" : {
+        "name" : "RANZHI",
+        "codeName" : "RANZHI"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 30,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "真实用户名",
+      "name" : "Realname",
+      "getPSDEField" : {
+        "name" : "REALNAME",
+        "codeName" : "Realname"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "角色",
+      "name" : "Role",
+      "getPSDEField" : {
+        "name" : "ROLE",
+        "codeName" : "Role"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "score",
+      "name" : "SCORE",
+      "getPSDEField" : {
+        "name" : "SCORE",
+        "codeName" : "SCORE"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "scoreLevel",
+      "name" : "SCORELEVEL",
+      "getPSDEField" : {
+        "name" : "SCORELEVEL",
+        "codeName" : "SCORELEVEL"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "skype",
+      "name" : "SKYPE",
+      "getPSDEField" : {
+        "name" : "SKYPE",
+        "codeName" : "SKYPE"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "slack",
+      "name" : "SLACK",
+      "getPSDEField" : {
+        "name" : "SLACK",
+        "codeName" : "SLACK"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "标题",
+      "name" : "Title",
+      "getPSDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "累计登录次数",
+      "name" : "Visits",
+      "getPSDEField" : {
+        "name" : "VISITS",
+        "codeName" : "Visits"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "微信",
+      "name" : "WEIXIN",
+      "getPSDEField" : {
+        "name" : "WEIXIN",
+        "codeName" : "WEIXIN"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "whatsapp",
+      "name" : "WHATSAPP",
+      "getPSDEField" : {
+        "name" : "WHATSAPP",
+        "codeName" : "WHATSAPP"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 90,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "累计动态数",
+      "name" : "Yearactioncnt",
+      "getPSDEField" : {
+        "name" : "YEARACTIONCNT",
+        "codeName" : "Yearactioncnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "累计创建Bug数",
+      "name" : "Yearbugcnt",
+      "getPSDEField" : {
+        "name" : "YEARBUGCNT",
+        "codeName" : "Yearbugcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "累计创建用例数",
+      "name" : "Yearcasecnt",
+      "getPSDEField" : {
+        "name" : "YEARCASECNT",
+        "codeName" : "Yearcasecnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "累计工时数",
+      "name" : "Yearestimatecnt",
+      "getPSDEField" : {
+        "name" : "YEARESTIMATECNT",
+        "codeName" : "Yearestimatecnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "累计日志数",
+      "name" : "Yearlogcnt",
+      "getPSDEField" : {
+        "name" : "YEARLOGCNT",
+        "codeName" : "Yearlogcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "累计创建计划数",
+      "name" : "Yearplancnt",
+      "getPSDEField" : {
+        "name" : "YEARPLANCNT",
+        "codeName" : "Yearplancnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "累计参与产品数",
+      "name" : "Yearproductcnt",
+      "getPSDEField" : {
+        "name" : "YEARPRODUCTCNT",
+        "codeName" : "Yearproductcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "累计创建需求数",
+      "name" : "Yearstorycnt",
+      "getPSDEField" : {
+        "name" : "YEARSTORYCNT",
+        "codeName" : "Yearstorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "defaultValue" : "0",
+      "logicName" : "累计登录次数",
+      "name" : "Yearvisits",
+      "getPSDEField" : {
+        "name" : "YEARVISITS",
+        "codeName" : "Yearvisits"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "zipcode",
+      "name" : "ZIPCODE",
+      "getPSDEField" : {
+        "name" : "ZIPCODE",
+        "codeName" : "ZIPCODE"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 10,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "UserYearWorkStatsFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "部门编号",
+      "name" : "N_DEPT_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_DEPT_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "用户编号",
+      "name" : "N_ID_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_ID_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "真实用户名",
+      "name" : "N_REALNAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_REALNAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "REALNAME",
+        "codeName" : "Realname"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -3656,6 +5823,112 @@
     "roleTag" : "UserYearWorkStats_Read",
     "userDRAction" : "READ"
   } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "BasisMainInfo",
+    "logicName" : "基础信息查看",
+    "modelTag2" : "0",
+    "name" : "基础信息查看",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "用户年度工作内容统计实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "用户年度工作内容统计实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "QADashboardView",
+    "logicName" : "用户年度工作内容统计实体数据看板视图（测试）",
+    "name" : "用户年度工作内容统计实体数据看板视图（测试）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TitleForm",
+    "logicName" : "标题",
+    "modelTag2" : "0",
+    "name" : "标题",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "DashboardView",
+    "logicName" : "用户年度工作内容统计实体数据看板视图（研发）",
+    "name" : "用户年度工作内容统计实体数据看板视图（研发）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "用户年度工作内容统计实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "用户年度工作内容统计实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "用户年度工作内容统计实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "用户年度工作内容统计实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainInfo",
+    "logicName" : "基础信息",
+    "modelTag2" : "0",
+    "name" : "基础信息",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "用户年度工作内容统计实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "用户年度工作内容统计实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "InfoEditView9",
+    "logicName" : "用户年度工作内容统计实体编辑视图（部件视图）（基础信息）",
+    "name" : "用户年度工作内容统计实体编辑视图（部件视图）（基础信息）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "用户年度工作内容统计实体选择表格视图（部件视图）",
+    "name" : "用户年度工作内容统计实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PODashboardView",
+    "logicName" : "用户年度工作内容统计实体数据看板视图（产品经理）",
+    "name" : "用户年度工作内容统计实体数据看板视图（产品经理）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "用户年度工作内容统计实体编辑视图（左右关系）",
+    "name" : "用户年度工作内容统计实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TitleEditView9",
+    "logicName" : "用户年度工作内容统计实体编辑视图（部件视图）（标题）",
+    "name" : "用户年度工作内容统计实体编辑视图（部件视图）（标题）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "用户年度工作内容统计实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "用户年度工作内容统计实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  } ],
   "codeName" : "UserYearWorkStats",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
@@ -3673,8 +5946,24 @@
   "enableUIActions" : 15,
   "enableViewLevel" : 0,
   "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "用户年度工作内容统计",
+  "getMajorPSDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
   "name" : "IBZ_USERYEARWORKSTATS",
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Auto1.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
@@ -3683,7 +5972,6 @@
   "storageMode" : 1,
   "systemTag" : "iBizPMS",
   "tableName" : "zt_user",
-  "virtualMode" : 0,
   "enableAPIStorage" : false,
   "enableCreate" : true,
   "enableDataVer" : false,

@@ -181,6 +181,11 @@ export class AppFrontAction extends AppDEUIAction {
             //打开视图后续逻辑
             const openViewNextLogic: any = async (actionModel: any, actionContext: any, xData: any, resultDatas?: any) => {
                 if (actionModel.reloadData && xData && xData.refresh && xData.refresh instanceof Function) {
+                    if (args && args.length > 0) {
+                        Object.assign(args[0], { 'refreshMode': actionModel.refreshMode });
+                    } else {
+                        args.push({ 'refreshMode': actionModel.refreshMode });
+                    }
                     xData.refresh(args);
                 }
                 if (actionModel.closeEditView) {
@@ -263,7 +268,7 @@ export class AppFrontAction extends AppDEUIAction {
                         );
                     }
                 }
-                if (!frontPSAppView.openMode || frontPSAppView.openMode == 'INDEXVIEWTAB') {
+                if (!frontPSAppView.openMode || frontPSAppView.openMode == 'INDEXVIEWTAB' || frontPSAppView.openMode == 'POPUPAPP') {
                     if (frontPSAppView.getPSAppDataEntity()) {
                         parameters = [
                             {
@@ -338,6 +343,17 @@ export class AppFrontAction extends AppDEUIAction {
                         data,
                     );
                     actionContext.$router.push(routePath);
+                    resolve(openViewNextLogic(this.actionModel, actionContext, xData, data));
+                } else if (frontPSAppView.openMode == 'POPUPAPP') {
+                    const routePath = actionContext.$viewTool.buildUpRoutePath(
+                        actionContext.$route,
+                        context,
+                        deResParameters,
+                        parameters,
+                        _args,
+                        data,
+                    );
+                    window.open('./#' + routePath, '_blank');
                     resolve(openViewNextLogic(this.actionModel, actionContext, xData, data));
                 } else if (frontPSAppView.openMode == 'POPUPMODAL') {
                     const view: any = {

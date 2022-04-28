@@ -1,32 +1,38 @@
 {
+  "codeListTag" : "zentao__Product__type",
   "codeListType" : "STATIC",
   "codeName" : "Product__type",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Product__type.json",
   "emptyText" : "未定义",
+  "name" : "产品类型",
   "getPSCodeItems" : [ {
     "codeName" : "Normal",
     "color" : "blue",
     "text" : "正常",
     "value" : "normal",
-    "default" : true,
-    "includeBeginValue" : true
+    "default" : true
   }, {
     "codeName" : "Branch",
     "text" : "多分支",
-    "value" : "branch",
-    "includeBeginValue" : true
+    "value" : "branch"
   }, {
     "codeName" : "Platform",
     "text" : "多平台",
-    "value" : "platform",
-    "includeBeginValue" : true
+    "value" : "platform"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

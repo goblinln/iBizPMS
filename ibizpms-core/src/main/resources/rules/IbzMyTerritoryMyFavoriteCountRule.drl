@@ -19,14 +19,14 @@ ruleflow-group "ibzmyterritorymyfavoritecountbegin"
     then
     end
 
-//逻辑处理节点[我的收藏任务数]
-rule "rawsqlcall3"
-ruleflow-group "ibzmyterritorymyfavoritecountrawsqlcall3"
+//逻辑处理节点[我的收藏bug数]
+rule "rawsqlcall2"
+ruleflow-group "ibzmyterritorymyfavoritecountrawsqlcall2"
     when
     then
     Map param =new HashMap();
     param.put("param0",curuser.getSessionParams().get("srfloginname"));
-    String strSql="select count(t1.id) AS MYFAVORITETASKS from zt_task t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'task' and t.account = #{et.param0})";
+    String strSql="select count(t1.id) AS MYFAVORITEBUGS from zt_bug t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'bug' and t.account = #{et.param0})";
     java.util.List<JSONObject> entities=iBzSysIbzmyterritoryDefaultService.select(strSql,param);//SQL调用
     if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
         JSONObject entity=entities.get(0);
@@ -55,14 +55,14 @@ ruleflow-group "ibzmyterritorymyfavoritecountrawsqlcall1"
     update(ibzmyterritorymyfavoritecountdefault);//更新fact中变量值
     end
 
-//逻辑处理节点[我的收藏bug数]
-rule "rawsqlcall2"
-ruleflow-group "ibzmyterritorymyfavoritecountrawsqlcall2"
+//逻辑处理节点[我的收藏任务数]
+rule "rawsqlcall3"
+ruleflow-group "ibzmyterritorymyfavoritecountrawsqlcall3"
     when
     then
     Map param =new HashMap();
     param.put("param0",curuser.getSessionParams().get("srfloginname"));
-    String strSql="select count(t1.id) AS MYFAVORITEBUGS from zt_bug t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'bug' and t.account = #{et.param0})";
+    String strSql="select count(t1.id) AS MYFAVORITETASKS from zt_task t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'task' and t.account = #{et.param0})";
     java.util.List<JSONObject> entities=iBzSysIbzmyterritoryDefaultService.select(strSql,param);//SQL调用
     if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
         JSONObject entity=entities.get(0);

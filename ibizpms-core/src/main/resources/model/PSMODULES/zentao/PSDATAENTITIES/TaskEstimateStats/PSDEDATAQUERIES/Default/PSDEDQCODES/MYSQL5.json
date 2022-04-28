@@ -1,0 +1,31 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCOUNT`",
+    "name" : "ACCOUNT"
+  }, {
+    "expression" : "t1.`DATE`",
+    "name" : "DATE"
+  }, {
+    "expression" : "t1.`EVALUATIONCOST`",
+    "name" : "EVALUATIONCOST"
+  }, {
+    "expression" : "t1.`EVALUATIONSTATUS`",
+    "name" : "EVALUATIONSTATUS"
+  }, {
+    "expression" : "t1.`EVALUATIONTIME`",
+    "name" : "EVALUATIONTIME"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`INPUTCOST`",
+    "name" : "INPUTCOST"
+  }, {
+    "expression" : "t1.`MONTHNAME`",
+    "name" : "MONTHNAME"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCOUNT`,\nt1.`DATE`,\nt1.`EVALUATIONCOST`,\nt1.`EVALUATIONSTATUS`,\nt1.`EVALUATIONTIME`,\nt1.`ID`,\nt1.`INPUTCOST`,\nt1.`MONTHNAME`\nFROM `zt_taskestimate` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

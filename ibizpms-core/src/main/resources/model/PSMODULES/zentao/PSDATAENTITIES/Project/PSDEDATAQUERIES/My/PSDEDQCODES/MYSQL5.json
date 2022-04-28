@@ -1,0 +1,15 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t21.`account` =#{srf.sessioncontext.srfloginname}",
+    "name" : "查询条件"
+  }, {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "queryCode" : "SELECT\n        t1.MDEPTID,\n        t1.orgid,\n\tt1.`ACL`,\n\tt1.`BEGIN`,\n\t( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `BUGCNT`,\n\tt1.`CANCELEDBY`,\n\tt1.`CANCELEDDATE`,\n\tt1.`CATID`,\n\tt1.`CLOSEDBY`,\n\tt1.`CLOSEDDATE`,\n\tt1.`CODE`,\n\tt1.`DAYS`,\n\tt1.`DELETED`,\n\tt1.`END`,\n\tt1.`ID`,\n\tt1.`ISCAT`,\n\tt1.`NAME`,\n\tt1.`OPENEDBY`,\n\tt1.`OPENEDDATE`,\n\tt1.`OPENEDVERSION`,\n\tt1.`ORDER`,\n\tt1.`ORDER` AS `ORDER1`,\n\tt1.`PARENT`,\n\tt11.`NAME` AS `PARENTNAME`,\n\tt1.`PM`,\n\tt1.`PO`,\n\tt1.`PRI`,\n\tt1.`QD`,\n\tt1.`RD`,\n\tt1.`STATGE`,\n\tt1.`STATUS`,\n\t(\nSELECT\n\tCOUNT( 1 ) \nFROM\n\tZT_STORY\n\tLEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY \nWHERE\n\tPROJECT = t1.`ID` \n\tAND DELETED = '0' \n\t) AS `STORYCNT`,\n\tt1.`SUBSTATUS`,\n\t( SELECT COUNT( 1 ) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `TASKCNT`,\n\tt1.`TEAM`,\n\tt1.`TYPE` ,\n\tt21.role,\n\tt21.account,\n\tt21.`join`,\n\tt21.hours,\n\tt1.PROJECTSN\nFROM\n\t`zt_project` t1\n\tLEFT JOIN zt_project t11 ON t1.PARENT = t11.id\n\tINNER JOIN zt_team t21 on t1.id = t21.root and t21.type= 'project'",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEDATAQUERIES/My/PSDEDQCODES/MYSQL5.json"
+}

@@ -168,7 +168,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            const res = await this.http.post(`/tests/${_context.test}/testmodules`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testmodules`, _data);
             return res;
         }
     this.log.warn([`[TestModule]>>>[Create函数]异常`]);
@@ -188,7 +188,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.test && _context.testmodule) {
-            const res = await this.http.get(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
+            const res = await this.http.get(`/tests/${encodeURIComponent(_context.test)}/testmodules/${encodeURIComponent(_context.testmodule)}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
@@ -211,7 +211,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         if (_context.test && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/tests/${_context.test}/testmodules/getdraft`, _data);
+            const res = await this.http.get(`/tests/${encodeURIComponent(_context.test)}/testmodules/getdraft`, _data);
             return res;
         }
     this.log.warn([`[TestModule]>>>[GetDraft函数]异常`]);
@@ -231,7 +231,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.test && _context.testmodule) {
-            const res = await this.http.delete(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
+            const res = await this.http.delete(`/tests/${encodeURIComponent(_context.test)}/testmodules/${encodeURIComponent(_context.testmodule)}`);
             return res;
         }
     this.log.warn([`[TestModule]>>>[Remove函数]异常`]);
@@ -253,7 +253,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         if (_context.test && _context.testmodule) {
         _data = await this.obtainMinor(_context, _data);
         _data = await this.beforeExecuteAction(_context,_data,'Update');
-            const res = await this.http.put(`/tests/${_context.test}/testmodules/${_context.testmodule}`, _data);
+            const res = await this.http.put(`/tests/${encodeURIComponent(_context.test)}/testmodules/${encodeURIComponent(_context.testmodule)}`, _data);
             return res;
         }
     this.log.warn([`[TestModule]>>>[Update函数]异常`]);
@@ -273,7 +273,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         if (_context.test && true) {
-            const res = await this.http.post(`/tests/${_context.test}/testmodules/fetchdefault`, _data);
+            const res = await this.http.post(`/tests/${encodeURIComponent(_context.test)}/testmodules/fetchdefault`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
@@ -282,5 +282,24 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
             } catch (error) {
                 return this.handleResponseError(error);
             }
+    }
+
+    /**
+     * SaveBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestModuleServiceBase
+     */
+    public async SaveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            const res = await this.http.post(`/tests/${_context.test}/testmodules/savebatch`,_data);
+            return res;
+        }
+        this.log.warn([`[TestModule]>>>[SaveBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

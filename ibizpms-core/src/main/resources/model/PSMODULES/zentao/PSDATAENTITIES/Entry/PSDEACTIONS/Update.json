@@ -7,14 +7,16 @@
   "name" : "Update",
   "orderValue" : 11,
   "getPSDEActionInput" : {
-    "codeName" : "UpdateInput",
-    "name" : "输入对象",
+    "name" : "UpdateInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "EntryDTO"
+    },
     "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
-    "codeName" : "UpdateResult",
-    "name" : "返回对象",
+    "name" : "UpdateResult",
     "type" : "VOID"
   },
   "builtinAction" : true

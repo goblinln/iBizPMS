@@ -6,13 +6,15 @@
   "logicName" : "汇总项目月报",
   "name" : "SumProjectMonthly",
   "getPSDEActionInput" : {
-    "codeName" : "SumProjectMonthlyInput",
-    "name" : "输入对象",
+    "name" : "SumProjectMonthlyInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbizproProjectMonthlyDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "SumProjectMonthlyResult",
-    "name" : "返回对象",
+    "name" : "SumProjectMonthlyResult",
     "type" : "VOID"
   }
 }

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import { Subscription } from 'rxjs';
-import { AppCtrlEventEngine, AppCustomEngine, AppModelService, AppServiceBase, AppTimerEngine, ControlInterface, GetModelService, LogUtil, Util } from 'ibiz-core';
-import { CounterServiceRegister } from 'ibiz-service';
+import { AppCtrlEventEngine, AppCustomEngine, AppModelService, AppServiceBase, AppTimerEngine, ControlInterface, CounterService, GetModelService, LogUtil, Util } from 'ibiz-core';
 import { PluginService } from 'ibiz-vue';
 import { IPSControl, IPSAppCounterRef } from '@ibiz/dynamic-model-api';
 
@@ -609,12 +608,16 @@ export class ControlBase extends Vue implements ControlInterface {
      *
      * @memberof ControlBase
      */
-    public counterRefresh() {
+    public counterRefresh(arg?: any) {
         if (this.counterServiceArray && this.counterServiceArray.length > 0) {
             this.counterServiceArray.forEach((item: any) => {
                 let counterService = item.service;
-                if (counterService && counterService.refreshData && counterService.refreshData instanceof Function) {
-                    counterService.refreshData();
+                if (counterService && counterService.refreshCounterData && counterService.refreshCounterData instanceof Function) {
+                    const tempParams = Util.deepCopy(this.viewparams);
+                    if (arg && Object.keys(arg).length > 0) {
+                        Object.assign(tempParams, arg);
+                    }
+                    counterService.refreshCounterData(this.context, tempParams);
                 }
             })
         }
@@ -642,10 +645,12 @@ export class ControlBase extends Vue implements ControlInterface {
         const appCounterRef: Array<IPSAppCounterRef> = param.getPSAppCounterRefs?.() || [];
         if (appCounterRef && appCounterRef.length > 0) {
             for (const counterRef of appCounterRef) {
-                const path = counterRef.getPSAppCounter?.()?.modelPath;
-                if (path) {
-                    const targetCounterService: any = await CounterServiceRegister.getInstance().getService({ context: this.context, viewparams: this.viewparams }, path);
-                    const tempData: any = { id: counterRef.id, path: path, service: targetCounterService };
+                const counter = counterRef.getPSAppCounter?.();
+                if (counter) {
+                    await counter.fill(true);
+                    const counterService = new CounterService();
+                    await counterService.loaded(counter, { context: this.context, viewparams: this.viewparams });
+                    const tempData: any = { id: counterRef.id, path: counter.modelPath, service: counterService };
                     this.counterServiceArray.push(tempData);
                 }
             }

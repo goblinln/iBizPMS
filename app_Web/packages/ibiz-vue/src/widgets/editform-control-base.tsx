@@ -6,6 +6,7 @@ import { AppFormService } from '../ctrl-service';
 import moment from 'moment';
 import { AppCenterService, AppViewLogicService } from '../app-service';
 import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFDLogic, IPSDEFDSingleLogic, IPSDEFIUpdateDetail, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemUpdate, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSUIActionGroupDetail, IPSDEFormItemEx } from '@ibiz/dynamic-model-api';
+import { notNilEmpty } from 'ibz-dynamic-core';
 
 /**
  * 编辑表单部件基类
@@ -234,13 +235,13 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
         }
         this.showFormNavBar = this.controlInstance.showFormNavBar;
         this.isAutoSave = this.controlInstance.enableAutoSave;
-        this.loaddraftAction = this.controlInstance.getGetDraftPSControlAction?.()?.actionName;
+        this.loaddraftAction = this.controlInstance.getGetDraftPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "GetDraft";
         this.updateAction = this.controlInstance.getUpdatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Update";
-        this.removeAction = this.controlInstance.getRemovePSControlAction?.()?.actionName;
-        this.loadAction = this.controlInstance.getGetPSControlAction?.()?.actionName;
+        this.removeAction = this.controlInstance.getRemovePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Remove";
+        this.loadAction = this.controlInstance.getGetPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Get";
         this.createAction = this.controlInstance.getCreatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Create";
-        this.WFSubmitAction = (this.controlInstance as any).getWFSubmitPSControlAction?.()?.actionName;
-        this.WFStartAction = (this.controlInstance as any).getWFStartPSControlAction?.()?.actionName;
+        this.WFSubmitAction = (this.controlInstance as any).getWFSubmitPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "WFSubmit";
+        this.WFStartAction = (this.controlInstance as any).getWFStartPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "WFStart";
         // 初始化data
         this.controlInstance.getPSDEFormItems()?.forEach((formItem: IPSDEFormItem) => {
             this.$set(this.data, formItem.id, null);
@@ -304,9 +305,18 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
     public handleDataChange() {
         if (this.isAutoSave) {
             this.autoSave();
+        }else{
+          const state = !Object.is(JSON.stringify(this.oldData), JSON.stringify(this.data)) ? true : false;
+          if(state){
+            this.ctrlEvent({
+              controlname: this.controlInstance.name,
+              action: 'viewstatechange',
+              data: {
+                viewDataChange: true
+              },
+            });
+          }
         }
-        const state = !Object.is(JSON.stringify(this.oldData), JSON.stringify(this.data)) ? true : false;
-        // this.$store.commit('viewaction/setViewDataChange', { viewtag: this.viewtag, viewdatachange: state });
     }
 
     /**
@@ -318,7 +328,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
      * @memberof EditFormControlBase
      */
     public formDataChange({ name }: { name: string }): void {
-        if (this.ignorefieldvaluechange) {
+        if (this.ignorefieldvaluechange || this.checkIgnoreInput(name)) {
             return;
         }
         this.resetFormData({ name: name });
@@ -485,6 +495,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                 this.onControlResponse('save', response);
                 if (!response.status || response.status !== 200) {
                     this.$throw(response, 'save');
+                    reject(response);
                     return;
                 }
                 this.viewparams.copymode = false;
@@ -635,6 +646,9 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                         return;
                     }
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
+                    // 工作流数据刷新
+                    AppCenterService.notifyMessage({ name: 'SysTodo', action: 'appRefresh', data: data });  
+                    AppCenterService.notifyMessage({ name: 'WFTask', action: 'appRefresh', data: data });                        
                     this.$success((this.$t('app.formpage.workflow.startsuccess') as string), 'wfstart');
                     resolve(response);
                 }).catch((response: any) => {
@@ -709,6 +723,9 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                     }
                     this.onFormLoad(arg, 'submit');
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
+                    // 工作流数据刷新
+                    AppCenterService.notifyMessage({ name: 'SysTodo', action: 'appRefresh', data: data });  
+                    AppCenterService.notifyMessage({ name: 'WFTask', action: 'appRefresh', data: data });                        
                     this.$success((this.$t('app.formpage.workflow.submitsuccess') as string), 'wfsubmit');
                     resolve(response);
                 }).catch((response: any) => {
@@ -970,11 +987,19 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
      */
     public onFormLoad(data: any = {}, action: string): void {
         if (this.appDeCodeName.toLowerCase()) {
-            if (Object.is(action, "save") || Object.is(action, "autoSave") || Object.is(action, "submit"))
+            if (Object.is(action, "save") || Object.is(action, "autoSave") || Object.is(action, "submit")){
                 // 更新context的实体主键
                 if (data[this.appDeCodeName.toLowerCase()]) {
                     Object.assign(this.context, { [this.appDeCodeName.toLowerCase()]: data[this.appDeCodeName.toLowerCase()] })
                 }
+                this.ctrlEvent({
+                  controlname: this.controlInstance.name,
+                  action: 'viewstatechange',
+                  data: {
+                    viewDataChange: false
+                  },
+                });
+            }
         }
         this.setFormEnableCond(data);
         this.computeButtonState(data);
@@ -1370,17 +1395,20 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
         const allFormDetails: IPSDEEditFormItem[] = ModelTool.getAllFormItems(this.controlInstance);
         if (allFormDetails.length > 0) {
             for (const detail of allFormDetails) {
-                const property = detail?.codeName?.toLowerCase();
-                if ((detail?.updateDV || detail?.updateDVT) && this.data.hasOwnProperty(property)) {
-                    switch (detail?.updateDVT) {
+                const property = detail.codeName.toLowerCase();
+                if (notNilEmpty(this.data[property])) {
+                  continue;
+                }
+                if ((detail.updateDV || detail.updateDVT) && this.data.hasOwnProperty(property)) {
+                    switch (detail.updateDVT) {
                         case 'CONTEXT':
-                            this.data[property] = this.viewparams[detail?.updateDV];
+                            this.data[property] = this.viewparams[detail.updateDV];
                             break;
                         case 'SESSION':
-                            this.data[property] = this.context[detail?.updateDV];
+                            this.data[property] = this.context[detail.updateDV];
                             break;
                         case 'APPDATA':
-                            this.data[property] = this.context[detail?.updateDV];
+                            this.data[property] = this.context[detail.updateDV];
                             break;
                         case 'OPERATORNAME':
                             this.data[property] = this.context['srfusername'];
@@ -1397,7 +1425,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                         case 'RESET':
                             this.data[property] = null;
                         default:
-                            this.data[property] = ModelTool.isNumberField(detail?.getPSAppDEField()) ? Number(detail?.updateDV) : detail?.updateDV;
+                            this.data[property] = ModelTool.isNumberField(detail.getPSAppDEField()) ? Number(detail.updateDV) : detail.updateDV;
                             break;
                     }
                 }
@@ -1581,6 +1609,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                             disabled: false,
                             required: !(detail as IPSDEFormItem).allowEmpty,
                             enableCond: (detail as IPSDEFormItem).enableCond,
+                            ignoreInput: (detail as IPSDEFormItem).ignoreInput
                         });
                         detailModel = new FormItemModel(detailOpts);
                         break;
@@ -1795,6 +1824,9 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                 }
             }
         }
+
+        //强制刷新,解决某些情况下detailsModel改变而页面不刷新的问题。
+        this.$forceUpdate();
     }
 
     /**
@@ -1823,7 +1855,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
             return logic.notMode ? !result : result;
         } else if (logic.logicType == 'SINGLE') {
             let singleLogic: IPSDEFDSingleLogic = logic as any;
-            return Verify.testCond(data[singleLogic.dEFDName.toLowerCase()], singleLogic.condOP, singleLogic.value)
+            return Verify.testCond(data[singleLogic.dEFDName?.toLowerCase()], singleLogic.condOP, singleLogic.value)
         }
         return false;
     }

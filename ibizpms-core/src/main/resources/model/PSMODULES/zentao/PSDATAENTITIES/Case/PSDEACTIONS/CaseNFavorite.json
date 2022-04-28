@@ -6,13 +6,15 @@
   "logicName" : "CaseNFavorite",
   "name" : "CaseNFavorite",
   "getPSDEActionInput" : {
-    "codeName" : "CaseNFavoriteInput",
-    "name" : "输入对象",
+    "name" : "CaseNFavoriteInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CaseDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CaseNFavoriteResult",
-    "name" : "返回对象",
+    "name" : "CaseNFavoriteResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

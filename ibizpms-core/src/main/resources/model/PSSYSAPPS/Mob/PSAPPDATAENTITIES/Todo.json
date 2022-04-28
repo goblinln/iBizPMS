@@ -230,7 +230,9 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Todo__status.json"
       }
-    } ]
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
@@ -765,6 +767,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    },
     "getPSSysImage" : {
       "cssClass" : "play"
     },
@@ -963,19 +969,28 @@
     "name" : "UPDATE"
   } ],
   "codeName" : "Todo",
+  "dEAPITag" : "IBZ_API__TODO",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json",
   "enableUIActions" : 15,
   "logicName" : "待办事宜表",
+  "getMainStatePSAppDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  } ],
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "Todos",
     "dataRSMode" : 0,
+    "majorDECodeName" : "SysAccount",
+    "majorDEName" : "SYS_USER",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
     },
+    "minorDECodeName" : "Todo",
+    "minorDEName" : "ZT_TODO",
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
@@ -984,6 +999,10 @@
     "rSMode" : 2
   } ],
   "name" : "ZT_TODO",
+  "getOrgIdPSAppDEField" : {
+    "name" : "ORG",
+    "codeName" : "Org"
+  },
   "getPSDEName" : "ZT_TODO",
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "ID",
@@ -996,7 +1015,9 @@
     "codeName" : "Name"
   } ],
   "storageMode" : 0,
+  "sysAPITag" : "StandardAPI",
   "defaultMode" : true,
+  "enableDEMainState" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,

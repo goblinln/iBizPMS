@@ -6,13 +6,15 @@
   "logicName" : "初始化序列",
   "name" : "INIT",
   "getPSDEActionInput" : {
-    "codeName" : "InitInput",
-    "name" : "输入对象",
+    "name" : "InitInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IBZProSequenceDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "InitResult",
-    "name" : "返回对象",
+    "name" : "InitResult",
     "type" : "VOID"
   }
 }

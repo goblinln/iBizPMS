@@ -23,6 +23,9 @@ export class AppDefaultMDViewLayout extends AppDefaultViewLayout {
                 {this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.model.srfCaption}</span> : null}
                 {this.$slots.quickGroupSearch}
             </div>,
+            <div class="quick-search-form">
+              {this.$slots.quickSearchForm}
+            </div>,
             this.$slots.quickSearch || (this.viewIsshowToolbar && this.$slots.toolbar) ?
             <div class="bar-container">
                 {this.$slots.quickSearch}

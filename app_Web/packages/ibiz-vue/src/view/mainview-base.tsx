@@ -225,7 +225,7 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
         return this.$createElement('span', {
             slot: 'captionInfo',
             domProps: {
-                innerHTML: innerHTML,
+                innerText: innerHTML,
             },
         });
     }
@@ -441,7 +441,7 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                     );
                 }
             }
-            if (!openView?.openMode || openView.openMode == 'INDEXVIEWTAB') {
+            if (!openView?.openMode || openView.openMode == 'INDEXVIEWTAB' || openView.openMode == 'POPUPAPP') {
                 if (openView.getPSAppDataEntity()) {
                     parameters = [
                         {
@@ -507,6 +507,11 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                         if (!result) {
                             return;
                         }
+                        if(result.isError){
+                            const data = result?.response?.data;
+                            this.$throw(data?.messages?data.messages:this.$t('components.500.errortext1'));
+                            return;
+                        }
                         const returnContext: any = result?.srftempcontext;
                         let targetOpenViewRef:
                             | IPSAppViewRef
@@ -515,6 +520,19 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                             });
                         if (!targetOpenViewRef) {
                             return;
+                        }
+                        let targetOpenView: IPSAppView | null = targetOpenViewRef.getRefPSAppView();
+                        if (!targetOpenView) {
+                            return;
+                        }
+                        await targetOpenView.fill(true);
+                        if (result && result.indextype) {
+                            const indexContext: any = Util.formatNavParam(
+                                [{ key: targetOpenView?.getPSAppDataEntity()?.codeName, rawValue: false, value: this.appDeCodeName }],
+                                true,
+                            );
+                            const _context: any = Util.computedNavData(fullargs[0], tempContext, data, indexContext);
+                            Object.assign(tempContext, _context);
                         }
                         if (
                             targetOpenViewRef.getPSNavigateContexts() &&
@@ -531,18 +549,13 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                             Object.assign(tempContext, { 'srfsandboxtag': result['srfsandboxtag'] });
                             Object.assign(data, { 'srfsandboxtag': result['srfsandboxtag'] });
                         }
-                        let targetOpenView: IPSAppView | null = targetOpenViewRef.getRefPSAppView();
-                        if (!targetOpenView) {
-                            return;
-                        }
-                        await targetOpenView.fill(true);
                         const view: any = {
-                            viewname: Util.srfFilePath2(targetOpenView.codeName),
+                            viewname: 'app-view-shell',
                             height: targetOpenView.height,
                             width: targetOpenView.width,
                             title: this.$tl(targetOpenView.getCapPSLanguageRes()?.lanResTag, targetOpenView.caption),
                         };
-                        if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
+                        if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB' || targetOpenView.openMode == 'POPUPAPP') {
                             if (targetOpenView.getPSAppDataEntity()) {
                                 deResParameters = Util.formatAppDERSPath(
                                     tempContext,
@@ -853,7 +866,7 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                         );
                     }
                 }
-                if (!dataview.openMode || dataview.openMode == 'INDEXVIEWTAB') {
+                if (!dataview.openMode || dataview.openMode == 'INDEXVIEWTAB' || dataview.openMode == 'POPUPAPP') {
                     if (dataview.getPSAppDataEntity()) {
                         parameters = [
                             {

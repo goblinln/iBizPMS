@@ -1,6 +1,6 @@
 
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { throttle, Util } from 'ibiz-core';
+import { LayoutTool, throttle, Util } from 'ibiz-core';
 import { PortletControlBase } from '../../../widgets';
 import { AppViewLogicService } from '../../../app-service';
 import { IPSDBAppViewPortletPart, IPSDBCustomPortletPart, IPSDBHtmlPortletPart, IPSDBRawItemPortletPart, IPSLanguageRes, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
@@ -385,10 +385,9 @@ export class AppPortletBase extends PortletControlBase {
         let isShowTitle = showTitleBar && title;
         let portletStyle;
         if (this.isAdaptiveSize) {
-            portletStyle = 'height:100%; width:100%';
+            portletStyle = {height: '100%', width: '100%'};
         } else {
-            portletStyle = !Util.isEmpty(height) && height > 0 ? `height: ${height}px;` : 'auto';
-            portletStyle += width ? `width: ${width}px;` : '';
+            portletStyle = {height: LayoutTool.clacStyleSize(height), width: LayoutTool.clacStyleSize(width)};
         }
         return (!this.isAdaptiveSize
             ? <card class={'portlet-card custom-card'} bordered={false} dis-hover padding={0}>

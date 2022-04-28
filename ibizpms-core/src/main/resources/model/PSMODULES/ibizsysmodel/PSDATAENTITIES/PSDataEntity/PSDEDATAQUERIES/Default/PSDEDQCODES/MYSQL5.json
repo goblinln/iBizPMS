@@ -1,0 +1,283 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACCCTRLARCH`",
+    "name" : "ACCCTRLARCH"
+  }, {
+    "expression" : "t1.`AUDITMODE`",
+    "name" : "AUDITMODE"
+  }, {
+    "expression" : "t1.`BASECLSPARAMS`",
+    "name" : "BASECLSPARAMS"
+  }, {
+    "expression" : "t1.`BIZTAG`",
+    "name" : "BIZTAG"
+  }, {
+    "expression" : "t1.`CODENAME`",
+    "name" : "CODENAME"
+  }, {
+    "expression" : "t1.`COLOR`",
+    "name" : "COLOR"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DATAACCMODE`",
+    "name" : "DATAACCMODE"
+  }, {
+    "expression" : "t1.`DATACHGLOGMODE`",
+    "name" : "DATACHGLOGMODE"
+  }, {
+    "expression" : "t1.`DATAIMPEXPFLAG`",
+    "name" : "DATAIMPEXPFLAG"
+  }, {
+    "expression" : "t1.`DBTABSPACE`",
+    "name" : "DBTABSPACE"
+  }, {
+    "expression" : "t1.`DECAT`",
+    "name" : "DECAT"
+  }, {
+    "expression" : "t1.`DELOCKFLAG`",
+    "name" : "DELOCKFLAG"
+  }, {
+    "expression" : "t1.`DESN`",
+    "name" : "DESN"
+  }, {
+    "expression" : "t1.`DETAG`",
+    "name" : "DETAG"
+  }, {
+    "expression" : "t1.`DETAG2`",
+    "name" : "DETAG2"
+  }, {
+    "expression" : "t1.`DETYPE`",
+    "name" : "DETYPE"
+  }, {
+    "expression" : "t1.`DSLINK`",
+    "name" : "DSLINK"
+  }, {
+    "expression" : "t1.`DYNAMICMODE`",
+    "name" : "DYNAMICMODE"
+  }, {
+    "expression" : "t1.`DYNAMODELFLAG`",
+    "name" : "DYNAMODELFLAG"
+  }, {
+    "expression" : "t1.`ENABLEAUDIT`",
+    "name" : "ENABLEAUDIT"
+  }, {
+    "expression" : "t1.`ENABLEDALOG`",
+    "name" : "ENABLEDALOG"
+  }, {
+    "expression" : "t1.`ENABLEDATAVER`",
+    "name" : "ENABLEDATAVER"
+  }, {
+    "expression" : "t1.`ENABLEDEACTION`",
+    "name" : "ENABLEDEACTION"
+  }, {
+    "expression" : "t1.`ENABLEDEDATASET`",
+    "name" : "ENABLEDEDATASET"
+  }, {
+    "expression" : "t1.`ENABLEENTITYCACHE`",
+    "name" : "ENABLEENTITYCACHE"
+  }, {
+    "expression" : "t1.`ENABLEMOB`",
+    "name" : "ENABLEMOB"
+  }, {
+    "expression" : "t1.`ENABLEMULTIDS`",
+    "name" : "ENABLEMULTIDS"
+  }, {
+    "expression" : "t1.`ENABLEOPNAMEMODEL`",
+    "name" : "ENABLEOPNAMEMODEL"
+  }, {
+    "expression" : "t1.`ENABLEORGMODEL`",
+    "name" : "ENABLEORGMODEL"
+  }, {
+    "expression" : "t1.`ENABLESELECT`",
+    "name" : "ENABLESELECT"
+  }, {
+    "expression" : "t1.`ENABLEWFMODEL`",
+    "name" : "ENABLEWFMODEL"
+  }, {
+    "expression" : "t1.`ENAMULTIFORM`",
+    "name" : "ENAMULTIFORM"
+  }, {
+    "expression" : "t1.`ENATEMPDATA`",
+    "name" : "ENATEMPDATA"
+  }, {
+    "expression" : "t1.`ENTITYCACHETIMEOUT`",
+    "name" : "ENTITYCACHETIMEOUT"
+  }, {
+    "expression" : "t1.`EXISTINGMODEL`",
+    "name" : "EXISTINGMODEL"
+  }, {
+    "expression" : "t1.`EXTABLENAME`",
+    "name" : "EXTABLENAME"
+  }, {
+    "expression" : "t1.`INDEXDETYPE`",
+    "name" : "INDEXDETYPE"
+  }, {
+    "expression" : "t1.`KEYRULE`",
+    "name" : "KEYRULE"
+  }, {
+    "expression" : "t1.`LOCKFLAG`",
+    "name" : "LOCKFLAG"
+  }, {
+    "expression" : "t1.`LOGICINVALIDVALUE`",
+    "name" : "LOGICINVALIDVALUE"
+  }, {
+    "expression" : "t1.`LOGICNAME`",
+    "name" : "LOGICNAME"
+  }, {
+    "expression" : "t1.`LOGICVALID`",
+    "name" : "LOGICVALID"
+  }, {
+    "expression" : "t1.`LOGICVALIDVALUE`",
+    "name" : "LOGICVALIDVALUE"
+  }, {
+    "expression" : "t1.`MAXENTITYCACHECNT`",
+    "name" : "MAXENTITYCACHECNT"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t21.`COLOR`",
+    "name" : "MODCOLOR"
+  }, {
+    "expression" : "t1.`MODELIMPEXPFLAG`",
+    "name" : "MODELIMPEXPFLAG"
+  }, {
+    "expression" : "t1.`MODELSTATE`",
+    "name" : "MODELSTATE"
+  }, {
+    "expression" : "t1.`NOVIEWMODE`",
+    "name" : "NOVIEWMODE"
+  }, {
+    "expression" : "t1.`PSDATAENTITYID`",
+    "name" : "PSDATAENTITYID"
+  }, {
+    "expression" : "t1.`PSDATAENTITYNAME`",
+    "name" : "PSDATAENTITYNAME"
+  }, {
+    "expression" : "t1.`PSMODULEID`",
+    "name" : "PSMODULEID"
+  }, {
+    "expression" : "t21.`PSMODULENAME`",
+    "name" : "PSMODULENAME"
+  }, {
+    "expression" : "t1.`PSSUBSYSSADEID`",
+    "name" : "PSSUBSYSSADEID"
+  }, {
+    "expression" : "t31.`PSSUBSYSSADENAME`",
+    "name" : "PSSUBSYSSADENAME"
+  }, {
+    "expression" : "t1.`PSSUBSYSSERVICEAPIID`",
+    "name" : "PSSUBSYSSERVICEAPIID"
+  }, {
+    "expression" : "t11.`PSSUBSYSSERVICEAPINAME`",
+    "name" : "PSSUBSYSSERVICEAPINAME"
+  }, {
+    "expression" : "t1.`PSSYSREQITEMID`",
+    "name" : "PSSYSREQITEMID"
+  }, {
+    "expression" : "t41.`PSSYSREQITEMNAME`",
+    "name" : "PSSYSREQITEMNAME"
+  }, {
+    "expression" : "t1.`PSSYSTEMID`",
+    "name" : "PSSYSTEMID"
+  }, {
+    "expression" : "t1.`PSSYSTEMNAME`",
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "expression" : "t1.`REMOVEFLAG`",
+    "name" : "REMOVEFLAG"
+  }, {
+    "expression" : "t1.`SAASMODE`",
+    "name" : "SAASMODE"
+  }, {
+    "expression" : "t1.`SERVICEAPIFLAG`",
+    "name" : "SERVICEAPIFLAG"
+  }, {
+    "expression" : "t1.`SERVICECODENAME`",
+    "name" : "SERVICECODENAME"
+  }, {
+    "expression" : "t1.`STORAGEMODE`",
+    "name" : "STORAGEMODE"
+  }, {
+    "expression" : "t1.`SUBSYSDE`",
+    "name" : "SUBSYSDE"
+  }, {
+    "expression" : "t21.`SUBSYSMODULE`",
+    "name" : "SUBSYSMODULE"
+  }, {
+    "expression" : "t1.`SVRPUBMODE`",
+    "name" : "SVRPUBMODE"
+  }, {
+    "expression" : "t1.`SYSTEMFLAG`",
+    "name" : "SYSTEMFLAG"
+  }, {
+    "expression" : "t1.`TABLENAME`",
+    "name" : "TABLENAME"
+  }, {
+    "expression" : "t1.`TESTCASEFLAG`",
+    "name" : "TESTCASEFLAG"
+  }, {
+    "expression" : "t1.`TODOTASK`",
+    "name" : "TODOTASK"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`USERACTION`",
+    "name" : "USERACTION"
+  }, {
+    "expression" : "t1.`USERCAT`",
+    "name" : "USERCAT"
+  }, {
+    "expression" : "t1.`USERPARAMS`",
+    "name" : "USERPARAMS"
+  }, {
+    "expression" : "t1.`USERTAG`",
+    "name" : "USERTAG"
+  }, {
+    "expression" : "t1.`USERTAG2`",
+    "name" : "USERTAG2"
+  }, {
+    "expression" : "t1.`USERTAG3`",
+    "name" : "USERTAG3"
+  }, {
+    "expression" : "t1.`USERTAG4`",
+    "name" : "USERTAG4"
+  }, {
+    "expression" : "t1.`VALIDFLAG`",
+    "name" : "VALIDFLAG"
+  }, {
+    "expression" : "t1.`VIEWLEVEL`",
+    "name" : "VIEWLEVEL"
+  }, {
+    "expression" : "t1.`VIEWNAME`",
+    "name" : "VIEWNAME"
+  }, {
+    "expression" : "t1.`VIEWNAME2`",
+    "name" : "VIEWNAME2"
+  }, {
+    "expression" : "t1.`VIEWNAME3`",
+    "name" : "VIEWNAME3"
+  }, {
+    "expression" : "t1.`VIEWNAME4`",
+    "name" : "VIEWNAME4"
+  }, {
+    "expression" : "t1.`VIRTUALFLAG`",
+    "name" : "VIRTUALFLAG"
+  }, {
+    "expression" : "t1.`VKEYSEPARATOR`",
+    "name" : "VKEYSEPARATOR"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACCCTRLARCH`,\nt1.`AUDITMODE`,\nt1.`BASECLSPARAMS`,\nt1.`BIZTAG`,\nt1.`CODENAME`,\nt1.`COLOR`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DATAACCMODE`,\nt1.`DATACHGLOGMODE`,\nt1.`DATAIMPEXPFLAG`,\nt1.`DBTABSPACE`,\nt1.`DECAT`,\nt1.`DELOCKFLAG`,\nt1.`DESN`,\nt1.`DETAG`,\nt1.`DETAG2`,\nt1.`DETYPE`,\nt1.`DSLINK`,\nt1.`DYNAMICMODE`,\nt1.`DYNAMODELFLAG`,\nt1.`ENABLEAUDIT`,\nt1.`ENABLEDALOG`,\nt1.`ENABLEDATAVER`,\nt1.`ENABLEDEACTION`,\nt1.`ENABLEDEDATASET`,\nt1.`ENABLEENTITYCACHE`,\nt1.`ENABLEMOB`,\nt1.`ENABLEMULTIDS`,\nt1.`ENABLEOPNAMEMODEL`,\nt1.`ENABLEORGMODEL`,\nt1.`ENABLESELECT`,\nt1.`ENABLEWFMODEL`,\nt1.`ENAMULTIFORM`,\nt1.`ENATEMPDATA`,\nt1.`ENTITYCACHETIMEOUT`,\nt1.`EXISTINGMODEL`,\nt1.`EXTABLENAME`,\nt1.`INDEXDETYPE`,\nt1.`KEYRULE`,\nt1.`LOCKFLAG`,\nt1.`LOGICINVALIDVALUE`,\nt1.`LOGICNAME`,\nt1.`LOGICVALID`,\nt1.`LOGICVALIDVALUE`,\nt1.`MAXENTITYCACHECNT`,\nt1.`MEMO`,\nt21.`COLOR` AS `MODCOLOR`,\nt1.`MODELIMPEXPFLAG`,\nt1.`MODELSTATE`,\nt1.`NOVIEWMODE`,\nt1.`PSDATAENTITYID`,\nt1.`PSDATAENTITYNAME`,\nt1.`PSMODULEID`,\nt21.`PSMODULENAME`,\nt1.`PSSUBSYSSADEID`,\nt31.`PSSUBSYSSADENAME`,\nt1.`PSSUBSYSSERVICEAPIID`,\nt11.`PSSUBSYSSERVICEAPINAME`,\nt1.`PSSYSREQITEMID`,\nt41.`PSSYSREQITEMNAME`,\nt1.`PSSYSTEMID`,\nt1.`PSSYSTEMNAME`,\nt1.`REMOVEFLAG`,\nt1.`SAASMODE`,\nt1.`SERVICEAPIFLAG`,\nt1.`SERVICECODENAME`,\nt1.`STORAGEMODE`,\nt1.`SUBSYSDE`,\nt21.`SUBSYSMODULE`,\nt1.`SVRPUBMODE`,\nt1.`SYSTEMFLAG`,\nt1.`TABLENAME`,\nt1.`TESTCASEFLAG`,\nt1.`TODOTASK`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`USERACTION`,\nt1.`USERCAT`,\nt1.`USERPARAMS`,\nt1.`USERTAG`,\nt1.`USERTAG2`,\nt1.`USERTAG3`,\nt1.`USERTAG4`,\nt1.`VALIDFLAG`,\nt1.`VIEWLEVEL`,\nt1.`VIEWNAME`,\nt1.`VIEWNAME2`,\nt1.`VIEWNAME3`,\nt1.`VIEWNAME4`,\nt1.`VIRTUALFLAG`,\nt1.`VKEYSEPARATOR`\nFROM `T_PSDATAENTITY` t1 \nLEFT JOIN `T_PSSUBSYSSERVICEAPI` t11 ON t1.`PSSUBSYSSERVICEAPIID` = t11.`PSSUBSYSSERVICEAPIID` \nLEFT JOIN `T_PSMODULE` t21 ON t1.`PSMODULEID` = t21.`PSMODULEID` \nLEFT JOIN `T_PSSUBSYSSADE` t31 ON t1.`PSSUBSYSSADEID` = t31.`PSSUBSYSSADEID` \nLEFT JOIN `T_PSSYSREQITEM` t41 ON t1.`PSSYSREQITEMID` = t41.`PSSYSREQITEMID` \n",
+  "id" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDataEntity/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

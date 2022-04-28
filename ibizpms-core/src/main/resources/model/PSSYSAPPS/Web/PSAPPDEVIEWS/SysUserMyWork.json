@@ -172,6 +172,11 @@
                 "height" : 40,
                 "layout" : "FLEX"
               },
+              "getPSRawItem" : {
+                "caption" : "今天剩余工作总计",
+                "contentType" : "RAW",
+                "name" : "rawitem1"
+              },
               "rawContent" : "今天剩余工作总计",
               "rawItemHeight" : 40.0
             } ],
@@ -216,6 +221,11 @@
                   "grow" : -1,
                   "height" : 30,
                   "layout" : "FLEX"
+                },
+                "getPSRawItem" : {
+                  "caption" : "我的任务",
+                  "contentType" : "RAW",
+                  "name" : "rawitem2"
                 },
                 "rawContent" : "我的任务",
                 "rawItemHeight" : 30.0
@@ -284,6 +294,11 @@
                   "height" : 30,
                   "layout" : "FLEX"
                 },
+                "getPSRawItem" : {
+                  "caption" : "我的bug",
+                  "contentType" : "RAW",
+                  "name" : "rawitem3"
+                },
                 "rawContent" : "我的bug",
                 "rawItemHeight" : 30.0
               }, {
@@ -351,6 +366,11 @@
                   "height" : 30,
                   "layout" : "FLEX"
                 },
+                "getPSRawItem" : {
+                  "caption" : "我的需求",
+                  "contentType" : "RAW",
+                  "name" : "rawitem4"
+                },
                 "rawContent" : "我的需求",
                 "rawItemHeight" : 30.0
               }, {
@@ -380,6 +400,14 @@
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
+                },
+                "getPSRawItem" : {
+                  "caption" : "---",
+                  "contentType" : "RAW",
+                  "name" : "rawitem7",
+                  "getPSSysCss" : {
+                    "cssName" : "text-center-red"
+                  }
                 },
                 "getPSSysCss" : {
                   "cssName" : "text-center-red"
@@ -411,6 +439,11 @@
                   "grow" : -1,
                   "height" : 30,
                   "layout" : "FLEX"
+                },
+                "getPSRawItem" : {
+                  "caption" : "未关闭的项目",
+                  "contentType" : "RAW",
+                  "name" : "rawitem5"
                 },
                 "rawContent" : "未关闭的项目",
                 "rawItemHeight" : 30.0
@@ -479,6 +512,11 @@
                   "height" : 30,
                   "layout" : "FLEX"
                 },
+                "getPSRawItem" : {
+                  "caption" : "未关闭的产品",
+                  "contentType" : "RAW",
+                  "name" : "rawitem6"
+                },
                 "rawContent" : "未关闭的产品",
                 "rawItemHeight" : 30.0
               }, {
@@ -509,6 +547,14 @@
                   "grow" : -1,
                   "layout" : "FLEX"
                 },
+                "getPSRawItem" : {
+                  "caption" : "---",
+                  "contentType" : "RAW",
+                  "name" : "rawitem8",
+                  "getPSSysCss" : {
+                    "cssName" : "text-center-red"
+                  }
+                },
                 "getPSSysCss" : {
                   "cssName" : "text-center-red"
                 },
@@ -535,43 +581,6 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-        }
-      }, {
-        "actionType" : "DEDATASET",
-        "name" : "fetch",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "CountMyWork"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-        }
-      }, {
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "dataAccessAction" : "READ",
@@ -592,6 +601,43 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "CountMyWork"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

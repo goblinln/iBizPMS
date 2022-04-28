@@ -1,0 +1,51 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "t1.DELETED = '0'",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ATTIME`",
+    "name" : "ATTIME"
+  }, {
+    "expression" : "t1.`CREATEDBY`",
+    "name" : "CREATEDBY"
+  }, {
+    "expression" : "t1.`CREATEDDATE`",
+    "name" : "CREATEDDATE"
+  }, {
+    "expression" : "t1.`DELETED`",
+    "name" : "DELETED"
+  }, {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`JOB`",
+    "name" : "JOB"
+  }, {
+    "expression" : "t1.`LOGS`",
+    "name" : "LOGS"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "t1.`QUEUE`",
+    "name" : "QUEUE"
+  }, {
+    "expression" : "t1.`STATUS`",
+    "name" : "STATUS"
+  }, {
+    "expression" : "t1.`TAG`",
+    "name" : "TAG"
+  }, {
+    "expression" : "t1.`TESTTASK`",
+    "name" : "TESTTASK"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  } ],
+  "queryCode" : "SELECT\nt1.`ATTIME`,\nt1.`CREATEDBY`,\nt1.`CREATEDDATE`,\nt1.`DELETED`,\nt1.`ID`,\nt1.`JOB`,\nt1.`LOGS`,\nt1.`NAME`,\nt1.`QUEUE`,\nt1.`STATUS`,\nt1.`TAG`,\nt1.`TESTTASK`,\nt1.`UPDATEDATE`\nFROM `zt_compile` t1 \n",
+  "id" : "PSMODULES/zentao/PSDATAENTITIES/Compile/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

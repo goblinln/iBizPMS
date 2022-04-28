@@ -1,0 +1,25 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ID`",
+    "name" : "ID"
+  }, {
+    "expression" : "t1.`NAME`",
+    "name" : "NAME"
+  }, {
+    "expression" : "0",
+    "name" : "TASKEFFICIENT"
+  }, {
+    "expression" : "0",
+    "name" : "TOTALCONSUMED"
+  }, {
+    "expression" : "0",
+    "name" : "TOTALESTIMATE"
+  }, {
+    "expression" : "0",
+    "name" : "TOTALLEFT"
+  } ],
+  "queryCode" : "SELECT t4.account as finishedby,t1.project,t1.projectname,t1.id as taskid,t1.taskname,t1.pri as taskpri,t1.estStarted as taskeststarted,t1.realStarted as taskrealstart,t1.deadline as taskdeadline,t1.finishedDate as taskfinisheddate,null as delay,t1.estimate as taskestimate,t1.consumed as totalconsumed, t2.taskcnt,t2.projectconsumed,t3.userconsumed \n,t4.dept,DATE_FORMAT(t1.finishedDate,'%Y-%m-%d') as `begin`,DATE_FORMAT(t1.finishedDate,'%Y-%m-%d') as `end`\nfrom (\nselect t1.finishedBy,t1.project,t2.`name` as projectname,t1.id,t1.`name` as taskname ,t1.pri,t1.estStarted,t1.realStarted,t1.deadline,t1.finishedDate,null as delay,t1.estimate,t1.consumed\nfrom zt_task t1 LEFT JOIN zt_project t2 on t1.project = t2.id where (t1.`status` = 'done' or (t1.`status` = 'closed' and closedReason = 'done')) and t2.deleted ='0' and t1.deleted = '0'  and t2.id <> 0 and t1.finishedBy <> '' and t1.finishedBy is not null and t1.parent >= 0 and not EXISTS (select 1 from zt_team t where t.root = t1.id and t.type = 'task')\n\nUNION\nselect t3.account as finishedBy,t1.project,t2.`name` as projectname,t1.id,t1.`name` as taskname ,t1.pri,t1.estStarted,t1.realStarted,t1.deadline,t1.finishedDate,null as delay,t1.estimate,t3.consumed\nfrom zt_task t1 LEFT JOIN zt_project t2 on t1.project = t2.id inner JOIN zt_team t3 on t3.root = t1.id and t3.type = 'task'\nwhere t2.deleted ='0' and t1.deleted = '0' and FIND_IN_SET(t3.account,t1.finishedList) and t2.id <> 0 and t1.parent >= 0 and t3.`left` = 0 \n\n) t1 LEFT JOIN (\n\nSELECT t1.finishedBy,t1.project,t1.projectname,t1.id,t1.taskname,COUNT(1) as taskcnt,SUM(t1.consumed) as projectconsumed from (\nselect t1.finishedBy,t1.project,t2.`name` as projectname,t1.id,t1.`name` as taskname ,t1.consumed\nfrom zt_task t1 LEFT JOIN zt_project t2 on t1.project = t2.id where (t1.`status` = 'done' or (t1.`status` = 'closed' and closedReason = 'done')) and t2.deleted ='0' and t1.deleted = '0'  and t2.id <> 0 and t1.finishedBy <> '' and t1.finishedBy is not null and t1.parent >= 0 and not EXISTS (select 1 from zt_team t where t.root = t1.id and t.type = 'task')\n\nUNION\nselect t3.account as finishedBy,t1.project,t2.`name` as projectname,t1.id,t1.`name` as taskname ,t3.consumed\nfrom zt_task t1 LEFT JOIN zt_project t2 on t1.project = t2.id inner JOIN zt_team t3 on t3.root = t1.id and t3.type = 'task'\nwhere t2.deleted ='0' and t1.deleted = '0' and FIND_IN_SET(t3.account,t1.finishedList) and t2.id <> 0 and t1.parent >= 0 and t3.`left` = 0 \n) t1 GROUP BY t1.finishedBy,t1.project  \n\n) t2 on t1.finishedBy = t2.finishedBy  and t1.project = t2.project   \nLEFT JOIN ( \n\nSELECT t1.finishedBy,SUM(t1.consumed) as userconsumed from (\nselect t1.finishedBy,t1.project,t2.`name` as projectname,t1.id,t1.`name` as taskname ,t1.consumed\nfrom zt_task t1 LEFT JOIN zt_project t2 on t1.project = t2.id where (t1.`status` = 'done' or (t1.`status` = 'closed' and closedReason = 'done')) and t2.deleted ='0' and t1.deleted = '0'  and t2.id <> 0 and t1.finishedBy <> '' and t1.finishedBy is not null and t1.parent >= 0 and not EXISTS (select 1 from zt_team t where t.root = t1.id and t.type = 'task')\n\nUNION\nselect t3.account as finishedBy,t1.project,t2.`name` as projectname,t1.id,t1.`name` as taskname ,t3.consumed\nfrom zt_task t1 LEFT JOIN zt_project t2 on t1.project = t2.id inner JOIN zt_team t3 on t3.root = t1.id and t3.type = 'task'\nwhere t2.deleted ='0' and t1.deleted = '0' and FIND_IN_SET(t3.account,t1.finishedList) and t2.id <> 0 and t1.parent >= 0 and t3.`left` = 0 \n\n) t1 GROUP BY t1.finishedBy\n\n) t3 on t1.finishedBy = t3.finishedBy\n\nleft JOIN zt_user t4 on t1.finishedBy = t4.account\nwhere (t4.dept = #{srf.datacontext.dept} or #{srf.datacontext.dept} is null) \nand (DATE_FORMAT(t1.finishedDate,'%Y-%m-%d') >= #{srf.datacontext.begin} or #{srf.datacontext.begin} is null)\nand (DATE_FORMAT(t1.finishedDate,'%Y-%m-%d') >= #{srf.datacontext.end} or #{srf.datacontext.end} is null)\nORDER BY t4.account,t1.project\n",
+  "id" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats/PSDEDATAQUERIES/TaskFinishHuiZong/PSDEDQCODES/MYSQL5.json"
+}

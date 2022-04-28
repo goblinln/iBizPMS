@@ -20,6 +20,15 @@ ruleflow-group "storybuildunlinkstorysbegin"
     then
     end
 
+//逻辑处理节点[处理]
+rule "deaction1"
+ruleflow-group "storybuildunlinkstorysdeaction1"
+    when
+    then
+    storyservice.buildUnlinkStory(storybuildunlinkstorysdefault);
+    update(storybuildunlinkstorysdefault);//更新fact中变量值
+    end
+
 //逻辑处理节点[参数]
 rule "prepareparam1"
 ruleflow-group "storybuildunlinkstorysprepareparam1"
@@ -27,15 +36,6 @@ ruleflow-group "storybuildunlinkstorysprepareparam1"
     then
     storybuildunlinkstorysdefault.set("build",storybuildunlinkstorysdefault.get("build"));
     storybuildunlinkstorysdefault.set("id",storybuildunlinkstorysdefault.get("id"));
-    update(storybuildunlinkstorysdefault);//更新fact中变量值
-    end
-
-//逻辑处理节点[处理]
-rule "deaction1"
-ruleflow-group "storybuildunlinkstorysdeaction1"
-    when
-    then
-    storyservice.buildUnlinkStory(storybuildunlinkstorysdefault);
     update(storybuildunlinkstorysdefault);//更新fact中变量值
     end
 

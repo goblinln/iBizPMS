@@ -6,13 +6,15 @@
   "logicName" : "我收到的汇报（计数器）",
   "name" : "ReportIReceived",
   "getPSDEActionInput" : {
-    "codeName" : "ReportIReceivedInput",
-    "name" : "输入对象",
+    "name" : "ReportIReceivedInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "IbzReportDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "ReportIReceivedResult",
-    "name" : "返回对象",
+    "name" : "ReportIReceivedResult",
     "type" : "VOID"
   },
   "getPSDELogic" : {

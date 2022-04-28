@@ -6,13 +6,15 @@
   "logicName" : "关闭",
   "name" : "Close",
   "getPSDEActionInput" : {
-    "codeName" : "CloseInput",
-    "name" : "输入对象",
+    "name" : "CloseInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ProjectDTO"
+    },
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
-    "codeName" : "CloseResult",
-    "name" : "返回对象",
+    "name" : "CloseResult",
     "type" : "VOID"
   },
   "userCat" : "CAT1"

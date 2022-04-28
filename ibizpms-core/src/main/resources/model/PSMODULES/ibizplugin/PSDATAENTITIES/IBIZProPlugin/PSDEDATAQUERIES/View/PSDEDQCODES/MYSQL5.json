@@ -1,0 +1,49 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "0",
+    "name" : "COMMENTCOUNT"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "0",
+    "name" : "DOWNLOADCOUNT"
+  }, {
+    "expression" : "t1.`DOWNLOADURL`",
+    "name" : "DOWNLOADURL"
+  }, {
+    "expression" : "t1.`IBIZPRO_PLUGINID`",
+    "name" : "IBIZPRO_PLUGINID"
+  }, {
+    "expression" : "t1.`IBIZPRO_PLUGINNAME`",
+    "name" : "IBIZPRO_PLUGINNAME"
+  }, {
+    "expression" : "t1.`KEYWORD`",
+    "name" : "KEYWORD"
+  }, {
+    "expression" : "0",
+    "name" : "SCORE"
+  }, {
+    "expression" : "t1.`TAG`",
+    "name" : "TAG"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`VERSION`",
+    "name" : "VERSION"
+  } ],
+  "queryCode" : "SELECT\n0 AS `COMMENTCOUNT`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\n0 AS `DOWNLOADCOUNT`,\nt1.`DOWNLOADURL`,\nt1.`IBIZPRO_PLUGINID`,\nt1.`IBIZPRO_PLUGINNAME`,\nt1.`KEYWORD`,\n0 AS `SCORE`,\nt1.`TAG`,\nt1.`TYPE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`VERSION`\nFROM `T_IBIZPRO_PLUGIN` t1 \n",
+  "id" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProPlugin/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

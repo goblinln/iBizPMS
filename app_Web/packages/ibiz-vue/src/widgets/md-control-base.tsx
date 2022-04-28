@@ -3,7 +3,7 @@ import { CodeListServiceBase, throttle, MDControlInterface, ModelTool, Util } fr
 import { MainControlBase } from './main-control-base';
 import { GlobalService } from 'ibiz-service';
 import { AppCenterService, AppViewLogicService } from '../app-service';
-import { IPSAppDataEntity, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSMDControl } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppDataEntity, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction } from '@ibiz/dynamic-model-api';
 
 
 /**
@@ -228,6 +228,38 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
     public dataMap: Map<string, any> = new Map();
 
     /**
+     * 分组模式
+     * 
+     * @type {string}
+     * @memberof MDControlBase
+     */
+    public groupMode: string = '';
+
+    /**
+     * 是否开启分组
+     * 
+     * @type {boolean}
+     * @memberof MDControlBase
+     */
+    public isEnableGroup: boolean = false;
+
+    /**
+     * 分组属性
+     * 
+     * @type {string}
+     * @memberof MDControlBase
+     */
+    public groupField: string = '';
+
+    /**
+     * 分组代码表
+     * 
+     * @type {IPSAppCodeList}
+     * @memberof MDControlBase
+     */
+    public groupCodeList?: IPSAppCodeList;
+
+    /**
      * 获取视图样式
      *
      * @readonly
@@ -285,6 +317,7 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
         }
         this.initToolBarModels();
         this.initDataMap();
+        this.initGroupOptions();
     }
 
     /**
@@ -477,54 +510,43 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
     public initDataMap() {}
 
     /**
-     * 将数据项数据转化为UI数据
+     * 初始化分组配置
      * 
-     * @param data 源数据
+     * @memberof MDControlBase
      */
-    public dataItemTransition(data: any[]) {
-        let _data: any[] = Util.deepCopy(data);
-        if (data.length > 0) {
-            data.forEach((item: any, index: number) => {
-                for (const key in item) {
-                    const itemUI: any = this.dataMap.get(key);
-                    if (itemUI && !Object.is(itemUI.itemUIName, key)) {
-                        delete _data[index][key];
-                        Object.assign(_data[index],{ [itemUI.itemUIName]: item[key]});
-                    };
-                };
-            });
-        };
-        return _data;
+    public initGroupOptions() {
+        this.isEnableGroup = (this.controlInstance.enableGroup && this.controlInstance.getGroupPSAppDEField?.()) ? true : false;
+        if (this.isEnableGroup) {
+            this.groupMode = this.controlInstance.groupMode;
+            this.groupField = this.controlInstance.getGroupPSAppDEField().codeName?.toLowerCase();
+            this.groupCodeList = this.controlInstance.getGroupPSCodeList?.() as IPSAppCodeList;
+        }
     }
 
     /**
-     * 将项UI数据转为数据项数据
+     * 分组
      * 
-     * @param data 多数据部件数据
+     * @memberof MDControlBase
      */
-    public itemUIDataTransition(data: any[]) {
-        let _data: any[] = Util.deepCopy(data);
-        let dataItems: any[] = [];
-        if (_data) {
-            for (const [dataItemName, itemUI] of this.dataMap) {
-                if (!Object.is(dataItemName, itemUI.itemUIName)) {
-                    dataItems.push(dataItemName);
-                };
-            };
-            data.forEach((item: any, index: number) => {
-                if (dataItems.length > 0) {
-                    for (const key in item) {
-                        dataItems.forEach((dataItemName: any) => {
-                            const itemUI: any = this.dataMap.get(dataItemName);
-                            if (itemUI && Object.is(itemUI.itemUIName, key)) {
-                                delete _data[index][key];
-                                Object.assign(_data[index],{ [dataItemName]: item[key]});
-                            }
-                        })
-                    };
-                };
-            });
-        };
-        return _data;
+    public group() {
+        if (Object.is(this.groupMode, "AUTO")) {
+            this.drawGroup();
+        } else if (Object.is(this.groupMode, "CODELIST")) {
+            this.drawCodelistGroup();
+        }
     }
+
+    /**
+     * 自动分组
+     * 
+     * @memberof MDControlBase
+     */
+    public drawGroup() { }
+
+    /**
+     * 代码表分组
+     * 
+     * @memberof MDControlBase
+     */
+    public drawCodelistGroup() { }
 }

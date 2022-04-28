@@ -1,25 +1,32 @@
 {
+  "codeListTag" : "zentao__Task__closed_reason",
   "codeListType" : "STATIC",
   "codeName" : "Task__closed_reason",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Task__closed_reason.json",
   "emptyText" : "未定义",
+  "name" : "任务关闭原因",
   "getPSCodeItems" : [ {
     "codeName" : "Done",
     "text" : "已完成",
-    "value" : "done",
-    "includeBeginValue" : true
+    "value" : "done"
   }, {
     "codeName" : "Cancel",
     "text" : "已取消",
-    "value" : "cancel",
-    "includeBeginValue" : true
+    "value" : "cancel"
   } ],
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  },
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
-  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

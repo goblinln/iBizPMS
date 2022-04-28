@@ -280,8 +280,13 @@
               "name" : "assignedto 不等于(<>) (closed)",
               "value" : "closed"
             } ],
+            "relatedItemNames" : [ "assignedto" ],
             "notMode" : false
-          } ]
+          } ],
+          "getPSRawItem" : {
+            "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
+            "name" : "rawitem1"
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "RAWITEM",
@@ -303,8 +308,12 @@
               "name" : "assignedto 等于(=) (closed)",
               "value" : "closed"
             } ],
+            "relatedItemNames" : [ "assignedto" ],
             "notMode" : false
-          } ]
+          } ],
+          "getPSRawItem" : {
+            "name" : "rawitem3"
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "RAWITEM",
@@ -325,8 +334,12 @@
               "logicType" : "SINGLE",
               "name" : "assignedto 值为空(Nil)"
             } ],
+            "relatedItemNames" : [ "assignedto" ],
             "notMode" : false
-          } ]
+          } ],
+          "getPSRawItem" : {
+            "name" : "rawitem2"
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -386,43 +399,6 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
-        }
-      }, {
-        "actionType" : "DEDATASET",
-        "name" : "fetch",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchMyNotSubmit"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
-        }
-      }, {
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "dataAccessAction" : "READ",
@@ -443,6 +419,43 @@
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchMyNotSubmit"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

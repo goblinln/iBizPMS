@@ -287,10 +287,29 @@ export class FormControlBase extends MainControlBase implements FormControlInter
         if (!$event || !$event.name || Object.is($event.name, '') || !this.data.hasOwnProperty($event.name)) {
             return;
         }
+        if (this.checkIgnoreInput($event.name, 'before')) {
+            return;
+        }
+        this.clearBackEndError();
         this.validateEditorRuleAction($event.name, $event.value);
         this.data[$event.name] = $event.value;
         this.formDataChange({ name: $event.name, newVal: $event.value, oldVal: null });
+    }
 
+    /**
+     * 清除后台值校验错误提示
+     *
+     * @memberof FormControlBase
+     */
+    public clearBackEndError() {
+        Object.values(this.detailsModel).forEach((formItem: any) => {
+            if (Object.is(formItem.detailType, 'FORMITEM')) {
+                if (formItem.isBackendError) {
+                    formItem.setError('');
+                    formItem.setIsBackendError(false);
+                }
+            }
+        });
     }
 
     /**
@@ -314,6 +333,28 @@ export class FormControlBase extends MainControlBase implements FormControlInter
                 // todo 提示info
             }
         }
+    }
+
+    /**
+     * @description 校验是否忽略输入值
+     * @protected
+     * @param {string} name
+     * @param {('before' | 'change')} [step='change'] {before：表单值变化之前，change：表单值变化}
+     * @return {*}  {boolean}
+     * @memberof FormControlBase
+     */
+    protected checkIgnoreInput(name: string, step: 'before' | 'change' = 'change'): boolean {
+        const formDetail = this.detailsModel[name];
+        if (formDetail) {
+            switch (formDetail.ignoreInput) {
+                case 4: //表单项禁用
+                    if (formDetail.disabled) {
+                        return true;
+                    }
+                    break;
+            }
+        }
+        return false;
     }
 
 
@@ -636,7 +677,10 @@ export class FormControlBase extends MainControlBase implements FormControlInter
                     if (Object.is(EntityFieldErrorCode.ERROR_VALUERULE, detail.fielderrortype) && detail.fieldname) {
                         const tempFormItem: any = this.findFormItemByField(detail.fieldname);
                         if (tempFormItem) {
-                            Object.assign(this.detailsModel[tempFormItem.name], { error: new String(detail.fielderrorinfo ? detail.fielderrorinfo : data.message) });
+                            Object.assign(this.detailsModel[tempFormItem.name], {
+                                error: new String(detail.fielderrorinfo ? detail.fielderrorinfo : data.message),
+                                isBackendError: true
+                            });
                         } else {
                             errorMsg += `${detail.fieldlogicname}${detail.fielderrorinfo ? detail.fielderrorinfo : data.message}<br/>`;
                         }

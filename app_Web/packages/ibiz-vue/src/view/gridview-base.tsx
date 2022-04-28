@@ -1,5 +1,5 @@
 import { IPSAppDEGridView, IPSDEGrid } from '@ibiz/dynamic-model-api';
-import { GirdViewInterface, GridViewEngine, ModelTool } from 'ibiz-core';
+import { GirdViewInterface, GridViewEngine, ModelTool, Util } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 
 /**
@@ -119,7 +119,11 @@ export class GridViewBase extends MDViewBase implements GirdViewInterface {
         }
         const refs: any = this.$refs;
         if (refs[this.gridInstance?.name] && refs[this.gridInstance.name].ctrl) {
-            refs[this.gridInstance?.name].ctrl.load(this.context, true);
+            if (Object.is(Util.typeOf($event), 'object')) {
+              refs[this.gridInstance?.name].ctrl.load(this.context, true, false);
+            } else {
+              refs[this.gridInstance?.name].ctrl.load(this.context, true, true);
+            }
         }
     }
 
