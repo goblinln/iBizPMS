@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "记录工时（行编辑）",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -142,18 +142,12 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "id",
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "date",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 21,
-    "name" : "work",
-    "getPSAppDEField" : {
-      "name" : "WORK",
-      "codeName" : "Work"
+      "name" : "DATE",
+      "codeName" : "Date"
     }
   }, {
     "dataType" : 7,
@@ -161,6 +155,20 @@
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "left",
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    }
+  }, {
+    "dataType" : 21,
+    "name" : "work",
+    "getPSAppDEField" : {
+      "name" : "WORK",
+      "codeName" : "Work"
     }
   }, {
     "dataType" : 1,
@@ -177,23 +185,15 @@
       "codeName" : "Account"
     }
   }, {
-    "dataType" : 7,
-    "name" : "left",
+    "dataType" : 1,
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "LEFT",
-      "codeName" : "Left"
-    }
-  }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "date",
-    "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
-    "name" : "srfmajortext",
+    "name" : "srfkey",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -208,25 +208,61 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     }
   } ],
   "getPSDEGridEditItems" : [ {
-    "caption" : "编号",
-    "codeName" : "id",
-    "enableCond" : 0,
+    "caption" : "日期",
+    "codeName" : "date",
+    "enableCond" : 3,
     "ignoreInput" : 0,
-    "name" : "id",
+    "name" : "date",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "DATE",
+      "codeName" : "Date"
     },
     "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "name" : "id"
+      "dateTimeFormat" : "YYYY-MM-DD",
+      "editorParams" : {
+        "TIMEFMT" : "YYYY-MM-DD"
+      },
+      "editorType" : "DATEPICKEREX_NOTIME",
+      "name" : "date"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "总计消耗",
+    "codeName" : "consumed",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "consumed",
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    },
+    "getPSEditor" : {
+      "editorType" : "NUMBER",
+      "name" : "consumed",
+      "precision" : 2
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "预计剩余",
+    "codeName" : "left",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "left",
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    },
+    "getPSEditor" : {
+      "editorType" : "NUMBER",
+      "name" : "left",
+      "precision" : 2
     },
     "allowEmpty" : true
   }, {
@@ -244,22 +280,6 @@
       "maxLength" : 65535,
       "name" : "work",
       "showMaxLength" : true
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "总计消耗",
-    "codeName" : "consumed",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "consumed",
-    "getPSAppDEField" : {
-      "name" : "CONSUMED",
-      "codeName" : "Consumed"
-    },
-    "getPSEditor" : {
-      "editorType" : "NUMBER",
-      "name" : "consumed",
-      "precision" : 2
     },
     "allowEmpty" : true
   }, {
@@ -294,38 +314,18 @@
     },
     "allowEmpty" : true
   }, {
-    "caption" : "预计剩余",
-    "codeName" : "left",
-    "enableCond" : 3,
+    "caption" : "编号",
+    "codeName" : "id",
+    "enableCond" : 0,
     "ignoreInput" : 0,
-    "name" : "left",
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "LEFT",
-      "codeName" : "Left"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "getPSEditor" : {
-      "editorType" : "NUMBER",
-      "name" : "left",
-      "precision" : 2
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "日期",
-    "codeName" : "date",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "date",
-    "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
-    },
-    "getPSEditor" : {
-      "dateTimeFormat" : "YYYY-MM-DD",
-      "editorParams" : {
-        "TIMEFMT" : "YYYY-MM-DD"
-      },
-      "editorType" : "DATEPICKEREX_NOTIME",
-      "name" : "date"
+      "editorType" : "TEXTBOX",
+      "name" : "id"
     },
     "allowEmpty" : true
   }, {

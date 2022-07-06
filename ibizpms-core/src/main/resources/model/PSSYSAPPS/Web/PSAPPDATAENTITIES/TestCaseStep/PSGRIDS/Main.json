@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "minorSortDir" : "ASC",
   "getMinorSortPSAppDEField" : {
@@ -91,39 +91,11 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 21,
-    "name" : "expect",
-    "getPSAppDEField" : {
-      "name" : "EXPECT",
-      "codeName" : "Expect"
-    }
-  }, {
     "dataType" : 21,
     "name" : "desc",
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "parent",
-    "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "case",
-    "getPSAppDEField" : {
-      "name" : "CASE",
-      "codeName" : "IBizCase"
     }
   }, {
     "dataType" : 25,
@@ -133,6 +105,20 @@
       "codeName" : "Type"
     }
   }, {
+    "dataType" : 21,
+    "name" : "expect",
+    "getPSAppDEField" : {
+      "name" : "EXPECT",
+      "codeName" : "Expect"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
     "dataType" : 1,
     "name" : "casestepsn",
     "getPSAppDEField" : {
@@ -140,11 +126,18 @@
       "codeName" : "Casestepsn"
     }
   }, {
-    "dataType" : 21,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "case",
     "getPSAppDEField" : {
-      "name" : "EXPECT",
-      "codeName" : "Expect"
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -156,30 +149,20 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "parent",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PARENT",
+      "codeName" : "Parent"
     }
-  } ],
-  "getPSDEGridEditItems" : [ {
-    "caption" : "预期",
-    "codeName" : "expect",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "expect",
+  }, {
+    "dataType" : 21,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
-    },
-    "getPSEditor" : {
-      "editorType" : "TEXTAREA",
-      "maxLength" : 65535,
-      "name" : "expect",
-      "showMaxLength" : true
-    },
-    "allowEmpty" : true
-  }, {
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
     "caption" : "步骤",
     "codeName" : "desc",
     "enableCond" : 3,
@@ -217,6 +200,23 @@
     },
     "allowEmpty" : true,
     "needCodeListConfig" : true
+  }, {
+    "caption" : "预期",
+    "codeName" : "expect",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "expect",
+    "getPSAppDEField" : {
+      "name" : "EXPECT",
+      "codeName" : "Expect"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTAREA",
+      "maxLength" : 65535,
+      "name" : "expect",
+      "showMaxLength" : true
+    },
+    "allowEmpty" : true
   }, {
     "caption" : "编号",
     "codeName" : "srfkey",

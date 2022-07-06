@@ -107,17 +107,17 @@
     },
     "getPSDEDataViewDataItems" : [ {
       "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "INDEXNAME",
-        "codeName" : "Indexname"
-      }
-    }, {
-      "dataType" : 25,
       "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "INDEXID",
         "codeName" : "Indexid"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "INDEXNAME",
+        "codeName" : "Indexname"
       }
     } ],
     "pagingSize" : 1000,

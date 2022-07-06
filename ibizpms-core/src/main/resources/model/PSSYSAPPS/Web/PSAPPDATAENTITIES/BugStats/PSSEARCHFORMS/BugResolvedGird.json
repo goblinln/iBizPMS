@@ -2,7 +2,7 @@
   "codeName" : "BugResolvedGird",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSSEARCHFORMS/BugResolvedGird.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "bug解决统计搜索表单",
   "getPSAppDataEntity" : {
     "modelref" : true,

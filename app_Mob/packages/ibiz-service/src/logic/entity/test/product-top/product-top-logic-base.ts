@@ -24,21 +24,6 @@ export class ProductTopLogicBase extends EntityLogicBase {
     }
 
     /**
-     * 获取置顶最大排序值「RAWSQLCALL」
-     */
-    private async executeRawsqlcall1(): Promise<any> {
-        // RAWSQLCALL暂未支持
-        console.log("RAWSQLCALL暂未支持");
-        return this.default;
-    }
-
-    /**
-     * save置顶
-     */
-    private async executeDeaction1(): Promise<any> {
-    }
-
-    /**
      * 开始
      */
     private async executeBegin(): Promise<any> {
@@ -57,6 +42,21 @@ export class ProductTopLogicBase extends EntityLogicBase {
         if (true) {
             return this.executeDeaction1();
         }
+    }
+
+    /**
+     * 获取置顶最大排序值「RAWSQLCALL」
+     */
+    private async executeRawsqlcall1(): Promise<any> {
+        // RAWSQLCALL暂未支持
+        console.log("RAWSQLCALL暂未支持");
+        return this.default;
+    }
+
+    /**
+     * save置顶
+     */
+    private async executeDeaction1(): Promise<any> {
     }
 
 

@@ -73,7 +73,6 @@ export abstract class SysTeamMemberBase extends EntityBase implements ISysTeamMe
      * 用户标识
      */
     userid?: any;
-
     /**
      * 重置实体数据
      *

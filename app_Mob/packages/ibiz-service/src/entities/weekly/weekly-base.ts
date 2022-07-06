@@ -129,7 +129,6 @@ export abstract class WeeklyBase extends EntityBase implements IWeekly {
      * 更新时间
      */
     updatedate?: any;
-
     /**
      * 重置实体数据
      *

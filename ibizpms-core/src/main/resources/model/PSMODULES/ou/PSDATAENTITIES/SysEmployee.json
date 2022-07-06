@@ -4069,82 +4069,10 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "EditViewBasicInfo",
-    "logicName" : "人员实体编辑视图（基本资料）",
-    "name" : "人员实体编辑视图（基本资料）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "人员实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "人员实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "人员实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "人员实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单（头像）",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单（头像）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "Usr3GridViewUserConcat",
-    "logicName" : "人员实体表格视图(通讯录-联系用户)",
-    "name" : "人员实体表格视图(通讯录-联系用户)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "LoginMobEditView",
-    "logicName" : "人员实体移动端编辑视图(账号信息)",
-    "name" : "人员实体移动端编辑视图(账号信息)",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PersonalInfoMain",
-    "logicName" : "个人信息详情表单",
-    "modelTag2" : "0",
-    "name" : "个人信息详情表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "GridExpView",
-    "logicName" : "人员实体表格导航视图（通讯录用户联系人）",
-    "name" : "人员实体表格导航视图（通讯录用户联系人）",
+    "codeName" : "GridExpViewDept",
+    "logicName" : "人员实体表格导航视图（通讯录部门联系人）",
+    "name" : "人员实体表格导航视图（通讯录部门联系人）",
     "realModelSubType" : "DEGRIDEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "人员实体移动端选择多数据视图（部件视图）",
-    "name" : "人员实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "人员实体编辑视图（通讯录）",
-    "modelTag" : "EDITVIEW",
-    "name" : "人员实体编辑视图（通讯录）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "人员实体编辑视图（左右关系）",
-    "name" : "人员实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "人员实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "人员实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobEditView",
@@ -4154,71 +4082,18 @@
     "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "人员实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "人员实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "codeName" : "RedirectView",
+    "logicName" : "人员实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "人员实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobPickupTreeView",
-    "logicName" : "人员实体移动端选择树视图（部件视图）",
-    "name" : "人员实体移动端选择树视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPTREEVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridExpViewDept",
-    "logicName" : "人员实体表格导航视图（通讯录部门联系人）",
-    "name" : "人员实体表格导航视图（通讯录部门联系人）",
-    "realModelSubType" : "DEGRIDEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TreeMobPickupView",
-    "logicName" : "人员实体移动端数据选择视图（人员树）",
-    "name" : "人员实体移动端数据选择视图（人员树）",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "UserTreeMobMPickupView",
-    "logicName" : "人员实体移动端多数据选择视图(人员树)",
-    "name" : "人员实体移动端多数据选择视图(人员树)",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "headPortraitMobEditView",
-    "logicName" : "人员实体移动端编辑视图(头像)",
-    "name" : "人员实体移动端编辑视图(头像)",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TreeExpView",
-    "logicName" : "人员实体树导航视图(顶部菜单栏)",
-    "name" : "人员实体树导航视图(顶部菜单栏)",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2GridView",
-    "logicName" : "人员实体表格视图(组织下所有人员)",
-    "name" : "人员实体表格视图(组织下所有人员)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DashboardView",
-    "logicName" : "人员实体数据看板视图（个人信息）",
-    "name" : "人员实体数据看板视图（个人信息）",
-    "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "人员实体选择表格视图（部件视图）",
-    "name" : "人员实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridExpViewProjectMember",
-    "logicName" : "人员实体表格导航视图（通讯录项目人员）",
-    "name" : "人员实体表格导航视图（通讯录项目人员）",
-    "realModelSubType" : "DEGRIDEXPVIEW",
+    "codeName" : "MobMDView",
+    "logicName" : "人员实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "人员实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMPickupView",
@@ -4228,10 +4103,54 @@
     "realModelSubType" : "DEMOBMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Usr3GridView",
-    "logicName" : "人员实体表格视图(通讯录-项目下人员)",
-    "name" : "人员实体表格视图(通讯录-项目下人员)",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "MobPickupMDView",
+    "logicName" : "人员实体移动端选择多数据视图（部件视图）",
+    "name" : "人员实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridExpViewProjectMember",
+    "logicName" : "人员实体表格导航视图（通讯录项目人员）",
+    "name" : "人员实体表格导航视图（通讯录项目人员）",
+    "realModelSubType" : "DEGRIDEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "人员实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "人员实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "人员实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "人员实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeExpView",
+    "logicName" : "人员实体树导航视图(顶部菜单栏)",
+    "name" : "人员实体树导航视图(顶部菜单栏)",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "LoginMobEditView",
+    "logicName" : "人员实体移动端编辑视图(账号信息)",
+    "name" : "人员实体移动端编辑视图(账号信息)",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridExpView",
+    "logicName" : "人员实体表格导航视图（通讯录用户联系人）",
+    "name" : "人员实体表格导航视图（通讯录用户联系人）",
+    "realModelSubType" : "DEGRIDEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "人员实体选择表格视图（部件视图）",
+    "name" : "人员实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MpkMobPickupTreeView",
@@ -4240,18 +4159,92 @@
     "realModelSubType" : "DEMOBPICKUPTREEVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobInfo",
-    "logicName" : "移动端账号信息",
-    "modelTag2" : "1",
-    "name" : "移动端账号信息",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "EditView2",
+    "logicName" : "人员实体编辑视图（左右关系）",
+    "name" : "人员实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "人员实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "人员实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "headPortraitMobEditView",
+    "logicName" : "人员实体移动端编辑视图(头像)",
+    "name" : "人员实体移动端编辑视图(头像)",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeMobPickupView",
+    "logicName" : "人员实体移动端数据选择视图（人员树）",
+    "name" : "人员实体移动端数据选择视图（人员树）",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditViewBasicInfo",
+    "logicName" : "人员实体编辑视图（基本资料）",
+    "name" : "人员实体编辑视图（基本资料）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3GridViewUserConcat",
+    "logicName" : "人员实体表格视图(通讯录-联系用户)",
+    "name" : "人员实体表格视图(通讯录-联系用户)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupTreeView",
+    "logicName" : "人员实体移动端选择树视图（部件视图）",
+    "name" : "人员实体移动端选择树视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPTREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
     "logicName" : "人员实体表格视图",
     "modelTag" : "MDATAVIEW",
     "name" : "人员实体表格视图",
     "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "UserTreeMobMPickupView",
+    "logicName" : "人员实体移动端多数据选择视图(人员树)",
+    "name" : "人员实体移动端多数据选择视图(人员树)",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DashboardView",
+    "logicName" : "人员实体数据看板视图（个人信息）",
+    "name" : "人员实体数据看板视图（个人信息）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2GridView",
+    "logicName" : "人员实体表格视图(组织下所有人员)",
+    "name" : "人员实体表格视图(组织下所有人员)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3GridView",
+    "logicName" : "人员实体表格视图(通讯录-项目下人员)",
+    "name" : "人员实体表格视图(通讯录-项目下人员)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "人员实体编辑视图（通讯录）",
+    "modelTag" : "EDITVIEW",
+    "name" : "人员实体编辑视图（通讯录）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "人员实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "人员实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Main",
@@ -4261,19 +4254,26 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "PickupView",
-    "logicName" : "人员实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "人员实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单（头像）",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单（头像）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "人员实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "人员实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "PersonalInfoMain",
+    "logicName" : "个人信息详情表单",
+    "modelTag2" : "0",
+    "name" : "个人信息详情表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobInfo",
+    "logicName" : "移动端账号信息",
+    "modelTag2" : "1",
+    "name" : "移动端账号信息",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "SysEmployee",
   "dEType" : 1,
@@ -4403,7 +4403,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

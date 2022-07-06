@@ -2368,43 +2368,6 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "PickupGridView",
-    "logicName" : "汇报实体选择表格视图（部件视图）",
-    "name" : "汇报实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobEditView",
-    "logicName" : "汇报实体移动端编辑视图（待阅）",
-    "name" : "汇报实体移动端编辑视图（待阅）",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "汇报实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "汇报实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ReportlyMobMDView",
-    "logicName" : "汇报实体移动端多数据视图（汇报）",
-    "name" : "汇报实体移动端多数据视图（汇报）",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CreateMobEditView",
-    "logicName" : "汇报实体移动端编辑视图（新建）",
-    "name" : "汇报实体移动端编辑视图（新建）",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CreateEditView",
-    "logicName" : "汇报实体编辑视图（新建）",
-    "name" : "汇报实体编辑视图（新建）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "EditView",
     "logicName" : "汇报实体编辑视图",
     "modelTag" : "EDITVIEW",
@@ -2412,28 +2375,10 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "汇报实体编辑视图（左右关系）",
-    "name" : "汇报实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainInfoMobEditView",
-    "logicName" : "汇报实体移动端编辑视图（主信息）",
-    "name" : "汇报实体移动端编辑视图（主信息）",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "MyReceivedGridView",
     "logicName" : "汇报实体表格视图（我收到的）",
     "name" : "汇报实体表格视图（我收到的）",
     "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ReportlyDetailEditView",
-    "logicName" : "汇报实体编辑视图（汇报详情）",
-    "name" : "汇报实体编辑视图（汇报详情）",
-    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -2443,32 +2388,11 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobReportlyDetail",
-    "logicName" : "汇报详情（移动端）",
-    "modelTag2" : "1",
-    "name" : "汇报详情（移动端）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MainGridView",
-    "logicName" : "汇报实体表格视图（主数据）",
-    "name" : "汇报实体表格视图（主数据）",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "MyReceivedReportlyDetailEditView",
+    "logicName" : "汇报实体编辑视图（我收到的）（汇报详情）",
+    "name" : "汇报实体编辑视图（我收到的）（汇报详情）",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "ReportlyDetail",
-    "logicName" : "汇报详情",
-    "modelTag2" : "0",
-    "name" : "汇报详情",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "PickupView",
     "logicName" : "汇报实体数据选择视图",
@@ -2477,18 +2401,72 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Create",
-    "logicName" : "新建表单",
-    "modelTag2" : "0",
-    "name" : "新建表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "MainInfoMobEditView",
+    "logicName" : "汇报实体移动端编辑视图（主信息）",
+    "name" : "汇报实体移动端编辑视图（主信息）",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ReportlyDetailEditView",
+    "logicName" : "汇报实体编辑视图（汇报详情）",
+    "name" : "汇报实体编辑视图（汇报详情）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ReportlyMobMDView",
+    "logicName" : "汇报实体移动端多数据视图（汇报）",
+    "name" : "汇报实体移动端多数据视图（汇报）",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MPickupView",
     "logicName" : "汇报实体数据多项选择视图",
     "modelTag" : "MPICKUPVIEW",
     "name" : "汇报实体数据多项选择视图",
     "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "汇报实体移动端编辑视图（待阅）",
+    "name" : "汇报实体移动端编辑视图（待阅）",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CreateEditView",
+    "logicName" : "汇报实体编辑视图（新建）",
+    "name" : "汇报实体编辑视图（新建）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "汇报实体选择表格视图（部件视图）",
+    "name" : "汇报实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CreateMobEditView",
+    "logicName" : "汇报实体移动端编辑视图（新建）",
+    "name" : "汇报实体移动端编辑视图（新建）",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainGridView",
+    "logicName" : "汇报实体表格视图（主数据）",
+    "name" : "汇报实体表格视图（主数据）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "汇报实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "汇报实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "汇报实体编辑视图（左右关系）",
+    "name" : "汇报实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "CalendarEditView",
@@ -2511,11 +2489,33 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "MyReceivedReportlyDetailEditView",
-    "logicName" : "汇报实体编辑视图（我收到的）（汇报详情）",
-    "name" : "汇报实体编辑视图（我收到的）（汇报详情）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "ReportlyDetail",
+    "logicName" : "汇报详情",
+    "modelTag2" : "0",
+    "name" : "汇报详情",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Create",
+    "logicName" : "新建表单",
+    "modelTag2" : "0",
+    "name" : "新建表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobReportlyDetail",
+    "logicName" : "汇报详情（移动端）",
+    "modelTag2" : "1",
+    "name" : "汇报详情（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "IbzReportly",
   "dEType" : 1,
@@ -2595,7 +2595,7 @@
   "name" : "IBZ_REPORTLY",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

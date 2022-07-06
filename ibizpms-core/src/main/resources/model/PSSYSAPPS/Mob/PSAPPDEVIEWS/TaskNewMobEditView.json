@@ -70,7 +70,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD", "SAVE", "BEFORESAVE", "REMOVE" ],
     "logicName" : "移动端新建表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -174,6 +174,35 @@
       "checkMode" : 3,
       "name" : "表单项值规则",
       "getPSDEFValueRule" : {
+        "codeName" : "ValueRule6",
+        "name" : "任务名称不大于10",
+        "getPSDEFVRGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "默认组",
+          "getPSDEFVRConditions" : [ {
+            "condType" : "STRINGLENGTH",
+            "dEFName" : "NAME",
+            "maxValue" : 100,
+            "name" : "[字符长度] 小于等于 100",
+            "ruleInfo" : "任务名称不大于10",
+            "includeMaxValue" : true,
+            "includeMinValue" : false
+          } ],
+          "ruleInfo" : "任务名称不大于10"
+        },
+        "ruleInfo" : "任务名称不大于10",
+        "checkDefault" : false,
+        "defaultMode" : false,
+        "enableBackend" : true,
+        "enableFront" : true
+      },
+      "getPSDEFormItemName" : "name",
+      "valueRuleType" : "DEFVALUERULE"
+    }, {
+      "checkMode" : 3,
+      "name" : "表单项值规则",
+      "getPSDEFValueRule" : {
         "codeName" : "ValueRule",
         "name" : "截至日期必须大于等于预计开始",
         "getPSDEFVRGroupCondition" : {
@@ -243,35 +272,6 @@
         "enableFront" : true
       },
       "getPSDEFormItemName" : "estimate",
-      "valueRuleType" : "DEFVALUERULE"
-    }, {
-      "checkMode" : 3,
-      "name" : "表单项值规则",
-      "getPSDEFValueRule" : {
-        "codeName" : "ValueRule6",
-        "name" : "任务名称不大于10",
-        "getPSDEFVRGroupCondition" : {
-          "condOp" : "AND",
-          "condType" : "GROUP",
-          "name" : "默认组",
-          "getPSDEFVRConditions" : [ {
-            "condType" : "STRINGLENGTH",
-            "dEFName" : "NAME",
-            "maxValue" : 100,
-            "name" : "[字符长度] 小于等于 100",
-            "ruleInfo" : "任务名称不大于10",
-            "includeMaxValue" : true,
-            "includeMinValue" : false
-          } ],
-          "ruleInfo" : "任务名称不大于10"
-        },
-        "ruleInfo" : "任务名称不大于10",
-        "checkDefault" : false,
-        "defaultMode" : false,
-        "enableBackend" : true,
-        "enableFront" : true
-      },
-      "getPSDEFormItemName" : "name",
       "valueRuleType" : "DEFVALUERULE"
     } ],
     "getPSDEFormItems" : [ {
@@ -688,14 +688,14 @@
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "project",
-              "name" : "project",
-              "value" : "project",
-              "rawValue" : false
-            }, {
               "key" : "allmodules",
               "name" : "allmodules",
               "value" : "allmodules",
+              "rawValue" : false
+            }, {
+              "key" : "project",
+              "name" : "project",
+              "value" : "project",
               "rawValue" : false
             } ],
             "getPickupPSAppView" : {
@@ -921,7 +921,7 @@
                 "id" : "fetch"
               },
               "groupMode" : "NONE",
-              "hookEventNames" : [ "DATACHANGE", "SAVE", "BEFORESAVE", "LOAD" ],
+              "hookEventNames" : [ "LOAD", "DATACHANGE", "BEFORESAVE", "SAVE" ],
               "logicName" : "主表格",
               "minorSortDir" : "ASC",
               "getMinorSortPSAppDEField" : {
@@ -1103,32 +1103,11 @@
                 "enableSort" : true
               } ],
               "getPSDEGridDataItems" : [ {
-                "dataType" : 7,
-                "name" : "consumed",
-                "getPSAppDEField" : {
-                  "name" : "CONSUMED",
-                  "codeName" : "Consumed"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "root",
-                "getPSAppDEField" : {
-                  "name" : "ROOT",
-                  "codeName" : "Root"
-                }
-              }, {
                 "dataType" : 25,
                 "name" : "account",
                 "getPSAppDEField" : {
                   "name" : "ACCOUNT",
                   "codeName" : "Account"
-                }
-              }, {
-                "dataType" : 7,
-                "name" : "left",
-                "getPSAppDEField" : {
-                  "name" : "LEFT",
-                  "codeName" : "Left"
                 }
               }, {
                 "dataType" : 7,
@@ -1138,11 +1117,25 @@
                   "codeName" : "Estimate"
                 }
               }, {
-                "dataType" : 25,
-                "name" : "srfmajortext",
+                "dataType" : 7,
+                "name" : "consumed",
                 "getPSAppDEField" : {
-                  "name" : "ACCOUNT",
-                  "codeName" : "Account"
+                  "name" : "CONSUMED",
+                  "codeName" : "Consumed"
+                }
+              }, {
+                "dataType" : 7,
+                "name" : "left",
+                "getPSAppDEField" : {
+                  "name" : "LEFT",
+                  "codeName" : "Left"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "srfkey",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
                 }
               }, {
                 "dataType" : 1,
@@ -1154,10 +1147,17 @@
                 "dataAccessAction" : true
               }, {
                 "dataType" : 1,
-                "name" : "srfkey",
+                "name" : "root",
                 "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
+                  "name" : "ROOT",
+                  "codeName" : "Root"
+                }
+              }, {
+                "dataType" : 25,
+                "name" : "srfmajortext",
+                "getPSAppDEField" : {
+                  "name" : "ACCOUNT",
+                  "codeName" : "Account"
                 }
               } ],
               "getPSDEGridEditItems" : [ {
@@ -1297,7 +1297,8 @@
                 "codeName" : "Root"
               },
               "rSMode" : 2,
-              "tempDataOrder" : 10
+              "tempDataOrder" : 10,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Tasks",
@@ -1342,7 +1343,8 @@
                 "codeName" : "Root"
               },
               "rSMode" : 2,
-              "tempDataOrder" : 10
+              "tempDataOrder" : 10,
+              "majorDEMajor" : false
             } ] ]
           },
           "getPSDEFDGroupLogics" : [ {
@@ -1471,25 +1473,25 @@
               "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "N_MODULE_EQ",
-              "name" : "N_MODULE_EQ",
-              "value" : "module",
-              "rawValue" : false
-            }, {
               "key" : "PROJECT",
               "name" : "PROJECT",
               "value" : "project",
               "rawValue" : false
+            }, {
+              "key" : "N_MODULE_EQ",
+              "name" : "N_MODULE_EQ",
+              "value" : "module",
+              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "project",
-              "name" : "project",
-              "value" : "project",
-              "rawValue" : false
-            }, {
               "key" : "n_module_eq",
               "name" : "n_module_eq",
               "value" : "module",
+              "rawValue" : false
+            }, {
+              "key" : "project",
+              "name" : "project",
+              "value" : "project",
               "rawValue" : false
             } ],
             "getPickupPSAppView" : {

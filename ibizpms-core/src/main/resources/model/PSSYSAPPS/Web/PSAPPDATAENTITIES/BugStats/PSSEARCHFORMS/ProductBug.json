@@ -2,7 +2,7 @@
   "codeName" : "ProductBug",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSSEARCHFORMS/ProductBug.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "产品Bug表单",
   "getPSAppDataEntity" : {
     "modelref" : true,

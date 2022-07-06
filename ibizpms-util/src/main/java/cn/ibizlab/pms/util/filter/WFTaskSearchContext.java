@@ -43,5 +43,12 @@ public class WFTaskSearchContext extends SearchContextBase implements Serializab
     @JSONField(name = "size")
     public int size=20;
 
+    /**
+     * 快速查询
+     */
+    @JsonProperty("query")
+    @JSONField(name = "query")
+    public String query;
+
 }
 

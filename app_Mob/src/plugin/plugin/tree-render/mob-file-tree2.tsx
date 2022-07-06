@@ -16,7 +16,7 @@ import { AppMobTreeBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class MobFileTree2 extends AppMobTreeBase {
 
-  /**
+      /**
    * 绘制树视图
    *
    * @returns {*}

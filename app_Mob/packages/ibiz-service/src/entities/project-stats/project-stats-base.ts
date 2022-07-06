@@ -351,7 +351,6 @@ export abstract class ProjectStatsBase extends EntityBase implements IProjectSta
      * 昨天解决Bug数
      */
     yesterdayrbugcnt?: any;
-
     /**
      * 重置实体数据
      *

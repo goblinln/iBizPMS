@@ -1,4 +1,4 @@
-import { MobMPickupViewEngine, ModelTool } from 'ibiz-core'
+import { MobMPickupViewEngine, MobMPickUpViewInterface, ModelTool } from 'ibiz-core'
 import { MainViewBase } from './main-view-base';
 import { IPSAppDEPickupView, IPSDEPickupViewPanel } from '@ibiz/dynamic-model-api';
 
@@ -9,7 +9,7 @@ import { IPSAppDEPickupView, IPSDEPickupViewPanel } from '@ibiz/dynamic-model-ap
  * @class MobMPickUpViewBase
  * @extends {MainViewBase}
  */
-export class MobMPickUpViewBase extends MainViewBase {
+export class MobMPickUpViewBase extends MainViewBase implements MobMPickUpViewInterface {
 
     /**
      * 视图实例

@@ -215,7 +215,6 @@ export abstract class TodoBase extends EntityBase implements ITodo {
      * config
      */
     config?: any;
-
     /**
      * 重置实体数据
      *

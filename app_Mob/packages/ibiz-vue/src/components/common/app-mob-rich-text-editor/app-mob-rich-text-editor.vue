@@ -104,6 +104,14 @@ export default class AppRichTextEditor extends Vue {
     @Prop() public data!: string;
 
     /**
+     * 是否禁用
+     *
+     * @type {string}
+     * @memberof AppRichTextEditor
+     */
+    @Prop({default:false}) public disabled?: boolean;
+
+    /**
      * 上传文件路径
      *
      * @memberof AppMobFileUpload

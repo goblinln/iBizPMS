@@ -129,7 +129,6 @@ export abstract class DailyBase extends EntityBase implements IDaily {
      * 日报名称
      */
     ibzdailyname?: any;
-
     /**
      * 重置实体数据
      *

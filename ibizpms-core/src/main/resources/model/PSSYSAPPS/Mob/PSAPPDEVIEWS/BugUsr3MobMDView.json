@@ -156,7 +156,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__status.json"
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "pri",
@@ -866,14 +866,14 @@
           "id" : "RELEASELINK"
         },
         "getPSNavigateContexts" : [ {
-          "key" : "PRODUCT",
-          "name" : "PRODUCT",
-          "value" : "product",
-          "rawValue" : false
-        }, {
           "key" : "SRFPARENTKEY",
           "name" : "SRFPARENTKEY",
           "value" : "release",
+          "rawValue" : false
+        }, {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "product",
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
@@ -882,13 +882,13 @@
           "value" : "product",
           "rawValue" : false
         }, {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
+          "key" : "release",
+          "name" : "release",
           "value" : "release",
           "rawValue" : false
         }, {
-          "key" : "release",
-          "name" : "release",
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
           "value" : "release",
           "rawValue" : false
         } ],

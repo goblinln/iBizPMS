@@ -31,7 +31,7 @@
       "modelref" : true,
       "id" : "fetch"
     },
-    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD" ],
     "logicName" : "ProductStatusPie",
     "getPSAppDataEntity" : {
       "modelref" : true,

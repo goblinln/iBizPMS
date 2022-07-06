@@ -1648,43 +1648,10 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "EditView2",
-    "logicName" : "系统更新功能实体编辑视图（左右关系）",
-    "name" : "系统更新功能实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "系统更新功能实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "系统更新功能实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "YMobMDView9",
-    "logicName" : "系统更新功能实体移动端多数据视图（部件视图）（优化）",
-    "name" : "系统更新功能实体移动端多数据视图（部件视图）（优化）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "系统更新功能实体移动端选择多数据视图（部件视图）",
-    "name" : "系统更新功能实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "系统更新功能实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "系统更新功能实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "InfoEditView",
+    "logicName" : "系统更新功能实体编辑视图（查看）",
+    "name" : "系统更新功能实体编辑视图（查看）",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMPickupView",
@@ -1694,12 +1661,6 @@
     "realModelSubType" : "DEMOBMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "LastGridView",
-    "logicName" : "系统更新功能实体表格视图（最近更新）",
-    "name" : "系统更新功能实体表格视图（最近更新）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "RedirectView",
     "logicName" : "系统更新功能实体数据重定向视图",
     "modelTag" : "REDIRECTVIEW",
@@ -1707,44 +1668,18 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "InfoMain",
-    "logicName" : "信息表单",
-    "modelTag2" : "0",
-    "name" : "信息表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "系统更新功能实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "系统更新功能实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
+    "codeName" : "PickupView",
+    "logicName" : "系统更新功能实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "系统更新功能实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "系统更新功能实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "系统更新功能实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "InfoEditView",
-    "logicName" : "系统更新功能实体编辑视图（查看）",
-    "name" : "系统更新功能实体编辑视图（查看）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobMDView9",
-    "logicName" : "系统更新功能实体移动端多数据视图（部件视图）（功能增强）",
-    "name" : "系统更新功能实体移动端多数据视图（部件视图）（功能增强）",
-    "realModelSubType" : "DEMOBMDVIEW9",
+    "codeName" : "MobRedirectView",
+    "logicName" : "系统更新功能实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "系统更新功能实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobPickupView",
@@ -1752,13 +1687,6 @@
     "modelTag" : "MOBPICKUPVIEW",
     "name" : "系统更新功能实体移动端数据选择视图",
     "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "系统更新功能实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "系统更新功能实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobEditView",
@@ -1774,12 +1702,84 @@
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupView",
-    "logicName" : "系统更新功能实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "系统更新功能实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "系统更新功能实体编辑视图（左右关系）",
+    "name" : "系统更新功能实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "LastGridView",
+    "logicName" : "系统更新功能实体表格视图（最近更新）",
+    "name" : "系统更新功能实体表格视图（最近更新）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "系统更新功能实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "系统更新功能实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView9",
+    "logicName" : "系统更新功能实体移动端多数据视图（部件视图）（功能增强）",
+    "name" : "系统更新功能实体移动端多数据视图（部件视图）（功能增强）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "YMobMDView9",
+    "logicName" : "系统更新功能实体移动端多数据视图（部件视图）（优化）",
+    "name" : "系统更新功能实体移动端多数据视图（部件视图）（优化）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "系统更新功能实体移动端选择多数据视图（部件视图）",
+    "name" : "系统更新功能实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "系统更新功能实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "系统更新功能实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "系统更新功能实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "系统更新功能实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "系统更新功能实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "系统更新功能实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "InfoMain",
+    "logicName" : "信息表单",
+    "modelTag2" : "0",
+    "name" : "信息表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "SysUpdateFeatures",
   "dEType" : 1,
@@ -1839,7 +1839,7 @@
   "name" : "SYS_UPDATE_FEATURES",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

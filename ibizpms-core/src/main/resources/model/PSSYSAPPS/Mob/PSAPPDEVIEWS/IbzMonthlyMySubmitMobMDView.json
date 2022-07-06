@@ -79,20 +79,20 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realTitle" : "月报移动端编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMobEditView.json",
-      "viewType" : "DEMOBEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "realTitle" : "月报分页导航视图",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMainInfoMobTabExpView.json",
       "viewType" : "DEMOBTABEXPVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
+    "realTitle" : "月报移动端编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMobEditView.json",
+      "viewType" : "DEMOBEDITVIEW"
     }
   } ],
   "getPSControls" : [ {
@@ -113,7 +113,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "MySubmit",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {

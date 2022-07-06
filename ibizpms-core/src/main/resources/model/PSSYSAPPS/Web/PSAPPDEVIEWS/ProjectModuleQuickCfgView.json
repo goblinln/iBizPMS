@@ -44,7 +44,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "主编辑表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -414,9 +414,9 @@
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "id",
-              "name" : "id",
-              "value" : "id",
+              "key" : "n_root_eq",
+              "name" : "n_root_eq",
+              "value" : "root",
               "rawValue" : false
             }, {
               "key" : "n_type_eq",
@@ -429,9 +429,9 @@
               "value" : "update",
               "rawValue" : true
             }, {
-              "key" : "n_root_eq",
-              "name" : "n_root_eq",
-              "value" : "root",
+              "key" : "id",
+              "name" : "id",
+              "value" : "id",
               "rawValue" : false
             } ],
             "valueItemName" : "parent",

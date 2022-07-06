@@ -18,7 +18,7 @@ import '../plugin-style.less';
 @VueLifeCycleProcessing()
 export class MobDemandList2 extends AppMobMDCtrlBase {
 
-
+    
     /**
      * 图片地址
      *

@@ -97,7 +97,7 @@
     "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "需求数据看板视图",
     "getRefPSAppView" : {
@@ -106,7 +106,7 @@
       "viewType" : "DEPORTALVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "需求数据看板视图",
     "getRefPSAppView" : {
@@ -214,7 +214,7 @@
       "pluginCode" : "kanbantitle"
     },
     "groupWidth" : 215,
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "title",
@@ -599,19 +599,15 @@
       "id" : "KANBAN"
     },
     "getPSDEDataViewDataItems" : [ {
-      "dataType" : 25,
-      "name" : "module",
-      "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
-      }
+      "dataType" : 9,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
+      },
+      "name" : "pri"
     }, {
-      "dataType" : 25,
-      "name" : "frombug",
-      "getPSAppDEField" : {
-        "name" : "FROMBUG",
-        "codeName" : "FromBug"
-      }
+      "dataType" : 1,
+      "name" : "id"
     }, {
       "dataType" : 25,
       "getFrontPSCodeList" : {
@@ -625,17 +621,21 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "parent",
+      "name" : "isfavorites",
       "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
+        "name" : "ISFAVORITES",
+        "codeName" : "Isfavorites"
       }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
     }, {
       "dataType" : 7,
       "name" : "estimate"
+    }, {
+      "dataType" : 25,
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
     }, {
       "dataType" : 25,
       "getFrontPSCodeList" : {
@@ -649,10 +649,10 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "tobug",
+      "name" : "ischild",
       "getPSAppDEField" : {
-        "name" : "TOBUG",
-        "codeName" : "ToBug"
+        "name" : "ISCHILD",
+        "codeName" : "Ischild"
       }
     }, {
       "dataType" : 25,
@@ -670,34 +670,31 @@
       }
     }, {
       "dataType" : 25,
+      "name" : "frombug",
+      "getPSAppDEField" : {
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "parent",
+      "getPSAppDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
+      }
+    }, {
+      "dataType" : 25,
       "name" : "product",
       "getPSAppDEField" : {
         "name" : "PRODUCT",
         "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "id"
-    }, {
-      "dataType" : 9,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
-      },
-      "name" : "pri"
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "branch",
-      "getPSAppDEField" : {
-        "name" : "BRANCH",
-        "codeName" : "Branch"
       }
     }, {
       "dataType" : 25,
@@ -708,18 +705,21 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "isfavorites",
+      "name" : "branch",
       "getPSAppDEField" : {
-        "name" : "ISFAVORITES",
-        "codeName" : "Isfavorites"
+        "name" : "BRANCH",
+        "codeName" : "Branch"
       }
     }, {
       "dataType" : 25,
-      "name" : "ischild",
+      "name" : "tobug",
       "getPSAppDEField" : {
-        "name" : "ISCHILD",
-        "codeName" : "Ischild"
+        "name" : "TOBUG",
+        "codeName" : "ToBug"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEDataViewItems" : [ {
       "cLConvertMode" : "FRONT",

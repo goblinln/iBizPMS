@@ -1,5 +1,5 @@
 import { MainViewBase } from "./main-view-base";
-import { MobOptionViewEngine, ModelTool, ThirdPartyService } from 'ibiz-core';
+import { MobOptionViewEngine, MobOptViewInterface, ModelTool } from 'ibiz-core';
 import { IPSAppDEMobEditView, IPSDEForm } from "@ibiz/dynamic-model-api";
 
 /**
@@ -9,7 +9,7 @@ import { IPSAppDEMobEditView, IPSDEForm } from "@ibiz/dynamic-model-api";
  * @class MobOptViewBase
  * @extends {MainViewBase}
  */
-export class MobOptViewBase extends MainViewBase {
+export class MobOptViewBase extends MainViewBase implements MobOptViewInterface {
 
     /**
      * 视图实例

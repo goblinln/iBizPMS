@@ -9,5 +9,11 @@ import { LoadingServiceBase } from "./loading-service-base";
  * @extends {LoadingServiceBase}
  */
 export class ViewLoadingService extends LoadingServiceBase {
-    
+    /**
+     * 主视图sessionid
+     *
+     * @type {string[]}
+     * @memberof ViewLoadingService
+     */
+     public srfsessionid: string = '';    
 }

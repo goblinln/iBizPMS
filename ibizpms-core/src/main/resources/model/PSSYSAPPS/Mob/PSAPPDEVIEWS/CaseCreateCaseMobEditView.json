@@ -36,17 +36,22 @@
     "value" : "version",
     "rawValue" : false
   }, {
-    "key" : "OBJECTTYPE",
-    "name" : "OBJECTTYPE",
-    "value" : "case",
-    "rawValue" : true
-  }, {
     "key" : "SRFPARENTKEY",
     "name" : "SRFPARENTKEY",
     "value" : "case",
     "rawValue" : false
+  }, {
+    "key" : "OBJECTTYPE",
+    "name" : "OBJECTTYPE",
+    "value" : "case",
+    "rawValue" : true
   } ],
   "getPSAppViewNavParams" : [ {
+    "key" : "version",
+    "name" : "version",
+    "value" : "version",
+    "rawValue" : false
+  }, {
     "key" : "srfparentkey",
     "name" : "srfparentkey",
     "value" : "case",
@@ -56,11 +61,6 @@
     "name" : "objecttype",
     "value" : "case",
     "rawValue" : true
-  }, {
-    "key" : "version",
-    "name" : "version",
-    "value" : "version",
-    "rawValue" : false
   } ],
   "getPSAppViewUIActions" : [ {
     "name" : "righttoolbar_tbitem1",
@@ -90,7 +90,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD", "SAVE", "BEFORESAVE", "REMOVE" ],
     "logicName" : "移动端新建",
     "getPSAppDataEntity" : {
       "modelref" : true,

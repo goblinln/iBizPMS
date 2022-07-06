@@ -45,29 +45,13 @@
   "getPSControls" : [ {
     "codeName" : "UnDoneProjectTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:Files",
-      "realTitle" : "file表格视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProjectGridViewFile.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:ChildDoclibModule",
-      "realTitle" : "文档库树视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr3TreeView.json",
-        "viewType" : "DETREEVIEW"
-      }
-    }, {
       "name" : "EXPITEM:Project",
       "parentDataJO" : {
         "srfparentdefname" : "project"
@@ -79,19 +63,35 @@
         "viewType" : "DETREEVIEW"
       }
     }, {
-      "name" : "EXPITEM:DocLib",
-      "realTitle" : "文档库树视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2TreeView.json",
-        "viewType" : "DETREEVIEW"
-      }
-    }, {
       "name" : "EXPITEM:RootDoclibModule",
       "realTitle" : "文档库树视图",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr3TreeView.json",
+        "viewType" : "DETREEVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ChildDoclibModule",
+      "realTitle" : "文档库树视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr3TreeView.json",
+        "viewType" : "DETREEVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:Files",
+      "realTitle" : "file表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProjectGridViewFile.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:DocLib",
+      "realTitle" : "文档库树视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2TreeView.json",
         "viewType" : "DETREEVIEW"
       }
     } ],

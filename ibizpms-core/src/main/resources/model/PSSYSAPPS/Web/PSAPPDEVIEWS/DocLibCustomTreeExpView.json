@@ -51,7 +51,7 @@
   "getPSControls" : [ {
     "codeName" : "CustomTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -59,14 +59,6 @@
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:DocRoot",
-      "realTitle" : "文档库树视图（自定义文档库-子目录）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibCustomDocLibChildTreeView.json",
-        "viewType" : "DETREEVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:DocLibModule",
       "realTitle" : "文档库树视图（自定义文档库-子目录）",
       "getRefPSAppView" : {
         "modelref" : true,
@@ -87,6 +79,14 @@
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibProductTreeViewCust.json",
+        "viewType" : "DETREEVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:DocLibModule",
+      "realTitle" : "文档库树视图（自定义文档库-子目录）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibCustomDocLibChildTreeView.json",
         "viewType" : "DETREEVIEW"
       }
     } ],

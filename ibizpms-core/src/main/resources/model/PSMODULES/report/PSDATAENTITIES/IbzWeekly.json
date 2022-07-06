@@ -3203,101 +3203,11 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "EditView",
-    "logicName" : "周报实体编辑视图(新建)",
-    "modelTag" : "EDITVIEW",
-    "name" : "周报实体编辑视图(新建)",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobEditViewCreate",
-    "logicName" : "周报实体移动端编辑视图（新建）",
-    "name" : "周报实体移动端编辑视图（新建）",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2MobTabExpViewMyReceived",
-    "logicName" : "周报实体移动端分页导航视图(我收到的)",
-    "name" : "周报实体移动端分页导航视图(我收到的)",
-    "realModelSubType" : "DEMOBTABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobEditViewMainMyTijiao",
-    "logicName" : "周报实体移动端编辑视图（主数据）(我提交的)",
-    "name" : "周报实体移动端编辑视图（主数据）(我提交的)",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditViewMainMyweekly",
-    "logicName" : "周报实体编辑视图(主数据)(我收到的)",
-    "name" : "周报实体编辑视图(主数据)(我收到的)",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2MobEditView",
-    "logicName" : "周报实体移动端编辑视图(周报描述)",
-    "name" : "周报实体移动端编辑视图(周报描述)",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobWeekEdit",
-    "logicName" : "移动端周报编辑",
-    "modelTag2" : "1",
-    "name" : "移动端周报编辑",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "实体2实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "实体2实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobEditViewMian",
-    "logicName" : "周报实体移动端编辑视图（编辑）",
-    "name" : "周报实体移动端编辑视图（编辑）",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "实体2实体选择表格视图（部件视图）",
-    "name" : "实体2实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobInfoMain2",
-    "logicName" : "移动端周报描述",
-    "modelTag2" : "1",
-    "name" : "移动端周报描述",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "周报实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "周报实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "周报实体移动端选择多数据视图（部件视图）",
-    "name" : "周报实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "codeName" : "GridView",
+    "logicName" : "周报实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "周报实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Usr2EditView",
@@ -3306,17 +3216,22 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobWaitRead",
-    "logicName" : "周报描述（移动端-待阅）",
-    "modelTag2" : "1",
-    "name" : "周报描述（移动端-待阅）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "MobEditViewMainMyTijiao",
+    "logicName" : "周报实体移动端编辑视图（主数据）(我提交的)",
+    "name" : "周报实体移动端编辑视图（主数据）(我提交的)",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditViewEdit",
-    "logicName" : "周报实体编辑视图(编辑)",
-    "name" : "周报实体编辑视图(编辑)",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "Usr2MobMDView",
+    "logicName" : "周报实体移动端多数据视图(我的周报)",
+    "name" : "周报实体移动端多数据视图(我的周报)",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "实体2实体编辑视图（左右关系）",
+    "name" : "实体2实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Usr2MobTabExpView",
@@ -3325,50 +3240,10 @@
     "realModelSubType" : "DEMOBTABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "WeeklyMsg",
-    "logicName" : "周报详细信息",
-    "modelTag2" : "0",
-    "name" : "周报详细信息",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "实体2实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "实体2实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "实体2实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "实体2实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProductWeeklyGridView",
-    "logicName" : "周报实体表格视图(产品周报)",
-    "name" : "周报实体表格视图(产品周报)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "周报实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "周报实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr3GridView",
-    "logicName" : "周报实体表格视图（主表格）(我收到的周报)",
-    "name" : "周报实体表格视图（主表格）(我收到的周报)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2MobMDView",
-    "logicName" : "周报实体移动端多数据视图(我的周报)",
-    "name" : "周报实体移动端多数据视图(我的周报)",
-    "realModelSubType" : "DEMOBMDVIEW",
+    "codeName" : "MobPickupMDView",
+    "logicName" : "周报实体移动端选择多数据视图（部件视图）",
+    "name" : "周报实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMPickupView",
@@ -3378,10 +3253,9 @@
     "realModelSubType" : "DEMOBMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobEditView",
-    "logicName" : "周报实体移动端编辑视图(周报-待阅)",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "周报实体移动端编辑视图(周报-待阅)",
+    "codeName" : "Usr2MobEditView",
+    "logicName" : "周报实体移动端编辑视图(周报描述)",
+    "name" : "周报实体移动端编辑视图(周报描述)",
     "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -3391,9 +3265,85 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "EditView",
+    "logicName" : "周报实体编辑视图(新建)",
+    "modelTag" : "EDITVIEW",
+    "name" : "周报实体编辑视图(新建)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "周报实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "周报实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditViewEdit",
+    "logicName" : "周报实体编辑视图(编辑)",
+    "name" : "周报实体编辑视图(编辑)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditViewMainMyweekly",
+    "logicName" : "周报实体编辑视图(主数据)(我收到的)",
+    "name" : "周报实体编辑视图(主数据)(我收到的)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2MobTabExpViewMyTiJiao",
+    "logicName" : "周报实体移动端分页导航视图(我提交的)",
+    "name" : "周报实体移动端分页导航视图(我提交的)",
+    "realModelSubType" : "DEMOBTABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "MobEditViewMainReceived",
     "logicName" : "周报实体移动端编辑视图（主数据）(我收到的)",
     "name" : "周报实体移动端编辑视图（主数据）(我收到的)",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "实体2实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "实体2实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "实体2实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "实体2实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "实体2实体选择表格视图（部件视图）",
+    "name" : "实体2实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2MobTabExpViewMyReceived",
+    "logicName" : "周报实体移动端分页导航视图(我收到的)",
+    "name" : "周报实体移动端分页导航视图(我收到的)",
+    "realModelSubType" : "DEMOBTABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditViewCreate",
+    "logicName" : "周报实体移动端编辑视图（新建）",
+    "name" : "周报实体移动端编辑视图（新建）",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3GridView",
+    "logicName" : "周报实体表格视图（主表格）(我收到的周报)",
+    "name" : "周报实体表格视图（主表格）(我收到的周报)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditViewMian",
+    "logicName" : "周报实体移动端编辑视图（编辑）",
+    "name" : "周报实体移动端编辑视图（编辑）",
     "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -3403,30 +3353,80 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "ProductWeeklyGridView",
+    "logicName" : "周报实体表格视图(产品周报)",
+    "name" : "周报实体表格视图(产品周报)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "周报实体移动端编辑视图(周报-待阅)",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "周报实体移动端编辑视图(周报-待阅)",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "周报实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "周报实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "实体2实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "实体2实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "MobMDView",
     "logicName" : "周报实体移动端多数据视图(主数据)(我收到的)",
     "name" : "周报实体移动端多数据视图(主数据)(我收到的)",
     "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Usr2MobTabExpViewMyTiJiao",
-    "logicName" : "周报实体移动端分页导航视图(我提交的)",
-    "name" : "周报实体移动端分页导航视图(我提交的)",
-    "realModelSubType" : "DEMOBTABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "MobWaitRead",
+    "logicName" : "周报描述（移动端-待阅）",
+    "modelTag2" : "1",
+    "name" : "周报描述（移动端-待阅）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "实体2实体编辑视图（左右关系）",
-    "name" : "实体2实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "周报实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "周报实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "MobWeekEdit",
+    "logicName" : "移动端周报编辑",
+    "modelTag2" : "1",
+    "name" : "移动端周报编辑",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "WeeklyMsg",
+    "logicName" : "周报详细信息",
+    "modelTag2" : "0",
+    "name" : "周报详细信息",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobInfoMain2",
+    "logicName" : "移动端周报描述",
+    "modelTag2" : "1",
+    "name" : "移动端周报描述",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "IbzWeekly",
   "dEType" : 1,
@@ -3506,7 +3506,7 @@
   "name" : "IBZ_WEEKLY",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

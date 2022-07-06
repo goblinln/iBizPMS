@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（项目文档库）",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -400,6 +400,20 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "doccnt",
+    "getPSAppDEField" : {
+      "name" : "DOCCNT",
+      "codeName" : "Doccnt"
+    }
+  }, {
     "dataType" : 1,
     "name" : "product",
     "getPSAppDEField" : {
@@ -422,27 +436,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "name",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "isfavourites",
     "getPSAppDEField" : {
       "name" : "ISFAVOURITES",
       "codeName" : "Isfavourites"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -453,19 +457,15 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   }, {
-    "dataType" : 9,
-    "name" : "doccnt",
-    "getPSAppDEField" : {
-      "name" : "DOCCNT",
-      "codeName" : "Doccnt"
-    }
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "编号",

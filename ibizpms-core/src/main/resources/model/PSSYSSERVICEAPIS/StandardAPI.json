@@ -1,5 +1,4 @@
 {
-  "aPILevel" : 3,
   "aPIMode" : 0,
   "aPIType" : "RESTFUL",
   "aPIVersion" : 1,
@@ -27600,6 +27599,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -27626,6 +27629,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -27648,6 +27655,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -27676,6 +27687,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -27700,6 +27715,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -27727,6 +27746,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -27747,6 +27770,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -27775,6 +27802,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchBugUser"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchContact",
@@ -27800,6 +27831,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchContActList"
       },
       "requestMethod" : "POST"
     }, {
@@ -27827,6 +27862,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchProduct",
@@ -27852,6 +27891,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProductTeamM"
       },
       "requestMethod" : "POST"
     }, {
@@ -27879,6 +27922,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectTeamUser"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchProjectTeamM",
@@ -27904,6 +27951,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectTeamM"
       },
       "requestMethod" : "POST"
     }, {
@@ -27931,6 +27982,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectTeamMProduct"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchProjectTeamTaskUserTemp",
@@ -27956,6 +28011,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectTeamTaskUserTemp"
       },
       "requestMethod" : "POST"
     }, {
@@ -27983,6 +28042,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectTeamUserTask"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchProjectteamPk",
@@ -28008,6 +28071,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectteamPk"
       },
       "requestMethod" : "POST"
     }, {
@@ -28035,6 +28102,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchStoryProductTeamPK"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchTask",
@@ -28061,6 +28132,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchTaskTeam"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchTaskMulti",
@@ -28086,6 +28161,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchTaskMTeam"
       },
       "requestMethod" : "POST"
     }, {
@@ -33202,6 +33281,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -33230,6 +33313,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchPersonInfo"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "CountMyWork",
@@ -33255,6 +33342,10 @@
           "id" : "SysUserDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchMyWork"
       },
       "requestMethod" : "POST"
     } ],
@@ -35158,7 +35249,6 @@
   } ],
   "serviceCodeName" : "StandardAPI",
   "serviceType" : "DEFAULT",
-  "coreLevel" : false,
   "enableServiceAPIDTO" : true,
   "resetDefaultActionCodeName" : true,
   "userLevel" : true

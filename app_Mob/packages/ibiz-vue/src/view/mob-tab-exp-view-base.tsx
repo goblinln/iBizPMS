@@ -1,4 +1,4 @@
-import { MobTabExpViewEngine, Util, ModelTool} from "ibiz-core";
+import { MobTabExpViewEngine, Util, ModelTool, MobTabExpViewInterface} from "ibiz-core";
 import { CounterServiceRegister } from "ibiz-service";
 import { MainViewBase } from "./main-view-base";
 import { GlobalService } from 'ibiz-service';
@@ -11,7 +11,7 @@ import { IPSAppDETabExplorerView, IPSTabExpPanel, IPSDETabViewPanel } from '@ibi
  * @class MobMobTabExpViewBase
  * @extends {MainViewBase}
  */
-export class MobTabExpViewBase extends MainViewBase {
+export class MobTabExpViewBase extends MainViewBase implements MobTabExpViewInterface {
 
     /**
      * 视图引擎

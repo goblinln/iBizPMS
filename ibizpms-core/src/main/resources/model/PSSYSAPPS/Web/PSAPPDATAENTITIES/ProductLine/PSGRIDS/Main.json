@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -173,13 +173,6 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 25,
-    "name" : "short",
-    "getPSAppDEField" : {
-      "name" : "SHORT",
-      "codeName" : "IBizShort"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
@@ -187,10 +180,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "short",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "SHORT",
+      "codeName" : "IBizShort"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -201,30 +201,14 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {
-    "caption" : "简称",
-    "codeName" : "short",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "short",
-    "getPSAppDEField" : {
-      "name" : "SHORT",
-      "codeName" : "IBizShort"
-    },
-    "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "maxLength" : 30,
-      "name" : "short"
-    },
-    "allowEmpty" : true
-  }, {
     "caption" : "名称",
     "codeName" : "name",
     "enableCond" : 3,
@@ -240,6 +224,22 @@
       "name" : "name"
     },
     "allowEmpty" : false
+  }, {
+    "caption" : "简称",
+    "codeName" : "short",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "short",
+    "getPSAppDEField" : {
+      "name" : "SHORT",
+      "codeName" : "IBizShort"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "maxLength" : 30,
+      "name" : "short"
+    },
+    "allowEmpty" : true
   }, {
     "caption" : "id",
     "codeName" : "srfkey",

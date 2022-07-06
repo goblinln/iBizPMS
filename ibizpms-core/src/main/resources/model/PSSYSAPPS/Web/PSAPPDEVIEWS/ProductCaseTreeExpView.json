@@ -45,7 +45,7 @@
   "getPSControls" : [ {
     "codeName" : "CaseTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -63,10 +63,7 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:ROOTMODULE",
-      "parentDataJO" : {
-        "srfparentdefname" : "n_module_eq"
-      },
+      "name" : "EXPITEM:ALL",
       "realTitle" : "功能测试",
       "getRefPSAppView" : {
         "modelref" : true,
@@ -74,7 +71,10 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:ALL",
+      "name" : "EXPITEM:ROOTMODULE",
+      "parentDataJO" : {
+        "srfparentdefname" : "n_module_eq"
+      },
       "realTitle" : "功能测试",
       "getRefPSAppView" : {
         "modelref" : true,
@@ -325,39 +325,34 @@
           "value" : "ZT_PRODUCT",
           "rawValue" : true
         }, {
-          "key" : "MODULENAME",
-          "name" : "MODULENAME",
-          "value" : "name",
-          "rawValue" : false
-        }, {
-          "key" : "TESTMODULE",
-          "name" : "TESTMODULE",
-          "rawValue" : true
-        }, {
           "key" : "SRFPARENTKEY",
           "name" : "SRFPARENTKEY",
           "value" : "test",
+          "rawValue" : false
+        }, {
+          "key" : "MODULENAME",
+          "name" : "MODULENAME",
+          "value" : "name",
           "rawValue" : false
         }, {
           "key" : "SRFPARENTDENAME",
           "name" : "SRFPARENTDENAME",
           "value" : "test",
           "rawValue" : true
+        }, {
+          "key" : "TESTMODULE",
+          "name" : "TESTMODULE",
+          "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "modulename",
-          "name" : "modulename",
-          "value" : "name",
-          "rawValue" : false
-        }, {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
-          "value" : "test",
-          "rawValue" : false
-        }, {
           "key" : "srfparentdename",
           "name" : "srfparentdename",
           "value" : "test",
+          "rawValue" : true
+        }, {
+          "key" : "srfparentdemapname",
+          "name" : "srfparentdemapname",
+          "value" : "ZT_PRODUCT",
           "rawValue" : true
         }, {
           "key" : "module",
@@ -365,10 +360,15 @@
           "value" : "srfkey",
           "rawValue" : false
         }, {
-          "key" : "srfparentdemapname",
-          "name" : "srfparentdemapname",
-          "value" : "ZT_PRODUCT",
-          "rawValue" : true
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "test",
+          "rawValue" : false
+        }, {
+          "key" : "modulename",
+          "name" : "modulename",
+          "value" : "name",
+          "rawValue" : false
         } ],
         "getTextPSAppDEField" : {
           "name" : "NAME",
@@ -474,39 +474,34 @@
           "value" : "ZT_PRODUCT",
           "rawValue" : true
         }, {
-          "key" : "MODULENAME",
-          "name" : "MODULENAME",
-          "value" : "name",
-          "rawValue" : false
-        }, {
-          "key" : "TESTMODULE",
-          "name" : "TESTMODULE",
-          "rawValue" : true
-        }, {
           "key" : "SRFPARENTKEY",
           "name" : "SRFPARENTKEY",
           "value" : "test",
+          "rawValue" : false
+        }, {
+          "key" : "MODULENAME",
+          "name" : "MODULENAME",
+          "value" : "name",
           "rawValue" : false
         }, {
           "key" : "SRFPARENTDENAME",
           "name" : "SRFPARENTDENAME",
           "value" : "test",
           "rawValue" : true
+        }, {
+          "key" : "TESTMODULE",
+          "name" : "TESTMODULE",
+          "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "modulename",
-          "name" : "modulename",
-          "value" : "name",
-          "rawValue" : false
-        }, {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
-          "value" : "test",
-          "rawValue" : false
-        }, {
           "key" : "srfparentdename",
           "name" : "srfparentdename",
           "value" : "test",
+          "rawValue" : true
+        }, {
+          "key" : "srfparentdemapname",
+          "name" : "srfparentdemapname",
+          "value" : "ZT_PRODUCT",
           "rawValue" : true
         }, {
           "key" : "module",
@@ -514,10 +509,15 @@
           "value" : "srfkey",
           "rawValue" : false
         }, {
-          "key" : "srfparentdemapname",
-          "name" : "srfparentdemapname",
-          "value" : "ZT_PRODUCT",
-          "rawValue" : true
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "test",
+          "rawValue" : false
+        }, {
+          "key" : "modulename",
+          "name" : "modulename",
+          "value" : "name",
+          "rawValue" : false
         } ],
         "getTextPSAppDEField" : {
           "name" : "NAME",

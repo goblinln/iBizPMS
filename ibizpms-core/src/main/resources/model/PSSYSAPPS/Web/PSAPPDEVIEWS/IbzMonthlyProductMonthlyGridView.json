@@ -66,8 +66,6 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA"
-  }, {
     "name" : "EDITDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "月报编辑视图",
@@ -76,6 +74,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMonthlyMainMsgEditView.json",
       "viewType" : "DEEDITVIEW"
     }
+  }, {
+    "name" : "NEWDATA"
   } ],
   "getPSControls" : [ {
     "aggMode" : "NONE",
@@ -88,7 +88,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（产品月报）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -320,10 +320,10 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 25,
-      "name" : "issubmit",
+      "name" : "ibz_monthlyname",
       "getPSAppDEField" : {
-        "name" : "ISSUBMIT",
-        "codeName" : "Issubmit"
+        "name" : "IBZ_MONTHLYNAME",
+        "codeName" : "IbzMonthlyName"
       }
     }, {
       "dataType" : 25,
@@ -342,7 +342,11 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "reportto",
+      "getPSAppDEField" : {
+        "name" : "REPORTTO",
+        "codeName" : "Reportto"
+      }
     }, {
       "dataType" : 1,
       "name" : "ibz_monthlyid",
@@ -352,10 +356,17 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "issubmit",
       "getPSAppDEField" : {
-        "name" : "IBZ_MONTHLYNAME",
-        "codeName" : "IbzMonthlyName"
+        "name" : "ISSUBMIT",
+        "codeName" : "Issubmit"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "IBZ_MONTHLYID",
+        "codeName" : "IbzMonthlyId"
       }
     }, {
       "dataType" : 1,
@@ -366,26 +377,15 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "IBZ_MONTHLYID",
-        "codeName" : "IbzMonthlyId"
-      }
-    }, {
       "dataType" : 25,
-      "name" : "reportto",
-      "getPSAppDEField" : {
-        "name" : "REPORTTO",
-        "codeName" : "Reportto"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "ibz_monthlyname",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYNAME",
         "codeName" : "IbzMonthlyName"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "月报标识",

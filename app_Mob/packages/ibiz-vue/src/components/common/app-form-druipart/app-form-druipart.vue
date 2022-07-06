@@ -21,7 +21,7 @@
       </template>
     </ion-list>
     <div v-show="!blockUI" class="form-druipart-text">{{caption}}</div>
-    <div v-show="!blockUI">
+    <div v-show="!blockUI" style="height: 100%">
       <component
         class="viewcontainer2"
         ref="appFormDruipart"

@@ -109,7 +109,6 @@ export abstract class SysDepartmentBase extends EntityBase implements ISysDepart
      * 建立人
      */
     createman?: any;
-
     /**
      * 重置实体数据
      *

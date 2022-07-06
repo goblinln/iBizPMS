@@ -2,7 +2,7 @@
   "codeName" : "TaskFinshSearchGird",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats/PSSEARCHFORMS/TaskFinshSearchGird.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "任务完成汇总表搜索表单",
   "getPSAppDataEntity" : {
     "modelref" : true,

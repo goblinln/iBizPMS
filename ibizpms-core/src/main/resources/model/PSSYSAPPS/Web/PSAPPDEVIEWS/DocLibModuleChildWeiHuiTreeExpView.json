@@ -51,9 +51,9 @@
     "rawValue" : false
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "srfparentdename",
-    "name" : "srfparentdename",
-    "value" : "DocLibModule",
+    "key" : "srfparentdemapname",
+    "name" : "srfparentdemapname",
+    "value" : "ZT_PRODUCT",
     "rawValue" : true
   }, {
     "key" : "moduletype",
@@ -66,27 +66,27 @@
     "value" : "srfparent",
     "rawValue" : false
   }, {
+    "key" : "srfparentdename",
+    "name" : "srfparentdename",
+    "value" : "DocLibModule",
+    "rawValue" : true
+  }, {
     "key" : "srfroot",
     "name" : "srfroot",
     "value" : "srfroot",
     "rawValue" : false
-  }, {
-    "key" : "srfparentdemapname",
-    "name" : "srfparentdemapname",
-    "value" : "ZT_PRODUCT",
-    "rawValue" : true
   } ],
   "getPSControls" : [ {
     "codeName" : "ChildWeiHuiTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:Module",
+      "name" : "EXPITEM:ChileModule",
       "parentDataJO" : {
         "srfparentdefname" : "n_parent_eq"
       },
@@ -105,7 +105,7 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:ChileModule",
+      "name" : "EXPITEM:Module",
       "parentDataJO" : {
         "srfparentdefname" : "n_parent_eq"
       },
@@ -571,23 +571,23 @@
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
-          "value" : "srfparent",
-          "rawValue" : false
-        }, {
           "key" : "tree",
           "name" : "tree",
           "value" : "root",
           "rawValue" : true
+        }, {
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
+          "value" : "srfparent",
+          "rawValue" : false
         }, {
           "key" : "n_root_eq",
           "name" : "n_root_eq",
           "value" : "srfroot",
           "rawValue" : false
         }, {
-          "key" : "n_parent_eq",
-          "name" : "n_parent_eq",
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
           "value" : "srfparent",
           "rawValue" : false
         } ],

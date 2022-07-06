@@ -1,4 +1,5 @@
 import { IPSAppDEUIAction, IPSDBAppViewPortletPart, IPSDBPortletPart, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSLanguageRes, IPSUIActionGroupDetail } from "@ibiz/dynamic-model-api";
+import { MobPortletControlInterface } from "ibiz-core";
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
 import { MainControlBase } from "./main-control-base";
 
@@ -9,7 +10,7 @@ import { MainControlBase } from "./main-control-base";
  * @class AppControlBase
  * @extends {MobPortletControlBase}
  */
-export class MobPortletControlBase extends MainControlBase {
+export class MobPortletControlBase extends MainControlBase implements MobPortletControlInterface{
 
     /**
      * 部件模型实例对象

@@ -51,19 +51,19 @@
   "getPSControls" : [ {
     "codeName" : "ProductTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:Files",
-      "realTitle" : "file表格视图",
+      "name" : "EXPITEM:ChildDocLibModule",
+      "realTitle" : "文档库树视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProductGridView.json",
-        "viewType" : "DEGRIDVIEW"
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeView.json",
+        "viewType" : "DETREEVIEW"
       }
     }, {
       "name" : "EXPITEM:Product",
@@ -79,12 +79,20 @@
         "viewType" : "DETREEVIEW"
       }
     }, {
-      "name" : "EXPITEM:ChildDocLibModule",
+      "name" : "EXPITEM:DocLib",
       "realTitle" : "文档库树视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeViewProductRoot.json",
         "viewType" : "DETREEVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:Files",
+      "realTitle" : "file表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProductGridView.json",
+        "viewType" : "DEGRIDVIEW"
       }
     }, {
       "name" : "EXPITEM:DoclibModule",
@@ -92,14 +100,6 @@
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeView.json",
-        "viewType" : "DETREEVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:DocLib",
-      "realTitle" : "文档库树视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeViewProductRoot.json",
         "viewType" : "DETREEVIEW"
       }
     } ],

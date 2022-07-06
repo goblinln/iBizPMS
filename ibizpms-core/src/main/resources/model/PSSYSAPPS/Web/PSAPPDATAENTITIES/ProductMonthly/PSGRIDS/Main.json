@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -146,20 +146,6 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 7,
-    "name" : "totalestimates",
-    "getPSAppDEField" : {
-      "name" : "TOTALESTIMATES",
-      "codeName" : "Totalestimates"
-    }
-  }, {
     "dataType" : 25,
     "name" : "ibizpro_productmonthlyname",
     "getPSAppDEField" : {
@@ -168,17 +154,17 @@
     }
   }, {
     "dataType" : 25,
+    "name" : "productname",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    }
+  }, {
+    "dataType" : 25,
     "name" : "year_month",
     "getPSAppDEField" : {
       "name" : "YEAR_MONTH",
       "codeName" : "YearMonth"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "po",
-    "getPSAppDEField" : {
-      "name" : "PO",
-      "codeName" : "PO"
     }
   }, {
     "format" : "YYYY-MM-DD",
@@ -190,13 +176,24 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "po",
     "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
-      "codeName" : "IbizproProductMonthlyName"
+      "name" : "PO",
+      "codeName" : "PO"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "totalestimates",
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATES",
+      "codeName" : "Totalestimates"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYID",
+      "codeName" : "IbizproProductMonthlyId"
     }
   }, {
     "dataType" : 1,
@@ -208,18 +205,21 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "product",
     "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTMONTHLYID",
-      "codeName" : "IbizproProductMonthlyId"
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     }
   }, {
     "dataType" : 25,
-    "name" : "productname",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "PRODUCTNAME",
-      "codeName" : "ProductName"
+      "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
+      "codeName" : "IbizproProductMonthlyName"
     }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "产品月报标识",

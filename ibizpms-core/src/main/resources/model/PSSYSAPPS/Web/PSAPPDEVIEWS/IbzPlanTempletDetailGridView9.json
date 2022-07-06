@@ -71,70 +71,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "GridView9toolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "表格界面（行编辑仅新建行）",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "caption" : "新建行",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf067@FontAwesome",
-        "cssClass" : "fa fa-plus"
-      },
-      "getPSUIAction" : {
-        "caption" : "新建行",
-        "codeName" : "NewRow",
-        "dataAccessAction" : "CREATE",
-        "fullCodeName" : "NewRow",
-        "name" : "表格界面_新建行",
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "CREATE"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf067@FontAwesome",
-          "cssClass" : "fa fa-plus"
-        },
-        "predefinedType" : "GRIDVIEW_NEWROWACTION",
-        "timeout" : 60000,
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "NewRow",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "新建行",
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "a5cf3f211750844db193707184d135a6",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "Main_Edit",
     "columnEnableLink" : 2,
@@ -187,7 +123,7 @@
       }
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "行编辑",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -352,24 +288,10 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 21,
-      "name" : "expect",
-      "getPSAppDEField" : {
-        "name" : "EXPECT",
-        "codeName" : "Expect"
-      }
-    }, {
-      "dataType" : 21,
       "name" : "desc",
       "getPSAppDEField" : {
         "name" : "DESC",
         "codeName" : "Desc"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "order",
-      "getPSAppDEField" : {
-        "name" : "ORDER",
-        "codeName" : "Order"
       }
     }, {
       "dataType" : 25,
@@ -379,26 +301,18 @@
         "codeName" : "Type"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "dataType" : 21,
+      "name" : "expect",
       "getPSAppDEField" : {
-        "name" : "IBZ_PLANTEMPLETDETAILNAME",
-        "codeName" : "IbzPlanTempletDetailName"
+        "name" : "EXPECT",
+        "codeName" : "Expect"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfdataaccaction",
+      "dataType" : 9,
+      "name" : "order",
       "getPSAppDEField" : {
-        "name" : "IBZ_PLANTEMPLETDETAILID",
-        "codeName" : "IbzPlanTempletDetailId"
-      },
-      "dataAccessAction" : true
-    }, {
-      "dataType" : 25,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "IBZ_PLANTEMPLETDETAILID",
-        "codeName" : "IbzPlanTempletDetailId"
+        "name" : "ORDER",
+        "codeName" : "Order"
       }
     }, {
       "dataType" : 25,
@@ -414,25 +328,30 @@
         "name" : "PLANTEMPLETID",
         "codeName" : "Plantempletid"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETDETAILID",
+        "codeName" : "IbzPlanTempletDetailId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETDETAILID",
+        "codeName" : "IbzPlanTempletDetailId"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETDETAILNAME",
+        "codeName" : "IbzPlanTempletDetailName"
+      }
     } ],
     "getPSDEGridEditItems" : [ {
-      "caption" : "描述",
-      "codeName" : "expect1",
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "name" : "expect1",
-      "getPSAppDEField" : {
-        "name" : "EXPECT",
-        "codeName" : "Expect"
-      },
-      "getPSEditor" : {
-        "editorType" : "TEXTBOX",
-        "maxLength" : 1048576,
-        "name" : "expect1",
-        "placeHolder" : "描述"
-      },
-      "allowEmpty" : true
-    }, {
       "caption" : "计划名称",
       "codeName" : "desc",
       "enableCond" : 3,
@@ -449,21 +368,6 @@
         "placeHolder" : "计划名称不能为空"
       },
       "allowEmpty" : false
-    }, {
-      "caption" : "排序",
-      "codeName" : "order",
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "name" : "order",
-      "getPSAppDEField" : {
-        "name" : "ORDER",
-        "codeName" : "Order"
-      },
-      "getPSEditor" : {
-        "editorType" : "NUMBER",
-        "name" : "order"
-      },
-      "allowEmpty" : true
     }, {
       "caption" : "类型",
       "codeName" : "type",
@@ -486,18 +390,35 @@
       "allowEmpty" : false,
       "needCodeListConfig" : true
     }, {
-      "caption" : "计划模板详情标识",
-      "codeName" : "srfkey",
+      "caption" : "描述",
+      "codeName" : "expect1",
       "enableCond" : 3,
       "ignoreInput" : 0,
-      "name" : "srfkey",
+      "name" : "expect1",
       "getPSAppDEField" : {
-        "name" : "IBZ_PLANTEMPLETDETAILID",
-        "codeName" : "IbzPlanTempletDetailId"
+        "name" : "EXPECT",
+        "codeName" : "Expect"
       },
       "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "srfkey"
+        "editorType" : "TEXTBOX",
+        "maxLength" : 1048576,
+        "name" : "expect1",
+        "placeHolder" : "描述"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "排序",
+      "codeName" : "order",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "order",
+      "getPSAppDEField" : {
+        "name" : "ORDER",
+        "codeName" : "Order"
+      },
+      "getPSEditor" : {
+        "editorType" : "NUMBER",
+        "name" : "order"
       },
       "allowEmpty" : true
     }, {
@@ -529,6 +450,21 @@
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "plantempletid"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "计划模板详情标识",
+      "codeName" : "srfkey",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETDETAILID",
+        "codeName" : "IbzPlanTempletDetailId"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
       },
       "allowEmpty" : true
     } ],
@@ -581,6 +517,70 @@
     "name" : "grid",
     "modelid" : "7a427031b62885759a7284ed9d89f536",
     "modeltype" : "PSDEGRID"
+  }, {
+    "codeName" : "GridView9toolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "表格界面（行编辑仅新建行）",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "新建行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "caption" : "新建行",
+        "codeName" : "NewRow",
+        "dataAccessAction" : "CREATE",
+        "fullCodeName" : "NewRow",
+        "name" : "表格界面_新建行",
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CREATE"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
+        },
+        "predefinedType" : "GRIDVIEW_NEWROWACTION",
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "NewRow",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "新建行",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "a5cf3f211750844db193707184d135a6",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "GridView9",
   "getPSDEViewId" : "b41e52c91793048d949a648e64814290",

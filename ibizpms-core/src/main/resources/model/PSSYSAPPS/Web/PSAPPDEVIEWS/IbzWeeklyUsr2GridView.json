@@ -123,21 +123,21 @@
     "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realOpenMode" : "INDEXVIEWTAB",
-    "realTitle" : "实体2编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditView.json",
-      "viewType" : "DEEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "周报编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyUsr2EditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
+    "realOpenMode" : "INDEXVIEWTAB",
+    "realTitle" : "实体2编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditView.json",
       "viewType" : "DEEDITVIEW"
     }
   } ],
@@ -174,180 +174,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "Usr2GridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "表格界面（导出、行为组(1~6)）",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1_createeveryweekreport",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_createeveryweekreport_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_createeveryweekreport_click"
-      }
-    }, {
-      "eventArg" : "deuiaction2_create",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_create_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_create_click"
-      }
-    }, {
-      "eventArg" : "deuiaction7",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction7_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction7_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "caption" : "生成周报",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1_createeveryweekreport",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_createeveryweekreport"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "NONE",
-        "caption" : "生成周报",
-        "codeName" : "createEveryWeekReport",
-        "fullCodeName" : "IbzWeekly_createEveryWeekReport",
-        "name" : "生成周报",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "AutoCreate"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
-        },
-        "getPSNavigateContexts" : [ {
-          "key" : "IBZWEEKLY",
-          "name" : "IBZWEEKLY",
-          "value" : "0",
-          "rawValue" : true
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "ibzweekly",
-          "name" : "ibzweekly",
-          "value" : "0",
-          "rawValue" : true
-        } ],
-        "refreshMode" : 1,
-        "timeout" : 60000,
-        "uIActionMode" : "BACKEND",
-        "uIActionTag" : "createEveryWeekReport",
-        "uIActionType" : "DEUIACTION",
-        "enableConfirm" : true,
-        "reloadData" : true,
-        "id" : "createEveryWeekReport@IbzWeekly"
-      },
-      "tooltip" : "生成周报",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "caption" : "新建",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2_create",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_create"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "NONE",
-        "caption" : "新建",
-        "codeName" : "create",
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditView.json",
-          "viewType" : "DEEDITVIEW"
-        },
-        "frontProcessType" : "WIZARD",
-        "fullCodeName" : "IbzWeekly_create",
-        "name" : "新建",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
-        },
-        "timeout" : 60000,
-        "uIActionMode" : "FRONT",
-        "uIActionTag" : "create",
-        "uIActionType" : "DEUIACTION",
-        "id" : "create@IbzWeekly"
-      },
-      "tooltip" : "新建",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT"
-      },
-      "caption" : "导出",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction7",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction7"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT"
-        },
-        "caption" : "导出",
-        "codeName" : "ExportExcel",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）",
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "predefinedType" : "GRIDVIEW_EXPORTACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "导出",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "a367f1c87484ad35865184abea15eece",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "Main",
     "columnEnableLink" : 2,
@@ -358,7 +184,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格(主表格)",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -691,20 +517,6 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "ibz_weeklyid",
-      "getPSAppDEField" : {
-        "name" : "IBZ_WEEKLYID",
-        "codeName" : "IbzWeeklyId"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "issubmit",
-      "getPSAppDEField" : {
-        "name" : "ISSUBMIT",
-        "codeName" : "Issubmit"
-      }
-    }, {
       "dataType" : 25,
       "name" : "ibz_weeklyname",
       "getPSAppDEField" : {
@@ -728,13 +540,31 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "reportto",
+      "getPSAppDEField" : {
+        "name" : "REPORTTO",
+        "codeName" : "Reportto"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "ibz_weeklyid",
+      "getPSAppDEField" : {
+        "name" : "IBZ_WEEKLYID",
+        "codeName" : "IbzWeeklyId"
+      }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "issubmit",
       "getPSAppDEField" : {
-        "name" : "IBZ_WEEKLYNAME",
-        "codeName" : "IbzWeeklyName"
+        "name" : "ISSUBMIT",
+        "codeName" : "Issubmit"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "IBZ_WEEKLYID",
+        "codeName" : "IbzWeeklyId"
       }
     }, {
       "dataType" : 1,
@@ -745,19 +575,15 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
+      "dataType" : 25,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "IBZ_WEEKLYID",
-        "codeName" : "IbzWeeklyId"
+        "name" : "IBZ_WEEKLYNAME",
+        "codeName" : "IbzWeeklyName"
       }
     }, {
       "dataType" : 25,
-      "name" : "reportto",
-      "getPSAppDEField" : {
-        "name" : "REPORTTO",
-        "codeName" : "Reportto"
-      }
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "周报标识",
@@ -810,7 +636,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -819,10 +645,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -841,10 +667,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -894,6 +720,180 @@
     "name" : "searchform",
     "modelid" : "4b843fc8c083cf654f21cfe76f058373",
     "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "codeName" : "Usr2GridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "表格界面（导出、行为组(1~6)）",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1_createeveryweekreport",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_createeveryweekreport_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_createeveryweekreport_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2_create",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_create_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_create_click"
+      }
+    }, {
+      "eventArg" : "deuiaction7",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction7_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction7_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "生成周报",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1_createeveryweekreport",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_createeveryweekreport"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "生成周报",
+        "codeName" : "createEveryWeekReport",
+        "fullCodeName" : "IbzWeekly_createEveryWeekReport",
+        "name" : "生成周报",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "AutoCreate"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "IBZWEEKLY",
+          "name" : "IBZWEEKLY",
+          "value" : "0",
+          "rawValue" : true
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "ibzweekly",
+          "name" : "ibzweekly",
+          "value" : "0",
+          "rawValue" : true
+        } ],
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "createEveryWeekReport",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "reloadData" : true,
+        "id" : "createEveryWeekReport@IbzWeekly"
+      },
+      "tooltip" : "生成周报",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "新建",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2_create",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_create"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "新建",
+        "codeName" : "create",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "IbzWeekly_create",
+        "name" : "新建",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "create",
+        "uIActionType" : "DEUIACTION",
+        "id" : "create@IbzWeekly"
+      },
+      "tooltip" : "新建",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction7",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction7"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "predefinedType" : "GRIDVIEW_EXPORTACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "a367f1c87484ad35865184abea15eece",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "Usr2GridView",
   "getPSDEViewId" : "59f7165531be9753da634e6f26177f75",

@@ -38,7 +38,7 @@
       "modelref" : true,
       "id" : "fetch"
     },
-    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD" ],
     "logicName" : "InvolvedProject_dev",
     "getPSAppDataEntity" : {
       "modelref" : true,

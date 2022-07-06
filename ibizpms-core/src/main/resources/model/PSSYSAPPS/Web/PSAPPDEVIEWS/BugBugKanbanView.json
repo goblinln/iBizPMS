@@ -119,19 +119,6 @@
           "value" : "srfkey",
           "rawValue" : false
         } ],
-        "refMode" : "RESOLVED",
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
-          "viewType" : "DEOPTVIEW"
-        }
-      }, {
-        "getPSNavigateParams" : [ {
-          "key" : "id",
-          "name" : "id",
-          "value" : "srfkey",
-          "rawValue" : false
-        } ],
         "refMode" : "ACTIVE",
         "getRefPSAppView" : {
           "modelref" : true,
@@ -149,6 +136,19 @@
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "RESOLVED",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
           "viewType" : "DEOPTVIEW"
         }
       } ],
@@ -165,19 +165,6 @@
           "value" : "srfkey",
           "rawValue" : false
         } ],
-        "refMode" : "RESOLVED",
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
-          "viewType" : "DEOPTVIEW"
-        }
-      }, {
-        "getPSNavigateParams" : [ {
-          "key" : "id",
-          "name" : "id",
-          "value" : "srfkey",
-          "rawValue" : false
-        } ],
         "refMode" : "ACTIVE",
         "getRefPSAppView" : {
           "modelref" : true,
@@ -197,25 +184,32 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
           "viewType" : "DEOPTVIEW"
         }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "RESOLVED",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
+          "viewType" : "DEOPTVIEW"
+        }
       } ],
       "viewLogicType" : "APP_OPENDATA",
       "editMode" : true
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "EDITDATA:RESOLVED",
-    "getPSNavigateParams" : [ {
-      "key" : "id",
-      "name" : "id",
-      "value" : "srfkey",
-      "rawValue" : false
-    } ],
-    "realOpenMode" : "POPUPMODAL",
-    "realTitle" : "解决Bug",
+    "name" : "EDITDATA",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
-      "viewType" : "DEOPTVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "EDITDATA:ACTIVE",
@@ -233,15 +227,6 @@
       "viewType" : "DEOPTVIEW"
     }
   }, {
-    "name" : "NEWDATA",
-    "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "Bug数据看板视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
-    }
-  }, {
     "name" : "EDITDATA:CLOSED",
     "getPSNavigateParams" : [ {
       "key" : "id",
@@ -257,7 +242,22 @@
       "viewType" : "DEOPTVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "EDITDATA:RESOLVED",
+    "getPSNavigateParams" : [ {
+      "key" : "id",
+      "name" : "id",
+      "value" : "srfkey",
+      "rawValue" : false
+    } ],
+    "realOpenMode" : "POPUPMODAL",
+    "realTitle" : "解决Bug",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
+      "viewType" : "DEOPTVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "Bug数据看板视图",
     "getRefPSAppView" : {
@@ -470,7 +470,7 @@
       "pluginCode" : "kanbantitle"
     },
     "groupWidth" : 465,
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "name",
@@ -1491,30 +1491,12 @@
       "id" : "KANBAN"
     },
     "getPSDEDataViewDataItems" : [ {
-      "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-      },
-      "name" : "closedby",
-      "getPSAppDEField" : {
-        "name" : "CLOSEDBY",
-        "codeName" : "ClosedBy"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "tostory",
-      "getPSAppDEField" : {
-        "name" : "TOSTORY",
-        "codeName" : "ToStory"
-      }
-    }, {
       "dataType" : 5,
-      "format" : "YYYY-MM-DD HH:mm:ss",
-      "name" : "closeddate",
+      "format" : "YYYY-MM-DD",
+      "name" : "deadline",
       "getPSAppDEField" : {
-        "name" : "CLOSEDDATE",
-        "codeName" : "ClosedDate"
+        "name" : "DEADLINE",
+        "codeName" : "Deadline"
       }
     }, {
       "dataType" : 25,
@@ -1528,36 +1510,67 @@
         "codeName" : "Resolution"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 25,
-      "name" : "srfkey",
+      "dataType" : 1,
+      "name" : "module",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "duplicatebug",
-      "getPSAppDEField" : {
-        "name" : "DUPLICATEBUG",
-        "codeName" : "DuplicateBug"
+        "name" : "MODULE",
+        "codeName" : "Module"
       }
     }, {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "project",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PROJECT",
+        "codeName" : "Project"
       }
+    }, {
+      "dataType" : 5,
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "name" : "closeddate",
+      "getPSAppDEField" : {
+        "name" : "CLOSEDDATE",
+        "codeName" : "ClosedDate"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "delayresolve",
+      "getPSAppDEField" : {
+        "name" : "DELAYRESOLVE",
+        "codeName" : "Delayresolve"
+      }
+    }, {
+      "dataType" : 9,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
+      },
+      "name" : "pri",
+      "getPSAppDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "delay",
+      "getPSAppDEField" : {
+        "name" : "DELAY",
+        "codeName" : "Delay"
+      }
+    }, {
+      "dataType" : 5,
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "name" : "resolveddate",
+      "getPSAppDEField" : {
+        "name" : "RESOLVEDDATE",
+        "codeName" : "ResolvedDate"
+      }
+    }, {
+      "dataType" : 9,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
+      },
+      "name" : "severity"
     }, {
       "dataType" : 1,
       "getFrontPSCodeList" : {
@@ -1568,17 +1581,6 @@
       "getPSAppDEField" : {
         "name" : "STORY",
         "codeName" : "Story"
-      }
-    }, {
-      "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameUnAssignTo_Gird.json"
-      },
-      "name" : "assignedto",
-      "getPSAppDEField" : {
-        "name" : "ASSIGNEDTO",
-        "codeName" : "AssignedTo"
       }
     }, {
       "dataType" : 25,
@@ -1600,38 +1602,14 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "repo",
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "name" : "closedby",
       "getPSAppDEField" : {
-        "name" : "REPO",
-        "codeName" : "Repo"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "isfavorites",
-      "getPSAppDEField" : {
-        "name" : "ISFAVORITES",
-        "codeName" : "Isfavorites"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "totask",
-      "getPSAppDEField" : {
-        "name" : "TOTASK",
-        "codeName" : "ToTask"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "delayresolve",
-      "getPSAppDEField" : {
-        "name" : "DELAYRESOLVE",
-        "codeName" : "Delayresolve"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "module",
-      "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
+        "name" : "CLOSEDBY",
+        "codeName" : "ClosedBy"
       }
     }, {
       "dataType" : 25,
@@ -1643,6 +1621,119 @@
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameUnAssignTo_Gird.json"
+      },
+      "name" : "assignedto",
+      "getPSAppDEField" : {
+        "name" : "ASSIGNEDTO",
+        "codeName" : "AssignedTo"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "name" : "resolvedby",
+      "getPSAppDEField" : {
+        "name" : "RESOLVEDBY",
+        "codeName" : "ResolvedBy"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "isfavorites",
+      "getPSAppDEField" : {
+        "name" : "ISFAVORITES",
+        "codeName" : "Isfavorites"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "tostory",
+      "getPSAppDEField" : {
+        "name" : "TOSTORY",
+        "codeName" : "ToStory"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "entry",
+      "getPSAppDEField" : {
+        "name" : "ENTRY",
+        "codeName" : "Entry"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "totask",
+      "getPSAppDEField" : {
+        "name" : "TOTASK",
+        "codeName" : "ToTask"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "plan",
+      "getPSAppDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "branch",
+      "getPSAppDEField" : {
+        "name" : "BRANCH",
+        "codeName" : "Branch"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "duplicatebug",
+      "getPSAppDEField" : {
+        "name" : "DUPLICATEBUG",
+        "codeName" : "DuplicateBug"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "repo",
+      "getPSAppDEField" : {
+        "name" : "REPO",
+        "codeName" : "Repo"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "case",
+      "getPSAppDEField" : {
+        "name" : "CASE",
+        "codeName" : "IBizCase"
       }
     }, {
       "dataType" : 25,
@@ -1659,99 +1750,8 @@
         "codeName" : "Testtask"
       }
     }, {
-      "dataType" : 9,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
-      },
-      "name" : "severity"
-    }, {
-      "dataType" : 1,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "project",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      }
-    }, {
-      "dataType" : 9,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
-      },
-      "name" : "pri",
-      "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
-      }
-    }, {
       "dataType" : 25,
-      "name" : "plan",
-      "getPSAppDEField" : {
-        "name" : "PLAN",
-        "codeName" : "Plan"
-      }
-    }, {
-      "dataType" : 5,
-      "format" : "YYYY-MM-DD HH:mm:ss",
-      "name" : "resolveddate",
-      "getPSAppDEField" : {
-        "name" : "RESOLVEDDATE",
-        "codeName" : "ResolvedDate"
-      }
-    }, {
-      "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-      },
-      "name" : "resolvedby",
-      "getPSAppDEField" : {
-        "name" : "RESOLVEDBY",
-        "codeName" : "ResolvedBy"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "entry",
-      "getPSAppDEField" : {
-        "name" : "ENTRY",
-        "codeName" : "Entry"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "branch",
-      "getPSAppDEField" : {
-        "name" : "BRANCH",
-        "codeName" : "Branch"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "case",
-      "getPSAppDEField" : {
-        "name" : "CASE",
-        "codeName" : "IBizCase"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "delay",
-      "getPSAppDEField" : {
-        "name" : "DELAY",
-        "codeName" : "Delay"
-      }
-    }, {
-      "dataType" : 5,
-      "format" : "YYYY-MM-DD",
-      "name" : "deadline",
-      "getPSAppDEField" : {
-        "name" : "DEADLINE",
-        "codeName" : "Deadline"
-      }
+      "name" : "srfmstag"
     } ],
     "getPSDEDataViewItems" : [ {
       "caption" : "截止日期",

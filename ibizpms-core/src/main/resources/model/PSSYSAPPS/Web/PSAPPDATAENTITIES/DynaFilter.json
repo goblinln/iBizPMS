@@ -36,6 +36,21 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -43,6 +58,21 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateInput",
+      "name" : "CreateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateResult",
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
@@ -50,6 +80,24 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetInput",
+      "getKeyPSAppDEField" : {
+        "name" : "DYNAFILTERID",
+        "codeName" : "DynaFilterId"
+      },
+      "name" : "GetInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetResult",
+      "name" : "GetResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -57,6 +105,24 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftInput",
+      "name" : "GetDraftInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftResult",
+      "name" : "GetDraftResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
@@ -65,6 +131,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "DYNAFILTERID",
+        "codeName" : "DynaFilterId"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -73,6 +153,20 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
@@ -80,6 +174,21 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateInput",
+      "name" : "UpdateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateResult",
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
@@ -87,6 +196,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -159,12 +286,201 @@
     "stdDataType" : 25,
     "stringLength" : 60
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "DynaFilterDTO",
+    "name" : "DynaFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "CreateDate",
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "CreateMan",
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Data",
+      "logicName" : "数据",
+      "name" : "Data",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DATA",
+        "codeName" : "Data"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Dename",
+      "logicName" : "实体名称",
+      "name" : "Dename",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DENAME",
+        "codeName" : "Dename"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "DeptId",
+      "logicName" : "组织部门标识",
+      "name" : "DeptId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEPTID",
+        "codeName" : "DeptId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "DynaFilterId",
+      "logicName" : "动态搜索栏标识",
+      "name" : "DynaFilterId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DYNAFILTERID",
+        "codeName" : "DynaFilterId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "DynaFilterName",
+      "logicName" : "动态搜索栏名称",
+      "name" : "DynaFilterName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DYNAFILTERNAME",
+        "codeName" : "DynaFilterName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Formname",
+      "logicName" : "表单名称",
+      "name" : "Formname",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "FORMNAME",
+        "codeName" : "Formname"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OrgId",
+      "logicName" : "组织机构标识",
+      "name" : "OrgId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateDate",
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "DynaFilterFilterDTO",
+    "name" : "DynaFilterFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_DYNAFILTERID_EQ",
+      "logicName" : "动态搜索栏标识",
+      "name" : "N_DYNAFILTERID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "DYNAFILTERID",
+        "codeName" : "DynaFilterId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_DYNAFILTERNAME_LIKE",
+      "logicName" : "动态搜索栏名称",
+      "name" : "N_DYNAFILTERNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "DYNAFILTERNAME",
+        "codeName" : "DynaFilterName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -172,6 +488,21 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateInput",
+      "name" : "CreateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateResult",
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
@@ -179,6 +510,24 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetInput",
+      "getKeyPSAppDEField" : {
+        "name" : "DYNAFILTERID",
+        "codeName" : "DynaFilterId"
+      },
+      "name" : "GetInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetResult",
+      "name" : "GetResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -186,6 +535,24 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftInput",
+      "name" : "GetDraftInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftResult",
+      "name" : "GetDraftResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
@@ -194,6 +561,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "DYNAFILTERID",
+        "codeName" : "DynaFilterId"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -202,6 +583,20 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
@@ -209,12 +604,45 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateInput",
+      "name" : "UpdateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateResult",
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "DynaFilterDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -271,7 +699,15 @@
   "dataAccCtrlMode" : 0,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DynaFilter.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "DYNAFILTERID",
+    "codeName" : "DynaFilterId"
+  },
   "logicName" : "动态搜索栏",
+  "getMajorPSAppDEField" : {
+    "name" : "DYNAFILTERNAME",
+    "codeName" : "DynaFilterName"
+  },
   "name" : "DYNAFILTER",
   "getOrgIdPSAppDEField" : {
     "name" : "ORGID",

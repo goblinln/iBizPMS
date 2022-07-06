@@ -1,7 +1,7 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Util } from 'ibiz-core';
 import { MobFormControlBase } from '../../../widgets';
-import { IPSAppDEView, IPSDEEditForm, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormPage } from '@ibiz/dynamic-model-api';
+import { IPSAppDEView, IPSDEEditForm, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormPage, IPSDEFormButton, IPSDEFormRawItem } from '@ibiz/dynamic-model-api';
 /**
  * 编辑表单部件基类
  *
@@ -156,11 +156,11 @@ export class AppMobFormBase extends MobFormControlBase {
                 case 'FORMITEM':
                     return this.renderFormItem(modelJson as IPSDEFormItem, index);
                 case 'BUTTON':
-                // return this.renderButton(modelJson as IPSDEFormButton, index);
+                return this.renderButton(modelJson as IPSDEFormButton, index);
                 case 'DRUIPART':
                     return this.renderDruipart(modelJson as IPSDEFormDRUIPart, index);
                 case 'RAWITEM':
-                // return this.renderRawitem(modelJson as IPSDEFormRawItem, index);
+                return this.renderRawitem(modelJson as IPSDEFormRawItem, index);
                 case 'IFRAME':
                 // return this.renderIframe(modelJson as IPSDEFormIFrame, index);
                 case 'FORMPART':
@@ -283,20 +283,71 @@ export class AppMobFormBase extends MobFormControlBase {
     }
 
     /**
+     * 绘制表单按钮
+     *
+     * @param {IPSDEFormButton} modelJson
+     * @param {number} index
+     * @return {*}  {*}
+     * @memberof AppMobFormBase
+     */
+    public renderButton(modelJson: IPSDEFormButton, index: number): any {
+        return (
+            <app-default-mob-form-button
+                context={this.context}
+                viewparams={this.viewparams}
+                data={this.data}
+                index={index}
+                detailsInstance={modelJson}
+                runtimeModel={this.detailsModel[modelJson.name]}
+                on-UIAction={this.onFormItemActionClick.bind(this)}>
+            </app-default-mob-form-button>
+        )
+    }
+
+    /**
+     * 渲染直接内容
+     *
+     * @param {IPSDEFormRawItem} modelJson
+     * @param {number} index
+     * @return {*} 
+     * @memberof AppMobFormBase
+     */
+    public renderRawitem(modelJson: IPSDEFormRawItem, index: number) {
+        return (
+            <app-default-mob-form-raw-item
+                context={this.context}
+                viewparams={this.viewparams}
+                index={index}
+                data={this.data}
+                detailsInstance={modelJson}
+                runtimeModel={this.detailsModel[modelJson.name]}>
+            </app-default-mob-form-raw-item>
+        )
+    }
+
+    /**
      * 绘制关系界面
      *
      * @returns
      * @memberof AppFormBase
      */
     public renderDruipart(modelJson: any, index: number): any {
-        const { refreshItems, parentDataJO } = modelJson;
+        const { refreshItems, height, parentDataJO } = modelJson;
+        const layoutPos = modelJson.getPSLayoutPos();
         const appView = modelJson.getPSAppView() as IPSAppDEView;
         const appDERSPaths = (appView as IPSAppDEView)?.getPSAppDERSPaths();
         const appDataEntity = this.controlInstance.getPSAppDataEntity();
         let tempContext: any = Util.deepCopy(this.context);
         // druipart样式
         let druipartHeight: any;
-        let druipartStyle: any = { height: druipartHeight, overflow: 'auto' };
+        if (layoutPos?.layout == 'FlEX') {
+            druipartHeight = '100%';
+        } else if (!height && appView?.height > 0) {
+            druipartHeight = appView.height;
+        } else {
+            druipartHeight = Util.isNumber(height) && height > 0 ? `${height}px` : '100%';
+        }
+        let druipartStyle = { height: druipartHeight, overflow: 'auto' };
         let viewName = Util.srfFilePath2(appView?.codeName);
         let partCaption: any = '';
         return (
@@ -334,12 +385,19 @@ export class AppMobFormBase extends MobFormControlBase {
      * @memberof AppMobFormBase
      */
     public render() {
-        const { controlClassNames } = this.renderOptions;
         if (!this.controlIsLoaded) {
-            return null;
+          return null;
         }
+        const { controlClassNames } = this.renderOptions;
+        let formId =
+            this.controlInstance.getPSAppDataEntity()?.codeName?.toLowerCase() +
+            this.controlInstance.codeName?.toLowerCase();
+        let controlStyle = {
+            width: this.controlInstance.width ? this.controlInstance.width + 'px' : '',
+            height: this.controlInstance.height ? this.controlInstance.height + 'px' : ''
+        };        
         return (
-            <div class={controlClassNames}>
+            <div class={controlClassNames} id={formId} style={controlStyle}>
                 {this.renderFormContent()}
             </div>
         );

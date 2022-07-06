@@ -138,7 +138,7 @@ button.alert-button.ion-focusable.ion-activatable.secondary.sc-ion-alert-ios {
 @default-form-text-align: right;
 .layout(@default-form-text-align);
 
-@import "./user.less";
+
 // ion-content{
 //   --background: inherit;
 // }
@@ -317,3 +317,20 @@ ion-alert.yesnocancel{
     }
   }
 }
+
+// 表单禁用状态透明度
+.item-interactive-disabled.sc-ion-label-ios-h:not(.item-multiple-inputs), .item-interactive-disabled:not(.item-multiple-inputs) .sc-ion-label-ios-h {
+  opacity: 1;
+}
+
+//  表单值通用类
+.form-value-content {
+  color: #5c5c5c;
+  font-size: 13px;
+}
+
+// 通用
+p{
+  margin: 0;
+}
+@import "./user.less";

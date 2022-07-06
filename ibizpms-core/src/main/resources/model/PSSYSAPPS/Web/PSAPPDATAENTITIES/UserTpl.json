@@ -36,24 +36,97 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -61,6 +134,20 @@
     "codeName" : "HasDeleted",
     "methodType" : "DEACTION",
     "name" : "hasDeleted",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "HasDeletedInput",
+      "name" : "HasDeletedInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "HasDeletedResult",
+      "name" : "HasDeletedResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -68,49 +155,259 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
     "name" : "FetchAccount",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchaccount",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "1",
+          "fieldName" : "PUBLIC",
+          "name" : "PUBLIC 等于(=) (1)"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "account",
+          "fieldName" : "ACCOUNT",
+          "name" : "ACCOUNT 等于(=) 网页请求上下文(account)",
+          "getPSVARTypeId" : "WEBCONTEXT"
+        } ]
+      }, {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "type",
+        "fieldName" : "TYPE",
+        "name" : "TYPE 等于(=) 网页请求上下文(type)",
+        "getPSVARTypeId" : "WEBCONTEXT"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "FetchMy",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchmy",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUserTpl",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUserTpl",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyUserTplInput",
+      "name" : "MyUserTplInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyUserTplResult",
+      "name" : "MyUserTplResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "srfloginname",
+        "fieldName" : "ACCOUNT",
+        "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
+        "getPSVARTypeId" : "SESSIONCONTEXT"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUserTplQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUserTplQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyUserTplQueryInput",
+      "name" : "MyUserTplQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyUserTplQueryResult",
+      "name" : "MyUserTplQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "ACCOUNT",
+          "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "1",
+          "fieldName" : "PUBLIC",
+          "name" : "PUBLIC 等于(=) (1)"
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -187,30 +484,310 @@
     "stdDataType" : 25,
     "stringLength" : 100
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "UserTplDTO",
+    "name" : "UserTplDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "Account",
+      "logicName" : "account",
+      "name" : "Account",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Content",
+      "logicName" : "content",
+      "name" : "Content",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CONTENT",
+        "codeName" : "Content"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Dept",
+      "logicName" : "归属部门",
+      "name" : "Dept",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "DeptName",
+      "logicName" : "归属部门名",
+      "name" : "DeptName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "IBizPublic",
+      "logicName" : "公开",
+      "name" : "IBizPublic",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PUBLIC",
+        "codeName" : "IBizPublic"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Id",
+      "logicName" : "id",
+      "name" : "Id",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Org",
+      "logicName" : "归属组织",
+      "name" : "Org",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORG",
+        "codeName" : "Org"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OrgName",
+      "logicName" : "归属组织名",
+      "name" : "OrgName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Title",
+      "logicName" : "模板标题",
+      "name" : "Title",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Type",
+      "logicName" : "type",
+      "name" : "Type",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateBy",
+      "logicName" : "由谁更新",
+      "name" : "UpdateBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEBY",
+        "codeName" : "UpdateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Usertplsn",
+      "logicName" : "用户模板编号",
+      "name" : "Usertplsn",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "USERTPLSN",
+        "codeName" : "Usertplsn"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "UserTplFilterDTO",
+    "name" : "UserTplFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_ID_EQ",
+      "logicName" : "id",
+      "name" : "N_ID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PUBLIC_EQ",
+      "logicName" : "公开",
+      "name" : "N_PUBLIC_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PUBLIC",
+        "codeName" : "IBizPublic"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TITLE_LIKE",
+      "logicName" : "模板标题",
+      "name" : "N_TITLE_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TYPE_EQ",
+      "logicName" : "type",
+      "name" : "N_TYPE_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -218,6 +795,20 @@
     "codeName" : "HasDeleted",
     "methodType" : "DEACTION",
     "name" : "hasDeleted",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "HasDeletedInput",
+      "name" : "HasDeletedInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "HasDeletedResult",
+      "name" : "HasDeletedResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -225,48 +816,258 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
     "name" : "FetchAccount",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchaccount",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "1",
+          "fieldName" : "PUBLIC",
+          "name" : "PUBLIC 等于(=) (1)"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "account",
+          "fieldName" : "ACCOUNT",
+          "name" : "ACCOUNT 等于(=) 网页请求上下文(account)",
+          "getPSVARTypeId" : "WEBCONTEXT"
+        } ]
+      }, {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "type",
+        "fieldName" : "TYPE",
+        "name" : "TYPE 等于(=) 网页请求上下文(type)",
+        "getPSVARTypeId" : "WEBCONTEXT"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "FetchMy",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchmy",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUserTpl",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUserTpl",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyUserTplInput",
+      "name" : "MyUserTplInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyUserTplResult",
+      "name" : "MyUserTplResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "srfloginname",
+        "fieldName" : "ACCOUNT",
+        "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
+        "getPSVARTypeId" : "SESSIONCONTEXT"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUserTplQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUserTplQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyUserTplQueryInput",
+      "name" : "MyUserTplQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyUserTplQueryResult",
+      "name" : "MyUserTplQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "UserTplDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "ACCOUNT",
+          "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "1",
+          "fieldName" : "PUBLIC",
+          "name" : "PUBLIC 等于(=) (1)"
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -326,7 +1127,15 @@
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "用户模板",
+  "getMajorPSAppDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "UserTpls",

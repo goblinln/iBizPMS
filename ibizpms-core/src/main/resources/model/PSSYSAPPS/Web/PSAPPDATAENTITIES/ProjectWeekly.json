@@ -36,24 +36,97 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBZPRO_PROJECTWEEKLYID",
+        "codeName" : "PROJECTWEEKLYId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "IBZPRO_PROJECTWEEKLYID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -62,6 +135,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZPRO_PROJECTWEEKLYID",
+        "codeName" : "PROJECTWEEKLYId"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -70,24 +157,93 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Summary",
     "methodType" : "DEACTION",
     "name" : "pushSumProjectWeekly",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/summary",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -195,30 +351,373 @@
     "name" : "PROJECT",
     "stdDataType" : 1
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "IbizproProjectWeeklyDTO",
+    "name" : "IbizproProjectWeeklyDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "Begindatestats",
+      "logicName" : "开始统计",
+      "name" : "Begindatestats",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BEGINDATESTATS",
+        "codeName" : "Begindatestats"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreateDate",
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "CreateMan",
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Date",
+      "logicName" : "日期",
+      "name" : "Date",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Enddatestats",
+      "logicName" : "结束统计",
+      "name" : "Enddatestats",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ENDDATESTATS",
+        "codeName" : "Enddatestats"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Month",
+      "logicName" : "月",
+      "name" : "Month",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MONTH",
+        "codeName" : "Month"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PM",
+      "logicName" : "项目负责人",
+      "name" : "PM",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PM",
+        "codeName" : "PM"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PROJECTWEEKLYId",
+      "logicName" : "项目周报标识",
+      "name" : "PROJECTWEEKLYId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "IBZPRO_PROJECTWEEKLYID",
+        "codeName" : "PROJECTWEEKLYId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "PROJECTWEEKLYName",
+      "logicName" : "项目周报名称",
+      "name" : "PROJECTWEEKLYName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "IBZPRO_PROJECTWEEKLYNAME",
+        "codeName" : "PROJECTWEEKLYName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Project",
+      "logicName" : "项目编号",
+      "name" : "Project",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ProjectName",
+      "logicName" : "项目名称",
+      "name" : "ProjectName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Tasks",
+      "logicName" : "任务",
+      "name" : "Tasks",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TASKS",
+        "codeName" : "Tasks"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Totalestimates",
+      "logicName" : "总工时",
+      "name" : "Totalestimates",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TOTALESTIMATES",
+        "codeName" : "Totalestimates"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateDate",
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Week",
+      "logicName" : "周",
+      "name" : "Week",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "WEEK",
+        "codeName" : "Week"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Year",
+      "logicName" : "年",
+      "name" : "Year",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "YEAR",
+        "codeName" : "Year"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "IbizproProjectWeeklyFilterDTO",
+    "name" : "IbizproProjectWeeklyFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_IBZPRO_PROJECTWEEKLYID_EQ",
+      "logicName" : "项目周报标识",
+      "name" : "N_IBZPRO_PROJECTWEEKLYID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "IBZPRO_PROJECTWEEKLYID",
+        "codeName" : "PROJECTWEEKLYId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_IBZPRO_PROJECTWEEKLYNAME_LIKE",
+      "logicName" : "项目周报名称",
+      "name" : "N_IBZPRO_PROJECTWEEKLYNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "IBZPRO_PROJECTWEEKLYNAME",
+        "codeName" : "PROJECTWEEKLYName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PM_EQ",
+      "logicName" : "项目负责人",
+      "name" : "N_PM_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PM",
+        "codeName" : "PM"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PROJECT_EQ",
+      "logicName" : "项目编号",
+      "name" : "N_PROJECT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBZPRO_PROJECTWEEKLYID",
+        "codeName" : "PROJECTWEEKLYId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "IBZPRO_PROJECTWEEKLYID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -227,6 +726,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZPRO_PROJECTWEEKLYID",
+        "codeName" : "PROJECTWEEKLYId"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -235,23 +748,92 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Summary",
     "methodType" : "DEACTION",
     "name" : "pushSumProjectWeekly",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/summary",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbizproProjectWeeklyDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -360,11 +942,19 @@
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectWeekly.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "IBZPRO_PROJECTWEEKLYID",
+    "codeName" : "PROJECTWEEKLYId"
+  },
   "logicName" : "项目周报",
   "getMainStatePSAppDEFields" : [ {
     "name" : "IBZPRO_PROJECTWEEKLYID",
     "codeName" : "PROJECTWEEKLYId"
   } ],
+  "getMajorPSAppDEField" : {
+    "name" : "IBZPRO_PROJECTWEEKLYNAME",
+    "codeName" : "PROJECTWEEKLYName"
+  },
   "name" : "IBZPRO_PROJECTWEEKLY",
   "getPSDEName" : "IBZPRO_PROJECTWEEKLY",
   "getQuickSearchPSAppDEFields" : [ {

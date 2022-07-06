@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "我的收藏（更多）",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -186,14 +186,14 @@
         "rawValue" : false
       } ],
       "getPSNavigateParams" : [ {
-        "key" : "lib",
-        "name" : "lib",
-        "value" : "lib",
-        "rawValue" : false
-      }, {
         "key" : "docqtype",
         "name" : "docqtype",
         "value" : "docqtype",
+        "rawValue" : false
+      }, {
+        "key" : "lib",
+        "name" : "lib",
+        "value" : "lib",
         "rawValue" : false
       } ],
       "timeout" : 60000,
@@ -450,10 +450,24 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
-    "name" : "module",
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "title",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "addedby",
+    "getPSAppDEField" : {
+      "name" : "ADDEDBY",
+      "codeName" : "AddedBy"
     }
   }, {
     "format" : "YYYY-MM-DD HH:mm:ss",
@@ -465,13 +479,18 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "editedby",
     "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
+      "name" : "EDITEDBY",
+      "codeName" : "EditedBy"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "editeddate",
+    "getPSAppDEField" : {
+      "name" : "EDITEDDATE",
+      "codeName" : "EditedDate"
     }
   }, {
     "dataType" : 1,
@@ -479,6 +498,20 @@
     "getPSAppDEField" : {
       "name" : "DOCSN",
       "codeName" : "Docsn"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "docqtype",
+    "getPSAppDEField" : {
+      "name" : "DOCQTYPE",
+      "codeName" : "Docqtype"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "isfavourites",
+    "getPSAppDEField" : {
+      "name" : "ISFAVOURITES",
+      "codeName" : "Isfavourites"
     }
   }, {
     "dataType" : 1,
@@ -497,17 +530,10 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "product",
+    "name" : "lib",
     "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "LIB",
+      "codeName" : "Lib"
     }
   }, {
     "dataType" : 1,
@@ -517,55 +543,29 @@
       "codeName" : "Project"
     }
   }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "module",
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    }
+  }, {
     "dataType" : 25,
-    "name" : "title",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     }
   }, {
-    "dataType" : 1,
-    "name" : "lib",
-    "getPSAppDEField" : {
-      "name" : "LIB",
-      "codeName" : "Lib"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "addedby",
-    "getPSAppDEField" : {
-      "name" : "ADDEDBY",
-      "codeName" : "AddedBy"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "isfavourites",
-    "getPSAppDEField" : {
-      "name" : "ISFAVOURITES",
-      "codeName" : "Isfavourites"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "editedby",
-    "getPSAppDEField" : {
-      "name" : "EDITEDBY",
-      "codeName" : "EditedBy"
-    }
-  }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "dataType" : 5,
-    "name" : "editeddate",
-    "getPSAppDEField" : {
-      "name" : "EDITEDDATE",
-      "codeName" : "EditedDate"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "docqtype",
-    "getPSAppDEField" : {
-      "name" : "DOCQTYPE",
-      "codeName" : "Docqtype"
-    }
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "文档编号",

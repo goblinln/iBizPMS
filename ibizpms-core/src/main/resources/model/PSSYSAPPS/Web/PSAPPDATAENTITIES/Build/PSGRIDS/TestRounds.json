@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（轮次）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -176,6 +176,34 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "productname",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "scmpath",
+    "getPSAppDEField" : {
+      "name" : "SCMPATH",
+      "codeName" : "ScmPath"
+    }
+  }, {
     "dataType" : 25,
     "name" : "filepath",
     "getPSAppDEField" : {
@@ -190,13 +218,6 @@
       "codeName" : "Builder"
     }
   }, {
-    "dataType" : 1,
-    "name" : "buildsn",
-    "getPSAppDEField" : {
-      "name" : "BUILDSN",
-      "codeName" : "Buildsn"
-    }
-  }, {
     "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "date",
@@ -205,11 +226,18 @@
       "codeName" : "Date"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "buildsn",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "BUILDSN",
+      "codeName" : "Buildsn"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     }
   }, {
     "dataType" : 1,
@@ -228,17 +256,10 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "id",
+    "name" : "branch",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+      "name" : "BRANCH",
+      "codeName" : "Branch"
     }
   }, {
     "dataType" : 1,
@@ -249,31 +270,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "scmpath",
-    "getPSAppDEField" : {
-      "name" : "SCMPATH",
-      "codeName" : "ScmPath"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "name",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "branch",
-    "getPSAppDEField" : {
-      "name" : "BRANCH",
-      "codeName" : "Branch"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "productname",
-    "getPSAppDEField" : {
-      "name" : "PRODUCTNAME",
-      "codeName" : "ProductName"
     }
   } ],
   "getPSDEGridEditItems" : [ {

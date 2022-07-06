@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "指派给（移动端）",
   "getPSAppDataEntity" : {
     "modelref" : true,

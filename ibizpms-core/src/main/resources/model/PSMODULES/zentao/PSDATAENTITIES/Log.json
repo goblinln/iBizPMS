@@ -1203,12 +1203,12 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "PickupView",
+    "logicName" : "log实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "log实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView2",
     "logicName" : "log实体编辑视图（左右关系）",
@@ -1221,13 +1221,6 @@
     "modelTag" : "MPICKUPVIEW",
     "name" : "log实体数据多项选择视图",
     "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "log实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "log实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -1243,6 +1236,13 @@
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "GridView",
+    "logicName" : "log实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "log实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "RedirectView",
     "logicName" : "log实体数据重定向视图",
     "modelTag" : "REDIRECTVIEW",
@@ -1250,12 +1250,12 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupView",
-    "logicName" : "log实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "log实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "Log",
   "dEType" : 1,
@@ -1286,7 +1286,7 @@
   "name" : "ZT_LOG",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

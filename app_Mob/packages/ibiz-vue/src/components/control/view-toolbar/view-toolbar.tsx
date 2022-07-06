@@ -1,5 +1,5 @@
 import { Vue, Component, Prop, Watch, Emit } from 'vue-property-decorator';
-import { ToolbarItem } from 'ibiz-core/src/interface/ctrl/toolbarItem';
+import { ToolbarItem } from 'ibiz-core';
 import "./view-toolbar.less";
 import { AnimationService } from 'ibiz-core';
 
@@ -11,7 +11,7 @@ import { AnimationService } from 'ibiz-core';
  * @extends {Vue}
  */
 @Component({})
-export class ViewToolbar extends Vue {
+export class ViewToolbar extends Vue implements ToolbarItem{
 
     /**
      * 工具栏模型
@@ -74,7 +74,7 @@ export class ViewToolbar extends Vue {
      * @type {ToolbarItem[]}
      * @memberof ViewToolbar
      */
-    protected items: ToolbarItem[] = [];
+    public items: ToolbarItem[] = [];
 
     /**
      * 格式化工具栏模型
@@ -140,6 +140,7 @@ export class ViewToolbar extends Vue {
                 disabled={item.disabled}
                 class={item.class}
                 iconName={item?.getPSSysImage?.cssClass}
+                imagePath={item?.getPSSysImage?.imagePath}
                 on-click={(e: any) => [this.itemClick({ tag: item.name, item: item }, e), this.showGroup = false]} />
             {item.showCaption ? <span class='btn-out-text'>{item.caption}</span> : ''}
         </div>
@@ -203,8 +204,28 @@ export class ViewToolbar extends Vue {
                 </van-popup>
             </div>
             : this.items.map((item: any) => {
-                return item.visabled ? this.renderMenuItem(item) : null;
+                return item.visabled ? this.renderMenuItemOnlyOne(item) : null;
             }) : null
+    }
+
+    /**
+     * 只有一个按钮时
+     *
+     * @param {*} item
+     * @return {*} 
+     * @memberof ViewToolbar
+     */
+    public renderMenuItemOnlyOne(item:any){
+        return <div class='sub-item'  >
+            <app-mob-button
+                size="large"
+                disabled={item.disabled}
+                class={item.class}
+                text={item.showCaption ? item.caption:''}
+                iconName={item?.getPSSysImage?.cssClass}
+                imagePath={item?.getPSSysImage?.imagePath}
+                on-click={(e: any) => [this.itemClick({ tag: item.name, item: item }, e)]} />
+             </div>
     }
 
     /**

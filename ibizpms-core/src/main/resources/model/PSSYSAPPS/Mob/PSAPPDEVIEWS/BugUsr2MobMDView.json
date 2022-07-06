@@ -102,7 +102,7 @@
     "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realTitle" : "Bug移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -110,7 +110,7 @@
       "viewType" : "DEMOBEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realTitle" : "Bug移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -157,7 +157,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__status.json"
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "MOB_ReleaseLink_reBug",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -626,6 +626,11 @@
           "id" : "RELEASELINK"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "release",
+          "rawValue" : false
+        }, {
           "key" : "BUG",
           "name" : "BUG",
           "value" : "0",
@@ -635,30 +640,25 @@
           "name" : "PRODUCT",
           "value" : "product",
           "rawValue" : false
-        }, {
-          "key" : "SRFPARENTKEY",
-          "name" : "SRFPARENTKEY",
-          "value" : "release",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "product",
-          "name" : "product",
-          "value" : "product",
-          "rawValue" : false
-        }, {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
-          "value" : "release",
-          "rawValue" : false
-        }, {
           "key" : "bug",
           "name" : "bug",
           "value" : "0",
           "rawValue" : true
         }, {
+          "key" : "product",
+          "name" : "product",
+          "value" : "product",
+          "rawValue" : false
+        }, {
           "key" : "release",
           "name" : "release",
+          "value" : "release",
+          "rawValue" : false
+        }, {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
           "value" : "release",
           "rawValue" : false
         } ],

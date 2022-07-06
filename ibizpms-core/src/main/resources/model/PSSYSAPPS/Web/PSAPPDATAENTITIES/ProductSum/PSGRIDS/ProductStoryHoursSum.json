@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "产品需求工时汇总表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -263,25 +263,18 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 9,
-    "name" : "releasedstagestoryhours",
+    "dataType" : 25,
+    "name" : "name",
     "getPSAppDEField" : {
-      "name" : "RELEASEDSTAGESTORYHOURS",
-      "codeName" : "Releasedstagestoryhours"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   }, {
-    "dataType" : 9,
-    "name" : "totalhours",
+    "dataType" : 25,
+    "name" : "po",
     "getPSAppDEField" : {
-      "name" : "TOTALHOURS",
-      "codeName" : "Totalhours"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "developedstagestoryhours",
-    "getPSAppDEField" : {
-      "name" : "DEVELOPEDSTAGESTORYHOURS",
-      "codeName" : "Developedstagestoryhours"
+      "name" : "PO",
+      "codeName" : "PO"
     }
   }, {
     "dataType" : 9,
@@ -292,10 +285,31 @@
     }
   }, {
     "dataType" : 9,
-    "name" : "closedstagestoryhours",
+    "name" : "planedstagestoryhours",
     "getPSAppDEField" : {
-      "name" : "CLOSEDSTAGESTORYHOURS",
-      "codeName" : "Closedstagestoryhours"
+      "name" : "PLANEDSTAGESTORYHOURS",
+      "codeName" : "Planedstagestoryhours"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "projectedstagestoryhours",
+    "getPSAppDEField" : {
+      "name" : "PROJECTEDSTAGESTORYHOURS",
+      "codeName" : "Projectedstagestoryhours"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "developingstagestoryhours",
+    "getPSAppDEField" : {
+      "name" : "DEVELOPINGSTAGESTORYHOURS",
+      "codeName" : "Developingstagestoryhours"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "developedstagestoryhours",
+    "getPSAppDEField" : {
+      "name" : "DEVELOPEDSTAGESTORYHOURS",
+      "codeName" : "Developedstagestoryhours"
     }
   }, {
     "dataType" : 9,
@@ -319,11 +333,32 @@
       "codeName" : "Verifiedstagestoryhours"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 9,
+    "name" : "releasedstagestoryhours",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "RELEASEDSTAGESTORYHOURS",
+      "codeName" : "Releasedstagestoryhours"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "closedstagestoryhours",
+    "getPSAppDEField" : {
+      "name" : "CLOSEDSTAGESTORYHOURS",
+      "codeName" : "Closedstagestoryhours"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "totalhours",
+    "getPSAppDEField" : {
+      "name" : "TOTALHOURS",
+      "codeName" : "Totalhours"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -334,46 +369,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "projectedstagestoryhours",
-    "getPSAppDEField" : {
-      "name" : "PROJECTEDSTAGESTORYHOURS",
-      "codeName" : "Projectedstagestoryhours"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "developingstagestoryhours",
-    "getPSAppDEField" : {
-      "name" : "DEVELOPINGSTAGESTORYHOURS",
-      "codeName" : "Developingstagestoryhours"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "name",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "planedstagestoryhours",
-    "getPSAppDEField" : {
-      "name" : "PLANEDSTAGESTORYHOURS",
-      "codeName" : "Planedstagestoryhours"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "po",
-    "getPSAppDEField" : {
-      "name" : "PO",
-      "codeName" : "PO"
     }
   } ],
   "getPSDEGridEditItems" : [ {

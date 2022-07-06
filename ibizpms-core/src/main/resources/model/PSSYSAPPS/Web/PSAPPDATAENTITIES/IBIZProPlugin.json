@@ -35,24 +35,98 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/checkkey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBIZPRO_PLUGINID",
+        "codeName" : "IBIZProPluginId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "IBIZPRO_PLUGINID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -60,25 +134,96 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBIZPRO_PLUGINID",
+        "codeName" : "IBIZProPluginId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "IBIZPRO_PLUGINID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/save",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -165,29 +310,325 @@
     "name" : "COMMENTCOUNT",
     "stdDataType" : 9
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "IBIZProPluginDTO",
+    "name" : "IBIZProPluginDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "Commentcount",
+      "logicName" : "总评论数",
+      "name" : "Commentcount",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "COMMENTCOUNT",
+        "codeName" : "Commentcount"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreateDate",
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "CreateMan",
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Downloadcount",
+      "logicName" : "总下载量",
+      "name" : "Downloadcount",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DOWNLOADCOUNT",
+        "codeName" : "Downloadcount"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Downloadurl",
+      "logicName" : "最新版本下载地址",
+      "name" : "Downloadurl",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DOWNLOADURL",
+        "codeName" : "Downloadurl"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "IBIZProPluginId",
+      "logicName" : "系统插件标识",
+      "name" : "IBIZProPluginId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "IBIZPRO_PLUGINID",
+        "codeName" : "IBIZProPluginId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "IBIZProPluginName",
+      "logicName" : "系统插件名称",
+      "name" : "IBIZProPluginName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "IBIZPRO_PLUGINNAME",
+        "codeName" : "IBIZProPluginName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Keyword",
+      "logicName" : "关键字",
+      "name" : "Keyword",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "KEYWORD",
+        "codeName" : "Keyword"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Score",
+      "logicName" : "总评分",
+      "name" : "Score",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SCORE",
+        "codeName" : "Score"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Tag",
+      "logicName" : "标签",
+      "name" : "Tag",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TAG",
+        "codeName" : "Tag"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Type",
+      "logicName" : "类型",
+      "name" : "Type",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateDate",
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Version",
+      "logicName" : "版本",
+      "name" : "Version",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "VERSION",
+        "codeName" : "Version"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "IBIZProPluginFilterDTO",
+    "name" : "IBIZProPluginFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_IBIZPRO_PLUGINID_EQ",
+      "logicName" : "系统插件标识",
+      "name" : "N_IBIZPRO_PLUGINID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "IBIZPRO_PLUGINID",
+        "codeName" : "IBIZProPluginId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_IBIZPRO_PLUGINNAME_LIKE",
+      "logicName" : "系统插件名称",
+      "name" : "N_IBIZPRO_PLUGINNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "IBIZPRO_PLUGINNAME",
+        "codeName" : "IBIZProPluginName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TYPE_EQ",
+      "logicName" : "类型",
+      "name" : "N_TYPE_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/checkkey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBIZPRO_PLUGINID",
+        "codeName" : "IBIZProPluginId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "IBIZPRO_PLUGINID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -195,24 +636,95 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBIZPRO_PLUGINID",
+        "codeName" : "IBIZProPluginId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "IBIZPRO_PLUGINID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/save",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IBIZProPluginDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -253,6 +765,17 @@
     "codeName" : "Select",
     "methodType" : "SELECT",
     "name" : "Select",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "type" : "UNKNOWN"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "UNKNOWN"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "URIPARAM",
+    "requestPath" : "/select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -274,7 +797,15 @@
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "IBIZPRO_PLUGINID",
+    "codeName" : "IBIZProPluginId"
+  },
   "logicName" : "系统插件",
+  "getMajorPSAppDEField" : {
+    "name" : "IBIZPRO_PLUGINNAME",
+    "codeName" : "IBIZProPluginName"
+  },
   "name" : "IBIZPRO_PLUGIN",
   "getPSDEName" : "IBIZPRO_PLUGIN",
   "getQuickSearchPSAppDEFields" : [ {

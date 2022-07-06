@@ -1240,43 +1240,11 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "TabExpView",
-    "logicName" : "收藏实体分页导航视图",
-    "name" : "收藏实体分页导航视图",
-    "realModelSubType" : "DETABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "RedirectView",
     "logicName" : "收藏实体数据重定向视图",
     "modelTag" : "REDIRECTVIEW",
     "name" : "收藏实体数据重定向视图",
     "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "收藏实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "收藏实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "收藏实体选择表格视图（部件视图）",
-    "name" : "收藏实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "收藏实体编辑视图（左右关系）",
-    "name" : "收藏实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "收藏实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "收藏实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MPickupView",
@@ -1286,12 +1254,11 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "EditView2",
+    "logicName" : "收藏实体编辑视图（左右关系）",
+    "name" : "收藏实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
     "logicName" : "收藏实体表格视图",
@@ -1300,11 +1267,44 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "EditView",
+    "logicName" : "收藏实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "收藏实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "收藏实体选择表格视图（部件视图）",
+    "name" : "收藏实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "MobTabExpView",
     "logicName" : "收藏实体移动端分页导航视图",
     "name" : "收藏实体移动端分页导航视图",
     "realModelSubType" : "DEMOBTABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TabExpView",
+    "logicName" : "收藏实体分页导航视图",
+    "name" : "收藏实体分页导航视图",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "收藏实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "收藏实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "IbzFavorites",
   "dEType" : 1,
@@ -1335,7 +1335,7 @@
   "name" : "IBZ_FAVORITES",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

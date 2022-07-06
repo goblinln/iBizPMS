@@ -20,7 +20,7 @@
     "name" : "PROJECTNAME",
     "codeName" : "ProjectName"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
   "getItemPSLayoutPanel" : {
     "getAllPSPanelFields" : [ {
       "id" : "pri",

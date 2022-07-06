@@ -14,10 +14,6 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec.json"
   },
   "name" : "DER1N_ZT_STORYSPEC_ZT_STORY_STORY",
-  "getNestedPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "Default"
-  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "STORY",

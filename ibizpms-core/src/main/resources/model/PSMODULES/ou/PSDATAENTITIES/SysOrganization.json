@@ -1486,18 +1486,10 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "RedirectView",
-    "logicName" : "单位实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "单位实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "单位实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "单位实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "单位实体编辑视图（左右关系）",
+    "name" : "单位实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -1507,20 +1499,6 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "单位实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "单位实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "EditView",
     "logicName" : "单位实体编辑视图",
     "modelTag" : "EDITVIEW",
@@ -1528,16 +1506,17 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "单位实体编辑视图（左右关系）",
-    "name" : "单位实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "RedirectView",
+    "logicName" : "单位实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "单位实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridExpView",
-    "logicName" : "单位实体表格导航视图(通讯录-组织机构下)",
-    "name" : "单位实体表格导航视图(通讯录-组织机构下)",
-    "realModelSubType" : "DEGRIDEXPVIEW",
+    "codeName" : "Usr2GridView",
+    "logicName" : "单位实体表格视图(通讯录所有组织)",
+    "name" : "单位实体表格视图(通讯录所有组织)",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupGridView",
@@ -1546,11 +1525,32 @@
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Usr2GridView",
-    "logicName" : "单位实体表格视图(通讯录所有组织)",
-    "name" : "单位实体表格视图(通讯录所有组织)",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "MPickupView",
+    "logicName" : "单位实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "单位实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridExpView",
+    "logicName" : "单位实体表格导航视图(通讯录-组织机构下)",
+    "name" : "单位实体表格导航视图(通讯录-组织机构下)",
+    "realModelSubType" : "DEGRIDEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "单位实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "单位实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "SysOrganization",
   "dEType" : 1,
@@ -1627,10 +1627,6 @@
       "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
     },
     "name" : "DER1N_SYS_DEPT_SYS_ORG_ORGID",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "ORGID",
@@ -1711,7 +1707,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

@@ -1,5 +1,5 @@
 import { IPSAppDEField, IPSAppDEView, IPSAppView, IPSDEMultiEditViewPanel } from '@ibiz/dynamic-model-api';
-import { Util, ViewTool, ViewState, ModelTool } from 'ibiz-core';
+import { Util, ViewTool, ViewState, ModelTool, MobMEditViewPanelControlInterface } from 'ibiz-core';
 import { Subject } from 'rxjs';
 import { AppMobMEditViewPanelService } from '../ctrl-service';
 import { MDControlBase } from './md-control-base';
@@ -11,7 +11,7 @@ import { MDControlBase } from './md-control-base';
  * @class GridControlBase
  * @extends {MDControlBase}
  */
-export class MobMeditViewPanelControlBase extends MDControlBase {
+export class MobMeditViewPanelControlBase extends MDControlBase implements MobMEditViewPanelControlInterface{
 
 
     /**
@@ -267,7 +267,8 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
     }
 
     /**
-     * deleteItem
+     * 删除数据
+     * @memberof MobMeditViewPanelControlBase
      */
     public deleteItem(item: any) {
         if (this.appDeCodeName) {

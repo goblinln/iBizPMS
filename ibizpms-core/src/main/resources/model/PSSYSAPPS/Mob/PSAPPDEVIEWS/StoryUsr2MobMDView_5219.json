@@ -90,13 +90,13 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "PLAN",
-    "name" : "PLAN",
+    "key" : "N_PLAN_EQ",
+    "name" : "N_PLAN_EQ",
     "value" : "productplan",
     "rawValue" : false
   }, {
-    "key" : "N_PLAN_EQ",
-    "name" : "N_PLAN_EQ",
+    "key" : "PLAN",
+    "name" : "PLAN",
     "value" : "productplan",
     "rawValue" : false
   } ],
@@ -159,7 +159,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "Mob_ProductPlan_Story",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -403,13 +403,13 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
           },
           "getPSNavigateParams" : [ {
-            "key" : "srfparentkey",
-            "name" : "srfparentkey",
+            "key" : "productplan",
+            "name" : "productplan",
             "value" : "productplan",
             "rawValue" : false
           }, {
-            "key" : "productplan",
-            "name" : "productplan",
+            "key" : "srfparentkey",
+            "name" : "srfparentkey",
             "value" : "productplan",
             "rawValue" : false
           } ],
@@ -514,15 +514,15 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
         },
         "getPSNavigateContexts" : [ {
-          "key" : "PRODUCTPLAN",
-          "name" : "PRODUCTPLAN",
-          "value" : "productplan",
-          "rawValue" : false
-        }, {
           "key" : "STORY",
           "name" : "STORY",
           "value" : "0",
           "rawValue" : true
+        }, {
+          "key" : "PRODUCTPLAN",
+          "name" : "PRODUCTPLAN",
+          "value" : "productplan",
+          "rawValue" : false
         }, {
           "key" : "PRODUCT",
           "name" : "PRODUCT",

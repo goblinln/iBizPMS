@@ -1,64 +1,88 @@
 <template>
-  <div class="app-mob-org-select">
-  <ion-input :disabled="disabled" :value="data[fillMap.label]"  readonly @click="openView">
-      <svg t="1608543874255" class="icon" viewBox="0 0 1165 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2970" width="200" height="200"><path d="M1107.30913719 909.45959375l-186.86323313-145.37686875a479.97811781 479.97811781 0 1 0-69.42107062 87.6783975q13.80107531-13.80107531 26.30518125-28.51668l185.08405875 143.96350594a36.58116281 36.58116281 0 1 0 44.89506375-57.73172719z m-594.79308657 9.37807969c-223.66055812 0-405.63521719-181.95803156-405.63521718-405.63521719S288.80560906 107.56723906 512.46616719 107.56723906 918.10138437 289.59178156 918.10138437 513.20245625 736.14335281 918.83767344 512.46616719 918.83767344z" fill="#474747" p-id="2971"></path></svg>  
-    </ion-input>
+  <div class="app-mob-org-select" @click="openView">
+      <div class="form-value-content select-value-content">{{visibleLabel}}</div><van-icon class="app-mob-select-vant-icon" name="arrow" />
   </div>
 </template>
 <script lang = 'ts'>
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-import { CodeListServiceBase } from "ibiz-core";
-import { observable } from 'rxjs';
+import { CodeListService } from "ibiz-service";
+import qs from "qs";
+import { Util } from "ibiz-core";
 @Component({})
 export default class AppMobOrgSelect extends Vue {
   /**
    * 表单数据
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   @Prop() public data!:any;
 
   /**
    * 上下文
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   @Prop() public context!:any;
 
   /**
+   * 视图参数
+   * 
+   * @type {*}
+   * @memberof AppOrgSelect
+   */
+  @Prop()
+  public viewparams!: any;
+
+  /**
+   * 局部上下文导航参数
+   * 
+   * @type {any}
+   * @memberof AppOrgSelect
+   */
+  @Prop() public localContext!:any;
+
+  /**
+   * 局部导航参数
+   * 
+   * @type {any}
+   * @memberof AppOrgSelect
+   */
+  @Prop() public localParam!:any;
+
+  /**
    * 填充对象
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   @Prop() public fillMap:any;
 
   /**
    * 过滤项
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   @Prop() public filter?:string;
 
   /**
    * 代码表标识
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   @Prop() public tag?:string;
 
   /**
    * 代码表类型
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   @Prop() public codelistType?:string;
 
   /**
    * 是否多选
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
-  @Prop({default:false}) public multiple?:boolean;
+  @Prop({default:false}) public multiple?:boolean ;
 
   /**
    * 是否禁用
@@ -69,127 +93,75 @@ export default class AppMobOrgSelect extends Vue {
   @Prop({default:false}) public disabled?: boolean;
 
   /**
+   * 只读模式
+   * 
+   * @type {boolean}
+   */
+  @Prop({default: false}) public readonly?: boolean;
+
+  /**
    * 查询单位路径
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   @Prop() public url!:string;
 
   /**
+   * 请求方式
+   *
+   * @type {stinr}
+   * @memberof AppOrgSelect
+   */ 
+  @Prop({ default: 'get'})
+  public requestMode!: 'get' | 'post' | 'delete' | 'put';
+
+  /**
    * 监听表单数据变化
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   @Watch('data',{immediate:true,deep:true})
   onDataChange(newVal: any, oldVal: any) {
     if(newVal){
       this.computedSelectedData();
-      if(this.filter){
-        let tempFilterValue:any = this.initBasicData();
-        // filter值变化才去请求数据
-        if(tempFilterValue && (this.copyFilterValue !== tempFilterValue)){
-          this.loadTreeData(this.url.replace('${orgid}',tempFilterValue));
-          this.copyFilterValue = tempFilterValue;
-        }
-      }
+      this.computeUrlParams()
     }
   }
 
   /**
    * 选择值
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   public selectTreeValue:any = "";
 
   /**
    * 树节点数据
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   public nodesData:any = [];
 
   /**
-     * 选中项集合
-     *
-     * @type {*}
-     * @memberof AppMobGroupSelect
-     */  
-    protected selects: any[] = [];
-
-  /**
-   * 备份过滤值
+   * 备份请求
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
-  public copyFilterValue:any;
+  public copyActualUrl:any;
 
   /**
    * vue生命周期
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   public created(){
-    if(!this.filter){
-      this.loadTreeData(this.url);
-    }
+    this.computeUrlParams();
   }
-
-   /**
-     * 单选时选中名称
-     *
-     * @type {*}
-     * @memberof AppMobGroupSelect
-     */  
-    get selectName() {
-        if(this.selects.length > 0) {
-            return this.selects[0].label;
-        }
-    }
-
-  /**
-     * 打开选择视图
-     *
-     * @type {*}
-     * @memberof AppMobGroupSelect
-     */  
-    public async openView() {
-        const view: any = {
-            viewname: 'app-tree',
-            title: (this.$t('components.AppMobOrgSelect.orgSelect') as string)
-        };
-        const context: any = JSON.parse(JSON.stringify(this.context));
-        const param: any = {};
-        Object.assign(param, {
-            selectTreeValue: this.selectTreeValue,
-          multiple: this.multiple,
-          nodesData: this.nodesData
-        });
-        this.$appmodal.openModal(view, context,param).then((result:any)=>{
-          this.viewClose(result);
-        });
-        
-    }
-
-    /**
-     * 选择视图关闭
-     *
-     * @type {*}
-     * @memberof AppMobGroupSelect
-     */  
-    public viewClose(result: any) {
-        let treeValue:any[] = [];
-        result.datas.forEach((item:any) => {
-          treeValue.push(item.label);
-        });
-        let stringVal:string = treeValue.join(',');
-        this.$emit("select-change",{name: this.fillMap.label, value:stringVal});
-    }
 
   /**
    * 加载树数据
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   public initBasicData(){
     // 计算出过滤值
@@ -205,9 +177,33 @@ export default class AppMobOrgSelect extends Vue {
   }
 
   /**
+   * 显示文本
+   * 
+   * @memberof AppOrgSelect
+   */
+  get visibleLabel(){
+    if(this.selectTreeValue){
+      const value = JSON.parse(this.selectTreeValue);
+      if(value.length > 0){
+        let text = '';
+        value.forEach((item:any)=>{
+          if(item.label){
+            text = text?text+','+item.label:text+item.label;
+          }
+        })
+        return text;
+      }else{
+        return  '';
+      }
+    }else{
+      return '';
+    }
+  }
+
+  /**
    * 计算选中值
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   public computedSelectedData(){
     // 单选
@@ -272,37 +268,83 @@ export default class AppMobOrgSelect extends Vue {
   }
 
   /**
+   * 计算URL参数
+   * 
+   * @memberof AppOrgSelect
+   */
+  public computeUrlParams(){
+    let requestUrl = this.url;
+    if(this.filter){
+        let tempFilterValue:any = this.initBasicData();
+        if(tempFilterValue){
+          requestUrl = this.url.replace('${orgid}',tempFilterValue);
+        }
+    }
+    // 参数处理
+    let data: any = {};
+    this.handlePublicParams(data);
+    let context = data.context;
+    let viewparam = data.param;
+    this.loadTreeData(requestUrl, viewparam);
+  }
+
+  /**
    * 加载树数据
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
-  public loadTreeData(requestUrl:string){
+  public loadTreeData(requestUrl:string, params = {}){
+    // 最终请求路径，作为缓存的key值
+    let tempActualUrl: string = requestUrl + "?"+ qs.stringify(params);
+    if(!requestUrl || (this.copyActualUrl == tempActualUrl)){
+      return;
+    }
+    this.copyActualUrl = tempActualUrl;
+
+    // 全局缓存
     if(this.filter){
-      const result:any = this.$store.getters.getOrgData(this.filter);
+      const result:any = this.$store.getters.getOrgData(tempActualUrl);
       if(result){
         this.nodesData = result;
         return;
       }
     }
-    this.$http.get(requestUrl).then((res:any) =>{
+    this.$http[this.requestMode](requestUrl, params).then((res:any) =>{
       if(!res.status && res.status !== 200){
-        console.error((this.$t('components.AppMobOrgSelect.loadFail') as string));
+        // this.$throw((this.$t('components.apporgselect.loadfail') as string),'loadTreeData');
         return;
       }
-      this.nodesData = res.data;
+      const data  = this.parseData(res.data);
+      this.nodesData = data;
+      // 全局缓存
       if(this.filter){
-        this.$store.commit('addOrgData', { srfkey: this.filter, orgData: res.data });
+        this.$store.commit('addOrgData', { srfkey: tempActualUrl, orgData: data });
       }
     })
   }
 
   /**
-   * 树选择触发事件
+   * 解析数据
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
-  public treeSelectChange($event:any){
-    // 多选
+  public parseData(data:any){
+    if(this.fillMap && Object.keys(this.fillMap).length >0){
+      Object.keys(this.fillMap).forEach((key:any) =>{
+           data.forEach((_item:any)=>{
+            _item[key] = _item[this.fillMap[key]];
+          })
+      })
+    }
+    return data;
+  }
+
+  /**
+   * 选择触发事件
+   * 
+   * @memberof AppOrgSelect
+   */
+  public selectChange($event:any){
     if(this.multiple){
       if(!Object.is($event,'[]')){
         const tempValue:any = JSON.parse($event);
@@ -348,7 +390,7 @@ export default class AppMobOrgSelect extends Vue {
   /**
    * 抛值
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   public emitValue(name:string,value:any){
     this.$emit('select-change',{name:name,value:value});
@@ -357,11 +399,11 @@ export default class AppMobOrgSelect extends Vue {
   /**
    * 填充label
    * 
-   * @memberof AppMobOrgSelect
+   * @memberof AppOrgSelect
    */
   public fillLabel(tempObject:any,valueItem:any,callback:any){
     if(!tempObject.label && tempObject.id && this.tag && this.codelistType && Object.is(this.codelistType,"DYNAMIC")){
-      let codeListService:CodeListServiceBase = new CodeListServiceBase();
+      let codeListService:CodeListService = new CodeListService();
       codeListService.getItems(this.tag).then((items:any) =>{
         if(items && items.length >0){
           let result:any = items.find((item:any) =>{
@@ -371,10 +413,81 @@ export default class AppMobOrgSelect extends Vue {
         }
         callback(tempObject);
       }).catch((error:any) =>{
-        console.log(error);
       })
     }
   }
+  
+  /**
+   * 公共参数处理
+   *
+   * @param {*} arg
+   * @returns
+   * @memberof AppOrgSelect
+   */
+  public handlePublicParams(arg: any) {
+      // 合并表单参数
+      arg.param = this.viewparams ? JSON.parse(JSON.stringify(this.viewparams)) : {};
+      arg.context = this.context ? JSON.parse(JSON.stringify(this.context)) : {};
+      // 附加参数处理
+      if (this.localContext && Object.keys(this.localContext).length >0) {
+          let _context = this.$util.computedNavData(this.data,arg.context,arg.param,this.localContext);
+          Object.assign(arg.context,_context);
+      }
+      if (this.localParam && Object.keys(this.localParam).length >0) {
+          let _param = this.$util.computedNavData(this.data,arg.param,arg.param,this.localParam);
+          Object.assign(arg.param,_param);
+      }
+  }
+
+  /**
+   * 项点击
+   *
+   * @type {*}
+   * @memberof AppCommonMicrocom
+   */
+  itemClick(item:any){
+    const isCheck = !item.check;
+    if(!this.multiple){
+      this.nodesData.forEach((_item:any) => {
+        if(item.id != _item.id){
+          _item.check = false; 
+        }else{
+          _item.check = isCheck;
+        }
+      });
+    }else{
+      item.check = isCheck;
+    }
+    this.selectChange(item);
+    this.$forceUpdate();
+  }
+
+    /**
+     * 打开选择视图
+     *
+     * @type {*}
+     * @memberof AppMobGroupSelect
+     */  
+    public async openView() {
+        const view: any = {
+            viewname: 'app-tree',
+            title: (this.$t('components.AppMobOrgSelect.orgSelect') as string)
+        };
+        const context: any = JSON.parse(JSON.stringify(this.context));
+        const param: any = {};
+        Object.assign(param, {
+            selectTreeValue: this.selectTreeValue,
+            multiple: this.multiple,
+            nodesData: this.nodesData
+        });
+        this.$appmodal.openModal(view, context,param).then((result:any)=>{
+          if(result.ret != "OK"){
+            return;
+          }
+          this.selectChange(JSON.stringify(result.datas));
+        });
+        
+    }
 
 }
 </script>

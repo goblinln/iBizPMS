@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（嵌入需求相关无分页）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -77,28 +77,25 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "module",
+    "dataType" : 9,
+    "name" : "pri",
     "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "frombug",
-    "getPSAppDEField" : {
-      "name" : "FROMBUG",
-      "codeName" : "FromBug"
+      "name" : "PRI",
+      "codeName" : "Pri"
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -117,48 +114,6 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "story",
-    "getPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "pri",
-    "getPSAppDEField" : {
-      "name" : "PRI",
-      "codeName" : "Pri"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "title",
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "lib",
-    "getPSAppDEField" : {
-      "name" : "LIB",
-      "codeName" : "Lib"
-    }
-  }, {
-    "dataType" : 1,
     "name" : "fromcaseid",
     "getPSAppDEField" : {
       "name" : "FROMCASEID",
@@ -171,6 +126,51 @@
       "name" : "BRANCH",
       "codeName" : "Branch"
     }
+  }, {
+    "dataType" : 1,
+    "name" : "frombug",
+    "getPSAppDEField" : {
+      "name" : "FROMBUG",
+      "codeName" : "FromBug"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "story",
+    "getPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "lib",
+    "getPSAppDEField" : {
+      "name" : "LIB",
+      "codeName" : "Lib"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "module",
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "用例编号",

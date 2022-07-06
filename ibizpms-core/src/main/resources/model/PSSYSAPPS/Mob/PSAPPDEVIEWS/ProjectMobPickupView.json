@@ -60,7 +60,7 @@
           "id" : "load"
         },
         "groupMode" : "NONE",
-        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+        "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
         "logicName" : "MOB",
         "mobListStyle" : "LISTVIEW",
         "getPSAppDataEntity" : {
@@ -191,32 +191,6 @@
           "id" : "MDCTRL"
         },
         "getPSControls" : [ {
-          "codeName" : "MobPickupMDViewmdctrl_batchtoolbar",
-          "controlType" : "TOOLBAR",
-          "hookEventNames" : [ "CLICK" ],
-          "logicName" : "移动端多数据批操工具栏",
-          "name" : "mdctrl_batchtoolbar",
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
-          },
-          "getPSControlLogics" : [ {
-            "eventArg" : "deuiaction1",
-            "eventNames" : "CLICK",
-            "logicTag" : "mdctrl_batchtoolbar",
-            "logicType" : "APPVIEWLOGIC",
-            "name" : "mdctrl_batchtoolbar_deuiaction1_click",
-            "getPSAppViewLogic" : {
-              "modelref" : true,
-              "id" : "mdctrl_batchtoolbar_deuiaction1_click"
-            }
-          } ],
-          "getPSControlParam" : {
-            "id" : "mdctrl_batchtoolbar"
-          },
-          "modelid" : "dc72839424ae81886458969764aad35c",
-          "modeltype" : "PSDETOOLBAR"
-        }, {
           "codeName" : "MobPickupMDViewmdctrl_quicktoolbar",
           "controlType" : "TOOLBAR",
           "hookEventNames" : [ "CLICK" ],
@@ -241,6 +215,32 @@
             "id" : "mdctrl_quicktoolbar"
           },
           "modelid" : "b5f265a97376e60ddeef17447557883a",
+          "modeltype" : "PSDETOOLBAR"
+        }, {
+          "codeName" : "MobPickupMDViewmdctrl_batchtoolbar",
+          "controlType" : "TOOLBAR",
+          "hookEventNames" : [ "CLICK" ],
+          "logicName" : "移动端多数据批操工具栏",
+          "name" : "mdctrl_batchtoolbar",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSControlLogics" : [ {
+            "eventArg" : "deuiaction1",
+            "eventNames" : "CLICK",
+            "logicTag" : "mdctrl_batchtoolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "mdctrl_batchtoolbar_deuiaction1_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "mdctrl_batchtoolbar_deuiaction1_click"
+            }
+          } ],
+          "getPSControlParam" : {
+            "id" : "mdctrl_batchtoolbar"
+          },
+          "modelid" : "dc72839424ae81886458969764aad35c",
           "modeltype" : "PSDETOOLBAR"
         } ],
         "getPSDEListDataItems" : [ {

@@ -96,117 +96,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "AddEstimateGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "表格界面（行编辑无开关）",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_click"
-      }
-    }, {
-      "eventArg" : "deuiaction3",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction3_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction3_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "caption" : "新建行",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf067@FontAwesome",
-        "cssClass" : "fa fa-plus"
-      },
-      "getPSUIAction" : {
-        "caption" : "新建行",
-        "codeName" : "NewRow",
-        "dataAccessAction" : "CREATE",
-        "fullCodeName" : "NewRow",
-        "name" : "表格界面_新建行",
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "CREATE"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf067@FontAwesome",
-          "cssClass" : "fa fa-plus"
-        },
-        "predefinedType" : "GRIDVIEW_NEWROWACTION",
-        "timeout" : 60000,
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "NewRow",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "新建行",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "caption" : "保存行",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction3",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction3"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0c7@FontAwesome",
-        "cssClass" : "fa fa-save"
-      },
-      "getPSUIAction" : {
-        "caption" : "保存行",
-        "codeName" : "SaveRow",
-        "dataAccessAction" : "CREATE",
-        "fullCodeName" : "SaveRow",
-        "name" : "表格界面_保存行",
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "CREATE"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf0c7@FontAwesome",
-          "cssClass" : "fa fa-save"
-        },
-        "predefinedType" : "GRIDVIEW_SAVEROWACTION",
-        "timeout" : 60000,
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "SaveRow",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "保存行",
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "RecordEstimate",
     "columnEnableLink" : 2,
@@ -259,7 +148,7 @@
       }
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "记录工时（行编辑）",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -437,18 +326,12 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "id",
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "date",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 21,
-      "name" : "work",
-      "getPSAppDEField" : {
-        "name" : "WORK",
-        "codeName" : "Work"
+        "name" : "DATE",
+        "codeName" : "Date"
       }
     }, {
       "dataType" : 7,
@@ -456,6 +339,20 @@
       "getPSAppDEField" : {
         "name" : "CONSUMED",
         "codeName" : "Consumed"
+      }
+    }, {
+      "dataType" : 7,
+      "name" : "left",
+      "getPSAppDEField" : {
+        "name" : "LEFT",
+        "codeName" : "Left"
+      }
+    }, {
+      "dataType" : 21,
+      "name" : "work",
+      "getPSAppDEField" : {
+        "name" : "WORK",
+        "codeName" : "Work"
       }
     }, {
       "dataType" : 1,
@@ -472,23 +369,15 @@
         "codeName" : "Account"
       }
     }, {
-      "dataType" : 7,
-      "name" : "left",
+      "dataType" : 1,
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "LEFT",
-        "codeName" : "Left"
-      }
-    }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "date",
-      "getPSAppDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
-      "name" : "srfmajortext",
+      "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
@@ -503,25 +392,61 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       }
     } ],
     "getPSDEGridEditItems" : [ {
-      "caption" : "编号",
-      "codeName" : "id",
-      "enableCond" : 0,
+      "caption" : "日期",
+      "codeName" : "date",
+      "enableCond" : 3,
       "ignoreInput" : 0,
-      "name" : "id",
+      "name" : "date",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "DATE",
+        "codeName" : "Date"
       },
       "getPSEditor" : {
-        "editorType" : "TEXTBOX",
-        "name" : "id"
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "date"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "总计消耗",
+      "codeName" : "consumed",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "consumed",
+      "getPSAppDEField" : {
+        "name" : "CONSUMED",
+        "codeName" : "Consumed"
+      },
+      "getPSEditor" : {
+        "editorType" : "NUMBER",
+        "name" : "consumed",
+        "precision" : 2
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "预计剩余",
+      "codeName" : "left",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "left",
+      "getPSAppDEField" : {
+        "name" : "LEFT",
+        "codeName" : "Left"
+      },
+      "getPSEditor" : {
+        "editorType" : "NUMBER",
+        "name" : "left",
+        "precision" : 2
       },
       "allowEmpty" : true
     }, {
@@ -539,22 +464,6 @@
         "maxLength" : 65535,
         "name" : "work",
         "showMaxLength" : true
-      },
-      "allowEmpty" : true
-    }, {
-      "caption" : "总计消耗",
-      "codeName" : "consumed",
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "name" : "consumed",
-      "getPSAppDEField" : {
-        "name" : "CONSUMED",
-        "codeName" : "Consumed"
-      },
-      "getPSEditor" : {
-        "editorType" : "NUMBER",
-        "name" : "consumed",
-        "precision" : 2
       },
       "allowEmpty" : true
     }, {
@@ -589,38 +498,18 @@
       },
       "allowEmpty" : true
     }, {
-      "caption" : "预计剩余",
-      "codeName" : "left",
-      "enableCond" : 3,
+      "caption" : "编号",
+      "codeName" : "id",
+      "enableCond" : 0,
       "ignoreInput" : 0,
-      "name" : "left",
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "LEFT",
-        "codeName" : "Left"
+        "name" : "ID",
+        "codeName" : "Id"
       },
       "getPSEditor" : {
-        "editorType" : "NUMBER",
-        "name" : "left",
-        "precision" : 2
-      },
-      "allowEmpty" : true
-    }, {
-      "caption" : "日期",
-      "codeName" : "date",
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "name" : "date",
-      "getPSAppDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
-      },
-      "getPSEditor" : {
-        "dateTimeFormat" : "YYYY-MM-DD",
-        "editorParams" : {
-          "TIMEFMT" : "YYYY-MM-DD"
-        },
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "name" : "date"
+        "editorType" : "TEXTBOX",
+        "name" : "id"
       },
       "allowEmpty" : true
     }, {
@@ -684,6 +573,117 @@
     "name" : "grid",
     "modelid" : "0b67cd1e0ddbe82328570945ff622941",
     "modeltype" : "PSDEGRID"
+  }, {
+    "codeName" : "AddEstimateGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "表格界面（行编辑无开关）",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "新建行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "caption" : "新建行",
+        "codeName" : "NewRow",
+        "dataAccessAction" : "CREATE",
+        "fullCodeName" : "NewRow",
+        "name" : "表格界面_新建行",
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CREATE"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
+        },
+        "predefinedType" : "GRIDVIEW_NEWROWACTION",
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "NewRow",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "新建行",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "保存行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction3",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0c7@FontAwesome",
+        "cssClass" : "fa fa-save"
+      },
+      "getPSUIAction" : {
+        "caption" : "保存行",
+        "codeName" : "SaveRow",
+        "dataAccessAction" : "CREATE",
+        "fullCodeName" : "SaveRow",
+        "name" : "表格界面_保存行",
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CREATE"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0c7@FontAwesome",
+          "cssClass" : "fa fa-save"
+        },
+        "predefinedType" : "GRIDVIEW_SAVEROWACTION",
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "SaveRow",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "保存行",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "AddEstimateGridView",
   "getPSDEViewId" : "6ff434380b07f779600bb9079ef8c74f",
@@ -777,7 +777,8 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Tasks",
@@ -822,6 +823,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   } ] ]
 }

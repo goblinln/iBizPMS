@@ -294,6 +294,7 @@
           "condOp" : "NOTEQ",
           "condType" : "SINGLE",
           "condValue" : "0",
+          "fieldName" : "PLAN",
           "name" : "PLAN 不等于(<>) (0)",
           "getPSDEField" : {
             "name" : "PLAN",
@@ -3764,36 +3765,17 @@
     "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "projectproduct实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "projectproduct实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
+    "codeName" : "PickupView",
+    "logicName" : "projectproduct实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "projectproduct实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProductGridView9",
-    "logicName" : "项目产品实体表格视图（部件视图）（关联产品）",
-    "name" : "项目产品实体表格视图（部件视图）（关联产品）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "PickupGridView",
     "logicName" : "projectproduct实体选择表格视图（部件视图）",
     "name" : "projectproduct实体选择表格视图（部件视图）",
     "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ListView9",
-    "logicName" : "项目产品实体列表视图（部件视图）",
-    "name" : "项目产品实体列表视图（部件视图）",
-    "realModelSubType" : "DELISTVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MPickupView",
@@ -3803,17 +3785,11 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupView",
-    "logicName" : "projectproduct实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "projectproduct实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "projectproduct实体编辑视图（左右关系）",
-    "name" : "projectproduct实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "RedirectView",
+    "logicName" : "projectproduct实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "projectproduct实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -3821,6 +3797,24 @@
     "modelTag" : "EDITVIEW",
     "name" : "projectproduct实体编辑视图",
     "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProductGridView9",
+    "logicName" : "项目产品实体表格视图（部件视图）（关联产品）",
+    "name" : "项目产品实体表格视图（部件视图）（关联产品）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ListView9",
+    "logicName" : "项目产品实体列表视图（部件视图）",
+    "name" : "项目产品实体列表视图（部件视图）",
+    "realModelSubType" : "DELISTVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "projectproduct实体编辑视图（左右关系）",
+    "name" : "projectproduct实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PlanListView9",
@@ -3841,6 +3835,13 @@
     "name" : "项目产品实体表格视图（部件视图）（关联项目）",
     "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "ProjectProduct",
   "dEType" : 1,
@@ -3983,7 +3984,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

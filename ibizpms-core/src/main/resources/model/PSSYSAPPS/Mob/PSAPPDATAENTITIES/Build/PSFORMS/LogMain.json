@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "BEFORELOAD", "SAVE", "BEFORESAVE", "REMOVE" ],
   "logicName" : "LogMain",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -271,7 +271,7 @@
               "id" : "load"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+            "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
             "logicName" : "MOBLog",
             "minorSortDir" : "DESC",
             "getMinorSortPSAppDEField" : {
@@ -763,7 +763,7 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__status.json"
             },
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+            "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
             "logicName" : "MOBLog",
             "minorSortDir" : "DESC",
             "getMinorSortPSAppDEField" : {

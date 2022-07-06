@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（关联测试）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -286,17 +286,10 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
-    "name" : "casesn",
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "CASESN",
-      "codeName" : "Casesn"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "frombug",
-    "getPSAppDEField" : {
-      "name" : "FROMBUG",
-      "codeName" : "FromBug"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 9,
@@ -306,11 +299,25 @@
       "codeName" : "Version"
     }
   }, {
-    "dataType" : 25,
-    "name" : "status1",
+    "dataType" : 9,
+    "name" : "version",
     "getPSAppDEField" : {
-      "name" : "STATUS1",
-      "codeName" : "Status1"
+      "name" : "VERSION",
+      "codeName" : "Version"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "pri",
+    "getPSAppDEField" : {
+      "name" : "PRI",
+      "codeName" : "Pri"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "title",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
     }
   }, {
     "dataType" : 25,
@@ -321,13 +328,74 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "openedby",
+    "getPSAppDEField" : {
+      "name" : "OPENEDBY",
+      "codeName" : "OpenedBy"
+    }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "lastrunner",
     "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
+      "name" : "LASTRUNNER",
+      "codeName" : "LastRunner"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "lastrundate",
+    "getPSAppDEField" : {
+      "name" : "LASTRUNDATE",
+      "codeName" : "LastRunDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "lastrunresult",
+    "getPSAppDEField" : {
+      "name" : "LASTRUNRESULT",
+      "codeName" : "LastRunResult"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "status1",
+    "getPSAppDEField" : {
+      "name" : "STATUS1",
+      "codeName" : "Status1"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "casesn",
+    "getPSAppDEField" : {
+      "name" : "CASESN",
+      "codeName" : "Casesn"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "status",
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "lastrunresult1",
+    "getPSAppDEField" : {
+      "name" : "LASTRUNRESULT1",
+      "codeName" : "Lastrunresult1"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "color",
+    "getPSAppDEField" : {
+      "name" : "COLOR",
+      "codeName" : "Color"
     }
   }, {
     "dataType" : 1,
@@ -345,25 +413,25 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 25,
-    "name" : "openedby",
+    "dataType" : 1,
+    "name" : "fromcaseid",
     "getPSAppDEField" : {
-      "name" : "OPENEDBY",
-      "codeName" : "OpenedBy"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "version",
-    "getPSAppDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
+      "name" : "FROMCASEID",
+      "codeName" : "FromCaseId"
     }
   }, {
     "dataType" : 1,
-    "name" : "id",
+    "name" : "branch",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "frombug",
+    "getPSAppDEField" : {
+      "name" : "FROMBUG",
+      "codeName" : "FromBug"
     }
   }, {
     "dataType" : 1,
@@ -373,26 +441,11 @@
       "codeName" : "Story"
     }
   }, {
-    "dataType" : 25,
-    "name" : "title",
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    }
-  }, {
     "dataType" : 1,
-    "name" : "fromcaseid",
+    "name" : "lib",
     "getPSAppDEField" : {
-      "name" : "FROMCASEID",
-      "codeName" : "FromCaseId"
-    }
-  }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "dataType" : 5,
-    "name" : "lastrundate",
-    "getPSAppDEField" : {
-      "name" : "LASTRUNDATE",
-      "codeName" : "LastRunDate"
+      "name" : "LIB",
+      "codeName" : "Lib"
     }
   }, {
     "dataType" : 1,
@@ -403,99 +456,16 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "status",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "pri",
-    "getPSAppDEField" : {
-      "name" : "PRI",
-      "codeName" : "Pri"
+      "name" : "TITLE",
+      "codeName" : "Title"
     }
   }, {
     "dataType" : 25,
-    "name" : "lastrunresult1",
-    "getPSAppDEField" : {
-      "name" : "LASTRUNRESULT1",
-      "codeName" : "Lastrunresult1"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "lib",
-    "getPSAppDEField" : {
-      "name" : "LIB",
-      "codeName" : "Lib"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "color",
-    "getPSAppDEField" : {
-      "name" : "COLOR",
-      "codeName" : "Color"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "lastrunresult",
-    "getPSAppDEField" : {
-      "name" : "LASTRUNRESULT",
-      "codeName" : "LastRunResult"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "branch",
-    "getPSAppDEField" : {
-      "name" : "BRANCH",
-      "codeName" : "Branch"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "lastrunner",
-    "getPSAppDEField" : {
-      "name" : "LASTRUNNER",
-      "codeName" : "LastRunner"
-    }
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
-    "caption" : "所属产品",
-    "codeName" : "product",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "product"
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "用例编号",
-    "codeName" : "srfkey",
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "allowEmpty" : true
-  }, {
     "caption" : "版本",
     "codeName" : "version",
     "enableCond" : 3,
@@ -533,6 +503,36 @@
     "valueItemName" : "version",
     "allowEmpty" : true,
     "needCodeListConfig" : true
+  }, {
+    "caption" : "所属产品",
+    "codeName" : "product",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "product"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "用例编号",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
   } ],
   "pagingSize" : 20,
   "getRemovePSControlAction" : {

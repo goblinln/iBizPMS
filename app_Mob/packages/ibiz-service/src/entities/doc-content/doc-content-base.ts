@@ -95,7 +95,6 @@ export abstract class DocContentBase extends EntityBase implements IDocContent {
      * 文档
      */
     doc?: any;
-
     /**
      * 重置实体数据
      *

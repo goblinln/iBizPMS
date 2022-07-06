@@ -84,7 +84,7 @@ export class AppDedaultMobWFDynaEditView3 extends MobWFDynaEditView3Base {
          return h(targetViewLayoutComponent, {
              props: { viewInstance: this.viewInstance, viewparams: this.viewparams, context: this.context }
          }, [
-            //  this.renderCaptionInfo(),
+             this.renderViewHeaderCaptionBar(),
              this.renderToolBar(),
              this.renderContent(),
              this.renderTopMessage(),

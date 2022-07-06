@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -332,17 +332,17 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
     "name" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   }, {
     "dataType" : 21,
@@ -350,6 +350,13 @@
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "addedby",
+    "getPSAppDEField" : {
+      "name" : "ADDEDBY",
+      "codeName" : "AddedBy"
     }
   }, {
     "format" : "YYYY-MM-DD HH:mm:ss",
@@ -360,13 +367,6 @@
       "codeName" : "AddedDate"
     }
   }, {
-    "dataType" : 25,
-    "name" : "addedby",
-    "getPSAppDEField" : {
-      "name" : "ADDEDBY",
-      "codeName" : "AddedBy"
-    }
-  }, {
     "dataType" : 1,
     "name" : "testsuitesn",
     "getPSAppDEField" : {
@@ -374,18 +374,11 @@
       "codeName" : "Testsuitesn"
     }
   }, {
-    "dataType" : 25,
-    "name" : "name",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -397,10 +390,17 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "product",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {

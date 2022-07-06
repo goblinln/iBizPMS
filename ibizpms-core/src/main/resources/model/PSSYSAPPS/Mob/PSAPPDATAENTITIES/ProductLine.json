@@ -36,6 +36,21 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -43,6 +58,21 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateInput",
+      "name" : "CreateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateResult",
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
@@ -50,6 +80,24 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLINEID",
+        "codeName" : "ProductLineId"
+      },
+      "name" : "GetInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetResult",
+      "name" : "GetResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -57,6 +105,24 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftInput",
+      "name" : "GetDraftInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftResult",
+      "name" : "GetDraftResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
@@ -65,6 +131,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLINEID",
+        "codeName" : "ProductLineId"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -73,6 +153,20 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
@@ -80,6 +174,21 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateInput",
+      "name" : "UpdateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateResult",
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
@@ -87,6 +196,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -141,12 +268,153 @@
     "stringLength" : 60,
     "enableFrontOnly" : true
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "ProductLineDTO",
+    "name" : "ProductLineDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "CreateDate",
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "CreateMan",
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Order",
+      "logicName" : "排序",
+      "name" : "Order",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORDER",
+        "codeName" : "Order"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ProductLineId",
+      "logicName" : "产品线标识",
+      "name" : "ProductLineId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLINEID",
+        "codeName" : "ProductLineId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "ProductLineName",
+      "logicName" : "产品线名称",
+      "name" : "ProductLineName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLINENAME",
+        "codeName" : "ProductLineName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateDate",
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "ProductLineFilterDTO",
+    "name" : "ProductLineFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_IBZ_PRODUCTLINEID_EQ",
+      "logicName" : "产品线标识",
+      "name" : "N_IBZ_PRODUCTLINEID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLINEID",
+        "codeName" : "ProductLineId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_IBZ_PRODUCTLINENAME_LIKE",
+      "logicName" : "产品线名称",
+      "name" : "N_IBZ_PRODUCTLINENAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLINENAME",
+        "codeName" : "ProductLineName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -154,6 +422,21 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateInput",
+      "name" : "CreateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateResult",
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
@@ -161,6 +444,24 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLINEID",
+        "codeName" : "ProductLineId"
+      },
+      "name" : "GetInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetResult",
+      "name" : "GetResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -168,6 +469,24 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftInput",
+      "name" : "GetDraftInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftResult",
+      "name" : "GetDraftResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
@@ -176,6 +495,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLINEID",
+        "codeName" : "ProductLineId"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -184,6 +517,20 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
@@ -191,12 +538,45 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateInput",
+      "name" : "UpdateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateResult",
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductLineDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -252,7 +632,15 @@
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductLine.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "IBZ_PRODUCTLINEID",
+    "codeName" : "ProductLineId"
+  },
   "logicName" : "产品线",
+  "getMajorPSAppDEField" : {
+    "name" : "IBZ_PRODUCTLINENAME",
+    "codeName" : "ProductLineName"
+  },
   "name" : "IBZ_PRODUCTLINE",
   "getPSDEName" : "IBZ_PRODUCTLINE",
   "getQuickSearchPSAppDEFields" : [ {

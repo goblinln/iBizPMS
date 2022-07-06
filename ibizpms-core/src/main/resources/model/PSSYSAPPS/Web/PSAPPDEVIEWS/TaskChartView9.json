@@ -39,7 +39,7 @@
       "modelref" : true,
       "id" : "fetch"
     },
-    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD" ],
     "logicName" : "MyFinishedbyTask",
     "getPSAppDataEntity" : {
       "modelref" : true,

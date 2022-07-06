@@ -45,14 +45,14 @@
   "getPSControls" : [ {
     "codeName" : "TreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:ChildTask",
+      "name" : "EXPITEM:ptask",
       "realTitle" : "任务编辑视图（树导航显示）",
       "getRefPSAppView" : {
         "modelref" : true,
@@ -60,7 +60,7 @@
         "viewType" : "DEEDITVIEW"
       }
     }, {
-      "name" : "EXPITEM:ptask",
+      "name" : "EXPITEM:ChildTask",
       "realTitle" : "任务编辑视图（树导航显示）",
       "getRefPSAppView" : {
         "modelref" : true,

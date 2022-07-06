@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -192,11 +192,18 @@
       "codeName" : "IBIZProPluginName"
     }
   }, {
-    "dataType" : 9,
-    "name" : "downloadcount",
+    "dataType" : 25,
+    "name" : "type",
     "getPSAppDEField" : {
-      "name" : "DOWNLOADCOUNT",
-      "codeName" : "Downloadcount"
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "version",
+    "getPSAppDEField" : {
+      "name" : "VERSION",
+      "codeName" : "Version"
     }
   }, {
     "dataType" : 25,
@@ -204,6 +211,13 @@
     "getPSAppDEField" : {
       "name" : "DOWNLOADURL",
       "codeName" : "Downloadurl"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "downloadcount",
+    "getPSAppDEField" : {
+      "name" : "DOWNLOADCOUNT",
+      "codeName" : "Downloadcount"
     }
   }, {
     "dataType" : 9,
@@ -220,13 +234,6 @@
       "codeName" : "Score"
     }
   }, {
-    "dataType" : 25,
-    "name" : "updateman",
-    "getPSAppDEField" : {
-      "name" : "UPDATEMAN",
-      "codeName" : "UpdateMan"
-    }
-  }, {
     "format" : "YYYY-MM-DD HH:mm:ss",
     "dataType" : 5,
     "name" : "updatedate",
@@ -236,17 +243,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "type",
+    "name" : "updateman",
     "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "IBIZPRO_PLUGINNAME",
-      "codeName" : "IBIZProPluginName"
+      "name" : "IBIZPRO_PLUGINID",
+      "codeName" : "IBIZProPluginId"
     }
   }, {
     "dataType" : 25,
@@ -258,17 +265,10 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "srfkey",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "IBIZPRO_PLUGINID",
-      "codeName" : "IBIZProPluginId"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "version",
-    "getPSAppDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
+      "name" : "IBIZPRO_PLUGINNAME",
+      "codeName" : "IBIZProPluginName"
     }
   } ],
   "getPSDEGridEditItems" : [ {

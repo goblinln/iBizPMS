@@ -684,6 +684,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "ASSIGNEDBY",
             "name" : "ASSIGNEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "ASSIGNEDBY",
@@ -694,6 +695,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "FINISHEDBY",
             "name" : "FINISHEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "FINISHEDBY",
@@ -704,6 +706,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "UPDATEBY",
             "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "UPDATEBY",
@@ -714,6 +717,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "CLOSEDBY",
             "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "CLOSEDBY",
@@ -724,6 +728,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "ACCOUNT",
             "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "ACCOUNT",
@@ -5967,143 +5972,17 @@
     "systemReserved" : true
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "EditForm",
-    "logicName" : "编辑待办",
-    "modelTag2" : "0",
-    "name" : "编辑待办",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "GridView9",
-    "logicName" : "待办事宜表实体表格视图（部件视图）（我的待办）",
-    "name" : "待办事宜表实体表格视图（部件视图）（我的待办）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CloseView",
-    "logicName" : "关闭表单视图",
-    "name" : "关闭表单视图",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "FinishFrom",
-    "logicName" : "完成",
-    "modelTag2" : "0",
-    "name" : "完成",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "待办事宜表实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "待办事宜表实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "待办事宜实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "待办事宜实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ActiviteFROM",
-    "logicName" : "激活",
-    "modelTag2" : "0",
-    "name" : "激活",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "todo实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "todo实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CalendarMain",
-    "logicName" : "日历视图显示",
-    "modelTag2" : "0",
-    "name" : "日历视图显示",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "todo实体选择表格视图（部件视图）",
-    "name" : "todo实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "AssignToView",
-    "logicName" : "指派表单视图",
-    "name" : "指派表单视图",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobNew",
-    "logicName" : "快速新建（移动端）",
-    "modelTag2" : "1",
-    "name" : "快速新建（移动端）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "BaseEditView9",
-    "logicName" : "待办事宜表实体编辑视图（部件视图）（基本信息）",
-    "name" : "待办事宜表实体编辑视图（部件视图）（基本信息）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "maindashboardview_link",
-    "logicName" : "待办事宜表实体数据看板视图（主数据_链接）",
-    "name" : "待办事宜表实体数据看板视图（主数据_链接）",
-    "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CloseForm",
-    "logicName" : "关闭表单",
-    "modelTag2" : "0",
-    "name" : "关闭表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "DashboardBasic",
-    "logicName" : "看板基本信息",
-    "modelTag2" : "0",
-    "name" : "看板基本信息",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "DescEditView9",
-    "logicName" : "待办事宜表实体编辑视图（部件视图）（描述）",
-    "name" : "待办事宜表实体编辑视图（部件视图）（描述）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "MobListView",
     "logicName" : "待办事宜表实体移动端列表视图",
     "name" : "待办事宜表实体移动端列表视图",
     "realModelSubType" : "DEMOBLISTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "assigntoForm",
-    "logicName" : "指派表单",
-    "modelTag2" : "0",
-    "name" : "指派表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "todo实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "todo实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
+    "codeName" : "MobMPickupView",
+    "logicName" : "待办事宜表实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "待办事宜表实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "NewMobEditView",
@@ -6112,16 +5991,55 @@
     "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "CalendarEditView",
-    "logicName" : "待办实体编辑视图（日历导航）",
-    "name" : "待办实体编辑视图（日历导航）",
+    "codeName" : "GridView",
+    "logicName" : "待办事宜实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "待办事宜实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TodoCreateView",
+    "logicName" : "待办事宜实体新建视图",
+    "name" : "待办事宜实体新建视图",
     "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "BaseEditView9",
+    "logicName" : "待办事宜表实体编辑视图（部件视图）（基本信息）",
+    "name" : "待办事宜表实体编辑视图（部件视图）（基本信息）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "todo实体选择表格视图（部件视图）",
+    "name" : "todo实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "待办事宜表实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "待办事宜表实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DashboardView",
+    "logicName" : "待办事宜表实体数据看板视图（主数据）",
+    "name" : "待办事宜表实体数据看板视图（主数据）",
+    "realModelSubType" : "DEPORTALVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "FinishView",
     "logicName" : "完成表单视图",
     "name" : "完成表单视图",
     "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "todo实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "todo实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobEditView",
@@ -6131,16 +6049,53 @@
     "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "EditView",
+    "logicName" : "待办事宜实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "待办事宜实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView9",
+    "logicName" : "待办事宜表实体表格视图（部件视图）（我的待办）",
+    "name" : "待办事宜表实体表格视图（部件视图）（我的待办）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "AssignToView",
+    "logicName" : "指派表单视图",
+    "name" : "指派表单视图",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ActiviteView",
+    "logicName" : "激活表单视图",
+    "name" : "激活表单视图",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CalendarEditView",
+    "logicName" : "待办实体编辑视图（日历导航）",
+    "name" : "待办实体编辑视图（日历导航）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DescEditView9",
+    "logicName" : "待办事宜表实体编辑视图（部件视图）（描述）",
+    "name" : "待办事宜表实体编辑视图（部件视图）（描述）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "MobRedirectView",
     "logicName" : "待办实体移动端数据重定向视图",
     "name" : "待办实体移动端数据重定向视图",
     "realModelSubType" : "DEMOBREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "DashboardView",
-    "logicName" : "待办事宜表实体数据看板视图（主数据）",
-    "name" : "待办事宜表实体数据看板视图（主数据）",
-    "realModelSubType" : "DEPORTALVIEW",
+    "codeName" : "MobPickupMDView",
+    "logicName" : "待办事宜表实体移动端选择多数据视图（部件视图）",
+    "name" : "待办事宜表实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobPickupView",
@@ -6156,44 +6111,36 @@
     "realModelSubType" : "DEMOBOPTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "FastBuild",
-    "logicName" : "快速建立",
-    "modelTag2" : "0",
-    "name" : "快速建立",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "TodoCreateView",
-    "logicName" : "待办事宜实体新建视图",
-    "name" : "待办事宜实体新建视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "todo实体编辑视图（左右关系）",
+    "name" : "todo实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "DashboardMain",
-    "logicName" : "看板视图",
-    "modelTag2" : "0",
-    "name" : "看板视图",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "待办事宜实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "待办事宜实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ActiviteView",
-    "logicName" : "激活表单视图",
-    "name" : "激活表单视图",
+    "codeName" : "CloseView",
+    "logicName" : "关闭表单视图",
+    "name" : "关闭表单视图",
     "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "maindashboardview_link",
+    "logicName" : "待办事宜表实体数据看板视图（主数据_链接）",
+    "name" : "待办事宜表实体数据看板视图（主数据_链接）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "todo实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "todo实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "todo实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "todo实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Usr2MobRedirectView",
@@ -6202,36 +6149,94 @@
     "realModelSubType" : "DEMOBREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "待办事宜表实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "待办事宜表实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "FastBuild",
+    "logicName" : "快速建立",
+    "modelTag2" : "0",
+    "name" : "快速建立",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "todo实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "todo实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "FinishFrom",
+    "logicName" : "完成",
+    "modelTag2" : "0",
+    "name" : "完成",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "待办事宜表实体移动端选择多数据视图（部件视图）",
-    "name" : "待办事宜表实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "CalendarMain",
+    "logicName" : "日历视图显示",
+    "modelTag2" : "0",
+    "name" : "日历视图显示",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "todo实体编辑视图（左右关系）",
-    "name" : "todo实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "assigntoForm",
+    "logicName" : "指派表单",
+    "modelTag2" : "0",
+    "name" : "指派表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "AssMob",
     "logicName" : "指派给（移动端）",
     "modelTag2" : "1",
     "name" : "指派给（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "CloseForm",
+    "logicName" : "关闭表单",
+    "modelTag2" : "0",
+    "name" : "关闭表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "DashboardMain",
+    "logicName" : "看板视图",
+    "modelTag2" : "0",
+    "name" : "看板视图",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobNew",
+    "logicName" : "快速新建（移动端）",
+    "modelTag2" : "1",
+    "name" : "快速新建（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "ActiviteFROM",
+    "logicName" : "激活",
+    "modelTag2" : "0",
+    "name" : "激活",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "DashboardBasic",
+    "logicName" : "看板基本信息",
+    "modelTag2" : "0",
+    "name" : "看板基本信息",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "EditForm",
+    "logicName" : "编辑待办",
+    "modelTag2" : "0",
+    "name" : "编辑待办",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   } ],
@@ -6317,7 +6322,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

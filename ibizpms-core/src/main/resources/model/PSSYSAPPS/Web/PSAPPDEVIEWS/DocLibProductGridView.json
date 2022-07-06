@@ -69,80 +69,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "ProductGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "行为组(1~6)",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1_togglefilter",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_togglefilter_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_togglefilter_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.FILTER"
-      },
-      "caption" : "过滤",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1_togglefilter",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_togglefilter"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0b0@FontAwesome",
-        "cssClass" : "fa fa-filter"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.FILTER"
-        },
-        "caption" : "过滤",
-        "codeName" : "ToggleFilter",
-        "fullCodeName" : "ToggleFilter",
-        "name" : "表格界面_搜索栏",
-        "getPSSysImage" : {
-          "glyph" : "xf0b0@FontAwesome",
-          "cssClass" : "fa fa-filter"
-        },
-        "predefinedType" : "GRIDVIEW_SEARCHBAR",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ToggleFilter",
-        "uIActionType" : "DEUIACTION",
-        "enableToggleMode" : true
-      },
-      "tooltip" : "过滤",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-      },
-      "enableToggleMode" : true,
-      "showCaption" : true,
-      "showIcon" : true,
-      "valid" : false
-    } ],
-    "modelid" : "5ad21b662e43fd5724b41620471178d8",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "ProductMain",
     "columnEnableLink" : 2,
@@ -153,7 +79,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（产品文档库）",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -389,14 +315,14 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
         },
         "getPSNavigateContexts" : [ {
-          "key" : "DOCLIBTYPE",
-          "name" : "DOCLIBTYPE",
-          "value" : "doclibtype",
-          "rawValue" : false
-        }, {
           "key" : "PRODUCT",
           "name" : "PRODUCT",
           "value" : "product",
+          "rawValue" : false
+        }, {
+          "key" : "DOCLIBTYPE",
+          "name" : "DOCLIBTYPE",
+          "value" : "doclibtype",
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
@@ -641,6 +567,20 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
+      "dataType" : 25,
+      "name" : "name",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "doccnt",
+      "getPSAppDEField" : {
+        "name" : "DOCCNT",
+        "codeName" : "Doccnt"
+      }
+    }, {
       "dataType" : 1,
       "name" : "product",
       "getPSAppDEField" : {
@@ -663,27 +603,17 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "name",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 25,
       "name" : "isfavourites",
       "getPSAppDEField" : {
         "name" : "ISFAVOURITES",
         "codeName" : "Isfavourites"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "dataType" : 1,
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -694,19 +624,15 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
+      "dataType" : 25,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "NAME",
+        "codeName" : "Name"
       }
     }, {
-      "dataType" : 9,
-      "name" : "doccnt",
-      "getPSAppDEField" : {
-        "name" : "DOCCNT",
-        "codeName" : "Doccnt"
-      }
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "编号",
@@ -1123,6 +1049,80 @@
     "name" : "searchbar",
     "modelid" : "29a60976ecd724b3a40bbb2f38a011f8",
     "modeltype" : "PSSYSSEARCHBAR"
+  }, {
+    "codeName" : "ProductGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "行为组(1~6)",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1_togglefilter",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_togglefilter_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_togglefilter_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.FILTER"
+      },
+      "caption" : "过滤",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1_togglefilter",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_togglefilter"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0b0@FontAwesome",
+        "cssClass" : "fa fa-filter"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.FILTER"
+        },
+        "caption" : "过滤",
+        "codeName" : "ToggleFilter",
+        "fullCodeName" : "ToggleFilter",
+        "name" : "表格界面_搜索栏",
+        "getPSSysImage" : {
+          "glyph" : "xf0b0@FontAwesome",
+          "cssClass" : "fa fa-filter"
+        },
+        "predefinedType" : "GRIDVIEW_SEARCHBAR",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ToggleFilter",
+        "uIActionType" : "DEUIACTION",
+        "enableToggleMode" : true
+      },
+      "tooltip" : "过滤",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+      },
+      "enableToggleMode" : true,
+      "showCaption" : true,
+      "showIcon" : true,
+      "valid" : false
+    } ],
+    "modelid" : "5ad21b662e43fd5724b41620471178d8",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "ProductGridView",
   "getPSDEViewId" : "f5a1c0f1bbfd46fce21fd682aa9151a6",

@@ -80,7 +80,8 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
+    "openMode" : "DRAWER_TOP",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "需求数据看板视图",
     "getRefPSAppView" : {
@@ -89,8 +90,7 @@
       "viewType" : "DEPORTALVIEW"
     }
   }, {
-    "name" : "EDITDATA",
-    "openMode" : "DRAWER_TOP",
+    "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "需求数据看板视图",
     "getRefPSAppView" : {
@@ -110,7 +110,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "需求相关（无分页）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -263,17 +263,17 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "module",
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
-      "dataType" : 1,
-      "name" : "frombug",
+      "dataType" : 25,
+      "name" : "title",
       "getPSAppDEField" : {
-        "name" : "FROMBUG",
-        "codeName" : "FromBug"
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
     }, {
       "dataType" : 1,
@@ -281,23 +281,6 @@
       "getPSAppDEField" : {
         "name" : "STORYSN",
         "codeName" : "Storysn"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "parent",
-      "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
       }
     }, {
       "dataType" : 1,
@@ -316,17 +299,24 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "tobug",
+      "name" : "frombug",
       "getPSAppDEField" : {
-        "name" : "TOBUG",
-        "codeName" : "ToBug"
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
       }
     }, {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "parent",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
       }
     }, {
       "dataType" : 1,
@@ -334,13 +324,6 @@
       "getPSAppDEField" : {
         "name" : "PRODUCT",
         "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
       }
     }, {
       "dataType" : 1,
@@ -356,6 +339,23 @@
         "name" : "BRANCH",
         "codeName" : "Branch"
       }
+    }, {
+      "dataType" : 1,
+      "name" : "tobug",
+      "getPSAppDEField" : {
+        "name" : "TOBUG",
+        "codeName" : "ToBug"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "编号",

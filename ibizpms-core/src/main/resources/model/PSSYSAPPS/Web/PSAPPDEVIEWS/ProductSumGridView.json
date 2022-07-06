@@ -121,77 +121,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "GridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "产品汇总表操作栏",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT"
-      },
-      "caption" : "导出",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT"
-        },
-        "caption" : "导出",
-        "codeName" : "ExportExcel",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）",
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "predefinedType" : "GRIDVIEW_EXPORTACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "导出",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "Main",
     "columnEnableLink" : 2,
@@ -202,7 +131,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -485,18 +414,53 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
+      "dataType" : 25,
+      "name" : "name",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "po",
+      "getPSAppDEField" : {
+        "name" : "PO",
+        "codeName" : "PO"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "plan",
+      "getPSAppDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "begin",
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "end",
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "waitstorycnt",
+      "getPSAppDEField" : {
+        "name" : "WAITSTORYCNT",
+        "codeName" : "WaitStoryCnt"
+      }
+    }, {
       "dataType" : 9,
       "name" : "activestorycnt",
       "getPSAppDEField" : {
         "name" : "ACTIVESTORYCNT",
         "codeName" : "ActiveStoryCnt"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "closedstorycnt",
-      "getPSAppDEField" : {
-        "name" : "CLOSEDSTORYCNT",
-        "codeName" : "ClosedStoryCnt"
       }
     }, {
       "dataType" : 9,
@@ -507,17 +471,17 @@
       }
     }, {
       "dataType" : 9,
+      "name" : "closedstorycnt",
+      "getPSAppDEField" : {
+        "name" : "CLOSEDSTORYCNT",
+        "codeName" : "ClosedStoryCnt"
+      }
+    }, {
+      "dataType" : 9,
       "name" : "storycnt",
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
       }
     }, {
       "dataType" : 1,
@@ -536,45 +500,10 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 25,
-      "name" : "begin",
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "plan",
-      "getPSAppDEField" : {
-        "name" : "PLAN",
-        "codeName" : "Plan"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "waitstorycnt",
-      "getPSAppDEField" : {
-        "name" : "WAITSTORYCNT",
-        "codeName" : "WaitStoryCnt"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "name",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "po",
-      "getPSAppDEField" : {
-        "name" : "PO",
-        "codeName" : "PO"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "end",
-      "getPSAppDEField" : {
-        "name" : "END",
-        "codeName" : "End"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -628,7 +557,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -637,10 +566,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -659,10 +588,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -883,6 +812,77 @@
     "name" : "searchform",
     "modelid" : "2b71fa6c133aaa4b5001a7efb2706399",
     "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "codeName" : "GridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "产品汇总表操作栏",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "predefinedType" : "GRIDVIEW_EXPORTACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "GridView",
   "getPSDEViewId" : "979bdf2835690d05196b871e12437c46",

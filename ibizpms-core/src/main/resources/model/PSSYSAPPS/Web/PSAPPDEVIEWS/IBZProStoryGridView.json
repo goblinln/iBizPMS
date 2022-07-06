@@ -118,7 +118,7 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realTitle" : "需求编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -126,7 +126,7 @@
       "viewType" : "DEEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realTitle" : "需求编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -157,6 +157,365 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
+    "aggMode" : "NONE",
+    "codeName" : "Main",
+    "columnEnableLink" : 2,
+    "controlType" : "GRID",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory/PSGRIDS/Main.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
+    "logicName" : "主表格",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "grid",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_grid",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "getPSDEGridColumns" : [ {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "编号",
+      "codeName" : "id",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "id",
+      "excelCaption" : "编号",
+      "name" : "id",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "需求名称",
+      "codeName" : "title",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "title",
+      "excelCaption" : "需求名称",
+      "name" : "title",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "IBIZ标识",
+      "codeName" : "ibiz_id",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "ibiz_id",
+      "excelCaption" : "IBIZ标识",
+      "name" : "ibiz_id",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "IBIZ_ID",
+        "codeName" : "IBIZId"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    } ],
+    "getPSDEGridDataItems" : [ {
+      "dataType" : 1,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "ibiz_id",
+      "getPSAppDEField" : {
+        "name" : "IBIZ_ID",
+        "codeName" : "IBIZId"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 1,
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    } ],
+    "getPSDEGridEditItems" : [ {
+      "caption" : "编号",
+      "codeName" : "srfkey",
+      "enableCond" : 0,
+      "ignoreInput" : 0,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "allowEmpty" : true
+    } ],
+    "pagingSize" : 20,
+    "getRemovePSControlAction" : {
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "DELETE",
+      "name" : "remove",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+      }
+    },
+    "sortMode" : "REMOTE",
+    "hasWFDataItems" : false,
+    "enableColFilter" : false,
+    "enableCustomized" : true,
+    "enableGroup" : false,
+    "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "forceFit" : false,
+    "hideHeader" : false,
+    "noSort" : false,
+    "singleSelect" : false,
+    "name" : "grid",
+    "modelid" : "6b95be0b8434fb93f6242d17a20b5369",
+    "modeltype" : "PSDEGRID"
+  }, {
+    "codeName" : "Default",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory/PSSEARCHFORMS/Default.json",
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
+    "logicName" : "默认搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD;SAVE",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "188179763d7bd9b0f49b9481a142e3e2",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
     "codeName" : "GridViewtoolbar",
     "controlType" : "TOOLBAR",
     "hookEventNames" : [ "CLICK" ],
@@ -331,365 +690,6 @@
     } ],
     "modelid" : "24ddc68b1717d44d1ea610d438f930f6",
     "modeltype" : "PSDETOOLBAR"
-  }, {
-    "aggMode" : "NONE",
-    "codeName" : "Main",
-    "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory/PSGRIDS/Main.json",
-    "getFetchPSControlAction" : {
-      "modelref" : true,
-      "id" : "fetch"
-    },
-    "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-    "logicName" : "主表格",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-    },
-    "getPSControlHandler" : {
-      "getPSHandlerActions" : [ {
-        "actionName" : "Get",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "READ",
-        "name" : "load",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-        }
-      }, {
-        "actionName" : "Create",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "create",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-        }
-      }, {
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-        }
-      }, {
-        "actionName" : "GetDraft",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-        }
-      }, {
-        "actionType" : "DEDATASET",
-        "name" : "fetch",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-        }
-      } ],
-      "userDRAction" : "READ",
-      "enableDEFieldPrivilege" : false,
-      "id" : "数据表格处理器"
-    },
-    "getPSControlLogics" : [ {
-      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
-      "logicTag" : "grid",
-      "logicType" : "APPVIEWENGINE",
-      "name" : "engine_grid",
-      "getPSAppViewEngine" : {
-        "modelref" : true,
-        "id" : "engine"
-      }
-    } ],
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "getPSDEGridColumns" : [ {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "编号",
-      "codeName" : "id",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "id",
-      "excelCaption" : "编号",
-      "name" : "id",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "width" : 100,
-      "widthUnit" : "PX",
-      "enableSort" : true
-    }, {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "需求名称",
-      "codeName" : "title",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "title",
-      "excelCaption" : "需求名称",
-      "name" : "title",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      },
-      "width" : 100,
-      "widthUnit" : "PX",
-      "enableSort" : true
-    }, {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "IBIZ标识",
-      "codeName" : "ibiz_id",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "ibiz_id",
-      "excelCaption" : "IBIZ标识",
-      "name" : "ibiz_id",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "IBIZ_ID",
-        "codeName" : "IBIZId"
-      },
-      "width" : 100,
-      "widthUnit" : "PX",
-      "enableSort" : true
-    } ],
-    "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "module",
-      "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "ibiz_id",
-      "getPSAppDEField" : {
-        "name" : "IBIZ_ID",
-        "codeName" : "IBIZId"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "srfdataaccaction",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataAccessAction" : true
-    }, {
-      "dataType" : 1,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    } ],
-    "getPSDEGridEditItems" : [ {
-      "caption" : "编号",
-      "codeName" : "srfkey",
-      "enableCond" : 0,
-      "ignoreInput" : 0,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "srfkey"
-      },
-      "allowEmpty" : true
-    } ],
-    "pagingSize" : 20,
-    "getRemovePSControlAction" : {
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "dataAccessAction" : "DELETE",
-      "name" : "remove",
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-      }
-    },
-    "sortMode" : "REMOTE",
-    "hasWFDataItems" : false,
-    "enableColFilter" : false,
-    "enableCustomized" : true,
-    "enableGroup" : false,
-    "enablePagingBar" : true,
-    "enableRowEdit" : false,
-    "enableRowEditOrder" : false,
-    "enableRowNew" : false,
-    "forceFit" : false,
-    "hideHeader" : false,
-    "noSort" : false,
-    "singleSelect" : false,
-    "name" : "grid",
-    "modelid" : "6b95be0b8434fb93f6242d17a20b5369",
-    "modeltype" : "PSDEGRID"
-  }, {
-    "codeName" : "Default",
-    "controlType" : "SEARCHFORM",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
-    "logicName" : "默认搜索表单",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-    },
-    "getPSControlHandler" : {
-      "getPSHandlerActions" : [ {
-        "actionType" : "FILTERACTION",
-        "name" : "search",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterSearch"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-        }
-      }, {
-        "actionType" : "FILTERACTION",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGetDraft"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-        }
-      }, {
-        "actionType" : "FILTERACTION",
-        "name" : "load",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGet"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
-        }
-      } ],
-      "enableDEFieldPrivilege" : false,
-      "id" : "搜索表单处理器"
-    },
-    "getPSControlLogics" : [ {
-      "eventNames" : "SEARCH;LOAD;SAVE",
-      "logicTag" : "searchform",
-      "logicType" : "APPVIEWENGINE",
-      "name" : "engine_searchform",
-      "getPSAppViewEngine" : {
-        "modelref" : true,
-        "id" : "engine"
-      }
-    } ],
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "getPSDEFormPages" : [ {
-      "caption" : "常规条件",
-      "codeName" : "formpage1",
-      "detailStyle" : "DEFAULT",
-      "detailType" : "FORMPAGE",
-      "name" : "formpage1",
-      "getPSLayout" : {
-        "columnCount" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "infoGroupMode" : false
-    } ],
-    "getPSLayout" : {
-      "columnCount" : 24,
-      "layout" : "TABLE_24COL"
-    },
-    "searchButtonStyle" : "DEFAULT",
-    "tabHeaderPos" : "TOP",
-    "enableAdvanceSearch" : false,
-    "enableAutoSearch" : false,
-    "enableFilterSave" : false,
-    "noTabHeader" : true,
-    "name" : "searchform",
-    "modelid" : "188179763d7bd9b0f49b9481a142e3e2",
-    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "GridView",
   "getPSDEViewId" : "ad3d7c58f6e2667193e1c20ef617877f",

@@ -1,11 +1,11 @@
-import { FormButtonModel, FormDruipartModel, FormGroupPanelModel, FormIFrameModel, FormItemModel, FormPageModel, FormPartModel, FormTabPageModel, FormTabPanelModel, FormUserControlModel, ModelTool, Util, Verify } from 'ibiz-core';
+import { FormButtonModel, FormDruipartModel, FormGroupPanelModel, FormIFrameModel, FormItemModel, FormPageModel, FormPartModel, FormTabPageModel, FormTabPanelModel, FormUserControlModel, FormRawItemModel, MobFormControlInterface, ModelTool, Util, Verify } from 'ibiz-core';
 import schema from 'async-validator';
 import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { AppMobFormService } from '../ctrl-service';
 import { MainControlBase } from './main-control-base';
 import { AppCenterService } from '../app-service/common-service';
 import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFormButton, IPSDEFormDetail, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSDEFIUpdateDetail } from '@ibiz/dynamic-model-api';
+import { AppViewLogicService } from '../app-service';
 
 
 /**
@@ -15,7 +15,7 @@ import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogi
  * @class FromControlBase
  * @extends {MainControlBase}
  */
-export class MobFormControlBase extends MainControlBase {
+export class MobFormControlBase extends MainControlBase implements MobFormControlInterface {
 
     /**
      * 部件模型实例对象
@@ -277,15 +277,15 @@ export class MobFormControlBase extends MainControlBase {
             });
         }
         this.dataChange.subscribe((data: any) => {
-                if (this.isAutoSave) {
-                    this.autoSave();
-                }
-                const state = !Object.is(JSON.stringify(this.oldData), data) ? true : false;
-                this.ctrlEvent({
-                    controlname: this.controlInstance.name,
-                    action: 'dataChange',
-                    data: state,
-                })
+            if (this.isAutoSave) {
+                this.autoSave();
+            }
+            const state = !Object.is(JSON.stringify(this.oldData), data) ? true : false;
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'dataChange',
+                data: state,
+            })
         });
     }
 
@@ -399,22 +399,22 @@ export class MobFormControlBase extends MainControlBase {
                             PSUIActionGroupDetails.forEach((actionDetail: any) => {
                                 let temp: any = {
                                     name: `${detail.name}_${actionDetail.name}`,
-                                    tag: actionDetail?.getPSUIAction?.uIActionTag,
-                                    caption: actionDetail?.getPSUIAction?.caption || '',
+                                    tag: actionDetail?.getPSUIAction()?.uIActionTag,
+                                    caption: actionDetail?.getPSUIAction()?.caption || '',
                                     disabled: false,
                                     visabled: true,
-                                    noprivdisplaymode: actionDetail?.getPSUIAction?.getNoPrivDisplayMode,
-                                    actiontarget: actionDetail?.getPSUIAction?.actionTarget || '',
-                                    dataaccaction: actionDetail?.getPSUIAction?.dataAccessAction || '',
+                                    noprivdisplaymode: actionDetail?.getPSUIAction()?.noPrivDisplayMode,
+                                    actiontarget: actionDetail?.getPSUIAction()?.actionTarget || '',
+                                    dataaccaction: actionDetail?.getPSUIAction()?.dataAccessAction || '',
                                     isShowCaption: actionDetail.showCaption,
                                     isShowIcon: actionDetail.showIcon,
                                 }
-                                if (actionDetail?.getPSUIAction?.$appDataEntity) {
-                                    temp.uiactiontag = `${actionDetail?.getPSUIAction?.$appDataEntity?.codeName?.toLowerCase()}_${actionDetail?.getPSUIAction?.uIActionTag?.toLowerCase()}`
-                                }
+                                if (actionDetail?.getPSUIAction()?.getPSAppDataEntity?.()) {
+                                    temp.uiactiontag = `${actionDetail?.getPSUIAction()?.getPSAppDataEntity?.()?.codeName?.toLowerCase()}_${actionDetail?.getPSUIAction()?.uIActionTag?.toLowerCase()}`
+                                }                                
                                 // 图标
-                                if (actionDetail?.getPSUIAction?.getPSSysImage) {
-                                    let image = actionDetail.getPSUIAction.getPSSysImage;
+                                if (actionDetail?.getPSUIAction()?.getPSSysImage?.()) {
+                                    let image = actionDetail.getPSUIAction().getPSSysImage?.();
                                     if (image.cssClass) {
                                         temp.icon = image.cssClass;
                                     } else {
@@ -476,14 +476,14 @@ export class MobFormControlBase extends MainControlBase {
                         detailModel = new FormPartModel(detailOpts);
                         break;
                     case 'DRUIPART':
-                        // this.drCount++;
+                        this.drCount++;
                         detailModel = new FormDruipartModel(detailOpts);
                         break;
                     case 'IFRAME':
                         detailModel = new FormIFrameModel(detailOpts);
                         break;
                     case 'RAWITEM':
-                        // detailModel = new FormRawItemModel(detailOpts);
+                        detailModel = new FormRawItemModel(detailOpts);
                         break;
                     case 'USERCONTROL':
                         detailModel = new FormUserControlModel(detailOpts);
@@ -521,7 +521,7 @@ export class MobFormControlBase extends MainControlBase {
      * @returns {void}
      * @memberof MobFormControlBase
      */
-    protected autoLoad(arg: any = {}): void {
+    public autoLoad(arg: any = {}): void {
         if (arg.srfkey && !Object.is(arg.srfkey, '')) {
             Object.assign(arg, { srfkey: arg.srfkey });
             this.load(arg);
@@ -552,15 +552,15 @@ export class MobFormControlBase extends MainControlBase {
         const arg: any = { ...opt };
         Object.assign(arg, this.viewparams);
         let response: any
-        this.onControlRequset('load', { ...this.context },  arg);
+        this.onControlRequset('load', { ...this.context }, arg);
         try {
             response = await this.service.get(this.loadAction, { ...this.context }, arg, this.showBusyIndicator);
         } catch (error) {
-            this.onControlResponse('load',response);
+            this.onControlResponse('load', response);
             this.$Notice.error(error.data.message ? error.data.message : (this.$t('app.commonWords.sysException') as string));
         }
         if (response && response.status === 200) {
-            this.onControlResponse('load',response);
+            this.onControlResponse('load', response);
             const data = response.data;
             this.onFormLoad(data, 'load');
             this.ctrlEvent({
@@ -572,7 +572,7 @@ export class MobFormControlBase extends MainControlBase {
                 this.formState.next({ type: 'load', data: data });
             });
         } else if (response && response.status !== 401) {
-            this.onControlResponse('load',response);
+            this.onControlResponse('load', response);
             const { error: _data } = response;
             this.$Notice.error(_data?.message || this.$t('app.commonWords.sysException') as string);
         }
@@ -585,7 +585,7 @@ export class MobFormControlBase extends MainControlBase {
      * @param {*} [opt={}]
      * @memberof MobFormControlBase
      */
-    protected async loadDraft(opt: any = {}): Promise<any> {
+    public async loadDraft(opt: any = {}): Promise<any> {
         const { codeName } = this.controlInstance;
         if (!this.loaddraftAction) {
             this.$Notice.error(codeName + this.$t('app.view') + this.$t('app.ctrl.form') + 'loaddraftAction' + this.$t('app.notConfig'));
@@ -596,11 +596,14 @@ export class MobFormControlBase extends MainControlBase {
         const response: any = await this.service.loadDraft(this.loaddraftAction, { ...this.context }, arg, this.showBusyIndicator);
         if (response && response.status === 200) {
             const data = response.data;
-            if (this.appDeCodeName?.toLowerCase() && data[this.appDeCodeName.toLowerCase()]) {
-                Object.assign(this.context, { [this.appDeCodeName.toLowerCase()]: data[this.appDeCodeName.toLowerCase()] });
-            }
             this.resetDraftFormStates();
             this.onFormLoad(data, 'loadDraft');
+            //  同步PC 删除主键表单项的值
+            this.controlInstance.getPSDEFormItems()?.find((item: IPSDEFormItem) => {
+                if (item.getPSAppDEField()?.keyField && !item.hidden) {
+                    data[item.name] = null;
+                }
+            })            
             this.ctrlEvent({
                 controlname: this.controlInstance.name,
                 action: 'load',
@@ -627,6 +630,21 @@ export class MobFormControlBase extends MainControlBase {
      * @memberof MobFormControlBase
      */
     public onFormLoad(data: any = {}, action: string): void {
+        if (this.appDeCodeName.toLowerCase()) {
+            if (Object.is(action, "save") || Object.is(action, "autoSave") || Object.is(action, "submit")){
+                // 更新context的实体主键
+                if (data[this.appDeCodeName.toLowerCase()]) {
+                    Object.assign(this.context, { [this.appDeCodeName.toLowerCase()]: data[this.appDeCodeName.toLowerCase()] })
+                }
+                this.ctrlEvent({
+                  controlname: this.controlInstance.name,
+                  action: 'viewstatechange',
+                  data: {
+                    viewDataChange: false
+                  },
+                });
+            }
+        }      
         this.setFormEnableCond(data);
         this.fillForm(data, action);
         this.oldData = {};
@@ -665,7 +683,7 @@ export class MobFormControlBase extends MainControlBase {
      * @param {string} [action]
      * @memberof MobFormControlBase
      */
-    protected fillForm(_datas: any = {}, action: string): void {
+    public fillForm(_datas: any = {}, action: string): void {
         this.ignorefieldvaluechange = true;
         Object.keys(_datas).forEach((name: string) => {
             if (this.data.hasOwnProperty(name)) {
@@ -790,7 +808,7 @@ export class MobFormControlBase extends MainControlBase {
      * @memberof AppDefaultMobForm
      */
     public resetFormData({ name, newVal, oldVal }: { name: string, newVal: any, oldVal: any }): void {
-        const formItems = this.controlInstance.getPSDEFormItems();
+        const formItems: IPSDEEditFormItem[] = ModelTool.getAllFormItems(this.controlInstance);
         if (formItems && formItems.length > 0) {
             for (const item of formItems) {
                 if (item.resetItemName && item.resetItemName == name) {
@@ -918,7 +936,7 @@ export class MobFormControlBase extends MainControlBase {
      *
      * @memberof MobFormControlBase
      */
-    protected resetValidates(): void {
+    public resetValidates(): void {
         Object.values(this.detailsModel).forEach((detail: any) => {
             if (!Object.is(detail.detailType, 'FORMITEM')) {
                 return;
@@ -1076,7 +1094,7 @@ export class MobFormControlBase extends MainControlBase {
                         if (Util.isEmpty(this.data[valueName])) {
                             return true
                         }
-                        const { isPast, infoMessage } = Verify.verifyDeRules(valueName, this.data, deRule.getPSDEFVRGroupCondition);
+                        const { isPast, infoMessage } = Verify.verifyDeRules(valueName, this.data, deRule.getPSDEFVRGroupCondition());
                         if (!isPast) {
                             callback(new Error(infoMessage || deRule.ruleInfo));
                         }
@@ -1197,17 +1215,17 @@ export class MobFormControlBase extends MainControlBase {
         const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
         if (!action) {
             let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
-            this.$Notice.error( `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string) );
+            this.$Notice.error(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string));
             return;
         }
         Object.assign(arg, { viewparams: this.viewparams });
-        this.onControlRequset('autoSave', { ...this.context },  arg);
+        this.onControlRequset('autoSave', { ...this.context }, arg);
         const post: Promise<any> = this.service.add(action, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.onControlResponse('autoSave',response);
+            this.onControlResponse('autoSave', response);
             if (!response.status || response.status !== 200) {
                 if (response.data) {
-                    this.$Notice.error( response.data.message || this.$t('app.commonWords.sysException') as string );
+                    this.$Notice.error(response.data.message || this.$t('app.commonWords.sysException') as string);
                 }
                 return;
             }
@@ -1223,14 +1241,14 @@ export class MobFormControlBase extends MainControlBase {
                 this.formState.next({ type: 'save', data: data });
             });
         }).catch((response: any) => {
-            this.onControlResponse('autoSave',response);
+            this.onControlResponse('autoSave', response);
             if (response && response.status && response.data) {
                 if (response.data.errorKey) {
                     if (Object.is(response.data.errorKey, "versionCheck")) {
-                        this.$Notice.confirm.call(this,(this.$t('app.formpage.saveerror') as string), (this.$t('app.formpage.savecontent') as string)).then((result:any)=>{
-                          if (result) {
-                            this.refresh([]);
-                          }
+                        this.$Notice.confirm.call(this, (this.$t('app.formpage.saveerror') as string), (this.$t('app.formpage.savecontent') as string)).then((result: any) => {
+                            if (result) {
+                                this.refresh([]);
+                            }
                         });
                     } else if (Object.is(response.data.errorKey, 'DupCheck')) {
                         let errorProp: string = response.data.message.match(/\[[a-zA-Z]*\]/)[0];
@@ -1249,14 +1267,14 @@ export class MobFormControlBase extends MainControlBase {
                             this.detailsModel[this.majorKeyItemName].caption + " : " + arg[this.majorKeyItemName] + (this.$t('app.commonWords.isExist') as string) + '!',
                         );
                     } else {
-                        this.$Notice.error( response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string) );
+                        this.$Notice.error(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string));
                     }
                 } else {
-                    this.$Notice.error( response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string) );
+                    this.$Notice.error(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string));
                 }
                 return;
             } else {
-                this.$Notice.error(this.$t('app.commonWords.sysException') as string) ;
+                this.$Notice.error(this.$t('app.commonWords.sysException') as string);
             }
         });
     }
@@ -1271,7 +1289,7 @@ export class MobFormControlBase extends MainControlBase {
      * @memberof MobFormControlBase
      */
     public async save(opt: any = {}, showResultInfo?: boolean, isStateNext: boolean = true): Promise<any> {
-        
+
         showResultInfo = showResultInfo === undefined ? true : false;
         if (this.data.srfuf == '1' ? !await this.validAll() : !await this.validAll('new')) {
             return Promise.reject();
@@ -1282,7 +1300,7 @@ export class MobFormControlBase extends MainControlBase {
             Object.assign(arg, this.context);
             Object.assign(arg, data);
             Object.assign(arg, { srfmajortext: data[this.majorMessageItemName] });
-            
+
             if (isStateNext && this.drCount > 0) {
                 this.drcounter = this.drCount;
                 this.drsaveopt = opt;
@@ -1327,7 +1345,7 @@ export class MobFormControlBase extends MainControlBase {
                 if (response && response.status && response.data) {
                     if (response.data.errorKey) {
                         if (Object.is(response.data.errorKey, "versionCheck")) {
-                            this.$Notice.confirm.call(this,(this.$t('app.formpage.saveerror') as string), (this.$t('app.formpage.savecontent') as string)).then(() => {
+                            this.$Notice.confirm.call(this, (this.$t('app.formpage.saveerror') as string), (this.$t('app.formpage.savecontent') as string)).then(() => {
                                 this.refresh();
                             });
                         } else if (Object.is(response.data.errorKey, 'DupCheck')) {
@@ -1368,7 +1386,7 @@ export class MobFormControlBase extends MainControlBase {
      * @returns {Promise<any>}
      * @memberof MobFormControlBase
      */
-    private async remove(opt: Array<any> = [], showResultInfo?: boolean): Promise<any> {
+    public async remove(opt: Array<any> = [], showResultInfo?: boolean): Promise<any> {
         if (!this.removeAction) {
             const view = this.controlInstance.getParentPSModelObject();
             this.$Notice.error(view?.name + this.$t('app.view') + this.$t('app.ctrl.form') + 'removeAction' + this.$t('app.notConfig'));
@@ -1397,6 +1415,96 @@ export class MobFormControlBase extends MainControlBase {
     }
 
     /**
+     * 工作流启动
+     *
+     * @param {*} data  表单数据
+     * @param {*} [localdata] 补充逻辑完成参数
+     * @return {*}  {Promise<any>}
+     * @memberof EditFormControlBase
+     */
+    public async wfstart(data: any, localdata?: any): Promise<any> {
+        if (!await this.validAll()) {
+            return;
+        }
+        return new Promise((resolve: any, reject: any) => {
+            const _this: any = this;
+            const formData: any = this.getData();
+            const copyData: any = Util.deepCopy(data[0]);
+            Object.assign(formData, { viewparams: copyData });
+            let tempContext: any = JSON.parse(JSON.stringify(this.context));
+            this.onControlRequset('save', tempContext, formData);
+            const post: Promise<any> = Object.is(formData.srfuf, '1') ? this.service.update(this.updateAction, tempContext, formData, this.showBusyIndicator, true) : this.service.add(this.createAction, tempContext, formData, this.showBusyIndicator, true);
+            post.then((response: any) => {
+                this.onControlResponse('save', response);
+                const arg: any = response.data;
+                const responseData: any = Util.deepCopy(arg);
+                // 保存完成UI处理
+                this.onFormLoad(arg, 'save');
+                this.ctrlEvent({
+                    controlname: this.controlInstance.name,
+                    action: 'save',
+                    data: arg,
+                });
+                this.$nextTick(() => {
+                    this.formState.next({ type: 'save', data: arg });
+                });
+                // 准备工作流数据,填充未存库数据
+                let tempWFData: any = {};
+                if (copyData && Object.keys(copyData).length > 0) {
+                    Object.keys(copyData).forEach((key: string) => {
+                        if ((!arg.hasOwnProperty(key)) || (!arg[key] && copyData[key])) {
+                            tempWFData[key] = copyData[key];
+                        }
+                    })
+                }
+                // 准备提交参数
+                if (this.viewparams) {
+                    let copyViewParams: any = Util.deepCopy(this.viewparams);
+                    if (copyViewParams.w) {
+                        delete copyViewParams.w;
+                    }
+                    if (this.appDeKeyFieldName && copyViewParams[this.appDeKeyFieldName.toLocaleLowerCase()]) {
+                        delete copyViewParams[this.appDeKeyFieldName.toLocaleLowerCase()]
+                    }
+                    if (this.appDeMajorFieldName && copyViewParams[this.appDeMajorFieldName.toLocaleLowerCase()]) {
+                        delete copyViewParams[this.appDeMajorFieldName.toLocaleLowerCase()]
+                    }
+                    Object.assign(responseData, copyViewParams);
+                }
+                if (tempWFData && Object.keys(tempWFData).length > 0) {
+                    Object.assign(responseData, tempWFData);
+                }
+                Object.assign(arg, { viewparams: responseData });
+                // 强制补充srfwfmemo
+                if (copyData.srfwfmemo) {
+                    Object.assign(arg, { srfwfmemo: copyData.srfwfmemo });
+                }
+                let tempContext: any = JSON.parse(JSON.stringify(this.context));
+                this.onControlRequset('wfstart', tempContext, arg);
+                const result: Promise<any> = this.service.wfstart(_this.WFStartAction, tempContext, arg, this.showBusyIndicator, localdata);
+                result.then((response: any) => {
+                    this.onControlResponse('wfstart', response);
+                    if (!response || response.status !== 200) {
+                        this.$Notice.error((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message, 'wfstart');
+                        return;
+                    }
+                    AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
+                    // this.$success((this.$t('app.formpage.workflow.startsuccess') as string), 'wfstart');
+                    resolve(response);
+                }).catch((response: any) => {
+                    this.onControlResponse('wfstart', response);
+                    this.$Notice.error(response, 'wfstart');
+                    reject(response);
+                });
+            }).catch((response: any) => {
+                this.onControlResponse('wfstart', response);
+                this.$Notice.error(response, 'wfstart');
+                reject(response);
+            })
+        });
+    }
+
+    /**
      * 保存并退出
      *
      * @protected
@@ -1404,7 +1512,7 @@ export class MobFormControlBase extends MainControlBase {
      * @returns {Promise<any>}
      * @memberof MobFormControlBase
      */
-    protected async saveAndExit(data: any[]): Promise<any> {
+    public async saveAndExit(data: any[]): Promise<any> {
         let arg: any = {};
         if (data && data.length > 0) {
             Object.assign(arg, data[0]);
@@ -1423,7 +1531,7 @@ export class MobFormControlBase extends MainControlBase {
       * @param {any[]} args
       * @memberof MobFormControlBase
       */
-    protected ResetData(_datas: any) {
+    public ResetData(_datas: any) {
         if (Object.keys(_datas).length > 0) {
             Object.keys(_datas).forEach((name: string) => {
                 if (this.data.hasOwnProperty(name)) {
@@ -1441,7 +1549,7 @@ export class MobFormControlBase extends MainControlBase {
      * @returns {Promise<any>}
      * @memberof MobFormControlBase
      */
-    protected async saveAndNew(data: any[]): Promise<any> {
+    public async saveAndNew(data: any[]): Promise<any> {
         let arg: any = { ...data[0] };
         this.currentAction = 'saveAndNew';
         const response: any = await this.save([arg]);
@@ -1460,7 +1568,7 @@ export class MobFormControlBase extends MainControlBase {
      * @returns {Promise<any>}
      * @memberof MobFormControlBase
      */
-    protected async removeAndExit(data: any[]): Promise<any> {
+    public async removeAndExit(data: any[]): Promise<any> {
         let arg: any = { ...data[0] };
         const response: any = await this.remove([arg]);
         if (response && response.status === 200) {
@@ -1493,15 +1601,134 @@ export class MobFormControlBase extends MainControlBase {
     * @memberof MobFormControlBase
     */
     protected drdatasaved($event: any) {
-        let _this = this;
         this.drcounter--;
         if (this.drcounter > 0) {
             return;
         }
-        this.save({}, undefined, false).then((res) => {
+        this.save(this.drsaveopt, this.showBusyIndicator, false).then((res) => {
             this.saveState(res);
+            this.drsaveopt = {};
         });
     }
 
+    /**
+ * 工作流提交
+ *
+ * @param {*} data  表单数据
+ * @param {*} [localdata] 补充逻辑完成参数
+ * @return {*}  {Promise<any>}
+ * @memberof EditFormControlBase
+ */
+    public async wfsubmit(data: any, localdata?: any, isStateNext: boolean = true): Promise<any> {
+        if (!await this.validAll()) {
+            let descMessage: string = this.$t('app.searchForm.globalerrortip') + '<br/>';
+            this.$Notice.error(descMessage, 'wfsubmit', { dangerouslyUseHTMLString: true });         
+            return;
+        }
+        this.currentAction = 'WFSubmit';
+        return new Promise((resolve: any, reject: any) => {
+            const _this: any = this;
+            const arg: any = data[0];
+            const copyData: any = Util.deepCopy(arg);
+            Object.assign(this.viewparams, copyData);
+            Object.assign(arg, { viewparams: this.viewparams });
+            if (!arg[this.appDeKeyFieldName.toLowerCase()]) {
+                return;
+            }
+            if (isStateNext && this.drCount > 0) {
+                this.drcounter = this.drCount;
+                this.drsaveopt = { data: data, localdata: localdata };
+                this.formState.next({ type: 'beforesave', data: arg });//先通知关系界面保存
+                this.saveState = resolve;
+                return;
+            }
+            const submitData: Function = (arg: any, responseData: any) => {
+                // 准备工作流数据,填充未存库数据
+                let tempWFData: any = {};
+                if (copyData && Object.keys(copyData).length > 0) {
+                    Object.keys(copyData).forEach((key: string) => {
+                        if ((!arg.hasOwnProperty(key)) || (!arg[key] && copyData[key])) {
+                            tempWFData[key] = copyData[key];
+                        }
+                    })
+                }
+                // 准备提交参数
+                if (this.viewparams) {
+                    Object.assign(responseData, this.viewparams);
+                }
+                if (tempWFData && Object.keys(tempWFData).length > 0) {
+                    Object.assign(responseData, tempWFData);
+                }
+                // 补充逻辑完成参数
+                if (localdata && localdata.type && Object.is(localdata.type, "finish")) {
+                    Object.assign(responseData, { srfwfpredefaction: "finish" });
+                }
+                Object.assign(arg, { viewparams: responseData });
+                // 强制补充srfwfmemo
+                if (copyData.srfwfmemo) {
+                    Object.assign(arg, { srfwfmemo: copyData.srfwfmemo });
+                }
+                let tempContext: any = JSON.parse(JSON.stringify(this.context));
+                this.onControlRequset('wfsubmit', tempContext, arg);
+                const result: Promise<any> = this.service.wfsubmit(_this.WFSubmitAction, tempContext, arg, this.showBusyIndicator, localdata);
+                result.then((response: any) => {
+                    this.onControlResponse('wfsubmit', response);
+                    if (!response || response.status !== 200) {
+                        this.$Notice.error((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message, 'wfsubmit');
+                        return;
+                    }
+                    this.onFormLoad(arg, 'submit');
+                    AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
+                    this.$Notice.success(this.$t('app.formpage.workflow.submitsuccess'));
+                    resolve(response);
+                }).catch((response: any) => {
+                    this.onControlResponse('wfsubmit', response);
+                    this.$Notice.error(response, 'wfsubmit');
+                    reject(response);
+                });
+            }
+            // if (this.isEditable) {
+            let tempContext: any = JSON.parse(JSON.stringify(this.context));
+            this.onControlRequset('save', tempContext, arg);
+            const post: Promise<any> = Object.is(arg.srfuf, '1') ? this.service.update(this.updateAction, tempContext, arg, this.showBusyIndicator, true) : this.service.add(this.createAction, tempContext, arg, this.showBusyIndicator, true);
+            post.then((response: any) => {
+                this.onControlResponse('save', response);
+                const responseData: any = response.data;
+                let tempResponseData: any = Util.deepCopy(response);
+                this.service.handleResponse('save', tempResponseData);
+                const arg: any = tempResponseData.data;
+                // 保存完成UI处理
+                this.onFormLoad(arg, 'save');
+                this.ctrlEvent({
+                    controlname: this.controlInstance.name,
+                    action: 'save',
+                    data: arg,
+                });
+                this.$nextTick(() => {
+                    this.formState.next({ type: 'save', data: arg });
+                });
+                submitData(arg, responseData);
+            }).catch((response: any) => {
+                this.onControlResponse('save', response);
+                this.$Notice.error(response, 'wfsubmit');
+                reject(response);
+            })
+            // } else {
+            // const responseData: any = this.getData();
+            // submitData(arg, responseData);
+            // }
+        })
+    }
+
+    /**
+     * 表单项行为触发
+     *
+     * @param {*} { formDetail, event }
+     * @memberof MobFormControlBase
+     */
+    public onFormItemActionClick({ formDetail, event }: any) {
+        const tag = `${this.controlInstance.name}_${formDetail.name}_click`;
+        AppViewLogicService.getInstance().executeViewLogic(tag, event, this, null, this.controlInstance.getPSAppViewLogics());
+    }
 
 }

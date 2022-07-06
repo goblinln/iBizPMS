@@ -108,14 +108,6 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realTitle" : "岗位编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysPostEditView.json",
-      "viewType" : "DEEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "getPSNavigateContexts" : [ {
       "key" : "POSTID",
@@ -135,6 +127,14 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridViewPostMembers.json",
       "viewType" : "DEGRIDVIEW"
     }
+  }, {
+    "name" : "NEWDATA",
+    "realTitle" : "岗位编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysPostEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
   } ],
   "getPSControls" : [ {
     "aggMode" : "NONE",
@@ -147,7 +147,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格_通讯录",
     "getNavPSAppView" : {
       "modelref" : true,
@@ -316,13 +316,6 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "memo",
-      "getPSAppDEField" : {
-        "name" : "MEMO",
-        "codeName" : "Memo"
-      }
-    }, {
-      "dataType" : 25,
       "name" : "postname",
       "getPSAppDEField" : {
         "name" : "POSTNAME",
@@ -330,10 +323,17 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "memo",
       "getPSAppDEField" : {
-        "name" : "POSTNAME",
-        "codeName" : "PostName"
+        "name" : "MEMO",
+        "codeName" : "Memo"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "POSTID",
+        "codeName" : "PostId"
       }
     }, {
       "dataType" : 25,
@@ -345,10 +345,10 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 25,
-      "name" : "srfkey",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "POSTID",
-        "codeName" : "PostId"
+        "name" : "POSTNAME",
+        "codeName" : "PostName"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -402,7 +402,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -411,10 +411,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -433,10 +433,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

@@ -418,7 +418,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "主编辑表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -643,7 +643,7 @@
     "codeName" : "Default",
     "controlType" : "DRBAR",
     "editItemCaption" : "文档库分类",
-    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SELECTIONCHANGE" ],
     "name" : "drbar",
     "getPSAppDataEntity" : {
       "modelref" : true,

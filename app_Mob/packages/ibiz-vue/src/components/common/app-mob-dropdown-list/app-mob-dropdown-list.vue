@@ -50,6 +50,14 @@ export default class AppMobDropdownList extends Vue {
   @Prop() public codelistType?: string;
 
   /**
+   * 代码表
+   *
+   * @type {string}
+   * @memberof DropDownList
+   */    
+  @Prop() public codeList?: any;
+
+  /**
    * 代码表列表项
    *
    * @type {Array<any>}
@@ -102,7 +110,7 @@ export default class AppMobDropdownList extends Vue {
             this.options = [];
           });
       } else {
-        this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: null, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
+        this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: this.codeList, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
             this.options = codelistItems;
         }).catch((error: any) => {
             LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codeNotExist')}`);

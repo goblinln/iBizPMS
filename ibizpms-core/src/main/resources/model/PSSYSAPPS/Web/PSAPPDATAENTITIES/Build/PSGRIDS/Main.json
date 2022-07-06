@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -311,14 +311,14 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
           },
           "getPSNavigateContexts" : [ {
-            "key" : "BUILD",
-            "name" : "BUILD",
-            "value" : "id",
-            "rawValue" : false
-          }, {
             "key" : "PROJECT",
             "name" : "PROJECT",
             "value" : "project",
+            "rawValue" : false
+          }, {
+            "key" : "BUILD",
+            "name" : "BUILD",
+            "value" : "id",
             "rawValue" : false
           }, {
             "key" : "PRODUCT",
@@ -380,9 +380,9 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
           },
           "getPSNavigateContexts" : [ {
-            "key" : "NAME",
-            "name" : "NAME",
-            "value" : "name",
+            "key" : "PROJECT",
+            "name" : "PROJECT",
+            "value" : "project",
             "rawValue" : false
           }, {
             "key" : "BUILD",
@@ -390,9 +390,9 @@
             "value" : "build",
             "rawValue" : false
           }, {
-            "key" : "PROJECT",
-            "name" : "PROJECT",
-            "value" : "project",
+            "key" : "NAME",
+            "name" : "NAME",
+            "value" : "name",
             "rawValue" : false
           }, {
             "key" : "PRODUCT",
@@ -401,6 +401,11 @@
             "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
+            "key" : "name",
+            "name" : "name",
+            "value" : "name",
+            "rawValue" : false
+          }, {
             "key" : "product",
             "name" : "product",
             "value" : "product",
@@ -409,11 +414,6 @@
             "key" : "project",
             "name" : "project",
             "value" : "project",
-            "rawValue" : false
-          }, {
-            "key" : "name",
-            "name" : "name",
-            "value" : "name",
             "rawValue" : false
           }, {
             "key" : "build",
@@ -560,11 +560,47 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "productname",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "scmpath",
+    "getPSAppDEField" : {
+      "name" : "SCMPATH",
+      "codeName" : "ScmPath"
+    }
+  }, {
     "dataType" : 25,
     "name" : "filepath",
     "getPSAppDEField" : {
       "name" : "FILEPATH",
       "codeName" : "FilePath"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "date",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
     }
   }, {
     "dataType" : 25,
@@ -581,19 +617,18 @@
       "codeName" : "Buildsn"
     }
   }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "date",
+    "dataType" : 1,
+    "name" : "product",
     "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "project",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "PROJECT",
+      "codeName" : "Project"
     }
   }, {
     "dataType" : 1,
@@ -612,41 +647,6 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "project",
-    "getPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "scmpath",
-    "getPSAppDEField" : {
-      "name" : "SCMPATH",
-      "codeName" : "ScmPath"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "name",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 1,
     "name" : "branch",
     "getPSAppDEField" : {
       "name" : "BRANCH",
@@ -654,10 +654,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "productname",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "PRODUCTNAME",
-      "codeName" : "ProductName"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {

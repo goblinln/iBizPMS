@@ -1507,6 +1507,20 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
+    "codeName" : "RedirectView",
+    "logicName" : "effort实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "effort实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "effort实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "effort实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "EditView",
     "logicName" : "effort实体编辑视图",
     "modelTag" : "EDITVIEW",
@@ -1514,23 +1528,16 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "effort实体选择表格视图（部件视图）",
-    "name" : "effort实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "effort实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "effort实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "EditView2",
     "logicName" : "effort实体编辑视图（左右关系）",
     "name" : "effort实体编辑视图（左右关系）",
     "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "effort实体选择表格视图（部件视图）",
+    "name" : "effort实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MPickupView",
@@ -1540,26 +1547,19 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "GridView",
+    "logicName" : "effort实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "effort实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "Main",
     "logicName" : "主编辑表单",
     "modelTag2" : "0",
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "effort实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "effort实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "effort实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "effort实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "Effort",
   "dEType" : 1,
@@ -1590,7 +1590,7 @@
   "name" : "ZT_EFFORT",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

@@ -45,7 +45,7 @@
   "getPSControls" : [ {
     "codeName" : "ListExpViewlistexpbar",
     "controlType" : "LISTEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "listexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,

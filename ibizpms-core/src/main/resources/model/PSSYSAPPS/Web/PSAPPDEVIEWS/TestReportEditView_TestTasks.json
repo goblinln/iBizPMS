@@ -36,15 +36,15 @@
     "getPSViewCtrlName" : "toolbar"
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "ID",
-    "name" : "ID",
-    "value" : "0",
-    "rawValue" : true
-  }, {
     "key" : "PROJECT",
     "name" : "PROJECT",
     "value" : "project",
     "rawValue" : false
+  }, {
+    "key" : "ID",
+    "name" : "ID",
+    "value" : "0",
+    "rawValue" : true
   } ],
   "getPSAppViewNavParams" : [ {
     "key" : "id",
@@ -154,7 +154,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "项目报告新建模式",
     "getPSAppDataEntity" : {
       "modelref" : true,

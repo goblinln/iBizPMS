@@ -31,19 +31,19 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:tabviewpanel3",
-      "realTitle" : "项目月报表格视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectMonthlyGridView.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
       "name" : "EXPITEM:tabviewpanel2",
       "realTitle" : "项目周报表格视图",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectWeeklyGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:tabviewpanel3",
+      "realTitle" : "项目月报表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectMonthlyGridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     } ],
@@ -252,240 +252,6 @@
           "xDataControlName" : "grid"
         } ],
         "getPSControls" : [ {
-          "codeName" : "GridViewtoolbar",
-          "controlType" : "TOOLBAR",
-          "hookEventNames" : [ "CLICK" ],
-          "logicName" : "表格界面（刷新）",
-          "name" : "toolbar",
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
-          },
-          "getPSControlLogics" : [ {
-            "eventArg" : "deuiaction3_manualcreatedaily",
-            "eventNames" : "CLICK",
-            "logicTag" : "toolbar",
-            "logicType" : "APPVIEWLOGIC",
-            "name" : "toolbar_deuiaction3_manualcreatedaily_click",
-            "getPSAppViewLogic" : {
-              "modelref" : true,
-              "id" : "toolbar_deuiaction3_manualcreatedaily_click"
-            }
-          }, {
-            "eventArg" : "deuiaction2",
-            "eventNames" : "CLICK",
-            "logicTag" : "toolbar",
-            "logicType" : "APPVIEWLOGIC",
-            "name" : "toolbar_deuiaction2_click",
-            "getPSAppViewLogic" : {
-              "modelref" : true,
-              "id" : "toolbar_deuiaction2_click"
-            }
-          }, {
-            "eventArg" : "deuiaction1",
-            "eventNames" : "CLICK",
-            "logicTag" : "toolbar",
-            "logicType" : "APPVIEWLOGIC",
-            "name" : "toolbar_deuiaction1_click",
-            "getPSAppViewLogic" : {
-              "modelref" : true,
-              "id" : "toolbar_deuiaction1_click"
-            }
-          }, {
-            "eventArg" : "deuiaction4",
-            "eventNames" : "CLICK",
-            "logicTag" : "toolbar",
-            "logicType" : "APPVIEWLOGIC",
-            "name" : "toolbar_deuiaction4_click",
-            "getPSAppViewLogic" : {
-              "modelref" : true,
-              "id" : "toolbar_deuiaction4_click"
-            }
-          } ],
-          "getPSControlParam" : {
-            "id" : "TOOLBAR"
-          },
-          "getPSDEToolbarItems" : [ {
-            "caption" : "生成日报",
-            "groupExtractMode" : "ITEM",
-            "itemType" : "DEUIACTION",
-            "name" : "deuiaction3_manualcreatedaily",
-            "noPrivDisplayMode" : 2,
-            "getPSAppViewUIAction" : {
-              "modelref" : true,
-              "id" : "toolbar_deuiaction3_manualcreatedaily"
-            },
-            "getPSSysImage" : {
-              "glyph" : "xf067@FontAwesome",
-              "cssClass" : "fa fa-plus"
-            },
-            "getPSUIAction" : {
-              "actionTarget" : "NONE",
-              "caption" : "生成日报",
-              "codeName" : "ManualCreateDaily",
-              "confirmMsg" : "是否生成项目日报",
-              "fullCodeName" : "IbizproProjectDaily_ManualCreateDaily",
-              "name" : "生成项目日报",
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Summary"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
-              },
-              "getPSNavigateContexts" : [ {
-                "key" : "ISMANUAL",
-                "name" : "ISMANUAL",
-                "value" : "yes",
-                "rawValue" : true
-              } ],
-              "getPSNavigateParams" : [ {
-                "key" : "ismanual",
-                "name" : "ismanual",
-                "value" : "yes",
-                "rawValue" : true
-              } ],
-              "getPSSysImage" : {
-                "glyph" : "xf067@FontAwesome",
-                "cssClass" : "fa fa-plus"
-              },
-              "timeout" : 60000,
-              "uIActionMode" : "BACKEND",
-              "uIActionTag" : "ManualCreateDaily",
-              "uIActionType" : "DEUIACTION",
-              "enableConfirm" : true,
-              "id" : "ManualCreateDaily@IbizproProjectDaily"
-            },
-            "tooltip" : "生成日报",
-            "showCaption" : true,
-            "showIcon" : true
-          }, {
-            "caption" : "刷新",
-            "groupExtractMode" : "ITEM",
-            "itemType" : "DEUIACTION",
-            "name" : "deuiaction2",
-            "noPrivDisplayMode" : 2,
-            "getPSAppViewUIAction" : {
-              "modelref" : true,
-              "id" : "toolbar_deuiaction2"
-            },
-            "getPSSysImage" : {
-              "glyph" : "xf021@FontAwesome",
-              "cssClass" : "fa fa-refresh"
-            },
-            "getPSUIAction" : {
-              "caption" : "刷新",
-              "codeName" : "Refresh",
-              "fullCodeName" : "Refresh",
-              "name" : "表格界面_刷新操作",
-              "getPSSysImage" : {
-                "glyph" : "xf021@FontAwesome",
-                "cssClass" : "fa fa-refresh"
-              },
-              "predefinedType" : "GRIDVIEW_REFRESHACTION",
-              "timeout" : 60000,
-              "uIActionMode" : "SYS",
-              "uIActionTag" : "Refresh",
-              "uIActionType" : "DEUIACTION"
-            },
-            "tooltip" : "刷新",
-            "showCaption" : true,
-            "showIcon" : true
-          }, {
-            "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.EXPORT"
-            },
-            "caption" : "导出",
-            "groupExtractMode" : "ITEM",
-            "itemType" : "DEUIACTION",
-            "name" : "deuiaction1",
-            "noPrivDisplayMode" : 2,
-            "getPSAppViewUIAction" : {
-              "modelref" : true,
-              "id" : "toolbar_deuiaction1"
-            },
-            "getPSSysImage" : {
-              "glyph" : "xf1c3@FontAwesome",
-              "cssClass" : "fa fa-file-excel-o"
-            },
-            "getPSUIAction" : {
-              "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.EXPORT"
-              },
-              "caption" : "导出",
-              "codeName" : "ExportExcel",
-              "fullCodeName" : "ExportExcel",
-              "name" : "表格界面_导出操作（Excel）",
-              "getPSSysImage" : {
-                "glyph" : "xf1c3@FontAwesome",
-                "cssClass" : "fa fa-file-excel-o"
-              },
-              "predefinedType" : "GRIDVIEW_EXPORTACTION",
-              "timeout" : 60000,
-              "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-              },
-              "uIActionMode" : "SYS",
-              "uIActionTag" : "ExportExcel",
-              "uIActionType" : "DEUIACTION"
-            },
-            "tooltip" : "导出",
-            "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-            },
-            "showCaption" : true,
-            "showIcon" : true
-          }, {
-            "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.FILTER"
-            },
-            "caption" : "过滤",
-            "groupExtractMode" : "ITEM",
-            "itemType" : "DEUIACTION",
-            "name" : "deuiaction4",
-            "noPrivDisplayMode" : 2,
-            "getPSAppViewUIAction" : {
-              "modelref" : true,
-              "id" : "toolbar_deuiaction4"
-            },
-            "getPSSysImage" : {
-              "glyph" : "xf0b0@FontAwesome",
-              "cssClass" : "fa fa-filter"
-            },
-            "getPSUIAction" : {
-              "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.FILTER"
-              },
-              "caption" : "过滤",
-              "codeName" : "ToggleFilter",
-              "fullCodeName" : "ToggleFilter",
-              "name" : "表格界面_搜索栏",
-              "getPSSysImage" : {
-                "glyph" : "xf0b0@FontAwesome",
-                "cssClass" : "fa fa-filter"
-              },
-              "predefinedType" : "GRIDVIEW_SEARCHBAR",
-              "timeout" : 60000,
-              "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-              },
-              "uIActionMode" : "SYS",
-              "uIActionTag" : "ToggleFilter",
-              "uIActionType" : "DEUIACTION",
-              "enableToggleMode" : true
-            },
-            "tooltip" : "过滤",
-            "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-            },
-            "enableToggleMode" : true,
-            "showCaption" : true,
-            "showIcon" : true
-          } ],
-          "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
-          "modeltype" : "PSDETOOLBAR"
-        }, {
           "aggMode" : "NONE",
           "codeName" : "Main",
           "columnEnableLink" : 2,
@@ -496,7 +262,7 @@
             "id" : "fetch"
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+          "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
           "logicName" : "主表格",
           "minorSortDir" : "DESC",
           "getMinorSortPSAppDEField" : {
@@ -739,20 +505,6 @@
             "enableSort" : true
           } ],
           "getPSDEGridDataItems" : [ {
-            "dataType" : 1,
-            "name" : "project",
-            "getPSAppDEField" : {
-              "name" : "PROJECT",
-              "codeName" : "Project"
-            }
-          }, {
-            "dataType" : 7,
-            "name" : "totalestimates",
-            "getPSAppDEField" : {
-              "name" : "TOTALESTIMATES",
-              "codeName" : "Totalestimates"
-            }
-          }, {
             "dataType" : 25,
             "name" : "ibizpro_projectdailyname",
             "getPSAppDEField" : {
@@ -761,17 +513,17 @@
             }
           }, {
             "dataType" : 25,
-            "name" : "pm",
-            "getPSAppDEField" : {
-              "name" : "PM",
-              "codeName" : "PM"
-            }
-          }, {
-            "dataType" : 25,
             "name" : "projectname",
             "getPSAppDEField" : {
               "name" : "PROJECTNAME",
               "codeName" : "ProjectName"
+            }
+          }, {
+            "dataType" : 25,
+            "name" : "pm",
+            "getPSAppDEField" : {
+              "name" : "PM",
+              "codeName" : "PM"
             }
           }, {
             "format" : "YYYY-MM-DD",
@@ -782,29 +534,12 @@
               "codeName" : "Date"
             }
           }, {
-            "dataType" : 25,
-            "name" : "srfmstag"
-          }, {
-            "dataType" : 25,
-            "name" : "srfmajortext",
+            "format" : "YYYY-MM-DD",
+            "dataType" : 5,
+            "name" : "begin",
             "getPSAppDEField" : {
-              "name" : "IBIZPRO_PROJECTDAILYNAME",
-              "codeName" : "IbizproProjectDailyName"
-            }
-          }, {
-            "dataType" : 25,
-            "name" : "srfdataaccaction",
-            "getPSAppDEField" : {
-              "name" : "IBIZPRO_PROJECTDAILYID",
-              "codeName" : "IbizproProjectDailyId"
-            },
-            "dataAccessAction" : true
-          }, {
-            "dataType" : 25,
-            "name" : "srfkey",
-            "getPSAppDEField" : {
-              "name" : "IBIZPRO_PROJECTDAILYID",
-              "codeName" : "IbizproProjectDailyId"
+              "name" : "BEGIN",
+              "codeName" : "Begin"
             }
           }, {
             "format" : "YYYY-MM-DD",
@@ -815,13 +550,44 @@
               "codeName" : "End"
             }
           }, {
-            "format" : "YYYY-MM-DD",
-            "dataType" : 5,
-            "name" : "begin",
+            "dataType" : 7,
+            "name" : "totalestimates",
             "getPSAppDEField" : {
-              "name" : "BEGIN",
-              "codeName" : "Begin"
+              "name" : "TOTALESTIMATES",
+              "codeName" : "Totalestimates"
             }
+          }, {
+            "dataType" : 25,
+            "name" : "srfkey",
+            "getPSAppDEField" : {
+              "name" : "IBIZPRO_PROJECTDAILYID",
+              "codeName" : "IbizproProjectDailyId"
+            }
+          }, {
+            "dataType" : 25,
+            "name" : "srfdataaccaction",
+            "getPSAppDEField" : {
+              "name" : "IBIZPRO_PROJECTDAILYID",
+              "codeName" : "IbizproProjectDailyId"
+            },
+            "dataAccessAction" : true
+          }, {
+            "dataType" : 1,
+            "name" : "project",
+            "getPSAppDEField" : {
+              "name" : "PROJECT",
+              "codeName" : "Project"
+            }
+          }, {
+            "dataType" : 25,
+            "name" : "srfmajortext",
+            "getPSAppDEField" : {
+              "name" : "IBIZPRO_PROJECTDAILYNAME",
+              "codeName" : "IbizproProjectDailyName"
+            }
+          }, {
+            "dataType" : 25,
+            "name" : "srfmstag"
           } ],
           "getPSDEGridEditItems" : [ {
             "caption" : "项目日报标识",
@@ -874,7 +640,7 @@
           "codeName" : "Default",
           "controlType" : "SEARCHFORM",
           "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily/PSSEARCHFORMS/Default.json",
-          "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+          "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
           "logicName" : "默认搜索表单",
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -883,10 +649,10 @@
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
               "actionType" : "FILTERACTION",
-              "name" : "search",
+              "name" : "load",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterSearch"
+                "id" : "FilterGet"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -905,10 +671,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "load",
+              "name" : "search",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGet"
+                "id" : "FilterSearch"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -958,6 +724,240 @@
           "name" : "searchform",
           "modelid" : "a80ebdca36d5f3473e2ecad00c8f0a25",
           "modeltype" : "PSDEFORM_SEARCHFORM"
+        }, {
+          "codeName" : "GridViewtoolbar",
+          "controlType" : "TOOLBAR",
+          "hookEventNames" : [ "CLICK" ],
+          "logicName" : "表格界面（刷新）",
+          "name" : "toolbar",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
+          },
+          "getPSControlLogics" : [ {
+            "eventArg" : "deuiaction3_manualcreatedaily",
+            "eventNames" : "CLICK",
+            "logicTag" : "toolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "toolbar_deuiaction3_manualcreatedaily_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction3_manualcreatedaily_click"
+            }
+          }, {
+            "eventArg" : "deuiaction2",
+            "eventNames" : "CLICK",
+            "logicTag" : "toolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "toolbar_deuiaction2_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction2_click"
+            }
+          }, {
+            "eventArg" : "deuiaction1",
+            "eventNames" : "CLICK",
+            "logicTag" : "toolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "toolbar_deuiaction1_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction1_click"
+            }
+          }, {
+            "eventArg" : "deuiaction4",
+            "eventNames" : "CLICK",
+            "logicTag" : "toolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "toolbar_deuiaction4_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction4_click"
+            }
+          } ],
+          "getPSControlParam" : {
+            "id" : "TOOLBAR"
+          },
+          "getPSDEToolbarItems" : [ {
+            "caption" : "生成日报",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction3_manualcreatedaily",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction3_manualcreatedaily"
+            },
+            "getPSSysImage" : {
+              "glyph" : "xf067@FontAwesome",
+              "cssClass" : "fa fa-plus"
+            },
+            "getPSUIAction" : {
+              "actionTarget" : "NONE",
+              "caption" : "生成日报",
+              "codeName" : "ManualCreateDaily",
+              "confirmMsg" : "是否生成项目日报",
+              "fullCodeName" : "IbizproProjectDaily_ManualCreateDaily",
+              "name" : "生成项目日报",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Summary"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
+              },
+              "getPSNavigateContexts" : [ {
+                "key" : "ISMANUAL",
+                "name" : "ISMANUAL",
+                "value" : "yes",
+                "rawValue" : true
+              } ],
+              "getPSNavigateParams" : [ {
+                "key" : "ismanual",
+                "name" : "ismanual",
+                "value" : "yes",
+                "rawValue" : true
+              } ],
+              "getPSSysImage" : {
+                "glyph" : "xf067@FontAwesome",
+                "cssClass" : "fa fa-plus"
+              },
+              "timeout" : 60000,
+              "uIActionMode" : "BACKEND",
+              "uIActionTag" : "ManualCreateDaily",
+              "uIActionType" : "DEUIACTION",
+              "enableConfirm" : true,
+              "id" : "ManualCreateDaily@IbizproProjectDaily"
+            },
+            "tooltip" : "生成日报",
+            "showCaption" : true,
+            "showIcon" : true
+          }, {
+            "caption" : "刷新",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction2",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction2"
+            },
+            "getPSSysImage" : {
+              "glyph" : "xf021@FontAwesome",
+              "cssClass" : "fa fa-refresh"
+            },
+            "getPSUIAction" : {
+              "caption" : "刷新",
+              "codeName" : "Refresh",
+              "fullCodeName" : "Refresh",
+              "name" : "表格界面_刷新操作",
+              "getPSSysImage" : {
+                "glyph" : "xf021@FontAwesome",
+                "cssClass" : "fa fa-refresh"
+              },
+              "predefinedType" : "GRIDVIEW_REFRESHACTION",
+              "timeout" : 60000,
+              "uIActionMode" : "SYS",
+              "uIActionTag" : "Refresh",
+              "uIActionType" : "DEUIACTION"
+            },
+            "tooltip" : "刷新",
+            "showCaption" : true,
+            "showIcon" : true
+          }, {
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.EXPORT"
+            },
+            "caption" : "导出",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction1",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction1"
+            },
+            "getPSSysImage" : {
+              "glyph" : "xf1c3@FontAwesome",
+              "cssClass" : "fa fa-file-excel-o"
+            },
+            "getPSUIAction" : {
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.EXPORT"
+              },
+              "caption" : "导出",
+              "codeName" : "ExportExcel",
+              "fullCodeName" : "ExportExcel",
+              "name" : "表格界面_导出操作（Excel）",
+              "getPSSysImage" : {
+                "glyph" : "xf1c3@FontAwesome",
+                "cssClass" : "fa fa-file-excel-o"
+              },
+              "predefinedType" : "GRIDVIEW_EXPORTACTION",
+              "timeout" : 60000,
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+              },
+              "uIActionMode" : "SYS",
+              "uIActionTag" : "ExportExcel",
+              "uIActionType" : "DEUIACTION"
+            },
+            "tooltip" : "导出",
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+            },
+            "showCaption" : true,
+            "showIcon" : true
+          }, {
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.FILTER"
+            },
+            "caption" : "过滤",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction4",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction4"
+            },
+            "getPSSysImage" : {
+              "glyph" : "xf0b0@FontAwesome",
+              "cssClass" : "fa fa-filter"
+            },
+            "getPSUIAction" : {
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.FILTER"
+              },
+              "caption" : "过滤",
+              "codeName" : "ToggleFilter",
+              "fullCodeName" : "ToggleFilter",
+              "name" : "表格界面_搜索栏",
+              "getPSSysImage" : {
+                "glyph" : "xf0b0@FontAwesome",
+                "cssClass" : "fa fa-filter"
+              },
+              "predefinedType" : "GRIDVIEW_SEARCHBAR",
+              "timeout" : 60000,
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+              },
+              "uIActionMode" : "SYS",
+              "uIActionTag" : "ToggleFilter",
+              "uIActionType" : "DEUIACTION",
+              "enableToggleMode" : true
+            },
+            "tooltip" : "过滤",
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+            },
+            "enableToggleMode" : true,
+            "showCaption" : true,
+            "showIcon" : true
+          } ],
+          "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
+          "modeltype" : "PSDETOOLBAR"
         } ],
         "getPSDEViewCodeName" : "GridView",
         "getPSDEViewId" : "25ebe7a80820e321e0fa1c695a1f2814",

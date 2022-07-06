@@ -305,7 +305,6 @@ export abstract class TestCaseBase extends EntityBase implements ITestCase {
      * 所属模块
      */
     module?: any;
-
     /**
      * 重置实体数据
      *

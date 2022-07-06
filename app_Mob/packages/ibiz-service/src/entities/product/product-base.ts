@@ -265,7 +265,6 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      * id
      */
     line?: any;
-
     /**
      * 重置实体数据
      *

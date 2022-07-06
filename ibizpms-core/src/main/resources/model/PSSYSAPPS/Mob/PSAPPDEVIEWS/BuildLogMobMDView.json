@@ -79,19 +79,19 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realTitle" : "版本移动端编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BuildMobEditView.json",
-      "viewType" : "DEMOBEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "realTitle" : "版本移动端编辑视图（更新日志）",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BuildLogMobEditView.json",
+      "viewType" : "DEMOBEDITVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
+    "realTitle" : "版本移动端编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BuildMobEditView.json",
       "viewType" : "DEMOBEDITVIEW"
     }
   } ],
@@ -113,7 +113,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "name",

@@ -1874,12 +1874,11 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "PickupGridView",
+    "logicName" : "员工负载表实体选择表格视图（部件视图）",
+    "name" : "员工负载表实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
     "logicName" : "员工负载表实体数据选择视图",
@@ -1888,31 +1887,11 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "员工负载表实体选择表格视图（部件视图）",
-    "name" : "员工负载表实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "员工负载表实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "员工负载表实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "EditView",
     "logicName" : "员工负载表实体编辑视图",
     "modelTag" : "EDITVIEW",
     "name" : "员工负载表实体编辑视图",
     "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "员工负载表实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "员工负载表实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -1927,6 +1906,27 @@
     "name" : "员工负载表实体编辑视图（左右关系）",
     "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "员工负载表实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "员工负载表实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "员工负载表实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "员工负载表实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "EmpLoyeeload",
   "dEType" : 1,
@@ -1986,7 +1986,7 @@
   "name" : "IBZ_EMPLOYEELOAD",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

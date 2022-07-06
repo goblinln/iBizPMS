@@ -15,7 +15,7 @@
     "id" : "load"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "getItemPSLayoutPanel" : {
     "getAllPSPanelFields" : [ {
       "id" : "account",

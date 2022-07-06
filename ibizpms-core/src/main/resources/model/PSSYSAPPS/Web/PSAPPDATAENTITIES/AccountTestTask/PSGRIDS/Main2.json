@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（主页嵌入无分页）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -175,10 +175,31 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
-    "name" : "testtasksn",
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "TESTTASKSN",
-      "codeName" : "Testtasksn"
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "productname",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "projecttname",
+    "getPSAppDEField" : {
+      "name" : "PROJECTTNAME",
+      "codeName" : "ProjecttName"
     }
   }, {
     "dataType" : 1,
@@ -188,14 +209,41 @@
       "codeName" : "Build"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "begin",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "BEGIN",
+      "codeName" : "Begin"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "end",
+    "getPSAppDEField" : {
+      "name" : "END",
+      "codeName" : "End"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "testtasksn",
+    "getPSAppDEField" : {
+      "name" : "TESTTASKSN",
+      "codeName" : "Testtasksn"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
     }
   }, {
     "dataType" : 1,
@@ -213,63 +261,15 @@
     },
     "dataAccessAction" : true
   }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "begin",
-    "getPSAppDEField" : {
-      "name" : "BEGIN",
-      "codeName" : "Begin"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "project",
-    "getPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "projecttname",
-    "getPSAppDEField" : {
-      "name" : "PROJECTTNAME",
-      "codeName" : "ProjecttName"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "name",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     }
   }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "end",
-    "getPSAppDEField" : {
-      "name" : "END",
-      "codeName" : "End"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "productname",
-    "getPSAppDEField" : {
-      "name" : "PRODUCTNAME",
-      "codeName" : "ProductName"
-    }
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "编号",

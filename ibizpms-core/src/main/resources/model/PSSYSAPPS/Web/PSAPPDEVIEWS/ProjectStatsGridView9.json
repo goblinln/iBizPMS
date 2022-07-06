@@ -80,20 +80,20 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realTitle" : "项目统计编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
-      "viewType" : "DEEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "realTitle" : "项目数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
+    "realTitle" : "项目统计编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
+      "viewType" : "DEEDITVIEW"
     }
   } ],
   "getPSControls" : [ {
@@ -107,7 +107,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "未关闭的项目",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -370,68 +370,11 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 7,
-      "name" : "totalleft",
-      "getPSAppDEField" : {
-        "name" : "TOTALLEFT",
-        "codeName" : "TotalLeft"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "status",
-      "getPSAppDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      }
-    }, {
-      "dataType" : 7,
-      "name" : "totalconsumed",
-      "getPSAppDEField" : {
-        "name" : "TOTALCONSUMED",
-        "codeName" : "TotalConsumed"
-      }
-    }, {
-      "dataType" : 7,
-      "name" : "totalestimate",
-      "getPSAppDEField" : {
-        "name" : "TOTALESTIMATE",
-        "codeName" : "TotalEstimate"
-      }
-    }, {
       "dataType" : 25,
       "name" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "srfdataaccaction",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataAccessAction" : true
-    }, {
-      "dataType" : 1,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       }
     }, {
       "format" : "YYYY-MM-DD",
@@ -442,11 +385,68 @@
         "codeName" : "End"
       }
     }, {
+      "dataType" : 25,
+      "name" : "status",
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      }
+    }, {
+      "dataType" : 7,
+      "name" : "totalestimate",
+      "getPSAppDEField" : {
+        "name" : "TOTALESTIMATE",
+        "codeName" : "TotalEstimate"
+      }
+    }, {
+      "dataType" : 7,
+      "name" : "totalconsumed",
+      "getPSAppDEField" : {
+        "name" : "TOTALCONSUMED",
+        "codeName" : "TotalConsumed"
+      }
+    }, {
+      "dataType" : 7,
+      "name" : "totalleft",
+      "getPSAppDEField" : {
+        "name" : "TOTALLEFT",
+        "codeName" : "TotalLeft"
+      }
+    }, {
       "dataType" : 9,
       "name" : "totalwh",
       "getPSAppDEField" : {
         "name" : "TOTALWH",
         "codeName" : "Totalwh"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
       }
     } ],
     "getPSDEGridEditItems" : [ {

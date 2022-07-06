@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 import { UIServiceRegister } from 'ibiz-service';
 import { AppCenterService, AppLoadingService } from '../app-service';
 import { AppControlBase } from './app-control-base';
-import { ModelTool } from 'ibiz-core';
+import { MobMainControlInterface, ModelTool } from 'ibiz-core';
 import { IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
 
 /**
@@ -12,7 +12,7 @@ import { IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
  * @class MainControlBase
  * @extends {AppControlBase}
  */
-export class MainControlBase extends AppControlBase {
+export class MainControlBase extends AppControlBase implements MobMainControlInterface {
 
     /**
      * 编辑视图

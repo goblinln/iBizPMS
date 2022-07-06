@@ -1526,20 +1526,6 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "EditView",
-    "logicName" : "\b待办消息记录实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "\b待办消息记录实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "\b待办消息记录实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "\b待办消息记录实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "EditView2",
     "logicName" : "\b待办消息记录实体编辑视图（左右关系）",
     "name" : "\b待办消息记录实体编辑视图（左右关系）",
@@ -1553,18 +1539,38 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "\b待办消息记录实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "\b待办消息记录实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "RedirectView",
     "logicName" : "\b待办消息记录实体数据重定向视图",
     "modelTag" : "REDIRECTVIEW",
     "name" : "\b待办消息记录实体数据重定向视图",
     "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "\b待办消息记录实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "\b待办消息记录实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "\b待办消息记录实体选择表格视图（部件视图）",
+    "name" : "\b待办消息记录实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "\b待办消息记录实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "\b待办消息记录实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "\b待办消息记录实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "\b待办消息记录实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Main",
@@ -1573,12 +1579,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "\b待办消息记录实体选择表格视图（部件视图）",
-    "name" : "\b待办消息记录实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "TaskMsgRecord",
   "dEType" : 1,
@@ -1614,7 +1614,7 @@
   "name" : "TASKMSGRECORD",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

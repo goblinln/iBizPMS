@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -190,11 +190,11 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "id",
+    "dataType" : 25,
+    "name" : "name",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   }, {
     "dataType" : 25,
@@ -212,17 +212,10 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "root",
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "name",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -239,11 +232,11 @@
       "codeName" : "Type"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -255,27 +248,35 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "root",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "ROOT",
+      "codeName" : "Root"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {
-    "caption" : "id",
-    "codeName" : "id",
-    "enableCond" : 0,
+    "caption" : "名称",
+    "codeName" : "name",
+    "enableCond" : 3,
     "ignoreInput" : 0,
-    "name" : "id",
+    "name" : "name",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "getPSEditor" : {
       "editorType" : "TEXTBOX",
-      "name" : "id"
+      "maxLength" : 60,
+      "name" : "name"
     },
-    "allowEmpty" : true
+    "allowEmpty" : false
   }, {
     "caption" : "简称",
     "codeName" : "short",
@@ -309,21 +310,20 @@
     },
     "allowEmpty" : false
   }, {
-    "caption" : "名称",
-    "codeName" : "name",
-    "enableCond" : 3,
+    "caption" : "id",
+    "codeName" : "id",
+    "enableCond" : 0,
     "ignoreInput" : 0,
-    "name" : "name",
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "getPSEditor" : {
       "editorType" : "TEXTBOX",
-      "maxLength" : 60,
-      "name" : "name"
+      "name" : "id"
     },
-    "allowEmpty" : false
+    "allowEmpty" : true
   }, {
     "caption" : "id",
     "codeName" : "parent",

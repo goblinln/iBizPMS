@@ -98,8 +98,6 @@
     "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA"
-  }, {
     "name" : "EDITDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "月报编辑视图",
@@ -108,6 +106,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMonthlyMainMsgEditView.json",
       "viewType" : "DEEDITVIEW"
     }
+  }, {
+    "name" : "NEWDATA"
   } ],
   "getPSAppViewUIActions" : [ {
     "name" : "toolbar_deuiaction2_create",
@@ -130,144 +130,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "MainMonthlyGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "表格界面（导出、行为组(1~6)）",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction2_create",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_create_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_create_click"
-      }
-    }, {
-      "eventArg" : "deuiaction7",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction7_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction7_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "caption" : "新建",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2_create",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_create"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf067@FontAwesome",
-        "cssClass" : "fa fa-plus"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "NONE",
-        "caption" : "新建",
-        "codeName" : "Create",
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyNewMonthlyEditView.json",
-          "viewType" : "DEEDITVIEW"
-        },
-        "frontProcessType" : "WIZARD",
-        "fullCodeName" : "IbzMonthly_Create",
-        "name" : "新建",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
-        },
-        "getPSNavigateContexts" : [ {
-          "key" : "DATE",
-          "name" : "DATE",
-          "value" : "date",
-          "rawValue" : false
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "date",
-          "name" : "date",
-          "value" : "date",
-          "rawValue" : false
-        } ],
-        "getPSSysImage" : {
-          "glyph" : "xf067@FontAwesome",
-          "cssClass" : "fa fa-plus"
-        },
-        "refreshMode" : 1,
-        "timeout" : 60000,
-        "uIActionMode" : "FRONT",
-        "uIActionTag" : "Create",
-        "uIActionType" : "DEUIACTION",
-        "reloadData" : true,
-        "id" : "Create@IbzMonthly"
-      },
-      "tooltip" : "新建",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT"
-      },
-      "caption" : "导出",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction7",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction7"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT"
-        },
-        "caption" : "导出",
-        "codeName" : "ExportExcel",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）",
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "predefinedType" : "GRIDVIEW_EXPORTACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "导出",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "a367f1c87484ad35865184abea15eece",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "Main",
     "columnEnableLink" : 2,
@@ -278,7 +140,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -613,10 +475,10 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 25,
-      "name" : "issubmit",
+      "name" : "ibz_monthlyname",
       "getPSAppDEField" : {
-        "name" : "ISSUBMIT",
-        "codeName" : "Issubmit"
+        "name" : "IBZ_MONTHLYNAME",
+        "codeName" : "IbzMonthlyName"
       }
     }, {
       "dataType" : 25,
@@ -635,7 +497,11 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "reportto",
+      "getPSAppDEField" : {
+        "name" : "REPORTTO",
+        "codeName" : "Reportto"
+      }
     }, {
       "dataType" : 1,
       "name" : "ibz_monthlyid",
@@ -645,10 +511,17 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "issubmit",
       "getPSAppDEField" : {
-        "name" : "IBZ_MONTHLYNAME",
-        "codeName" : "IbzMonthlyName"
+        "name" : "ISSUBMIT",
+        "codeName" : "Issubmit"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "IBZ_MONTHLYID",
+        "codeName" : "IbzMonthlyId"
       }
     }, {
       "dataType" : 1,
@@ -659,26 +532,15 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "IBZ_MONTHLYID",
-        "codeName" : "IbzMonthlyId"
-      }
-    }, {
       "dataType" : 25,
-      "name" : "reportto",
-      "getPSAppDEField" : {
-        "name" : "REPORTTO",
-        "codeName" : "Reportto"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "ibz_monthlyname",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYNAME",
         "codeName" : "IbzMonthlyName"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "月报标识",
@@ -731,7 +593,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -740,10 +602,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -762,10 +624,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -815,6 +677,144 @@
     "name" : "searchform",
     "modelid" : "d68eaacb6504941ac21941e396fb02be",
     "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "codeName" : "MainMonthlyGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "表格界面（导出、行为组(1~6)）",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction2_create",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_create_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_create_click"
+      }
+    }, {
+      "eventArg" : "deuiaction7",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction7_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction7_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "新建",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2_create",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_create"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "新建",
+        "codeName" : "Create",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyNewMonthlyEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "IbzMonthly_Create",
+        "name" : "新建",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "DATE",
+          "name" : "DATE",
+          "value" : "date",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "date",
+          "name" : "date",
+          "value" : "date",
+          "rawValue" : false
+        } ],
+        "getPSSysImage" : {
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "Create",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "Create@IbzMonthly"
+      },
+      "tooltip" : "新建",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction7",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction7"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "predefinedType" : "GRIDVIEW_EXPORTACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "a367f1c87484ad35865184abea15eece",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "MainMonthlyGridView",
   "getPSDEViewId" : "a546f9bcb46b89b86752f7e7a617c216",

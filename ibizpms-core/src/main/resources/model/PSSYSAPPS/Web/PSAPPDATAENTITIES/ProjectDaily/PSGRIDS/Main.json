@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -165,20 +165,6 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "project",
-    "getPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    }
-  }, {
-    "dataType" : 7,
-    "name" : "totalestimates",
-    "getPSAppDEField" : {
-      "name" : "TOTALESTIMATES",
-      "codeName" : "Totalestimates"
-    }
-  }, {
     "dataType" : 25,
     "name" : "ibizpro_projectdailyname",
     "getPSAppDEField" : {
@@ -187,17 +173,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "pm",
-    "getPSAppDEField" : {
-      "name" : "PM",
-      "codeName" : "PM"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "pm",
+    "getPSAppDEField" : {
+      "name" : "PM",
+      "codeName" : "PM"
     }
   }, {
     "format" : "YYYY-MM-DD",
@@ -208,29 +194,12 @@
       "codeName" : "Date"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "begin",
     "getPSAppDEField" : {
-      "name" : "IBIZPRO_PROJECTDAILYNAME",
-      "codeName" : "IbizproProjectDailyName"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfdataaccaction",
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PROJECTDAILYID",
-      "codeName" : "IbizproProjectDailyId"
-    },
-    "dataAccessAction" : true
-  }, {
-    "dataType" : 25,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PROJECTDAILYID",
-      "codeName" : "IbizproProjectDailyId"
+      "name" : "BEGIN",
+      "codeName" : "Begin"
     }
   }, {
     "format" : "YYYY-MM-DD",
@@ -241,13 +210,44 @@
       "codeName" : "End"
     }
   }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "begin",
+    "dataType" : 7,
+    "name" : "totalestimates",
     "getPSAppDEField" : {
-      "name" : "BEGIN",
-      "codeName" : "Begin"
+      "name" : "TOTALESTIMATES",
+      "codeName" : "Totalestimates"
     }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PROJECTDAILYID",
+      "codeName" : "IbizproProjectDailyId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PROJECTDAILYID",
+      "codeName" : "IbizproProjectDailyId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PROJECTDAILYNAME",
+      "codeName" : "IbizproProjectDailyName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "项目日报标识",

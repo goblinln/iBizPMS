@@ -14,10 +14,6 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail.json"
   },
   "name" : "DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID",
-  "getNestedPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "Default"
-  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "PLANTEMPLETID",

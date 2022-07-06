@@ -1196,24 +1196,10 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "score实体编辑视图（左右关系）",
-    "name" : "score实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "score实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "score实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "score实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "score实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "PickupGridView",
+    "logicName" : "score实体选择表格视图（部件视图）",
+    "name" : "score实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
@@ -1223,10 +1209,31 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "score实体选择表格视图（部件视图）",
-    "name" : "score实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "codeName" : "PickupView",
+    "logicName" : "score实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "score实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "score实体编辑视图（左右关系）",
+    "name" : "score实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "score实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "score实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "score实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "score实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Main",
@@ -1235,13 +1242,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "score实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "score实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "Score",
   "dEType" : 1,
@@ -1272,7 +1272,7 @@
   "name" : "ZT_SCORE",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

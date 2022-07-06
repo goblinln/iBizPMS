@@ -1,4 +1,4 @@
-import { MobWFDynaExpMDViewEngine, Util, ModelTool } from 'ibiz-core';
+import { MobWFDynaExpMDViewEngine, Util, ModelTool, MobWFDynaExpMDInterface } from 'ibiz-core';
 import { GlobalService } from 'ibiz-service';
 import { MDViewBase } from './md-view-base';
 import { IPSAppDEMobWFDynaExpMDView, IPSDEMobMDCtrl } from '@ibiz/dynamic-model-api';
@@ -10,7 +10,7 @@ import { IPSAppDEMobWFDynaExpMDView, IPSDEMobMDCtrl } from '@ibiz/dynamic-model-
  * @class MobWFDynaExpMdViewBase
  * @extends {ExpViewBase}
  */
-export class MobWFDynaExpMdViewBase extends MDViewBase {
+export class MobWFDynaExpMdViewBase extends MDViewBase implements MobWFDynaExpMDInterface {
 
     /**
      * 视图实例

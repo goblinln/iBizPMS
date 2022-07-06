@@ -67,7 +67,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（编辑）",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -362,18 +362,12 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "id",
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "dates",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 21,
-      "name" : "work",
-      "getPSAppDEField" : {
-        "name" : "WORK",
-        "codeName" : "Work"
+        "name" : "DATES",
+        "codeName" : "Dates"
       }
     }, {
       "dataType" : 7,
@@ -383,6 +377,20 @@
         "codeName" : "Consumed"
       }
     }, {
+      "dataType" : 7,
+      "name" : "left",
+      "getPSAppDEField" : {
+        "name" : "LEFT",
+        "codeName" : "Left"
+      }
+    }, {
+      "dataType" : 21,
+      "name" : "work",
+      "getPSAppDEField" : {
+        "name" : "WORK",
+        "codeName" : "Work"
+      }
+    }, {
       "dataType" : 1,
       "name" : "taskestimatesn",
       "getPSAppDEField" : {
@@ -390,12 +398,11 @@
         "codeName" : "TaskEstimatesn"
       }
     }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "dates",
+      "dataType" : 1,
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "DATES",
-        "codeName" : "Dates"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -405,15 +412,8 @@
         "codeName" : "Task"
       }
     }, {
-      "dataType" : 7,
-      "name" : "left",
-      "getPSAppDEField" : {
-        "name" : "LEFT",
-        "codeName" : "Left"
-      }
-    }, {
       "dataType" : 1,
-      "name" : "srfmajortext",
+      "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
@@ -428,28 +428,13 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       }
     } ],
     "getPSDEGridEditItems" : [ {
-      "caption" : "编号",
-      "codeName" : "id",
-      "enableCond" : 0,
-      "ignoreInput" : 0,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "getPSEditor" : {
-        "editorType" : "TEXTBOX",
-        "name" : "id"
-      },
-      "allowEmpty" : true
-    }, {
       "caption" : "编号",
       "codeName" : "taskestimatesn",
       "enableCond" : 3,
@@ -462,6 +447,21 @@
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
         "name" : "taskestimatesn"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "编号",
+      "codeName" : "id",
+      "enableCond" : 0,
+      "ignoreInput" : 0,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "id"
       },
       "allowEmpty" : true
     }, {
@@ -618,7 +618,8 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Tasks",
@@ -663,6 +664,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   } ] ]
 }

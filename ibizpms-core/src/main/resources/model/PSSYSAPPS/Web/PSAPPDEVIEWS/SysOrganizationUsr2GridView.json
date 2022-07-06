@@ -111,7 +111,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -322,24 +322,10 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "orgname",
+      "name" : "shortname",
       "getPSAppDEField" : {
-        "name" : "ORGNAME",
-        "codeName" : "OrgName"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "porgid",
-      "getPSAppDEField" : {
-        "name" : "PORGID",
-        "codeName" : "ParentOrgId"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "orglevel",
-      "getPSAppDEField" : {
-        "name" : "ORGLEVEL",
-        "codeName" : "OrgLevel"
+        "name" : "SHORTNAME",
+        "codeName" : "ShortName"
       }
     }, {
       "dataType" : 25,
@@ -350,17 +336,24 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "shortname",
-      "getPSAppDEField" : {
-        "name" : "SHORTNAME",
-        "codeName" : "ShortName"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "orgname",
       "getPSAppDEField" : {
         "name" : "ORGNAME",
         "codeName" : "OrgName"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "orglevel",
+      "getPSAppDEField" : {
+        "name" : "ORGLEVEL",
+        "codeName" : "OrgLevel"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
       }
     }, {
       "dataType" : 25,
@@ -372,10 +365,17 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 25,
-      "name" : "srfkey",
+      "name" : "porgid",
       "getPSAppDEField" : {
-        "name" : "ORGID",
-        "codeName" : "OrgId"
+        "name" : "PORGID",
+        "codeName" : "ParentOrgId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -429,7 +429,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -438,10 +438,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -460,10 +460,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

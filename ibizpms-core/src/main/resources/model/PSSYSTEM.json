@@ -1710,7 +1710,7 @@
   } ],
   "getAllPSSysDBSchemes" : [ {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   } ],
   "getAllPSSysDBValueFuncs" : [ {
     "modelref" : true,
@@ -10383,6 +10383,28 @@
   } ],
   "codeName" : "iBizPMS",
   "defaultLanguage" : "ZH_CN",
+  "getDefaultPSSysSFPub" : {
+    "codeName" : "IBizPMS",
+    "contentType" : "CODE",
+    "defaultFlag" : true,
+    "dynaModelFilePath" : "PSSYSSFPUBS/IBizPMS.json",
+    "name" : "后台服务体系",
+    "pKGCodeName" : "cn.ibizlab.pms",
+    "getPSSysSFPubPkgs" : [ {
+      "name" : "javers-core",
+      "orderValue" : 10000,
+      "pkgParam" : "<dependency>\n           <groupId>org.javers</groupId>\n           <artifactId>javers-core</artifactId>\n           <version>5.12.0</version>\n </dependency>",
+      "verParam" : "<dependency>\n           <groupId>org.javers</groupId>\n           <artifactId>javers-core</artifactId>\n           <version>5.12.0</version>\n </dependency>"
+    }, {
+      "name" : "phprpc",
+      "orderValue" : 10000,
+      "pkgParam" : "<dependency>\n            <groupId>org.sction</groupId>\n            <artifactId>phprpc</artifactId>\n            <version>3.0.2</version>\n</dependency>",
+      "verParam" : "<dependency>\n            <groupId>org.sction</groupId>\n            <artifactId>phprpc</artifactId>\n            <version>3.0.2</version>\n</dependency>"
+    } ],
+    "versionString" : "1.0.0.0",
+    "codeMode" : true,
+    "mainPSSysSFPub" : true
+  },
   "deploySysId" : "67F0CDDF-FF00-4012-97F5-2BF520769214",
   "logicName" : "iBiz软件生产管理",
   "name" : "iBizPMS",

@@ -416,6 +416,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
+          "fieldName" : "ADDEDBY",
           "name" : "ADDEDBY 等于(=) 用户上下文(srfloginname)",
           "getPSDEField" : {
             "name" : "ADDEDBY",
@@ -498,6 +499,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfparentkey",
+          "fieldName" : "OBJECTID",
           "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
           "getPSDEField" : {
             "name" : "OBJECTID",
@@ -508,6 +510,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "objecttype",
+          "fieldName" : "OBJECTTYPE",
           "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
           "getPSDEField" : {
             "name" : "OBJECTTYPE",
@@ -518,6 +521,7 @@
           "condOp" : "NOTEQ",
           "condType" : "SINGLE",
           "condValue" : "editor",
+          "fieldName" : "EXTRA",
           "name" : "EXTRA 不等于(<>) (editor)",
           "getPSDEField" : {
             "name" : "EXTRA",
@@ -3264,11 +3268,16 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "MobPickupView",
-    "logicName" : "附件实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "附件实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "codeName" : "MobPickupMDView",
+    "logicName" : "附件实体移动端选择多数据视图（部件视图）",
+    "name" : "附件实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView9",
+    "logicName" : "附件实体移动端多数据视图（部件视图）（通用）",
+    "name" : "附件实体移动端多数据视图（部件视图）（通用）",
+    "realModelSubType" : "DEMOBMDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupGridView",
@@ -3277,42 +3286,10 @@
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobMDView9",
-    "logicName" : "附件实体移动端多数据视图（部件视图）（通用）",
-    "name" : "附件实体移动端多数据视图（部件视图）（通用）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "file实体编辑视图（左右关系）",
-    "name" : "file实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "附件实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "附件实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ListView9",
-    "logicName" : "附件实体列表视图（部件视图）（通用）",
-    "name" : "附件实体列表视图（部件视图）（通用）",
-    "realModelSubType" : "DELISTVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "file实体编辑视图",
-    "name" : "file实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "ProductGridView",
+    "logicName" : "file实体表格视图（产品文档库）",
+    "name" : "file实体表格视图（产品文档库）",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobRedirectView",
@@ -3322,10 +3299,10 @@
     "realModelSubType" : "DEMOBREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "附件实体移动端选择多数据视图（部件视图）",
-    "name" : "附件实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "codeName" : "ListView9",
+    "logicName" : "附件实体列表视图（部件视图）（通用）",
+    "name" : "附件实体列表视图（部件视图）（通用）",
+    "realModelSubType" : "DELISTVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "ProjectGridViewFile",
@@ -3335,10 +3312,38 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ProductGridView",
-    "logicName" : "file实体表格视图（产品文档库）",
-    "name" : "file实体表格视图（产品文档库）",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "RedirectView",
+    "logicName" : "file实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "file实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "附件实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "附件实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "附件实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "附件实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "file实体编辑视图（左右关系）",
+    "name" : "file实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "附件实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "附件实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -3348,6 +3353,12 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "EditView",
+    "logicName" : "file实体编辑视图",
+    "name" : "file实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "MPickupView",
     "logicName" : "file实体数据多项选择视图",
     "modelTag" : "MPICKUPVIEW",
@@ -3355,33 +3366,26 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "附件实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "附件实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
     "codeName" : "Main",
     "logicName" : "主编辑表单",
     "modelTag2" : "0",
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobEditView",
-    "logicName" : "附件实体移动端编辑视图",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "附件实体移动端编辑视图",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "file实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "file实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "附件实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "附件实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "File",
   "dEType" : 1,
@@ -3864,7 +3868,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

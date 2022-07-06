@@ -58,7 +58,7 @@
           "id" : "fetch"
         },
         "groupMode" : "NONE",
-        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+        "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "LOAD", "BEFORELOAD" ],
         "logicName" : "主表格",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -359,13 +359,6 @@
           "enableSort" : false
         } ],
         "getPSDEGridDataItems" : [ {
-          "dataType" : 25,
-          "name" : "manager",
-          "getPSAppDEField" : {
-            "name" : "MANAGER",
-            "codeName" : "Manager"
-          }
-        }, {
           "dataType" : 1,
           "name" : "deptsn",
           "getPSAppDEField" : {
@@ -380,13 +373,6 @@
             "codeName" : "Name"
           }
         }, {
-          "dataType" : 1,
-          "name" : "parent",
-          "getPSAppDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
-          }
-        }, {
           "dataType" : 25,
           "name" : "parentname",
           "getPSAppDEField" : {
@@ -395,10 +381,17 @@
           }
         }, {
           "dataType" : 25,
-          "name" : "srfmajortext",
+          "name" : "manager",
           "getPSAppDEField" : {
-            "name" : "NAME",
-            "codeName" : "Name"
+            "name" : "MANAGER",
+            "codeName" : "Manager"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
           }
         }, {
           "dataType" : 1,
@@ -410,10 +403,17 @@
           "dataAccessAction" : true
         }, {
           "dataType" : 1,
-          "name" : "srfkey",
+          "name" : "parent",
           "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfmajortext",
+          "getPSAppDEField" : {
+            "name" : "NAME",
+            "codeName" : "Name"
           }
         } ],
         "getPSDEGridEditItems" : [ {
@@ -467,7 +467,7 @@
         "codeName" : "Default",
         "controlType" : "SEARCHFORM",
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept/PSSEARCHFORMS/Default.json",
-        "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+        "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
         "logicName" : "默认搜索表单",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -476,10 +476,10 @@
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
             "actionType" : "FILTERACTION",
-            "name" : "search",
+            "name" : "load",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FilterSearch"
+              "id" : "FilterGet"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -498,10 +498,10 @@
             }
           }, {
             "actionType" : "FILTERACTION",
-            "name" : "load",
+            "name" : "search",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FilterGet"
+              "id" : "FilterSearch"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -584,7 +584,7 @@
       "modelid" : "e644f7976b08c3d7f14fd7e1d5329da8",
       "modeltype" : "PSAPPDEVIEW"
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,

@@ -40,17 +40,17 @@
       "logicType" : "PREDEFINED",
       "name" : "新建数据",
       "getNewDataPSAppViews" : [ {
-        "refMode" : "task",
+        "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
           "viewType" : "DEPORTALVIEW"
         }
       }, {
-        "refMode" : "story",
+        "refMode" : "case",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
           "viewType" : "DEPORTALVIEW"
         }
       }, {
@@ -68,17 +68,17 @@
           "viewType" : "DEEDITVIEW"
         }
       }, {
-        "refMode" : "bug",
+        "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
           "viewType" : "DEPORTALVIEW"
         }
       }, {
-        "refMode" : "case",
+        "refMode" : "task",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
           "viewType" : "DEPORTALVIEW"
         }
       } ],
@@ -89,17 +89,17 @@
           "viewType" : "DEPICKUPVIEW"
         }
       }, {
-        "refMode" : "task",
+        "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
           "viewType" : "DEPORTALVIEW"
         }
       }, {
-        "refMode" : "story",
+        "refMode" : "case",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
           "viewType" : "DEPORTALVIEW"
         }
       }, {
@@ -117,17 +117,17 @@
           "viewType" : "DEEDITVIEW"
         }
       }, {
-        "refMode" : "bug",
+        "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
           "viewType" : "DEPORTALVIEW"
         }
       }, {
-        "refMode" : "case",
+        "refMode" : "task",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
           "viewType" : "DEPORTALVIEW"
         }
       } ],
@@ -158,10 +158,17 @@
         }
       },
       "getOpenDataPSAppViews" : [ {
-        "refMode" : "task",
+        "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      }, {
+        "refMode" : "case",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
           "viewType" : "DEPORTALVIEW"
         }
       }, {
@@ -170,13 +177,6 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
           "viewType" : "DEEDITVIEW"
-        }
-      }, {
-        "refMode" : "case",
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-          "viewType" : "DEPORTALVIEW"
         }
       }, {
         "refMode" : "project",
@@ -193,10 +193,10 @@
           "viewType" : "DEPORTALVIEW"
         }
       }, {
-        "refMode" : "bug",
+        "refMode" : "task",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
           "viewType" : "DEPORTALVIEW"
         }
       } ],
@@ -207,10 +207,17 @@
           "viewType" : "DEREDIRECTVIEW"
         }
       }, {
-        "refMode" : "task",
+        "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      }, {
+        "refMode" : "case",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
           "viewType" : "DEPORTALVIEW"
         }
       }, {
@@ -219,13 +226,6 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
           "viewType" : "DEEDITVIEW"
-        }
-      }, {
-        "refMode" : "case",
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-          "viewType" : "DEPORTALVIEW"
         }
       }, {
         "refMode" : "project",
@@ -242,10 +242,10 @@
           "viewType" : "DEPORTALVIEW"
         }
       }, {
-        "refMode" : "bug",
+        "refMode" : "task",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
           "viewType" : "DEPORTALVIEW"
         }
       } ],
@@ -254,21 +254,37 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA:task",
-    "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "任务主数据看板视图",
+    "name" : "EDITDATA",
+    "realTitle" : "索引检索数据重定向视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
+      "viewType" : "DEREDIRECTVIEW"
+    }
+  }, {
+    "name" : "NEWDATAWIZARD",
+    "realTitle" : "索引检索数据选择视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
+      "viewType" : "DEPICKUPVIEW"
+    }
+  }, {
+    "name" : "NEWDATA:bug",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     }
   }, {
-    "name" : "NEWDATA:story",
+    "name" : "NEWDATA:case",
     "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "需求数据看板视图",
+    "realTitle" : "功能测试",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     }
   }, {
@@ -281,7 +297,25 @@
       "viewType" : "DEEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA:task",
+    "name" : "NEWDATA:project",
+    "realOpenMode" : "DRAWER_LEFT",
+    "realTitle" : "项目",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "NEWDATA:story",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "需求数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+      "viewType" : "DEPORTALVIEW"
+    }
+  }, {
+    "name" : "NEWDATA:task",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
@@ -290,13 +324,13 @@
       "viewType" : "DEPORTALVIEW"
     }
   }, {
-    "name" : "EDITDATA:product",
-    "realOpenMode" : "DRAWER_LEFT",
-    "realTitle" : "产品编辑视图",
+    "name" : "EDITDATA:bug",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "EDITDATA:case",
@@ -308,22 +342,13 @@
       "viewType" : "DEPORTALVIEW"
     }
   }, {
-    "name" : "NEWDATA:project",
+    "name" : "EDITDATA:product",
     "realOpenMode" : "DRAWER_LEFT",
-    "realTitle" : "项目",
+    "realTitle" : "产品编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
       "viewType" : "DEEDITVIEW"
-    }
-  }, {
-    "name" : "NEWDATA:bug",
-    "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "Bug数据看板视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "EDITDATA:project",
@@ -344,41 +369,104 @@
       "viewType" : "DEPORTALVIEW"
     }
   }, {
-    "name" : "NEWDATA:case",
+    "name" : "EDITDATA:task",
     "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "功能测试",
+    "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
-    }
-  }, {
-    "name" : "NEWDATAWIZARD",
-    "realTitle" : "索引检索数据选择视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
-      "viewType" : "DEPICKUPVIEW"
-    }
-  }, {
-    "name" : "EDITDATA:bug",
-    "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "Bug数据看板视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
-    }
-  }, {
-    "name" : "EDITDATA",
-    "realTitle" : "索引检索数据重定向视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
-      "viewType" : "DEREDIRECTVIEW"
     }
   } ],
   "getPSControls" : [ {
+    "codeName" : "Default",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSSEARCHFORMS/Default.json",
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
+    "logicName" : "默认搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD;SAVE",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "edab1390abda9ac712f0a21d02c0b0e4",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
     "codeName" : "IndexMob",
     "controlStyle" : "FullTextSearch",
     "controlType" : "LIST",
@@ -396,7 +484,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "IndexMob",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -576,94 +664,6 @@
     "name" : "list",
     "modelid" : "3d749efd9d96f3330022d35dfcdaaf60",
     "modeltype" : "PSDELIST"
-  }, {
-    "codeName" : "Default",
-    "controlType" : "SEARCHFORM",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
-    "logicName" : "默认搜索表单",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-    },
-    "getPSControlHandler" : {
-      "getPSHandlerActions" : [ {
-        "actionType" : "FILTERACTION",
-        "name" : "search",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterSearch"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        }
-      }, {
-        "actionType" : "FILTERACTION",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGetDraft"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        }
-      }, {
-        "actionType" : "FILTERACTION",
-        "name" : "load",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGet"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        }
-      } ],
-      "enableDEFieldPrivilege" : false,
-      "id" : "搜索表单处理器"
-    },
-    "getPSControlLogics" : [ {
-      "eventNames" : "SEARCH;LOAD;SAVE",
-      "logicTag" : "searchform",
-      "logicType" : "APPVIEWENGINE",
-      "name" : "engine_searchform",
-      "getPSAppViewEngine" : {
-        "modelref" : true,
-        "id" : "engine"
-      }
-    } ],
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "getPSDEFormPages" : [ {
-      "caption" : "常规条件",
-      "codeName" : "formpage1",
-      "detailStyle" : "DEFAULT",
-      "detailType" : "FORMPAGE",
-      "name" : "formpage1",
-      "getPSLayout" : {
-        "columnCount" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "infoGroupMode" : false
-    } ],
-    "getPSLayout" : {
-      "columnCount" : 24,
-      "layout" : "TABLE_24COL"
-    },
-    "searchButtonStyle" : "DEFAULT",
-    "tabHeaderPos" : "TOP",
-    "enableAdvanceSearch" : false,
-    "enableAutoSearch" : false,
-    "enableFilterSave" : false,
-    "noTabHeader" : true,
-    "name" : "searchform",
-    "modelid" : "edab1390abda9ac712f0a21d02c0b0e4",
-    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "ListView",
   "getPSDEViewId" : "f239b1e812cf7a2418baebc5ff643ede",

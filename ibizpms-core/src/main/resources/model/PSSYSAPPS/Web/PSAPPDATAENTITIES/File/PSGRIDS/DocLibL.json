@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "文档库查看",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -323,13 +323,6 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 25,
-    "name" : "strsize",
-    "getPSAppDEField" : {
-      "name" : "STRSIZE",
-      "codeName" : "Strsize"
-    }
-  }, {
     "dataType" : 1,
     "name" : "id",
     "getPSAppDEField" : {
@@ -337,40 +330,11 @@
       "codeName" : "Id"
     }
   }, {
-    "dataType" : 1,
-    "name" : "filesn",
-    "getPSAppDEField" : {
-      "name" : "FILESN",
-      "codeName" : "Filesn"
-    }
-  }, {
     "dataType" : 25,
     "name" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
-    }
-  }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "dataType" : 5,
-    "name" : "addeddate",
-    "getPSAppDEField" : {
-      "name" : "ADDEDDATE",
-      "codeName" : "AddedDate"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "addedby",
-    "getPSAppDEField" : {
-      "name" : "ADDEDBY",
-      "codeName" : "AddedBy"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "objecttype",
-    "getPSAppDEField" : {
-      "name" : "OBJECTTYPE",
-      "codeName" : "ObjectType"
     }
   }, {
     "dataType" : 25,
@@ -381,10 +345,53 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "objecttype",
     "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
+      "name" : "OBJECTTYPE",
+      "codeName" : "ObjectType"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "strsize",
+    "getPSAppDEField" : {
+      "name" : "STRSIZE",
+      "codeName" : "Strsize"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "addedby",
+    "getPSAppDEField" : {
+      "name" : "ADDEDBY",
+      "codeName" : "AddedBy"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "addeddate",
+    "getPSAppDEField" : {
+      "name" : "ADDEDDATE",
+      "codeName" : "AddedDate"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "filesn",
+    "getPSAppDEField" : {
+      "name" : "FILESN",
+      "codeName" : "Filesn"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "size",
+    "getPSAppDEField" : {
+      "name" : "SIZE",
+      "codeName" : "Size"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -395,18 +402,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "size",
-    "getPSAppDEField" : {
-      "name" : "SIZE",
-      "codeName" : "Size"
+      "name" : "TITLE",
+      "codeName" : "Title"
     }
   } ],
   "getPSDEGridEditItems" : [ {

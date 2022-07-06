@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（计划下属）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -305,119 +305,10 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
-    "name" : "module",
-    "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "frombug",
-    "getPSAppDEField" : {
-      "name" : "FROMBUG",
-      "codeName" : "FromBug"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "status",
-    "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "storysn",
-    "getPSAppDEField" : {
-      "name" : "STORYSN",
-      "codeName" : "Storysn"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "parent",
-    "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 7,
-    "name" : "estimate",
-    "getPSAppDEField" : {
-      "name" : "ESTIMATE",
-      "codeName" : "Estimate"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "stage",
-    "getPSAppDEField" : {
-      "name" : "STAGE",
-      "codeName" : "Stage"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "tobug",
-    "getPSAppDEField" : {
-      "name" : "TOBUG",
-      "codeName" : "ToBug"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "srfdataaccaction",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true
-  }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "openedby",
-    "getPSAppDEField" : {
-      "name" : "OPENEDBY",
-      "codeName" : "OpenedBy"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
     "name" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "modulename",
-    "getPSAppDEField" : {
-      "name" : "MODULENAME",
-      "codeName" : "Modulename"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "assignedto",
-    "getPSAppDEField" : {
-      "name" : "ASSIGNEDTO",
-      "codeName" : "AssignedTo"
     }
   }, {
     "dataType" : 9,
@@ -428,6 +319,13 @@
     }
   }, {
     "dataType" : 25,
+    "name" : "modulename",
+    "getPSAppDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    }
+  }, {
+    "dataType" : 25,
     "name" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
@@ -435,24 +333,45 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "color",
+    "name" : "openedby",
     "getPSAppDEField" : {
-      "name" : "COLOR",
-      "codeName" : "Color"
+      "name" : "OPENEDBY",
+      "codeName" : "OpenedBy"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "assignedto",
+    "getPSAppDEField" : {
+      "name" : "ASSIGNEDTO",
+      "codeName" : "AssignedTo"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "estimate",
+    "getPSAppDEField" : {
+      "name" : "ESTIMATE",
+      "codeName" : "Estimate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "status",
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "stage",
+    "getPSAppDEField" : {
+      "name" : "STAGE",
+      "codeName" : "Stage"
     }
   }, {
     "dataType" : 1,
-    "name" : "branch",
+    "name" : "storysn",
     "getPSAppDEField" : {
-      "name" : "BRANCH",
-      "codeName" : "Branch"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "duplicatestory",
-    "getPSAppDEField" : {
-      "name" : "DUPLICATESTORY",
-      "codeName" : "DuplicateStory"
+      "name" : "STORYSN",
+      "codeName" : "Storysn"
     }
   }, {
     "dataType" : 25,
@@ -468,6 +387,87 @@
       "name" : "ISCHILD",
       "codeName" : "Ischild"
     }
+  }, {
+    "dataType" : 25,
+    "name" : "color",
+    "getPSAppDEField" : {
+      "name" : "COLOR",
+      "codeName" : "Color"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "frombug",
+    "getPSAppDEField" : {
+      "name" : "FROMBUG",
+      "codeName" : "FromBug"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "parent",
+    "getPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "module",
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "duplicatestory",
+    "getPSAppDEField" : {
+      "name" : "DUPLICATESTORY",
+      "codeName" : "DuplicateStory"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "branch",
+    "getPSAppDEField" : {
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "tobug",
+    "getPSAppDEField" : {
+      "name" : "TOBUG",
+      "codeName" : "ToBug"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "编号",

@@ -35,12 +35,47 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/checkkey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -48,6 +83,21 @@
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempInput",
+      "name" : "CreateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempResult",
+      "name" : "CreateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -56,6 +106,21 @@
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempMajorInput",
+      "name" : "CreateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempMajorResult",
+      "name" : "CreateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -63,12 +128,51 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "IBZ_PLANTEMPLETID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
@@ -76,6 +180,24 @@
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempInput",
+      "name" : "GetDraftTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempResult",
+      "name" : "GetDraftTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -84,6 +206,24 @@
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempMajorInput",
+      "name" : "GetDraftTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempMajorResult",
+      "name" : "GetDraftTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -91,13 +231,52 @@
     "codeName" : "GetPlan",
     "methodType" : "DEACTION",
     "name" : "GetPlan",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "IBZ_PLANTEMPLETID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "requestPath" : "/getplan",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "GetTempInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempResult",
+      "name" : "GetTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -106,6 +285,24 @@
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "GetTempMajorInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempMajorResult",
+      "name" : "GetTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -114,8 +311,24 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "IBZ_PLANTEMPLETID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
@@ -123,6 +336,20 @@
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "RemoveTempInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempResult",
+      "name" : "RemoveTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -133,6 +360,20 @@
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "RemoveTempMajorInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempMajorResult",
+      "name" : "RemoveTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -141,19 +382,70 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/save",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempInput",
+      "name" : "UpdateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempResult",
+      "name" : "UpdateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -162,6 +454,21 @@
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempMajorInput",
+      "name" : "UpdateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempMajorResult",
+      "name" : "UpdateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   } ],
@@ -193,11 +500,49 @@
     "codeName" : "FetchCurUserTemplet",
     "methodType" : "FETCH",
     "name" : "FetchCurUserTemplet",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchcurusertemplet",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -263,17 +608,238 @@
     "stdDataType" : 25,
     "stringLength" : 60
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "IbzPlanTempletDTO",
+    "name" : "IbzPlanTempletDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "Acl",
+      "logicName" : "权限",
+      "name" : "Acl",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreateDate",
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "CreateMan",
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "CreateManName",
+      "logicName" : "创建人姓名",
+      "name" : "CreateManName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEMANNAME",
+        "codeName" : "CreateManName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "IbzPlanTempletId",
+      "logicName" : "产品计划模板标识",
+      "name" : "IbzPlanTempletId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "IbzPlanTempletName",
+      "logicName" : "模板名称",
+      "name" : "IbzPlanTempletName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETNAME",
+        "codeName" : "IbzPlanTempletName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Plans",
+      "logicName" : "计划",
+      "name" : "Plans",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PLANS",
+        "codeName" : "Plans"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Product",
+      "logicName" : "产品",
+      "name" : "Product",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateDate",
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "IbzPlanTempletFilterDTO",
+    "name" : "IbzPlanTempletFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_ACL_EQ",
+      "logicName" : "权限",
+      "name" : "N_ACL_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_CREATEMANNAME_EQ",
+      "logicName" : "创建人姓名",
+      "name" : "N_CREATEMANNAME_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "CREATEMANNAME",
+        "codeName" : "CreateManName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_IBZ_PLANTEMPLETID_EQ",
+      "logicName" : "产品计划模板标识",
+      "name" : "N_IBZ_PLANTEMPLETID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_IBZ_PLANTEMPLETNAME_LIKE",
+      "logicName" : "模板名称",
+      "name" : "N_IBZ_PLANTEMPLETNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETNAME",
+        "codeName" : "IbzPlanTempletName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/checkkey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -281,6 +847,21 @@
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempInput",
+      "name" : "CreateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempResult",
+      "name" : "CreateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -289,6 +870,21 @@
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempMajorInput",
+      "name" : "CreateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempMajorResult",
+      "name" : "CreateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -296,12 +892,51 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "IBZ_PLANTEMPLETID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
@@ -309,6 +944,24 @@
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempInput",
+      "name" : "GetDraftTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempResult",
+      "name" : "GetDraftTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -317,6 +970,24 @@
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempMajorInput",
+      "name" : "GetDraftTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempMajorResult",
+      "name" : "GetDraftTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -324,13 +995,52 @@
     "codeName" : "GetPlan",
     "methodType" : "DEACTION",
     "name" : "GetPlan",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "IBZ_PLANTEMPLETID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "requestPath" : "/getplan",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "GetTempInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempResult",
+      "name" : "GetTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -339,6 +1049,24 @@
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "GetTempMajorInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempMajorResult",
+      "name" : "GetTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -347,8 +1075,24 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "IBZ_PLANTEMPLETID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
@@ -356,6 +1100,20 @@
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "RemoveTempInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempResult",
+      "name" : "RemoveTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -366,6 +1124,20 @@
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "name" : "RemoveTempMajorInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempMajorResult",
+      "name" : "RemoveTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -374,19 +1146,70 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/save",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempInput",
+      "name" : "UpdateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempResult",
+      "name" : "UpdateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -395,23 +1218,118 @@
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempMajorInput",
+      "name" : "UpdateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempMajorResult",
+      "name" : "UpdateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
     "codeName" : "FetchCurUserTemplet",
     "methodType" : "FETCH",
     "name" : "FetchCurUserTemplet",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchcurusertemplet",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurUserTemplet",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurUserTemplet",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurUserTempletInput",
+      "name" : "CurUserTempletInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurUserTempletResult",
+      "name" : "CurUserTempletResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "open",
+          "fieldName" : "ACL",
+          "name" : "ACL 等于(=) (open)"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "CREATEMANNAME",
+          "name" : "CREATEMANNAME 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        } ]
+      } ]
+    } ],
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -419,6 +1337,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "IbzPlanTempletDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -460,6 +1396,17 @@
     "codeName" : "Select",
     "methodType" : "SELECT",
     "name" : "Select",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "type" : "UNKNOWN"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "UNKNOWN"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "URIPARAM",
+    "requestPath" : "/select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -481,7 +1428,15 @@
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "IBZ_PLANTEMPLETID",
+    "codeName" : "IbzPlanTempletId"
+  },
   "logicName" : "产品计划模板",
+  "getMajorPSAppDEField" : {
+    "name" : "IBZ_PLANTEMPLETNAME",
+    "codeName" : "IbzPlanTempletName"
+  },
   "name" : "IBZ_PLANTEMPLET",
   "getPSDEName" : "IBZ_PLANTEMPLET",
   "getQuickSearchPSAppDEFields" : [ {

@@ -99,7 +99,6 @@ export abstract class TestSuiteBase extends EntityBase implements ITestSuite {
      * 所属产品
      */
     product?: any;
-
     /**
      * 重置实体数据
      *

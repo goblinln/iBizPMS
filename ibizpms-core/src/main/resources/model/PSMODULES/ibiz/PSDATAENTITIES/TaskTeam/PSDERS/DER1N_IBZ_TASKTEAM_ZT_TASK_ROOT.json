@@ -14,10 +14,6 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"
   },
   "name" : "DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT",
-  "getNestedPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "Default"
-  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "ROOT",

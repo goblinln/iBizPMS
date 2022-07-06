@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "子计划主编辑表单",
   "getPSAppDataEntity" : {
     "modelref" : true,

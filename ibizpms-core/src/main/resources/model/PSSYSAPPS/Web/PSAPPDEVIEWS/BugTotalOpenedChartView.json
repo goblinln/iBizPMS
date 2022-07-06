@@ -28,7 +28,7 @@
       "modelref" : true,
       "id" : "fetch"
     },
-    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD" ],
     "logicName" : "CurUserOpenedBug",
     "getPSAppDataEntity" : {
       "modelref" : true,

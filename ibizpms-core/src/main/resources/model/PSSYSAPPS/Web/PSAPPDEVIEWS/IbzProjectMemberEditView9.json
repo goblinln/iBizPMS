@@ -34,13 +34,13 @@
     "rawValue" : false
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "id",
-    "name" : "id",
+    "key" : "ibzprojectmember",
+    "name" : "ibzprojectmember",
     "value" : "srfparentkey",
     "rawValue" : false
   }, {
-    "key" : "ibzprojectmember",
-    "name" : "ibzprojectmember",
+    "key" : "id",
+    "name" : "id",
     "value" : "srfparentkey",
     "rawValue" : false
   } ],
@@ -64,7 +64,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "主编辑表单",
     "getPSAppDataEntity" : {
       "modelref" : true,

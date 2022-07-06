@@ -45,14 +45,14 @@
   "getPSControls" : [ {
     "codeName" : "DeptTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:SubDept",
+      "name" : "EXPITEM:RootDept",
       "parentDataJO" : {
         "srfparentdefname" : "n_parent_eq",
         "srfparentdename" : "ZT_DEPT",
@@ -65,7 +65,7 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:RootDept",
+      "name" : "EXPITEM:SubDept",
       "parentDataJO" : {
         "srfparentdefname" : "n_parent_eq",
         "srfparentdename" : "ZT_DEPT",

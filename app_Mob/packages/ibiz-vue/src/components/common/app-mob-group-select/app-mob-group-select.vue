@@ -1,23 +1,24 @@
 <template>
-    <div class="ibiz-mob-group-select">
-        <ion-input class="ibz-input" :value="selectName"  readonly></ion-input>
-        <app-mob-icon  v-show="selects.length>0" class="delete-value right-common-icon" name="close-circle-outline" @onClick="clearSelects"></app-mob-icon>
-        <app-mob-icon  v-show="selects.length<1" class="open-picker" name="search-outline" @onClick="openView"></app-mob-icon>
+    <div class="app-mob-group-select" @click="openView">
+       <div class="form-value-content select-value-content">{{visibleLabel}}</div><van-icon class="app-mob-select-vant-icon" name="arrow" />
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
-import { CodeListServiceBase } from "ibiz-core";
+import { CodeListServiceBase, Util } from "ibiz-core";
+import axios from 'axios';
+import { CodeListService } from 'ibiz-service';
 
 @Component({})
 export default class AppMobGroupSelect extends Vue {
-    /**
+
+     /**
      * 名称标识
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     @Prop() name!: string;
 
@@ -25,15 +26,15 @@ export default class AppMobGroupSelect extends Vue {
      * 树加载地址
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
-    @Prop() treeurl?:string;
+    @Prop() treeurl?:boolean;
 
     /**
      * 数据接口地址
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     @Prop() url!: string;
 
@@ -41,7 +42,7 @@ export default class AppMobGroupSelect extends Vue {
      * 多选
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     @Prop({default: false}) multiple?: boolean;
 
@@ -49,21 +50,21 @@ export default class AppMobGroupSelect extends Vue {
      * 数据对象
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     @Prop() data: any;
 
     /**
      * 代码表标识
      * 
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */
     @Prop() public tag?:string;
 
     /**
      * 代码表类型
      * 
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */
     @Prop() public codelistType?:string;
 
@@ -71,7 +72,7 @@ export default class AppMobGroupSelect extends Vue {
      * 过滤属性标识
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     @Prop() filter?: string;
 
@@ -79,7 +80,7 @@ export default class AppMobGroupSelect extends Vue {
      * 是否启用
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     @Prop() disabled?: boolean;
 
@@ -87,7 +88,7 @@ export default class AppMobGroupSelect extends Vue {
      * 值
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     @Prop() value: any;
 
@@ -95,7 +96,7 @@ export default class AppMobGroupSelect extends Vue {
      * 上下文参数
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     @Prop() context: any;
 
@@ -103,7 +104,7 @@ export default class AppMobGroupSelect extends Vue {
      * 关联属性
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     @Prop() valueitem: any;
 
@@ -111,23 +112,69 @@ export default class AppMobGroupSelect extends Vue {
      * 填充属性
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
-    @Prop() fillmap: any;
+    @Prop() fillMap: any;
+
+    /**
+     * 请求方式
+     *
+     * @type {stinr}
+     * @memberof AppGroupSelect
+     */ 
+    @Prop({ default: 'get'})
+    public requestMode!: 'get' | 'post' | 'delete' | 'put';
+
+    /**
+     * 树双向绑定值
+     *
+     * @memberof AppGroupSelect
+     */ 
+    get curValue(){
+        return JSON.stringify(this.selects);
+    }
+    
+    set curValue(newVal:any ){
+        this.onSelect(newVal);
+    }
+
+    /**
+     * 分组编辑器模式
+     *
+     * @memberof AppGroupSelect
+     */ 
+    @Prop({ default: ''})
+    public editorMode ?:string ;
 
     /**
      * 选中项集合
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     protected selects: any[] = [];
+
+    /**
+     * 树模式数据
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */  
+    public nodesData:any[] = [];
+
+    /**
+     * 树模式下模拟树父节点标识（用于过滤父节点）
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */  
+    public groupIDArray:string[] = [];
 
     /**
      * 值变化
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     @Watch('data',{immediate:true,deep:true})
     onValueChange(newVal: any, oldVal: any) {
@@ -136,9 +183,9 @@ export default class AppMobGroupSelect extends Vue {
             let item: any = {};
             item.label = this.data[this.name]?this.data[this.name].split(','):[];
             item.id = this.data[this.valueitem] ? this.data[this.valueitem].split(',') : [];
-            if(this.fillmap) {
-                for(let key in this.fillmap) {
-                    item[this.fillmap[key]] = this.data[key] ? this.data[key].split(',') : [];
+            if(this.fillMap) {
+                for(let key in this.fillMap) {
+                    item[this.fillMap[key]] = this.data[key] ? this.data[key].split(',') : [];
                 }
             }
             const callback:any = (item:any) =>{
@@ -158,36 +205,19 @@ export default class AppMobGroupSelect extends Vue {
             }else{
                 callback(item);
             }
+            console.log(this.selects);
             
         }
     }
 
-    /**
-     * 单选时选中名称
-     *
-     * @type {*}
-     * @memberof AppMobGroupSelect
-     */  
-    get selectName() {
-        if(this.selects.length == 1) {
-            return this.selects[0].label;
-        } else {
-            let chosenName = '';
-            for (let i = 0; i < this.selects.length; i++) {
-              const element:any = this.selects[i];
-              chosenName += element.label + ',';
-            }
-            return chosenName.slice(0,chosenName.length-1)
-        }
-    }
-
+    
     /**
      * 打开选择视图
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
-    public async openView() {
+    public openView() {
         const view: any = {
             viewname: 'app-mob-group-picker',
             title: (this.$t('components.AppMobGroupSelect.groupSelect') as string)
@@ -213,36 +243,39 @@ export default class AppMobGroupSelect extends Vue {
             filtervalue: filtervalue,
             multiple: this.multiple,
             selects: this.selects,
+            requestMode: this.requestMode,
         });
-        const result: any = await this.$appmodal.openModal(view, context, param);
-        if (result || Object.is(result.ret, 'OK')) {
-            this.openViewClose(result);
-        }
+        this.$appmodal.openModal(view, context,param).then((result:any)=>{
+          if(result.ret != "OK"){
+            return;
+          }
+          this.openViewClose(result);
+        });
     }
 
     /**
      * 选择视图关闭
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     public openViewClose(result: any) {
         this.selects = [];
         if (result.datas && result.datas.length > 0) {
-            this.selects = result.datas;
+            this.selects = result.datas
         }
-        this.setValue();
+        this.setValue()
     }
 
     /**
      * 数据删除
      *
      * @type {*}
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */  
     public remove(item: any) {
         this.selects.splice(this.selects.indexOf(item), 1);
-        this.setValue();
+        this.setValue()
     }
 
     /**
@@ -257,8 +290,8 @@ export default class AppMobGroupSelect extends Vue {
         if(this.valueitem) {
             item[this.valueitem] = null;
         }
-        if(this.fillmap) {
-            for(let key in this.fillmap) {
+        if(this.fillMap) {
+            for(let key in this.fillMap) {
                 item[key] = null;
             }
         }
@@ -268,9 +301,9 @@ export default class AppMobGroupSelect extends Vue {
                 if(this.valueitem) {
                     item[this.valueitem] = item[this.valueitem] ? `${item[this.valueitem]},${select.id}` : select.id;
                 }
-                if(this.fillmap) {
-                    for(let key in this.fillmap) {
-                        item[key] = item[key] ? `${item[key]},${select[this.fillmap[key]]}` : select[this.fillmap[key]];
+                if(this.fillMap) {
+                    for(let key in this.fillMap) {
+                        item[key] = item[key] ? `${item[key]},${select[this.fillMap[key]]}` : select[this.fillMap[key]];
                     }
                 }
             });
@@ -279,9 +312,9 @@ export default class AppMobGroupSelect extends Vue {
             if(this.valueitem) {
                 item[this.valueitem] = this.selects.length > 0 ? this.selects[0].id : null;
             }
-            if(this.fillmap) {
-                for(let key in this.fillmap) {
-                    item[key] = this.selects.length > 0 ? this.selects[0][this.fillmap[key]] : null;
+            if(this.fillMap) {
+                for(let key in this.fillMap) {
+                    item[key] = this.selects.length > 0 ? this.selects[0][this.fillMap[key]] : null;
                 }
             }
         }
@@ -293,11 +326,11 @@ export default class AppMobGroupSelect extends Vue {
     /**
      * 填充label
      * 
-     * @memberof AppMobGroupSelect
+     * @memberof AppGroupSelect
      */
     public fillLabel(tempObject:any,valueItem:Array<any>,callback:any){
         if(tempObject.label.length === 0 && tempObject.id.length >0 && this.tag && this.codelistType && Object.is(this.codelistType,"DYNAMIC")){
-        let codeListService:CodeListServiceBase = new CodeListServiceBase();
+        let codeListService:CodeListService = new CodeListService();
         codeListService.getItems(this.tag).then((items:any) =>{
             if(items && items.length >0 && valueItem.length >0){
             let tempLabel:Array<any> = [];
@@ -317,15 +350,114 @@ export default class AppMobGroupSelect extends Vue {
     }
 
     /**
-     * 全部清除
-     * 
-     * @memberof AppMobGroupSelect
-     */
-    public clearSelects(){
-      this.selects = [];
-      this.setValue();
+     * 声明周期
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */  
+    mounted(){
+        if(this.editorMode == 'tree'){
+            this.loadTree();
+        }
     }
 
+    /**
+     * 加载树数据
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */  
+    public loadTree() {
+        const context: any = JSON.parse(JSON.stringify(this.context));
+        let orgid:string = "";
+        if(this.filter){
+            if(this.data[this.filter]){
+                orgid = this.data[this.filter];
+            }else if(context[this.filter]){
+                orgid = context[this.filter];
+            }else{
+                orgid = context.srforgid;
+            }
+        }else{
+            orgid = context.srforgid;
+        }
+        let tempTreeUrl = this.url?.replace('${selected-orgid}',orgid);
+        if(!tempTreeUrl){
+            return;
+        }
+        axios({method: this.requestMode, url: tempTreeUrl, data: {}}).then((response: any) => {
+            if(response.status === 200) {
+                this.parseTreeData(response.data);
+            }
+        }).catch((error: any) => {
+            console.log(error);
+            
+        })
+    }
+
+    /**
+     * 树选择事件
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */  
+    public onSelect(event: any) {
+        if (!event || JSON.parse(event).length == 0) {
+            return;
+        }
+        const items: any[] = JSON.parse(event);
+        this.selects = [];
+        const _this: any = this;
+        // 过滤根节点
+        const curValue = items.filter((item: any) => {
+            return !(
+                _this.groupIDArray.findIndex((_item: any) => {
+                    return item.id === _item;
+                }) != -1
+            );
+        });
+        this.selects = curValue;
+        this.setValue();
+    }
+
+    /**
+     * 构造树数据
+     *
+     * @type {*}
+     * @memberof AppGroupSelect
+     */
+    public parseTreeData(data:any) {
+        let treeData:any = [];
+        data.forEach((item:any) => {
+            const index = treeData.findIndex((_item:any)=>{return _item.label == item.group});
+            if(index != -1){
+                treeData[index].children.push(item);
+            }else{
+                const uuid = Util.createUUID();
+                this.groupIDArray.push(uuid);
+                treeData.push({id:uuid,label:item.group,children:[item]});
+            }
+        });
+        this.nodesData =treeData;
+    }
+    /**
+   * 显示文本
+   * 
+   * @memberof AppOrgSelect
+   */
+  get visibleLabel(){
+      if(this.selects.length > 0){
+        let text = '';
+        this.selects.forEach((item:any)=>{
+          if(item.label){
+            text = text?text+','+item.label:text+item.label;
+          }
+        })
+        return text;
+      }else{
+        return  '';
+      }
+  }
 }
 </script>
 

@@ -87,6 +87,8 @@
 
         <rocketmq.version>4.7.0</rocketmq.version>
         <flowable-modeler.version>6.4.2</flowable-modeler.version>
+
+        <alibaba-fastjson.version>1.2.57_noneautotype</alibaba-fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -107,6 +109,12 @@
                 <version>${spring-cloud-openfeign.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${alibaba-fastjson.version}</version>
             </dependency>
 
             <!--  Alibaba Druid -->

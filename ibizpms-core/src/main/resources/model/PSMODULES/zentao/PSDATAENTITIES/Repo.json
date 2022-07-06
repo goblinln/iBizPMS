@@ -1946,31 +1946,17 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "repo实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "repo实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
+    "codeName" : "GridView",
+    "logicName" : "repo实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "repo实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView2",
     "logicName" : "repo实体编辑视图（左右关系）",
     "name" : "repo实体编辑视图（左右关系）",
     "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "repo实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "repo实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -1980,12 +1966,26 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "repo实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "repo实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "RedirectView",
+    "logicName" : "repo实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "repo实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "repo实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "repo实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "Repo",
   "dEType" : 1,
@@ -2045,7 +2045,7 @@
   "name" : "ZT_REPO",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "基础信息查看",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -545,7 +545,7 @@
                   "modelref" : true,
                   "id" : "fetch"
                 },
-                "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+                "hookEventNames" : [ "LOAD", "BEFORELOAD" ],
                 "logicName" : "ProductCreateStory_PO",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -861,7 +861,7 @@
                   "modelref" : true,
                   "id" : "fetch"
                 },
-                "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+                "hookEventNames" : [ "LOAD", "BEFORELOAD" ],
                 "logicName" : "ProductBugcnt_QA",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1177,7 +1177,7 @@
                   "modelref" : true,
                   "id" : "fetch"
                 },
-                "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+                "hookEventNames" : [ "LOAD", "BEFORELOAD" ],
                 "logicName" : "InvolvedProject_dev",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1624,7 +1624,7 @@
                   "id" : "fetch"
                 },
                 "groupMode" : "NONE",
-                "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+                "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
                 "logicName" : "参与项目",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1804,20 +1804,6 @@
                   "enableSort" : false
                 } ],
                 "getPSDEGridDataItems" : [ {
-                  "dataType" : 1,
-                  "name" : "id",
-                  "getPSAppDEField" : {
-                    "name" : "ID",
-                    "codeName" : "Id"
-                  }
-                }, {
-                  "dataType" : 9,
-                  "name" : "bugcnt",
-                  "getPSAppDEField" : {
-                    "name" : "BUGCNT",
-                    "codeName" : "BugCnt"
-                  }
-                }, {
                   "dataType" : 25,
                   "name" : "name",
                   "getPSAppDEField" : {
@@ -1825,11 +1811,11 @@
                     "codeName" : "Name"
                   }
                 }, {
-                  "dataType" : 1,
-                  "name" : "parent",
+                  "dataType" : 9,
+                  "name" : "storycnt",
                   "getPSAppDEField" : {
-                    "name" : "PARENT",
-                    "codeName" : "Parent"
+                    "name" : "STORYCNT",
+                    "codeName" : "StoryCnt"
                   }
                 }, {
                   "dataType" : 9,
@@ -1839,21 +1825,25 @@
                     "codeName" : "Ycompletetaskcnt"
                   }
                 }, {
-                  "dataType" : 25,
-                  "name" : "srfmstag"
-                }, {
                   "dataType" : 9,
-                  "name" : "storycnt",
+                  "name" : "bugcnt",
                   "getPSAppDEField" : {
-                    "name" : "STORYCNT",
-                    "codeName" : "StoryCnt"
+                    "name" : "BUGCNT",
+                    "codeName" : "BugCnt"
                   }
                 }, {
-                  "dataType" : 25,
-                  "name" : "srfmajortext",
+                  "dataType" : 1,
+                  "name" : "id",
                   "getPSAppDEField" : {
-                    "name" : "NAME",
-                    "codeName" : "Name"
+                    "name" : "ID",
+                    "codeName" : "Id"
+                  }
+                }, {
+                  "dataType" : 1,
+                  "name" : "srfkey",
+                  "getPSAppDEField" : {
+                    "name" : "ID",
+                    "codeName" : "Id"
                   }
                 }, {
                   "dataType" : 1,
@@ -1865,11 +1855,21 @@
                   "dataAccessAction" : true
                 }, {
                   "dataType" : 1,
-                  "name" : "srfkey",
+                  "name" : "parent",
                   "getPSAppDEField" : {
-                    "name" : "ID",
-                    "codeName" : "Id"
+                    "name" : "PARENT",
+                    "codeName" : "Parent"
                   }
+                }, {
+                  "dataType" : 25,
+                  "name" : "srfmajortext",
+                  "getPSAppDEField" : {
+                    "name" : "NAME",
+                    "codeName" : "Name"
+                  }
+                }, {
+                  "dataType" : 25,
+                  "name" : "srfmstag"
                 } ],
                 "getPSDEGridEditItems" : [ {
                   "caption" : "项目编号",
@@ -2154,7 +2154,7 @@
                   "id" : "fetch"
                 },
                 "groupMode" : "NONE",
-                "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+                "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
                 "logicName" : "产品计划数和需求数_管理员表格",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -2310,18 +2310,18 @@
                   "enableSort" : false
                 } ],
                 "getPSDEGridDataItems" : [ {
-                  "dataType" : 9,
-                  "name" : "waitstorycnt",
-                  "getPSAppDEField" : {
-                    "name" : "WAITSTORYCNT",
-                    "codeName" : "WaitStoryCnt"
-                  }
-                }, {
                   "dataType" : 25,
                   "name" : "name",
                   "getPSAppDEField" : {
                     "name" : "NAME",
                     "codeName" : "Name"
+                  }
+                }, {
+                  "dataType" : 9,
+                  "name" : "waitstorycnt",
+                  "getPSAppDEField" : {
+                    "name" : "WAITSTORYCNT",
+                    "codeName" : "WaitStoryCnt"
                   }
                 }, {
                   "dataType" : 9,
@@ -2331,11 +2331,11 @@
                     "codeName" : "StoryCnt"
                   }
                 }, {
-                  "dataType" : 25,
-                  "name" : "srfmajortext",
+                  "dataType" : 1,
+                  "name" : "srfkey",
                   "getPSAppDEField" : {
-                    "name" : "NAME",
-                    "codeName" : "Name"
+                    "name" : "ID",
+                    "codeName" : "Id"
                   }
                 }, {
                   "dataType" : 1,
@@ -2346,11 +2346,11 @@
                   },
                   "dataAccessAction" : true
                 }, {
-                  "dataType" : 1,
-                  "name" : "srfkey",
+                  "dataType" : 25,
+                  "name" : "srfmajortext",
                   "getPSAppDEField" : {
-                    "name" : "ID",
-                    "codeName" : "Id"
+                    "name" : "NAME",
+                    "codeName" : "Name"
                   }
                 } ],
                 "getPSDEGridEditItems" : [ {
@@ -2590,7 +2590,7 @@
                 "rawValue" : false
               } ],
               "getPSAppViewRefs" : [ {
-                "name" : "NEWDATA",
+                "name" : "EDITDATA",
                 "realTitle" : "产品汇总表编辑视图",
                 "getRefPSAppView" : {
                   "modelref" : true,
@@ -2598,7 +2598,7 @@
                   "viewType" : "DEEDITVIEW"
                 }
               }, {
-                "name" : "EDITDATA",
+                "name" : "NEWDATA",
                 "realTitle" : "产品汇总表编辑视图",
                 "getRefPSAppView" : {
                   "modelref" : true,
@@ -2617,7 +2617,7 @@
                   "id" : "fetch"
                 },
                 "groupMode" : "NONE",
-                "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+                "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
                 "logicName" : "产品创建bug数_测试人员表格",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -2770,11 +2770,11 @@
                     "codeName" : "StoryCnt"
                   }
                 }, {
-                  "dataType" : 25,
-                  "name" : "srfmajortext",
+                  "dataType" : 1,
+                  "name" : "srfkey",
                   "getPSAppDEField" : {
-                    "name" : "NAME",
-                    "codeName" : "Name"
+                    "name" : "ID",
+                    "codeName" : "Id"
                   }
                 }, {
                   "dataType" : 1,
@@ -2785,11 +2785,11 @@
                   },
                   "dataAccessAction" : true
                 }, {
-                  "dataType" : 1,
-                  "name" : "srfkey",
+                  "dataType" : 25,
+                  "name" : "srfmajortext",
                   "getPSAppDEField" : {
-                    "name" : "ID",
-                    "codeName" : "Id"
+                    "name" : "NAME",
+                    "codeName" : "Name"
                   }
                 } ],
                 "getPSDEGridEditItems" : [ {

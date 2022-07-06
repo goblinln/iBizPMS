@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "产品投入表",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -87,18 +87,18 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 9,
-    "name" : "resprojectcnt",
-    "getPSAppDEField" : {
-      "name" : "RESPROJECTCNT",
-      "codeName" : "ResProjectCnt"
-    }
-  }, {
     "dataType" : 25,
     "name" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "resprojectcnt",
+    "getPSAppDEField" : {
+      "name" : "RESPROJECTCNT",
+      "codeName" : "ResProjectCnt"
     }
   }, {
     "dataType" : 7,
@@ -108,11 +108,11 @@
       "codeName" : "Haveconsumed"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -123,11 +123,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {

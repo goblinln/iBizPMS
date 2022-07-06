@@ -1784,37 +1784,10 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "RedirectView",
-    "logicName" : "产品月报实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "产品月报实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "产品月报实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "产品月报实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainInfo",
-    "logicName" : "主信息表单",
-    "modelTag2" : "0",
-    "name" : "主信息表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
     "codeName" : "EditView2",
     "logicName" : "产品月报实体编辑视图（左右关系）",
     "name" : "产品月报实体编辑视图（左右关系）",
     "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "产品月报实体选择表格视图（部件视图）",
-    "name" : "产品月报实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -1831,12 +1804,19 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "MPickupView",
+    "logicName" : "产品月报实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "产品月报实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "产品月报实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "产品月报实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
     "logicName" : "产品月报实体编辑视图（主信息）",
@@ -1844,6 +1824,26 @@
     "name" : "产品月报实体编辑视图（主信息）",
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "产品月报实体选择表格视图（部件视图）",
+    "name" : "产品月报实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MainInfo",
+    "logicName" : "主信息表单",
+    "modelTag2" : "0",
+    "name" : "主信息表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "IbizproProductMonthly",
   "dEType" : 1,
@@ -1907,7 +1907,7 @@
   "name" : "IBIZPRO_PRODUCTMONTHLY",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

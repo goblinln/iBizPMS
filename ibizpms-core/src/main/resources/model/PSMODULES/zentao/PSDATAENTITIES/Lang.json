@@ -1072,23 +1072,10 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "MPickupView",
-    "logicName" : "lang实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "lang实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "EditView2",
     "logicName" : "lang实体编辑视图（左右关系）",
     "name" : "lang实体编辑视图（左右关系）",
     "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "lang实体选择表格视图（部件视图）",
-    "name" : "lang实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -1112,11 +1099,24 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "lang实体选择表格视图（部件视图）",
+    "name" : "lang实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "RedirectView",
     "logicName" : "lang实体数据重定向视图",
     "modelTag" : "REDIRECTVIEW",
     "name" : "lang实体数据重定向视图",
     "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "lang实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "lang实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Main",
@@ -1155,7 +1155,7 @@
   "name" : "ZT_LANG",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

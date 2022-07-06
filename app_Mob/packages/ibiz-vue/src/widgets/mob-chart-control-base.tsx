@@ -11,6 +11,7 @@ import {
     ChartRadarSeries,
     GetModelService,
     AppModelService,
+    MobChartControlInterface,
 } from 'ibiz-core';
 import {
     IPSChartAxis,
@@ -25,7 +26,7 @@ import {
  * @class GridControlBase
  * @extends {MDControlBase}
  */
-export class MobChartControlBase extends MDControlBase {
+export class MobChartControlBase extends MDControlBase implements MobChartControlInterface{
     /**
      * 图表的模型对象
      *

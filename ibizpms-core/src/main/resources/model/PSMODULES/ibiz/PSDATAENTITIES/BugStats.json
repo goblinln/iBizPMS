@@ -4067,41 +4067,17 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "ProductBugStatusGridView",
-    "logicName" : "Bug统计实体表格视图（产品Bug状态汇总）",
-    "name" : "Bug统计实体表格视图（产品Bug状态汇总）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "AssigntoGridView",
-    "logicName" : "Bug统计实体表格视图(Bug指派表)",
-    "name" : "Bug统计实体表格视图(Bug指派表)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "BugResolvedByGridViewZuZhi",
     "logicName" : "Bug统计实体表格视图（组织下Bug解决表）",
     "name" : "Bug统计实体表格视图（组织下Bug解决表）",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "Bug统计实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "Bug统计实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProductBugResolutionGridView",
-    "logicName" : "Bug统计实体表格视图（产品Bug解决方案汇总）",
-    "name" : "Bug统计实体表格视图（产品Bug解决方案汇总）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "Bug统计实体选择表格视图（部件视图）",
-    "name" : "Bug统计实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "codeName" : "MPickupView",
+    "logicName" : "Bug统计实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "Bug统计实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "BUGRESOLVETION",
@@ -4117,11 +4093,16 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "Bug统计实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "Bug统计实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
+    "codeName" : "BugResolvedByGridView",
+    "logicName" : "Bug统计实体表格视图（Bug完成表）",
+    "name" : "Bug统计实体表格视图（Bug完成表）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "Bug统计实体选择表格视图（部件视图）",
+    "name" : "Bug统计实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -4131,16 +4112,9 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "Usr2GridViewProjectBugStatusCount",
-    "logicName" : "Bug统计实体表格视图(bug状态统计)",
-    "name" : "Bug统计实体表格视图(bug状态统计)",
+    "codeName" : "AssigntoGridView",
+    "logicName" : "Bug统计实体表格视图(Bug指派表)",
+    "name" : "Bug统计实体表格视图(Bug指派表)",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -4150,18 +4124,44 @@
     "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "BugResolvedByGridView",
-    "logicName" : "Bug统计实体表格视图（Bug完成表）",
-    "name" : "Bug统计实体表格视图（Bug完成表）",
+    "codeName" : "RedirectView",
+    "logicName" : "Bug统计实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "Bug统计实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2GridViewProjectBugStatusCount",
+    "logicName" : "Bug统计实体表格视图(bug状态统计)",
+    "name" : "Bug统计实体表格视图(bug状态统计)",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "Bug统计实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "Bug统计实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
+    "codeName" : "ProductBugResolutionGridView",
+    "logicName" : "Bug统计实体表格视图（产品Bug解决方案汇总）",
+    "name" : "Bug统计实体表格视图（产品Bug解决方案汇总）",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "Bug统计实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "Bug统计实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProductBugStatusGridView",
+    "logicName" : "Bug统计实体表格视图（产品Bug状态汇总）",
+    "name" : "Bug统计实体表格视图（产品Bug状态汇总）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "BugStats",
   "dEType" : 1,
@@ -4245,7 +4245,7 @@
   "name" : "IBZ_BUGSTATS",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

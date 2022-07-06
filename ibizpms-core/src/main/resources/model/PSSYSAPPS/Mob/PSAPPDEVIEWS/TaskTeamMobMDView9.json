@@ -73,7 +73,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "MOB",
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
@@ -319,7 +319,8 @@
       "codeName" : "Root"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Tasks",
@@ -364,6 +365,7 @@
       "codeName" : "Root"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   } ] ]
 }

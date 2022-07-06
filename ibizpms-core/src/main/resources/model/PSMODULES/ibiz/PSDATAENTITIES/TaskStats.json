@@ -2349,52 +2349,6 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "UserFinishTaskGridView",
-    "logicName" : "任务统计实体表格视图(任务完成汇总表）",
-    "name" : "任务统计实体表格视图(任务完成汇总表）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "UserFinishTaskSumGridView",
-    "logicName" : "任务统计实体表格视图（用户完成任务汇总）",
-    "name" : "任务统计实体表格视图（用户完成任务汇总）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "任务统计实体编辑视图（左右关系）",
-    "name" : "任务统计实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "任务统计实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "任务统计实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "任务统计实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "任务统计实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "任务统计实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "任务统计实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "PickupGridView",
     "logicName" : "任务统计实体选择表格视图（部件视图）",
     "name" : "任务统计实体选择表格视图（部件视图）",
@@ -2414,6 +2368,52 @@
     "name" : "任务统计实体表格视图",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "UserFinishTaskSumGridView",
+    "logicName" : "任务统计实体表格视图（用户完成任务汇总）",
+    "name" : "任务统计实体表格视图（用户完成任务汇总）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "任务统计实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "任务统计实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "任务统计实体编辑视图（左右关系）",
+    "name" : "任务统计实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "任务统计实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "任务统计实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "UserFinishTaskGridView",
+    "logicName" : "任务统计实体表格视图(任务完成汇总表）",
+    "name" : "任务统计实体表格视图(任务完成汇总表）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "任务统计实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "任务统计实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "TaskStats",
   "dEType" : 1,
@@ -2444,7 +2444,7 @@
   "name" : "IBZ_TASKSTATS",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

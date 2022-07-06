@@ -309,4 +309,20 @@ export class CodeListServiceBase {
             })
         })
     }
+
+    
+    /**
+     * 通过代码表标识获取代码表对象
+     *
+     * @memberof CodeListService
+     */
+     public async getCodeListByTag(context: any, tag: string) {
+        let appModelService: any = await GetModelService(context);
+        if (appModelService?.app) {
+            const codelist: IPSAppCodeList = appModelService.app.getAllPSAppCodeLists().find((item: IPSAppCodeList) => {
+                return item.codeName == tag;
+            })
+            return codelist;
+        }
+    }
 }

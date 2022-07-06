@@ -36,6 +36,20 @@
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ActivateInput",
+      "name" : "ActivateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ActivateResult",
+      "name" : "ActivateResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -44,6 +58,20 @@
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "BatchUnlinkStoryInput",
+      "name" : "BatchUnlinkStoryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "BatchUnlinkStoryResult",
+      "name" : "BatchUnlinkStoryResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -52,6 +80,21 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -59,6 +102,20 @@
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CloseInput",
+      "name" : "CloseInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CloseResult",
+      "name" : "CloseResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -67,6 +124,21 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateInput",
+      "name" : "CreateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateResult",
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "create",
     "builtinMethod" : true
@@ -76,6 +148,21 @@
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempInput",
+      "name" : "CreateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempResult",
+      "name" : "CreateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -84,6 +171,21 @@
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempMajorInput",
+      "name" : "CreateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempMajorResult",
+      "name" : "CreateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -91,13 +193,51 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftInput",
+      "name" : "GetDraftInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftResult",
+      "name" : "GetDraftResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -105,6 +245,24 @@
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempInput",
+      "name" : "GetDraftTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempResult",
+      "name" : "GetDraftTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -113,6 +271,24 @@
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempMajorInput",
+      "name" : "GetDraftTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempMajorResult",
+      "name" : "GetDraftTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -121,6 +297,24 @@
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetTempInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempResult",
+      "name" : "GetTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -129,6 +323,24 @@
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetTempMajorInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempMajorResult",
+      "name" : "GetTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -137,6 +349,20 @@
     "codeName" : "LinkProduct",
     "methodType" : "DEACTION",
     "name" : "LinkProduct",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "LinkProductInput",
+      "name" : "LinkProductInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "LinkProductResult",
+      "name" : "LinkProductResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -144,6 +370,20 @@
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "name" : "LinkStory",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "LinkStoryInput",
+      "name" : "LinkStoryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "LinkStoryResult",
+      "name" : "LinkStoryResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -152,6 +392,20 @@
     "codeName" : "ManageMembers",
     "methodType" : "DEACTION",
     "name" : "ManageMembers",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ManageMembersInput",
+      "name" : "ManageMembersInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ManageMembersResult",
+      "name" : "ManageMembersResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -160,6 +414,20 @@
     "codeName" : "PmsEeProjectTodoTaskCount",
     "methodType" : "DEACTION",
     "name" : "PmsEeProjectTodoTaskCount",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "PmsEeProjectTodoTaskCountInput",
+      "name" : "PmsEeProjectTodoTaskCountInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "PmsEeProjectTodoTaskCountResult",
+      "name" : "PmsEeProjectTodoTaskCountResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -168,6 +436,20 @@
     "codeName" : "Putoff",
     "methodType" : "DEACTION",
     "name" : "Putoff",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "PutoffInput",
+      "name" : "PutoffInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "PutoffResult",
+      "name" : "PutoffResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -177,6 +459,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "remove",
     "builtinMethod" : true,
@@ -188,6 +484,20 @@
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveTempInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempResult",
+      "name" : "RemoveTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -198,6 +508,20 @@
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveTempMajorInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempMajorResult",
+      "name" : "RemoveTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -207,6 +531,20 @@
     "codeName" : "ReturnEdit",
     "methodType" : "DEACTION",
     "name" : "ReturnEdit",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ReturnEditInput",
+      "name" : "ReturnEditInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ReturnEditResult",
+      "name" : "ReturnEditResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
@@ -214,6 +552,20 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -221,6 +573,20 @@
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "StartInput",
+      "name" : "StartInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "StartResult",
+      "name" : "StartResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -229,6 +595,20 @@
     "codeName" : "Suspend",
     "methodType" : "DEACTION",
     "name" : "Suspend",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SuspendInput",
+      "name" : "SuspendInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SuspendResult",
+      "name" : "SuspendResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -237,6 +617,20 @@
     "codeName" : "UnlinkMember",
     "methodType" : "DEACTION",
     "name" : "UnlinkMember",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UnlinkMemberInput",
+      "name" : "UnlinkMemberInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UnlinkMemberResult",
+      "name" : "UnlinkMemberResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -245,6 +639,20 @@
     "codeName" : "UnlinkProduct",
     "methodType" : "DEACTION",
     "name" : "UnlinkProduct",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UnlinkProductInput",
+      "name" : "UnlinkProductInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UnlinkProductResult",
+      "name" : "UnlinkProductResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -252,6 +660,20 @@
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UnlinkStoryInput",
+      "name" : "UnlinkStoryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UnlinkStoryResult",
+      "name" : "UnlinkStoryResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -260,6 +682,21 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateInput",
+      "name" : "UpdateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateResult",
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "update",
     "builtinMethod" : true
@@ -269,6 +706,21 @@
     "codeName" : "UpdateCycle",
     "methodType" : "DEACTION",
     "name" : "UpdateCycle",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateCycleInput",
+      "name" : "UpdateCycleInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateCycleResult",
+      "name" : "UpdateCycleResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
@@ -276,6 +728,21 @@
     "codeName" : "UpdateOrder",
     "methodType" : "DEACTION",
     "name" : "UpdateOrder",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateOrderInput",
+      "name" : "UpdateOrderInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateOrderResult",
+      "name" : "UpdateOrderResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -284,6 +751,21 @@
     "codeName" : "UpdateProjectCycle",
     "methodType" : "DEACTION",
     "name" : "UpdateProjectCycle",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateProjectCycleInput",
+      "name" : "UpdateProjectCycleInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateProjectCycleResult",
+      "name" : "UpdateProjectCycleResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
@@ -291,6 +773,21 @@
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempInput",
+      "name" : "UpdateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempResult",
+      "name" : "UpdateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -299,6 +796,21 @@
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempMajorInput",
+      "name" : "UpdateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempMajorResult",
+      "name" : "UpdateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   } ],
@@ -306,36 +818,128 @@
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
     "name" : "FetchAccount",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchaccount",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "BugProjectInput",
+      "name" : "BugProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "BugProjectResult",
+      "name" : "BugProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDefaultQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurDefaultQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurDefaultQueryInput",
+      "name" : "CurDefaultQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurDefaultQueryResult",
+      "name" : "CurDefaultQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDefaultQueryExp",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurDefaultQueryExp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurDefaultQueryExpInput",
+      "name" : "CurDefaultQueryExpInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurDefaultQueryExpResult",
+      "name" : "CurDefaultQueryExpResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurPlanProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurPlanProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurPlanProjectInput",
+      "name" : "CurPlanProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurPlanProjectResult",
+      "name" : "CurPlanProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "getADPSDEDQConditions" : [ {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "n_product_eq",
+      "fieldName" : "PRODUCT",
       "name" : "PRODUCT 等于(=) 数据上下文(n_product_eq)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
@@ -343,89 +947,453 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurProduct",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurProductInput",
+      "name" : "CurProductInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurProductResult",
+      "name" : "CurProductResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUser",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUser",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurUserInput",
+      "name" : "CurUserInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurUserResult",
+      "name" : "CurUserResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUserSa",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUserSa",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurUserSaInput",
+      "name" : "CurUserSaInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurUserSaResult",
+      "name" : "CurUserSaResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDeveloperQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DeveloperQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DeveloperQueryInput",
+      "name" : "DeveloperQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DeveloperQueryResult",
+      "name" : "DeveloperQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condType" : "CUSTOM",
+        "condition" : "t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  \nand t3.type = 'project')",
+        "name" : "?"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ESBulkInput",
+      "name" : "ESBulkInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ESBulkResult",
+      "name" : "ESBulkResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchInvolvedProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "InvolvedProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "InvolvedProjectInput",
+      "name" : "InvolvedProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "InvolvedProjectResult",
+      "name" : "InvolvedProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchInvolvedProject_StoryTaskBug",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "InvolvedProject_StoryTaskBug",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "InvolvedProject_StoryTaskBugInput",
+      "name" : "InvolvedProject_StoryTaskBugInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "InvolvedProject_StoryTaskBugResult",
+      "name" : "InvolvedProject_StoryTaskBugResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "FetchMy",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchmy",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyProjectInput",
+      "name" : "MyProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyProjectResult",
+      "name" : "MyProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "0",
+        "fieldName" : "DELETED",
+        "name" : "DELETED 等于(=) (0)"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenByQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenByQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "OpenByQueryInput",
+      "name" : "OpenByQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "OpenByQueryResult",
+      "name" : "OpenByQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "private",
+        "fieldName" : "ACL",
+        "name" : "ACL 等于(=) (private)"
+      }, {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "OPENEDBY",
+          "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "UPDATEBY",
+          "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "PM",
+          "name" : "PM 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "RD",
+          "name" : "RD 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "PO",
+          "name" : "PO 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "QD",
+          "name" : "QD 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "OpenQueryInput",
+      "name" : "OpenQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "OpenQueryResult",
+      "name" : "OpenQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "open",
+        "fieldName" : "ACL",
+        "name" : "ACL 等于(=) (open)"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeam",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeam",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProjectTeamInput",
+      "name" : "ProjectTeamInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProjectTeamResult",
+      "name" : "ProjectTeamResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "StoryProjectInput",
+      "name" : "StoryProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "StoryProjectResult",
+      "name" : "StoryProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchUnDoneProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "UnDoneProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UnDoneProjectInput",
+      "name" : "UnDoneProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UnDoneProjectResult",
+      "name" : "UnDoneProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -1289,12 +2257,1351 @@
     "enableBackend" : true,
     "enableFront" : true
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "ProjectDTO",
+    "name" : "ProjectDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "Account",
+      "logicName" : "项目团队成员",
+      "name" : "Account",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Accounts",
+      "logicName" : "项目团队相关成员",
+      "name" : "Accounts",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACCOUNTS",
+        "codeName" : "Accounts"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Acl",
+      "logicName" : "访问控制",
+      "name" : "Acl",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Alltaskcnt",
+      "logicName" : "所有任务数",
+      "name" : "Alltaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ALLTASKCNT",
+        "codeName" : "Alltaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Asstomytaskcnt",
+      "logicName" : "指派给我任务数",
+      "name" : "Asstomytaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ASSTOMYTASKCNT",
+        "codeName" : "Asstomytaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Begin",
+      "logicName" : "开始时间",
+      "name" : "Begin",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Branchs",
+      "logicName" : "关联产品平台集合",
+      "name" : "Branchs",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BRANCHS",
+        "codeName" : "Branchs"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "BugCnt",
+      "logicName" : "Bug总数",
+      "name" : "BugCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Buildcnt",
+      "logicName" : "版本总数",
+      "name" : "Buildcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BUILDCNT",
+        "codeName" : "Buildcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CanceledBy",
+      "logicName" : "由谁取消",
+      "name" : "CanceledBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CANCELEDBY",
+        "codeName" : "CanceledBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CanceledDate",
+      "logicName" : "取消日期",
+      "name" : "CanceledDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CANCELEDDATE",
+        "codeName" : "CanceledDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Canceltaskcnt",
+      "logicName" : "取消任务数",
+      "name" : "Canceltaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CANCELTASKCNT",
+        "codeName" : "Canceltaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CatID",
+      "logicName" : "catID",
+      "name" : "CatID",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CATID",
+        "codeName" : "CatID"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ClosedBy",
+      "logicName" : "由谁关闭",
+      "name" : "ClosedBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CLOSEDBY",
+        "codeName" : "ClosedBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ClosedDate",
+      "logicName" : "关闭日期",
+      "name" : "ClosedDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CLOSEDDATE",
+        "codeName" : "ClosedDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Closetaskcnt",
+      "logicName" : "关闭任务数",
+      "name" : "Closetaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CLOSETASKCNT",
+        "codeName" : "Closetaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Code",
+      "logicName" : "项目代号",
+      "name" : "Code",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CODE",
+        "codeName" : "Code"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Comment",
+      "logicName" : "备注",
+      "name" : "Comment",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CycleTaskCnt",
+      "logicName" : "周期任务数",
+      "name" : "CycleTaskCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CYCLETASKCNT",
+        "codeName" : "CycleTaskCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Days",
+      "logicName" : "可用工作日",
+      "name" : "Days",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DAYS",
+        "codeName" : "Days"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Dept",
+      "logicName" : "选择部门",
+      "name" : "Dept",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Desc",
+      "logicName" : "项目描述",
+      "name" : "Desc",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Doclibcnt",
+      "logicName" : "文档数量",
+      "name" : "Doclibcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DOCLIBCNT",
+        "codeName" : "Doclibcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "End",
+      "logicName" : "结束日期",
+      "name" : "End",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Hours",
+      "logicName" : "可用工时/天",
+      "name" : "Hours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "HOURS",
+        "codeName" : "Hours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 6,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Id",
+      "logicName" : "项目编号",
+      "name" : "Id",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "IsCat",
+      "logicName" : "isCat",
+      "name" : "IsCat",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ISCAT",
+        "codeName" : "IsCat"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Istop",
+      "logicName" : "是否置顶",
+      "name" : "Istop",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ISTOP",
+        "codeName" : "Istop"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Join",
+      "logicName" : "加盟日",
+      "name" : "Join",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "JOIN",
+        "codeName" : "Join"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Managemembers",
+      "logicName" : "复制团队",
+      "name" : "Managemembers",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MANAGEMEMBERS",
+        "codeName" : "Managemembers"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "MdeptId",
+      "logicName" : "部门标识",
+      "name" : "MdeptId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MDEPTID",
+        "codeName" : "MdeptId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "MdeptName",
+      "logicName" : "归属部门名",
+      "name" : "MdeptName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MDEPTNAME",
+        "codeName" : "MdeptName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Mobimage",
+      "logicName" : "移动端图片",
+      "name" : "Mobimage",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MOBIMAGE",
+        "codeName" : "Mobimage"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Moretaskcnt",
+      "logicName" : "更多任务数",
+      "name" : "Moretaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MORETASKCNT",
+        "codeName" : "Moretaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Mycompletetaskcnt",
+      "logicName" : "我完成任务数",
+      "name" : "Mycompletetaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MYCOMPLETETASKCNT",
+        "codeName" : "Mycompletetaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Name",
+      "logicName" : "项目名称",
+      "name" : "Name",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Noticeusers",
+      "logicName" : "消息通知用户",
+      "name" : "Noticeusers",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "NOTICEUSERS",
+        "codeName" : "Noticeusers"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OpenedBy",
+      "logicName" : "由谁创建",
+      "name" : "OpenedBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "OPENEDBY",
+        "codeName" : "OpenedBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OpenedDate",
+      "logicName" : "创建日期",
+      "name" : "OpenedDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "OPENEDDATE",
+        "codeName" : "OpenedDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OpenedVersion",
+      "logicName" : "当前系统版本",
+      "name" : "OpenedVersion",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "OPENEDVERSION",
+        "codeName" : "OpenedVersion"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Order",
+      "logicName" : "项目排序",
+      "name" : "Order",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORDER",
+        "codeName" : "Order"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Order1",
+      "logicName" : "项目排序",
+      "name" : "Order1",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORDER1",
+        "codeName" : "Order1"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OrgId",
+      "logicName" : "组织标识",
+      "name" : "OrgId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OrgName",
+      "logicName" : "归属组织名",
+      "name" : "OrgName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PM",
+      "logicName" : "项目负责人",
+      "name" : "PM",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PM",
+        "codeName" : "PM"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PO",
+      "logicName" : "产品负责人",
+      "name" : "PO",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PO",
+        "codeName" : "PO"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Parent",
+      "logicName" : "父项目",
+      "name" : "Parent",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ParentName",
+      "logicName" : "parent",
+      "name" : "ParentName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PARENTNAME",
+        "codeName" : "ParentName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Period",
+      "logicName" : "时间段",
+      "name" : "Period",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PERIOD",
+        "codeName" : "Period"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PlanTaskCnt",
+      "logicName" : "计划任务数",
+      "name" : "PlanTaskCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PLANTASKCNT",
+        "codeName" : "PlanTaskCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Plans",
+      "logicName" : "关联计划",
+      "name" : "Plans",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PLANS",
+        "codeName" : "Plans"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Pmseeprojectinfo",
+      "logicName" : "项目立项信息",
+      "name" : "Pmseeprojectinfo",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PMSEEPROJECTINFO",
+        "codeName" : "Pmseeprojectinfo"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Pri",
+      "logicName" : "优先级",
+      "name" : "Pri",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Products",
+      "logicName" : "关联产品",
+      "name" : "Products",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTS",
+        "codeName" : "Products"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Projectsn",
+      "logicName" : "项目编号",
+      "name" : "Projectsn",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PROJECTSN",
+        "codeName" : "Projectsn"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "QD",
+      "logicName" : "测试负责人",
+      "name" : "QD",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "QD",
+        "codeName" : "QD"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "RD",
+      "logicName" : "发布负责人",
+      "name" : "RD",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "RD",
+        "codeName" : "RD"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Role",
+      "logicName" : "角色",
+      "name" : "Role",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ROLE",
+        "codeName" : "Role"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "SrfArray",
+      "logicName" : "关联数据数组",
+      "name" : "SrfArray",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SRFARRAY",
+        "codeName" : "SrfArray"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Statge",
+      "logicName" : "statge",
+      "name" : "Statge",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "STATGE",
+        "codeName" : "Statge"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Status",
+      "logicName" : "项目状态",
+      "name" : "Status",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "StoryCnt",
+      "logicName" : "需求总数",
+      "name" : "StoryCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Storychangecnt",
+      "logicName" : "需求变更数",
+      "name" : "Storychangecnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "STORYCHANGECNT",
+        "codeName" : "Storychangecnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "SubStatus",
+      "logicName" : "子状态",
+      "name" : "SubStatus",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Supproreport",
+      "logicName" : "支持项目汇报",
+      "name" : "Supproreport",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SUPPROREPORT",
+        "codeName" : "Supproreport"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "TaskCnt",
+      "logicName" : "任务总数",
+      "name" : "TaskCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TASKCNT",
+        "codeName" : "TaskCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Team",
+      "logicName" : "团队名称",
+      "name" : "Team",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TEAM",
+        "codeName" : "Team"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Teamcnt",
+      "logicName" : "团队成员总数",
+      "name" : "Teamcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TEAMCNT",
+        "codeName" : "Teamcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "TempTaskCnt",
+      "logicName" : "临时任务数",
+      "name" : "TempTaskCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TEMPTASKCNT",
+        "codeName" : "TempTaskCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "TotalConsumed",
+      "logicName" : "任务消耗总工时",
+      "name" : "TotalConsumed",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TOTALCONSUMED",
+        "codeName" : "TotalConsumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "TotalEstimate",
+      "logicName" : "任务最初预计总工时",
+      "name" : "TotalEstimate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TOTALESTIMATE",
+        "codeName" : "TotalEstimate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "TotalLeft",
+      "logicName" : "任务预计剩余总工时",
+      "name" : "TotalLeft",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TOTALLEFT",
+        "codeName" : "TotalLeft"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Totalhours",
+      "logicName" : "可用工时",
+      "name" : "Totalhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TOTALHOURS",
+        "codeName" : "Totalhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 6,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Totalwh",
+      "logicName" : "总工时",
+      "name" : "Totalwh",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TOTALWH",
+        "codeName" : "Totalwh"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Type",
+      "logicName" : "项目类型",
+      "name" : "Type",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Unclosetaskcnt",
+      "logicName" : "未关闭任务数",
+      "name" : "Unclosetaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UNCLOSETASKCNT",
+        "codeName" : "Unclosetaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Uncompletetaskcnt",
+      "logicName" : "未完成任务数",
+      "name" : "Uncompletetaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UNCOMPLETETASKCNT",
+        "codeName" : "Uncompletetaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Unstarttaskcnt",
+      "logicName" : "未开始任务数",
+      "name" : "Unstarttaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UNSTARTTASKCNT",
+        "codeName" : "Unstarttaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateBy",
+      "logicName" : "由谁更新",
+      "name" : "UpdateBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEBY",
+        "codeName" : "UpdateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Whitelist",
+      "logicName" : "分组白名单",
+      "name" : "Whitelist",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "WHITELIST",
+        "codeName" : "Whitelist"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "YStarttaskcnt",
+      "logicName" : "进行中任务数",
+      "name" : "YStarttaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "YSTARTASKCNT",
+        "codeName" : "YStarttaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Ycompletetaskcnt",
+      "logicName" : "已完成任务数",
+      "name" : "Ycompletetaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "YCOMPLETETASKCNT",
+        "codeName" : "Ycompletetaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "ProjectFilterDTO",
+    "name" : "ProjectFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_ACCOUNT_EQ",
+      "logicName" : "项目团队成员",
+      "name" : "N_ACCOUNT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ACL_EQ",
+      "logicName" : "访问控制",
+      "name" : "N_ACL_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_DEPT_EQ",
+      "logicName" : "选择部门",
+      "name" : "N_DEPT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ID_EQ",
+      "logicName" : "项目编号",
+      "name" : "N_ID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ID_IN",
+      "logicName" : "项目编号",
+      "name" : "N_ID_IN",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ID_NOTEQ",
+      "logicName" : "项目编号",
+      "name" : "N_ID_NOTEQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ISCAT_EQ",
+      "logicName" : "isCat",
+      "name" : "N_ISCAT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ISCAT",
+        "codeName" : "IsCat"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ISTOP_EQ",
+      "logicName" : "是否置顶",
+      "name" : "N_ISTOP_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ISTOP",
+        "codeName" : "Istop"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_MANAGEMEMBERS_EQ",
+      "logicName" : "复制团队",
+      "name" : "N_MANAGEMEMBERS_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "MANAGEMEMBERS",
+        "codeName" : "Managemembers"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_NAME_EQ",
+      "logicName" : "项目名称",
+      "name" : "N_NAME_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_NAME_LIKE",
+      "logicName" : "项目名称",
+      "name" : "N_NAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PARENTNAME_EQ",
+      "logicName" : "parent",
+      "name" : "N_PARENTNAME_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PARENTNAME",
+        "codeName" : "ParentName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PARENTNAME_LIKE",
+      "logicName" : "parent",
+      "name" : "N_PARENTNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PARENTNAME",
+        "codeName" : "ParentName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PARENT_EQ",
+      "logicName" : "父项目",
+      "name" : "N_PARENT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PERIOD_EQ",
+      "logicName" : "时间段",
+      "name" : "N_PERIOD_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PERIOD",
+        "codeName" : "Period"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PM_EQ",
+      "logicName" : "项目负责人",
+      "name" : "N_PM_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PM",
+        "codeName" : "PM"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PO_EQ",
+      "logicName" : "产品负责人",
+      "name" : "N_PO_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PO",
+        "codeName" : "PO"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PRI_EQ",
+      "logicName" : "优先级",
+      "name" : "N_PRI_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_QD_EQ",
+      "logicName" : "测试负责人",
+      "name" : "N_QD_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "QD",
+        "codeName" : "QD"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_RD_EQ",
+      "logicName" : "发布负责人",
+      "name" : "N_RD_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "RD",
+        "codeName" : "RD"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_STATGE_EQ",
+      "logicName" : "statge",
+      "name" : "N_STATGE_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "STATGE",
+        "codeName" : "Statge"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_STATUS_EQ",
+      "logicName" : "项目状态",
+      "name" : "N_STATUS_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_STATUS_IN",
+      "logicName" : "项目状态",
+      "name" : "N_STATUS_IN",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_STATUS_ISNULL",
+      "logicName" : "项目状态",
+      "name" : "N_STATUS_ISNULL",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_STATUS_NOTEQ",
+      "logicName" : "项目状态",
+      "name" : "N_STATUS_NOTEQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_SUPPROREPORT_EQ",
+      "logicName" : "支持项目汇报",
+      "name" : "N_SUPPROREPORT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "SUPPROREPORT",
+        "codeName" : "Supproreport"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TYPE_EQ",
+      "logicName" : "项目类型",
+      "name" : "N_TYPE_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ActivateInput",
+      "name" : "ActivateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ActivateResult",
+      "name" : "ActivateResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1303,6 +3610,20 @@
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "BatchUnlinkStoryInput",
+      "name" : "BatchUnlinkStoryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "BatchUnlinkStoryResult",
+      "name" : "BatchUnlinkStoryResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1311,6 +3632,21 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -1318,6 +3654,20 @@
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CloseInput",
+      "name" : "CloseInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CloseResult",
+      "name" : "CloseResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1326,6 +3676,21 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateInput",
+      "name" : "CreateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateResult",
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "create",
     "builtinMethod" : true
@@ -1335,6 +3700,21 @@
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempInput",
+      "name" : "CreateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempResult",
+      "name" : "CreateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -1343,6 +3723,21 @@
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempMajorInput",
+      "name" : "CreateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempMajorResult",
+      "name" : "CreateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -1350,13 +3745,51 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftInput",
+      "name" : "GetDraftInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftResult",
+      "name" : "GetDraftResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -1364,6 +3797,24 @@
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempInput",
+      "name" : "GetDraftTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempResult",
+      "name" : "GetDraftTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -1372,6 +3823,24 @@
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempMajorInput",
+      "name" : "GetDraftTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempMajorResult",
+      "name" : "GetDraftTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -1380,6 +3849,24 @@
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetTempInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempResult",
+      "name" : "GetTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -1388,6 +3875,24 @@
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetTempMajorInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempMajorResult",
+      "name" : "GetTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -1396,6 +3901,20 @@
     "codeName" : "LinkProduct",
     "methodType" : "DEACTION",
     "name" : "LinkProduct",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "LinkProductInput",
+      "name" : "LinkProductInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "LinkProductResult",
+      "name" : "LinkProductResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -1403,6 +3922,20 @@
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "name" : "LinkStory",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "LinkStoryInput",
+      "name" : "LinkStoryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "LinkStoryResult",
+      "name" : "LinkStoryResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1411,6 +3944,20 @@
     "codeName" : "ManageMembers",
     "methodType" : "DEACTION",
     "name" : "ManageMembers",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ManageMembersInput",
+      "name" : "ManageMembersInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ManageMembersResult",
+      "name" : "ManageMembersResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1419,6 +3966,20 @@
     "codeName" : "PmsEeProjectTodoTaskCount",
     "methodType" : "DEACTION",
     "name" : "PmsEeProjectTodoTaskCount",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "PmsEeProjectTodoTaskCountInput",
+      "name" : "PmsEeProjectTodoTaskCountInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "PmsEeProjectTodoTaskCountResult",
+      "name" : "PmsEeProjectTodoTaskCountResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1427,6 +3988,20 @@
     "codeName" : "Putoff",
     "methodType" : "DEACTION",
     "name" : "Putoff",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "PutoffInput",
+      "name" : "PutoffInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "PutoffResult",
+      "name" : "PutoffResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1436,6 +4011,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "remove",
     "builtinMethod" : true,
@@ -1447,6 +4036,20 @@
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveTempInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempResult",
+      "name" : "RemoveTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -1457,6 +4060,20 @@
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveTempMajorInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempMajorResult",
+      "name" : "RemoveTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -1466,6 +4083,20 @@
     "codeName" : "ReturnEdit",
     "methodType" : "DEACTION",
     "name" : "ReturnEdit",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ReturnEditInput",
+      "name" : "ReturnEditInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ReturnEditResult",
+      "name" : "ReturnEditResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
@@ -1473,6 +4104,20 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -1480,6 +4125,20 @@
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "StartInput",
+      "name" : "StartInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "StartResult",
+      "name" : "StartResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1488,6 +4147,20 @@
     "codeName" : "Suspend",
     "methodType" : "DEACTION",
     "name" : "Suspend",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SuspendInput",
+      "name" : "SuspendInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SuspendResult",
+      "name" : "SuspendResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1496,6 +4169,20 @@
     "codeName" : "UnlinkMember",
     "methodType" : "DEACTION",
     "name" : "UnlinkMember",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UnlinkMemberInput",
+      "name" : "UnlinkMemberInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UnlinkMemberResult",
+      "name" : "UnlinkMemberResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1504,6 +4191,20 @@
     "codeName" : "UnlinkProduct",
     "methodType" : "DEACTION",
     "name" : "UnlinkProduct",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UnlinkProductInput",
+      "name" : "UnlinkProductInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UnlinkProductResult",
+      "name" : "UnlinkProductResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -1511,6 +4212,20 @@
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UnlinkStoryInput",
+      "name" : "UnlinkStoryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UnlinkStoryResult",
+      "name" : "UnlinkStoryResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1519,6 +4234,21 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateInput",
+      "name" : "UpdateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateResult",
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "update",
     "builtinMethod" : true
@@ -1528,6 +4258,21 @@
     "codeName" : "UpdateCycle",
     "methodType" : "DEACTION",
     "name" : "UpdateCycle",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateCycleInput",
+      "name" : "UpdateCycleInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateCycleResult",
+      "name" : "UpdateCycleResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
@@ -1535,6 +4280,21 @@
     "codeName" : "UpdateOrder",
     "methodType" : "DEACTION",
     "name" : "UpdateOrder",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateOrderInput",
+      "name" : "UpdateOrderInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateOrderResult",
+      "name" : "UpdateOrderResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1543,6 +4303,21 @@
     "codeName" : "UpdateProjectCycle",
     "methodType" : "DEACTION",
     "name" : "UpdateProjectCycle",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateProjectCycleInput",
+      "name" : "UpdateProjectCycleInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateProjectCycleResult",
+      "name" : "UpdateProjectCycleResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
@@ -1550,6 +4325,21 @@
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempInput",
+      "name" : "UpdateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempResult",
+      "name" : "UpdateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -1558,42 +4348,149 @@
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempMajorInput",
+      "name" : "UpdateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempMajorResult",
+      "name" : "UpdateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
     "name" : "FetchAccount",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchaccount",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "BugProjectInput",
+      "name" : "BugProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "BugProjectResult",
+      "name" : "BugProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDefaultQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurDefaultQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurDefaultQueryInput",
+      "name" : "CurDefaultQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurDefaultQueryResult",
+      "name" : "CurDefaultQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDefaultQueryExp",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurDefaultQueryExp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurDefaultQueryExpInput",
+      "name" : "CurDefaultQueryExpInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurDefaultQueryExpResult",
+      "name" : "CurDefaultQueryExpResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurPlanProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurPlanProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurPlanProjectInput",
+      "name" : "CurPlanProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurPlanProjectResult",
+      "name" : "CurPlanProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "getADPSDEDQConditions" : [ {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "n_product_eq",
+      "fieldName" : "PRODUCT",
       "name" : "PRODUCT 等于(=) 数据上下文(n_product_eq)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
@@ -1601,95 +4498,477 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurProduct",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurProductInput",
+      "name" : "CurProductInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurProductResult",
+      "name" : "CurProductResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUser",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUser",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurUserInput",
+      "name" : "CurUserInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurUserResult",
+      "name" : "CurUserResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUserSa",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUserSa",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurUserSaInput",
+      "name" : "CurUserSaInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurUserSaResult",
+      "name" : "CurUserSaResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDeveloperQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DeveloperQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DeveloperQueryInput",
+      "name" : "DeveloperQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DeveloperQueryResult",
+      "name" : "DeveloperQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condType" : "CUSTOM",
+        "condition" : "t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  \nand t3.type = 'project')",
+        "name" : "?"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ESBulkInput",
+      "name" : "ESBulkInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ESBulkResult",
+      "name" : "ESBulkResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchInvolvedProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "InvolvedProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "InvolvedProjectInput",
+      "name" : "InvolvedProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "InvolvedProjectResult",
+      "name" : "InvolvedProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchInvolvedProject_StoryTaskBug",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "InvolvedProject_StoryTaskBug",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "InvolvedProject_StoryTaskBugInput",
+      "name" : "InvolvedProject_StoryTaskBugInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "InvolvedProject_StoryTaskBugResult",
+      "name" : "InvolvedProject_StoryTaskBugResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "FetchMy",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchmy",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyProjectInput",
+      "name" : "MyProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyProjectResult",
+      "name" : "MyProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "0",
+        "fieldName" : "DELETED",
+        "name" : "DELETED 等于(=) (0)"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenByQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenByQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "OpenByQueryInput",
+      "name" : "OpenByQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "OpenByQueryResult",
+      "name" : "OpenByQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "private",
+        "fieldName" : "ACL",
+        "name" : "ACL 等于(=) (private)"
+      }, {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "OPENEDBY",
+          "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "UPDATEBY",
+          "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "PM",
+          "name" : "PM 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "RD",
+          "name" : "RD 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "PO",
+          "name" : "PO 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "QD",
+          "name" : "QD 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "OpenQueryInput",
+      "name" : "OpenQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "OpenQueryResult",
+      "name" : "OpenQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "open",
+        "fieldName" : "ACL",
+        "name" : "ACL 等于(=) (open)"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeam",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeam",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProjectTeamInput",
+      "name" : "ProjectTeamInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProjectTeamResult",
+      "name" : "ProjectTeamResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "StoryProjectInput",
+      "name" : "StoryProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "StoryProjectResult",
+      "name" : "StoryProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchUnDoneProject",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "UnDoneProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UnDoneProjectInput",
+      "name" : "UnDoneProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UnDoneProjectResult",
+      "name" : "UnDoneProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempAccount",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "Account",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "AccountInput",
+      "name" : "AccountInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "AccountResult",
+      "name" : "AccountResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1697,6 +4976,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "BugProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "BugProjectInput",
+      "name" : "BugProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "BugProjectResult",
+      "name" : "BugProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1704,6 +5001,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurDefaultQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurDefaultQueryInput",
+      "name" : "CurDefaultQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurDefaultQueryResult",
+      "name" : "CurDefaultQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1711,6 +5026,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurDefaultQueryExp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurDefaultQueryExpInput",
+      "name" : "CurDefaultQueryExpInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurDefaultQueryExpResult",
+      "name" : "CurDefaultQueryExpResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1718,6 +5051,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurPlanProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurPlanProjectInput",
+      "name" : "CurPlanProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurPlanProjectResult",
+      "name" : "CurPlanProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1725,6 +5076,7 @@
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "n_product_eq",
+      "fieldName" : "PRODUCT",
       "name" : "PRODUCT 等于(=) 数据上下文(n_product_eq)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
@@ -1732,6 +5084,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurProduct",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurProductInput",
+      "name" : "CurProductInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurProductResult",
+      "name" : "CurProductResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1739,6 +5109,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurUser",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurUserInput",
+      "name" : "CurUserInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurUserResult",
+      "name" : "CurUserResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1746,6 +5134,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurUserSa",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurUserSaInput",
+      "name" : "CurUserSaInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurUserSaResult",
+      "name" : "CurUserSaResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1753,6 +5159,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1760,6 +5184,34 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DeveloperQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DeveloperQueryInput",
+      "name" : "DeveloperQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DeveloperQueryResult",
+      "name" : "DeveloperQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condType" : "CUSTOM",
+        "condition" : "t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  \nand t3.type = 'project')",
+        "name" : "?"
+      } ]
+    } ],
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1767,6 +5219,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ESBulk",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ESBulkInput",
+      "name" : "ESBulkInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ESBulkResult",
+      "name" : "ESBulkResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1774,6 +5244,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "InvolvedProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "InvolvedProjectInput",
+      "name" : "InvolvedProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "InvolvedProjectResult",
+      "name" : "InvolvedProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1781,6 +5269,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "InvolvedProject_StoryTaskBug",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "InvolvedProject_StoryTaskBugInput",
+      "name" : "InvolvedProject_StoryTaskBugInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "InvolvedProject_StoryTaskBugResult",
+      "name" : "InvolvedProject_StoryTaskBugResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1788,6 +5294,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "My",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyInput",
+      "name" : "MyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyResult",
+      "name" : "MyResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1795,6 +5319,36 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyProjectInput",
+      "name" : "MyProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyProjectResult",
+      "name" : "MyProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "0",
+        "fieldName" : "DELETED",
+        "name" : "DELETED 等于(=) (0)"
+      } ]
+    } ],
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1802,6 +5356,83 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "OpenByQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "OpenByQueryInput",
+      "name" : "OpenByQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "OpenByQueryResult",
+      "name" : "OpenByQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "private",
+        "fieldName" : "ACL",
+        "name" : "ACL 等于(=) (private)"
+      }, {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "OPENEDBY",
+          "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "UPDATEBY",
+          "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "PM",
+          "name" : "PM 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "RD",
+          "name" : "RD 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "PO",
+          "name" : "PO 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "QD",
+          "name" : "QD 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        } ]
+      } ]
+    } ],
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1809,6 +5440,36 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "OpenQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "OpenQueryInput",
+      "name" : "OpenQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "OpenQueryResult",
+      "name" : "OpenQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "open",
+        "fieldName" : "ACL",
+        "name" : "ACL 等于(=) (open)"
+      } ]
+    } ],
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1816,6 +5477,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectTeam",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProjectTeamInput",
+      "name" : "ProjectTeamInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProjectTeamResult",
+      "name" : "ProjectTeamResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1823,6 +5502,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "StoryProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "StoryProjectInput",
+      "name" : "StoryProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "StoryProjectResult",
+      "name" : "StoryProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -1830,6 +5527,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "UnDoneProject",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UnDoneProjectInput",
+      "name" : "UnDoneProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UnDoneProjectResult",
+      "name" : "UnDoneProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProjectDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -2255,6 +5970,10 @@
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "用户项目",
   "getMainStatePSAppDEFields" : [ {
     "name" : "STATUS",
@@ -2263,6 +5982,10 @@
     "name" : "ISTOP",
     "codeName" : "Istop"
   } ],
+  "getMajorPSAppDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
+  },
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "AccountProjects",

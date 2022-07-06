@@ -1860,56 +1860,10 @@
     "defaultMode" : true
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "EditView2",
-    "logicName" : "产品生命周期实体编辑视图（左右关系）",
-    "name" : "产品生命周期实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "RoadMapListView",
-    "logicName" : "产品路线图列表视图",
-    "name" : "产品路线图列表视图",
-    "realModelSubType" : "DELISTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "产品生命周期实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "产品生命周期实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "PickupGridView",
     "logicName" : "产品生命周期实体选择表格视图（部件视图）",
     "name" : "产品生命周期实体选择表格视图（部件视图）",
     "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "产品生命周期实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "产品生命周期实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "产品生命周期实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "产品生命周期实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RoadMapListView9",
-    "logicName" : "产品路线图列表视图（部件视图）",
-    "name" : "产品路线图列表视图（部件视图）",
-    "realModelSubType" : "DELISTVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -1919,11 +1873,36 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "产品生命周期实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "产品生命周期实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
+    "codeName" : "PickupView",
+    "logicName" : "产品生命周期实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "产品生命周期实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "产品生命周期实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "产品生命周期实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RoadMapListView",
+    "logicName" : "产品路线图列表视图",
+    "name" : "产品路线图列表视图",
+    "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "产品生命周期实体编辑视图（左右关系）",
+    "name" : "产品生命周期实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RoadMapListView9",
+    "logicName" : "产品路线图列表视图（部件视图）",
+    "name" : "产品路线图列表视图（部件视图）",
+    "realModelSubType" : "DELISTVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RoadMapSListView9",
@@ -1931,6 +1910,27 @@
     "name" : "产品路线图列表视图（部件视图）（概况）",
     "realModelSubType" : "DELISTVIEW9",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "产品生命周期实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "产品生命周期实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "产品生命周期实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "产品生命周期实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "ProductLife",
   "dEType" : 1,
@@ -1986,7 +1986,7 @@
   "name" : "IBZ_PRODUCTLIFE",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

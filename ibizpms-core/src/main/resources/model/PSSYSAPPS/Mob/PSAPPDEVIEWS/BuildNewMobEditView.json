@@ -70,7 +70,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD", "SAVE", "BEFORESAVE", "REMOVE" ],
     "logicName" : "移动端新建模式",
     "getPSAppDataEntity" : {
       "modelref" : true,

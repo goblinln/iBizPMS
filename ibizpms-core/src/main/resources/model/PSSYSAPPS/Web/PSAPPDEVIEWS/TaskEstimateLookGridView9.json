@@ -52,15 +52,15 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "OBJECTTYPE",
-    "name" : "OBJECTTYPE",
-    "value" : "task",
-    "rawValue" : true
-  }, {
     "key" : "SRFPARENTKEY",
     "name" : "SRFPARENTKEY",
     "value" : "task",
     "rawValue" : false
+  }, {
+    "key" : "OBJECTTYPE",
+    "name" : "OBJECTTYPE",
+    "value" : "task",
+    "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA"
@@ -78,7 +78,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（查看）",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -270,24 +270,10 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "taskestimatesn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 21,
-      "name" : "work",
-      "getPSAppDEField" : {
-        "name" : "WORK",
-        "codeName" : "Work"
-      }
-    }, {
-      "dataType" : 7,
-      "name" : "consumed",
-      "getPSAppDEField" : {
-        "name" : "CONSUMED",
-        "codeName" : "Consumed"
+        "name" : "TASKESTIMATESN",
+        "codeName" : "TaskEstimatesn"
       }
     }, {
       "format" : "YYYY-MM-DD",
@@ -298,18 +284,11 @@
         "codeName" : "Dates"
       }
     }, {
-      "dataType" : 1,
-      "name" : "taskestimatesn",
+      "dataType" : 7,
+      "name" : "consumed",
       "getPSAppDEField" : {
-        "name" : "TASKESTIMATESN",
-        "codeName" : "TaskEstimatesn"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "task",
-      "getPSAppDEField" : {
-        "name" : "TASK",
-        "codeName" : "Task"
+        "name" : "CONSUMED",
+        "codeName" : "Consumed"
       }
     }, {
       "dataType" : 7,
@@ -319,8 +298,22 @@
         "codeName" : "Left"
       }
     }, {
+      "dataType" : 21,
+      "name" : "work",
+      "getPSAppDEField" : {
+        "name" : "WORK",
+        "codeName" : "Work"
+      }
+    }, {
       "dataType" : 1,
-      "name" : "srfmajortext",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
@@ -335,7 +328,14 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "task",
+      "getPSAppDEField" : {
+        "name" : "TASK",
+        "codeName" : "Task"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
@@ -480,7 +480,8 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Tasks",
@@ -525,6 +526,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   } ] ]
 }

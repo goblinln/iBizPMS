@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -354,42 +354,6 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 25,
-    "name" : "phone",
-    "getPSAppDEField" : {
-      "name" : "PHONE",
-      "codeName" : "Phone"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "last",
-    "getPSAppDEField" : {
-      "name" : "LAST",
-      "codeName" : "Last"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "REALNAME",
-      "codeName" : "Realname"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "srfdataaccaction",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true
-  }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
     "dataType" : 1,
     "name" : "id",
     "getPSAppDEField" : {
@@ -398,17 +362,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "email",
+    "name" : "realname",
     "getPSAppDEField" : {
-      "name" : "EMAIL",
-      "codeName" : "Email"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "address",
-    "getPSAppDEField" : {
-      "name" : "ADDRESS",
-      "codeName" : "Address"
+      "name" : "REALNAME",
+      "codeName" : "Realname"
     }
   }, {
     "dataType" : 25,
@@ -426,6 +383,13 @@
     }
   }, {
     "dataType" : 25,
+    "name" : "email",
+    "getPSAppDEField" : {
+      "name" : "EMAIL",
+      "codeName" : "Email"
+    }
+  }, {
+    "dataType" : 25,
     "name" : "gender",
     "getPSAppDEField" : {
       "name" : "GENDER",
@@ -433,17 +397,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "realname",
+    "name" : "phone",
     "getPSAppDEField" : {
-      "name" : "REALNAME",
-      "codeName" : "Realname"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "visits",
-    "getPSAppDEField" : {
-      "name" : "VISITS",
-      "codeName" : "Visits"
+      "name" : "PHONE",
+      "codeName" : "Phone"
     }
   }, {
     "dataType" : 25,
@@ -453,11 +410,54 @@
       "codeName" : "Qq"
     }
   }, {
+    "dataType" : 25,
+    "name" : "address",
+    "getPSAppDEField" : {
+      "name" : "ADDRESS",
+      "codeName" : "Address"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "last",
+    "getPSAppDEField" : {
+      "name" : "LAST",
+      "codeName" : "Last"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "visits",
+    "getPSAppDEField" : {
+      "name" : "VISITS",
+      "codeName" : "Visits"
+    }
+  }, {
     "dataType" : 1,
     "name" : "usersn",
     "getPSAppDEField" : {
       "name" : "USERSN",
       "codeName" : "Usersn"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "REALNAME",
+      "codeName" : "Realname"
     }
   } ],
   "getPSDEGridEditItems" : [ {

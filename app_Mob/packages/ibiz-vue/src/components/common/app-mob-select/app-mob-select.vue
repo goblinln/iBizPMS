@@ -1,6 +1,6 @@
 <template>
     <div class="app-mobile-select" data-tap-disabled="true">
-        <div class="cancel-icon" v-if="curValue || curValue === 0"><app-mob-icon name="close-circle-outline" @onClick="clear"></app-mob-icon></div>
+        <div class="cancel-icon" v-if="(curValue || curValue === 0) && !disabled"><app-mob-icon name="close-circle-outline" @onClick="clear"></app-mob-icon></div>
         <div v-if="curValue== null || curValue==''" class="ion-select-icon"></div>
         <ion-select  :value="curValue" :disabled="disabled ? disabled : false" @ionChange="change" interface="action-sheet" @click="load" :cancel-text="$t('app.button.cancel')" @ionCancel="cancel">
               <template v-if="codeListType == 'DYNAMIC'">
@@ -99,7 +99,7 @@ export default class AppSelect extends Vue {
      * @type {string}
      * @memberof AppSelect
      */
-    @Prop() public disabled?: string;
+    @Prop({default:false}) public disabled?: boolean;
 
     /**
      * 代码表标识
@@ -159,6 +159,14 @@ export default class AppSelect extends Vue {
      */
     @Prop({ default: true }) protected isCache?: boolean;
 
+        /**
+     * 代码表
+     *
+     * @type {string}
+     * @memberof DropDownList
+     */    
+    @Prop() public codeList?: any;
+
     /**
      * 视图参数
      *
@@ -197,7 +205,7 @@ export default class AppSelect extends Vue {
      */
     public mounted() {
         if (Object.is(this.codeListType, "STATIC")) {
-            this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: null, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
+            this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: this.codeList, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
                 this.options = codelistItems;
             }).catch((error: any) => {
                 LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codeNotExist')}`);

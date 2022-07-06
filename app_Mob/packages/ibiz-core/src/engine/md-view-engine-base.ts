@@ -299,12 +299,16 @@ export class MDViewEngineBase extends ViewEngine {
      */
     public onEditData(arg: any): void {
         const loadParam: any = {};
+        const otherParam: any = {};
         const { data }: { data: any } = arg;
         if (this.keyPSDEField && data[this.keyPSDEField] && !Object.is(data[this.keyPSDEField], '')) {
             Object.assign(loadParam, { [this.keyPSDEField]: data[this.keyPSDEField] });
         }
+        if (this.view && this.view.viewparams) {
+            Object.assign(otherParam, this.view.viewparams);
+        }
         if (this.openData && this.isFunc(this.openData)) {
-            this.openData([data], {}, {});
+            this.openData([loadParam], [data], otherParam, null, this.getMDCtrl());
         }
     }
 

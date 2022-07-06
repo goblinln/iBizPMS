@@ -158,212 +158,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "Usr2GridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "保存（关联Bug）",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_click"
-      }
-    }, {
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "caption" : "保存",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0c1@FontAwesome",
-        "cssClass" : "fa fa-link"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "MULTIKEY",
-        "caption" : "关联bug",
-        "codeName" : "buildlinkbugs",
-        "dialogResult" : "OK",
-        "fullCodeName" : "Bug_buildlinkbugs",
-        "name" : "版本批量关联已解决的bug",
-        "getNextPSUIAction" : {
-          "modelref" : true,
-          "id" : "Refresh"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "BuildLinkBug"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
-        "getPSNavigateContexts" : [ {
-          "key" : "BUG",
-          "name" : "BUG",
-          "value" : "0",
-          "rawValue" : true
-        }, {
-          "key" : "PRODUCTS",
-          "name" : "PRODUCTS",
-          "value" : "product",
-          "rawValue" : false
-        }, {
-          "key" : "PROJECTS",
-          "name" : "PROJECTS",
-          "value" : "project",
-          "rawValue" : false
-        }, {
-          "key" : "BUILDS",
-          "name" : "BUILDS",
-          "value" : "build",
-          "rawValue" : false
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "product",
-          "name" : "product",
-          "value" : "0",
-          "rawValue" : true
-        }, {
-          "key" : "projects",
-          "name" : "projects",
-          "value" : "project",
-          "rawValue" : false
-        }, {
-          "key" : "project",
-          "name" : "project",
-          "value" : "0",
-          "rawValue" : true
-        }, {
-          "key" : "builds",
-          "name" : "builds",
-          "value" : "build",
-          "rawValue" : false
-        }, {
-          "key" : "ids",
-          "name" : "ids",
-          "value" : "id",
-          "rawValue" : false
-        }, {
-          "key" : "resolvedby",
-          "name" : "resolvedby",
-          "value" : "resolvedby",
-          "rawValue" : false
-        }, {
-          "key" : "bug",
-          "name" : "bug",
-          "value" : "0",
-          "rawValue" : true
-        }, {
-          "key" : "statuses",
-          "name" : "statuses",
-          "value" : "status",
-          "rawValue" : false
-        }, {
-          "key" : "build",
-          "name" : "build",
-          "value" : "0",
-          "rawValue" : true
-        }, {
-          "key" : "products",
-          "name" : "products",
-          "value" : "product",
-          "rawValue" : false
-        } ],
-        "getPSSysImage" : {
-          "glyph" : "xf0c1@FontAwesome",
-          "cssClass" : "fa fa-link"
-        },
-        "refreshMode" : 1,
-        "timeout" : 60000,
-        "uIActionMode" : "BACKEND",
-        "uIActionTag" : "buildlinkbugs",
-        "uIActionType" : "DEUIACTION",
-        "closeEditView" : true,
-        "closePopupView" : true,
-        "enableConfirm" : true,
-        "reloadData" : true,
-        "id" : "buildlinkbugs@Bug"
-      },
-      "tooltip" : "保存",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.FILTER"
-      },
-      "caption" : "过滤",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0b0@FontAwesome",
-        "cssClass" : "fa fa-filter"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.FILTER"
-        },
-        "caption" : "过滤",
-        "codeName" : "ToggleFilter",
-        "fullCodeName" : "ToggleFilter",
-        "name" : "表格界面_搜索栏",
-        "getPSSysImage" : {
-          "glyph" : "xf0b0@FontAwesome",
-          "cssClass" : "fa fa-filter"
-        },
-        "predefinedType" : "GRIDVIEW_SEARCHBAR",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ToggleFilter",
-        "uIActionType" : "DEUIACTION",
-        "enableToggleMode" : true
-      },
-      "tooltip" : "过滤",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-      },
-      "enableToggleMode" : true,
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "f7a8e912adccac05dcabdba5ecd79b30",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "Main_BuildSub3",
     "columnEnableLink" : 2,
@@ -416,7 +210,7 @@
       }
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（版本下属_操作列）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -731,17 +525,59 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "bugsn",
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "BUGSN",
-        "codeName" : "Bugsn"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
-      "dataType" : 1,
-      "name" : "tostory",
+      "dataType" : 9,
+      "name" : "pri",
       "getPSAppDEField" : {
-        "name" : "TOSTORY",
-        "codeName" : "ToStory"
+        "name" : "PRI",
+        "codeName" : "Pri"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "status",
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "openedby",
+      "getPSAppDEField" : {
+        "name" : "OPENEDBY",
+        "codeName" : "OpenedBy"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "assignedto",
+      "getPSAppDEField" : {
+        "name" : "ASSIGNEDTO",
+        "codeName" : "AssignedTo"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "resolvedby_text",
+      "getPSAppDEField" : {
+        "name" : "RESOLVEDBY",
+        "codeName" : "ResolvedBy"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "resolvedby",
+      "getPSAppDEField" : {
+        "name" : "RESOLVEDBY",
+        "codeName" : "ResolvedBy"
       }
     }, {
       "dataType" : 25,
@@ -751,14 +587,32 @@
         "codeName" : "Resolution"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "dataType" : 1,
+      "name" : "project",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "isfavorites",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "ISFAVORITES",
+        "codeName" : "Isfavorites"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "bugsn",
+      "getPSAppDEField" : {
+        "name" : "BUGSN",
+        "codeName" : "Bugsn"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "confirmed",
+      "getPSAppDEField" : {
+        "name" : "CONFIRMED",
+        "codeName" : "Confirmed"
       }
     }, {
       "dataType" : 1,
@@ -776,74 +630,25 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 25,
-      "name" : "openedby",
+      "dataType" : 1,
+      "name" : "tostory",
       "getPSAppDEField" : {
-        "name" : "OPENEDBY",
-        "codeName" : "OpenedBy"
+        "name" : "TOSTORY",
+        "codeName" : "ToStory"
       }
     }, {
       "dataType" : 1,
-      "name" : "duplicatebug",
+      "name" : "entry",
       "getPSAppDEField" : {
-        "name" : "DUPLICATEBUG",
-        "codeName" : "DuplicateBug"
+        "name" : "ENTRY",
+        "codeName" : "Entry"
       }
     }, {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "product",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "story",
-      "getPSAppDEField" : {
-        "name" : "STORY",
-        "codeName" : "Story"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "resolvedby_text",
-      "getPSAppDEField" : {
-        "name" : "RESOLVEDBY",
-        "codeName" : "ResolvedBy"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "assignedto",
-      "getPSAppDEField" : {
-        "name" : "ASSIGNEDTO",
-        "codeName" : "AssignedTo"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "confirmed",
-      "getPSAppDEField" : {
-        "name" : "CONFIRMED",
-        "codeName" : "Confirmed"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "repo",
-      "getPSAppDEField" : {
-        "name" : "REPO",
-        "codeName" : "Repo"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "isfavorites",
-      "getPSAppDEField" : {
-        "name" : "ISFAVORITES",
-        "codeName" : "Isfavorites"
+        "name" : "PRODUCT",
+        "codeName" : "Product"
       }
     }, {
       "dataType" : 1,
@@ -854,17 +659,52 @@
       }
     }, {
       "dataType" : 1,
+      "name" : "plan",
+      "getPSAppDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      }
+    }, {
+      "dataType" : 1,
       "name" : "module",
       "getPSAppDEField" : {
         "name" : "MODULE",
         "codeName" : "Module"
       }
     }, {
-      "dataType" : 25,
-      "name" : "status",
+      "dataType" : 1,
+      "name" : "branch",
       "getPSAppDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
+        "name" : "BRANCH",
+        "codeName" : "Branch"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "duplicatebug",
+      "getPSAppDEField" : {
+        "name" : "DUPLICATEBUG",
+        "codeName" : "DuplicateBug"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "repo",
+      "getPSAppDEField" : {
+        "name" : "REPO",
+        "codeName" : "Repo"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "story",
+      "getPSAppDEField" : {
+        "name" : "STORY",
+        "codeName" : "Story"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "case",
+      "getPSAppDEField" : {
+        "name" : "CASE",
+        "codeName" : "IBizCase"
       }
     }, {
       "dataType" : 1,
@@ -881,61 +721,15 @@
         "codeName" : "Testtask"
       }
     }, {
-      "dataType" : 1,
-      "name" : "product",
+      "dataType" : 25,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "project",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "pri",
-      "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "plan",
-      "getPSAppDEField" : {
-        "name" : "PLAN",
-        "codeName" : "Plan"
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
     }, {
       "dataType" : 25,
-      "name" : "resolvedby",
-      "getPSAppDEField" : {
-        "name" : "RESOLVEDBY",
-        "codeName" : "ResolvedBy"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "entry",
-      "getPSAppDEField" : {
-        "name" : "ENTRY",
-        "codeName" : "Entry"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "branch",
-      "getPSAppDEField" : {
-        "name" : "BRANCH",
-        "codeName" : "Branch"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "case",
-      "getPSAppDEField" : {
-        "name" : "CASE",
-        "codeName" : "IBizCase"
-      }
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "解决者",
@@ -2669,6 +2463,212 @@
     "name" : "searchbar",
     "modelid" : "b15ebe8f6547321abe40858a702d54c6",
     "modeltype" : "PSSYSSEARCHBAR"
+  }, {
+    "codeName" : "Usr2GridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "保存（关联Bug）",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "保存",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0c1@FontAwesome",
+        "cssClass" : "fa fa-link"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "MULTIKEY",
+        "caption" : "关联bug",
+        "codeName" : "buildlinkbugs",
+        "dialogResult" : "OK",
+        "fullCodeName" : "Bug_buildlinkbugs",
+        "name" : "版本批量关联已解决的bug",
+        "getNextPSUIAction" : {
+          "modelref" : true,
+          "id" : "Refresh"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "BuildLinkBug"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "BUILDS",
+          "name" : "BUILDS",
+          "value" : "build",
+          "rawValue" : false
+        }, {
+          "key" : "BUG",
+          "name" : "BUG",
+          "value" : "0",
+          "rawValue" : true
+        }, {
+          "key" : "PROJECTS",
+          "name" : "PROJECTS",
+          "value" : "project",
+          "rawValue" : false
+        }, {
+          "key" : "PRODUCTS",
+          "name" : "PRODUCTS",
+          "value" : "product",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "products",
+          "name" : "products",
+          "value" : "product",
+          "rawValue" : false
+        }, {
+          "key" : "build",
+          "name" : "build",
+          "value" : "0",
+          "rawValue" : true
+        }, {
+          "key" : "resolvedby",
+          "name" : "resolvedby",
+          "value" : "resolvedby",
+          "rawValue" : false
+        }, {
+          "key" : "project",
+          "name" : "project",
+          "value" : "0",
+          "rawValue" : true
+        }, {
+          "key" : "product",
+          "name" : "product",
+          "value" : "0",
+          "rawValue" : true
+        }, {
+          "key" : "statuses",
+          "name" : "statuses",
+          "value" : "status",
+          "rawValue" : false
+        }, {
+          "key" : "builds",
+          "name" : "builds",
+          "value" : "build",
+          "rawValue" : false
+        }, {
+          "key" : "projects",
+          "name" : "projects",
+          "value" : "project",
+          "rawValue" : false
+        }, {
+          "key" : "ids",
+          "name" : "ids",
+          "value" : "id",
+          "rawValue" : false
+        }, {
+          "key" : "bug",
+          "name" : "bug",
+          "value" : "0",
+          "rawValue" : true
+        } ],
+        "getPSSysImage" : {
+          "glyph" : "xf0c1@FontAwesome",
+          "cssClass" : "fa fa-link"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "buildlinkbugs",
+        "uIActionType" : "DEUIACTION",
+        "closeEditView" : true,
+        "closePopupView" : true,
+        "enableConfirm" : true,
+        "reloadData" : true,
+        "id" : "buildlinkbugs@Bug"
+      },
+      "tooltip" : "保存",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.FILTER"
+      },
+      "caption" : "过滤",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0b0@FontAwesome",
+        "cssClass" : "fa fa-filter"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.FILTER"
+        },
+        "caption" : "过滤",
+        "codeName" : "ToggleFilter",
+        "fullCodeName" : "ToggleFilter",
+        "name" : "表格界面_搜索栏",
+        "getPSSysImage" : {
+          "glyph" : "xf0b0@FontAwesome",
+          "cssClass" : "fa fa-filter"
+        },
+        "predefinedType" : "GRIDVIEW_SEARCHBAR",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ToggleFilter",
+        "uIActionType" : "DEUIACTION",
+        "enableToggleMode" : true
+      },
+      "tooltip" : "过滤",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+      },
+      "enableToggleMode" : true,
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "f7a8e912adccac05dcabdba5ecd79b30",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "Usr2GridView",
   "getPSDEViewId" : "b0239c29fcf1ceb2d41c4c99e7c7f10d",

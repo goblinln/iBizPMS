@@ -1,3 +1,4 @@
+import { MobTabExpPanelControlInterface } from "ibiz-core";
 import { MainControlBase } from "./main-control-base";
 
 /**
@@ -7,7 +8,7 @@ import { MainControlBase } from "./main-control-base";
  * @class MobTabExpPanelControlBase
  * @extends {MainControlBase}
  */
-export class MobTabExpPanelControlBase extends MainControlBase {
+export class MobTabExpPanelControlBase extends MainControlBase implements MobTabExpPanelControlInterface{
 
     /**
      * 被激活的分页面板
@@ -63,7 +64,7 @@ export class MobTabExpPanelControlBase extends MainControlBase {
      * @returns
      * @memberof MobTabExpPanelControlBase
      */
-    protected tabPanelClick($event: any) {
+    public tabPanelClick($event: any) {
         if (!$event) {
             return;
         }

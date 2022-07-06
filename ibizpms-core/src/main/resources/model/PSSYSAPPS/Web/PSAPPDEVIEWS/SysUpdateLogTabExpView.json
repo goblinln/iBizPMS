@@ -97,7 +97,7 @@
             "modelref" : true,
             "id" : "load"
           },
-          "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+          "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
           "logicName" : "查看",
           "getPSAppDataEntity" : {
             "modelref" : true,

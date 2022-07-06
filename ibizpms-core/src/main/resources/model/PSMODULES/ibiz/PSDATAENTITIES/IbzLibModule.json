@@ -295,6 +295,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "caselib",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (caselib)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -343,6 +344,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "caselib",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (caselib)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -355,6 +357,7 @@
           "getPSDEDQConditions" : [ {
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
+            "fieldName" : "PARENT",
             "name" : "PARENT 值为空(Nil)",
             "getPSDEField" : {
               "name" : "PARENT",
@@ -364,6 +367,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
+            "fieldName" : "PARENT",
             "name" : "PARENT 等于(=) (0)",
             "getPSDEField" : {
               "name" : "PARENT",
@@ -2866,44 +2870,16 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "RedirectView",
-    "logicName" : "用例库模块实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "用例库模块实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "用例库模块实体编辑视图（左右关系）",
+    "name" : "用例库模块实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupGridView",
     "logicName" : "用例库模块实体选择表格视图（部件视图）",
     "name" : "用例库模块实体选择表格视图（部件视图）",
     "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TreeExpView",
-    "logicName" : "模块维护",
-    "name" : "模块维护",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "用例库模块实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "用例库模块实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "用例库模块实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "用例库模块实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -2913,11 +2889,31 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "用例库模块实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "用例库模块实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "TreeExpView",
+    "logicName" : "模块维护",
+    "name" : "模块维护",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "用例库模块实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "用例库模块实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "用例库模块实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "用例库模块实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "用例库模块实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "用例库模块实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "CaseTreeExpView",
@@ -2926,11 +2922,19 @@
     "realModelSubType" : "DETREEEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "用例库模块实体编辑视图（左右关系）",
-    "name" : "用例库模块实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "EditView",
+    "logicName" : "用例库模块实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "用例库模块实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "IbzLibModule",
   "dEType" : 1,
@@ -3078,7 +3082,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

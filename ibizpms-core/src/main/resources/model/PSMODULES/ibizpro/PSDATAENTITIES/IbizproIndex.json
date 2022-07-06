@@ -1244,12 +1244,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
     },
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEMAPS/DEMap.json",
-    "name" : "实体映射",
-    "autoDEActionMap" : false,
-    "autoDEDataQueryMap" : false,
-    "autoDEDataSetMap" : false,
-    "autoDEFieldMap" : false
+    "name" : "实体映射"
   } ],
   "getAllPSDEMethodDTOs" : [ {
     "name" : "IbizproIndexDTO",
@@ -1451,11 +1446,11 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "MPickupView",
-    "logicName" : "索引检索实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "索引检索实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
+    "codeName" : "IndexPickupView",
+    "logicName" : "索引检索(索引实体)实体数据选择视图",
+    "modelTag" : "INDEXDEPICKUPVIEW",
+    "name" : "索引检索(索引实体)实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "IndexPickupDataView",
@@ -1464,30 +1459,10 @@
     "realModelSubType" : "DEINDEXPICKUPDATAVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "索引检索实体编辑视图",
-    "name" : "索引检索实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "索引检索实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "索引检索实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "IndexPickupView",
-    "logicName" : "索引检索(索引实体)实体数据选择视图",
-    "modelTag" : "INDEXDEPICKUPVIEW",
-    "name" : "索引检索(索引实体)实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "索引检索实体选择表格视图（部件视图）",
-    "name" : "索引检索实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "索引检索实体编辑视图（左右关系）",
+    "name" : "索引检索实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -1497,10 +1472,37 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "索引检索实体编辑视图（左右关系）",
-    "name" : "索引检索实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "GridView",
+    "logicName" : "索引检索实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "索引检索实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "索引检索实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "索引检索实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "索引检索实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "索引检索实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "索引检索实体选择表格视图（部件视图）",
+    "name" : "索引检索实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "索引检索实体编辑视图",
+    "name" : "索引检索实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "ListView",
@@ -1515,13 +1517,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "索引检索实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "索引检索实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "IbizproIndex",
   "dEType" : 1,
@@ -1874,7 +1869,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

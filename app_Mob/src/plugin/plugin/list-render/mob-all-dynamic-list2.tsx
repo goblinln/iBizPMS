@@ -16,7 +16,7 @@ import {  AppMobMDCtrlBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class MobAllDynamicList2 extends AppMobMDCtrlBase {
 
-    render() {
+        render() {
         return this.$createElement('app-trends-list', {
             props: { items: this.items }
 

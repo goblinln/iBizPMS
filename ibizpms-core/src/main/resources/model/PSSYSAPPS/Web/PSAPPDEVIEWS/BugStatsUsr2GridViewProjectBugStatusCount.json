@@ -84,7 +84,7 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realTitle" : "Bug统计编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -92,7 +92,7 @@
       "viewType" : "DEEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realTitle" : "Bug统计编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -111,7 +111,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "项目bug状态统计",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -305,11 +305,11 @@
       "enableSort" : true
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "product",
+      "dataType" : 25,
+      "name" : "projectname",
       "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
       }
     }, {
       "dataType" : 9,
@@ -317,13 +317,6 @@
       "getPSAppDEField" : {
         "name" : "BUGACTIVE",
         "codeName" : "Bugactive"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "project",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
       }
     }, {
       "dataType" : 9,
@@ -334,31 +327,24 @@
       }
     }, {
       "dataType" : 9,
-      "name" : "bugcnt",
-      "getPSAppDEField" : {
-        "name" : "BUGCNT",
-        "codeName" : "BugCnt"
-      }
-    }, {
-      "dataType" : 9,
       "name" : "bugclosed",
       "getPSAppDEField" : {
         "name" : "BUGCLOSED",
         "codeName" : "Bugclosed"
       }
     }, {
-      "dataType" : 25,
-      "name" : "projectname",
+      "dataType" : 9,
+      "name" : "bugcnt",
       "getPSAppDEField" : {
-        "name" : "PROJECTNAME",
-        "codeName" : "ProjectName"
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "dataType" : 1,
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -370,10 +356,24 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "product",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "project",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -427,7 +427,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -436,10 +436,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -458,10 +458,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

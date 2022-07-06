@@ -23,25 +23,25 @@
     } ]
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "BUGPRODUCT",
-    "name" : "BUGPRODUCT",
-    "value" : "product",
-    "rawValue" : false
-  }, {
     "key" : "BUGPROJECT",
     "name" : "BUGPROJECT",
     "value" : "project",
     "rawValue" : false
+  }, {
+    "key" : "BUGPRODUCT",
+    "name" : "BUGPRODUCT",
+    "value" : "product",
+    "rawValue" : false
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "bugproject",
-    "name" : "bugproject",
-    "value" : "project",
-    "rawValue" : false
-  }, {
     "key" : "bugproduct",
     "name" : "bugproduct",
     "value" : "product",
+    "rawValue" : false
+  }, {
+    "key" : "bugproject",
+    "name" : "bugproject",
+    "value" : "project",
     "rawValue" : false
   } ],
   "getPSControls" : [ {
@@ -64,7 +64,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "看板Bug的一生",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -471,14 +471,14 @@
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductBuild.json"
             },
             "getPSNavigateParams" : [ {
-              "key" : "bugproject",
-              "name" : "bugproject",
-              "value" : "project",
-              "rawValue" : false
-            }, {
               "key" : "bugproduct",
               "name" : "bugproduct",
               "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "bugproject",
+              "name" : "bugproject",
+              "value" : "project",
               "rawValue" : false
             } ],
             "enableLinkView" : false

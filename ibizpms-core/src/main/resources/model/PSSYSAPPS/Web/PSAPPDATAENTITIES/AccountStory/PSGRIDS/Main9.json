@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（产品门户嵌入）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -120,17 +120,24 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
-    "name" : "module",
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
-    "dataType" : 1,
-    "name" : "frombug",
+    "dataType" : 9,
+    "name" : "pri",
     "getPSAppDEField" : {
-      "name" : "FROMBUG",
-      "codeName" : "FromBug"
+      "name" : "PRI",
+      "codeName" : "Pri"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "title",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
     }
   }, {
     "dataType" : 25,
@@ -148,27 +155,17 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "parent",
+    "name" : "product",
     "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "color",
     "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "tobug",
-    "getPSAppDEField" : {
-      "name" : "TOBUG",
-      "codeName" : "ToBug"
+      "name" : "COLOR",
+      "codeName" : "Color"
     }
   }, {
     "dataType" : 1,
@@ -187,38 +184,31 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "id",
+    "name" : "frombug",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "FROMBUG",
+      "codeName" : "FromBug"
     }
   }, {
     "dataType" : 1,
-    "name" : "product",
+    "name" : "parent",
     "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+      "name" : "PARENT",
+      "codeName" : "Parent"
     }
   }, {
-    "dataType" : 9,
-    "name" : "pri",
+    "dataType" : 1,
+    "name" : "module",
     "getPSAppDEField" : {
-      "name" : "PRI",
-      "codeName" : "Pri"
+      "name" : "MODULE",
+      "codeName" : "Module"
     }
   }, {
-    "dataType" : 25,
-    "name" : "title",
+    "dataType" : 1,
+    "name" : "duplicatestory",
     "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "color",
-    "getPSAppDEField" : {
-      "name" : "COLOR",
-      "codeName" : "Color"
+      "name" : "DUPLICATESTORY",
+      "codeName" : "DuplicateStory"
     }
   }, {
     "dataType" : 1,
@@ -229,11 +219,21 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "duplicatestory",
+    "name" : "tobug",
     "getPSAppDEField" : {
-      "name" : "DUPLICATESTORY",
-      "codeName" : "DuplicateStory"
+      "name" : "TOBUG",
+      "codeName" : "ToBug"
     }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "编号",

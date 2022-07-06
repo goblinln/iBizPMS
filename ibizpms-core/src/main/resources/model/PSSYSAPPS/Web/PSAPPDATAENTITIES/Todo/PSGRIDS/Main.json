@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -447,11 +447,18 @@
       "codeName" : "Id"
     }
   }, {
-    "dataType" : 1,
-    "name" : "todosn",
+    "dataType" : 25,
+    "name" : "date1",
     "getPSAppDEField" : {
-      "name" : "TODOSN",
-      "codeName" : "Todosn"
+      "name" : "DATE1",
+      "codeName" : "Date1"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "type",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
     }
   }, {
     "dataType" : 9,
@@ -462,49 +469,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "status",
-    "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     }
   }, {
-    "dataType" : 25,
-    "name" : "type",
+    "dataType" : 9,
+    "name" : "begin",
     "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "srfdataaccaction",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true
-  }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BEGIN",
+      "codeName" : "Begin"
     }
   }, {
     "dataType" : 9,
@@ -515,18 +490,43 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "date1",
+    "name" : "status",
     "getPSAppDEField" : {
-      "name" : "DATE1",
-      "codeName" : "Date1"
+      "name" : "STATUS",
+      "codeName" : "Status"
     }
   }, {
-    "dataType" : 9,
-    "name" : "begin",
+    "dataType" : 1,
+    "name" : "todosn",
     "getPSAppDEField" : {
-      "name" : "BEGIN",
-      "codeName" : "Begin"
+      "name" : "TODOSN",
+      "codeName" : "Todosn"
     }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "编号",

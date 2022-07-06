@@ -149,117 +149,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "BatchNewGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "表格界面（行编辑无开关）",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_click"
-      }
-    }, {
-      "eventArg" : "deuiaction3",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction3_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction3_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "caption" : "新建行",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf067@FontAwesome",
-        "cssClass" : "fa fa-plus"
-      },
-      "getPSUIAction" : {
-        "caption" : "新建行",
-        "codeName" : "NewRow",
-        "dataAccessAction" : "CREATE",
-        "fullCodeName" : "NewRow",
-        "name" : "表格界面_新建行",
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "CREATE"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf067@FontAwesome",
-          "cssClass" : "fa fa-plus"
-        },
-        "predefinedType" : "GRIDVIEW_NEWROWACTION",
-        "timeout" : 60000,
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "NewRow",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "新建行",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "caption" : "保存行",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction3",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction3"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0c7@FontAwesome",
-        "cssClass" : "fa fa-save"
-      },
-      "getPSUIAction" : {
-        "caption" : "保存行",
-        "codeName" : "SaveRow",
-        "dataAccessAction" : "CREATE",
-        "fullCodeName" : "SaveRow",
-        "name" : "表格界面_保存行",
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "CREATE"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf0c7@FontAwesome",
-          "cssClass" : "fa fa-save"
-        },
-        "predefinedType" : "GRIDVIEW_SAVEROWACTION",
-        "timeout" : 60000,
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "SaveRow",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "保存行",
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "BatchNew",
     "columnEnableLink" : 2,
@@ -312,7 +201,7 @@
       }
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "批量新建",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -512,18 +401,11 @@
       "enableSort" : true
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "module",
+      "dataType" : 25,
+      "name" : "modulename",
       "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "frombug",
-      "getPSAppDEField" : {
-        "name" : "FROMBUG",
-        "codeName" : "FromBug"
+        "name" : "MODULENAME",
+        "codeName" : "Modulename"
       }
     }, {
       "dataType" : 25,
@@ -534,20 +416,45 @@
       }
     }, {
       "dataType" : 25,
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
       "name" : "type",
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "dataType" : 1,
+      "name" : "product",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "story",
+      "getPSAppDEField" : {
+        "name" : "STORY",
+        "codeName" : "Story"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -566,48 +473,6 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "modulename",
-      "getPSAppDEField" : {
-        "name" : "MODULENAME",
-        "codeName" : "Modulename"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "story",
-      "getPSAppDEField" : {
-        "name" : "STORY",
-        "codeName" : "Story"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "lib",
-      "getPSAppDEField" : {
-        "name" : "LIB",
-        "codeName" : "Lib"
-      }
-    }, {
-      "dataType" : 1,
       "name" : "fromcaseid",
       "getPSAppDEField" : {
         "name" : "FROMCASEID",
@@ -620,38 +485,32 @@
         "name" : "BRANCH",
         "codeName" : "Branch"
       }
+    }, {
+      "dataType" : 1,
+      "name" : "frombug",
+      "getPSAppDEField" : {
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "lib",
+      "getPSAppDEField" : {
+        "name" : "LIB",
+        "codeName" : "Lib"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
-      "caption" : "所属产品",
-      "codeName" : "product",
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      },
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "product"
-      },
-      "allowEmpty" : true
-    }, {
-      "caption" : "相关需求",
-      "codeName" : "story",
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "name" : "story",
-      "getPSAppDEField" : {
-        "name" : "STORY",
-        "codeName" : "Story"
-      },
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "story"
-      },
-      "allowEmpty" : true
-    }, {
       "caption" : "所属模块",
       "codeName" : "modulename",
       "enableCond" : 3,
@@ -697,15 +556,15 @@
           "value" : "path,asc",
           "rawValue" : true
         }, {
-          "key" : "n_root_eq",
-          "name" : "n_root_eq",
-          "value" : "product",
-          "rawValue" : false
-        }, {
           "key" : "type",
           "name" : "type",
           "value" : "TestModule",
           "rawValue" : true
+        }, {
+          "key" : "n_root_eq",
+          "name" : "n_root_eq",
+          "value" : "product",
+          "rawValue" : false
         } ],
         "getPickupPSAppView" : {
           "modelref" : true,
@@ -721,37 +580,6 @@
       },
       "valueItemName" : "module",
       "allowEmpty" : true
-    }, {
-      "caption" : "所属模块",
-      "codeName" : "module",
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "name" : "module",
-      "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
-      },
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "module"
-      },
-      "allowEmpty" : true
-    }, {
-      "caption" : "用例标题",
-      "codeName" : "title",
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      },
-      "getPSEditor" : {
-        "editorType" : "TEXTBOX",
-        "maxLength" : 255,
-        "name" : "title"
-      },
-      "allowEmpty" : false
     }, {
       "caption" : "相关需求",
       "codeName" : "storyname",
@@ -795,11 +623,6 @@
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "product",
-          "name" : "product",
-          "value" : "test",
-          "rawValue" : false
-        }, {
           "key" : "n_parent_gtandeq",
           "name" : "n_parent_gtandeq",
           "value" : "0",
@@ -808,6 +631,11 @@
           "key" : "n_module_eq",
           "name" : "n_module_eq",
           "value" : "module",
+          "rawValue" : false
+        }, {
+          "key" : "product",
+          "name" : "product",
+          "value" : "test",
           "rawValue" : false
         }, {
           "key" : "type",
@@ -834,6 +662,22 @@
       "valueItemName" : "story",
       "allowEmpty" : true
     }, {
+      "caption" : "用例标题",
+      "codeName" : "title",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "maxLength" : 255,
+        "name" : "title"
+      },
+      "allowEmpty" : false
+    }, {
       "caption" : "用例类型",
       "codeName" : "type",
       "enableCond" : 3,
@@ -854,6 +698,51 @@
       },
       "allowEmpty" : true,
       "needCodeListConfig" : true
+    }, {
+      "caption" : "所属产品",
+      "codeName" : "product",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "product"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "所属模块",
+      "codeName" : "module",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "module"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "相关需求",
+      "codeName" : "story",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "story",
+      "getPSAppDEField" : {
+        "name" : "STORY",
+        "codeName" : "Story"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "story"
+      },
+      "allowEmpty" : true
     }, {
       "caption" : "用例编号",
       "codeName" : "srfkey",
@@ -915,6 +804,117 @@
     "name" : "grid",
     "modelid" : "c92e9553e5e0e62b9d87b4df49796b8f",
     "modeltype" : "PSDEGRID"
+  }, {
+    "codeName" : "BatchNewGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "表格界面（行编辑无开关）",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "新建行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "caption" : "新建行",
+        "codeName" : "NewRow",
+        "dataAccessAction" : "CREATE",
+        "fullCodeName" : "NewRow",
+        "name" : "表格界面_新建行",
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CREATE"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
+        },
+        "predefinedType" : "GRIDVIEW_NEWROWACTION",
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "NewRow",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "新建行",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "保存行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction3",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0c7@FontAwesome",
+        "cssClass" : "fa fa-save"
+      },
+      "getPSUIAction" : {
+        "caption" : "保存行",
+        "codeName" : "SaveRow",
+        "dataAccessAction" : "CREATE",
+        "fullCodeName" : "SaveRow",
+        "name" : "表格界面_保存行",
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CREATE"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0c7@FontAwesome",
+          "cssClass" : "fa fa-save"
+        },
+        "predefinedType" : "GRIDVIEW_SAVEROWACTION",
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "SaveRow",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "保存行",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "BatchNewGridView",
   "getPSDEViewId" : "45f9141221f228f847015669fbddd8cc",

@@ -2,10 +2,10 @@ import { ModelTool, Util } from 'ibiz-core';
 import { Vue, Component, Prop, Inject } from 'vue-property-decorator';
 import { EditorBase } from '../editor-base/editor-base';
 import { VueLifeCycleProcessing } from '../../../decorators';
-import { IPSAppDEView, IPSAppView, IPSPickerEditor } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppDEView, IPSAppView, IPSCodeListEditor, IPSPickerEditor } from '@ibiz/dynamic-model-api';
 
 /**
- * 自动完成编辑器
+ *  数据选择编辑器
  *
  * @export
  * @class DataPickerEditor
@@ -40,11 +40,20 @@ export default class DataPickerEditor extends EditorBase {
         if(entity && !entity?.isFill){
            await entity.fill();
         } 
+        this.codeList = (this.editorInstance as IPSCodeListEditor)?.getPSAppCodeList?.();
         this.customProps.acParams = ModelTool.getAcParams(this.editorInstance);
         this.customProps.sort = ModelTool.getAcSort(this.editorInstance);
         this.customProps.deMajorField = ModelTool.getEditorMajorName(this.editorInstance);
         this.customProps.deKeyField = ModelTool.getEditorKeyName(this.editorInstance);
     }
+
+    /**
+     * 代码表对象
+     *
+     * @type {IPSAppCodeList}
+     * @memberof DataPickerEditor
+     */
+    public codeList?: IPSAppCodeList | null;
 
     /**
      * 初始化选择视图相关参数
@@ -130,6 +139,81 @@ export default class DataPickerEditor extends EditorBase {
     }
 
     /**
+     * 组织部门人员微服务组件参数处理
+     * 
+     * @memberof DataPickerEditor
+     */
+    public initSelectPickerParams() {
+        let params: any = {
+            name: this.editorInstance.name,
+            value: this.value,
+            valueitem: this.parentItem?.valueItemName || '',
+            multiple: this.editorInstance.editorParams?.['multiple'] ? JSON.parse(this.editorInstance.editorParams['multiple'] as string) : false,
+            url: this.editorInstance.editorParams?.['url'],
+            filter: this.editorInstance.editorParams?.['filter'],
+            requestMode: this.editorInstance.editorParams?.['requestMode']?.toLowerCase(),
+            fillMap: this.editorInstance.editorParams?.['fillMap'] ? eval('(' + this.editorInstance.editorParams['fillMap'] + ')') : { id: this.parentItem?.valueItemName || '', label: this.editorInstance.name },
+            disabled: this.disabled,
+            data: this.contextData,
+            context: this.context,
+            style: this.customStyle,
+            localParam: this.customProps.localParam,
+            localContext: this.customProps.localContext,
+        };
+        if (this.codeList) {
+            Object.assign(params, {
+                tag: this.codeList.codeName,
+                codelistType: this.codeList.codeListType,
+                renderMode: this.codeList.orMode,
+                valueSeparator: this.codeList.valueSeparator,
+                textSeparator: this.codeList.textSeparator
+            });
+        }
+        return params;
+    }
+
+    /**
+     * 单位选择器
+     * 
+     * @memberof DataPickerEditor
+     */
+    public renderOrgSelect() {
+        let params: any = this.initSelectPickerParams();
+        Object.assign(params, {
+            filter: this.editorInstance.editorParams?.['filter'] ? this.editorInstance.editorParams['filter'] : 'srforgid',
+        });
+        return this.$createElement(this.editorComponentName, {
+            props: params,
+            on: {
+                "select-change": this.editorChange.bind(this),
+            }
+        })
+    }
+
+    /**
+     * 部门人员选择器
+     * 
+     * @memberof DataPickerEditor
+     */
+    public renderDepartmentPersonnel() {
+        let params: any = this.initSelectPickerParams();
+        Object.assign(params, {
+            filter: this.editorInstance.editorParams?.['filter'] ? this.editorInstance.editorParams['filter'] : 'srfpdept',
+        });
+        if (this.editorInstance.editorParams?.['treeurl']) {
+            Object.assign(params, {
+                treeurl: this.editorInstance.editorParams['treeurl'],
+            })
+        }
+        return this.$createElement(this.editorComponentName, {
+            props: params,
+            on: {
+                formitemvaluechange: this.editorChange.bind(this)
+            }
+        })
+    }
+
+    /**
      * 绘制内容
      *
      * @returns {*}
@@ -146,7 +230,12 @@ export default class DataPickerEditor extends EditorBase {
             case 'MOBMPICKER':
             case 'MOBPICKER_DROPDOWNVIEW':
                 return this.renderDefault();
+            case 'MOBPICKER_MOBDEPTPERSONSELECT':
+            case 'MOBPICKER_MOBEMPSELECT':
+                return this.renderDepartmentPersonnel();
+            case 'MOBPICKER_MOBORGMULTIPLE':
+            case 'MOBPICKER_MOBDEPATMENTSELECT':
+                return this.renderOrgSelect();
         }
-
     }
 }

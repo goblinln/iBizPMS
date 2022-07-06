@@ -1,4 +1,4 @@
-import { CodeListServiceBase, ModelTool, Util, ViewTool } from 'ibiz-core';
+import { CodeListServiceBase, MobExpBarControlInterface, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service';
 import { MainControlBase } from './main-control-base';
 import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSCodeItem, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSLanguageRes, IPSSysImage } from '@ibiz/dynamic-model-api';
@@ -7,7 +7,7 @@ import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSA
  *
  *
  */
-export class MobExpBarControlBase extends MainControlBase {
+export class MobExpBarControlBase extends MainControlBase implements MobExpBarControlInterface{
     /**
        * 导航栏部件模型对象
        *

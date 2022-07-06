@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（我的地盘）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -207,49 +207,45 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
-    "name" : "testtasksn",
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "TESTTASKSN",
-      "codeName" : "Testtasksn"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 25,
-    "name" : "status",
-    "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "build",
-    "getPSAppDEField" : {
-      "name" : "BUILD",
-      "codeName" : "Build"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     }
   }, {
-    "dataType" : 1,
-    "name" : "srfdataaccaction",
+    "dataType" : 25,
+    "name" : "productname",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    }
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "projecttname",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PROJECTTNAME",
+      "codeName" : "ProjecttName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "buildname",
+    "getPSAppDEField" : {
+      "name" : "BUILDNAME",
+      "codeName" : "BuildName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "owner",
+    "getPSAppDEField" : {
+      "name" : "OWNER",
+      "codeName" : "Owner"
     }
   }, {
     "format" : "YYYY-MM-DD",
@@ -260,11 +256,26 @@
       "codeName" : "Begin"
     }
   }, {
-    "dataType" : 1,
-    "name" : "id",
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "end",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "END",
+      "codeName" : "End"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "status",
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "testtasksn",
+    "getPSAppDEField" : {
+      "name" : "TESTTASKSN",
+      "codeName" : "Testtasksn"
     }
   }, {
     "dataType" : 1,
@@ -281,48 +292,37 @@
       "codeName" : "Project"
     }
   }, {
-    "dataType" : 25,
-    "name" : "projecttname",
+    "dataType" : 1,
+    "name" : "build",
     "getPSAppDEField" : {
-      "name" : "PROJECTTNAME",
-      "codeName" : "ProjecttName"
+      "name" : "BUILD",
+      "codeName" : "Build"
     }
   }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
     "dataType" : 25,
-    "name" : "name",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     }
   }, {
     "dataType" : 25,
-    "name" : "owner",
-    "getPSAppDEField" : {
-      "name" : "OWNER",
-      "codeName" : "Owner"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "buildname",
-    "getPSAppDEField" : {
-      "name" : "BUILDNAME",
-      "codeName" : "BuildName"
-    }
-  }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "end",
-    "getPSAppDEField" : {
-      "name" : "END",
-      "codeName" : "End"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "productname",
-    "getPSAppDEField" : {
-      "name" : "PRODUCTNAME",
-      "codeName" : "ProductName"
-    }
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "编号",

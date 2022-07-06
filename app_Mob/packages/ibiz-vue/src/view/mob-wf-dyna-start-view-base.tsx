@@ -1,8 +1,8 @@
 import { IPSAppDEWFDynaStartView, IPSDEForm } from '@ibiz/dynamic-model-api';
-import { ModelTool } from 'ibiz-core';
+import { MobWFDynaStartViewInterface, ModelTool } from 'ibiz-core';
 import { MainViewBase } from './main-view-base';
 
-export class MobWFDynaStartViewBase extends MainViewBase {
+export class MobWFDynaStartViewBase extends MainViewBase implements MobWFDynaStartViewInterface {
 
     /**
      * 视图实例
@@ -73,9 +73,9 @@ export class MobWFDynaStartViewBase extends MainViewBase {
      * 
      * @memberof MobWFDynaStartViewBase
      */
-    public onClickOk(){
+    public async onClickOk(){
         let xData:any =(this.$refs.form as any).ctrl;
-        if(xData && xData.formValidateStatus()){
+        if(xData && await xData.validAll()){
             let preFormData:any = xData.getData();
             let nextFormData:any = xData.transformData(preFormData);
             Object.assign(preFormData,nextFormData);

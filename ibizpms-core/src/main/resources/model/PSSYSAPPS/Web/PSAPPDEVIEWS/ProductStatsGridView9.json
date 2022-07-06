@@ -92,14 +92,6 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realTitle" : "产品统计编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView.json",
-      "viewType" : "DEEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "getPSNavigateContexts" : [ {
       "key" : "PRODUCTSTATS",
@@ -113,6 +105,14 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     }
+  }, {
+    "name" : "NEWDATA",
+    "realTitle" : "产品统计编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
   } ],
   "getPSControls" : [ {
     "aggMode" : "NONE",
@@ -125,7 +125,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "未关闭的产品",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -344,11 +344,18 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "id",
+      "dataType" : 25,
+      "name" : "name",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "currproject",
+      "getPSAppDEField" : {
+        "name" : "CURRPROJECT",
+        "codeName" : "Currproject"
       }
     }, {
       "dataType" : 9,
@@ -356,13 +363,6 @@
       "getPSAppDEField" : {
         "name" : "PRODUCTPLANCNT",
         "codeName" : "ProductPlanCnt"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "activebugcnt",
-      "getPSAppDEField" : {
-        "name" : "ACTIVEBUGCNT",
-        "codeName" : "ActiveBugCnt"
       }
     }, {
       "dataType" : 9,
@@ -379,25 +379,25 @@
         "codeName" : "ActiveStoryCnt"
       }
     }, {
-      "dataType" : 25,
-      "name" : "currproject",
+      "dataType" : 9,
+      "name" : "activebugcnt",
       "getPSAppDEField" : {
-        "name" : "CURRPROJECT",
-        "codeName" : "Currproject"
+        "name" : "ACTIVEBUGCNT",
+        "codeName" : "ActiveBugCnt"
       }
     }, {
-      "dataType" : 25,
-      "name" : "name",
+      "dataType" : 1,
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "dataType" : 1,
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -408,11 +408,11 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
+      "dataType" : 25,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "NAME",
+        "codeName" : "Name"
       }
     } ],
     "getPSDEGridEditItems" : [ {

@@ -1,3 +1,13 @@
+    .label-top-value-center {
+  .app-form-item.label-top, .app-form-item.label-bottom {
+  .editor-wrapper.editor {
+      .editor-content {
+        display: flex;
+        justify-content: center;
+      }
+  }
+}
+}
     .dropdown-transparent{
     .ivu-select-selection{
         background-color: transparent !important;
@@ -71,7 +81,17 @@
      margin-left: 6px;
 }
     
-        .team-card{
+    .list-left-exp {
+  .app-list-item-content {
+	width: 100% !important;
+	>.item-content-text {
+		>.item-title {
+			font-size: 14px !important;
+		}
+	}
+}
+}
+    .team-card{
 	>.view-content >.content-wrapper >.app-list >div:not(.empty-data-tip){
 		display: flex;
 		flex-wrap: wrap;
@@ -80,15 +100,15 @@
 		>.app-list-item{
 			border-bottom: none;
 			width: 33%;
-			>.panel-container >.app-layoutpanel >.ivu-row{
+			>.viewpanel-container >.app-viewpanel {
 				box-shadow: 1px 1px 5px rgb(209, 205, 205);
 				margin: 10px;
 				padding: 10px;
 				padding-left: 20px;
 				border-radius: 6px;
 				width: auto;
-				>.app-layoutpanel-container{
-					.app-layoutpanel-field{
+				>.app-viewpanel-container{
+					.app-viewpanel-field{
 						margin-bottom: 5px;
 						>.item-field{
 							>.item-field-content{
@@ -101,18 +121,21 @@
 						}
           }
 				}
-        .app-layoutpanel-rowitem{
+        .app-viewpanel-rowitem{
           font-weight: bolder;
         }
 			}	
 		}		
 	}	
+  .app-viewpanel .app-viewpanel-container {
+    width: 100%;
+  }
 }
     
     .team-fontsize{
-	margin-bottom: 10px;
-	>.ivu-row{
-		>.app-layoutpanel-field:first-child{
+	  margin-bottom: 10px;
+    overflow: hidden !important;
+		>.app-viewpanel-field:first-child{
 			font-size: 18px;
 			font-weight: bold;
 			height: 62px;
@@ -132,12 +155,11 @@
 				}
 			}
 		}
-		>.app-layoutpanel-field:nth-child(2), .app-layoutpanel-rowitem{
+		>.app-viewpanel-field:nth-child(2), .app-viewpanel-rowitem{
 			position: absolute;
     		top: 44px;
     		left: 54px;
 		}
-	}
 }
 
     .medit-arrow {
@@ -255,6 +277,26 @@
     font-size: 23px;
     font-weight: 900;
     text-align: center;
+}
+    .el-table__body-wrapper {
+  .treegrid-column-align {
+    >div.cell {
+      padding-left: 24px;
+      > .el-table__expand-icon {
+        margin-left: -23px;
+      }
+      > .el-table__indent {
+        padding-left: 0px !important;
+      }
+    }
+  }
+  .el-table__row--level-1 {
+    .treegrid-column-align {
+      >div.cell { 
+        padding-left: 4px;
+      }
+    }
+  }
 }
     .main-basic-info-layout {
   >.ivu-row {
@@ -529,6 +571,7 @@
   }
 }
     .panelitem-borad {
+  .editor-wrapper.editor{
 	.app-span{
         border: 1px solid #515a6e;
         color: #515a6e;
@@ -537,6 +580,7 @@
         border-radius: 4px;
         padding: 0 4px;
     }
+  }
 }
     .project-code {
     max-width: 300px;

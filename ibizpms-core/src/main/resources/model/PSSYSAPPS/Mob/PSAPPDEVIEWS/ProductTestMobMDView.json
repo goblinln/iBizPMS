@@ -83,6 +83,14 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
+    "name" : "EDITDATA",
+    "realTitle" : "测试",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductMobTabExpView.json",
+      "viewType" : "DEMOBTABEXPVIEW"
+    }
+  }, {
     "name" : "NEWDATA",
     "realOpenMode" : "POPUPMODAL",
     "realTitle" : "产品移动端编辑视图",
@@ -90,14 +98,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductMobEditView.json",
       "viewType" : "DEMOBEDITVIEW"
-    }
-  }, {
-    "name" : "EDITDATA",
-    "realTitle" : "测试",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductMobTabExpView.json",
-      "viewType" : "DEMOBTABEXPVIEW"
     }
   } ],
   "getPSControls" : [ {
@@ -114,10 +114,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -136,10 +136,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -322,7 +322,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "MOB",
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {

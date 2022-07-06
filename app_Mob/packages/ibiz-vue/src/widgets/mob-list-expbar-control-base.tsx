@@ -1,4 +1,5 @@
 import { IPSAppView, IPSDEList, IPSListExpBar } from "@ibiz/dynamic-model-api";
+import { MobListExpBarControlInterface } from "../../../ibiz-core/src";
 import { MobExpBarControlBase } from './mob-expbar-control-base';
 /**
  * 列表导航栏部件基类
@@ -7,7 +8,7 @@ import { MobExpBarControlBase } from './mob-expbar-control-base';
  * @class MobListExpBarControlBase
  * @extends {MainControlBase}
  */
-export class MobListExpBarControlBase extends MobExpBarControlBase {
+export class MobListExpBarControlBase extends MobExpBarControlBase implements MobListExpBarControlInterface{
 
     /**
      * 列表导航栏的模型对象
@@ -73,7 +74,7 @@ export class MobListExpBarControlBase extends MobExpBarControlBase {
     *
     * @memberof MobListExpBarControlBase
     */
-    public onSearch($event: any) {
+    public onSearch() {
         const list: any = (this.$refs[`${this.$xDataControl.name.toLowerCase()}`] as any).ctrl;
         if (list) {
             this.viewState.next({ tag: this.$xDataControl.name, action: "load", data: { query: this.searchText } });

@@ -14,10 +14,6 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
   },
   "name" : "DER1N_ZT_CASESTEP_ZT_CASE_CASE",
-  "getNestedPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "Default"
-  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "CASE",

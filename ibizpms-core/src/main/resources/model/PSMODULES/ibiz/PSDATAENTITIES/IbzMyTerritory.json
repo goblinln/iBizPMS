@@ -5574,85 +5574,16 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "RedirectView",
-    "logicName" : "我的地盘实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "我的地盘实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr3TabExpView",
-    "logicName" : "我的地盘实体分页导航视图(插件管理)",
-    "name" : "我的地盘实体分页导航视图(插件管理)",
-    "realModelSubType" : "DETABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "我的地盘实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "我的地盘实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ListView",
-    "logicName" : "欢迎",
-    "name" : "欢迎",
-    "realModelSubType" : "DELISTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView9",
-    "logicName" : "我的地盘实体移动端多数据视图（部件视图）",
-    "name" : "我的地盘实体移动端多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "PickupGridView",
     "logicName" : "我的地盘实体选择表格视图（部件视图）",
     "name" : "我的地盘实体选择表格视图（部件视图）",
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ReportMobTabExpView",
-    "logicName" : "我的地盘实体移动端分页导航视图(汇报)",
-    "name" : "我的地盘实体移动端分页导航视图(汇报)",
-    "realModelSubType" : "DEMOBTABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "我的地盘实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "我的地盘实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ListView9",
-    "logicName" : "我的地盘实体列表视图（部件视图）（我的工作）",
-    "name" : "我的地盘实体列表视图（部件视图）（我的工作）",
-    "realModelSubType" : "DELISTVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "UserSumTreeExpView",
-    "logicName" : "我的地盘实体树导航视图（用户汇总表）",
-    "name" : "我的地盘实体树导航视图（用户汇总表）",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CalendarExpView",
-    "logicName" : "我的地盘实体日历导航视图",
-    "name" : "我的地盘实体日历导航视图",
-    "realModelSubType" : "DECALENDAREXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EmployTreeExpView",
-    "logicName" : "我的地盘实体树导航视图（员工负载）",
-    "name" : "我的地盘实体树导航视图（员工负载）",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProductReportTabExpView",
-    "logicName" : "我的地盘实体分页导航视图（产品汇报）",
-    "name" : "我的地盘实体分页导航视图（产品汇报）",
-    "realModelSubType" : "DETABEXPVIEW",
+    "codeName" : "MobPickupMDView",
+    "logicName" : "我的地盘实体移动端选择多数据视图（部件视图）",
+    "name" : "我的地盘实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "ProjectReportTabExpView",
@@ -5661,74 +5592,23 @@
     "realModelSubType" : "DETABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "ListView9PersonInfo",
-    "logicName" : "我的地盘实体列表视图（部件视图）（个人信息贡献）",
-    "name" : "我的地盘实体列表视图（部件视图）（个人信息贡献）",
-    "realModelSubType" : "DELISTVIEW9",
+    "codeName" : "MobMPickupView",
+    "logicName" : "我的地盘实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "我的地盘实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "我的地盘实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "我的地盘实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "RedirectView",
+    "logicName" : "我的地盘实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "我的地盘实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "DashboardView",
-    "logicName" : "我的地盘实体数据看板视图",
-    "name" : "我的地盘实体数据看板视图",
-    "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ReportTabExpView",
-    "logicName" : "我的地盘实体分页导航视图（员工汇报）",
-    "name" : "我的地盘实体分页导航视图（员工汇报）",
-    "realModelSubType" : "DETABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "StatsTabExpView",
-    "logicName" : "我的地盘实体分页导航视图(统计)",
-    "name" : "我的地盘实体分页导航视图(统计)",
-    "realModelSubType" : "DETABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "TestTreeExpView",
-    "logicName" : "我的地盘实体树导航视图（测试统计）",
-    "name" : "我的地盘实体树导航视图（测试统计）",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "我的地盘实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "我的地盘实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "我的地盘实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "我的地盘实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ALLReportTabExpView",
-    "logicName" : "我的地盘实体分页导航视图（所有汇报）",
-    "name" : "我的地盘实体分页导航视图（所有汇报）",
+    "codeName" : "ProductReportTabExpView",
+    "logicName" : "我的地盘实体分页导航视图（产品汇报）",
+    "name" : "我的地盘实体分页导航视图（产品汇报）",
     "realModelSubType" : "DETABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -5739,46 +5619,46 @@
     "realModelSubType" : "DEMOBPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "我的地盘实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "我的地盘实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "codeName" : "Usr3TabExpView",
+    "logicName" : "我的地盘实体分页导航视图(插件管理)",
+    "name" : "我的地盘实体分页导航视图(插件管理)",
+    "realModelSubType" : "DETABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "我的地盘实体编辑视图（左右关系）",
-    "name" : "我的地盘实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "ListView9PersonInfo",
+    "logicName" : "我的地盘实体列表视图（部件视图）（个人信息贡献）",
+    "name" : "我的地盘实体列表视图（部件视图）（个人信息贡献）",
+    "realModelSubType" : "DELISTVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobCalendarView",
-    "logicName" : "我的地盘实体移动端日历视图",
-    "name" : "我的地盘实体移动端日历视图",
-    "realModelSubType" : "DEMOBCALENDARVIEW",
+    "codeName" : "DashboardView",
+    "logicName" : "我的地盘实体数据看板视图",
+    "name" : "我的地盘实体数据看板视图",
+    "realModelSubType" : "DEPORTALVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MyWork",
-    "logicName" : "我的工作",
-    "name" : "我的工作",
-    "realModelSubType" : "DELISTVIEW",
+    "codeName" : "EmployTreeExpView",
+    "logicName" : "我的地盘实体树导航视图（员工负载）",
+    "name" : "我的地盘实体树导航视图（员工负载）",
+    "realModelSubType" : "DETREEEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobDashboardView",
-    "logicName" : "我的地盘实体移动端数据看板视图",
-    "name" : "我的地盘实体移动端数据看板视图",
-    "realModelSubType" : "DEMOBPORTALVIEW",
+    "codeName" : "DailyMobTabExpView",
+    "logicName" : "我的地盘实体移动端分页导航视图(日报)",
+    "name" : "我的地盘实体移动端分页导航视图(日报)",
+    "realModelSubType" : "DEMOBTABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "我的地盘实体移动端选择多数据视图（部件视图）",
-    "name" : "我的地盘实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "codeName" : "PickupView",
+    "logicName" : "我的地盘实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "我的地盘实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "TreeExpViewProjectStats",
-    "logicName" : "我的地盘实体树导航视图（项目汇总表）",
-    "name" : "我的地盘实体树导航视图（项目汇总表）",
+    "codeName" : "UserSumTreeExpView",
+    "logicName" : "我的地盘实体树导航视图（用户汇总表）",
+    "name" : "我的地盘实体树导航视图（用户汇总表）",
     "realModelSubType" : "DETREEEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -5789,6 +5669,18 @@
     "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "MyWork",
+    "logicName" : "我的工作",
+    "name" : "我的工作",
+    "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ALLReportTabExpView",
+    "logicName" : "我的地盘实体分页导航视图（所有汇报）",
+    "name" : "我的地盘实体分页导航视图（所有汇报）",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "MobEditView",
     "logicName" : "我的地盘实体移动端编辑视图",
     "modelTag" : "MOBEDITVIEW",
@@ -5796,22 +5688,10 @@
     "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobTabExpView",
-    "logicName" : "我的地盘实体移动端分页导航视图",
-    "name" : "我的地盘实体移动端分页导航视图",
-    "realModelSubType" : "DEMOBTABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProductSumTreeExpView",
-    "logicName" : "我的地盘实体树导航视图（产品汇总表）",
-    "name" : "我的地盘实体树导航视图（产品汇总表）",
+    "codeName" : "TestTreeExpView",
+    "logicName" : "我的地盘实体树导航视图（测试统计）",
+    "name" : "我的地盘实体树导航视图（测试统计）",
     "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CalendarView",
-    "logicName" : "我的地盘实体日历视图",
-    "name" : "我的地盘实体日历视图",
-    "realModelSubType" : "DECALENDARVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "TabExpView",
@@ -5820,11 +5700,131 @@
     "realModelSubType" : "DETABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "DailyMobTabExpView",
-    "logicName" : "我的地盘实体移动端分页导航视图(日报)",
-    "name" : "我的地盘实体移动端分页导航视图(日报)",
+    "codeName" : "ReportTabExpView",
+    "logicName" : "我的地盘实体分页导航视图（员工汇报）",
+    "name" : "我的地盘实体分页导航视图（员工汇报）",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProductSumTreeExpView",
+    "logicName" : "我的地盘实体树导航视图（产品汇总表）",
+    "name" : "我的地盘实体树导航视图（产品汇总表）",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "我的地盘实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "我的地盘实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "StatsTabExpView",
+    "logicName" : "我的地盘实体分页导航视图(统计)",
+    "name" : "我的地盘实体分页导航视图(统计)",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ListView",
+    "logicName" : "欢迎",
+    "name" : "欢迎",
+    "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "我的地盘实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "我的地盘实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CalendarView",
+    "logicName" : "我的地盘实体日历视图",
+    "name" : "我的地盘实体日历视图",
+    "realModelSubType" : "DECALENDARVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ReportMobTabExpView",
+    "logicName" : "我的地盘实体移动端分页导航视图(汇报)",
+    "name" : "我的地盘实体移动端分页导航视图(汇报)",
     "realModelSubType" : "DEMOBTABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobCalendarView",
+    "logicName" : "我的地盘实体移动端日历视图",
+    "name" : "我的地盘实体移动端日历视图",
+    "realModelSubType" : "DEMOBCALENDARVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView9",
+    "logicName" : "我的地盘实体移动端多数据视图（部件视图）",
+    "name" : "我的地盘实体移动端多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ListView9",
+    "logicName" : "我的地盘实体列表视图（部件视图）（我的工作）",
+    "name" : "我的地盘实体列表视图（部件视图）（我的工作）",
+    "realModelSubType" : "DELISTVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "我的地盘实体编辑视图（左右关系）",
+    "name" : "我的地盘实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeExpViewProjectStats",
+    "logicName" : "我的地盘实体树导航视图（项目汇总表）",
+    "name" : "我的地盘实体树导航视图（项目汇总表）",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobDashboardView",
+    "logicName" : "我的地盘实体移动端数据看板视图",
+    "name" : "我的地盘实体移动端数据看板视图",
+    "realModelSubType" : "DEMOBPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "我的地盘实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "我的地盘实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "我的地盘实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "我的地盘实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CalendarExpView",
+    "logicName" : "我的地盘实体日历导航视图",
+    "name" : "我的地盘实体日历导航视图",
+    "realModelSubType" : "DECALENDAREXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobTabExpView",
+    "logicName" : "我的地盘实体移动端分页导航视图",
+    "name" : "我的地盘实体移动端分页导航视图",
+    "realModelSubType" : "DEMOBTABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "IbzMyTerritory",
   "dEType" : 1,
@@ -5859,7 +5859,7 @@
   "name" : "IBZ_MYTERRITORY",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

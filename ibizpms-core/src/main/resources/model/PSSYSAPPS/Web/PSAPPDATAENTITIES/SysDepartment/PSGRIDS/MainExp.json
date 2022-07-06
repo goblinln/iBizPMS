@@ -74,24 +74,10 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 25,
-    "name" : "pdeptid",
-    "getPSAppDEField" : {
-      "name" : "PDEPTID",
-      "codeName" : "ParentDeptid"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "deptid",
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "orgid",
-    "getPSAppDEField" : {
-      "name" : "ORGID",
-      "codeName" : "OrgId"
     }
   }, {
     "dataType" : 25,
@@ -102,10 +88,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "DEPTNAME",
-      "codeName" : "DeptName"
+      "name" : "DEPTID",
+      "codeName" : "DeptId"
     }
   }, {
     "dataType" : 25,
@@ -117,10 +103,24 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "srfkey",
+    "name" : "orgid",
     "getPSAppDEField" : {
-      "name" : "DEPTID",
-      "codeName" : "DeptId"
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "pdeptid",
+    "getPSAppDEField" : {
+      "name" : "PDEPTID",
+      "codeName" : "ParentDeptid"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "DEPTNAME",
+      "codeName" : "DeptName"
     }
   } ],
   "getPSDEGridEditItems" : [ {

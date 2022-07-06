@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -252,13 +252,6 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "issubmit",
-    "getPSAppDEField" : {
-      "name" : "ISSUBMIT",
-      "codeName" : "Issubmit"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "account",
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
@@ -274,7 +267,11 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "reportto",
+    "getPSAppDEField" : {
+      "name" : "REPORTTO",
+      "codeName" : "Reportto"
+    }
   }, {
     "dataType" : 1,
     "name" : "ibz_reportlyid",
@@ -284,10 +281,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "issubmit",
     "getPSAppDEField" : {
-      "name" : "IBZ_REPORTLYNAME",
-      "codeName" : "IbzReportlyName"
+      "name" : "ISSUBMIT",
+      "codeName" : "Issubmit"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBZ_REPORTLYID",
+      "codeName" : "IbzReportlyId"
     }
   }, {
     "dataType" : 1,
@@ -298,19 +302,15 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "IBZ_REPORTLYID",
-      "codeName" : "IbzReportlyId"
+      "name" : "IBZ_REPORTLYNAME",
+      "codeName" : "IbzReportlyName"
     }
   }, {
     "dataType" : 25,
-    "name" : "reportto",
-    "getPSAppDEField" : {
-      "name" : "REPORTTO",
-      "codeName" : "Reportto"
-    }
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "汇报标识",

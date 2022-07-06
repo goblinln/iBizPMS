@@ -1,9 +1,14 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
-import { Util, ViewTool, ThirdPartyService, ViewContext, ViewState, AppServiceBase, GetModelService, AppModelService, ModelTool, AppCapacitorService } from 'ibiz-core';
+import { Util, ViewTool, ThirdPartyService, ViewContext, ViewState, AppServiceBase, GetModelService, AppModelService, ModelTool, AppCapacitorService, throttle, MobViewInterface, SandboxInstance, AppTimerEngine, AppCtrlEventEngine, AppViewEventEngine } from 'ibiz-core';
 import { CounterServiceRegister, ViewMessageService } from 'ibiz-service';
-import { IPSAppView, IPSControl, IPSAppDEView, IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { NavDataService } from '../app-service';
+import { IPSAppView, IPSControl, IPSAppDEView, IPSLanguageRes, DynamicInstanceConfig } from '@ibiz/dynamic-model-api';
+import { AppMessageBoxService, NavDataService, ViewLoadingService } from '../app-service';
+import { IPSDEToolbar } from '@ibiz/dynamic-model-api';
+import { IPSDEToolbarItem } from '@ibiz/dynamic-model-api';
+import { IPSDETBGroupItem } from '@ibiz/dynamic-model-api';
+import { IPSDETBRawItem } from '@ibiz/dynamic-model-api';
+import { IPSDEUIAction } from '@ibiz/dynamic-model-api';
 /**
  * 视图基类
  *
@@ -11,7 +16,7 @@ import { NavDataService } from '../app-service';
  * @class ViewBase
  * @extends {Vue}
  */
-export class ViewBase extends Vue {
+export class ViewBase extends Vue implements MobViewInterface {
 
     /**
      * 环境文件
@@ -22,6 +27,13 @@ export class ViewBase extends Vue {
      */
     protected Environment: any = AppServiceBase.getInstance().getAppEnvironment();
 
+    /**
+     * 注册事件逻辑分隔符
+     * 
+     * @memberof ViewBase
+     */
+    public registerEventSeparator: string = 'ibiz__';
+    
     /**
      * 部件UI是否存在权限
      *
@@ -47,12 +59,37 @@ export class ViewBase extends Vue {
     public _viewparams!: any;
 
     /**
+     * 导航数据（用于数据穿透）
+     *
+     * @type {*}
+     * @memberof ViewBase
+     */
+    public navdatas!: any;    
+
+    /**
      * 是否为子视图
      *
      * @type {boolean}
      * @memberof ViewBase
      */
     public isChildView: boolean = false;
+    
+    /**
+     * 视图操作参数集合
+     *
+     * @type {*}
+     * @memberof ViewBase
+     */
+     public viewCtx: any = {};
+
+     /**
+      * 视图loading服务
+      *
+      * @type {ViewLoadingService}
+      * @memberof ViewBase
+      */
+     public viewLoadingService: ViewLoadingService = new ViewLoadingService();
+
 
     /**
      * 视图默认使用(路由：true,非路由：false)
@@ -61,6 +98,14 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public viewDefaultUsage!: string;
+
+    /**
+     * 视图默认加载
+     *
+     * @type {boolean}
+     * @memberof ViewBase
+     */
+    public isLoadDefault: boolean = true;
 
     /**
      * 手机返回事件
@@ -226,7 +271,23 @@ export class ViewBase extends Vue {
     public viewparams: any = {};
 
     /**
-     * 门户部件状态对象
+     * 传入视图上下文
+     *
+     * @type {any}
+     * @memberof ViewBase
+     */
+     public viewdata!: any;
+
+     /**
+      * 传入视图参数
+      *
+      * @type {any}
+      * @memberof ViewBase
+      */
+     public viewparam!: any;
+
+    /**
+     * 门户部件状态对象(对标PC的portletState)
      *
      * @type {*}
      * @memberof MainViewBase
@@ -273,6 +334,13 @@ export class ViewBase extends Vue {
     protected toolbarModels: any;
 
     /**
+     * 界面触发逻辑Map
+     * 
+     * @memberof ViewBase
+     */
+    public viewTriggerLogicMap: Map<string, any> = new Map();
+
+    /**
      * 视图动态参数
      *
      * @type {*}
@@ -287,6 +355,24 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public staticProps!: any;
+
+    /**
+     * 获取顶层视图
+     *
+     * @memberof ViewBase
+     */
+    public getTopView() {
+        return this.viewCtx.topview;
+    }
+
+    /**
+     * 获取父级视图
+     *
+     * @memberof ViewBase
+     */
+    public getParentView() {
+        return this.viewCtx.parentview;
+    }
 
     /**
      * 底部按钮样式
@@ -328,6 +414,14 @@ export class ViewBase extends Vue {
     public viewMessageService: ViewMessageService = new ViewMessageService();
 
     /**
+     * 是否显示标题
+     *
+     * @type {boolean}
+     * @memberof ViewBase
+     */
+    public showCaption: boolean = true;
+
+    /**
      * 监听动态参数变化
      *
      * @param {*} newVal
@@ -359,6 +453,11 @@ export class ViewBase extends Vue {
                 }, 0);
             }
         }
+        // 处理navdatas
+        if (newVal.navdatas && newVal.navdatas !== oldVal?.navdatas) {
+            this.navdatas = newVal.navdatas;
+        }        
+        this.initViewCtx();         
     }
 
     /**
@@ -432,6 +531,7 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public beforeViewModelInit(data: any) {
+        this.isLoadDefault = data.isLoadDefault ? true : false;      
         this.viewDefaultUsage = data.hasOwnProperty('viewDefaultUsage') ? this.staticProps.viewDefaultUsage : 'routerView';
         // this.navDataService = data.navDataService;
         this.panelState = data.panelState;
@@ -443,6 +543,8 @@ export class ViewBase extends Vue {
         this.customViewNavContexts = this.viewInstance.getPSAppViewNavContexts() ? this.viewInstance.getPSAppViewNavContexts() : [];
         this.customViewParams = this.viewInstance.getPSAppViewNavParams() ? this.viewInstance.getPSAppViewNavParams() : [];
         this.viewCodeName = modelData?.codeName;
+        this.showCaption = data.showCaption === false || this.viewInstance.showCaptionBar === false ? false : true;
+        this.context = data.viewcontainer;
     }
 
     /**
@@ -454,15 +556,81 @@ export class ViewBase extends Vue {
         try {
             await this.initModelService();
             await this.viewModelLoad()
+            this.initMountedMap();
             // 初始化时需要计算context和viewparams
             this.parseViewParam();
+            // 初始化viewCtx
+            this.initViewCtx();            
             if (this.staticProps && this.staticProps.modeldata) {
                 await this.initViewMessageService(this.staticProps.modeldata);
                 await this.initCounterService(this.staticProps.modeldata);
                 await this.initAppUIService();
+                await this.initViewLogic(this.viewInstance);                
             }
         } catch (error) {
             console.warn(error);
+        }
+    }
+    
+    /**
+     * 绘制视图部件集合
+     * 
+     * @memberof ViewBase
+     */
+     public renderViewControls() {
+        const viewLayoutPanel = this.viewInstance.getPSViewLayoutPanel();
+        if (viewLayoutPanel && viewLayoutPanel.useDefaultLayout) {
+            return [];
+        } else {
+            const controlArray: Array<any> = [];
+            if (this.viewInstance.getPSControls() && (this.viewInstance.getPSControls() as IPSControl[]).length > 0) {
+                (this.viewInstance.getPSControls() as IPSControl[]).forEach((control: IPSControl) => {
+                    const targetCtrl = this.renderTargetControl(control);
+                    controlArray.push(targetCtrl);
+                });
+            }
+            controlArray.push(this.renderCaptionBar());
+            controlArray.push(this.renderDataInfoBar());
+            return controlArray;
+        }
+    }
+
+    /**
+     * 绘制目标部件
+     * 
+     * @memberof ViewBase
+     */
+     public renderTargetControl(control: IPSControl) {
+        if (Object.is(control.controlType, 'TOOLBAR')) {
+            const viewToolBar: IPSDEToolbar = control as IPSDEToolbar;
+            const targetViewToolbarItems: any[] = [];
+            if (viewToolBar && viewToolBar.getPSDEToolbarItems()) {
+                viewToolBar.getPSDEToolbarItems()?.forEach((toolbarItem: IPSDEToolbarItem) => {
+                    targetViewToolbarItems.push(this.initToolBarItems(toolbarItem));
+                });
+            }
+            return (
+                <view-toolbar
+                    slot={`layout-${control.name}`}
+                    mode={this.viewInstance?.viewStyle || 'DEFAULT'}
+                    counterServiceArray={this.counterServiceArray}
+                    isViewLoading={this.viewLoadingService?.isLoading}
+                    toolbarModels={targetViewToolbarItems}
+                    on-item-click={(data: any, $event: any) => {
+                        throttle(this.handleItemClick, [data, $event], this);
+                    }}
+                ></view-toolbar>
+            );
+        } else {
+            let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(control);
+            Object.assign(targetCtrlParam, {
+                dynamicProps: {
+                    viewparams: Util.deepCopy(this.viewparams),
+                    context: Util.deepCopy(this.context),
+                    viewCtx: this.viewCtx
+                }
+            });
+            return this.$createElement(targetCtrlName, { slot: `layout-${control.name}`, props: targetCtrlParam, ref: control?.name, on: targetCtrlEvent });
         }
     }
 
@@ -478,11 +646,78 @@ export class ViewBase extends Vue {
                 await control.fill();
             }
         }
-        this.initMountedMap();
         await this.viewInstance?.getPSAppDataEntity?.()?.fill();
         // await this.viewInstance.fill(true);
     }
 
+    /**
+     * 初始化工具栏项
+     *
+     * @param {IPSDEToolbarItem} item
+     * 
+     * @@memberof ViewBase
+     */
+    public initToolBarItems(item: IPSDEToolbarItem): void {
+        if (item.itemType === 'ITEMS') {
+            const items = (item as IPSDETBGroupItem).getPSDEToolbarItems();
+            if (items && items.length != 0) {
+                const models: Array<any> = [];
+                const tempModel: any = {
+                    name: item.name,
+                    showCaption: item.showCaption,
+                    caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+                    tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
+                    disabled: false,
+                    visabled: true,
+                    itemType: item.itemType,
+                    dataaccaction: '',
+                    actionLevel: (item as any).actionLevel
+                };
+                items.forEach((_item: any) => {
+                    models.push(this.initToolBarItems(_item));
+                });
+                Object.assign(tempModel, {
+                    model: models,
+                });
+                return tempModel;
+            }
+        }
+        const img = item.getPSSysImage();
+        const css = item.getPSSysCss();
+        const uiAction = (item as any)?.getPSUIAction?.() as IPSDEUIAction;
+        const tempModel: any = {
+            name: item.name,
+            showCaption: item.showCaption,
+            caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+            tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
+            disabled: false,
+            visabled: uiAction?.dataAccessAction && this.Environment.enablePermissionValid ? false : true,
+            itemType: item.itemType,
+            dataaccaction: uiAction?.dataAccessAction,
+            noprivdisplaymode: uiAction?.noPrivDisplayMode,
+            uiaction: uiAction,
+            showIcon: item.showIcon,
+            class: css ? css.cssName : '',
+            getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
+            actionLevel: (item as any).actionLevel
+        };
+        if (item.itemType == 'RAWITEM') {
+            Object.assign(tempModel, {
+                rawType: (item as IPSDETBRawItem).contentType,
+                rawContent: (item as IPSDETBRawItem).rawContent,
+                htmlContent: (item as IPSDETBRawItem).htmlContent,
+                style: {}
+            })
+            if (item.height) {
+                Object.assign(tempModel.style, { height: item.height + 'px' });
+            }
+            if (item.width) {
+                Object.assign(tempModel.style, { width: item.width + 'px' });
+            }
+        }
+        return tempModel;
+    }
+    
     /**
      * 初始化计数器服务
      * 
@@ -635,7 +870,9 @@ export class ViewBase extends Vue {
                 }
                 if (Object.is(res.action, 'load')) {
                     if (_this.engine) {
-                        _this.engine.load();
+                        _this.engine.load(res.data);
+                    } else {
+                        this.viewState.next({ tag: _this?.viewInstance?.xDataControlName, action: 'load', data: res.data});
                     }
                 }
                 if (Object.is(res.action, 'save')) {
@@ -646,10 +883,15 @@ export class ViewBase extends Vue {
         if (_this.formDruipartState) {
             this.formDruipartStatEvent();
         }
+        // 视图加载服务初始化操作
+        this.viewLoadingService.srfsessionid = this.context?.srfsessionid;
+        this.$store.commit("loadingService/addViewLoadingService", this.viewLoadingService);        
         // 视图初始化向导航栈里面加数据
         this.$nextTick(() => {
             _this.navDataService.addNavData({ title: this.model.srfCaption, viewType: this.viewInstance.viewType, path: this.$route?.fullPath, viewmode: this.viewDefaultUsage, tag: this.viewInstance.codeName, key: null, data: {} });
         })
+        // 处理视图定时器逻辑
+        this.handleTimerLogic();        
     }
 
     /**
@@ -732,6 +974,70 @@ export class ViewBase extends Vue {
         if (this.formDruipartStateEvent) {
             this.formDruipartStateEvent.unsubscribe();
         }
+        // 销毁逻辑定时器
+        this.destroyLogicTimer();        
+    }
+
+    /**
+     * 初始化视图操作参数
+     *
+     * @public
+     * @memberof ViewBase
+     */
+     public initViewCtx(args?: any): void {
+        this.viewCtx = { viewNavContext: this.context, viewNavParam: this.viewparams };
+        if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+            this.viewCtx['appGlobal'] = AppServiceBase.getInstance().getAppStore().getters.getAppGlobal()
+        };
+        if (AppServiceBase.getInstance().getAppStore().getters.getRouteViewGlobal(this.context.srfsessionid)) {
+            this.viewCtx['routeViewGlobal'] = AppServiceBase.getInstance().getAppStore().getters.getRouteViewGlobal(this.context.srfsessionid);
+        } else {
+            AppServiceBase.getInstance().getAppStore().commit('addRouteViewGlobal', { tag: this.context.srfsessionid, param: {} });
+            this.viewCtx['routeViewGlobal'] = AppServiceBase.getInstance().getAppStore().getters.getRouteViewGlobal(this.context.srfsessionid);
+        }
+        this.viewCtx['viewGlobal'] = {};
+        this.viewCtx['viewNavData'] = {};
+        this.viewCtx['messagebox'] = AppMessageBoxService.getInstance();
+        this.viewCtx['app'] = AppServiceBase.getInstance();
+        this.viewCtx['view'] = this;
+        // 处理顶层视图
+        if (!this.viewDefaultUsage && this.viewdata && !Object.is(this.viewdata, '')) {
+            // 嵌入视图
+            if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+                this.viewCtx['topview'] = AppServiceBase.getInstance().getAppStore().getters.getView(this.context.srfsessionid);;
+            }
+        } else {
+            // 顶层路由视图
+            if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+                AppServiceBase.getInstance().getAppStore().commit('addView', { tag: this.context.srfsessionid, param: this });
+            }
+            this.viewCtx['topview'] = this;
+        }
+        // 处理父层视图
+        this.handleParentView();        
+    }
+
+    /**
+     * 处理父级视图数据
+     *
+     * @memberof ViewBase
+     */
+    public handleParentView() {
+        if (this.context && this.context.parentviewpath) {
+            if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+                this.viewCtx['parentview'] = AppServiceBase.getInstance().getAppStore().getters.getView(this.context.parentviewpath);;
+            } else {
+                this.viewCtx['parentview'] = null;
+            }
+        } else {
+            this.viewCtx['parentview'] = null;
+        }
+        if (this.viewInstance && this.viewInstance.modelPath) {
+            if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+                AppServiceBase.getInstance().getAppStore().commit('addView', { tag: this.viewInstance.modelPath, param: this });
+            }
+            Object.assign(this.context, { parentviewpath: this.viewInstance.modelPath });
+        }
     }
 
     /**
@@ -808,6 +1114,14 @@ export class ViewBase extends Vue {
             Object.assign(_this.context, { [(ModelTool.getViewAppEntityCodeName(this.viewInstance) as string).toLowerCase()]: inputvalue });
         }
         setSrfsessionid();
+        if (_this.viewparams.srfinsttag && _this.viewparams.srfinsttag2 && this.modelService) {
+            let dynainstParam: DynamicInstanceConfig = this.modelService.getDynaInsConfig();
+            Object.assign(_this.context, { srfdynainstid: dynainstParam.id });
+        }
+        // 补充沙箱实例参数（路由）
+        if (_this.viewparams && _this.viewparams.hasOwnProperty('srfsandboxtag')) {
+            Object.assign(_this.context, { 'srfsandboxtag': _this.viewparams.srfsandboxtag });
+        }
         if (_this.viewparams && _this.viewparams.srfdynainstid) {
             Object.assign(_this.context, { srfdynainstid: this.viewparams.srfdynainstid });
         }
@@ -836,6 +1150,18 @@ export class ViewBase extends Vue {
                 this.handleCustomDataLogic(curNavParam, tempParam, item.key);
                 Object.assign(this.viewparams, tempParam);
             })
+        }
+    }
+
+    /**
+     * 初始化沙箱实例
+     *
+     * @memberof ViewBase
+     */
+    public async initSandBoxInst(args: any) {
+        if (args && args.srfsandboxtag) {
+            const tempSandboxInst: SandboxInstance = new SandboxInstance(args);
+            await tempSandboxInst.initSandBox();
         }
     }
 
@@ -1114,6 +1440,7 @@ export class ViewBase extends Vue {
             dynamicProps: {
                 viewparams: this.viewparams,
                 context: this.context,
+                viewCtx: this.viewCtx
             }
         };
         Object.defineProperty(targetCtrlParam.staticProps, 'containerInstance', { enumerable: false, writable: true });
@@ -1146,8 +1473,21 @@ export class ViewBase extends Vue {
                 this.enableControlUIAuth = false;
                 this.renderShade();
             } else {
-                if (_this.engine) {
-                    _this.engine.onCtrlEvent(controlname, action, data);
+                if (controlname && action && this.viewTriggerLogicMap.get(`${controlname.toLowerCase()}-${action.toLowerCase()}`)) {
+                    if (this.viewTriggerLogicMap.get(`${controlname.toLowerCase()}-${action.toLowerCase()}`)) {
+                        this.viewTriggerLogicMap.get(`${controlname.toLowerCase()}-${action.toLowerCase()}`).executeAsyncUILogic({ arg: data, utils: this.viewCtx, app: this.viewCtx.app, view: this, ctrl: (this.$refs[controlname] as any).ctrl }).then((args: any) => {
+                            if (args && args?.hasOwnProperty('srfret') && !args.srfret) {
+                                return;
+                            }
+                            if (_this.engine) {
+                                _this.engine.onCtrlEvent(controlname, action, data);
+                            }
+                        })
+                    }
+                } else {
+                    if (_this.engine) {
+                        _this.engine.onCtrlEvent(controlname, action, data);
+                    }
                 }
             }
         }
@@ -1182,17 +1522,59 @@ export class ViewBase extends Vue {
         return true;
     }
 
+
+    /**
+     *  绘制标题栏
+     *
+     * @memberof ViewBase
+     */
+     public renderCaptionBar() {
+        const captionBar: any = ModelTool.findPSControlByName('captionbar', this.viewInstance.getPSControls());
+        if (captionBar && this.viewInstance.showCaptionBar) {
+            return (
+                <div slot="layout-captionbar" class="app-captionbar-container">
+                    <app-default-captionbar
+                        viewModelData={this.viewInstance}
+                        modelData={captionBar}
+                        context={this.context}
+                        viewparam={this.viewparam}
+                    ></app-default-captionbar>
+                </div>
+            );
+        }
+    }
+
+    /**
+     *  绘制信息栏
+     *
+     * @memberof ViewBase
+     */
+    public renderDataInfoBar() {
+        const datainfoBar: any = ModelTool.findPSControlByName('datainfobar', this.viewInstance.getPSControls());
+        return (
+            <div slot="layout-datainfobar" class="app-datainfobar-container">
+                <app-default-datainfobar
+                    modelData={datainfoBar}
+                    viewInfo={this.model}
+                    context={this.context}
+                    viewparam={this.viewparam}
+                ></app-default-datainfobar>
+            </div>
+        );
+    }
+
     /**
      * 绘制头部标题栏
      * 
      * @memberof ViewBase
      */
     public renderViewHeaderCaptionBar() {
-        if (this.viewInstance.showCaptionBar === false) {
+        if (this.showCaption === false) {
             return null;
         }
         const srfCaption = this.model.srfCaption;
         const dataInfo: string = this.model.dataInfo ? (`-${this.model.dataInfo}`) : '';
+        const psimage = this.viewInstance.getPSSysImage();
         return <ion-toolbar v-show="titleStatus" class="ionoc-view-header" slot="captionbar">
             <ion-buttons slot="start">
                 {this.isShowBackButton &&
@@ -1201,7 +1583,7 @@ export class ViewBase extends Vue {
             {this.$t('app.button.back')}
           </ion-button>}
             </ion-buttons>
-            <ion-title class="view-title">{dataInfo ? srfCaption + dataInfo : srfCaption}</ion-title>
+            <ion-title class="view-title"><app-ps-sys-image imageModel={psimage}></app-ps-sys-image>{dataInfo ? srfCaption + dataInfo : srfCaption}</ion-title>
         </ion-toolbar>
     }
 
@@ -1237,5 +1619,87 @@ export class ViewBase extends Vue {
             el.appendChild(shade);
         }
     }
+
+    /**
+     * 初始化视图逻辑
+     * 
+     * @memberof ViewBase
+     */
+    public async initViewLogic(opts: any) {
+        if (opts.getPSAppViewLogics() && opts.getPSAppViewLogics().length > 0) {
+            opts.getPSAppViewLogics().forEach((element: any) => {
+                // 目标逻辑类型类型为实体界面逻辑、系统预置界面逻辑、前端扩展插件、脚本代码
+                if (element && element.logicTrigger && (Object.is(element.logicType, 'DEUILOGIC') ||
+                    Object.is(element.logicType, 'SYSVIEWLOGIC') ||
+                    Object.is(element.logicType, 'PFPLUGIN') ||
+                    Object.is(element.logicType, 'SCRIPT'))) {
+                    switch (element.logicTrigger) {
+                        case 'TIMER':
+                            this.viewTriggerLogicMap.set(element.name.toLowerCase(), new AppTimerEngine(element));
+                            break;
+                        case 'CTRLEVENT':
+                            if (element?.getPSViewCtrlName() && element?.eventNames) {
+                                this.viewTriggerLogicMap.set(`${element.getPSViewCtrlName()?.toLowerCase()}-${element.eventNames?.toLowerCase()}`, new AppCtrlEventEngine(element));
+                            }
+                            break;
+                        case 'VIEWEVENT':
+                            if (element?.eventNames) {
+                                this.viewTriggerLogicMap.set(`${element.eventNames?.toLowerCase()}`, new AppViewEventEngine(element));
+                            }
+                            break;
+                        default:
+                            console.log(`视图${element.logicTrigger}类型暂未支持`);
+                            break;
+                    }
+                }
+                // 绑定用户自定义事件
+                if (element.eventNames && element.eventNames.toLowerCase().startsWith(this.registerEventSeparator)) {
+                    this.$on(element.eventNames, (...args: any) => {
+                        this.handleViewCustomEvent(element.name?.toLowerCase(), null, args);
+                    });
+                }
+            });
+        }
+    }
     
+    /**
+     * 处理视图自定义事件
+     *
+     * @memberof ViewBase
+     */
+    public handleViewCustomEvent(name: string, data: any, args: any) {
+        if (this.viewTriggerLogicMap.get(name)) {
+            this.viewTriggerLogicMap.get(name).executeAsyncUILogic({ arg: { sender: this, navContext: this.context, navParam: this.viewparams, navData: this.navdatas, data: data, args: args }, utils: this.viewCtx, app: this.viewCtx.app, view: this });
+        }
+    }    
+
+    /**
+     * 处理视图定时器逻辑
+     *
+     * @memberof ViewBase
+     */
+    public handleTimerLogic() {
+        if (this.viewTriggerLogicMap && this.viewTriggerLogicMap.size > 0) {
+            for (let item of this.viewTriggerLogicMap.values()) {
+                if (item && (item instanceof AppTimerEngine)) {
+                    item.executeAsyncUILogic({ arg: { sender: this, navContext: this.context, navParam: this.viewparams, navData: this.navdatas, data: null }, utils: this.viewCtx, app: this.viewCtx.app, view: this });
+                }
+            }
+        }
+    }
+
+    /**
+     * 销毁视图定时器逻辑
+     *
+     * @memberof ViewBase
+     */
+    public destroyLogicTimer() {
+        if (this.viewTriggerLogicMap && this.viewTriggerLogicMap.size > 0) {
+            for (let item of this.viewTriggerLogicMap.values()) {
+                if (item && (item instanceof AppTimerEngine)) {
+                    item.destroyTimer();
+                }
+            }
+        }
+    }
 }

@@ -1,4 +1,5 @@
 import { IPSDEPickupViewPanel } from "@ibiz/dynamic-model-api";
+import { MobPickUpViewPanelControlInterface } from "ibiz-core";
 import { MainControlBase } from "./main-control-base";
 
 /**
@@ -8,7 +9,7 @@ import { MainControlBase } from "./main-control-base";
  * @class MobPickUpViewPanelControlBase
  * @extends {MainControlBase}
  */
-export class MobPickUpViewPanelControlBase extends MainControlBase {
+export class MobPickUpViewPanelControlBase extends MainControlBase implements MobPickUpViewPanelControlInterface{
 
     /**
      * 部件模型实例对象
@@ -32,7 +33,7 @@ export class MobPickUpViewPanelControlBase extends MainControlBase {
      * @param {*} $event
      * @memberof MobPickUpViewPanelControlBase
      */
-    protected onViewDatasChange($event: any): void {
+    public onViewDatasChange($event: any): void {
         if ($event.length > 0) {
             $event.forEach((item: any, index: any) => {
                 let srfmajortext = item[this.appDeMajorFieldName.toLowerCase()];

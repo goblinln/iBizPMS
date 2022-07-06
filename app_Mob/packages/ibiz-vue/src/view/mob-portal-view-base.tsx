@@ -1,6 +1,6 @@
 import { ViewBase } from './view-base';
 import { IPSAppPortalView, IPSDEDashboard } from '@ibiz/dynamic-model-api';
-import { ModelTool } from 'ibiz-core';
+import { MobPortalViewInterface, ModelTool } from 'ibiz-core';
 
 /**
  * 应用看板视图基类
@@ -9,7 +9,7 @@ import { ModelTool } from 'ibiz-core';
  * @class MobPortalViewBase
  * @extends {MainViewBase}
  */
-export class MobPortalViewBase extends ViewBase {
+export class MobPortalViewBase extends ViewBase implements MobPortalViewInterface {
 
     /**
      * 数据视图视图实例

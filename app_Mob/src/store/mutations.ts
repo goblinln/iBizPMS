@@ -337,3 +337,51 @@ export const addDepartmentPersonnel = (state: any, departmentPersonnel: Array<an
   state.departmentPersonnel = [];
   state.departmentPersonnel = [...departmentPersonnel];
 }
+
+/**
+ * 添加顶层路由数据参数
+ * 
+ * @param state 
+ * @param args 
+ */
+export const addRouteViewGlobal = (state: any, args: { tag: string, param: any }) => {
+  if(args && args.tag && args.param) {
+      state.routeViewGlobal[args.tag] = args.param;
+  }
+}
+
+/**
+ * 删除指定键值顶层路由数据参数
+ * 
+ * @param state 
+ * @param args 
+ */
+export const removeRouteViewGlobal = (state: any, tag: string ) => {
+  if(tag && state.routeViewGlobal[tag]) {
+      delete state.routeViewGlobal[tag];
+  }
+}
+
+/**
+ * 添加顶层视图
+ * 
+ * @param state 
+ * @param args 
+ */
+export const addView = (state: any, args: { tag: string, param: any }) => {
+  if(args && args.tag && args.param) {
+      state.appViews[args.tag] = args.param;
+  }
+}
+
+/**
+ * 删除顶层视图
+ * 
+ * @param state 
+ * @param args 
+ */
+export const removeView = (state: any, tag: string ) => {
+  if(tag && state.appViews[tag]) {
+      delete state.appViews[tag];
+  }
+}

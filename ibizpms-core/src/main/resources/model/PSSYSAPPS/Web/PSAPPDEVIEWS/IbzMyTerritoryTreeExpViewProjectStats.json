@@ -45,42 +45,18 @@
   "getPSControls" : [ {
     "codeName" : "TreeExpViewProjectStatstreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:ProjectProgress",
-      "realTitle" : "项目进度表格视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectProgressUsr2GridView.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:TaskStatusCount",
-      "realTitle" : "项目统计表格视图（任务状态统计）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsUsr2GridViewTaskStatusCount.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
       "name" : "EXPITEM:BugType",
       "realTitle" : "项目bug类型统计表格视图",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectBugTypeSumUsr2GridView.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:ProjectStoryStageStats",
-      "realTitle" : "项目统计表格视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectStoryStageStatusGridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     }, {
@@ -92,11 +68,19 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:ProjectInputStats",
-      "realTitle" : "项目统计表格视图",
+      "name" : "EXPITEM:BugStatusCount",
+      "realTitle" : "Bug统计表格视图(bug状态统计)",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectInputStatsGridView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsUsr2GridViewProjectBugStatusCount.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:TaskStatusCount",
+      "realTitle" : "项目统计表格视图（任务状态统计）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsUsr2GridViewTaskStatusCount.json",
         "viewType" : "DEGRIDVIEW"
       }
     }, {
@@ -105,6 +89,30 @@
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectQualityUsr2GridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ProjectStoryStageStats",
+      "realTitle" : "项目统计表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectStoryStageStatusGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ProjectInputStats",
+      "realTitle" : "项目统计表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectInputStatsGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ProjectProgress",
+      "realTitle" : "项目进度表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectProgressUsr2GridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     }, {
@@ -121,14 +129,6 @@
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectStoryStatusStatsGridView.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:BugStatusCount",
-      "realTitle" : "Bug统计表格视图(bug状态统计)",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsUsr2GridViewProjectBugStatusCount.json",
         "viewType" : "DEGRIDVIEW"
       }
     } ],

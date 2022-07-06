@@ -53,7 +53,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "移动端项目按照计划关联",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -341,13 +341,13 @@
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "srfparentkey",
-              "name" : "srfparentkey",
+              "key" : "project",
+              "name" : "project",
               "value" : "project",
               "rawValue" : false
             }, {
-              "key" : "project",
-              "name" : "project",
+              "key" : "srfparentkey",
+              "name" : "srfparentkey",
               "value" : "project",
               "rawValue" : false
             } ],

@@ -129,7 +129,6 @@ export abstract class MonthlyBase extends EntityBase implements IMonthly {
      * 抄送给
      */
     mailto?: any;
-
     /**
      * 重置实体数据
      *

@@ -6981,6 +6981,26 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
+    "codeName" : "RedirectView",
+    "logicName" : "项目工时统计实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "项目工时统计实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "项目工时统计实体选择表格视图（部件视图）",
+    "name" : "项目工时统计实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "项目工时统计实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "项目工时统计实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "EditView2",
     "logicName" : "项目工时统计实体编辑视图（左右关系）",
     "name" : "项目工时统计实体编辑视图（左右关系）",
@@ -6993,20 +7013,6 @@
     "name" : "项目工时统计实体数据选择视图",
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "项目工时统计实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "项目工时统计实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "GridView",
     "logicName" : "项目工时统计实体表格视图",
@@ -7022,18 +7028,12 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "项目工时统计实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "项目工时统计实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "项目工时统计实体选择表格视图（部件视图）",
-    "name" : "项目工时统计实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "ProjectTaskestimate",
   "dEType" : 1,
@@ -7064,7 +7064,7 @@
   "name" : "PROJECTTASKESTIMATE",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

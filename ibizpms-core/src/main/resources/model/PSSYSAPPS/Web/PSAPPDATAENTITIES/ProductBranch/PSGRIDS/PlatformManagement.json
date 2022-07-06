@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "平台管理",
   "minorSortDir" : "ASC",
   "getMinorSortPSAppDEField" : {
@@ -224,24 +224,10 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
     "name" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "order",
-    "getPSAppDEField" : {
-      "name" : "ORDER",
-      "codeName" : "Order"
     }
   }, {
     "dataType" : 25,
@@ -251,6 +237,13 @@
       "codeName" : "Name"
     }
   }, {
+    "dataType" : 9,
+    "name" : "order",
+    "getPSAppDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    }
+  }, {
     "dataType" : 1,
     "name" : "branchsn",
     "getPSAppDEField" : {
@@ -258,11 +251,11 @@
       "codeName" : "Branchsn"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -274,10 +267,17 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "product",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {

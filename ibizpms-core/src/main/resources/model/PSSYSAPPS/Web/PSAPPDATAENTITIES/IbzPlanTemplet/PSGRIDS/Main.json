@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -82,10 +82,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "IBZ_PLANTEMPLETNAME",
-      "codeName" : "IbzPlanTempletName"
+      "name" : "IBZ_PLANTEMPLETID",
+      "codeName" : "IbzPlanTempletId"
     }
   }, {
     "dataType" : 25,
@@ -97,10 +97,10 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "srfkey",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "IBZ_PLANTEMPLETID",
-      "codeName" : "IbzPlanTempletId"
+      "name" : "IBZ_PLANTEMPLETNAME",
+      "codeName" : "IbzPlanTempletName"
     }
   } ],
   "getPSDEGridEditItems" : [ {

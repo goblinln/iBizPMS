@@ -247,7 +247,6 @@ export abstract class SysAccountBase extends EntityBase implements ISysAccount {
      * 剩余里程碑（今日到期）
      */
     leftlcbjzcnt?: any;
-
     /**
      * 重置实体数据
      *

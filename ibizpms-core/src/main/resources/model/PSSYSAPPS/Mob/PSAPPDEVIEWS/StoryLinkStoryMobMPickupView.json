@@ -76,10 +76,10 @@
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
             "actionType" : "FILTERACTION",
-            "name" : "search",
+            "name" : "load",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FilterSearch"
+              "id" : "FilterGet"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -98,10 +98,10 @@
             }
           }, {
             "actionType" : "FILTERACTION",
-            "name" : "load",
+            "name" : "search",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FilterGet"
+              "id" : "FilterSearch"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -276,7 +276,7 @@
           "id" : "load"
         },
         "groupMode" : "NONE",
-        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+        "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
         "logicName" : "MOB_DuoShuJuChoice_Story",
         "minorSortDir" : "DESC",
         "getMinorSortPSAppDEField" : {

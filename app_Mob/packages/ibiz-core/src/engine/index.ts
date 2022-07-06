@@ -33,4 +33,6 @@ export { MobWFMDViewEngine } from "./mob-wfmdview-engine";
 export { MobWFStartViewEngine } from "./mob-wfstart-view-engine";
 export { MobWizardViewEngine } from "./mob-wizard-view-engine";
 export { MobSearchViewEngine } from "./mob-search-view-engine";
+export { MobCommonViewEngine } from "./mob-common-view-engine";
 export { ViewEngine } from "./view-engine";
+export * from './trigger-engine';

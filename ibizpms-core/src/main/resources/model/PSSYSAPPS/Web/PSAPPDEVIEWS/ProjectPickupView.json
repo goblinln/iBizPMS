@@ -58,7 +58,7 @@
           "id" : "fetch"
         },
         "groupMode" : "NONE",
-        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+        "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "LOAD", "BEFORELOAD" ],
         "logicName" : "主表格",
         "minorSortDir" : "DESC",
         "getMinorSortPSAppDEField" : {
@@ -272,32 +272,11 @@
             "codeName" : "Id"
           }
         }, {
-          "dataType" : 1,
-          "name" : "projectsn",
-          "getPSAppDEField" : {
-            "name" : "PROJECTSN",
-            "codeName" : "Projectsn"
-          }
-        }, {
-          "dataType" : 25,
-          "name" : "status",
-          "getPSAppDEField" : {
-            "name" : "STATUS",
-            "codeName" : "Status"
-          }
-        }, {
           "dataType" : 25,
           "name" : "name",
           "getPSAppDEField" : {
             "name" : "NAME",
             "codeName" : "Name"
-          }
-        }, {
-          "dataType" : 1,
-          "name" : "parent",
-          "getPSAppDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
           }
         }, {
           "dataType" : 25,
@@ -308,13 +287,32 @@
           }
         }, {
           "dataType" : 25,
-          "name" : "srfmstag"
-        }, {
-          "dataType" : 25,
-          "name" : "srfmajortext",
+          "name" : "status",
           "getPSAppDEField" : {
-            "name" : "NAME",
-            "codeName" : "Name"
+            "name" : "STATUS",
+            "codeName" : "Status"
+          }
+        }, {
+          "format" : "YYYY-MM-DD",
+          "dataType" : 5,
+          "name" : "end",
+          "getPSAppDEField" : {
+            "name" : "END",
+            "codeName" : "End"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "projectsn",
+          "getPSAppDEField" : {
+            "name" : "PROJECTSN",
+            "codeName" : "Projectsn"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
           }
         }, {
           "dataType" : 1,
@@ -326,19 +324,21 @@
           "dataAccessAction" : true
         }, {
           "dataType" : 1,
-          "name" : "srfkey",
+          "name" : "parent",
           "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
+            "name" : "PARENT",
+            "codeName" : "Parent"
           }
         }, {
-          "format" : "YYYY-MM-DD",
-          "dataType" : 5,
-          "name" : "end",
+          "dataType" : 25,
+          "name" : "srfmajortext",
           "getPSAppDEField" : {
-            "name" : "END",
-            "codeName" : "End"
+            "name" : "NAME",
+            "codeName" : "Name"
           }
+        }, {
+          "dataType" : 25,
+          "name" : "srfmstag"
         } ],
         "getPSDEGridEditItems" : [ {
           "caption" : "项目编号",
@@ -391,7 +391,7 @@
         "codeName" : "Default",
         "controlType" : "SEARCHFORM",
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSSEARCHFORMS/Default.json",
-        "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+        "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
         "logicName" : "默认搜索表单",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -400,10 +400,10 @@
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
             "actionType" : "FILTERACTION",
-            "name" : "search",
+            "name" : "load",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FilterSearch"
+              "id" : "FilterGet"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -422,10 +422,10 @@
             }
           }, {
             "actionType" : "FILTERACTION",
-            "name" : "load",
+            "name" : "search",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FilterGet"
+              "id" : "FilterSearch"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -527,7 +527,7 @@
         "rSMode" : 2
       } ] ]
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,

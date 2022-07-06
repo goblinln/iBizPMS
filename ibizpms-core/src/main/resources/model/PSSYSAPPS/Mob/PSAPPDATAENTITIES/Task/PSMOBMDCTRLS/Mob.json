@@ -16,7 +16,7 @@
     "id" : "load"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
   "getItemPSLayoutPanel" : {
     "getAllPSPanelFields" : [ {
       "id" : "pri",
@@ -1083,15 +1083,15 @@
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "project",
-          "name" : "project",
-          "value" : "project",
-          "rawValue" : false
-        }, {
           "key" : "actioninfo",
           "name" : "actioninfo",
           "value" : "当前任务只有%1$s才可以记录工时。",
           "rawValue" : true
+        }, {
+          "key" : "project",
+          "name" : "project",
+          "value" : "project",
+          "rawValue" : false
         } ],
         "getPSSysImage" : {
           "glyph" : "xf017@FontAwesome",

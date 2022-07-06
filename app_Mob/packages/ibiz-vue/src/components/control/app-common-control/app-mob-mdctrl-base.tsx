@@ -180,11 +180,12 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
      * @memberof AppMobMDCtrlBase
      */
     public renderMainMDCtrl() {
+        const emptyText = this.controlInstance.emptyText;
         return this.items.length > 0
             ? <ion-list class="items" ref="ionlist">
                 {this.controlInstance.enableGroup ? this.renderHaveGroup() : this.renderNoGroup()}
             </ion-list>
-            : !this.isFirstLoad ? <div class="no-data">{this.$t('app.commonWords.noData')}</div> : null
+            : !this.isFirstLoad ? <div class="no-data">{emptyText || this.$t('app.commonWords.noData')}</div> : null
     }
 
     /**
@@ -261,7 +262,7 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
         if (!this.controlInstance.getItemPSLayoutPanel()) {
             return null
         }
-        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(this.controlInstance.getItemPSLayoutPanel());
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(this.controlInstance.getItemPSLayoutPanel(),item);
         Object.assign(targetCtrlParam.dynamicProps, { inputData: item });
         return <div style="width:100%;">
             <ion-item class="ibz-ionic-item">

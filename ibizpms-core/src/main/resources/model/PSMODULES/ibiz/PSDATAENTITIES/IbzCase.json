@@ -3389,13 +3389,6 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
     "codeName" : "MPickupView",
     "logicName" : "用例库用例实体数据多项选择视图",
     "modelTag" : "MPICKUPVIEW",
@@ -3410,75 +3403,10 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "InfoEdit",
-    "logicName" : "主信息编辑",
-    "modelTag2" : "0",
-    "name" : "主信息编辑",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "NewEditView",
-    "logicName" : "用例库用例实体编辑视图(新建)",
-    "name" : "用例库用例实体编辑视图(新建)",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "JBInfo",
-    "logicName" : "基本信息",
-    "modelTag2" : "0",
-    "name" : "基本信息",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "NewEdit",
-    "logicName" : "创建编辑",
-    "modelTag2" : "0",
-    "name" : "创建编辑",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "用例库用例实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "用例库用例实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "NewEditEditView9",
-    "logicName" : "用例库用例实体编辑视图（部件视图）（创建编辑）",
-    "name" : "用例库用例实体编辑视图（部件视图）（创建编辑）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "用例库用例实体选择表格视图（部件视图）",
-    "name" : "用例库用例实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "OpenCaseView",
-    "logicName" : "用例库用例实体数据看板视图",
-    "name" : "用例库用例实体数据看板视图",
+    "codeName" : "DashboardView",
+    "logicName" : "用例库用例实体数据看板视图(2)",
+    "name" : "用例库用例实体数据看板视图(2)",
     "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainEditView9",
-    "logicName" : "用例库用例实体编辑视图（部件视图）（主信息）",
-    "name" : "用例库用例实体编辑视图（部件视图）（主信息）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "用例库用例实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "用例库用例实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "用例库用例实体编辑视图（左右关系）",
-    "name" : "用例库用例实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -3488,10 +3416,42 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "OpenCaseView",
+    "logicName" : "用例库用例实体数据看板视图",
+    "name" : "用例库用例实体数据看板视图",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "EditEditView",
     "logicName" : "用例库用例实体编辑视图(编辑)",
     "name" : "用例库用例实体编辑视图(编辑)",
     "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "NewEditView",
+    "logicName" : "用例库用例实体编辑视图(新建)",
+    "name" : "用例库用例实体编辑视图(新建)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "用例库用例实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "用例库用例实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "用例库用例实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "用例库用例实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "用例库用例实体选择表格视图（部件视图）",
+    "name" : "用例库用例实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "InfoEditView9",
@@ -3500,16 +3460,56 @@
     "realModelSubType" : "DEEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "DashboardView",
-    "logicName" : "用例库用例实体数据看板视图(2)",
-    "name" : "用例库用例实体数据看板视图(2)",
-    "realModelSubType" : "DEPORTALVIEW",
+    "codeName" : "NewEditEditView9",
+    "logicName" : "用例库用例实体编辑视图（部件视图）（创建编辑）",
+    "name" : "用例库用例实体编辑视图（部件视图）（创建编辑）",
+    "realModelSubType" : "DEEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "用例库用例实体编辑视图（左右关系）",
+    "name" : "用例库用例实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainEditView9",
+    "logicName" : "用例库用例实体编辑视图（部件视图）（主信息）",
+    "name" : "用例库用例实体编辑视图（部件视图）（主信息）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "NewEdit",
+    "logicName" : "创建编辑",
+    "modelTag2" : "0",
+    "name" : "创建编辑",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "MainInfo",
     "logicName" : "主信息",
     "modelTag2" : "0",
     "name" : "主信息",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "InfoEdit",
+    "logicName" : "主信息编辑",
+    "modelTag2" : "0",
+    "name" : "主信息编辑",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "JBInfo",
+    "logicName" : "基本信息",
+    "modelTag2" : "0",
+    "name" : "基本信息",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   } ],
@@ -3560,10 +3560,6 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
     },
     "name" : "DER1N_IBZ_LIBCASESTEPS_IBZ_CASE_CASE",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "CASE",
@@ -3634,7 +3630,7 @@
   "name" : "IBZ_CASE",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

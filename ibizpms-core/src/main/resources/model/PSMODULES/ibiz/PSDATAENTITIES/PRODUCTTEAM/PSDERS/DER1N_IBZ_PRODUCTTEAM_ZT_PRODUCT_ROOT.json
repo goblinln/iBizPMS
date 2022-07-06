@@ -13,10 +13,6 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
   },
   "name" : "DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT",
-  "getNestedPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "Default"
-  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "ROOT",

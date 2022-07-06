@@ -125,7 +125,6 @@ export abstract class ProjectModuleBase extends EntityBase implements IProjectMo
      * id
      */
     parent?: any;
-
     /**
      * 重置实体数据
      *

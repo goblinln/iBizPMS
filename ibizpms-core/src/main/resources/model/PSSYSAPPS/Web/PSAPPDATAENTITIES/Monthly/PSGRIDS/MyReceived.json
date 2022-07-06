@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "我收到的月报",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -193,11 +193,18 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 25,
-    "name" : "issubmit",
+    "dataType" : 1,
+    "name" : "ibz_monthlyid",
     "getPSAppDEField" : {
-      "name" : "ISSUBMIT",
-      "codeName" : "Issubmit"
+      "name" : "IBZ_MONTHLYID",
+      "codeName" : "IbzMonthlyId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "ibz_monthlyname",
+    "getPSAppDEField" : {
+      "name" : "IBZ_MONTHLYNAME",
+      "codeName" : "IbzMonthlyName"
     }
   }, {
     "dataType" : 25,
@@ -205,13 +212,6 @@
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "reportstatus",
-    "getPSAppDEField" : {
-      "name" : "REPORTSTATUS",
-      "codeName" : "Reportstatus"
     }
   }, {
     "format" : "YYYY-MM-DD",
@@ -223,20 +223,31 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 1,
-    "name" : "ibz_monthlyid",
+    "name" : "reportto",
     "getPSAppDEField" : {
-      "name" : "IBZ_MONTHLYID",
-      "codeName" : "IbzMonthlyId"
+      "name" : "REPORTTO",
+      "codeName" : "Reportto"
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "reportstatus",
     "getPSAppDEField" : {
-      "name" : "IBZ_MONTHLYNAME",
-      "codeName" : "IbzMonthlyName"
+      "name" : "REPORTSTATUS",
+      "codeName" : "Reportstatus"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "issubmit",
+    "getPSAppDEField" : {
+      "name" : "ISSUBMIT",
+      "codeName" : "Issubmit"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBZ_MONTHLYID",
+      "codeName" : "IbzMonthlyId"
     }
   }, {
     "dataType" : 1,
@@ -247,26 +258,15 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "IBZ_MONTHLYID",
-      "codeName" : "IbzMonthlyId"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "reportto",
-    "getPSAppDEField" : {
-      "name" : "REPORTTO",
-      "codeName" : "Reportto"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "ibz_monthlyname",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYNAME",
       "codeName" : "IbzMonthlyName"
     }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "月报标识",

@@ -9604,41 +9604,16 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "ProjectMainEditEditView",
-    "logicName" : "测试报告实体编辑视图（主信息编辑）（项目）",
-    "name" : "测试报告实体编辑视图（主信息编辑）（项目）",
+    "codeName" : "EditView_Project",
+    "logicName" : "测试报告实体编辑视图（项目报告新建）",
+    "name" : "测试报告实体编辑视图（项目报告新建）",
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Action",
-    "logicName" : "Action",
-    "modelTag2" : "0",
-    "name" : "Action",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "testreport实体编辑视图（左右关系）",
-    "name" : "testreport实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ActionEditView",
-    "logicName" : "测试报告实体编辑视图(历史记录)",
-    "name" : "测试报告实体编辑视图(历史记录)",
+    "codeName" : "ProjectMainInfoView",
+    "logicName" : "测试报告实体编辑视图（主信息）（项目）",
+    "name" : "测试报告实体编辑视图（主信息）（项目）",
     "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView_TestRange",
-    "logicName" : "测试报告实体编辑视图（测试范围）",
-    "name" : "测试报告实体编辑视图（测试范围）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "projectDashboardView",
-    "logicName" : "测试报告实体数据看板视图（项目）",
-    "name" : "测试报告实体数据看板视图（项目）",
-    "realModelSubType" : "DEPORTALVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
@@ -9648,16 +9623,84 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "projectDashboardView",
+    "logicName" : "测试报告实体数据看板视图（项目）",
+    "name" : "测试报告实体数据看板视图（项目）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView_R",
+    "logicName" : "测试报告实体编辑视图（单数据）",
+    "name" : "测试报告实体编辑视图（单数据）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProjectGridView",
+    "logicName" : "测试报告实体表格视图（项目报告）",
+    "name" : "测试报告实体表格视图（项目报告）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "测试报告实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "测试报告实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView_Report",
+    "logicName" : "测试报告实体编辑视图（报告）",
+    "name" : "测试报告实体编辑视图（报告）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainEditEditView",
+    "logicName" : "测试报告实体编辑视图（主信息编辑）",
+    "name" : "测试报告实体编辑视图（主信息编辑）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView_TestRange",
+    "logicName" : "测试报告实体编辑视图（测试范围）",
+    "name" : "测试报告实体编辑视图（测试范围）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "EditView_tosumup",
     "logicName" : "测试报告实体编辑视图（总结）",
     "name" : "测试报告实体编辑视图（总结）",
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MainTabExpView",
-    "logicName" : "测试报告实体分页导航视图（主数据）",
-    "name" : "测试报告实体分页导航视图（主数据）",
-    "realModelSubType" : "DETABEXPVIEW",
+    "codeName" : "ProjectMainEditEditView",
+    "logicName" : "测试报告实体编辑视图（主信息编辑）（项目）",
+    "name" : "测试报告实体编辑视图（主信息编辑）（项目）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "testreport实体编辑视图（左右关系）",
+    "name" : "testreport实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "testreport实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "testreport实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DashboardView",
+    "logicName" : "测试报告实体数据看板视图",
+    "name" : "测试报告实体数据看板视图",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView_TestTasks",
+    "logicName" : "测试报告实体编辑视图（项目报告新建）（多数据）",
+    "name" : "测试报告实体编辑视图（项目报告新建）（多数据）",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupGridView",
@@ -9666,9 +9709,15 @@
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView_Project",
-    "logicName" : "测试报告实体编辑视图（项目报告新建）",
-    "name" : "测试报告实体编辑视图（项目报告新建）",
+    "codeName" : "ProjectTabExpView",
+    "logicName" : "测试报告实体分页导航视图（项目报告）",
+    "name" : "测试报告实体分页导航视图（项目报告）",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ActionEditView",
+    "logicName" : "测试报告实体编辑视图(历史记录)",
+    "name" : "测试报告实体编辑视图(历史记录)",
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -9679,9 +9728,22 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ProjectTabExpView",
-    "logicName" : "测试报告实体分页导航视图（项目报告）",
-    "name" : "测试报告实体分页导航视图（项目报告）",
+    "codeName" : "PickupView",
+    "logicName" : "testreport实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "testreport实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainInfoView",
+    "logicName" : "测试报告实体编辑视图（主信息）",
+    "name" : "测试报告实体编辑视图（主信息）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainTabExpView",
+    "logicName" : "测试报告实体分页导航视图（主数据）",
+    "name" : "测试报告实体分页导航视图（主数据）",
     "realModelSubType" : "DETABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -9692,50 +9754,12 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "ProjectGridView",
-    "logicName" : "测试报告实体表格视图（项目报告）",
-    "name" : "测试报告实体表格视图（项目报告）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Project_New",
-    "logicName" : "项目报告新建模式",
+    "codeName" : "tosumup",
+    "logicName" : "总结",
     "modelTag2" : "0",
-    "name" : "项目报告新建模式",
+    "name" : "总结",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView_Report",
-    "logicName" : "测试报告实体编辑视图（报告）",
-    "name" : "测试报告实体编辑视图（报告）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectMainInfoView",
-    "logicName" : "测试报告实体编辑视图（主信息）（项目）",
-    "name" : "测试报告实体编辑视图（主信息）（项目）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "testreport实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "testreport实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Report",
-    "logicName" : "报告",
-    "modelTag2" : "0",
-    "name" : "报告",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MainEditEditView",
-    "logicName" : "测试报告实体编辑视图（主信息编辑）",
-    "name" : "测试报告实体编辑视图（主信息编辑）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "TestRange",
     "logicName" : "测试范围",
@@ -9744,49 +9768,10 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "EditView_R",
-    "logicName" : "测试报告实体编辑视图（单数据）",
-    "name" : "测试报告实体编辑视图（单数据）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DashboardView",
-    "logicName" : "测试报告实体数据看板视图",
-    "name" : "测试报告实体数据看板视图",
-    "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "tosumup",
-    "logicName" : "总结",
+    "codeName" : "Report",
+    "logicName" : "报告",
     "modelTag2" : "0",
-    "name" : "总结",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "测试报告实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "测试报告实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "testreport实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "testreport实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainInfoView",
-    "logicName" : "测试报告实体编辑视图（主信息）",
-    "name" : "测试报告实体编辑视图（主信息）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainInfo",
-    "logicName" : "MainInfo",
-    "modelTag2" : "0",
-    "name" : "MainInfo",
+    "name" : "报告",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
@@ -9797,11 +9782,26 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "EditView_TestTasks",
-    "logicName" : "测试报告实体编辑视图（项目报告新建）（多数据）",
-    "name" : "测试报告实体编辑视图（项目报告新建）（多数据）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "Action",
+    "logicName" : "Action",
+    "modelTag2" : "0",
+    "name" : "Action",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Project_New",
+    "logicName" : "项目报告新建模式",
+    "modelTag2" : "0",
+    "name" : "项目报告新建模式",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MainInfo",
+    "logicName" : "MainInfo",
+    "modelTag2" : "0",
+    "name" : "MainInfo",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "TestReport",
   "dEType" : 1,
@@ -9941,7 +9941,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

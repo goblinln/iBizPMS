@@ -1,5 +1,5 @@
 import { Subject, Subscription } from 'rxjs';
-import { CodeListServiceBase } from 'ibiz-core'
+import { CodeListServiceBase, MobMDControlInterface } from 'ibiz-core'
 import { MainControlBase } from './main-control-base';
 import { GlobalService } from 'ibiz-service';
 
@@ -11,7 +11,7 @@ import { GlobalService } from 'ibiz-service';
  * @class MDControlBase
  * @extends {MainControlBase}
  */
-export class MDControlBase extends MainControlBase {
+export class MDControlBase extends MainControlBase implements MobMDControlInterface {
     /**
      * 代码表服务对象
      *
@@ -84,6 +84,13 @@ export class MDControlBase extends MainControlBase {
      * @memberof MDControlBase
      */
     public createAction?: string;
+
+    /**
+     * 数据映射（数据项名称和UI名称的映射）
+     * 
+     * @memberof MDControlBase
+     */
+    public dataMap: Map<string, any> = new Map();    
 
     /**
      * 当前页
@@ -197,6 +204,7 @@ export class MDControlBase extends MainControlBase {
         this.updateAction = this.controlInstance?.getUpdatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Update";
         this.fetchAction = this.controlInstance?.getFetchPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "FetchDefault";
         this.createAction = this.controlInstance?.getCreatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Create";
+        this.initDataMap();        
     }
 
     /**
@@ -241,4 +249,12 @@ export class MDControlBase extends MainControlBase {
     public getData(): any {
         return this.selections[0];
     }
+
+    /**
+     * 初始化数据映射
+     * 
+     * @memberof MDControlBase
+     */
+    public initDataMap() {}
+
 }

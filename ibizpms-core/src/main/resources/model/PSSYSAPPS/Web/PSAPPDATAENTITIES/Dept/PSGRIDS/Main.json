@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -223,13 +223,6 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 25,
-    "name" : "manager",
-    "getPSAppDEField" : {
-      "name" : "MANAGER",
-      "codeName" : "Manager"
-    }
-  }, {
     "dataType" : 1,
     "name" : "deptsn",
     "getPSAppDEField" : {
@@ -244,13 +237,6 @@
       "codeName" : "Name"
     }
   }, {
-    "dataType" : 1,
-    "name" : "parent",
-    "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    }
-  }, {
     "dataType" : 25,
     "name" : "parentname",
     "getPSAppDEField" : {
@@ -259,10 +245,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "manager",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "MANAGER",
+      "codeName" : "Manager"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -274,10 +267,17 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "parent",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {

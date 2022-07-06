@@ -1,5 +1,6 @@
 import { MainControlBase } from "./main-control-base";
 import { IPSAppDEView, IPSDETabViewPanel } from "@ibiz/dynamic-model-api";
+import { MobTabViewPanelControlInterface } from "ibiz-core";
 
 /**
  * 分页视图面板基类
@@ -8,7 +9,7 @@ import { IPSAppDEView, IPSDETabViewPanel } from "@ibiz/dynamic-model-api";
  * @class AppControlBase
  * @extends {TabViewPanelControlBase}
  */
-export class MobTabViewPanelControlBase extends MainControlBase {
+export class MobTabViewPanelControlBase extends MainControlBase implements MobTabViewPanelControlInterface{
 
     /**
      * 部件模型

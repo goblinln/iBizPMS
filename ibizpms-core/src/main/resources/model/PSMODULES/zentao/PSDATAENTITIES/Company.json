@@ -1571,16 +1571,10 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "MainView",
-    "logicName" : "公司实体数据看板视图（主数据）",
-    "name" : "公司实体数据看板视图（主数据）",
-    "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainTabExpView",
-    "logicName" : "公司实体分页导航视图（组织权限）",
-    "name" : "公司实体分页导航视图（组织权限）",
-    "realModelSubType" : "DETABEXPVIEW",
+    "codeName" : "MainView9",
+    "logicName" : "公司实体编辑视图（部件视图）（嵌入主信息）",
+    "name" : "公司实体编辑视图（部件视图）（嵌入主信息）",
+    "realModelSubType" : "DEEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -1590,16 +1584,35 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "DeptUserTreeExpView",
+    "logicName" : "公司实体树导航视图（组织部门人员）",
+    "name" : "公司实体树导航视图（组织部门人员）",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainView",
+    "logicName" : "公司实体数据看板视图（主数据）",
+    "name" : "公司实体数据看板视图（主数据）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "公司实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "公司实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "DeptTreeExpView",
     "logicName" : "公司实体树导航视图（组织部门）",
     "name" : "公司实体树导航视图（组织部门）",
     "realModelSubType" : "DETREEEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "DeptUserTreeExpView",
-    "logicName" : "公司实体树导航视图（组织部门人员）",
-    "name" : "公司实体树导航视图（组织部门人员）",
-    "realModelSubType" : "DETREEEXPVIEW",
+    "codeName" : "MainTabExpView",
+    "logicName" : "公司实体分页导航视图（组织权限）",
+    "name" : "公司实体分页导航视图（组织权限）",
+    "realModelSubType" : "DETABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView2",
@@ -1615,33 +1628,6 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "company实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "company实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "公司实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "公司实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainView9",
-    "logicName" : "公司实体编辑视图（部件视图）（嵌入主信息）",
-    "name" : "公司实体编辑视图（部件视图）（嵌入主信息）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主信息表单",
-    "modelTag2" : "0",
-    "name" : "主信息表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
     "codeName" : "GridView",
     "logicName" : "company实体表格视图",
     "modelTag" : "MDATAVIEW",
@@ -1655,10 +1641,24 @@
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "RedirectView",
+    "logicName" : "company实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "company实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "Main_Edit",
     "logicName" : "主编辑表单",
     "modelTag2" : "0",
     "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主信息表单",
+    "modelTag2" : "0",
+    "name" : "主信息表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   } ],
@@ -1696,7 +1696,7 @@
   "name" : "ZT_COMPANY",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

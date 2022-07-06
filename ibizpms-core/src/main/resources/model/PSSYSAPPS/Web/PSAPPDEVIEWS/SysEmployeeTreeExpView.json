@@ -45,13 +45,21 @@
   "getPSControls" : [ {
     "codeName" : "TreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
     },
     "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:project",
+      "realTitle" : "项目表格导航视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectGridExpView.json",
+        "viewType" : "DEGRIDEXPVIEW"
+      }
+    }, {
       "name" : "EXPITEM:post",
       "parentDataJO" : {
         "srfparentdefname" : "postid"
@@ -63,22 +71,22 @@
         "viewType" : "DEGRIDEXPVIEW"
       }
     }, {
-      "name" : "EXPITEM:SysTeam",
-      "parentDataJO" : {
-        "srfparentdefname" : "teamid"
-      },
-      "realTitle" : "组成员表格导航视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberGridExpViewTeam.json",
-        "viewType" : "DEGRIDEXPVIEW"
-      }
-    }, {
       "name" : "EXPITEM:UserContact",
       "realTitle" : "人员表格导航视图",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeGridExpView.json",
+        "viewType" : "DEGRIDEXPVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:SysPost",
+      "parentDataJO" : {
+        "srfparentdefname" : "postid"
+      },
+      "realTitle" : "组成员表格导航视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberGridExpView.json",
         "viewType" : "DEGRIDEXPVIEW"
       }
     }, {
@@ -93,14 +101,6 @@
         "viewType" : "DEGRIDEXPVIEW"
       }
     }, {
-      "name" : "EXPITEM:OrgEmp",
-      "realTitle" : "单位表格导航视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationGridExpView.json",
-        "viewType" : "DEGRIDEXPVIEW"
-      }
-    }, {
       "name" : "EXPITEM:Org",
       "realTitle" : "部门表格导航视图",
       "getRefPSAppView" : {
@@ -109,7 +109,7 @@
         "viewType" : "DEGRIDEXPVIEW"
       }
     }, {
-      "name" : "EXPITEM:Teammember",
+      "name" : "EXPITEM:ContActUser",
       "realTitle" : "人员编辑视图",
       "getRefPSAppView" : {
         "modelref" : true,
@@ -117,12 +117,20 @@
         "viewType" : "DEEDITVIEW"
       }
     }, {
-      "name" : "EXPITEM:project",
-      "realTitle" : "项目表格导航视图",
+      "name" : "EXPITEM:OrgEmp",
+      "realTitle" : "单位表格导航视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectGridExpView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationGridExpView.json",
         "viewType" : "DEGRIDEXPVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ProjectEmp",
+      "realTitle" : "人员编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
+        "viewType" : "DEEDITVIEW"
       }
     }, {
       "name" : "EXPITEM:Depart",
@@ -141,7 +149,18 @@
         "viewType" : "DEGRIDEXPVIEW"
       }
     }, {
-      "name" : "EXPITEM:ContActUser",
+      "name" : "EXPITEM:SysTeam",
+      "parentDataJO" : {
+        "srfparentdefname" : "teamid"
+      },
+      "realTitle" : "组成员表格导航视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberGridExpViewTeam.json",
+        "viewType" : "DEGRIDEXPVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:IBZEMP",
       "realTitle" : "人员编辑视图",
       "getRefPSAppView" : {
         "modelref" : true,
@@ -149,18 +168,7 @@
         "viewType" : "DEEDITVIEW"
       }
     }, {
-      "name" : "EXPITEM:SysPost",
-      "parentDataJO" : {
-        "srfparentdefname" : "postid"
-      },
-      "realTitle" : "组成员表格导航视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberGridExpView.json",
-        "viewType" : "DEGRIDEXPVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:IBZEMP",
+      "name" : "EXPITEM:Teammember",
       "realTitle" : "人员编辑视图",
       "getRefPSAppView" : {
         "modelref" : true,
@@ -174,14 +182,6 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamGridExpView.json",
         "viewType" : "DEGRIDEXPVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:ProjectEmp",
-      "realTitle" : "人员编辑视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
-        "viewType" : "DEEDITVIEW"
       }
     } ],
     "getPSControlHandler" : {

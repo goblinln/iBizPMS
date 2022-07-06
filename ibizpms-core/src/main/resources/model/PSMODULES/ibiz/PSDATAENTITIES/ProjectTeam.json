@@ -635,6 +635,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "project",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (project)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -749,6 +750,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "project",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (project)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -829,6 +831,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "project",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (project)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -3717,93 +3720,6 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "PickupView",
-    "logicName" : "项目团队实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "项目团队实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "项目团队实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "项目团队实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "项目团队实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "项目团队实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectTeamMobMEditView",
-    "logicName" : "项目团队实体移动端多表单编辑视图（部件视图）（项目团队）",
-    "name" : "项目团队实体移动端多表单编辑视图（部件视图）（项目团队）",
-    "realModelSubType" : "DEMOBMEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobEditView",
-    "logicName" : "项目团队实体移动端编辑视图",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "项目团队实体移动端编辑视图",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MainGridView_EditRow",
-    "logicName" : "项目团队实体表格视图（团队管理）",
-    "name" : "项目团队实体表格视图（团队管理）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "项目团队实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "项目团队实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "项目团队实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "项目团队实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "项目团队实体选择表格视图（部件视图）",
-    "name" : "项目团队实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "项目团队实体编辑视图（左右关系）",
-    "name" : "项目团队实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainGridView",
-    "logicName" : "项目团队实体表格视图（主表格）",
-    "modelTag" : "MDATAVIEW",
-    "name" : "项目团队实体表格视图（主表格）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "MobRedirectView",
     "logicName" : "项目团队实体移动端数据重定向视图",
     "modelTag" : "MOBREDIRECTVIEW",
@@ -3817,10 +3733,10 @@
     "realModelSubType" : "DELISTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "项目团队实体移动端选择多数据视图（部件视图）",
-    "name" : "项目团队实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "项目团队实体编辑视图（左右关系）",
+    "name" : "项目团队实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -3830,12 +3746,26 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ProjectTeamMob",
-    "logicName" : "项目团队",
-    "modelTag2" : "1",
-    "name" : "项目团队",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "MPickupView",
+    "logicName" : "项目团队实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "项目团队实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "项目团队实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "项目团队实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "项目团队实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "项目团队实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobPickupView",
     "logicName" : "项目团队实体移动端数据选择视图",
@@ -3844,11 +3774,84 @@
     "realModelSubType" : "DEMOBPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "ProjectTeamMobMEditView",
+    "logicName" : "项目团队实体移动端多表单编辑视图（部件视图）（项目团队）",
+    "name" : "项目团队实体移动端多表单编辑视图（部件视图）（项目团队）",
+    "realModelSubType" : "DEMOBMEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "ProjectTeamMobEditView",
     "logicName" : "项目团队实体移动端编辑视图（部件视图）（项目团队）",
     "name" : "项目团队实体移动端编辑视图（部件视图）（项目团队）",
     "realModelSubType" : "DEMOBEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "项目团队实体移动端选择多数据视图（部件视图）",
+    "name" : "项目团队实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "项目团队实体选择表格视图（部件视图）",
+    "name" : "项目团队实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "项目团队实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "项目团队实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainGridView_EditRow",
+    "logicName" : "项目团队实体表格视图（团队管理）",
+    "name" : "项目团队实体表格视图（团队管理）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "项目团队实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "项目团队实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "项目团队实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "项目团队实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainGridView",
+    "logicName" : "项目团队实体表格视图（主表格）",
+    "modelTag" : "MDATAVIEW",
+    "name" : "项目团队实体表格视图（主表格）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProjectTeamMob",
+    "logicName" : "项目团队",
+    "modelTag2" : "1",
+    "name" : "项目团队",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "ProjectTeam",
   "dEType" : 1,
@@ -3891,10 +3894,6 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
     },
     "name" : "DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "ROOT",
@@ -3916,7 +3915,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

@@ -49,7 +49,6 @@ export abstract class SysTeamBase extends EntityBase implements ISysTeam {
      * 区属
      */
     domains?: any;
-
     /**
      * 重置实体数据
      *

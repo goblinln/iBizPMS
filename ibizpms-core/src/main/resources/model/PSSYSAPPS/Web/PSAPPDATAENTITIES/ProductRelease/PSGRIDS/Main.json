@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -386,14 +386,14 @@
             "id" : "ZTProduct__LINKBUG"
           },
           "getPSNavigateContexts" : [ {
-            "key" : "TEST",
-            "name" : "TEST",
-            "value" : "product",
-            "rawValue" : false
-          }, {
             "key" : "RELEASE",
             "name" : "RELEASE",
             "value" : "id",
+            "rawValue" : false
+          }, {
+            "key" : "TEST",
+            "name" : "TEST",
+            "value" : "product",
             "rawValue" : false
           }, {
             "key" : "PRODUCT",
@@ -626,6 +626,27 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "buildname",
+    "getPSAppDEField" : {
+      "name" : "BUILDNAME",
+      "codeName" : "Buildname"
+    }
+  }, {
     "dataType" : 25,
     "name" : "status",
     "getPSAppDEField" : {
@@ -642,20 +663,31 @@
     }
   }, {
     "dataType" : 1,
+    "name" : "releasesn",
+    "getPSAppDEField" : {
+      "name" : "RELEASESN",
+      "codeName" : "Releasesn"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "marker",
+    "getPSAppDEField" : {
+      "name" : "MARKER",
+      "codeName" : "Marker"
+    }
+  }, {
+    "dataType" : 1,
     "name" : "build",
     "getPSAppDEField" : {
       "name" : "BUILD",
       "codeName" : "Build"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
     }
   }, {
     "dataType" : 1,
@@ -674,41 +706,6 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "releasesn",
-    "getPSAppDEField" : {
-      "name" : "RELEASESN",
-      "codeName" : "Releasesn"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "marker",
-    "getPSAppDEField" : {
-      "name" : "MARKER",
-      "codeName" : "Marker"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "name",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 1,
     "name" : "branch",
     "getPSAppDEField" : {
       "name" : "BRANCH",
@@ -716,11 +713,14 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "buildname",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "BUILDNAME",
-      "codeName" : "Buildname"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "ID",

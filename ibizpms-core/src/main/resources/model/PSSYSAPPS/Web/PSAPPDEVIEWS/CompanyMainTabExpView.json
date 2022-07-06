@@ -30,12 +30,12 @@
         "viewType" : "DETREEEXPVIEW"
       }
     }, {
-      "name" : "EXPITEM:tabviewpanel5",
-      "realTitle" : "系统日志列表视图",
+      "name" : "EXPITEM:tabviewpanel2",
+      "realTitle" : "组织部门树导航视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionAllTrendsListView.json",
-        "viewType" : "DELISTVIEW"
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CompanyDeptTreeExpView.json",
+        "viewType" : "DETREEEXPVIEW"
       }
     }, {
       "name" : "EXPITEM:tabviewpanel3",
@@ -46,20 +46,20 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
+      "name" : "EXPITEM:tabviewpanel5",
+      "realTitle" : "系统日志列表视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionAllTrendsListView.json",
+        "viewType" : "DELISTVIEW"
+      }
+    }, {
       "name" : "EXPITEM:tabviewpanel4",
       "realTitle" : "公司数据看板视图",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CompanyMainView.json",
         "viewType" : "DEPORTALVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:tabviewpanel2",
-      "realTitle" : "组织部门树导航视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CompanyDeptTreeExpView.json",
-        "viewType" : "DETREEEXPVIEW"
       }
     } ],
     "getPSControlParam" : { },
@@ -124,24 +124,13 @@
         "getPSControls" : [ {
           "codeName" : "DeptUserTreeExpViewtreeexpbar",
           "controlType" : "TREEEXPBAR",
-          "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+          "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
           "name" : "treeexpbar",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
           },
           "getPSAppViewRefs" : [ {
-            "name" : "EXPITEM:SubDept",
-            "parentDataJO" : {
-              "srfparentdefname" : "n_dept_eq"
-            },
-            "realTitle" : "用户表格视图",
-            "getRefPSAppView" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserMainGridView.json",
-              "viewType" : "DEGRIDVIEW"
-            }
-          }, {
             "name" : "EXPITEM:RootDept",
             "parentDataJO" : {
               "srfparentdefname" : "n_dept_eq"
@@ -154,6 +143,17 @@
             }
           }, {
             "name" : "EXPITEM:AllDept",
+            "realTitle" : "用户表格视图",
+            "getRefPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserMainGridView.json",
+              "viewType" : "DEGRIDVIEW"
+            }
+          }, {
+            "name" : "EXPITEM:SubDept",
+            "parentDataJO" : {
+              "srfparentdefname" : "n_dept_eq"
+            },
             "realTitle" : "用户表格视图",
             "getRefPSAppView" : {
               "modelref" : true,

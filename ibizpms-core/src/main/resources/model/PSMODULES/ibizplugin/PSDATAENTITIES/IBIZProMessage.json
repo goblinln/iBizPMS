@@ -2160,17 +2160,17 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "PickupGridView",
-    "logicName" : "消息实体选择表格视图（部件视图）",
-    "name" : "消息实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "EditView",
     "logicName" : "消息实体编辑视图",
     "modelTag" : "EDITVIEW",
     "name" : "消息实体编辑视图",
     "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "消息实体选择表格视图（部件视图）",
+    "name" : "消息实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -2194,6 +2194,12 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "EditView2",
+    "logicName" : "消息实体编辑视图（左右关系）",
+    "name" : "消息实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "PickupView",
     "logicName" : "消息实体数据选择视图",
     "modelTag" : "PICKUPVIEW",
@@ -2207,12 +2213,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "消息实体编辑视图（左右关系）",
-    "name" : "消息实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "IBIZProMessage",
   "dEType" : 1,
@@ -2251,7 +2251,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

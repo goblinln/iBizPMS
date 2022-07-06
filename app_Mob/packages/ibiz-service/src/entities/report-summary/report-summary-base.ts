@@ -139,7 +139,6 @@ export abstract class ReportSummaryBase extends EntityBase implements IReportSum
      * 计划任务
      */
     tomorrowplanstask?: any;
-
     /**
      * 重置实体数据
      *

@@ -169,7 +169,6 @@ export abstract class ProductReleaseBase extends EntityBase implements IProductR
      * 平台/分支
      */
     branch?: any;
-
     /**
      * 重置实体数据
      *

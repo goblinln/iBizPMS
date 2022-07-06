@@ -143,7 +143,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "MOB_Release_Story",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -515,15 +515,15 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
         },
         "getPSNavigateContexts" : [ {
-          "key" : "STORY",
-          "name" : "STORY",
-          "value" : "0",
-          "rawValue" : true
-        }, {
           "key" : "RELEASE",
           "name" : "RELEASE",
           "value" : "srfparentkey",
           "rawValue" : false
+        }, {
+          "key" : "STORY",
+          "name" : "STORY",
+          "value" : "0",
+          "rawValue" : true
         }, {
           "key" : "PRODUCT",
           "name" : "PRODUCT",
@@ -531,15 +531,15 @@
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "product",
-          "name" : "product",
-          "value" : "product",
-          "rawValue" : false
-        }, {
           "key" : "story",
           "name" : "story",
           "value" : "0",
           "rawValue" : true
+        }, {
+          "key" : "product",
+          "name" : "product",
+          "value" : "product",
+          "rawValue" : false
         }, {
           "key" : "release",
           "name" : "release",

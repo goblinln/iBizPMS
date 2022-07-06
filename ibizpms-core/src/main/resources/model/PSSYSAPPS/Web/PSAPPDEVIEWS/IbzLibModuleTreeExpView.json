@@ -45,13 +45,21 @@
   "getPSControls" : [ {
     "codeName" : "TreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
     },
     "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:ALL",
+      "realTitle" : "用例库模块表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibModuleGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
       "name" : "EXPITEM:LibRoot",
       "parentDataJO" : {
         "srfparentdefname" : "n_parent_eq"
@@ -67,14 +75,6 @@
       "parentDataJO" : {
         "srfparentdefname" : "n_parent_eq"
       },
-      "realTitle" : "用例库模块表格视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibModuleGridView.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:ALL",
       "realTitle" : "用例库模块表格视图",
       "getRefPSAppView" : {
         "modelref" : true,

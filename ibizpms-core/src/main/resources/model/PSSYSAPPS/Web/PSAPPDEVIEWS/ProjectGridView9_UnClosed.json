@@ -86,6 +86,14 @@
     "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
+    "name" : "EDITDATA",
+    "realTitle" : "项目",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    }
+  }, {
     "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_LEFT",
     "realTitle" : "项目",
@@ -93,14 +101,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
       "viewType" : "DEEDITVIEW"
-    }
-  }, {
-    "name" : "EDITDATA",
-    "realTitle" : "项目",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
-      "viewType" : "DETABEXPVIEW"
     }
   } ],
   "getPSControls" : [ {
@@ -114,7 +114,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（无分页）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -328,32 +328,11 @@
         "codeName" : "Id"
       }
     }, {
-      "dataType" : 1,
-      "name" : "projectsn",
-      "getPSAppDEField" : {
-        "name" : "PROJECTSN",
-        "codeName" : "Projectsn"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "status",
-      "getPSAppDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      }
-    }, {
       "dataType" : 25,
       "name" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "parent",
-      "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
       }
     }, {
       "dataType" : 25,
@@ -364,13 +343,32 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "status",
       "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "STATUS",
+        "codeName" : "Status"
+      }
+    }, {
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "end",
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "projectsn",
+      "getPSAppDEField" : {
+        "name" : "PROJECTSN",
+        "codeName" : "Projectsn"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -382,19 +380,21 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "parent",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PARENT",
+        "codeName" : "Parent"
       }
     }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "end",
+      "dataType" : 25,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "END",
-        "codeName" : "End"
+        "name" : "NAME",
+        "codeName" : "Name"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "项目编号",

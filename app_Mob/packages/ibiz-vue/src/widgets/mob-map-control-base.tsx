@@ -1,15 +1,12 @@
-import { Vue, Component, Watch, Prop } from 'vue-property-decorator';
-import { Subject, Subscription } from 'rxjs';
-import { Util, ViewTool, ModelTool } from 'ibiz-core';
+import { Subscription } from 'rxjs';
 import { MDControlBase } from './md-control-base';
 import { GlobalService } from 'ibiz-service';
 import { AppMobMapService } from '../ctrl-service';
-import { AppCenterService, AppViewLogicService } from '../app-service';
-import { ViewOpenService } from '../app-service/common-service/view-open-service';
+import { AppCenterService } from '../app-service';
 import { IPSMap, IPSSysMap, IPSSysMapItem } from '@ibiz/dynamic-model-api';
 import echarts from 'echarts';
-import 'echarts/map/js/china.js';
-
+import '../components/control/app-default-mob-map/china.js';
+import { MobMapControlInterface } from 'ibiz-core';
 /**
  * 地图部件基类
  *
@@ -17,7 +14,7 @@ import 'echarts/map/js/china.js';
  * @class MobMapControlBase
  * @extends {MDControlBase}
  */
-export class MobMapControlBase extends MDControlBase{
+export class MobMapControlBase extends MDControlBase implements MobMapControlInterface{
 
     /**
      * 地图部件实例
@@ -52,7 +49,7 @@ export class MobMapControlBase extends MDControlBase{
     * @param {Array<any>}
     * @memberof MobMapControlBase
     */
-    public items:Array<any> =[];
+    public items: Array<any> = [];
 
     /**
      * 获取单项树
@@ -77,10 +74,10 @@ export class MobMapControlBase extends MDControlBase{
      * 执行created后的逻辑
      *
      *  @memberof MobMapControlBase
-     */    
-    protected afterCreated(){
+     */
+    protected afterCreated() {
         if (this.viewState) {
-            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }:any) => {
+            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
                 if (!Object.is(this.name, tag)) {
                     return;
                 }
@@ -98,12 +95,12 @@ export class MobMapControlBase extends MDControlBase{
                 }
             });
         }
-        if(AppCenterService && AppCenterService.getMessageCenter()){
-            this.appStateEvent = AppCenterService.getMessageCenter().subscribe(({ name, action, data }) =>{
-                if(!Object.is(name,"MOBMAP")){
+        if (AppCenterService && AppCenterService.getMessageCenter()) {
+            this.appStateEvent = AppCenterService.getMessageCenter().subscribe(({ name, action, data }) => {
+                if (!Object.is(name, "MOBMAP")) {
                     return;
                 }
-                if(Object.is(action,'appRefresh')){
+                if (Object.is(action, 'appRefresh')) {
                     this.refresh();
                 }
             })
@@ -115,7 +112,7 @@ export class MobMapControlBase extends MDControlBase{
      *
      * @memberof MobMapControlBase
      */
-    public async ctrlModelInit(args?:any) {
+    public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit(args);
         if (!(this.Environment?.isPreviewMode)) {
             this.service = new AppMobMapService(this.controlInstance);
@@ -134,13 +131,13 @@ export class MobMapControlBase extends MDControlBase{
      * @returns {Promise<any>}
      * @memberof MobMapControlBase
      */
-    private async load(data: any = {}, type: string = "",isloadding = this.showBusyIndicator): Promise<any> {
+    public async load(data: any = {}, type: string = "", isloadding = this.showBusyIndicator): Promise<any> {
         const parentdata: any = {};
         this.ctrlEvent({ controlname: this.controlInstance.name, action: 'beforeload', data: parentdata });
         Object.assign(data, parentdata);
-        let tempViewParams:any = parentdata.viewparams?parentdata.viewparams:{};
-        Object.assign(tempViewParams,JSON.parse(JSON.stringify(this.viewparams)));
-        Object.assign(data,{viewparams:tempViewParams});
+        let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
+        Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
+        Object.assign(data, { viewparams: tempViewParams });
         const response: any = await this.service.search(this.fetchAction, this.context, data, isloadding);
         if (!response || response.status !== 200) {
             this.$notify({ type: 'danger', message: response.error.message });
@@ -179,23 +176,23 @@ export class MobMapControlBase extends MDControlBase{
      *
      * @type {}
      * @memberof MobMapControlBase
-     */   
-    public map :any;
+     */
+    public map: any;
 
     /**
      * 图表div绑定的id
      *
      * @type {}
      * @memberof MobMapControlBase
-     */   
-    public mapId:string = this.$util.createUUID();
+     */
+    public mapId: string = this.$util.createUUID();
 
     /**
      * 地图样式
      *
      * @type {}
      * @memberof MobMapControlBase
-     */   
+     */
     public mapStyle = '';
 
     /**
@@ -203,8 +200,8 @@ export class MobMapControlBase extends MDControlBase{
      *
      * @type {}
      * @memberof MobMapControlBase
-     */   
-    public mapItems:any = {}
+     */
+    public mapItems: any = {}
 
     /**
      * 初始化配置
@@ -212,7 +209,7 @@ export class MobMapControlBase extends MDControlBase{
      * @type {}
      * @memberof MobMapControlBase
      */
-     public initOptions: any = {
+    public initOptions: any = {
         tooltip: {
             trigger: 'item'
         },
@@ -239,7 +236,7 @@ export class MobMapControlBase extends MDControlBase{
                     borderColor: 'rgba(0, 0, 0, 0.2)',
                     // 地图默认背景
                     areaColor: "#efefef",
-    
+
                 },
                 emphasis: {
                     // 点击背景颜色
@@ -317,8 +314,8 @@ export class MobMapControlBase extends MDControlBase{
      *
      * @type {}
      * @memberof MobMapControlBase
-     */ 
-    public afterMounted(){
+     */
+    public afterMounted() {
         let element: any = this.$refs[this.mapId];
         this.map = echarts.init(element);
         this.map.setOption(this.initOptions);
@@ -329,18 +326,18 @@ export class MobMapControlBase extends MDControlBase{
      *
      * @memberof MobMapControlBase
      */
-    public ctrlMounted(){
+    public ctrlMounted() {
         super.ctrlMounted();
         this.afterMounted();
     }
-    
+
     /**
      * 绘制
      *
      * @type {}
      * @memberof MobMapControlBase
-     */ 
-    public setOptions(){
+     */
+    public setOptions() {
         if (!this.map) {
             return;
         }
@@ -414,7 +411,7 @@ export class MobMapControlBase extends MDControlBase{
                 })
             });
         }
-    }    
+    }
 
 
 }

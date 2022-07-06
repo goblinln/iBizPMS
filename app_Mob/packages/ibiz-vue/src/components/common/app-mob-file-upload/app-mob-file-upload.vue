@@ -462,7 +462,13 @@ export default class AppMobFileUpload extends Vue {
      * @memberof AppMobFileUpload
      */
     public onError(error: any, file: any, fileList: any) {
-        this.$Notice.error(`${this.$t('upload_failed')}`);
+        let res = error.response;
+        if (res) {
+          let message = res.data.message;
+          this.$Notice.error(message);
+        } else {
+          this.$Notice.error(`${this.$t('upload_failed')}`);
+        }
     }
 
     /**

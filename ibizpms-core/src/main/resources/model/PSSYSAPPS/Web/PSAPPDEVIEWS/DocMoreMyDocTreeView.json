@@ -20,15 +20,15 @@
     } ]
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "n_addedby_eq",
-    "name" : "n_addedby_eq",
-    "value" : "srfloginname",
-    "rawValue" : false
-  }, {
     "key" : "parent",
     "name" : "parent",
     "value" : "0",
     "rawValue" : true
+  }, {
+    "key" : "n_addedby_eq",
+    "name" : "n_addedby_eq",
+    "value" : "srfloginname",
+    "rawValue" : false
   } ],
   "getPSControls" : [ {
     "codeName" : "MoreMyDocTree",

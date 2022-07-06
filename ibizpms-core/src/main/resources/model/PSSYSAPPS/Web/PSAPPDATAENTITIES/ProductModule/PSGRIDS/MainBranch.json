@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（平台）",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -223,6 +223,27 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "branch_text",
+    "getPSAppDEField" : {
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "branch",
+    "getPSAppDEField" : {
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    }
+  }, {
+    "dataType" : 25,
     "name" : "short",
     "getPSAppDEField" : {
       "name" : "SHORT",
@@ -236,25 +257,25 @@
       "codeName" : "Order"
     }
   }, {
+    "dataType" : 25,
+    "name" : "type",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "parent",
+    "getPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    }
+  }, {
     "dataType" : 1,
     "name" : "root",
     "getPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "branch_text",
-    "getPSAppDEField" : {
-      "name" : "BRANCH",
-      "codeName" : "Branch"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "name",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
     }
   }, {
     "dataType" : 25,
@@ -265,31 +286,10 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "parent",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "branch",
-    "getPSAppDEField" : {
-      "name" : "BRANCH",
-      "codeName" : "Branch"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "type",
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -300,14 +300,55 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {
+    "caption" : "名称",
+    "codeName" : "name",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "maxLength" : 60,
+      "name" : "name",
+      "placeHolder" : "模块名称"
+    },
+    "allowEmpty" : false
+  }, {
+    "caption" : "平台",
+    "codeName" : "branch",
+    "createDV" : "branch",
+    "createDVT" : "CONTEXT",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "branch",
+    "getPSAppDEField" : {
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    },
+    "getPSEditor" : {
+      "editorType" : "DROPDOWNLIST",
+      "name" : "branch",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch_Cache.json"
+      },
+      "singleSelect" : true
+    },
+    "valueItemName" : "branch",
+    "allowEmpty" : true,
+    "needCodeListConfig" : true
+  }, {
     "caption" : "简称",
     "codeName" : "short",
     "enableCond" : 3,
@@ -341,64 +382,6 @@
     },
     "allowEmpty" : false
   }, {
-    "caption" : "名称",
-    "codeName" : "name",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "name",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "maxLength" : 60,
-      "name" : "name",
-      "placeHolder" : "模块名称"
-    },
-    "allowEmpty" : false
-  }, {
-    "caption" : "id",
-    "codeName" : "parent",
-    "createDV" : "srfparentkey",
-    "createDVT" : "CONTEXT",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "parent",
-    "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    },
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "parent"
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "平台",
-    "codeName" : "branch",
-    "createDV" : "branch",
-    "createDVT" : "CONTEXT",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "branch",
-    "getPSAppDEField" : {
-      "name" : "BRANCH",
-      "codeName" : "Branch"
-    },
-    "getPSEditor" : {
-      "editorType" : "DROPDOWNLIST",
-      "name" : "branch",
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch_Cache.json"
-      },
-      "singleSelect" : true
-    },
-    "valueItemName" : "branch",
-    "allowEmpty" : true,
-    "needCodeListConfig" : true
-  }, {
     "caption" : "类型（story）",
     "codeName" : "type",
     "createDV" : "moduletype",
@@ -414,6 +397,23 @@
       "editorType" : "TEXTBOX",
       "maxLength" : 30,
       "name" : "type"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "id",
+    "codeName" : "parent",
+    "createDV" : "srfparentkey",
+    "createDVT" : "CONTEXT",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "parent",
+    "getPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "parent"
     },
     "allowEmpty" : true
   }, {

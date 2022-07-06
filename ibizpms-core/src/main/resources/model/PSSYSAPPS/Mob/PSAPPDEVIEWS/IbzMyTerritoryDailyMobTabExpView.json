@@ -22,19 +22,19 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:tabviewpanel",
-      "realTitle" : "日报移动端多数据视图（主数据）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyDailyMobMDView.json",
-        "viewType" : "DEMOBMDVIEW"
-      }
-    }, {
       "name" : "EXPITEM:tabviewpanel3",
       "realTitle" : "任务移动端多数据视图(我的已完成任务)",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMyPlansTomorrowTaskMobMDView.json",
+        "viewType" : "DEMOBMDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:tabviewpanel",
+      "realTitle" : "日报移动端多数据视图（主数据）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyDailyMobMDView.json",
         "viewType" : "DEMOBMDVIEW"
       }
     }, {
@@ -176,7 +176,7 @@
             "id" : "load"
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+          "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
           "getItemPSLayoutPanel" : {
             "getAllPSPanelFields" : [ {
               "id" : "pri",

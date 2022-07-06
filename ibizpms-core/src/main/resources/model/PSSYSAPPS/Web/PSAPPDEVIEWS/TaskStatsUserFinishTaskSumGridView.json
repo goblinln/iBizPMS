@@ -71,7 +71,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "用户完成任务汇总表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -266,17 +266,17 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 25,
+      "name" : "projectname",
+      "getPSAppDEField" : {
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      }
+    }, {
+      "dataType" : 25,
       "name" : "finishedby",
       "getPSAppDEField" : {
         "name" : "FINISHEDBY",
         "codeName" : "FinishedBy"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "totalconsumed",
-      "getPSAppDEField" : {
-        "name" : "TOTALCONSUMED",
-        "codeName" : "TotalConsumed"
       }
     }, {
       "dataType" : 9,
@@ -286,6 +286,13 @@
         "codeName" : "TotalEstimate"
       }
     }, {
+      "dataType" : 9,
+      "name" : "totalconsumed",
+      "getPSAppDEField" : {
+        "name" : "TOTALCONSUMED",
+        "codeName" : "TotalConsumed"
+      }
+    }, {
       "dataType" : 25,
       "name" : "taskefficient",
       "getPSAppDEField" : {
@@ -293,18 +300,11 @@
         "codeName" : "Taskefficient"
       }
     }, {
-      "dataType" : 25,
-      "name" : "projectname",
+      "dataType" : 1,
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "PROJECTNAME",
-        "codeName" : "ProjectName"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -315,11 +315,11 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
+      "dataType" : 25,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "NAME",
+        "codeName" : "Name"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -373,7 +373,7 @@
     "codeName" : "UserFinishTask",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats/PSSEARCHFORMS/UserFinishTask.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "用户完成任务",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -382,10 +382,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -404,10 +404,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

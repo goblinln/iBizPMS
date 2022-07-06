@@ -3,6 +3,28 @@
   margin: 0 !important;
   .app-layoutpanel-container{
     background-color: #fff;
+    padding: 5px;
+    .tab-panel-container{
+      padding: 0;
+    }
+  }
+  .tab-panel-container{
+    padding: 5px;
+    background-color: #fff;
+    .app-layoutpanel-tabpanel{
+      .van-tabs__wrap{
+        .van-tabs__nav{
+          border-color: var(--app-background-color); 
+          margin: 0;
+          .van-tab{
+            border-color: var(--app-background-color); 
+          }
+          .van-tab--active{
+            background-color: var(--app-background-color);
+          }
+        }
+      }
+    }
   }
   .van-row{
     >.app-layoutpanel-container {
@@ -16,9 +38,6 @@
             overflow: initial;
         }
     }
-  }
-  .van-col{
-    padding: 5px;
   }
 }
 

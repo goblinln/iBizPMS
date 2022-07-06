@@ -30,7 +30,7 @@
     "useDefaultLayout" : true
   },
   "getRedirectPSAppViewRefs" : [ {
-    "name" : "EDITVIEW",
+    "name" : "ZT_TESTTASK:EDITVIEW",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "测试版本数据看板视图",
     "getRefPSAppView" : {
@@ -39,7 +39,7 @@
       "viewType" : "DEPORTALVIEW"
     }
   }, {
-    "name" : "ZT_TESTTASK:EDITVIEW",
+    "name" : "EDITVIEW",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "测试版本数据看板视图",
     "getRefPSAppView" : {

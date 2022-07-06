@@ -120,77 +120,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "StorySumGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "产品汇总表操作栏",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT"
-      },
-      "caption" : "导出",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT"
-        },
-        "caption" : "导出",
-        "codeName" : "ExportExcel",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）",
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "predefinedType" : "GRIDVIEW_EXPORTACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "导出",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "PAGE",
     "codeName" : "ProductStorySum",
     "columnEnableLink" : 2,
@@ -201,7 +130,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "产品需求汇总表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -542,82 +471,11 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 9,
-      "name" : "developedstagestorycnt",
-      "getPSAppDEField" : {
-        "name" : "DEVELOPEDSTAGESTORYCNT",
-        "codeName" : "Developedstagestorycnt"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "verifiedstagestorycnt",
-      "getPSAppDEField" : {
-        "name" : "VERIFIEDSTAGESTORYCNT",
-        "codeName" : "Verifiedstagestorycnt"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "testedstagestorycnt",
-      "getPSAppDEField" : {
-        "name" : "TESTEDSTAGESTORYCNT",
-        "codeName" : "Testedstagestorycnt"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "storycnt",
-      "getPSAppDEField" : {
-        "name" : "STORYCNT",
-        "codeName" : "StoryCnt"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "srfdataaccaction",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataAccessAction" : true
-    }, {
-      "dataType" : 1,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "closedstagestorycnt",
-      "getPSAppDEField" : {
-        "name" : "CLOSEDSTAGESTORYCNT",
-        "codeName" : "Closedstagestorycnt"
-      }
-    }, {
       "dataType" : 25,
       "name" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "projectedstagestorycnt",
-      "getPSAppDEField" : {
-        "name" : "PROJECTEDSTAGESTORYCNT",
-        "codeName" : "Projectedstagestorycnt"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "releasedstagestorycnt",
-      "getPSAppDEField" : {
-        "name" : "RELEASEDSTAGESTORYCNT",
-        "codeName" : "Releasedstagestorycnt"
       }
     }, {
       "dataType" : 25,
@@ -628,10 +486,38 @@
       }
     }, {
       "dataType" : 9,
+      "name" : "waitstagestorycnt",
+      "getPSAppDEField" : {
+        "name" : "WAITSTAGESTORYCNT",
+        "codeName" : "Waitstagestorycnt"
+      }
+    }, {
+      "dataType" : 9,
       "name" : "planedstagestorycnt",
       "getPSAppDEField" : {
         "name" : "PLANEDSTAGESTORYCNT",
         "codeName" : "Planedstagestorycnt"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "projectedstagestorycnt",
+      "getPSAppDEField" : {
+        "name" : "PROJECTEDSTAGESTORYCNT",
+        "codeName" : "Projectedstagestorycnt"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "developingstagestorycnt",
+      "getPSAppDEField" : {
+        "name" : "DEVELOPINGSTAGESTORYCNT",
+        "codeName" : "Developingstagestorycnt"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "developedstagestorycnt",
+      "getPSAppDEField" : {
+        "name" : "DEVELOPEDSTAGESTORYCNT",
+        "codeName" : "Developedstagestorycnt"
       }
     }, {
       "dataType" : 9,
@@ -642,17 +528,60 @@
       }
     }, {
       "dataType" : 9,
-      "name" : "waitstagestorycnt",
+      "name" : "testedstagestorycnt",
       "getPSAppDEField" : {
-        "name" : "WAITSTAGESTORYCNT",
-        "codeName" : "Waitstagestorycnt"
+        "name" : "TESTEDSTAGESTORYCNT",
+        "codeName" : "Testedstagestorycnt"
       }
     }, {
       "dataType" : 9,
-      "name" : "developingstagestorycnt",
+      "name" : "verifiedstagestorycnt",
       "getPSAppDEField" : {
-        "name" : "DEVELOPINGSTAGESTORYCNT",
-        "codeName" : "Developingstagestorycnt"
+        "name" : "VERIFIEDSTAGESTORYCNT",
+        "codeName" : "Verifiedstagestorycnt"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "releasedstagestorycnt",
+      "getPSAppDEField" : {
+        "name" : "RELEASEDSTAGESTORYCNT",
+        "codeName" : "Releasedstagestorycnt"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "closedstagestorycnt",
+      "getPSAppDEField" : {
+        "name" : "CLOSEDSTAGESTORYCNT",
+        "codeName" : "Closedstagestorycnt"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "storycnt",
+      "getPSAppDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -706,7 +635,7 @@
     "codeName" : "ProductStorySum",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSSEARCHFORMS/ProductStorySum.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "搜索表单（产品需求汇总下）",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -715,10 +644,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -737,10 +666,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -879,6 +808,77 @@
     "name" : "searchform",
     "modelid" : "7f666c41d1c111c3f7c65b3bd6160800",
     "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "codeName" : "StorySumGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "产品汇总表操作栏",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "predefinedType" : "GRIDVIEW_EXPORTACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "StorySumGridView",
   "getPSDEViewId" : "235cdc37a295e5e786083d4c7ce59f6b",

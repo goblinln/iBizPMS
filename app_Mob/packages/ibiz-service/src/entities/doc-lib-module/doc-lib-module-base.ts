@@ -133,7 +133,6 @@ export abstract class DocLibModuleBase extends EntityBase implements IDocLibModu
      * 编号
      */
     root?: any;
-
     /**
      * 重置实体数据
      *

@@ -22,19 +22,19 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
     "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:tabviewpanel3",
+      "realTitle" : "我的地盘树导航视图（产品汇总表）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryProductSumTreeExpView.json",
+        "viewType" : "DETREEEXPVIEW"
+      }
+    }, {
       "name" : "EXPITEM:tabviewpanel",
       "realTitle" : "我的地盘树导航视图（测试统计）",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryTestTreeExpView.json",
-        "viewType" : "DETREEEXPVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:tabviewpanel6",
-      "realTitle" : "我的地盘树导航视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryUserSumTreeExpView.json",
         "viewType" : "DETREEEXPVIEW"
       }
     }, {
@@ -46,19 +46,19 @@
         "viewType" : "DETREEEXPVIEW"
       }
     }, {
-      "name" : "EXPITEM:tabviewpanel3",
-      "realTitle" : "我的地盘树导航视图（产品汇总表）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryProductSumTreeExpView.json",
-        "viewType" : "DETREEEXPVIEW"
-      }
-    }, {
       "name" : "EXPITEM:tabviewpanel2",
       "realTitle" : "我的地盘树导航视图（员工负载计）",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryEmployTreeExpView.json",
+        "viewType" : "DETREEEXPVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:tabviewpanel6",
+      "realTitle" : "我的地盘树导航视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryUserSumTreeExpView.json",
         "viewType" : "DETREEEXPVIEW"
       }
     } ],
@@ -124,26 +124,18 @@
         "getPSControls" : [ {
           "codeName" : "ProductSumTreeExpViewtreeexpbar",
           "controlType" : "TREEEXPBAR",
-          "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+          "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
           "name" : "treeexpbar",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
           },
           "getPSAppViewRefs" : [ {
-            "name" : "EXPITEM:ProductBugTypeSum",
-            "realTitle" : "产品Bug类型统计表格视图",
+            "name" : "EXPITEM:productInputTable",
+            "realTitle" : "产品统计表格视图",
             "getRefPSAppView" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumProductBugTypeSumUsr4GridView.json",
-              "viewType" : "DEGRIDVIEW"
-            }
-          }, {
-            "name" : "EXPITEM:ProductSum",
-            "realTitle" : "产品汇总表表格视图",
-            "getRefPSAppView" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumGridView.json",
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridViewProducntInputTable.json",
               "viewType" : "DEGRIDVIEW"
             }
           }, {
@@ -163,11 +155,19 @@
               "viewType" : "DEGRIDVIEW"
             }
           }, {
-            "name" : "EXPITEM:productInputTable",
+            "name" : "EXPITEM:ProductSum",
+            "realTitle" : "产品汇总表表格视图",
+            "getRefPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumGridView.json",
+              "viewType" : "DEGRIDVIEW"
+            }
+          }, {
+            "name" : "EXPITEM:productquantity",
             "realTitle" : "产品统计表格视图",
             "getRefPSAppView" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridViewProducntInputTable.json",
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridView.json",
               "viewType" : "DEGRIDVIEW"
             }
           }, {
@@ -179,11 +179,11 @@
               "viewType" : "DEGRIDVIEW"
             }
           }, {
-            "name" : "EXPITEM:productquantity",
-            "realTitle" : "产品统计表格视图",
+            "name" : "EXPITEM:ProductBugTypeSum",
+            "realTitle" : "产品Bug类型统计表格视图",
             "getRefPSAppView" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridView.json",
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumProductBugTypeSumUsr4GridView.json",
               "viewType" : "DEGRIDVIEW"
             }
           } ],
@@ -686,25 +686,6 @@
         "modeltype" : "PSAPPDEVIEW"
       }
     }, {
-      "caption" : "项目",
-      "codeName" : "StatsTabExpViewtabviewpanel5",
-      "controlType" : "TABVIEWPANEL",
-      "getEmbeddedPSAppDEView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryTreeExpViewProjectStats.json",
-        "viewType" : "DETREEEXPVIEW"
-      },
-      "name" : "tabviewpanel5",
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-      },
-      "getPSControlParam" : {
-        "id" : "TABVIEWPANEL5"
-      },
-      "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel5",
-      "modeltype" : "PSVIEWPANEL"
-    }, {
       "caption" : "测试",
       "codeName" : "StatsTabExpViewtabviewpanel",
       "controlType" : "TABVIEWPANEL",
@@ -722,6 +703,25 @@
         "id" : "TABVIEWPANEL"
       },
       "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL"
+    }, {
+      "caption" : "项目",
+      "codeName" : "StatsTabExpViewtabviewpanel5",
+      "controlType" : "TABVIEWPANEL",
+      "getEmbeddedPSAppDEView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryTreeExpViewProjectStats.json",
+        "viewType" : "DETREEEXPVIEW"
+      },
+      "name" : "tabviewpanel5",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+      },
+      "getPSControlParam" : {
+        "id" : "TABVIEWPANEL5"
+      },
+      "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel5",
       "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "组织",

@@ -2,7 +2,7 @@
   "codeName" : "UserLoginPosition",
   "controlType" : "MAP",
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action/PSMAPS/UserLoginPosition.json",
-  "hookEventNames" : [ "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "hookEventNames" : [ "ROWCLICK", "LOAD", "BEFORELOAD" ],
   "legendPos" : "NONE",
   "logicName" : "用户登录位置",
   "getPSAppDataEntity" : {

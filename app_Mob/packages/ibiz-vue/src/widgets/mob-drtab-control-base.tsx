@@ -1,5 +1,6 @@
 import { MainControlBase } from "./main-control-base";
 import { IPSDEDRTab } from '@ibiz/dynamic-model-api';
+import { MobDrtabControlInterface } from "../../../ibiz-core/src";
 
 /**
  * 数据关系分页部件基类
@@ -8,7 +9,7 @@ import { IPSDEDRTab } from '@ibiz/dynamic-model-api';
  * @class MobDrtabControlBase
  * @extends {MainControlBase}
  */
-export class MobDrtabControlBase extends MainControlBase {
+export class MobDrtabControlBase extends MainControlBase implements MobDrtabControlInterface{
     
     /**
      * 部件模型实例对象

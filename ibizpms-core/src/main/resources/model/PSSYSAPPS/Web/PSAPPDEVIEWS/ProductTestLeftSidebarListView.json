@@ -102,6 +102,14 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
+    "name" : "EDITDATA",
+    "realTitle" : "测试",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductTestTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    }
+  }, {
     "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_LEFT",
     "realTitle" : "产品编辑视图",
@@ -109,14 +117,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
       "viewType" : "DEEDITVIEW"
-    }
-  }, {
-    "name" : "EDITDATA",
-    "realTitle" : "测试",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductTestTabExpView.json",
-      "viewType" : "DETABEXPVIEW"
     }
   } ],
   "getPSAppViewUIActions" : [ {
@@ -269,7 +269,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "TestSidebar",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {

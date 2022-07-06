@@ -1,6 +1,6 @@
 <template>
   <div class="app-mobile-slider">
-      <ion-range :value="value" min="0" max="100" pin :disabled="disabled" @ionChange="change"></ion-range>
+      <ion-range :value="value" :min="min" :max="max" :step="step" pin :disabled="disabled" @ionChange="change"></ion-range>
   </div>
 </template>
 
@@ -32,6 +32,27 @@ export default class AppMobSlider extends Vue {
      * @memberof AppMobSlider
      */
     @Prop() public name?:string;
+
+    /**
+    * 步长
+    * @type {number}
+    * @memberof AppMobSlider
+    */
+    @Prop({default:1}) public step!: number;
+
+    /**
+    * 最小值
+    * @type {number}
+    * @memberof AppMobSlider
+    */
+    @Prop({default:0}) public min!: number;
+
+    /**
+    * 最大值
+    * @type {number}
+    * @memberof AppMobSlider
+    */
+    @Prop({default:100}) public max!: number;
 
     /**
      * 禁用

@@ -121,7 +121,6 @@ export abstract class IbztaskteamBase extends EntityBase implements IIbztaskteam
      * 编号
      */
     root?: any;
-
     /**
      * 重置实体数据
      *

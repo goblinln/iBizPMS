@@ -63,6 +63,13 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
     "dataType" : 1,
     "name" : "product",
     "getPSAppDEField" : {
@@ -85,27 +92,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "name",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "isfavourites",
     "getPSAppDEField" : {
       "name" : "ISFAVOURITES",
       "codeName" : "Isfavourites"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -116,12 +113,15 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "编号",
@@ -140,11 +140,6 @@
     "allowEmpty" : true
   } ],
   "getPSNavigateContexts" : [ {
-    "key" : "DOCLIBTYPE",
-    "name" : "DOCLIBTYPE",
-    "value" : "doclibtype",
-    "rawValue" : false
-  }, {
     "key" : "PARENT",
     "name" : "PARENT",
     "value" : "0",
@@ -154,17 +149,22 @@
     "name" : "PRODUCT",
     "value" : "product",
     "rawValue" : false
+  }, {
+    "key" : "DOCLIBTYPE",
+    "name" : "DOCLIBTYPE",
+    "value" : "doclibtype",
+    "rawValue" : false
   } ],
   "getPSNavigateParams" : [ {
-    "key" : "product",
-    "name" : "product",
-    "value" : "product",
-    "rawValue" : false
-  }, {
     "key" : "parent",
     "name" : "parent",
     "value" : "0",
     "rawValue" : true
+  }, {
+    "key" : "product",
+    "name" : "product",
+    "value" : "product",
+    "rawValue" : false
   } ],
   "pagingSize" : 20,
   "getRemovePSControlAction" : {

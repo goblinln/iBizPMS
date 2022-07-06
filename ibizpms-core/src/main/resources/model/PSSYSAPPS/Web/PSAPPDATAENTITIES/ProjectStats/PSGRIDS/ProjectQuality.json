@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "项目质量表",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -230,32 +230,11 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 9,
-    "name" : "taskcnt",
+    "dataType" : 25,
+    "name" : "name",
     "getPSAppDEField" : {
-      "name" : "TASKCNT",
-      "codeName" : "TaskCnt"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "finishbugcnt",
-    "getPSAppDEField" : {
-      "name" : "FINISHBUGCNT",
-      "codeName" : "FinishBugCnt"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "importantbugcnt",
-    "getPSAppDEField" : {
-      "name" : "IMPORTANTBUGCNT",
-      "codeName" : "Importantbugcnt"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugtask",
-    "getPSAppDEField" : {
-      "name" : "BUGTASK",
-      "codeName" : "Bugtask"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   }, {
     "dataType" : 9,
@@ -265,61 +244,18 @@
       "codeName" : "StoryCnt"
     }
   }, {
-    "dataType" : 25,
-    "name" : "seriousbugproportion",
+    "dataType" : 9,
+    "name" : "completestorycnt",
     "getPSAppDEField" : {
-      "name" : "SERIOUSBUGPROPORTION",
-      "codeName" : "Seriousbugproportion"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "srfdataaccaction",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true
-  }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "COMPLETESTORYCNT",
+      "codeName" : "Completestorycnt"
     }
   }, {
     "dataType" : 9,
-    "name" : "bugcnt",
+    "name" : "taskcnt",
     "getPSAppDEField" : {
-      "name" : "BUGCNT",
-      "codeName" : "BugCnt"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugstory",
-    "getPSAppDEField" : {
-      "name" : "BUGSTORY",
-      "codeName" : "Bugstory"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "name",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
     }
   }, {
     "dataType" : 9,
@@ -330,10 +266,74 @@
     }
   }, {
     "dataType" : 9,
-    "name" : "completestorycnt",
+    "name" : "bugcnt",
     "getPSAppDEField" : {
-      "name" : "COMPLETESTORYCNT",
-      "codeName" : "Completestorycnt"
+      "name" : "BUGCNT",
+      "codeName" : "BugCnt"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "finishbugcnt",
+    "getPSAppDEField" : {
+      "name" : "FINISHBUGCNT",
+      "codeName" : "FinishBugCnt"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugstory",
+    "getPSAppDEField" : {
+      "name" : "BUGSTORY",
+      "codeName" : "Bugstory"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugtask",
+    "getPSAppDEField" : {
+      "name" : "BUGTASK",
+      "codeName" : "Bugtask"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "importantbugcnt",
+    "getPSAppDEField" : {
+      "name" : "IMPORTANTBUGCNT",
+      "codeName" : "Importantbugcnt"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "seriousbugproportion",
+    "getPSAppDEField" : {
+      "name" : "SERIOUSBUGPROPORTION",
+      "codeName" : "Seriousbugproportion"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {

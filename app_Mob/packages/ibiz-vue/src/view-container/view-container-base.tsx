@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import qs from 'qs';
 import axios from 'axios';
-import { IPSAppView } from '@ibiz/dynamic-model-api';
-import { AppServiceBase, GetModelService, Util } from 'ibiz-core';
+import { DynamicInstanceConfig, IPSAppView } from '@ibiz/dynamic-model-api';
+import { AppServiceBase, GetModelService, SandboxInstance, Util } from 'ibiz-core';
 import { AppComponentService } from '../app-service';
 
 
@@ -97,6 +97,9 @@ export class ViewContainerBase extends Vue {
             } else {
                 this.context = Util.deepCopy(this.dynamicProps._context);
             }
+            if (this.context && this.context.hasOwnProperty('srfsandboxtag')) {
+                await this.initSandBoxInst(this.context);
+            }
         }
         await this.computeDynaModelFilePath();
         // 路由打开
@@ -109,8 +112,20 @@ export class ViewContainerBase extends Vue {
                     Object.assign(tempViewParam, qs.parse(item));
                 });
             }
+            // 初始化沙箱实例
+            if (tempViewParam && tempViewParam.hasOwnProperty('srfsandboxtag')) {
+                await this.initSandBoxInst(tempViewParam);
+            }
+            if (tempViewParam.srfinsttag && tempViewParam.srfinsttag2) {
+                let dynainstParam: DynamicInstanceConfig = (await GetModelService({ srfsandboxtag: tempViewParam.srfsandboxtag, instTag: tempViewParam.srfinsttag, instTag2: tempViewParam.srfinsttag2 })).getDynaInsConfig();
+                this.context = { srfdynainstid: dynainstParam.id };
+            }
             if (tempViewParam.srfdynainstid) {
                 this.context = { srfdynainstid: tempViewParam.srfdynainstid };
+            }
+            // 初始化沙箱实例
+            if (tempViewParam && tempViewParam.hasOwnProperty('srfsandboxtag')) {
+                await this.initSandBoxInst(tempViewParam);
             }
         }
         this.loadDynamicModelData();
@@ -152,8 +167,8 @@ export class ViewContainerBase extends Vue {
         } else {
             if (this.dynaModelFilePath) {
                 const data = await GetModelService(this.context);
-                if(data){
-                    this.modeldata  = await data.getPSAppView(this.dynaModelFilePath) as IPSAppView
+                if (data) {
+                    this.modeldata = await data.getPSAppView(this.dynaModelFilePath) as IPSAppView
                 }
             }
         }
@@ -183,7 +198,7 @@ export class ViewContainerBase extends Vue {
             ...this.staticProps,
         });
         // 删除viewModelData，避免递归
-        if(temp.viewModelData){
+        if (temp.viewModelData) {
             delete temp.viewModelData;
         }
         this.viewContext = temp;
@@ -226,6 +241,18 @@ export class ViewContainerBase extends Vue {
                     }
                 }
             }
+        }
+    }
+
+    /**
+     * 初始化沙箱实例
+     *
+     * @memberof ViewContainerBase
+     */
+    public async initSandBoxInst(args: any) {
+        if (args && args.srfsandboxtag) {
+            const tempSandboxInst: SandboxInstance = new SandboxInstance(args);
+            await tempSandboxInst.initSandBox();
         }
     }
 }

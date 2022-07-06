@@ -1,7 +1,12 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { Util } from 'ibiz-core';
+import { LayoutTool, Util } from 'ibiz-core';
 import { MobDashboardControlBase } from '../../../widgets';
-import { IPSAppPortlet, IPSDBPortletPart, IPSDEDashboard, IPSLanguageRes } from '@ibiz/dynamic-model-api';
+import {
+    IPSAppPortlet,
+    IPSDBPortletPart,
+    IPSDEDashboard,
+    IPSLanguageRes,
+} from '@ibiz/dynamic-model-api';
 
 /**
  * 数据看板部件基类
@@ -11,7 +16,6 @@ import { IPSAppPortlet, IPSDBPortletPart, IPSDEDashboard, IPSLanguageRes } from 
  * @extends {MobDashboardControlBase}
  */
 export class AppMobDashboardBase extends MobDashboardControlBase {
-
     /**
      * 部件动态参数
      *
@@ -33,12 +37,12 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
      * @param {*} oldVal
      * @memberof AppMobDashboardBase
      */
-    @Watch('dynamicProps',{
+    @Watch('dynamicProps', {
         immediate: true,
     })
     public onDynamicPropsChange(newVal: any, oldVal: any) {
-        if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-           super.onDynamicPropsChange(newVal,oldVal);
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onDynamicPropsChange(newVal, oldVal);
         }
     }
 
@@ -53,8 +57,8 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
         immediate: true,
     })
     public onStaticPropsChange(newVal: any, oldVal: any) {
-        if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-            super.onStaticPropsChange(newVal,oldVal);
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onStaticPropsChange(newVal, oldVal);
         }
     }
 
@@ -63,7 +67,7 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
      *
      * @memberof AppMobDashboardBase
      */
-    public destroyed(){
+    public destroyed() {
         this.ctrlDestroyed();
     }
 
@@ -74,7 +78,15 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
      * @memberof AppMobDashboardBase
      */
     @Emit('ctrl-event')
-    public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void {}
+    public ctrlEvent({
+        controlname,
+        action,
+        data,
+    }: {
+        controlname: string;
+        action: string;
+        data: any;
+    }): void {}
 
     /**
      * 绘制门户部件内容
@@ -83,38 +95,63 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
      * @memberof AppMobDashboardBase
      */
     public renderPortletContent(modelJson: IPSDBPortletPart, index?: number) {
-        if(modelJson.portletType == 'CONTAINER'){
+        if (modelJson.portletType == 'CONTAINER') {
             // 绘制门户部件（容器）
             const childPortlets = modelJson.getPSControls();
-            let cardClass = !childPortlets ? 'portlet-card' : "portlet-card custom-card";
+            let cardClass = !childPortlets
+                ? 'portlet-card'
+                : 'portlet-card custom-card';
             let cardPadding = childPortlets ? 0 : 10;
             let isShowTitle = !!(modelJson.showTitleBar && modelJson.title);
             const controlClassNames: any = {
                 [Util.srfFilePath2(modelJson?.codeName)]: true,
             };
             if (modelJson?.getPSSysCss?.()?.cssName) {
-                Object.assign(controlClassNames, { [modelJson.getPSSysCss()?.cssName as string]: true });
+                Object.assign(controlClassNames, {
+                    [modelJson.getPSSysCss()?.cssName as string]: true,
+                });
             }
-            let labelCaption: any = this.$tl((modelJson.getTitlePSLanguageRes() as IPSLanguageRes)?.lanResTag, modelJson.title);
-            return <div class='portlet-without-title'>
-            <card class={cardClass} bordered={false} dis-hover padding={cardPadding}>
-                { isShowTitle && [
-                    <p slot='title'>{labelCaption}<span class="line"></span></p>,
-                    <a slot='extra'></a>
-                ]}
-                <span>
-                    <div class={{'portlet-container':true}}>
-                      {this.renderPortletContent(modelJson)}
+            let labelCaption: any = this.$tl(
+                (modelJson.getTitlePSLanguageRes() as IPSLanguageRes)
+                    ?.lanResTag,
+                modelJson.title
+            );
+            return (
+                <div class="portlet-without-title">
+                    <div
+                        class={cardClass}
+                        bordered={false}
+                        dis-hover
+                        padding={cardPadding}
+                    >
+                        {isShowTitle && [
+                            <p slot="title">
+                                {labelCaption}
+                                <span class="line"></span>
+                            </p>,
+                            <a slot="extra"></a>,
+                        ]}
+                        <span>
+                            <div class={{ 'portlet-container': true }}>
+                                {this.renderPortlets(modelJson)}
+                            </div>
+                        </span>
                     </div>
-                </span>
-            </card>
-            </div>
-        }else{
+                </div>
+            );
+        } else {
             // 绘制门户部件（非容器）
-            let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(modelJson);
-            return this.$createElement(targetCtrlName,{ props: targetCtrlParam, ref: modelJson.name, on: targetCtrlEvent })
+            let {
+                targetCtrlName,
+                targetCtrlParam,
+                targetCtrlEvent,
+            } = this.computeTargetCtrlData(modelJson);
+            return this.$createElement(targetCtrlName, {
+                props: targetCtrlParam,
+                ref: modelJson.name,
+                on: targetCtrlEvent,
+            });
         }
-       
     }
 
     /**
@@ -123,12 +160,67 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
      * @returns
      * @memberof AppMobDashboardBase
      */
-    public renderStaticDashboard(modelJson:IPSDEDashboard): any {
-        return  (
-            modelJson?.getPSControls()?.map((item: any, index: number) => {
-                return this.renderPortletContent(item, index);
-            })
-    );
+    public renderStaticDashboard(modelJson: IPSDEDashboard): any {
+        return modelJson?.getPSControls()?.map((item: any, index: number) => {
+            return this.renderPortletContent(item, index);
+        });
+    }
+
+    /**
+     * 绘制门户部件布局
+     *
+     * @memberof AppDashboardBase
+     */
+    public renderPortlets(modelJson: any) {
+        if (!modelJson) {
+            return;
+        }
+        const layout = modelJson.getPSLayout?.()?.layout;
+        if (!layout) {
+            return this.renderPortletContent(modelJson);
+        }
+        // 栅格布局
+        if (layout == 'TABLE_24COL' || layout == 'TABLE_12COL') {
+            return (
+                <van-row>
+                    {modelJson
+                        .getPSControls?.()
+                        ?.map((item: any, index: number) => {
+                            let attrs = LayoutTool.getGridOptions(
+                                item.getPSLayoutPos()
+                            );
+                            return (
+                                <van-col {...{ props: attrs }}>
+                                    {this.renderPortletContent(item, index)}
+                                </van-col>
+                            );
+                        })}
+                </van-row>
+            );
+        }
+
+        // FLEX布局
+        if (layout == 'FLEX') {
+            const flexStyle = LayoutTool.getFlexStyle(
+                modelJson.getPSLayout?.()
+            );
+            return (
+                <div style={flexStyle}>
+                    {modelJson
+                        .getPSControls?.()
+                        ?.map((item: any, index: number) => {
+                            let detailStyle = LayoutTool.getFlexStyle2(
+                                item.getPSLayoutPos()
+                            );
+                            return (
+                                <div style={detailStyle}>
+                                    {this.renderPortletContent(item, index)}
+                                </div>
+                            );
+                        })}
+                </div>
+            );
+        }
     }
 
     /**
@@ -138,15 +230,19 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
      * @returns
      * @memberof AppMobDashboardBase
      */
-    public renderCustomPortlet(customModel: any){
-        let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(customModel.modelData);
+    public renderCustomPortlet(customModel: any) {
+        let {
+            targetCtrlName,
+            targetCtrlParam,
+            targetCtrlEvent,
+        } = this.computeTargetCtrlData(customModel.modelData);
         Object.assign(targetCtrlParam.dynamicProps, { isAdaptiveSize: true });
         return this.$createElement(targetCtrlName, {
             key: Util.createUUID(),
             props: targetCtrlParam,
             ref: customModel.modelData?.name,
             on: targetCtrlEvent,
-            class:'dashboard-item userCustomize'
+            class: 'dashboard-item userCustomize',
         });
     }
 
@@ -157,9 +253,9 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
      * @memberof AppMobDashboardBase
      */
     public renderCustomizedDashboard(): any {
-        return this.renderCustomModelData.map((item:any, index: number)=>{
-            return this.renderCustomPortlet(item)
-        })
+        return this.renderCustomModelData.map((item: any, index: number) => {
+            return this.renderCustomPortlet(item);
+        });
     }
 
     /**
@@ -174,11 +270,25 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
         }
         const { controlClassNames } = this.renderOptions;
         return (
-            <ion-grid class={{...controlClassNames, 'app-mob-dashboard': true}}>
-                {this.isEnableCustomized && 
-                        <div class="dashboard-enableCustomized" on-click={()=>{this.handleClick()}}>定制仪表盘<app-mob-icon name="settings-outline"></app-mob-icon></div>
-                }
-                {this.isHasCustomized ? this.renderCustomizedDashboard() : !this.isEnableCustomized?this.renderStaticDashboard(this.controlInstance):null}
+            <ion-grid
+                class={{ ...controlClassNames, 'app-mob-dashboard': true }}
+            >
+                {this.isEnableCustomized && (
+                    <div
+                        class="dashboard-enableCustomized"
+                        on-click={() => {
+                            this.handleClick();
+                        }}
+                    >
+                        定制仪表盘
+                        <app-mob-icon name="settings-outline"></app-mob-icon>
+                    </div>
+                )}
+                {this.isHasCustomized
+                    ? this.renderCustomizedDashboard()
+                    : !this.isEnableCustomized
+                    ? this.renderStaticDashboard(this.controlInstance)
+                    : null}
             </ion-grid>
         );
     }

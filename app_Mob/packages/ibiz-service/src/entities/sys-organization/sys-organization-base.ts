@@ -81,7 +81,6 @@ export abstract class SysOrganizationBase extends EntityBase implements ISysOrga
      * 最后修改时间
      */
     updatedate?: any;
-
     /**
      * 重置实体数据
      *

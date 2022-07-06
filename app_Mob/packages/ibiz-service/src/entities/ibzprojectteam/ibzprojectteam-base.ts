@@ -137,7 +137,6 @@ export abstract class IBZPROJECTTEAMBase extends EntityBase implements IIBZPROJE
      * 项目编号
      */
     root?: any;
-
     /**
      * 重置实体数据
      *

@@ -617,14 +617,14 @@
       "modeltype" : "PSSYSVIEWPANEL"
     },
     "getPSNavigateContexts" : [ {
-      "key" : "TASK",
-      "name" : "TASK",
-      "value" : "accounttask",
-      "rawValue" : false
-    }, {
       "key" : "PROJECT",
       "name" : "PROJECT",
       "value" : "project",
+      "rawValue" : false
+    }, {
+      "key" : "TASK",
+      "name" : "TASK",
+      "value" : "accounttask",
       "rawValue" : false
     } ],
     "getTextPSAppDEField" : {

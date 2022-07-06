@@ -1,5 +1,5 @@
 import moment from "moment";
-import { Util, ViewTool } from 'ibiz-core';
+import { MobTreeControlInterface, Util, ViewTool } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { AppMobTreeService } from '../ctrl-service';
 import { AppViewLogicService } from "../app-service";
@@ -14,7 +14,7 @@ import { IPSDETree, IPSDETreeNode, IPSDEToolbarItem, IPSDECMUIActionItem, IPSDEU
  * @class MobTreeControlBase
  * @extends {MDControlBase}
  */
-export class MobTreeControlBase extends MDControlBase {
+export class MobTreeControlBase extends MDControlBase implements MobTreeControlInterface{
 
     /**
      * 树视图部件的模型对象

@@ -1,15 +1,10 @@
-import { IPSAppDataEntity, IPSAppDEField, IPSAppDEUIAction, IPSAppDEView, IPSAppView, IPSNavigateContext, IPSNavigateParam } from "@ibiz/dynamic-model-api";
+import { IPSAppDataEntity, IPSAppDEField, IPSAppDERedirectView, IPSAppDEUIAction, IPSAppDEView, IPSAppView, IPSAppViewRef, IPSNavigateContext, IPSNavigateParam } from "@ibiz/dynamic-model-api";
 import { ModelTool, UIActionTool, Util } from "ibiz-core";
 import { AppGlobalService } from "../app-service";
+import { AppDEUIAction } from './app-ui-action';
+import { UIActionResult } from './appuilogic';
 
-export class AppFrontAction {
-
-    /**
-     * 模型数据
-     * 
-     * @memberof AppFrontAction
-     */
-    private actionModel !: IPSAppDEUIAction;
+export class AppFrontAction extends AppDEUIAction {
 
     /**
      * 初始化AppFrontAction
@@ -17,7 +12,7 @@ export class AppFrontAction {
      * @memberof AppFrontAction
      */
     constructor(opts: IPSAppDEUIAction, context?: any) {
-        this.actionModel = opts;
+        super(opts, context);
     }
 
     /**
@@ -34,6 +29,12 @@ export class AppFrontAction {
      * @memberof AppFrontAction
      */
     public async execute(args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string, deUIService?: any) {
+        if (Object.is(this.actionModel?.uILogicAttachMode, 'REPLACE')) {
+            if (actionContext.context) {
+                Object.assign(context, actionContext.context);
+            }
+            return this.executeDEUILogic(args, context, params, $event, xData, actionContext, srfParentDeName);
+        }      
         const actionTarget: string | null = this.actionModel.actionTarget;
         if (Object.is(actionTarget, "SINGLEDATA")) {
             actionContext.$Notice.error('不支持单项数据');
@@ -77,6 +78,85 @@ export class AppFrontAction {
             context = UIActionTool.handleContextParam(actionTarget, _args, parentContext, parentViewParam, context);
             data = UIActionTool.handleActionParam(actionTarget, _args, parentContext, parentViewParam, params);
             context = Object.assign({}, actionContext.context, context);
+            const frontPSAppView: IPSAppView | null = this.actionModel.getFrontPSAppView();
+            return this.oPenView(
+                frontPSAppView,
+                actionContext,
+                context,
+                args,
+                deUIService,
+                params,
+                $event,
+                data,
+                xData,
+                _args,
+            );
+
+        }
+    }
+
+    /**
+     * 打开视图
+     *
+     * @param {*} actionContext
+     * @param {*} context
+     * @param {*} args
+     * @param {*} deUIService
+     * @param {*} params
+     * @param {*} $event
+     * @param {*} data
+     * @param {*} xData
+     * @param {*} _args
+     * @return {*}
+     * @memberof AppFrontAction
+     */
+    async oPenView(
+        frontPSAppView: any,
+        actionContext: any,
+        context: any,
+        args: any,
+        deUIService: any,
+        params: any,
+        $event: any,
+        data: any,
+        xData: any,
+        _args: any,
+    ): Promise<any> {
+        // 打开HTML
+        return new Promise(async (resolve: any, reject: any) => {
+            //打开视图后续逻辑
+            const openViewNextLogic: any = (actionModel: any, actionContext: any, xData: any, resultDatas?: any) => {
+                if (actionModel.reloadData && xData && xData.refresh && xData.refresh instanceof Function) {
+                    xData.refresh(args);
+                }
+                if (actionModel.closeEditView) {
+                    actionContext.closeView(null);
+                }
+                // 后续界面行为
+                if (this.actionModel.M?.getNextPSUIAction) {
+                    const nextUIaction: IPSAppDEUIAction | null = (this.actionModel.getNextPSUIAction()) as IPSAppDEUIAction;
+                    if (!nextUIaction) {
+                        return;
+                    }
+                    if (nextUIaction.getPSAppDataEntity()) {
+                        let [tag, appDeName] = (this.actionModel.getNextPSUIAction() as IPSAppDEUIAction).id.split('@');
+                        if (deUIService) {
+                            deUIService.excuteAction(tag, resultDatas, context, params, $event, xData, actionContext, undefined, deUIService);
+                        }
+                    } else {
+                        (AppGlobalService.getInstance() as any).executeGlobalAction(nextUIaction.id, resultDatas, context, params, $event, xData, actionContext, undefined);
+                    }
+                } else {
+                    if (Object.is(actionModel?.uILogicAttachMode, 'AFTER')) {
+                        if (actionContext.context) {
+                            Object.assign(context, actionContext.context);
+                        }
+                        return this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
+                    } else {
+                        return new UIActionResult({ ok: true, result: resultDatas });
+                    }
+                }
+            }
             // 打开HTML
             if (Object.is(this.actionModel.frontProcessType, "OPENHTMLPAGE") && this.actionModel.htmlPageUrl) {
                 window.open(this.actionModel.htmlPageUrl, '_blank');
@@ -87,7 +167,6 @@ export class AppFrontAction {
                     actionContext.$Notice.warning(`${this.actionModel.caption}无打开视图`);
                     return;
                 }
-                const frontPSAppView: IPSAppView | null = this.actionModel.getFrontPSAppView();
                 await frontPSAppView?.fill(true);
                 if (!frontPSAppView) {
                     return;
@@ -122,37 +201,43 @@ export class AppFrontAction {
                         Object.assign(context, { viewpath: frontPSAppView.modelPath });
                     }
                 }
-                //打开视图后续逻辑
-                const openViewNextLogic: any = (actionModel: any, actionContext: any, xData: any, resultDatas?: any) => {
-                    if (actionModel.reloadData && xData && xData.refresh && xData.refresh instanceof Function) {
-                        xData.refresh(args);
-                    }
-                    if (actionModel.closeEditView) {
-                        actionContext.closeView(null);
-                    }
-                    // 后续界面行为
-                    if (this.actionModel.getNextPSUIAction()) {
-                        const nextUIaction: IPSAppDEUIAction | null = (this.actionModel.getNextPSUIAction()) as IPSAppDEUIAction;
-                        if (!nextUIaction) {
-                            return;
-                        }
-                        if (nextUIaction.getPSAppDataEntity()) {
-                            let [tag, appDeName] = (this.actionModel.getNextPSUIAction() as IPSAppDEUIAction).id.split('@');
-                            if (deUIService) {
-                                deUIService.excuteAction(tag, resultDatas, context, params, $event, xData, actionContext, undefined, deUIService);
-                            }
-                        } else {
-                            (AppGlobalService.getInstance() as any).executeGlobalAction(nextUIaction.id, resultDatas, context, params, $event, xData, actionContext, undefined);
-                        }
-                    }
-                }
-                // 打开视图
+                // 打开重定向视图
                 if (frontPSAppView.redirectView) {
-                    // todo 重定向视图
+                    const data = args[0];
+                    const field: IPSAppDEField | null = (frontPSAppView as IPSAppDERedirectView).getTypePSAppDEField();
+                    if (field) {
+                        const type = data[field.codeName.toLocaleLowerCase()];
+                        const appViewRefs = (frontPSAppView as IPSAppDERedirectView).getRedirectPSAppViewRefs()!;
+                        let appViewRef: IPSAppViewRef | undefined = appViewRefs?.find(
+                            (appViewRef: IPSAppViewRef) =>
+                                appViewRef.name === type || appViewRef.name === `EDITVIEW:${type}`,
+                        );
+                        if (!appViewRef) {
+                            appViewRef = appViewRefs?.find((appViewRef: IPSAppViewRef) => {
+                                const entityName = frontPSAppView.getPSAppDataEntity()?.name;
+                                return appViewRef.name === type || appViewRef.name === `${entityName}:EDITVIEW:${type}`;
+                            });
+                        }
+                        if (appViewRef) {
+                            const appView: any = await appViewRef.getRefPSAppView()?.fill();
+                            return this.oPenView(
+                                appView,
+                                actionContext,
+                                context,
+                                args,
+                                deUIService,
+                                params,
+                                $event,
+                                data,
+                                xData,
+                                _args,
+                            );
+                        }
+                    }
                 } else if (!frontPSAppView.openMode || frontPSAppView.openMode == 'INDEXVIEWTAB') {
                     const routePath = actionContext.$viewTool.buildUpRoutePath(actionContext.$route, context, deResParameters, parameters, _args, data);
                     actionContext.$router.push(routePath);
-                    openViewNextLogic(this.actionModel, actionContext, xData, data);
+                    resolve(openViewNextLogic(this.actionModel, actionContext, xData, data));
                     return null;
                 } else if (frontPSAppView.openMode == 'POPUPMODAL') {
                     const view: any = {
@@ -165,7 +250,7 @@ export class AppFrontAction {
                     if (!result || !Object.is(result.ret, 'OK')) {
                         return;
                     }
-                    openViewNextLogic(this.actionModel, actionContext, xData, result.datas);
+                    resolve(openViewNextLogic(this.actionModel, actionContext, xData, result.datas));
                     return result.datas;
                 } else if (frontPSAppView.openMode.indexOf('DRAWER') !== -1) {
                     const view: any = {
@@ -179,7 +264,7 @@ export class AppFrontAction {
                     if (!result || !Object.is(result.ret, 'OK')) {
                         return;
                     }
-                    openViewNextLogic(this.actionModel, actionContext, xData, result.datas);
+                    resolve(openViewNextLogic(this.actionModel, actionContext, xData, result.datas));
                     return result.datas;
                 } else {
                     actionContext.$Notice.warning(`${frontPSAppView.title}不支持该模式打开`);
@@ -187,8 +272,10 @@ export class AppFrontAction {
                 // 用户自定义
             } else {
                 actionContext.$Notice.warning(`${this.actionModel.caption}自定义未实现`);
-            }
-        }
-    }
+                resolve(openViewNextLogic(this.actionModel, actionContext, xData, data));
+            }            
+
+        })
+    }    
 
 }

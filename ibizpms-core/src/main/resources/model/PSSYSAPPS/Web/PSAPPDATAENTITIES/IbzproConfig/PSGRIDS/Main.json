@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -146,13 +146,6 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 25,
-    "name" : "vaild",
-    "getPSAppDEField" : {
-      "name" : "VAILD",
-      "codeName" : "Vaild"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "ibzpro_configname",
     "getPSAppDEField" : {
       "name" : "IBZPRO_CONFIGNAME",
@@ -167,10 +160,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "memo",
+    "name" : "type",
     "getPSAppDEField" : {
-      "name" : "MEMO",
-      "codeName" : "Memo"
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "vaild",
+    "getPSAppDEField" : {
+      "name" : "VAILD",
+      "codeName" : "Vaild"
     }
   }, {
     "dataType" : 25,
@@ -181,17 +181,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "type",
+    "name" : "memo",
     "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
+      "name" : "MEMO",
+      "codeName" : "Memo"
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "IBZPRO_CONFIGNAME",
-      "codeName" : "IbzproConfigName"
+      "name" : "IBZPRO_CONFIGID",
+      "codeName" : "IbzproConfigId"
     }
   }, {
     "dataType" : 25,
@@ -203,10 +203,10 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "srfkey",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "IBZPRO_CONFIGID",
-      "codeName" : "IbzproConfigId"
+      "name" : "IBZPRO_CONFIGNAME",
+      "codeName" : "IbzproConfigName"
     }
   } ],
   "getPSDEGridEditItems" : [ {

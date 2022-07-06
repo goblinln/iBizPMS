@@ -83,7 +83,6 @@ export abstract class SysUpdateFeaturesBase extends EntityBase implements ISysUp
      * 系统更新日志标识
      */
     sysupdatelogid?: any;
-
     /**
      * 重置实体数据
      *

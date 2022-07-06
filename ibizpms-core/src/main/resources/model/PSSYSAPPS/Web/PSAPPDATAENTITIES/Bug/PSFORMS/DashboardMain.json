@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "看板视图基本信息",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -1393,35 +1393,35 @@
             "value" : "project",
             "rawValue" : false
           }, {
-            "key" : "PROJECT",
-            "name" : "PROJECT",
-            "value" : "project",
-            "rawValue" : false
-          }, {
             "key" : "SIZE",
             "name" : "SIZE",
             "value" : "1000",
             "rawValue" : true
+          }, {
+            "key" : "PROJECT",
+            "name" : "PROJECT",
+            "value" : "project",
+            "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
-            "key" : "project",
-            "name" : "project",
+            "key" : "n_project_eq",
+            "name" : "n_project_eq",
             "value" : "project",
             "rawValue" : false
           }, {
-            "key" : "n_project_eq",
-            "name" : "n_project_eq",
+            "key" : "size",
+            "name" : "size",
+            "value" : "1000",
+            "rawValue" : true
+          }, {
+            "key" : "project",
+            "name" : "project",
             "value" : "project",
             "rawValue" : false
           }, {
             "key" : "type",
             "name" : "type",
             "value" : "BugTask",
-            "rawValue" : true
-          }, {
-            "key" : "size",
-            "name" : "size",
-            "value" : "1000",
             "rawValue" : true
           } ],
           "paramJOString" : "{\"n_project_eq\":\"%project%\"}",

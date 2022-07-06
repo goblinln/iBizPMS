@@ -240,10 +240,10 @@
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
               "actionType" : "FILTERACTION",
-              "name" : "search",
+              "name" : "load",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterSearch"
+                "id" : "FilterGet"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -262,10 +262,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "load",
+              "name" : "search",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGet"
+                "id" : "FilterSearch"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -440,7 +440,7 @@
             "id" : "load"
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+          "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
           "logicName" : "FavoriteMOBDas",
           "minorSortDir" : "DESC",
           "getMinorSortPSAppDEField" : {
@@ -1131,10 +1131,10 @@
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
               "actionType" : "FILTERACTION",
-              "name" : "search",
+              "name" : "load",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterSearch"
+                "id" : "FilterGet"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -1153,10 +1153,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "load",
+              "name" : "search",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGet"
+                "id" : "FilterSearch"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -1396,7 +1396,7 @@
             "name" : "PROJECTNAME",
             "codeName" : "ProjectName"
           },
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+          "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
           "getItemPSLayoutPanel" : {
             "getAllPSPanelFields" : [ {
               "id" : "pri",
@@ -2660,10 +2660,10 @@
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
               "actionType" : "FILTERACTION",
-              "name" : "search",
+              "name" : "load",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterSearch"
+                "id" : "FilterGet"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -2682,10 +2682,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "load",
+              "name" : "search",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGet"
+                "id" : "FilterSearch"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -2974,7 +2974,7 @@
             "id" : "load"
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+          "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
           "getItemPSLayoutPanel" : {
             "getAllPSPanelFields" : [ {
               "id" : "pri",
@@ -4200,10 +4200,10 @@
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
               "actionType" : "FILTERACTION",
-              "name" : "search",
+              "name" : "load",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterSearch"
+                "id" : "FilterGet"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -4222,10 +4222,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "load",
+              "name" : "search",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGet"
+                "id" : "FilterSearch"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -4400,7 +4400,7 @@
             "id" : "load"
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+          "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
           "logicName" : "AssMOBDASHBOARD",
           "minorSortDir" : "DESC",
           "getMinorSortPSAppDEField" : {
@@ -5304,10 +5304,10 @@
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
               "actionType" : "FILTERACTION",
-              "name" : "search",
+              "name" : "load",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterSearch"
+                "id" : "FilterGet"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -5326,10 +5326,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "load",
+              "name" : "search",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGet"
+                "id" : "FilterSearch"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -5565,7 +5565,7 @@
             "id" : "load"
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+          "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
           "getItemPSLayoutPanel" : {
             "getAllPSPanelFields" : [ {
               "id" : "pri",
@@ -6367,7 +6367,7 @@
             "id" : "load"
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+          "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
           "getItemPSLayoutPanel" : {
             "getAllPSPanelFields" : [ {
               "id" : "mytasks",
@@ -7112,7 +7112,7 @@
             "id" : "load"
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+          "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
           "getItemPSLayoutPanel" : {
             "getAllPSPanelFields" : [ {
               "id" : "date1",
@@ -7684,7 +7684,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "TEST_TASK__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Projects",
@@ -7738,7 +7739,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "STORY__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Projects",
@@ -7796,7 +7798,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "TASK__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Projects",
@@ -7854,7 +7857,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "BUILD__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Projects",
@@ -7912,7 +7916,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "BUG__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Projects",
@@ -7966,7 +7971,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "PRODUCT_PLAN__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Projects",
@@ -8126,7 +8132,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "TEST_CASE_ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Bugs",
@@ -8166,7 +8173,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "BUG__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "TestTasks",
@@ -8206,7 +8214,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "TEST_TASK__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -8242,7 +8251,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "STORY__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Tasks",
@@ -8282,7 +8292,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "TASK__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Builds",
@@ -8322,7 +8333,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "BUILD__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Bugs",
@@ -8362,7 +8374,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "BUG__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "ProductPlans",
@@ -8398,7 +8411,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "PRODUCT_PLAN__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "DocLibs",
@@ -8514,7 +8528,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "STORY__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "ProductReleases",
@@ -8554,7 +8569,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "PRODUCT_RELEASE__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "ProductPlans",
@@ -8594,7 +8610,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "PRODUCT_PLAN__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Builds",
@@ -8634,7 +8651,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "BUILD__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "DocLibs",
@@ -8714,7 +8732,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "TEST_TASK__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Docs",
@@ -8880,7 +8899,8 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "TEST_SUITE__ACTION",
-          "rSMode" : 2
+          "rSMode" : 2,
+          "majorDEMajor" : false
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Actions",

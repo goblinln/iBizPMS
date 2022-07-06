@@ -35,6 +35,22 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/checkkey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -42,6 +58,25 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -50,6 +85,21 @@
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempInput",
+      "name" : "CreateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempResult",
+      "name" : "CreateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -58,6 +108,21 @@
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempMajorInput",
+      "name" : "CreateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempMajorResult",
+      "name" : "CreateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -65,12 +130,51 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
@@ -78,6 +182,24 @@
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempInput",
+      "name" : "GetDraftTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempResult",
+      "name" : "GetDraftTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -86,6 +208,24 @@
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempMajorInput",
+      "name" : "GetDraftTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempMajorResult",
+      "name" : "GetDraftTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -94,6 +234,24 @@
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetTempInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempResult",
+      "name" : "GetTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -102,6 +260,24 @@
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetTempMajorInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempMajorResult",
+      "name" : "GetTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -109,15 +285,47 @@
     "codeName" : "PMEvaluation",
     "methodType" : "DEACTION",
     "name" : "PMEvaluation",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/pmevaluation",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
@@ -125,6 +333,20 @@
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveTempInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempResult",
+      "name" : "RemoveTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -135,6 +357,20 @@
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveTempMajorInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempMajorResult",
+      "name" : "RemoveTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -144,20 +380,71 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/save",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempInput",
+      "name" : "UpdateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempResult",
+      "name" : "UpdateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -166,6 +453,21 @@
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempMajorInput",
+      "name" : "UpdateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempMajorResult",
+      "name" : "UpdateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   } ],
@@ -173,36 +475,169 @@
     "codeName" : "FetchActionMonth",
     "methodType" : "FETCH",
     "name" : "FetchActionMonth",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchactionmonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchActionYear",
     "methodType" : "FETCH",
     "name" : "FetchActionYear",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchactionyear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaults",
     "methodType" : "FETCH",
     "name" : "FetchDefaults",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefaults",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionMonth",
     "methodType" : "FETCH",
     "name" : "FetchProjectActionMonth",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchprojectactionmonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionYear",
     "methodType" : "FETCH",
     "name" : "FetchProjectActionYear",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchprojectactionyear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskEstimate",
     "methodType" : "FETCH",
     "name" : "FetchProjectTaskEstimate",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchprojecttaskestimate",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -393,11 +828,533 @@
     "name" : "TASK",
     "stdDataType" : 1
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "TaskEstimateDTO",
+    "name" : "TaskEstimateDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "Account",
+      "logicName" : "用户",
+      "name" : "Account",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Consumed",
+      "logicName" : "总计消耗",
+      "name" : "Consumed",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CONSUMED",
+        "codeName" : "Consumed"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreateBy",
+      "logicName" : "由谁创建",
+      "name" : "CreateBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEBY",
+        "codeName" : "CreateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Date",
+      "logicName" : "日期",
+      "name" : "Date",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Dates",
+      "logicName" : "日期",
+      "name" : "Dates",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DATES",
+        "codeName" : "Dates"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Deleted",
+      "logicName" : "任务删除标识",
+      "name" : "Deleted",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Dept",
+      "logicName" : "归属部门",
+      "name" : "Dept",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "DeptName",
+      "logicName" : "归属部门名",
+      "name" : "DeptName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Evaluationcost",
+      "logicName" : "评估成本",
+      "name" : "Evaluationcost",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "EVALUATIONCOST",
+        "codeName" : "Evaluationcost"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Evaluationdesc",
+      "logicName" : "评估说明",
+      "name" : "Evaluationdesc",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "EVALUATIONDESC",
+        "codeName" : "Evaluationdesc"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Evaluationstatus",
+      "logicName" : "评估状态",
+      "name" : "Evaluationstatus",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "EVALUATIONSTATUS",
+        "codeName" : "Evaluationstatus"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Evaluationtime",
+      "logicName" : "评估工时",
+      "name" : "Evaluationtime",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "EVALUATIONTIME",
+        "codeName" : "Evaluationtime"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Files",
+      "logicName" : "附件",
+      "name" : "Files",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "FILES",
+        "codeName" : "Files"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Id",
+      "logicName" : "编号",
+      "name" : "Id",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Inputcost",
+      "logicName" : "投入成本",
+      "name" : "Inputcost",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "INPUTCOST",
+        "codeName" : "Inputcost"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Left",
+      "logicName" : "预计剩余",
+      "name" : "Left",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "LEFT",
+        "codeName" : "Left"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Month",
+      "logicName" : "月",
+      "name" : "Month",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MONTH",
+        "codeName" : "Month"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Monthname",
+      "logicName" : "月（显示）",
+      "name" : "Monthname",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MONTHNAME",
+        "codeName" : "Monthname"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Monthorder",
+      "logicName" : "月（排序）",
+      "name" : "Monthorder",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MONTHORDER",
+        "codeName" : "Monthorder"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Org",
+      "logicName" : "归属组织",
+      "name" : "Org",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORG",
+        "codeName" : "Org"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OrgName",
+      "logicName" : "归属组织名",
+      "name" : "OrgName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Project",
+      "logicName" : "项目",
+      "name" : "Project",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ProjectName",
+      "logicName" : "所属项目",
+      "name" : "ProjectName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Task",
+      "logicName" : "任务",
+      "name" : "Task",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TASK",
+        "codeName" : "Task"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "TaskEstimatesn",
+      "logicName" : "任务预计编号",
+      "name" : "TaskEstimatesn",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TASKESTIMATESN",
+        "codeName" : "TaskEstimatesn"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "TaskName",
+      "logicName" : "任务名称",
+      "name" : "TaskName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TASKNAME",
+        "codeName" : "TaskName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Taskspecies",
+      "logicName" : "任务种别",
+      "name" : "Taskspecies",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TASKSPECIES",
+        "codeName" : "Taskspecies"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Type",
+      "logicName" : "任务类型",
+      "name" : "Type",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateBy",
+      "logicName" : "由谁更新",
+      "name" : "UpdateBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEBY",
+        "codeName" : "UpdateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Work",
+      "logicName" : "work",
+      "name" : "Work",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "WORK",
+        "codeName" : "Work"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Year",
+      "logicName" : "年",
+      "name" : "Year",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "YEAR",
+        "codeName" : "Year"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Yearname",
+      "logicName" : "年（显示）",
+      "name" : "Yearname",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "YEARNAME",
+        "codeName" : "Yearname"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "TaskEstimateFilterDTO",
+    "name" : "TaskEstimateFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_ACCOUNT_EQ",
+      "logicName" : "用户",
+      "name" : "N_ACCOUNT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ID_EQ",
+      "logicName" : "编号",
+      "name" : "N_ID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ID_LIKE",
+      "logicName" : "编号",
+      "name" : "N_ID_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_MONTH_EQ",
+      "logicName" : "月",
+      "name" : "N_MONTH_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "MONTH",
+        "codeName" : "Month"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PROJECT_EQ",
+      "logicName" : "项目",
+      "name" : "N_PROJECT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TASKNAME_EQ",
+      "logicName" : "任务名称",
+      "name" : "N_TASKNAME_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "TASKNAME",
+        "codeName" : "TaskName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TASKNAME_LIKE",
+      "logicName" : "任务名称",
+      "name" : "N_TASKNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "TASKNAME",
+        "codeName" : "TaskName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TASK_EQ",
+      "logicName" : "任务",
+      "name" : "N_TASK_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "TASK",
+        "codeName" : "Task"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_YEAR_EQ",
+      "logicName" : "年",
+      "name" : "N_YEAR_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "YEAR",
+        "codeName" : "Year"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/checkkey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -405,6 +1362,25 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -413,6 +1389,21 @@
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempInput",
+      "name" : "CreateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempResult",
+      "name" : "CreateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -421,6 +1412,21 @@
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateTempMajorInput",
+      "name" : "CreateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateTempMajorResult",
+      "name" : "CreateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -428,12 +1434,51 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
@@ -441,6 +1486,24 @@
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempInput",
+      "name" : "GetDraftTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempResult",
+      "name" : "GetDraftTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -449,6 +1512,24 @@
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftTempMajorInput",
+      "name" : "GetDraftTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftTempMajorResult",
+      "name" : "GetDraftTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -457,6 +1538,24 @@
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetTempInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempResult",
+      "name" : "GetTempResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -465,6 +1564,24 @@
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetTempMajorInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetTempMajorResult",
+      "name" : "GetTempMajorResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -472,15 +1589,47 @@
     "codeName" : "PMEvaluation",
     "methodType" : "DEACTION",
     "name" : "PMEvaluation",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/pmevaluation",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
@@ -488,6 +1637,20 @@
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveTempInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempResult",
+      "name" : "RemoveTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -498,6 +1661,20 @@
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveTempMajorInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveTempMajorInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveTempMajorResult",
+      "name" : "RemoveTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -507,20 +1684,71 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTOS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/save",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempInput",
+      "name" : "UpdateTempInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempResult",
+      "name" : "UpdateTempResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -529,48 +1757,214 @@
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateTempMajorInput",
+      "name" : "UpdateTempMajorInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateTempMajorResult",
+      "name" : "UpdateTempMajorResult",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
     "codeName" : "FetchActionMonth",
     "methodType" : "FETCH",
     "name" : "FetchActionMonth",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchactionmonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchActionYear",
     "methodType" : "FETCH",
     "name" : "FetchActionYear",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchactionyear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaults",
     "methodType" : "FETCH",
     "name" : "FetchDefaults",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefaults",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionMonth",
     "methodType" : "FETCH",
     "name" : "FetchProjectActionMonth",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchprojectactionmonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionYear",
     "methodType" : "FETCH",
     "name" : "FetchProjectActionYear",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchprojectactionyear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskEstimate",
     "methodType" : "FETCH",
     "name" : "FetchProjectTaskEstimate",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchprojecttaskestimate",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempActionMonth",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ActionMonth",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ActionMonthInput",
+      "name" : "ActionMonthInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ActionMonthResult",
+      "name" : "ActionMonthResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -578,6 +1972,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ActionYear",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ActionYearInput",
+      "name" : "ActionYearInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ActionYearResult",
+      "name" : "ActionYearResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -585,6 +1997,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -592,6 +2022,34 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT1",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultsInput",
+      "name" : "DefaultsInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultsResult",
+      "name" : "DefaultsResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condType" : "CUSTOM",
+        "condition" : "1<>1",
+        "name" : "自定义条件"
+      } ]
+    } ],
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -599,6 +2057,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectActionMonth",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProjectActionMonthInput",
+      "name" : "ProjectActionMonthInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProjectActionMonthResult",
+      "name" : "ProjectActionMonthResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -606,6 +2082,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectActionYear",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProjectActionYearInput",
+      "name" : "ProjectActionYearInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProjectActionYearResult",
+      "name" : "ProjectActionYearResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -613,6 +2107,43 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectTaskEstimate",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProjectTaskEstimateInput",
+      "name" : "ProjectTaskEstimateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProjectTaskEstimateResult",
+      "name" : "ProjectTaskEstimateResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TaskEstimateDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "project",
+        "fieldName" : "PROJECT",
+        "name" : "PROJECT 等于(=) 网页请求上下文(project)",
+        "getPSVARTypeId" : "WEBCONTEXT"
+      }, {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "0",
+        "fieldName" : "DELETED",
+        "name" : "DELETED 等于(=) (0)"
+      } ]
+    } ],
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -654,6 +2185,17 @@
     "codeName" : "Select",
     "methodType" : "SELECT",
     "name" : "Select",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "type" : "UNKNOWN"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "UNKNOWN"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "URIPARAM",
+    "requestPath" : "/select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -702,7 +2244,15 @@
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "任务预计",
+  "getMajorPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "name" : "IBZ_TASKESTIMATE",
   "getOrgIdPSAppDEField" : {
     "name" : "ORG",

@@ -45,26 +45,18 @@
   "getPSControls" : [ {
     "codeName" : "ProductSumTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:ProductBugTypeSum",
-      "realTitle" : "产品Bug类型统计表格视图",
+      "name" : "EXPITEM:productInputTable",
+      "realTitle" : "产品统计表格视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumProductBugTypeSumUsr4GridView.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:ProductSum",
-      "realTitle" : "产品汇总表表格视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumGridView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridViewProducntInputTable.json",
         "viewType" : "DEGRIDVIEW"
       }
     }, {
@@ -84,11 +76,19 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:productInputTable",
+      "name" : "EXPITEM:ProductSum",
+      "realTitle" : "产品汇总表表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:productquantity",
       "realTitle" : "产品统计表格视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridViewProducntInputTable.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     }, {
@@ -100,11 +100,11 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:productquantity",
-      "realTitle" : "产品统计表格视图",
+      "name" : "EXPITEM:ProductBugTypeSum",
+      "realTitle" : "产品Bug类型统计表格视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumProductBugTypeSumUsr4GridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     } ],

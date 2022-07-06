@@ -45,14 +45,22 @@
   "getPSControls" : [ {
     "codeName" : "StoryTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:Root_NoBranch",
+      "name" : "EXPITEM:ALL",
+      "realTitle" : "story表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ROOTMODULE",
       "parentDataJO" : {
         "srfparentdefname" : "n_module_eq"
       },
@@ -74,7 +82,7 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:ROOTMODULE",
+      "name" : "EXPITEM:Root_NoBranch",
       "parentDataJO" : {
         "srfparentdefname" : "n_module_eq"
       },
@@ -82,14 +90,6 @@
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainGridView_ByModule.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:ALL",
-      "realTitle" : "story表格视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainGridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     } ],
@@ -326,65 +326,6 @@
         "id" : "treeexpbar_tree"
       },
       "getPSControls" : [ {
-        "codeName" : "StoryTreeExpViewbranchs_cm",
-        "controlType" : "CONTEXTMENU",
-        "hookEventNames" : [ "CLICK" ],
-        "logicName" : "树节点默认工具栏",
-        "name" : "branchs_cm",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-        },
-        "getPSControlLogics" : [ {
-          "eventArg" : "deuiaction1",
-          "eventNames" : "CLICK",
-          "logicTag" : "branchs_cm",
-          "logicType" : "APPVIEWLOGIC",
-          "name" : "branchs_cm_deuiaction1_click",
-          "getPSAppViewLogic" : {
-            "modelref" : true,
-            "id" : "branchs_cm_deuiaction1_click"
-          }
-        } ],
-        "getPSControlParam" : {
-          "id" : "branchs_cm"
-        },
-        "getPSDEToolbarItems" : [ {
-          "caption" : "刷新",
-          "groupExtractMode" : "ITEM",
-          "itemType" : "DEUIACTION",
-          "name" : "deuiaction1",
-          "noPrivDisplayMode" : 2,
-          "getPSAppViewUIAction" : {
-            "modelref" : true,
-            "id" : "branchs_cm_deuiaction1"
-          },
-          "getPSSysImage" : {
-            "glyph" : "xf021@FontAwesome",
-            "cssClass" : "fa fa-refresh"
-          },
-          "getPSUIAction" : {
-            "caption" : "刷新",
-            "codeName" : "RefreshParent",
-            "fullCodeName" : "RefreshParent",
-            "name" : "树界面_刷新父节点操作",
-            "getPSSysImage" : {
-              "glyph" : "xf021@FontAwesome",
-              "cssClass" : "fa fa-refresh"
-            },
-            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
-            "timeout" : 60000,
-            "uIActionMode" : "SYS",
-            "uIActionTag" : "RefreshParent",
-            "uIActionType" : "DEUIACTION"
-          },
-          "tooltip" : "刷新",
-          "showCaption" : true,
-          "showIcon" : true
-        } ],
-        "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
-        "modeltype" : "PSDETOOLBAR"
-      }, {
         "codeName" : "StoryTreeExpViewall_cm",
         "controlType" : "CONTEXTMENU",
         "hookEventNames" : [ "CLICK" ],
@@ -444,11 +385,11 @@
         "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
         "modeltype" : "PSDETOOLBAR"
       }, {
-        "codeName" : "StoryTreeExpViewmodule_cm",
+        "codeName" : "StoryTreeExpViewbranchs_cm",
         "controlType" : "CONTEXTMENU",
         "hookEventNames" : [ "CLICK" ],
         "logicName" : "树节点默认工具栏",
-        "name" : "module_cm",
+        "name" : "branchs_cm",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -456,16 +397,16 @@
         "getPSControlLogics" : [ {
           "eventArg" : "deuiaction1",
           "eventNames" : "CLICK",
-          "logicTag" : "module_cm",
+          "logicTag" : "branchs_cm",
           "logicType" : "APPVIEWLOGIC",
-          "name" : "module_cm_deuiaction1_click",
+          "name" : "branchs_cm_deuiaction1_click",
           "getPSAppViewLogic" : {
             "modelref" : true,
-            "id" : "module_cm_deuiaction1_click"
+            "id" : "branchs_cm_deuiaction1_click"
           }
         } ],
         "getPSControlParam" : {
-          "id" : "module_cm"
+          "id" : "branchs_cm"
         },
         "getPSDEToolbarItems" : [ {
           "caption" : "刷新",
@@ -475,7 +416,66 @@
           "noPrivDisplayMode" : 2,
           "getPSAppViewUIAction" : {
             "modelref" : true,
-            "id" : "module_cm_deuiaction1"
+            "id" : "branchs_cm_deuiaction1"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf021@FontAwesome",
+            "cssClass" : "fa fa-refresh"
+          },
+          "getPSUIAction" : {
+            "caption" : "刷新",
+            "codeName" : "RefreshParent",
+            "fullCodeName" : "RefreshParent",
+            "name" : "树界面_刷新父节点操作",
+            "getPSSysImage" : {
+              "glyph" : "xf021@FontAwesome",
+              "cssClass" : "fa fa-refresh"
+            },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
+            "timeout" : 60000,
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "RefreshParent",
+            "uIActionType" : "DEUIACTION"
+          },
+          "tooltip" : "刷新",
+          "showCaption" : true,
+          "showIcon" : true
+        } ],
+        "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
+        "modeltype" : "PSDETOOLBAR"
+      }, {
+        "codeName" : "StoryTreeExpViewbranch_cm",
+        "controlType" : "CONTEXTMENU",
+        "hookEventNames" : [ "CLICK" ],
+        "logicName" : "树节点默认工具栏",
+        "name" : "branch_cm",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        },
+        "getPSControlLogics" : [ {
+          "eventArg" : "deuiaction1",
+          "eventNames" : "CLICK",
+          "logicTag" : "branch_cm",
+          "logicType" : "APPVIEWLOGIC",
+          "name" : "branch_cm_deuiaction1_click",
+          "getPSAppViewLogic" : {
+            "modelref" : true,
+            "id" : "branch_cm_deuiaction1_click"
+          }
+        } ],
+        "getPSControlParam" : {
+          "id" : "branch_cm"
+        },
+        "getPSDEToolbarItems" : [ {
+          "caption" : "刷新",
+          "groupExtractMode" : "ITEM",
+          "itemType" : "DEUIACTION",
+          "name" : "deuiaction1",
+          "noPrivDisplayMode" : 2,
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "branch_cm_deuiaction1"
           },
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
@@ -562,6 +562,65 @@
         "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
         "modeltype" : "PSDETOOLBAR"
       }, {
+        "codeName" : "StoryTreeExpViewmodule_cm",
+        "controlType" : "CONTEXTMENU",
+        "hookEventNames" : [ "CLICK" ],
+        "logicName" : "树节点默认工具栏",
+        "name" : "module_cm",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        },
+        "getPSControlLogics" : [ {
+          "eventArg" : "deuiaction1",
+          "eventNames" : "CLICK",
+          "logicTag" : "module_cm",
+          "logicType" : "APPVIEWLOGIC",
+          "name" : "module_cm_deuiaction1_click",
+          "getPSAppViewLogic" : {
+            "modelref" : true,
+            "id" : "module_cm_deuiaction1_click"
+          }
+        } ],
+        "getPSControlParam" : {
+          "id" : "module_cm"
+        },
+        "getPSDEToolbarItems" : [ {
+          "caption" : "刷新",
+          "groupExtractMode" : "ITEM",
+          "itemType" : "DEUIACTION",
+          "name" : "deuiaction1",
+          "noPrivDisplayMode" : 2,
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "module_cm_deuiaction1"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf021@FontAwesome",
+            "cssClass" : "fa fa-refresh"
+          },
+          "getPSUIAction" : {
+            "caption" : "刷新",
+            "codeName" : "RefreshParent",
+            "fullCodeName" : "RefreshParent",
+            "name" : "树界面_刷新父节点操作",
+            "getPSSysImage" : {
+              "glyph" : "xf021@FontAwesome",
+              "cssClass" : "fa fa-refresh"
+            },
+            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
+            "timeout" : 60000,
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "RefreshParent",
+            "uIActionType" : "DEUIACTION"
+          },
+          "tooltip" : "刷新",
+          "showCaption" : true,
+          "showIcon" : true
+        } ],
+        "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
+        "modeltype" : "PSDETOOLBAR"
+      }, {
         "codeName" : "StoryTreeExpViewroot_nobranch_cm",
         "controlType" : "CONTEXTMENU",
         "hookEventNames" : [ "CLICK" ],
@@ -620,65 +679,6 @@
         } ],
         "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
         "modeltype" : "PSDETOOLBAR"
-      }, {
-        "codeName" : "StoryTreeExpViewbranch_cm",
-        "controlType" : "CONTEXTMENU",
-        "hookEventNames" : [ "CLICK" ],
-        "logicName" : "树节点默认工具栏",
-        "name" : "branch_cm",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-        },
-        "getPSControlLogics" : [ {
-          "eventArg" : "deuiaction1",
-          "eventNames" : "CLICK",
-          "logicTag" : "branch_cm",
-          "logicType" : "APPVIEWLOGIC",
-          "name" : "branch_cm_deuiaction1_click",
-          "getPSAppViewLogic" : {
-            "modelref" : true,
-            "id" : "branch_cm_deuiaction1_click"
-          }
-        } ],
-        "getPSControlParam" : {
-          "id" : "branch_cm"
-        },
-        "getPSDEToolbarItems" : [ {
-          "caption" : "刷新",
-          "groupExtractMode" : "ITEM",
-          "itemType" : "DEUIACTION",
-          "name" : "deuiaction1",
-          "noPrivDisplayMode" : 2,
-          "getPSAppViewUIAction" : {
-            "modelref" : true,
-            "id" : "branch_cm_deuiaction1"
-          },
-          "getPSSysImage" : {
-            "glyph" : "xf021@FontAwesome",
-            "cssClass" : "fa fa-refresh"
-          },
-          "getPSUIAction" : {
-            "caption" : "刷新",
-            "codeName" : "RefreshParent",
-            "fullCodeName" : "RefreshParent",
-            "name" : "树界面_刷新父节点操作",
-            "getPSSysImage" : {
-              "glyph" : "xf021@FontAwesome",
-              "cssClass" : "fa fa-refresh"
-            },
-            "predefinedType" : "TREEVIEW_REFRESHPARENTACTION",
-            "timeout" : 60000,
-            "uIActionMode" : "SYS",
-            "uIActionTag" : "RefreshParent",
-            "uIActionType" : "DEUIACTION"
-          },
-          "tooltip" : "刷新",
-          "showCaption" : true,
-          "showIcon" : true
-        } ],
-        "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
-        "modeltype" : "PSDETOOLBAR"
       } ],
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
@@ -687,6 +687,11 @@
         },
         "name" : "全局 - 根模块无分支（动态）",
         "getPSNavigateParams" : [ {
+          "key" : "n_branch_eq",
+          "name" : "n_branch_eq",
+          "value" : "0",
+          "rawValue" : true
+        }, {
           "key" : "n_type_eq",
           "name" : "n_type_eq",
           "value" : "story",
@@ -694,11 +699,6 @@
         }, {
           "key" : "n_parent_eq",
           "name" : "n_parent_eq",
-          "value" : "0",
-          "rawValue" : true
-        }, {
-          "key" : "n_branch_eq",
-          "name" : "n_branch_eq",
           "value" : "0",
           "rawValue" : true
         } ],
@@ -800,13 +800,13 @@
           "value" : "story",
           "rawValue" : true
         }, {
-          "key" : "n_parent_eq",
-          "name" : "n_parent_eq",
+          "key" : "n_branch_noteq",
+          "name" : "n_branch_noteq",
           "value" : "0",
           "rawValue" : true
         }, {
-          "key" : "n_branch_noteq",
-          "name" : "n_branch_noteq",
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
           "value" : "0",
           "rawValue" : true
         } ],
@@ -1300,25 +1300,10 @@
           "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "modulename",
-          "name" : "modulename",
-          "value" : "name",
-          "rawValue" : false
-        }, {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
-          "value" : "product",
-          "rawValue" : false
-        }, {
           "key" : "srfparentdename",
           "name" : "srfparentdename",
           "value" : "product",
           "rawValue" : true
-        }, {
-          "key" : "module",
-          "name" : "module",
-          "value" : "srfkey",
-          "rawValue" : false
         }, {
           "key" : "branch",
           "name" : "branch",
@@ -1329,6 +1314,21 @@
           "name" : "srfparentdemapname",
           "value" : "ZT_PRODUCT",
           "rawValue" : true
+        }, {
+          "key" : "module",
+          "name" : "module",
+          "value" : "srfkey",
+          "rawValue" : false
+        }, {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "product",
+          "rawValue" : false
+        }, {
+          "key" : "modulename",
+          "name" : "modulename",
+          "value" : "name",
+          "rawValue" : false
         } ],
         "getTextPSAppDEField" : {
           "name" : "NAME",
@@ -1459,25 +1459,10 @@
           "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "modulename",
-          "name" : "modulename",
-          "value" : "name",
-          "rawValue" : false
-        }, {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
-          "value" : "product",
-          "rawValue" : false
-        }, {
           "key" : "srfparentdename",
           "name" : "srfparentdename",
           "value" : "product",
           "rawValue" : true
-        }, {
-          "key" : "module",
-          "name" : "module",
-          "value" : "srfkey",
-          "rawValue" : false
         }, {
           "key" : "branch",
           "name" : "branch",
@@ -1488,6 +1473,21 @@
           "name" : "srfparentdemapname",
           "value" : "ZT_PRODUCT",
           "rawValue" : true
+        }, {
+          "key" : "module",
+          "name" : "module",
+          "value" : "srfkey",
+          "rawValue" : false
+        }, {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "product",
+          "rawValue" : false
+        }, {
+          "key" : "modulename",
+          "name" : "modulename",
+          "value" : "name",
+          "rawValue" : false
         } ],
         "getTextPSAppDEField" : {
           "name" : "NAME",
@@ -1618,25 +1618,10 @@
           "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "modulename",
-          "name" : "modulename",
-          "value" : "name",
-          "rawValue" : false
-        }, {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
-          "value" : "product",
-          "rawValue" : false
-        }, {
           "key" : "srfparentdename",
           "name" : "srfparentdename",
           "value" : "product",
           "rawValue" : true
-        }, {
-          "key" : "module",
-          "name" : "module",
-          "value" : "srfkey",
-          "rawValue" : false
         }, {
           "key" : "branch",
           "name" : "branch",
@@ -1647,6 +1632,21 @@
           "name" : "srfparentdemapname",
           "value" : "ZT_PRODUCT",
           "rawValue" : true
+        }, {
+          "key" : "module",
+          "name" : "module",
+          "value" : "srfkey",
+          "rawValue" : false
+        }, {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "product",
+          "rawValue" : false
+        }, {
+          "key" : "modulename",
+          "name" : "modulename",
+          "value" : "name",
+          "rawValue" : false
         } ],
         "getTextPSAppDEField" : {
           "name" : "NAME",

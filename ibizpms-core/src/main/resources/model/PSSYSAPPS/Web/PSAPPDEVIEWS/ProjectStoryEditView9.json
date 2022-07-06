@@ -42,7 +42,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "需求影响项目",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -350,7 +350,7 @@
                 "id" : "fetch"
               },
               "groupMode" : "NONE",
-              "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+              "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
               "logicName" : "嵌入项目任务表格（无分页）",
               "minorSortDir" : "DESC",
               "getMinorSortPSAppDEField" : {
@@ -578,31 +578,24 @@
               } ],
               "getPSDEGridDataItems" : [ {
                 "dataType" : 1,
-                "name" : "module",
+                "name" : "id",
                 "getPSAppDEField" : {
-                  "name" : "MODULE",
-                  "codeName" : "Module"
+                  "name" : "ID",
+                  "codeName" : "Id"
                 }
               }, {
                 "dataType" : 25,
-                "name" : "tasktype",
+                "name" : "name",
                 "getPSAppDEField" : {
-                  "name" : "TASKTYPE",
-                  "codeName" : "Tasktype"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "frombug",
-                "getPSAppDEField" : {
-                  "name" : "FROMBUG",
-                  "codeName" : "FromBug"
+                  "name" : "NAME",
+                  "codeName" : "Name"
                 }
               }, {
                 "dataType" : 25,
-                "name" : "status",
+                "name" : "assignedto",
                 "getPSAppDEField" : {
-                  "name" : "STATUS",
-                  "codeName" : "Status"
+                  "name" : "ASSIGNEDTO",
+                  "codeName" : "AssignedTo"
                 }
               }, {
                 "dataType" : 25,
@@ -612,11 +605,25 @@
                   "codeName" : "Status1"
                 }
               }, {
-                "dataType" : 1,
-                "name" : "parent",
+                "dataType" : 7,
+                "name" : "consumed",
                 "getPSAppDEField" : {
-                  "name" : "PARENT",
-                  "codeName" : "Parent"
+                  "name" : "CONSUMED",
+                  "codeName" : "Consumed"
+                }
+              }, {
+                "dataType" : 7,
+                "name" : "left",
+                "getPSAppDEField" : {
+                  "name" : "LEFT",
+                  "codeName" : "Left"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "tasksn",
+                "getPSAppDEField" : {
+                  "name" : "TASKSN",
+                  "codeName" : "Tasksn"
                 }
               }, {
                 "dataType" : 25,
@@ -627,13 +634,17 @@
                 }
               }, {
                 "dataType" : 25,
-                "name" : "srfmstag"
+                "name" : "status",
+                "getPSAppDEField" : {
+                  "name" : "STATUS",
+                  "codeName" : "Status"
+                }
               }, {
                 "dataType" : 25,
-                "name" : "srfmajortext",
+                "name" : "tasktype",
                 "getPSAppDEField" : {
-                  "name" : "NAME",
-                  "codeName" : "Name"
+                  "name" : "TASKTYPE",
+                  "codeName" : "Tasktype"
                 }
               }, {
                 "dataType" : 1,
@@ -652,10 +663,24 @@
                 "dataAccessAction" : true
               }, {
                 "dataType" : 1,
-                "name" : "id",
+                "name" : "project",
                 "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "plan",
+                "getPSAppDEField" : {
+                  "name" : "PLAN",
+                  "codeName" : "Plan"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "module",
+                "getPSAppDEField" : {
+                  "name" : "MODULE",
+                  "codeName" : "Module"
                 }
               }, {
                 "dataType" : 1,
@@ -666,53 +691,28 @@
                 }
               }, {
                 "dataType" : 1,
-                "name" : "project",
+                "name" : "parent",
                 "getPSAppDEField" : {
-                  "name" : "PROJECT",
-                  "codeName" : "Project"
-                }
-              }, {
-                "dataType" : 25,
-                "name" : "assignedto",
-                "getPSAppDEField" : {
-                  "name" : "ASSIGNEDTO",
-                  "codeName" : "AssignedTo"
-                }
-              }, {
-                "dataType" : 7,
-                "name" : "consumed",
-                "getPSAppDEField" : {
-                  "name" : "CONSUMED",
-                  "codeName" : "Consumed"
+                  "name" : "PARENT",
+                  "codeName" : "Parent"
                 }
               }, {
                 "dataType" : 1,
-                "name" : "plan",
+                "name" : "frombug",
                 "getPSAppDEField" : {
-                  "name" : "PLAN",
-                  "codeName" : "Plan"
+                  "name" : "FROMBUG",
+                  "codeName" : "FromBug"
                 }
               }, {
                 "dataType" : 25,
-                "name" : "name",
+                "name" : "srfmajortext",
                 "getPSAppDEField" : {
                   "name" : "NAME",
                   "codeName" : "Name"
                 }
               }, {
-                "dataType" : 7,
-                "name" : "left",
-                "getPSAppDEField" : {
-                  "name" : "LEFT",
-                  "codeName" : "Left"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "tasksn",
-                "getPSAppDEField" : {
-                  "name" : "TASKSN",
-                  "codeName" : "Tasksn"
-                }
+                "dataType" : 25,
+                "name" : "srfmstag"
               } ],
               "getPSDEGridEditItems" : [ {
                 "caption" : "编号",

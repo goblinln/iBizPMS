@@ -100,9 +100,14 @@ export class ModelTool {
      */
     public static getAllFormItems(form: any) {
         let arr: any[] = [];
-        this.parseForm(form, (formDetail: any) => {
-            if (formDetail?.detailType == 'FORMITEM') {
+        this.parseForm(form, (formDetail: any)=>{
+            if(formDetail?.detailType == 'FORMITEM'){
                 arr.push(formDetail);
+            }
+            if (formDetail?.compositeItem && formDetail.getPSDEFormItems?.()?.length > 0) {
+                (formDetail.getPSDEFormItems() || []).forEach((compositeItem: any) => {
+                    arr.push(compositeItem);
+                })
             }
         })
         return arr;

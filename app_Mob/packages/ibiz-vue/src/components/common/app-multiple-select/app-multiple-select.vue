@@ -99,6 +99,14 @@ export default class AppMultipleSelect extends Vue {
    */
   @Prop({ default: "," }) public textSeparator?: string;
 
+  /**
+   * 代码表
+   *
+   * @type {string}
+   * @memberof DropDownList
+   */    
+  @Prop() public codeList?: any;
+
   get curValue() {
     if (this.value) {
       this.selectedValues = this.value;
@@ -172,7 +180,7 @@ export default class AppMultipleSelect extends Vue {
             this.options = [];
           });
       } else {
-        this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: null, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
+        this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: this.codeList, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
             this.options = codelistItems;
         }).catch((error: any) => {
             LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codeNotExist')}`);

@@ -130,6 +130,14 @@ export class AppDefaultEditor extends Vue {
     @Prop() public ignorefieldvaluechange?: any
 
     /**
+     * 值格式化
+     *
+     * @type {boolean}
+     * @memberof AppDefaultEditor
+     */
+    @Prop() public valueFormat?:any
+
+    /**
      * 编辑器change事件
      *
      * @param {*} value
@@ -231,6 +239,7 @@ export class AppDefaultEditor extends Vue {
                     editorInstance: editor,
                     context: this.context,
                     value: this.value,
+                    valueFormat: this.valueFormat,
                     containerCtrl: this.containerCtrl,
                     viewparams: this.viewparams,
                     contextData: this.contextData,

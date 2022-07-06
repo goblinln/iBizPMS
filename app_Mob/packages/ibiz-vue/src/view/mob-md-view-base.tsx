@@ -2,6 +2,7 @@ import { MobMDViewEngine, ModelTool } from 'ibiz-core';
 import { IPSAppDEMobMDView, IPSDEMobMDCtrl} from '@ibiz/dynamic-model-api';
 import { MDViewBase } from "./md-view-base";
 import { Util } from 'ibiz-core';
+import { MobMDViewInterface } from 'ibiz-core';
 
 /**
  * 多数据视图基类
@@ -10,7 +11,7 @@ import { Util } from 'ibiz-core';
  * @class MDViewBase
  * @extends {MainViewBase}
  */
-export class MobMDViewBase extends MDViewBase {
+export class MobMDViewBase extends MDViewBase implements MobMDViewInterface {
 
     /**
      * 视图实例

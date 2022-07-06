@@ -16,7 +16,7 @@ import { AppMobMDCtrlBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class MobItemList extends AppMobMDCtrlBase {
 
-    /**
+        /**
      * 绘制列表主体
      *
      * @returns {*}

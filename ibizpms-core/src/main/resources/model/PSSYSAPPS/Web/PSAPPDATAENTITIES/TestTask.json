@@ -35,43 +35,164 @@
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/activate",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Block",
     "methodType" : "DEACTION",
     "name" : "Block",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/block",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/close",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
@@ -83,46 +204,162 @@
       "modelref" : true,
       "id" : "GetCurUserConcat"
     },
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetUserConcatInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetUserConcatInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetUserConcatResult",
+      "name" : "GetUserConcatResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "LinkCase",
     "methodType" : "DEACTION",
     "name" : "linkCase",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/linkcase",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/start",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "UnlinkCase",
     "methodType" : "DEACTION",
     "name" : "unlinkCase",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/unlinkcase",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   } ],
   "getAllPSAppDEDataExports" : [ {
     "codeName" : "DataExport",
@@ -444,28 +681,152 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Account",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "AccountInput",
+      "name" : "AccountInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "AccountResult",
+      "name" : "AccountResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "My",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyInput",
+      "name" : "MyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyResult",
+      "name" : "MyResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "OWNER",
+          "name" : "OWNER 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "CREATEBY",
+          "name" : "CREATEBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "UPDATEBY",
+          "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTestTaskPc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTestTaskPc",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyTestTaskPcInput",
+      "name" : "MyTestTaskPcInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyTestTaskPcResult",
+      "name" : "MyTestTaskPcResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTestTask",
     "methodType" : "FETCH",
     "name" : "FetchProjectTestTaskDS",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchprojecttesttask",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -735,48 +1096,800 @@
     "enableBackend" : false,
     "enableFront" : true
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "TestTaskDTO",
+    "name" : "TestTaskDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "Auto",
+      "logicName" : "auto",
+      "name" : "Auto",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "AUTO",
+        "codeName" : "Auto"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Begin",
+      "logicName" : "开始日期",
+      "name" : "Begin",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Build",
+      "logicName" : "版本",
+      "name" : "Build",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BUILD",
+        "codeName" : "Build"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "BuildName",
+      "logicName" : "版本",
+      "name" : "BuildName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BUILDNAME",
+        "codeName" : "BuildName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Casecnt",
+      "logicName" : "用例数",
+      "name" : "Casecnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CASECNT",
+        "codeName" : "Casecnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Comment",
+      "logicName" : "备注",
+      "name" : "Comment",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreateBy",
+      "logicName" : "由谁创建",
+      "name" : "CreateBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEBY",
+        "codeName" : "CreateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreateDate",
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "CreateMan",
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Dept",
+      "logicName" : "归属部门",
+      "name" : "Dept",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "DeptName",
+      "logicName" : "归属部门名",
+      "name" : "DeptName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Desc",
+      "logicName" : "描述",
+      "name" : "Desc",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "End",
+      "logicName" : "结束日期",
+      "name" : "End",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Id",
+      "logicName" : "编号",
+      "name" : "Id",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Mailto",
+      "logicName" : "抄送给",
+      "name" : "Mailto",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MAILTO",
+        "codeName" : "Mailto"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Mailtoconact",
+      "logicName" : "联系人",
+      "name" : "Mailtoconact",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MAILTOCONACT",
+        "codeName" : "Mailtoconact"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Mailtopk",
+      "logicName" : "抄送给",
+      "name" : "Mailtopk",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MAILTOPK",
+        "codeName" : "Mailtopk"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Name",
+      "logicName" : "名称",
+      "name" : "Name",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Org",
+      "logicName" : "归属组织",
+      "name" : "Org",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORG",
+        "codeName" : "Org"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OrgName",
+      "logicName" : "归属组织名",
+      "name" : "OrgName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Owner",
+      "logicName" : "负责人",
+      "name" : "Owner",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "OWNER",
+        "codeName" : "Owner"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Ownerpk",
+      "logicName" : "负责人（选择）",
+      "name" : "Ownerpk",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "OWNERPK",
+        "codeName" : "Ownerpk"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Pri",
+      "logicName" : "优先级",
+      "name" : "Pri",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Product",
+      "logicName" : "所属产品",
+      "name" : "Product",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ProductName",
+      "logicName" : "产品",
+      "name" : "ProductName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Project",
+      "logicName" : "所属项目",
+      "name" : "Project",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ProjecttName",
+      "logicName" : "项目",
+      "name" : "ProjecttName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PROJECTTNAME",
+        "codeName" : "ProjecttName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Report",
+      "logicName" : "report",
+      "name" : "Report",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "REPORT",
+        "codeName" : "Report"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Status",
+      "logicName" : "当前状态",
+      "name" : "Status",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "SubStatus",
+      "logicName" : "子状态",
+      "name" : "SubStatus",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Testtasksn",
+      "logicName" : "测试版本编号",
+      "name" : "Testtasksn",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TESTTASKSN",
+        "codeName" : "Testtasksn"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateBy",
+      "logicName" : "由谁更新",
+      "name" : "UpdateBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEBY",
+        "codeName" : "UpdateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateDate",
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "TestTaskFilterDTO",
+    "name" : "TestTaskFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_BUILDNAME_EQ",
+      "logicName" : "版本",
+      "name" : "N_BUILDNAME_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "BUILDNAME",
+        "codeName" : "BuildName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_BUILDNAME_LIKE",
+      "logicName" : "版本",
+      "name" : "N_BUILDNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "BUILDNAME",
+        "codeName" : "BuildName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_BUILD_EQ",
+      "logicName" : "版本",
+      "name" : "N_BUILD_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "BUILD",
+        "codeName" : "Build"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ID_EQ",
+      "logicName" : "编号",
+      "name" : "N_ID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_NAME_LIKE",
+      "logicName" : "名称",
+      "name" : "N_NAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_OWNER_EQ",
+      "logicName" : "负责人",
+      "name" : "N_OWNER_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "OWNER",
+        "codeName" : "Owner"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PRI_EQ",
+      "logicName" : "优先级",
+      "name" : "N_PRI_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PRODUCTNAME_EQ",
+      "logicName" : "产品",
+      "name" : "N_PRODUCTNAME_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PRODUCTNAME_LIKE",
+      "logicName" : "产品",
+      "name" : "N_PRODUCTNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PRODUCT_EQ",
+      "logicName" : "所属产品",
+      "name" : "N_PRODUCT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PRODUCT_ISNOTNULL",
+      "logicName" : "所属产品",
+      "name" : "N_PRODUCT_ISNOTNULL",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PRODUCT_NOTEQ",
+      "logicName" : "所属产品",
+      "name" : "N_PRODUCT_NOTEQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PROJECTTNAME_EQ",
+      "logicName" : "项目",
+      "name" : "N_PROJECTTNAME_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PROJECTTNAME",
+        "codeName" : "ProjecttName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PROJECTTNAME_LIKE",
+      "logicName" : "项目",
+      "name" : "N_PROJECTTNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PROJECTTNAME",
+        "codeName" : "ProjecttName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PROJECT_EQ",
+      "logicName" : "所属项目",
+      "name" : "N_PROJECT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_STATUS_EQ",
+      "logicName" : "当前状态",
+      "name" : "N_STATUS_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_STATUS_NOTEQ",
+      "logicName" : "当前状态",
+      "name" : "N_STATUS_NOTEQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/activate",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Block",
     "methodType" : "DEACTION",
     "name" : "Block",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/block",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/close",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
@@ -788,73 +1901,313 @@
       "modelref" : true,
       "id" : "GetCurUserConcat"
     },
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetUserConcatInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "GetUserConcatInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetUserConcatResult",
+      "name" : "GetUserConcatResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "LinkCase",
     "methodType" : "DEACTION",
     "name" : "linkCase",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/linkcase",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/start",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "UnlinkCase",
     "methodType" : "DEACTION",
     "name" : "unlinkCase",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/unlinkcase",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "codeName" : "FetchAccount",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Account",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "AccountInput",
+      "name" : "AccountInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "AccountResult",
+      "name" : "AccountResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "My",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyInput",
+      "name" : "MyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyResult",
+      "name" : "MyResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "OWNER",
+          "name" : "OWNER 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "CREATEBY",
+          "name" : "CREATEBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "fieldName" : "UPDATEBY",
+          "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT"
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTestTaskPc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTestTaskPc",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyTestTaskPcInput",
+      "name" : "MyTestTaskPcInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyTestTaskPcResult",
+      "name" : "MyTestTaskPcResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTestTask",
     "methodType" : "FETCH",
     "name" : "FetchProjectTestTaskDS",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "TestTaskDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchprojecttesttask",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -893,49 +2246,166 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEUIActions" : [ {
-    "actionTarget" : "MULTIKEY",
-    "caption" : "测试报告",
-    "codeName" : "TestReport",
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "激活",
+    "codeName" : "ActiviteDash",
     "getFrontPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_TestTasks.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskActiviteOptionView.json",
+      "viewType" : "DEOPTVIEW"
     },
     "frontProcessType" : "WIZARD",
-    "fullCodeName" : "TestTask_TestReport",
-    "name" : "测试报告",
+    "fullCodeName" : "TestTask_ActiviteDash",
+    "name" : "激活（操作栏）",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
-    "getPSNavigateContexts" : [ {
-      "key" : "TESTREPORT",
-      "name" : "TESTREPORT",
-      "value" : "0",
-      "rawValue" : true
-    }, {
-      "key" : "TASKS",
-      "name" : "TASKS",
-      "value" : "id",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "testreport",
-      "name" : "testreport",
-      "value" : "0",
-      "rawValue" : true
-    }, {
-      "key" : "tasks",
-      "name" : "tasks",
-      "value" : "id",
-      "rawValue" : false
-    } ],
-    "paramItem" : "tasks",
+    "getPSSysImage" : {
+      "glyph" : "xf0d0@FontAwesome",
+      "cssClass" : "fa fa-magic"
+    },
+    "refreshMode" : 1,
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
-    "uIActionTag" : "TestReport",
+    "uIActionTag" : "ActiviteDash",
     "uIActionType" : "DEUIACTION",
-    "id" : "TestReport@TestTask"
+    "reloadData" : true,
+    "id" : "ActiviteDash@TestTask"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "阻塞",
+    "codeName" : "BlockDash",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskBlockOptionView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "TestTask_BlockDash",
+    "name" : "阻塞（操作栏）",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf04c@FontAwesome",
+      "cssClass" : "fa fa-pause"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "BlockDash",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "BlockDash@TestTask"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "关闭",
+    "codeName" : "CloseDash",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskCloseOptionView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "TestTask_CloseDash",
+    "name" : "关闭（操作栏 ）",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf00d@FontAwesome",
+      "cssClass" : "fa fa-close"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "CloseDash",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "CloseDash@TestTask"
+  }, {
+    "actionTarget" : "NONE",
+    "caption" : "新建",
+    "codeName" : "Create",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "TestTask_Create",
+    "name" : "新建",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "Create",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "Create@TestTask"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "删除",
+    "codeName" : "Delete",
+    "confirmMsg" : "您确认要删除该测试单吗？",
+    "fullCodeName" : "TestTask_Delete",
+    "name" : "删除",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf00d@FontAwesome",
+      "cssClass" : "fa fa-remove"
+    },
+    "refreshMode" : 1,
+    "successMsg" : "已删除",
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Delete",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "Delete@TestTask"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "编辑",
+    "codeName" : "EditEdit",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_Edit.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "TestTask_EditEdit",
+    "name" : "编辑",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf044@FontAwesome",
+      "cssClass" : "fa fa-edit"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "EditEdit",
+    "uIActionType" : "DEUIACTION",
+    "id" : "EditEdit@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "关联用例",
@@ -978,62 +2448,35 @@
     "uIActionType" : "DEUIACTION",
     "id" : "LinkCase@TestTask"
   }, {
-    "actionTarget" : "MULTIKEY",
-    "caption" : "测试报告",
-    "codeName" : "TestReportR",
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "查看",
+    "codeName" : "Look",
+    "dialogResult" : "OK",
     "getFrontPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_R.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
     },
     "frontProcessType" : "WIZARD",
-    "fullCodeName" : "TestTask_TestReportR",
-    "name" : "测试报告（单）",
+    "fullCodeName" : "TestTask_Look",
+    "name" : "查看",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
-    "getPSNavigateContexts" : [ {
-      "key" : "TASKS",
-      "name" : "TASKS",
-      "value" : "id",
-      "rawValue" : false
-    }, {
-      "key" : "ID",
-      "name" : "ID",
-      "value" : "0",
-      "rawValue" : true
-    }, {
-      "key" : "PROJECT",
-      "name" : "PROJECT",
-      "value" : "project",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "id",
-      "name" : "id",
-      "value" : "0",
-      "rawValue" : true
-    }, {
-      "key" : "project",
-      "name" : "project",
-      "value" : "project",
-      "rawValue" : false
-    }, {
-      "key" : "tasks",
-      "name" : "tasks",
-      "value" : "id",
-      "rawValue" : false
-    } ],
     "getPSSysImage" : {
-      "glyph" : "xf024@FontAwesome",
-      "cssClass" : "fa fa-flag"
+      "glyph" : "xf18d@FontAwesome",
+      "cssClass" : "fa fa-stack-exchange"
     },
+    "refreshMode" : 1,
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
-    "uIActionTag" : "TestReportR",
+    "uIActionTag" : "Look",
     "uIActionType" : "DEUIACTION",
-    "id" : "TestReportR@TestTask"
+    "closeEditView" : true,
+    "closePopupView" : true,
+    "reloadData" : true,
+    "id" : "Look@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "概况",
@@ -1132,31 +2575,6 @@
     "id" : "Reports@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "caption" : "编辑",
-    "codeName" : "EditEdit",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_Edit.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "TestTask_EditEdit",
-    "name" : "编辑",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf044@FontAwesome",
-      "cssClass" : "fa fa-edit"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "EditEdit",
-    "uIActionType" : "DEUIACTION",
-    "id" : "EditEdit@TestTask"
-  }, {
-    "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "StartDash",
     "getFrontPSAppView" : {
@@ -1183,171 +2601,106 @@
     "reloadData" : true,
     "id" : "StartDash@TestTask"
   }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "关闭",
-    "codeName" : "CloseDash",
+    "actionTarget" : "MULTIKEY",
+    "caption" : "测试报告",
+    "codeName" : "TestReport",
     "getFrontPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskCloseOptionView.json",
-      "viewType" : "DEOPTVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "TestTask_CloseDash",
-    "name" : "关闭（操作栏 ）",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf00d@FontAwesome",
-      "cssClass" : "fa fa-close"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "CloseDash",
-    "uIActionType" : "DEUIACTION",
-    "reloadData" : true,
-    "id" : "CloseDash@TestTask"
-  }, {
-    "actionTarget" : "NONE",
-    "caption" : "新建",
-    "codeName" : "Create",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_TestTasks.json",
       "viewType" : "DEEDITVIEW"
     },
     "frontProcessType" : "WIZARD",
-    "fullCodeName" : "TestTask_Create",
-    "name" : "新建",
+    "fullCodeName" : "TestTask_TestReport",
+    "name" : "测试报告",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
-    "getPSSysImage" : {
-      "glyph" : "xf067@FontAwesome",
-      "cssClass" : "fa fa-plus"
-    },
-    "refreshMode" : 1,
+    "getPSNavigateContexts" : [ {
+      "key" : "TASKS",
+      "name" : "TASKS",
+      "value" : "id",
+      "rawValue" : false
+    }, {
+      "key" : "TESTREPORT",
+      "name" : "TESTREPORT",
+      "value" : "0",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "testreport",
+      "name" : "testreport",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "tasks",
+      "name" : "tasks",
+      "value" : "id",
+      "rawValue" : false
+    } ],
+    "paramItem" : "tasks",
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
-    "uIActionTag" : "Create",
+    "uIActionTag" : "TestReport",
     "uIActionType" : "DEUIACTION",
-    "reloadData" : true,
-    "id" : "Create@TestTask"
+    "id" : "TestReport@TestTask"
   }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "激活",
-    "codeName" : "ActiviteDash",
+    "actionTarget" : "MULTIKEY",
+    "caption" : "测试报告",
+    "codeName" : "TestReportR",
     "getFrontPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskActiviteOptionView.json",
-      "viewType" : "DEOPTVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_R.json",
+      "viewType" : "DEEDITVIEW"
     },
     "frontProcessType" : "WIZARD",
-    "fullCodeName" : "TestTask_ActiviteDash",
-    "name" : "激活（操作栏）",
+    "fullCodeName" : "TestTask_TestReportR",
+    "name" : "测试报告（单）",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "PROJECT",
+      "name" : "PROJECT",
+      "value" : "project",
+      "rawValue" : false
+    }, {
+      "key" : "ID",
+      "name" : "ID",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "TASKS",
+      "name" : "TASKS",
+      "value" : "id",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "id",
+      "name" : "id",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "project",
+      "name" : "project",
+      "value" : "project",
+      "rawValue" : false
+    }, {
+      "key" : "tasks",
+      "name" : "tasks",
+      "value" : "id",
+      "rawValue" : false
+    } ],
     "getPSSysImage" : {
-      "glyph" : "xf0d0@FontAwesome",
-      "cssClass" : "fa fa-magic"
+      "glyph" : "xf024@FontAwesome",
+      "cssClass" : "fa fa-flag"
     },
-    "refreshMode" : 1,
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
-    "uIActionTag" : "ActiviteDash",
+    "uIActionTag" : "TestReportR",
     "uIActionType" : "DEUIACTION",
-    "reloadData" : true,
-    "id" : "ActiviteDash@TestTask"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "删除",
-    "codeName" : "Delete",
-    "confirmMsg" : "您确认要删除该测试单吗？",
-    "fullCodeName" : "TestTask_Delete",
-    "name" : "删除",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf00d@FontAwesome",
-      "cssClass" : "fa fa-remove"
-    },
-    "refreshMode" : 1,
-    "successMsg" : "已删除",
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "Delete",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "Delete@TestTask"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "查看",
-    "codeName" : "Look",
-    "dialogResult" : "OK",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainTabExpView.json",
-      "viewType" : "DETABEXPVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "TestTask_Look",
-    "name" : "查看",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf18d@FontAwesome",
-      "cssClass" : "fa fa-stack-exchange"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "Look",
-    "uIActionType" : "DEUIACTION",
-    "closeEditView" : true,
-    "closePopupView" : true,
-    "reloadData" : true,
-    "id" : "Look@TestTask"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "阻塞",
-    "codeName" : "BlockDash",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskBlockOptionView.json",
-      "viewType" : "DEOPTVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "TestTask_BlockDash",
-    "name" : "阻塞（操作栏）",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf04c@FontAwesome",
-      "cssClass" : "fa fa-pause"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "BlockDash",
-    "uIActionType" : "DEUIACTION",
-    "reloadData" : true,
-    "id" : "BlockDash@TestTask"
+    "id" : "TestReportR@TestTask"
   } ],
   "getAllPSAppPortletCats" : [ {
     "codeName" : "Ungroup",
@@ -1559,11 +2912,19 @@
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "测试版本",
   "getMainStatePSAppDEFields" : [ {
     "name" : "STATUS",
     "codeName" : "Status"
   } ],
+  "getMajorPSAppDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
+  },
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

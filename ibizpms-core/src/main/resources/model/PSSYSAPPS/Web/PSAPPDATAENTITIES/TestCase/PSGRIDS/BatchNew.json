@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "批量新建",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -164,18 +164,11 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "module",
+    "dataType" : 25,
+    "name" : "modulename",
     "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "frombug",
-    "getPSAppDEField" : {
-      "name" : "FROMBUG",
-      "codeName" : "FromBug"
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
     }
   }, {
     "dataType" : 25,
@@ -186,20 +179,45 @@
     }
   }, {
     "dataType" : 25,
+    "name" : "title",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 25,
     "name" : "type",
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "product",
     "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "module",
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "story",
+    "getPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -218,48 +236,6 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "modulename",
-    "getPSAppDEField" : {
-      "name" : "MODULENAME",
-      "codeName" : "Modulename"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "story",
-    "getPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "title",
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "lib",
-    "getPSAppDEField" : {
-      "name" : "LIB",
-      "codeName" : "Lib"
-    }
-  }, {
-    "dataType" : 1,
     "name" : "fromcaseid",
     "getPSAppDEField" : {
       "name" : "FROMCASEID",
@@ -272,38 +248,32 @@
       "name" : "BRANCH",
       "codeName" : "Branch"
     }
+  }, {
+    "dataType" : 1,
+    "name" : "frombug",
+    "getPSAppDEField" : {
+      "name" : "FROMBUG",
+      "codeName" : "FromBug"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "lib",
+    "getPSAppDEField" : {
+      "name" : "LIB",
+      "codeName" : "Lib"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
-    "caption" : "所属产品",
-    "codeName" : "product",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "product"
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "相关需求",
-    "codeName" : "story",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "story",
-    "getPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
-    },
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "story"
-    },
-    "allowEmpty" : true
-  }, {
     "caption" : "所属模块",
     "codeName" : "modulename",
     "enableCond" : 3,
@@ -349,15 +319,15 @@
         "value" : "path,asc",
         "rawValue" : true
       }, {
-        "key" : "n_root_eq",
-        "name" : "n_root_eq",
-        "value" : "product",
-        "rawValue" : false
-      }, {
         "key" : "type",
         "name" : "type",
         "value" : "TestModule",
         "rawValue" : true
+      }, {
+        "key" : "n_root_eq",
+        "name" : "n_root_eq",
+        "value" : "product",
+        "rawValue" : false
       } ],
       "getPickupPSAppView" : {
         "modelref" : true,
@@ -373,37 +343,6 @@
     },
     "valueItemName" : "module",
     "allowEmpty" : true
-  }, {
-    "caption" : "所属模块",
-    "codeName" : "module",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "module",
-    "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
-    },
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "module"
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "用例标题",
-    "codeName" : "title",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "title",
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    },
-    "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "maxLength" : 255,
-      "name" : "title"
-    },
-    "allowEmpty" : false
   }, {
     "caption" : "相关需求",
     "codeName" : "storyname",
@@ -447,11 +386,6 @@
         "rawValue" : false
       } ],
       "getPSNavigateParams" : [ {
-        "key" : "product",
-        "name" : "product",
-        "value" : "test",
-        "rawValue" : false
-      }, {
         "key" : "n_parent_gtandeq",
         "name" : "n_parent_gtandeq",
         "value" : "0",
@@ -460,6 +394,11 @@
         "key" : "n_module_eq",
         "name" : "n_module_eq",
         "value" : "module",
+        "rawValue" : false
+      }, {
+        "key" : "product",
+        "name" : "product",
+        "value" : "test",
         "rawValue" : false
       }, {
         "key" : "type",
@@ -486,6 +425,22 @@
     "valueItemName" : "story",
     "allowEmpty" : true
   }, {
+    "caption" : "用例标题",
+    "codeName" : "title",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "title",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "maxLength" : 255,
+      "name" : "title"
+    },
+    "allowEmpty" : false
+  }, {
     "caption" : "用例类型",
     "codeName" : "type",
     "enableCond" : 3,
@@ -506,6 +461,51 @@
     },
     "allowEmpty" : true,
     "needCodeListConfig" : true
+  }, {
+    "caption" : "所属产品",
+    "codeName" : "product",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "product"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "所属模块",
+    "codeName" : "module",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "module",
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "module"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "相关需求",
+    "codeName" : "story",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "story",
+    "getPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "story"
+    },
+    "allowEmpty" : true
   }, {
     "caption" : "用例编号",
     "codeName" : "srfkey",

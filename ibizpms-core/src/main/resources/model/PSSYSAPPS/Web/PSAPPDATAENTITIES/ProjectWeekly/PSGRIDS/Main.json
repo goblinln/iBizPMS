@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -124,25 +124,11 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "project",
-    "getPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    }
-  }, {
-    "dataType" : 7,
-    "name" : "totalestimates",
-    "getPSAppDEField" : {
-      "name" : "TOTALESTIMATES",
-      "codeName" : "Totalestimates"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "pm",
+    "name" : "ibzpro_projectweeklyname",
     "getPSAppDEField" : {
-      "name" : "PM",
-      "codeName" : "PM"
+      "name" : "IBZPRO_PROJECTWEEKLYNAME",
+      "codeName" : "PROJECTWEEKLYName"
     }
   }, {
     "dataType" : 25,
@@ -150,6 +136,13 @@
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "pm",
+    "getPSAppDEField" : {
+      "name" : "PM",
+      "codeName" : "PM"
     }
   }, {
     "format" : "YYYY-MM-DD",
@@ -160,14 +153,18 @@
       "codeName" : "Date"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "dataType" : 7,
+    "name" : "totalestimates",
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATES",
+      "codeName" : "Totalestimates"
+    }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "IBZPRO_PROJECTWEEKLYNAME",
-      "codeName" : "PROJECTWEEKLYName"
+      "name" : "IBZPRO_PROJECTWEEKLYID",
+      "codeName" : "PROJECTWEEKLYId"
     }
   }, {
     "dataType" : 25,
@@ -178,19 +175,22 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 25,
-    "name" : "srfkey",
+    "dataType" : 1,
+    "name" : "project",
     "getPSAppDEField" : {
-      "name" : "IBZPRO_PROJECTWEEKLYID",
-      "codeName" : "PROJECTWEEKLYId"
+      "name" : "PROJECT",
+      "codeName" : "Project"
     }
   }, {
     "dataType" : 25,
-    "name" : "ibzpro_projectweeklyname",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "IBZPRO_PROJECTWEEKLYNAME",
       "codeName" : "PROJECTWEEKLYName"
     }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "项目周报标识",

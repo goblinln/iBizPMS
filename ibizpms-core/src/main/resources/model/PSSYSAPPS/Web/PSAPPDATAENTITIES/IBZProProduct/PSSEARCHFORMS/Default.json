@@ -2,7 +2,7 @@
   "codeName" : "Default",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct/PSSEARCHFORMS/Default.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "默认搜索表单",
   "getPSAppDataEntity" : {
     "modelref" : true,

@@ -118,79 +118,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "ProjectReportLinkGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "过滤工具栏",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.FILTER"
-      },
-      "caption" : "过滤",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0b0@FontAwesome",
-        "cssClass" : "fa fa-filter"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.FILTER"
-        },
-        "caption" : "过滤",
-        "codeName" : "ToggleFilter",
-        "fullCodeName" : "ToggleFilter",
-        "name" : "表格界面_搜索栏",
-        "getPSSysImage" : {
-          "glyph" : "xf0b0@FontAwesome",
-          "cssClass" : "fa fa-filter"
-        },
-        "predefinedType" : "GRIDVIEW_SEARCHBAR",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ToggleFilter",
-        "uIActionType" : "DEUIACTION",
-        "enableToggleMode" : true
-      },
-      "tooltip" : "过滤",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-      },
-      "enableToggleMode" : true,
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "7167528aee7341e0abb009dc91a9b012",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "RePortMainGrid",
     "columnEnableLink" : 2,
@@ -201,7 +128,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主信息（报告关联）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -559,31 +486,24 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "casesn",
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "CASESN",
-        "codeName" : "Casesn"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 9,
-      "name" : "resultcnt",
+      "name" : "pri",
       "getPSAppDEField" : {
-        "name" : "RESULTCNT",
-        "codeName" : "ResultCNT"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "frombug",
-      "getPSAppDEField" : {
-        "name" : "FROMBUG",
-        "codeName" : "FromBug"
+        "name" : "PRI",
+        "codeName" : "Pri"
       }
     }, {
       "dataType" : 25,
-      "name" : "status1",
+      "name" : "title",
       "getPSAppDEField" : {
-        "name" : "STATUS1",
-        "codeName" : "Status1"
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
     }, {
       "dataType" : 25,
@@ -594,13 +514,88 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "openedby",
+      "getPSAppDEField" : {
+        "name" : "OPENEDBY",
+        "codeName" : "OpenedBy"
+      }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "lastrunner",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "LASTRUNNER",
+        "codeName" : "LastRunner"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "lastrundate",
+      "getPSAppDEField" : {
+        "name" : "LASTRUNDATE",
+        "codeName" : "LastRunDate"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "lastrunresult",
+      "getPSAppDEField" : {
+        "name" : "LASTRUNRESULT",
+        "codeName" : "LastRunResult"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "status1",
+      "getPSAppDEField" : {
+        "name" : "STATUS1",
+        "codeName" : "Status1"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "tobugcnt",
+      "getPSAppDEField" : {
+        "name" : "TOBUGCNT",
+        "codeName" : "ToBugCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "resultcnt",
+      "getPSAppDEField" : {
+        "name" : "RESULTCNT",
+        "codeName" : "ResultCNT"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "lastrunresult1",
+      "getPSAppDEField" : {
+        "name" : "LASTRUNRESULT1",
+        "codeName" : "Lastrunresult1"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "casesn",
+      "getPSAppDEField" : {
+        "name" : "CASESN",
+        "codeName" : "Casesn"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "status",
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "isfavorites",
+      "getPSAppDEField" : {
+        "name" : "ISFAVORITES",
+        "codeName" : "Isfavorites"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "color",
+      "getPSAppDEField" : {
+        "name" : "COLOR",
+        "codeName" : "Color"
       }
     }, {
       "dataType" : 1,
@@ -618,110 +613,11 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 25,
-      "name" : "openedby",
-      "getPSAppDEField" : {
-        "name" : "OPENEDBY",
-        "codeName" : "OpenedBy"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "story",
-      "getPSAppDEField" : {
-        "name" : "STORY",
-        "codeName" : "Story"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
       "dataType" : 1,
       "name" : "fromcaseid",
       "getPSAppDEField" : {
         "name" : "FROMCASEID",
         "codeName" : "FromCaseId"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "isfavorites",
-      "getPSAppDEField" : {
-        "name" : "ISFAVORITES",
-        "codeName" : "Isfavorites"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "module",
-      "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
-      }
-    }, {
-      "format" : "YYYY-MM-DD HH:mm:ss",
-      "dataType" : 5,
-      "name" : "lastrundate",
-      "getPSAppDEField" : {
-        "name" : "LASTRUNDATE",
-        "codeName" : "LastRunDate"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "status",
-      "getPSAppDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "pri",
-      "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "lastrunresult1",
-      "getPSAppDEField" : {
-        "name" : "LASTRUNRESULT1",
-        "codeName" : "Lastrunresult1"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "lib",
-      "getPSAppDEField" : {
-        "name" : "LIB",
-        "codeName" : "Lib"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "color",
-      "getPSAppDEField" : {
-        "name" : "COLOR",
-        "codeName" : "Color"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "lastrunresult",
-      "getPSAppDEField" : {
-        "name" : "LASTRUNRESULT",
-        "codeName" : "LastRunResult"
       }
     }, {
       "dataType" : 1,
@@ -731,19 +627,50 @@
         "codeName" : "Branch"
       }
     }, {
-      "dataType" : 9,
-      "name" : "tobugcnt",
+      "dataType" : 1,
+      "name" : "frombug",
       "getPSAppDEField" : {
-        "name" : "TOBUGCNT",
-        "codeName" : "ToBugCNT"
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "story",
+      "getPSAppDEField" : {
+        "name" : "STORY",
+        "codeName" : "Story"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "lib",
+      "getPSAppDEField" : {
+        "name" : "LIB",
+        "codeName" : "Lib"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
       }
     }, {
       "dataType" : 25,
-      "name" : "lastrunner",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "LASTRUNNER",
-        "codeName" : "LastRunner"
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "用例编号",
@@ -1637,6 +1564,79 @@
     "name" : "searchbar",
     "modelid" : "94b56c57283d48847abaeb57d37cc4cd",
     "modeltype" : "PSSYSSEARCHBAR"
+  }, {
+    "codeName" : "ProjectReportLinkGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "过滤工具栏",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.FILTER"
+      },
+      "caption" : "过滤",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0b0@FontAwesome",
+        "cssClass" : "fa fa-filter"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.FILTER"
+        },
+        "caption" : "过滤",
+        "codeName" : "ToggleFilter",
+        "fullCodeName" : "ToggleFilter",
+        "name" : "表格界面_搜索栏",
+        "getPSSysImage" : {
+          "glyph" : "xf0b0@FontAwesome",
+          "cssClass" : "fa fa-filter"
+        },
+        "predefinedType" : "GRIDVIEW_SEARCHBAR",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ToggleFilter",
+        "uIActionType" : "DEUIACTION",
+        "enableToggleMode" : true
+      },
+      "tooltip" : "过滤",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+      },
+      "enableToggleMode" : true,
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "7167528aee7341e0abb009dc91a9b012",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "ProjectReportLinkGridView",
   "getPSDEViewId" : "64f85efd1f61ff3f6ff3ff39dc99ed58",

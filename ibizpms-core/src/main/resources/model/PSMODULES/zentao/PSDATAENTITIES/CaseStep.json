@@ -522,6 +522,7 @@
               "condOp" : "EQ",
               "condType" : "SINGLE",
               "condValue" : "srfparentkey",
+              "fieldName" : "ID",
               "name" : "ID 等于(=) 网页请求上下文(srfparentkey)",
               "getPSDEField" : {
                 "name" : "ID",
@@ -2975,6 +2976,65 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
+    "codeName" : "MobMDView9",
+    "logicName" : "用例步骤实体移动端多数据视图（部件视图）",
+    "name" : "用例步骤实体移动端多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "casestep实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "casestep实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "casestep实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "casestep实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView9",
+    "logicName" : "用例步骤实体表格视图（部件视图）(嵌入结果)",
+    "name" : "用例步骤实体表格视图（部件视图）(嵌入结果)",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "用例步骤实体移动端选择多数据视图（部件视图）",
+    "name" : "用例步骤实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainGridView9_EditMode",
+    "logicName" : "用例步骤实体表格视图（部件视图）（行编辑）",
+    "name" : "用例步骤实体表格视图（部件视图）（行编辑）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "casestep实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "casestep实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "casestep实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "casestep实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "用例步骤实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "用例步骤实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "EditView2",
     "logicName" : "casestep实体编辑视图（左右关系）",
     "name" : "casestep实体编辑视图（左右关系）",
@@ -2987,45 +3047,12 @@
     "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "casestep实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "casestep实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "MobMDView",
+    "logicName" : "用例步骤实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "用例步骤实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainGridView9",
-    "logicName" : "用例步骤实体表格视图（部件视图）",
-    "name" : "用例步骤实体表格视图（部件视图）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "用例步骤实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "用例步骤实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainGridView9_EditMode",
-    "logicName" : "用例步骤实体表格视图（部件视图）（行编辑）",
-    "name" : "用例步骤实体表格视图（部件视图）（行编辑）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "用例步骤实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "用例步骤实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "MPickupView",
     "logicName" : "casestep实体数据多项选择视图",
@@ -3034,31 +3061,18 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobMDView9",
-    "logicName" : "用例步骤实体移动端多数据视图（部件视图）",
-    "name" : "用例步骤实体移动端多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBMDVIEW9",
+    "codeName" : "MainGridView9",
+    "logicName" : "用例步骤实体表格视图（部件视图）",
+    "name" : "用例步骤实体表格视图（部件视图）",
+    "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupView",
-    "logicName" : "casestep实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "casestep实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
+    "codeName" : "MobEditView",
+    "logicName" : "用例步骤实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "用例步骤实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "用例步骤实体移动端选择多数据视图（部件视图）",
-    "name" : "用例步骤实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "MobRedirectView",
     "logicName" : "用例步骤实体移动端数据重定向视图",
@@ -3073,39 +3087,26 @@
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "casestep实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "casestep实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
+    "codeName" : "MobMPickupView",
+    "logicName" : "用例步骤实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "用例步骤实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobEditView",
-    "logicName" : "用例步骤实体移动端编辑视图",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "用例步骤实体移动端编辑视图",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "casestep实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "casestep实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView9",
-    "logicName" : "用例步骤实体表格视图（部件视图）(嵌入结果)",
-    "name" : "用例步骤实体表格视图（部件视图）(嵌入结果)",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "用例步骤实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "用例步骤实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "CaseStep",
   "dEType" : 1,
@@ -3193,10 +3194,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
     },
     "name" : "DER1N_ZT_CASESTEP_ZT_CASE_CASE",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "CASE",
@@ -3238,7 +3235,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

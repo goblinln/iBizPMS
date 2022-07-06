@@ -1,5 +1,5 @@
 import { IPSAppDataEntity, IPSAppDEField, IPSAppDEMobListExplorerView, IPSListExpBar } from '@ibiz/dynamic-model-api';
-import { MobListExpViewEngine, ModelTool } from 'ibiz-core';
+import { MobListExpViewEngine, MobListExpViewInterface, ModelTool } from 'ibiz-core';
 import { MobExpViewBase } from './mob-exp-view-base';
 
 
@@ -10,7 +10,7 @@ import { MobExpViewBase } from './mob-exp-view-base';
  * @class MobListExpViewBase
  * @extends {ExpViewBase}
  */
-export class MobListExpViewBase extends MobExpViewBase {
+export class MobListExpViewBase extends MobExpViewBase implements MobListExpViewInterface {
 
     /**
      * 视图实例

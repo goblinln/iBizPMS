@@ -23,7 +23,7 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
     protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name',];
+    protected quickSearchFields = ['name','productname','projectname',];
     protected selectContextParam = {
         product: 'product',
         project: 'project',

@@ -379,7 +379,6 @@ export abstract class StoryBase extends EntityBase implements IStory {
      * 转Bug
      */
     tobug?: any;
-
     /**
      * 重置实体数据
      *

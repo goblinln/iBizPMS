@@ -1,5 +1,5 @@
 import { IPSAppDataEntity, IPSAppDEField, IPSAppDEMobMapView, IPSMap } from '@ibiz/dynamic-model-api';
-import { MobMapViewEngine, ModelTool } from 'ibiz-core';
+import { MobMapViewEngine, MobMapViewInterface, ModelTool } from 'ibiz-core';
 import { MobMDViewBase } from './mob-md-view-base';
 
 
@@ -10,7 +10,7 @@ import { MobMDViewBase } from './mob-md-view-base';
  * @class MobMapViewBase
  * @extends {ExpViewBase}
  */
-export class MobMapViewBase extends MobMDViewBase {
+export class MobMapViewBase extends MobMDViewBase implements MobMapViewInterface {
 
     /**
      * 视图实例

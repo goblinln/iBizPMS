@@ -43,13 +43,13 @@
     }
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "n_assignedto_eq",
-    "name" : "n_assignedto_eq",
+    "key" : "n_owner_eq",
+    "name" : "n_owner_eq",
     "value" : "srfloginname",
     "rawValue" : false
   }, {
-    "key" : "n_owner_eq",
-    "name" : "n_owner_eq",
+    "key" : "n_assignedto_eq",
+    "name" : "n_assignedto_eq",
     "value" : "srfloginname",
     "rawValue" : false
   }, {
@@ -66,42 +66,18 @@
   "getPSControls" : [ {
     "codeName" : "CalendarExpViewcalendarexpbar",
     "controlType" : "CALENDAREXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "calendarexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:ACCOUNTREPORTLY",
-      "realTitle" : "汇报编辑视图",
+      "name" : "EXPITEM:ACCOUNTBUG",
+      "realTitle" : "Bug编辑视图（日历导航）",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCalendarEditView.json",
-        "viewType" : "DEEDITVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:ACCOUNTSTORY",
-      "realTitle" : "需求编辑视图（日历）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCalendarEditView.json",
-        "viewType" : "DEEDITVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:ACCOUNTTESTTASK",
-      "realTitle" : "测试版本编辑视图（日历导航）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskCalendarEditView.json",
-        "viewType" : "DEEDITVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:ACCOUNTTODO",
-      "realTitle" : "待办编辑视图（日历导航）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCalendarEditView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCalendarEditView.json",
         "viewType" : "DEEDITVIEW"
       }
     }, {
@@ -113,11 +89,11 @@
         "viewType" : "DEEDITVIEW"
       }
     }, {
-      "name" : "EXPITEM:ACCOUNTBUG",
-      "realTitle" : "Bug编辑视图（日历导航）",
+      "name" : "EXPITEM:ACCOUNTTODO",
+      "realTitle" : "待办编辑视图（日历导航）",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCalendarEditView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCalendarEditView.json",
         "viewType" : "DEEDITVIEW"
       }
     }, {
@@ -126,6 +102,30 @@
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoCalendarEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ACCOUNTREPORTLY",
+      "realTitle" : "汇报编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCalendarEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ACCOUNTTESTTASK",
+      "realTitle" : "测试版本编辑视图（日历导航）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskCalendarEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ACCOUNTSTORY",
+      "realTitle" : "需求编辑视图（日历）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCalendarEditView.json",
         "viewType" : "DEEDITVIEW"
       }
     } ],
@@ -777,14 +777,14 @@
           "modeltype" : "PSSYSVIEWPANEL"
         },
         "getPSNavigateContexts" : [ {
-          "key" : "TASK",
-          "name" : "TASK",
-          "value" : "accounttask",
-          "rawValue" : false
-        }, {
           "key" : "PROJECT",
           "name" : "PROJECT",
           "value" : "project",
+          "rawValue" : false
+        }, {
+          "key" : "TASK",
+          "name" : "TASK",
+          "value" : "accounttask",
           "rawValue" : false
         } ],
         "getTextPSAppDEField" : {

@@ -1,7 +1,8 @@
 import { IPSExpBar } from '@ibiz/dynamic-model-api';
+import { MobExpViewInterface } from 'ibiz-core';
 import { MainViewBase } from './main-view-base';
 
-export class MobExpViewBase extends MainViewBase {
+export class MobExpViewBase extends MainViewBase implements MobExpViewInterface {
     /**
      * 视图唯一标识
      *

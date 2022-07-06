@@ -14,7 +14,7 @@ export class AppModelService extends PSModelServiceImpl { }
  *
  */
 export const GetModelService: Function = (param: any) => {
-    if(param.instTag && param.instTag2){
+    if(param && param.instTag && param.instTag2){
         return GlobalHelp.getModelServiceByTag(param.instTag,param.instTag2);
     }else{
         return GlobalHelp.getModelService(param?.srfdynainstid);

@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "Bug解决汇总表",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -228,17 +228,75 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 25,
+    "name" : "resolvedby",
+    "getPSAppDEField" : {
+      "name" : "RESOLVEDBY",
+      "codeName" : "ResolvedBy"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugid",
+    "getPSAppDEField" : {
+      "name" : "BUGID",
+      "codeName" : "Bugid"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "bugtitle",
+    "getPSAppDEField" : {
+      "name" : "BUGTITLE",
+      "codeName" : "Bugtitle"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugpri",
+    "getPSAppDEField" : {
+      "name" : "BUGPRI",
+      "codeName" : "Bugpri"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugseverity",
+    "getPSAppDEField" : {
+      "name" : "BUGSEVERITY",
+      "codeName" : "Bugseverity"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "bugopenedby",
+    "getPSAppDEField" : {
+      "name" : "BUGOPENEDBY",
+      "codeName" : "Bugopenedby"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "bugopeneddate",
+    "getPSAppDEField" : {
+      "name" : "BUGOPENEDDATE",
+      "codeName" : "Bugopeneddate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "bugresolution",
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLUTION",
+      "codeName" : "BugRESOLUTION"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "bugresolveddate",
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLVEDDATE",
+      "codeName" : "Bugresolveddate"
+    }
+  }, {
+    "dataType" : 25,
     "name" : "bugstatus",
     "getPSAppDEField" : {
       "name" : "BUGSTATUS",
       "codeName" : "Bugstatus"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
     }
   }, {
     "dataType" : 1,
@@ -256,26 +314,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "bugopeneddate",
-    "getPSAppDEField" : {
-      "name" : "BUGOPENEDDATE",
-      "codeName" : "Bugopeneddate"
-    }
-  }, {
     "dataType" : 1,
     "name" : "product",
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "bugopenedby",
-    "getPSAppDEField" : {
-      "name" : "BUGOPENEDBY",
-      "codeName" : "Bugopenedby"
     }
   }, {
     "dataType" : 1,
@@ -285,54 +328,11 @@
       "codeName" : "Project"
     }
   }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "bugresolveddate",
-    "getPSAppDEField" : {
-      "name" : "BUGRESOLVEDDATE",
-      "codeName" : "Bugresolveddate"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugid",
-    "getPSAppDEField" : {
-      "name" : "BUGID",
-      "codeName" : "Bugid"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "resolvedby",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "RESOLVEDBY",
-      "codeName" : "ResolvedBy"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "bugtitle",
-    "getPSAppDEField" : {
-      "name" : "BUGTITLE",
-      "codeName" : "Bugtitle"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "bugresolution",
-    "getPSAppDEField" : {
-      "name" : "BUGRESOLUTION",
-      "codeName" : "BugRESOLUTION"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugpri",
-    "getPSAppDEField" : {
-      "name" : "BUGPRI",
-      "codeName" : "Bugpri"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugseverity",
-    "getPSAppDEField" : {
-      "name" : "BUGSEVERITY",
-      "codeName" : "Bugseverity"
+      "name" : "TITLE",
+      "codeName" : "Title"
     }
   } ],
   "getPSDEGridEditItems" : [ {

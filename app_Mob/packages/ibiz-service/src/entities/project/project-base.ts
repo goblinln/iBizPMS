@@ -381,7 +381,6 @@ export abstract class ProjectBase extends EntityBase implements IProject {
      * 父项目
      */
     parent?: any;
-
     /**
      * 重置实体数据
      *

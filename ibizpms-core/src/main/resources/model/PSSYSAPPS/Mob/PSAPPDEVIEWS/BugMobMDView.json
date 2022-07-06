@@ -84,7 +84,7 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realTitle" : "Bug移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -92,7 +92,7 @@
       "viewType" : "DEMOBEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realTitle" : "Bug移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -114,10 +114,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -136,10 +136,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -446,7 +446,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__status.json"
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "pri",

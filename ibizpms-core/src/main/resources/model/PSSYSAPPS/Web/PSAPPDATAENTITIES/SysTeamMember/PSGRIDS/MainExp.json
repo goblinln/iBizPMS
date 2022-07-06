@@ -68,27 +68,6 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 25,
-    "name" : "postid",
-    "getPSAppDEField" : {
-      "name" : "POSTID",
-      "codeName" : "PostId"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "teamid",
-    "getPSAppDEField" : {
-      "name" : "TEAMID",
-      "codeName" : "TeamId"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "teamname",
-    "getPSAppDEField" : {
-      "name" : "TEAMNAME",
-      "codeName" : "TeamName"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "userid",
     "getPSAppDEField" : {
       "name" : "USERID",
@@ -103,10 +82,38 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "teammemberid",
+    "getPSAppDEField" : {
+      "name" : "TEAMMEMBERID",
+      "codeName" : "TeamMemberId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "teamname",
+    "getPSAppDEField" : {
+      "name" : "TEAMNAME",
+      "codeName" : "TeamName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "teamid",
     "getPSAppDEField" : {
       "name" : "TEAMID",
       "codeName" : "TeamId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "postid",
+    "getPSAppDEField" : {
+      "name" : "POSTID",
+      "codeName" : "PostId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "TEAMMEMBERID",
+      "codeName" : "TeamMemberId"
     }
   }, {
     "dataType" : 25,
@@ -118,17 +125,10 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "srfkey",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "TEAMMEMBERID",
-      "codeName" : "TeamMemberId"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "teammemberid",
-    "getPSAppDEField" : {
-      "name" : "TEAMMEMBERID",
-      "codeName" : "TeamMemberId"
+      "name" : "TEAMID",
+      "codeName" : "TeamId"
     }
   } ],
   "getPSDEGridEditItems" : [ {

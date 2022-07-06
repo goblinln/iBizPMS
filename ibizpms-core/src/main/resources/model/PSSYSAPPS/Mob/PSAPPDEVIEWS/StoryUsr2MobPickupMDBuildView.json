@@ -19,24 +19,24 @@
     } ]
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "srfparentkey",
-    "name" : "srfparentkey",
-    "value" : "srfparentkey",
-    "rawValue" : false
+    "key" : "n_parent_gtandeq",
+    "name" : "n_parent_gtandeq",
+    "value" : "0",
+    "rawValue" : true
   }, {
     "key" : "project",
     "name" : "project",
     "value" : "project",
     "rawValue" : false
   }, {
-    "key" : "n_parent_gtandeq",
-    "name" : "n_parent_gtandeq",
-    "value" : "0",
-    "rawValue" : true
-  }, {
     "key" : "build",
     "name" : "build",
     "value" : "build",
+    "rawValue" : false
+  }, {
+    "key" : "srfparentkey",
+    "name" : "srfparentkey",
+    "value" : "srfparentkey",
     "rawValue" : false
   } ],
   "getPSControls" : [ {
@@ -52,10 +52,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -74,10 +74,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -252,7 +252,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "MOB_BuildLink_Story",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {

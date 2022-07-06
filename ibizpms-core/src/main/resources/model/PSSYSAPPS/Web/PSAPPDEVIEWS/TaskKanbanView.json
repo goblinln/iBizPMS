@@ -119,23 +119,10 @@
           "value" : "srfkey",
           "rawValue" : false
         } ],
-        "refMode" : "CANCEL",
+        "refMode" : "CLOSED",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
-          "viewType" : "DEOPTVIEW"
-        }
-      }, {
-        "getPSNavigateParams" : [ {
-          "key" : "id",
-          "name" : "id",
-          "value" : "srfkey",
-          "rawValue" : false
-        } ],
-        "refMode" : "PAUSE",
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
           "viewType" : "DEOPTVIEW"
         }
       }, {
@@ -158,10 +145,10 @@
           "value" : "srfkey",
           "rawValue" : false
         } ],
-        "refMode" : "CLOSED",
+        "refMode" : "PAUSE",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
           "viewType" : "DEOPTVIEW"
         }
       }, {
@@ -175,6 +162,19 @@
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "CANCEL",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
           "viewType" : "DEOPTVIEW"
         }
       } ],
@@ -191,23 +191,10 @@
           "value" : "srfkey",
           "rawValue" : false
         } ],
-        "refMode" : "CANCEL",
+        "refMode" : "CLOSED",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
-          "viewType" : "DEOPTVIEW"
-        }
-      }, {
-        "getPSNavigateParams" : [ {
-          "key" : "id",
-          "name" : "id",
-          "value" : "srfkey",
-          "rawValue" : false
-        } ],
-        "refMode" : "PAUSE",
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
           "viewType" : "DEOPTVIEW"
         }
       }, {
@@ -230,10 +217,10 @@
           "value" : "srfkey",
           "rawValue" : false
         } ],
-        "refMode" : "CLOSED",
+        "refMode" : "PAUSE",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
           "viewType" : "DEOPTVIEW"
         }
       }, {
@@ -249,6 +236,19 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
           "viewType" : "DEOPTVIEW"
         }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "CANCEL",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
       } ],
       "viewLogicType" : "APP_OPENDATA",
       "editMode" : true
@@ -261,7 +261,7 @@
     "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "EDITDATA:CANCEL",
+    "name" : "EDITDATA:CLOSED",
     "getPSNavigateParams" : [ {
       "key" : "id",
       "name" : "id",
@@ -269,35 +269,20 @@
       "rawValue" : false
     } ],
     "realOpenMode" : "POPUPMODAL",
-    "realTitle" : "取消任务",
+    "realTitle" : "关闭任务",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
       "viewType" : "DEOPTVIEW"
     }
   }, {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
-    }
-  }, {
-    "name" : "EDITDATA:PAUSE",
-    "getPSNavigateParams" : [ {
-      "key" : "id",
-      "name" : "id",
-      "value" : "srfkey",
-      "rawValue" : false
-    } ],
-    "realOpenMode" : "POPUPMODAL",
-    "realTitle" : "暂停任务",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
-      "viewType" : "DEOPTVIEW"
     }
   }, {
     "name" : "EDITDATA:DONE",
@@ -315,7 +300,7 @@
       "viewType" : "DEOPTVIEW"
     }
   }, {
-    "name" : "EDITDATA:CLOSED",
+    "name" : "EDITDATA:PAUSE",
     "getPSNavigateParams" : [ {
       "key" : "id",
       "name" : "id",
@@ -323,10 +308,10 @@
       "rawValue" : false
     } ],
     "realOpenMode" : "POPUPMODAL",
-    "realTitle" : "关闭任务",
+    "realTitle" : "暂停任务",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
       "viewType" : "DEOPTVIEW"
     }
   }, {
@@ -345,7 +330,22 @@
       "viewType" : "DEOPTVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "EDITDATA:CANCEL",
+    "getPSNavigateParams" : [ {
+      "key" : "id",
+      "name" : "id",
+      "value" : "srfkey",
+      "rawValue" : false
+    } ],
+    "realOpenMode" : "POPUPMODAL",
+    "realTitle" : "取消任务",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
+      "viewType" : "DEOPTVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
@@ -558,7 +558,7 @@
       "pluginCode" : "kanbantitle"
     },
     "groupWidth" : 280,
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "name",
@@ -1398,24 +1398,79 @@
     },
     "getPSDEDataViewDataItems" : [ {
       "dataType" : 25,
-      "name" : "tasktype",
+      "name" : "delay"
+    }, {
+      "dataType" : 25,
+      "name" : "isfavorites",
       "getPSAppDEField" : {
-        "name" : "TASKTYPE",
-        "codeName" : "Tasktype"
+        "name" : "ISFAVORITES",
+        "codeName" : "Isfavorites"
       }
     }, {
-      "dataType" : 21,
-      "name" : "desc",
+      "dataType" : 5,
+      "format" : "YYYY-MM-DD",
+      "name" : "deadline",
       "getPSAppDEField" : {
-        "name" : "DESC",
-        "codeName" : "Desc"
+        "name" : "DEADLINE",
+        "codeName" : "Deadline"
+      }
+    }, {
+      "dataType" : 9,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
+      },
+      "name" : "pri",
+      "getPSAppDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      }
+    }, {
+      "dataType" : 7,
+      "name" : "left"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__type.json"
+      },
+      "name" : "type",
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "parent",
+      "getPSAppDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      }
+    }, {
+      "dataType" : 7,
+      "name" : "consumed",
+      "getPSAppDEField" : {
+        "name" : "CONSUMED",
+        "codeName" : "Consumed"
+      }
+    }, {
+      "dataType" : 5,
+      "format" : "YYYY-MM-DD",
+      "name" : "eststarted",
+      "getPSAppDEField" : {
+        "name" : "ESTSTARTED",
+        "codeName" : "EstStarted"
       }
     }, {
       "dataType" : 25,
-      "name" : "frombug",
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__status.json"
+      },
+      "name" : "status",
       "getPSAppDEField" : {
-        "name" : "FROMBUG",
-        "codeName" : "FromBug"
+        "name" : "STATUS",
+        "codeName" : "Status"
       }
     }, {
       "dataType" : 25,
@@ -1429,25 +1484,89 @@
         "codeName" : "Status1"
       }
     }, {
-      "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__type.json"
-      },
-      "name" : "type",
-      "getPSAppDEField" : {
-        "name" : "TYPE",
-        "codeName" : "Type"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
       "dataType" : 7,
       "name" : "estimate",
       "getPSAppDEField" : {
         "name" : "ESTIMATE",
         "codeName" : "Estimate"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "id"
+    }, {
+      "dataType" : 21,
+      "name" : "desc",
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "name",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "name" : "assignedto",
+      "getPSAppDEField" : {
+        "name" : "ASSIGNEDTO",
+        "codeName" : "AssignedTo"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "name" : "mailto",
+      "getPSAppDEField" : {
+        "name" : "MAILTO",
+        "codeName" : "Mailto"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "story",
+      "getPSAppDEField" : {
+        "name" : "STORY",
+        "codeName" : "Story"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "tasktype",
+      "getPSAppDEField" : {
+        "name" : "TASKTYPE",
+        "codeName" : "Tasktype"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__color.json"
+      },
+      "name" : "color",
+      "getPSAppDEField" : {
+        "name" : "COLOR",
+        "codeName" : "Color"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "project",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
       }
     }, {
       "dataType" : 25,
@@ -1464,113 +1583,6 @@
         "codeName" : "Name"
       }
     }, {
-      "dataType" : 1,
-      "name" : "id"
-    }, {
-      "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-      },
-      "name" : "assignedto",
-      "getPSAppDEField" : {
-        "name" : "ASSIGNEDTO",
-        "codeName" : "AssignedTo"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "story",
-      "getPSAppDEField" : {
-        "name" : "STORY",
-        "codeName" : "Story"
-      }
-    }, {
-      "dataType" : 7,
-      "name" : "consumed",
-      "getPSAppDEField" : {
-        "name" : "CONSUMED",
-        "codeName" : "Consumed"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "name",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 5,
-      "format" : "YYYY-MM-DD",
-      "name" : "eststarted",
-      "getPSAppDEField" : {
-        "name" : "ESTSTARTED",
-        "codeName" : "EstStarted"
-      }
-    }, {
-      "dataType" : 7,
-      "name" : "left"
-    }, {
-      "dataType" : 25,
-      "name" : "isfavorites",
-      "getPSAppDEField" : {
-        "name" : "ISFAVORITES",
-        "codeName" : "Isfavorites"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "module",
-      "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
-      }
-    }, {
-      "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__status.json"
-      },
-      "name" : "status",
-      "getPSAppDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "parent",
-      "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      }
-    }, {
-      "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-      },
-      "name" : "mailto",
-      "getPSAppDEField" : {
-        "name" : "MAILTO",
-        "codeName" : "Mailto"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "project",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      }
-    }, {
-      "dataType" : 9,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
-      },
-      "name" : "pri",
-      "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
-      }
-    }, {
       "dataType" : 25,
       "name" : "plan",
       "getPSAppDEField" : {
@@ -1579,26 +1591,14 @@
       }
     }, {
       "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__color.json"
-      },
-      "name" : "color",
+      "name" : "frombug",
       "getPSAppDEField" : {
-        "name" : "COLOR",
-        "codeName" : "Color"
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
       }
     }, {
       "dataType" : 25,
-      "name" : "delay"
-    }, {
-      "dataType" : 5,
-      "format" : "YYYY-MM-DD",
-      "name" : "deadline",
-      "getPSAppDEField" : {
-        "name" : "DEADLINE",
-        "codeName" : "Deadline"
-      }
+      "name" : "srfmstag"
     } ],
     "getPSDEDataViewItems" : [ {
       "caption" : "延期",

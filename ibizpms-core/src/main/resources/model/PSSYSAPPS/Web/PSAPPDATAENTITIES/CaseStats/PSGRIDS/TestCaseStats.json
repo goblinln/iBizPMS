@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "用例统计表",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -151,13 +151,6 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
     "dataType" : 25,
     "name" : "modulename",
     "getPSAppDEField" : {
@@ -165,11 +158,18 @@
       "codeName" : "Modulename"
     }
   }, {
-    "dataType" : 1,
-    "name" : "module",
+    "dataType" : 9,
+    "name" : "totalcase",
     "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
+      "name" : "TOTALCASE",
+      "codeName" : "Totalcase"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "passcase",
+    "getPSAppDEField" : {
+      "name" : "PASSCASE",
+      "codeName" : "Passcase"
     }
   }, {
     "dataType" : 9,
@@ -187,13 +187,6 @@
     }
   }, {
     "dataType" : 9,
-    "name" : "totalcase",
-    "getPSAppDEField" : {
-      "name" : "TOTALCASE",
-      "codeName" : "Totalcase"
-    }
-  }, {
-    "dataType" : 9,
     "name" : "totalruncase",
     "getPSAppDEField" : {
       "name" : "TOTALRUNCASE",
@@ -207,11 +200,11 @@
       "codeName" : "Passrate"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -223,17 +216,24 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "product",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     }
   }, {
-    "dataType" : 9,
-    "name" : "passcase",
+    "dataType" : 1,
+    "name" : "module",
     "getPSAppDEField" : {
-      "name" : "PASSCASE",
-      "codeName" : "Passcase"
+      "name" : "MODULE",
+      "codeName" : "Module"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
     }
   } ],
   "getPSDEGridEditItems" : [ {

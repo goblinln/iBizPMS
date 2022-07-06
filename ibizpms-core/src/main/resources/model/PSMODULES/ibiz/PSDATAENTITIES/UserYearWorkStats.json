@@ -5824,32 +5824,17 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "BasisMainInfo",
-    "logicName" : "基础信息查看",
-    "modelTag2" : "0",
-    "name" : "基础信息查看",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "用户年度工作内容统计实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "用户年度工作内容统计实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "QADashboardView",
-    "logicName" : "用户年度工作内容统计实体数据看板视图（测试）",
-    "name" : "用户年度工作内容统计实体数据看板视图（测试）",
+    "codeName" : "PODashboardView",
+    "logicName" : "用户年度工作内容统计实体数据看板视图（产品经理）",
+    "name" : "用户年度工作内容统计实体数据看板视图（产品经理）",
     "realModelSubType" : "DEPORTALVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "TitleForm",
-    "logicName" : "标题",
-    "modelTag2" : "0",
-    "name" : "标题",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "TitleEditView9",
+    "logicName" : "用户年度工作内容统计实体编辑视图（部件视图）（标题）",
+    "name" : "用户年度工作内容统计实体编辑视图（部件视图）（标题）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "DashboardView",
     "logicName" : "用户年度工作内容统计实体数据看板视图（研发）",
@@ -5864,31 +5849,23 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "用户年度工作内容统计实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "用户年度工作内容统计实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainInfo",
-    "logicName" : "基础信息",
-    "modelTag2" : "0",
-    "name" : "基础信息",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "用户年度工作内容统计实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "用户年度工作内容统计实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "InfoEditView9",
     "logicName" : "用户年度工作内容统计实体编辑视图（部件视图）（基础信息）",
     "name" : "用户年度工作内容统计实体编辑视图（部件视图）（基础信息）",
     "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "用户年度工作内容统计实体编辑视图（左右关系）",
+    "name" : "用户年度工作内容统计实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "用户年度工作内容统计实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "用户年度工作内容统计实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupGridView",
@@ -5897,10 +5874,31 @@
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PODashboardView",
-    "logicName" : "用户年度工作内容统计实体数据看板视图（产品经理）",
-    "name" : "用户年度工作内容统计实体数据看板视图（产品经理）",
+    "codeName" : "GridView",
+    "logicName" : "用户年度工作内容统计实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "用户年度工作内容统计实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "QADashboardView",
+    "logicName" : "用户年度工作内容统计实体数据看板视图（测试）",
+    "name" : "用户年度工作内容统计实体数据看板视图（测试）",
     "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "用户年度工作内容统计实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "用户年度工作内容统计实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "用户年度工作内容统计实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "用户年度工作内容统计实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Main",
@@ -5910,24 +5908,26 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "用户年度工作内容统计实体编辑视图（左右关系）",
-    "name" : "用户年度工作内容统计实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "BasisMainInfo",
+    "logicName" : "基础信息查看",
+    "modelTag2" : "0",
+    "name" : "基础信息查看",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "TitleEditView9",
-    "logicName" : "用户年度工作内容统计实体编辑视图（部件视图）（标题）",
-    "name" : "用户年度工作内容统计实体编辑视图（部件视图）（标题）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "MainInfo",
+    "logicName" : "基础信息",
+    "modelTag2" : "0",
+    "name" : "基础信息",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "用户年度工作内容统计实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "用户年度工作内容统计实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "TitleForm",
+    "logicName" : "标题",
+    "modelTag2" : "0",
+    "name" : "标题",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "UserYearWorkStats",
   "dEType" : 1,
@@ -5958,7 +5958,7 @@
   "name" : "IBZ_USERYEARWORKSTATS",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

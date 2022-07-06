@@ -1,5 +1,4 @@
 {
-  "aPILevel" : 3,
   "aPIMode" : 0,
   "aPIType" : "RESTFUL",
   "aPIVersion" : 1,
@@ -35531,6 +35530,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -35557,6 +35560,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -35579,6 +35586,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -35607,6 +35618,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -35631,6 +35646,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -35658,6 +35677,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -35678,6 +35701,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -35705,6 +35732,10 @@
           "id" : "IBIZProKeywordDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -36969,6 +37000,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -36995,6 +37030,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -37017,6 +37056,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -37045,6 +37088,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -37069,6 +37116,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -37096,6 +37147,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -37116,6 +37171,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -37144,6 +37203,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchBuild"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchDefault",
@@ -37169,6 +37232,10 @@
           "id" : "PSSysSFPubDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -37222,6 +37289,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -37248,6 +37319,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -37270,6 +37345,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -37298,6 +37377,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -37320,6 +37403,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "ChangePwd"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -37344,6 +37431,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -37371,6 +37462,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -37391,6 +37486,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -37419,6 +37518,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchMyWork",
@@ -37445,6 +37548,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchMyWork"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchPersonInfo",
@@ -37470,6 +37577,10 @@
           "id" : "SysUserDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchPersonInfo"
       },
       "requestMethod" : "POST"
     }, {
@@ -41029,6 +41140,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -41055,6 +41170,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -41077,6 +41196,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -41105,6 +41228,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -41129,6 +41256,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -41156,6 +41287,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -41176,6 +41311,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -41204,6 +41343,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchBugUser"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchContActList",
@@ -41229,6 +41372,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchContActList"
       },
       "requestMethod" : "POST"
     }, {
@@ -41256,6 +41403,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchProductTeamM",
@@ -41281,6 +41432,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProductTeamM"
       },
       "requestMethod" : "POST"
     }, {
@@ -41308,6 +41463,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectTeamM"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchProjectTeamMProduct",
@@ -41333,6 +41492,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectTeamMProduct"
       },
       "requestMethod" : "POST"
     }, {
@@ -41360,6 +41523,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectTeamTaskUserTemp"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchProjectTeamUser",
@@ -41385,6 +41552,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectTeamUser"
       },
       "requestMethod" : "POST"
     }, {
@@ -41412,6 +41583,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectTeamUserTask"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchProjectteamPk",
@@ -41437,6 +41612,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchProjectteamPk"
       },
       "requestMethod" : "POST"
     }, {
@@ -41464,6 +41643,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchStoryProductTeamPK"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchTaskMTeam",
@@ -41490,6 +41673,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchTaskMTeam"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchTaskTeam",
@@ -41515,6 +41702,10 @@
           "id" : "SysEmployeeDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchTaskTeam"
       },
       "requestMethod" : "POST"
     }, {
@@ -42048,6 +42239,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -42074,6 +42269,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -42096,6 +42295,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -42124,6 +42327,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -42148,6 +42355,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -42175,6 +42386,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -42195,6 +42410,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -42222,6 +42441,10 @@
           "id" : "SysOrganizationDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "GET"
     }, {
@@ -43479,6 +43702,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -43505,6 +43732,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -43527,6 +43758,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -43555,6 +43790,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -43579,6 +43818,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -43606,6 +43849,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "MarkDone",
@@ -43626,6 +43873,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "MarkDone"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -43649,6 +43900,10 @@
         "name" : "返回对象",
         "type" : "VOID"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "MarkRead"
+      },
       "requestMethod" : "POST",
       "needResourceKey" : true
     }, {
@@ -43671,6 +43926,10 @@
         "name" : "返回对象",
         "type" : "VOID"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
+      },
       "requestMethod" : "POST",
       "needResourceKey" : true
     }, {
@@ -43692,6 +43951,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Send"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -43720,6 +43983,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchUserAllMessages",
@@ -43746,6 +44013,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchUserAllMessages"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchUserUnreadMessages",
@@ -43771,6 +44042,10 @@
           "id" : "IBIZProMessageDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchUserUnreadMessages"
       },
       "requestMethod" : "POST"
     }, {
@@ -46282,6 +46557,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -46308,6 +46587,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -46330,6 +46613,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -46358,6 +46645,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -46382,6 +46673,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -46409,6 +46704,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -46429,6 +46728,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -46456,6 +46759,10 @@
           "id" : "SysPostDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -51294,6 +51601,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -51320,6 +51631,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -51342,6 +51657,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -51370,6 +51689,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -51394,6 +51717,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -51421,6 +51748,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -51441,6 +51772,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -51468,6 +51803,10 @@
           "id" : "SysRoleDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -58279,6 +58618,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -58305,6 +58648,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -58327,6 +58674,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -58355,6 +58706,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -58379,6 +58734,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -58406,6 +58765,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -58426,6 +58789,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -58453,6 +58820,10 @@
           "id" : "SysTeamDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -64797,6 +65168,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -64823,6 +65198,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -64845,6 +65224,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -64873,6 +65256,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -64897,6 +65284,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -64924,6 +65315,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -64944,6 +65339,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -64972,6 +65371,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchBuild"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchDefault",
@@ -64997,6 +65400,10 @@
           "id" : "PSSystemDBCfgDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -66405,6 +66812,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -66431,6 +66842,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -66453,6 +66868,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -66481,6 +66900,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -66505,6 +66928,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -66532,6 +66959,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -66552,6 +66983,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -66579,6 +67014,10 @@
           "id" : "IBIZProPluginDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -66886,6 +67325,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -66912,6 +67355,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -66934,6 +67381,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -66962,6 +67413,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -66986,6 +67441,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -67013,6 +67472,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -67033,6 +67496,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -67060,6 +67527,10 @@
           "id" : "SysUserRoleDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -67838,6 +68309,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -67864,6 +68339,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -67886,6 +68365,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -67914,6 +68397,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -67938,6 +68425,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -67965,6 +68456,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -67985,6 +68480,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -68013,6 +68512,10 @@
         },
         "type" : "PAGE"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchBuild"
+      },
       "requestMethod" : "POST"
     }, {
       "codeName" : "FetchDefault",
@@ -68038,6 +68541,10 @@
           "id" : "PSSysAppDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -72724,6 +73231,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -72750,6 +73261,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -72772,6 +73287,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -72800,6 +73319,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -72824,6 +73347,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -72851,6 +73378,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -72871,6 +73402,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -72898,6 +73433,10 @@
           "id" : "IBIZProTagDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -73178,6 +73717,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -73204,6 +73747,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -73226,6 +73773,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -73254,6 +73805,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -73278,6 +73833,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -73305,6 +73864,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -73325,6 +73888,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -73352,6 +73919,10 @@
           "id" : "SysTeamMemberDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "POST"
     }, {
@@ -76394,6 +76965,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
       "requestMethod" : "POST",
       "noServiceCodeName" : true
     }, {
@@ -76420,6 +76995,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
       "requestMethod" : "GET",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -76442,6 +77021,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
       "requestMethod" : "DELETE",
       "needResourceKey" : true,
@@ -76470,6 +77053,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
       "requestMethod" : "PUT",
       "needResourceKey" : true,
       "noServiceCodeName" : true
@@ -76494,6 +77081,10 @@
         "name" : "返回对象",
         "stdDataType" : 9,
         "type" : "SIMPLE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "CheckKey"
       },
       "requestMethod" : "POST"
     }, {
@@ -76521,6 +77112,10 @@
         },
         "type" : "DTO"
       },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
       "requestMethod" : "GET"
     }, {
       "codeName" : "Save",
@@ -76541,6 +77136,10 @@
       "getPSDEServiceAPIMethodReturn" : {
         "name" : "返回对象",
         "type" : "VOID"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "Save"
       },
       "requestMethod" : "POST",
       "needResourceKey" : true
@@ -76568,6 +77167,10 @@
           "id" : "SysDepartmentDTO"
         },
         "type" : "PAGE"
+      },
+      "getPSSubSysServiceAPIDEMethod" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
       },
       "requestMethod" : "GET"
     }, {
@@ -77546,7 +78149,6 @@
   } ],
   "serviceCodeName" : "WebApi",
   "serviceType" : "DEFAULT",
-  "coreLevel" : false,
   "enableServiceAPIDTO" : true,
   "resetDefaultActionCodeName" : true,
   "userLevel" : true

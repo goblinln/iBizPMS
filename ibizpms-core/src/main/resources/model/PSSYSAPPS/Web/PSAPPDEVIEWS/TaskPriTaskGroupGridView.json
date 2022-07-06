@@ -154,181 +154,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "PriTaskGroupGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "表格界面（只新建，刷新）",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_click"
-      }
-    }, {
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_click"
-      }
-    }, {
-      "eventArg" : "deuiaction4",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction4_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction4_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.NEW"
-      },
-      "caption" : "新建",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf067@FontAwesome",
-        "cssClass" : "fa fa-plus"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.NEW"
-        },
-        "caption" : "新建",
-        "codeName" : "New",
-        "fullCodeName" : "New",
-        "name" : "表格界面_新建操作",
-        "getPSSysImage" : {
-          "glyph" : "xf0f6@FontAwesome",
-          "cssClass" : "fa fa-file-text-o"
-        },
-        "predefinedType" : "GRIDVIEW_NEWACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.NEW"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "New",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "新建",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.NEW"
-      },
-      "showCaption" : false,
-      "showIcon" : true
-    }, {
-      "itemType" : "SEPERATOR",
-      "name" : "seperator1",
-      "spanMode" : false
-    }, {
-      "caption" : "刷新",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf021@FontAwesome",
-        "cssClass" : "fa fa-refresh"
-      },
-      "getPSUIAction" : {
-        "caption" : "刷新",
-        "codeName" : "Refresh",
-        "fullCodeName" : "Refresh",
-        "name" : "表格界面_刷新操作",
-        "getPSSysImage" : {
-          "glyph" : "xf021@FontAwesome",
-          "cssClass" : "fa fa-refresh"
-        },
-        "predefinedType" : "GRIDVIEW_REFRESHACTION",
-        "timeout" : 60000,
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "Refresh",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "刷新",
-      "showCaption" : false,
-      "showIcon" : true
-    }, {
-      "itemType" : "SEPERATOR",
-      "name" : "seperator3",
-      "spanMode" : false
-    }, {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT"
-      },
-      "caption" : "导出",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction4",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction4"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT"
-        },
-        "caption" : "导出",
-        "codeName" : "ExportExcel",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）",
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "predefinedType" : "GRIDVIEW_EXPORTACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "导出",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "24ddc68b1717d44d1ea610d438f930f6",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "PAGE",
     "codeName" : "PriTaskGroup",
     "columnEnableLink" : 2,
@@ -347,7 +172,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "任务分组（优先级分组）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -1005,33 +830,18 @@
               "id" : "TOBUG"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "MAILTO",
-              "name" : "MAILTO",
-              "value" : "mailto",
-              "rawValue" : false
-            }, {
-              "key" : "ASSIGNEDTO",
-              "name" : "ASSIGNEDTO",
-              "value" : "assignedto",
-              "rawValue" : false
-            }, {
               "key" : "TASK",
               "name" : "TASK",
               "value" : "task",
               "rawValue" : false
             }, {
-              "key" : "STORYNAME",
-              "name" : "STORYNAME",
-              "value" : "storyname",
+              "key" : "COLOR",
+              "name" : "COLOR",
+              "value" : "color",
               "rawValue" : false
             }, {
-              "key" : "MODULE",
-              "name" : "MODULE",
-              "value" : "module",
-              "rawValue" : false
-            }, {
-              "key" : "CURPROJECT",
-              "name" : "CURPROJECT",
+              "key" : "PROJECT",
+              "name" : "PROJECT",
               "value" : "project",
               "rawValue" : false
             }, {
@@ -1040,9 +850,24 @@
               "value" : "story",
               "rawValue" : false
             }, {
-              "key" : "PROJECT",
-              "name" : "PROJECT",
+              "key" : "CURPROJECT",
+              "name" : "CURPROJECT",
               "value" : "project",
+              "rawValue" : false
+            }, {
+              "key" : "TITLE",
+              "name" : "TITLE",
+              "value" : "name",
+              "rawValue" : false
+            }, {
+              "key" : "ASSIGNEDTO",
+              "name" : "ASSIGNEDTO",
+              "value" : "assignedto",
+              "rawValue" : false
+            }, {
+              "key" : "MAILTO",
+              "name" : "MAILTO",
+              "value" : "mailto",
               "rawValue" : false
             }, {
               "key" : "MODULENAME",
@@ -1050,9 +875,9 @@
               "value" : "modulename",
               "rawValue" : false
             }, {
-              "key" : "COLOR",
-              "name" : "COLOR",
-              "value" : "color",
+              "key" : "STORYNAME",
+              "name" : "STORYNAME",
+              "value" : "storyname",
               "rawValue" : false
             }, {
               "key" : "BRANCH",
@@ -1060,9 +885,9 @@
               "value" : "0",
               "rawValue" : true
             }, {
-              "key" : "TITLE",
-              "name" : "TITLE",
-              "value" : "name",
+              "key" : "MODULE",
+              "name" : "MODULE",
+              "value" : "module",
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
@@ -1071,14 +896,9 @@
               "value" : "mailto",
               "rawValue" : false
             }, {
-              "key" : "modulename",
-              "name" : "modulename",
-              "value" : "modulename",
-              "rawValue" : false
-            }, {
-              "key" : "story",
-              "name" : "story",
-              "value" : "story",
+              "key" : "project",
+              "name" : "project",
+              "value" : "project",
               "rawValue" : false
             }, {
               "key" : "assignedto",
@@ -1086,14 +906,14 @@
               "value" : "assignedto",
               "rawValue" : false
             }, {
-              "key" : "project",
-              "name" : "project",
-              "value" : "project",
+              "key" : "color",
+              "name" : "color",
+              "value" : "color",
               "rawValue" : false
             }, {
-              "key" : "title",
-              "name" : "title",
-              "value" : "name",
+              "key" : "story",
+              "name" : "story",
+              "value" : "story",
               "rawValue" : false
             }, {
               "key" : "module",
@@ -1101,14 +921,24 @@
               "value" : "module",
               "rawValue" : false
             }, {
-              "key" : "curproject",
-              "name" : "curproject",
-              "value" : "project",
+              "key" : "branch",
+              "name" : "branch",
+              "value" : "0",
+              "rawValue" : true
+            }, {
+              "key" : "modulename",
+              "name" : "modulename",
+              "value" : "modulename",
               "rawValue" : false
             }, {
-              "key" : "color",
-              "name" : "color",
-              "value" : "color",
+              "key" : "title",
+              "name" : "title",
+              "value" : "name",
+              "rawValue" : false
+            }, {
+              "key" : "storyname",
+              "name" : "storyname",
+              "value" : "storyname",
               "rawValue" : false
             }, {
               "key" : "task",
@@ -1116,14 +946,9 @@
               "value" : "task",
               "rawValue" : false
             }, {
-              "key" : "branch",
-              "name" : "branch",
-              "value" : "0",
-              "rawValue" : true
-            }, {
-              "key" : "storyname",
-              "name" : "storyname",
-              "value" : "storyname",
+              "key" : "curproject",
+              "name" : "curproject",
+              "value" : "project",
               "rawValue" : false
             } ],
             "getPSSysImage" : {
@@ -1372,9 +1197,9 @@
               "id" : "SUBTASKS"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "PARENT",
-              "name" : "PARENT",
-              "value" : "id",
+              "key" : "MODULE",
+              "name" : "MODULE",
+              "value" : "module",
               "rawValue" : false
             }, {
               "key" : "PROJECT",
@@ -1382,17 +1207,12 @@
               "value" : "project",
               "rawValue" : false
             }, {
-              "key" : "MODULE",
-              "name" : "MODULE",
-              "value" : "module",
+              "key" : "PARENT",
+              "name" : "PARENT",
+              "value" : "id",
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "project",
-              "name" : "project",
-              "value" : "project",
-              "rawValue" : false
-            }, {
               "key" : "module",
               "name" : "module",
               "value" : "module",
@@ -1401,6 +1221,11 @@
               "key" : "parent",
               "name" : "parent",
               "value" : "id",
+              "rawValue" : false
+            }, {
+              "key" : "project",
+              "name" : "project",
+              "value" : "project",
               "rawValue" : false
             } ],
             "getPSSysImage" : {
@@ -1532,18 +1357,39 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "module",
+      "dataType" : 9,
+      "name" : "pri",
       "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
+        "name" : "PRI",
+        "codeName" : "Pri"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 25,
-      "name" : "tasktype",
+      "name" : "name",
       "getPSAppDEField" : {
-        "name" : "TASKTYPE",
-        "codeName" : "Tasktype"
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "status1",
+      "getPSAppDEField" : {
+        "name" : "STATUS1",
+        "codeName" : "Status1"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "assignedto",
+      "getPSAppDEField" : {
+        "name" : "ASSIGNEDTO",
+        "codeName" : "AssignedTo"
       }
     }, {
       "dataType" : 25,
@@ -1553,11 +1399,40 @@
         "codeName" : "FinishedBy"
       }
     }, {
-      "dataType" : 1,
-      "name" : "frombug",
+      "dataType" : 7,
+      "name" : "estimate",
       "getPSAppDEField" : {
-        "name" : "FROMBUG",
-        "codeName" : "FromBug"
+        "name" : "ESTIMATE",
+        "codeName" : "Estimate"
+      }
+    }, {
+      "dataType" : 7,
+      "name" : "consumed",
+      "getPSAppDEField" : {
+        "name" : "CONSUMED",
+        "codeName" : "Consumed"
+      }
+    }, {
+      "dataType" : 7,
+      "name" : "left",
+      "getPSAppDEField" : {
+        "name" : "LEFT",
+        "codeName" : "Left"
+      }
+    }, {
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "deadline",
+      "getPSAppDEField" : {
+        "name" : "DEADLINE",
+        "codeName" : "Deadline"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "tasksn",
+      "getPSAppDEField" : {
+        "name" : "TASKSN",
+        "codeName" : "Tasksn"
       }
     }, {
       "dataType" : 25,
@@ -1568,34 +1443,31 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "status1",
+      "name" : "isfavorites",
       "getPSAppDEField" : {
-        "name" : "STATUS1",
-        "codeName" : "Status1"
+        "name" : "ISFAVORITES",
+        "codeName" : "Isfavorites"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "tasktype",
+      "getPSAppDEField" : {
+        "name" : "TASKTYPE",
+        "codeName" : "Tasktype"
       }
     }, {
       "dataType" : 1,
-      "name" : "parent",
+      "name" : "module",
       "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
+        "name" : "MODULE",
+        "codeName" : "Module"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 7,
-      "name" : "estimate",
+      "dataType" : 1,
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "ESTIMATE",
-        "codeName" : "Estimate"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -1607,17 +1479,17 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "project",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PROJECT",
+        "codeName" : "Project"
       }
     }, {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "plan",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PLAN",
+        "codeName" : "Plan"
       }
     }, {
       "dataType" : 1,
@@ -1628,75 +1500,28 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "project",
+      "name" : "parent",
       "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "assignedto",
-      "getPSAppDEField" : {
-        "name" : "ASSIGNEDTO",
-        "codeName" : "AssignedTo"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "pri",
-      "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
-      }
-    }, {
-      "dataType" : 7,
-      "name" : "consumed",
-      "getPSAppDEField" : {
-        "name" : "CONSUMED",
-        "codeName" : "Consumed"
+        "name" : "PARENT",
+        "codeName" : "Parent"
       }
     }, {
       "dataType" : 1,
-      "name" : "plan",
+      "name" : "frombug",
       "getPSAppDEField" : {
-        "name" : "PLAN",
-        "codeName" : "Plan"
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
       }
     }, {
       "dataType" : 25,
-      "name" : "name",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       }
     }, {
-      "dataType" : 7,
-      "name" : "left",
-      "getPSAppDEField" : {
-        "name" : "LEFT",
-        "codeName" : "Left"
-      }
-    }, {
       "dataType" : 25,
-      "name" : "isfavorites",
-      "getPSAppDEField" : {
-        "name" : "ISFAVORITES",
-        "codeName" : "Isfavorites"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "tasksn",
-      "getPSAppDEField" : {
-        "name" : "TASKSN",
-        "codeName" : "Tasksn"
-      }
-    }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "deadline",
-      "getPSAppDEField" : {
-        "name" : "DEADLINE",
-        "codeName" : "Deadline"
-      }
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "编号",
@@ -2886,6 +2711,181 @@
     "name" : "searchbar",
     "modelid" : "f48f6753b28b83cbb139774abd86cc6c",
     "modeltype" : "PSSYSSEARCHBAR"
+  }, {
+    "codeName" : "PriTaskGroupGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "表格界面（只新建，刷新）",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction4_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.NEW"
+      },
+      "caption" : "新建",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.NEW"
+        },
+        "caption" : "新建",
+        "codeName" : "New",
+        "fullCodeName" : "New",
+        "name" : "表格界面_新建操作",
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "predefinedType" : "GRIDVIEW_NEWACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "New",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "新建",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.NEW"
+      },
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "itemType" : "SEPERATOR",
+      "name" : "seperator1",
+      "spanMode" : false
+    }, {
+      "caption" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "getPSUIAction" : {
+        "caption" : "刷新",
+        "codeName" : "Refresh",
+        "fullCodeName" : "Refresh",
+        "name" : "表格界面_刷新操作",
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "predefinedType" : "GRIDVIEW_REFRESHACTION",
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "Refresh",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "刷新",
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "itemType" : "SEPERATOR",
+      "name" : "seperator3",
+      "spanMode" : false
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction4",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "predefinedType" : "GRIDVIEW_EXPORTACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "24ddc68b1717d44d1ea610d438f930f6",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "PriTaskGroupGridView",
   "getPSDEViewId" : "0a427a6b7d5d62661e7be390bd400b64",

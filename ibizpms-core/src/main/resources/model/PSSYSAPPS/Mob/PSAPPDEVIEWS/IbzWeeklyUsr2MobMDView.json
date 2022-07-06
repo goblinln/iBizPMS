@@ -73,9 +73,9 @@
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
         "getPSNavigateContexts" : [ {
-          "key" : "THISWEEKTASK",
-          "name" : "THISWEEKTASK",
-          "value" : "thisweektask",
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "ibzweekly",
           "rawValue" : false
         }, {
           "key" : "NEXTWEEKTASK",
@@ -83,15 +83,15 @@
           "value" : "nextweektask",
           "rawValue" : false
         }, {
+          "key" : "THISWEEKTASK",
+          "name" : "THISWEEKTASK",
+          "value" : "thisweektask",
+          "rawValue" : false
+        }, {
           "key" : "OBJECTTYPE",
           "name" : "OBJECTTYPE",
           "value" : "weekly",
           "rawValue" : true
-        }, {
-          "key" : "SRFPARENTKEY",
-          "name" : "SRFPARENTKEY",
-          "value" : "ibzweekly",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
           "key" : "srfparentkey",
@@ -104,14 +104,14 @@
           "value" : "weekly",
           "rawValue" : true
         }, {
-          "key" : "thisweektask",
-          "name" : "thisweektask",
-          "value" : "thisweektask",
-          "rawValue" : false
-        }, {
           "key" : "nextweektask",
           "name" : "nextweektask",
           "value" : "nextweektask",
+          "rawValue" : false
+        }, {
+          "key" : "thisweektask",
+          "name" : "thisweektask",
+          "value" : "thisweektask",
           "rawValue" : false
         } ],
         "getRefPSAppView" : {
@@ -122,9 +122,9 @@
       },
       "getPSAppUILogicRefViews" : [ {
         "getPSNavigateContexts" : [ {
-          "key" : "THISWEEKTASK",
-          "name" : "THISWEEKTASK",
-          "value" : "thisweektask",
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "ibzweekly",
           "rawValue" : false
         }, {
           "key" : "NEXTWEEKTASK",
@@ -132,15 +132,15 @@
           "value" : "nextweektask",
           "rawValue" : false
         }, {
+          "key" : "THISWEEKTASK",
+          "name" : "THISWEEKTASK",
+          "value" : "thisweektask",
+          "rawValue" : false
+        }, {
           "key" : "OBJECTTYPE",
           "name" : "OBJECTTYPE",
           "value" : "weekly",
           "rawValue" : true
-        }, {
-          "key" : "SRFPARENTKEY",
-          "name" : "SRFPARENTKEY",
-          "value" : "ibzweekly",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
           "key" : "srfparentkey",
@@ -153,14 +153,14 @@
           "value" : "weekly",
           "rawValue" : true
         }, {
-          "key" : "thisweektask",
-          "name" : "thisweektask",
-          "value" : "thisweektask",
-          "rawValue" : false
-        }, {
           "key" : "nextweektask",
           "name" : "nextweektask",
           "value" : "nextweektask",
+          "rawValue" : false
+        }, {
+          "key" : "thisweektask",
+          "name" : "thisweektask",
+          "value" : "thisweektask",
           "rawValue" : false
         } ],
         "getRefPSAppView" : {
@@ -185,19 +185,11 @@
     "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realTitle" : "周报移动端编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyMobEditView.json",
-      "viewType" : "DEMOBEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "getPSNavigateContexts" : [ {
-      "key" : "THISWEEKTASK",
-      "name" : "THISWEEKTASK",
-      "value" : "thisweektask",
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "ibzweekly",
       "rawValue" : false
     }, {
       "key" : "NEXTWEEKTASK",
@@ -205,15 +197,15 @@
       "value" : "nextweektask",
       "rawValue" : false
     }, {
+      "key" : "THISWEEKTASK",
+      "name" : "THISWEEKTASK",
+      "value" : "thisweektask",
+      "rawValue" : false
+    }, {
       "key" : "OBJECTTYPE",
       "name" : "OBJECTTYPE",
       "value" : "weekly",
       "rawValue" : true
-    }, {
-      "key" : "SRFPARENTKEY",
-      "name" : "SRFPARENTKEY",
-      "value" : "ibzweekly",
-      "rawValue" : false
     } ],
     "getPSNavigateParams" : [ {
       "key" : "srfparentkey",
@@ -226,14 +218,14 @@
       "value" : "weekly",
       "rawValue" : true
     }, {
-      "key" : "thisweektask",
-      "name" : "thisweektask",
-      "value" : "thisweektask",
-      "rawValue" : false
-    }, {
       "key" : "nextweektask",
       "name" : "nextweektask",
       "value" : "nextweektask",
+      "rawValue" : false
+    }, {
+      "key" : "thisweektask",
+      "name" : "thisweektask",
+      "value" : "thisweektask",
       "rawValue" : false
     } ],
     "realTitle" : "周报分页导航视图",
@@ -241,6 +233,14 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyUsr2MobTabExpView.json",
       "viewType" : "DEMOBTABEXPVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
+    "realTitle" : "周报移动端编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyMobEditView.json",
+      "viewType" : "DEMOBEDITVIEW"
     }
   } ],
   "getPSAppViewUIActions" : [ {
@@ -274,7 +274,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "ibz_weeklyid"

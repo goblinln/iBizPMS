@@ -123,7 +123,6 @@ export abstract class ModuleBase extends EntityBase implements IModule {
      * 上级模块
      */
     parent?: any;
-
     /**
      * 重置实体数据
      *

@@ -246,6 +246,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "account",
+          "fieldName" : "ACCOUNT",
           "name" : "ACCOUNT 等于(=) 数据上下文(account)",
           "getPSDEField" : {
             "name" : "ACCOUNT",
@@ -294,6 +295,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
+          "fieldName" : "ACCOUNT",
           "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
           "getPSDEField" : {
             "name" : "ACCOUNT",
@@ -376,6 +378,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
+          "fieldName" : "ACCOUNT",
           "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
           "getPSDEField" : {
             "name" : "ACCOUNT",
@@ -424,6 +427,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
+          "fieldName" : "ACCOUNT",
           "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
           "getPSDEField" : {
             "name" : "ACCOUNT",
@@ -1632,23 +1636,11 @@
     "defaultMode" : true
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "PickupGridView",
-    "logicName" : "usercontact实体选择表格视图（部件视图）",
-    "name" : "usercontact实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "usercontact实体编辑视图（左右关系）",
-    "name" : "usercontact实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "GridView",
+    "logicName" : "usercontact实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "usercontact实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -1658,11 +1650,22 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "usercontact实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "usercontact实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
+    "codeName" : "Usr2GridView",
+    "logicName" : "用户联系方式实体表格视图(通讯录-联系人)",
+    "name" : "用户联系方式实体表格视图(通讯录-联系人)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "usercontact实体选择表格视图（部件视图）",
+    "name" : "usercontact实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridExpView",
+    "logicName" : "用户联系方式实体表格导航视图（通讯录）",
+    "name" : "用户联系方式实体表格导航视图（通讯录）",
+    "realModelSubType" : "DEGRIDEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "TreeExpView",
@@ -1678,23 +1681,11 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "usercontact实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "usercontact实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridExpView",
-    "logicName" : "用户联系方式实体表格导航视图（通讯录）",
-    "name" : "用户联系方式实体表格导航视图（通讯录）",
-    "realModelSubType" : "DEGRIDEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2GridView",
-    "logicName" : "用户联系方式实体表格视图(通讯录-联系人)",
-    "name" : "用户联系方式实体表格视图(通讯录-联系人)",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "RedirectView",
+    "logicName" : "usercontact实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "usercontact实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -1703,6 +1694,19 @@
     "name" : "usercontact实体数据选择视图",
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "usercontact实体编辑视图（左右关系）",
+    "name" : "usercontact实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "UserContact",
   "dEType" : 1,
@@ -1737,7 +1741,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

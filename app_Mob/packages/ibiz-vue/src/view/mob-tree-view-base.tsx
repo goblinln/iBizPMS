@@ -1,4 +1,4 @@
-import { MobTreeViewEngine, ModelTool } from 'ibiz-core';
+import { MobTreeViewEngine, MobTreeViewInterface, ModelTool } from 'ibiz-core';
 import { MDViewBase } from './md-view-base';
 import { IPSAppDETreeView, IPSDETree, IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
 
@@ -9,7 +9,7 @@ import { IPSAppDETreeView, IPSDETree, IPSAppDataEntity, IPSAppDEField } from '@i
  * @class MobTreeViewBase
  * @extends {MDViewBase}
  */
-export class MobTreeViewBase extends MDViewBase {
+export class MobTreeViewBase extends MDViewBase implements MobTreeViewInterface {
 
     /**
      * 视图实例

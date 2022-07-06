@@ -185,7 +185,6 @@ export abstract class ProductStatsBase extends EntityBase implements IProductSta
      * 未解决Bug数
      */
     activebugcnt?: any;
-
     /**
      * 重置实体数据
      *

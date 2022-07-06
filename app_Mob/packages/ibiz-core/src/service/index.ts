@@ -14,3 +14,5 @@ export { GetModelService } from './model-service/model-service';
 export { AppModelService } from './model-service/model-service';
 export { AnimationService } from './aniamtion-service/aniamtion-service';
 export { AppCapacitorService } from './app-capacitor-service/app-capacitor-service';
+export { SandboxService } from './model-service/sandbox/sandbox-service';
+export { SandboxInstance } from './model-service/sandbox/sandbox-instance';

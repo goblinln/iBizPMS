@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "MainInfo",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -324,11 +324,6 @@
             "id" : "ADDPROJ"
           },
           "getPSNavigateContexts" : [ {
-            "key" : "PLANID",
-            "name" : "PLANID",
-            "value" : "id",
-            "rawValue" : false
-          }, {
             "key" : "END",
             "name" : "END",
             "value" : "end",
@@ -339,22 +334,22 @@
             "value" : "product",
             "rawValue" : false
           }, {
-            "key" : "BEGIN",
-            "name" : "BEGIN",
-            "value" : "begin",
+            "key" : "PLANID",
+            "name" : "PLANID",
+            "value" : "id",
             "rawValue" : false
           }, {
             "key" : "BRANCH",
             "name" : "BRANCH",
             "value" : "branch",
             "rawValue" : false
+          }, {
+            "key" : "BEGIN",
+            "name" : "BEGIN",
+            "value" : "begin",
+            "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
-            "key" : "product",
-            "name" : "product",
-            "value" : "product",
-            "rawValue" : false
-          }, {
             "key" : "planid",
             "name" : "planid",
             "value" : "id",
@@ -373,6 +368,11 @@
             "key" : "begin",
             "name" : "begin",
             "value" : "begin",
+            "rawValue" : false
+          }, {
+            "key" : "product",
+            "name" : "product",
+            "value" : "product",
             "rawValue" : false
           } ],
           "getPSSysImage" : {
@@ -471,14 +471,14 @@
             "id" : "ZTProduct__LINKBUG"
           },
           "getPSNavigateContexts" : [ {
-            "key" : "TEST",
-            "name" : "TEST",
-            "value" : "product",
-            "rawValue" : false
-          }, {
             "key" : "ID",
             "name" : "ID",
             "value" : "id",
+            "rawValue" : false
+          }, {
+            "key" : "TEST",
+            "name" : "TEST",
+            "value" : "product",
             "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
@@ -578,18 +578,18 @@
             "rawValue" : true
           } ],
           "getPSNavigateParams" : [ {
-            "key" : "title",
-            "name" : "title",
-            "rawValue" : true
+            "key" : "parent",
+            "name" : "parent",
+            "value" : "id",
+            "rawValue" : false
           }, {
             "key" : "productplan",
             "name" : "productplan",
             "rawValue" : true
           }, {
-            "key" : "parent",
-            "name" : "parent",
-            "value" : "id",
-            "rawValue" : false
+            "key" : "title",
+            "name" : "title",
+            "rawValue" : true
           } ],
           "getPSSysImage" : {
             "glyph" : "xf0e8@FontAwesome",
@@ -686,74 +686,6 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 25,
-    "name" : "endstr",
-    "getPSAppDEField" : {
-      "name" : "ENDSTR",
-      "codeName" : "Endstr"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "beginstr",
-    "getPSAppDEField" : {
-      "name" : "BEGINSTR",
-      "codeName" : "Beginstr"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "parent",
-    "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 9,
-    "name" : "storycnt",
-    "getPSAppDEField" : {
-      "name" : "STORYCNT",
-      "codeName" : "StoryCnt"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "srfdataaccaction",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true
-  }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "begin",
-    "getPSAppDEField" : {
-      "name" : "BEGIN",
-      "codeName" : "Begin"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
     "dataType" : 1,
     "name" : "id",
     "getPSAppDEField" : {
@@ -769,10 +701,24 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "statuss",
+    "name" : "beginstr",
     "getPSAppDEField" : {
-      "name" : "STATUSS",
-      "codeName" : "Statuss"
+      "name" : "BEGINSTR",
+      "codeName" : "Beginstr"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "endstr",
+    "getPSAppDEField" : {
+      "name" : "ENDSTR",
+      "codeName" : "Endstr"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "storycnt",
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
     }
   }, {
     "dataType" : 9,
@@ -789,11 +735,12 @@
       "codeName" : "Productplansn"
     }
   }, {
-    "dataType" : 1,
-    "name" : "branch",
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "begin",
     "getPSAppDEField" : {
-      "name" : "BRANCH",
-      "codeName" : "Branch"
+      "name" : "BEGIN",
+      "codeName" : "Begin"
     }
   }, {
     "format" : "YYYY-MM-DD",
@@ -803,6 +750,59 @@
       "name" : "END",
       "codeName" : "End"
     }
+  }, {
+    "dataType" : 25,
+    "name" : "statuss",
+    "getPSAppDEField" : {
+      "name" : "STATUSS",
+      "codeName" : "Statuss"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "parent",
+    "getPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "branch",
+    "getPSAppDEField" : {
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "编号",

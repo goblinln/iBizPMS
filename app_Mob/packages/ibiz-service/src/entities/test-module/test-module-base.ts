@@ -121,7 +121,6 @@ export abstract class TestModuleBase extends EntityBase implements ITestModule {
      * id
      */
     parent?: any;
-
     /**
      * 重置实体数据
      *

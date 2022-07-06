@@ -2,7 +2,7 @@
   "codeName" : "AssignedTOBug",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSSEARCHFORMS/AssignedTOBug.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "指派Bug",
   "getPSAppDataEntity" : {
     "modelref" : true,

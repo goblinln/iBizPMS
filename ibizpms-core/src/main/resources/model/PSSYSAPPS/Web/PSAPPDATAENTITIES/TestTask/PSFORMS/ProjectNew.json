@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "项目新建",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -425,25 +425,25 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "N_PRODUCT_EQ",
-              "name" : "N_PRODUCT_EQ",
-              "value" : "product",
-              "rawValue" : false
-            }, {
               "key" : "N_PROJECT_EQ",
               "name" : "N_PROJECT_EQ",
               "value" : "project",
               "rawValue" : false
-            } ],
-            "getPSNavigateParams" : [ {
-              "key" : "n_product_eq",
-              "name" : "n_product_eq",
+            }, {
+              "key" : "N_PRODUCT_EQ",
+              "name" : "N_PRODUCT_EQ",
               "value" : "product",
               "rawValue" : false
-            }, {
+            } ],
+            "getPSNavigateParams" : [ {
               "key" : "n_project_eq",
               "name" : "n_project_eq",
               "value" : "project",
+              "rawValue" : false
+            }, {
+              "key" : "n_product_eq",
+              "name" : "n_product_eq",
+              "value" : "product",
               "rawValue" : false
             } ],
             "valueItemName" : "build",

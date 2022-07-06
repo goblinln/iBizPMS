@@ -46,7 +46,7 @@ const router = new Router({
                 if (to.params && to.params[routerParamsName]) {
                     Object.assign(params, qs.parse(to.params[routerParamsName], { delimiter: ';' }));
                 }
-                const url: string = 'appdata';
+                const url: string = '/appdata';
                 const auth: Promise<any> = AuthGuard.getInstance().authGuard(url, params, router);
                 auth.then(() => {
                     next();

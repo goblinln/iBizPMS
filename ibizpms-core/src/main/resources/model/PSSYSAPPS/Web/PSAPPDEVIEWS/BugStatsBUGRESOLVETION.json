@@ -111,7 +111,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "项目下的Bug在每个解决方案的Bug数统计",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -395,25 +395,18 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 9,
-      "name" : "bugfixed",
-      "getPSAppDEField" : {
-        "name" : "BUGFIXED",
-        "codeName" : "Bugfixed"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "bugnotrepro",
-      "getPSAppDEField" : {
-        "name" : "BUGNOTREPRO",
-        "codeName" : "Bugnotrepro"
-      }
-    }, {
       "dataType" : 25,
       "name" : "projectname",
       "getPSAppDEField" : {
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugduplicate",
+      "getPSAppDEField" : {
+        "name" : "BUGDUPLICATE",
+        "codeName" : "Bugduplicate"
       }
     }, {
       "dataType" : 9,
@@ -423,11 +416,53 @@
         "codeName" : "Bugbydesign"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "dataType" : 9,
+      "name" : "bugfixed",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "BUGFIXED",
+        "codeName" : "Bugfixed"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugpostponed",
+      "getPSAppDEField" : {
+        "name" : "BUGPOSTPONED",
+        "codeName" : "Bugpostponed"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugnotrepro",
+      "getPSAppDEField" : {
+        "name" : "BUGNOTREPRO",
+        "codeName" : "Bugnotrepro"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugtostory",
+      "getPSAppDEField" : {
+        "name" : "BUGTOSTORY",
+        "codeName" : "Bugtostory"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugwillnotfix",
+      "getPSAppDEField" : {
+        "name" : "BUGWILLNOTFIX",
+        "codeName" : "Bugwillnotfix"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugexternal",
+      "getPSAppDEField" : {
+        "name" : "BUGEXTERNAL",
+        "codeName" : "Bugexternal"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugcnt",
+      "getPSAppDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
       }
     }, {
       "dataType" : 1,
@@ -445,13 +480,6 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 9,
-      "name" : "bugtostory",
-      "getPSAppDEField" : {
-        "name" : "BUGTOSTORY",
-        "codeName" : "Bugtostory"
-      }
-    }, {
       "dataType" : 1,
       "name" : "product",
       "getPSAppDEField" : {
@@ -466,39 +494,11 @@
         "codeName" : "Project"
       }
     }, {
-      "dataType" : 9,
-      "name" : "bugexternal",
+      "dataType" : 25,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "BUGEXTERNAL",
-        "codeName" : "Bugexternal"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "bugpostponed",
-      "getPSAppDEField" : {
-        "name" : "BUGPOSTPONED",
-        "codeName" : "Bugpostponed"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "bugcnt",
-      "getPSAppDEField" : {
-        "name" : "BUGCNT",
-        "codeName" : "BugCnt"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "bugduplicate",
-      "getPSAppDEField" : {
-        "name" : "BUGDUPLICATE",
-        "codeName" : "Bugduplicate"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "bugwillnotfix",
-      "getPSAppDEField" : {
-        "name" : "BUGWILLNOTFIX",
-        "codeName" : "Bugwillnotfix"
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -552,7 +552,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -561,10 +561,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -583,10 +583,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

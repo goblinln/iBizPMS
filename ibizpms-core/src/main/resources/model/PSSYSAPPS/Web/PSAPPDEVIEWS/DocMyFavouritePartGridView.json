@@ -86,7 +86,7 @@
     "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realOpenMode" : "DRAWER_LEFT",
     "realTitle" : "doc编辑视图",
     "getRefPSAppView" : {
@@ -95,7 +95,7 @@
       "viewType" : "DEEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_LEFT",
     "realTitle" : "doc编辑视图",
     "getRefPSAppView" : {
@@ -115,7 +115,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "我的收藏",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -288,11 +288,26 @@
       "enableSort" : true
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "product",
+      "dataType" : 25,
+      "name" : "title",
       "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "addedby",
+      "getPSAppDEField" : {
+        "name" : "ADDEDBY",
+        "codeName" : "AddedBy"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "editeddate",
+      "getPSAppDEField" : {
+        "name" : "EDITEDDATE",
+        "codeName" : "EditedDate"
       }
     }, {
       "dataType" : 1,
@@ -303,56 +318,10 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "project",
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "module",
-      "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "lib",
-      "getPSAppDEField" : {
-        "name" : "LIB",
-        "codeName" : "Lib"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "addedby",
-      "getPSAppDEField" : {
-        "name" : "ADDEDBY",
-        "codeName" : "AddedBy"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "format" : "YYYY-MM-DD HH:mm:ss",
-      "dataType" : 5,
-      "name" : "editeddate",
-      "getPSAppDEField" : {
-        "name" : "EDITEDDATE",
-        "codeName" : "EditedDate"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -364,11 +333,42 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "lib",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "LIB",
+        "codeName" : "Lib"
       }
+    }, {
+      "dataType" : 1,
+      "name" : "project",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "文档编号",

@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "产品Bug解决方案汇总表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -249,17 +249,10 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 25,
-    "name" : "bugefficient",
+    "name" : "productname",
     "getPSAppDEField" : {
-      "name" : "BUGEFFICIENT",
-      "codeName" : "Bugefficient"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugfixed",
-    "getPSAppDEField" : {
-      "name" : "BUGFIXED",
-      "codeName" : "Bugfixed"
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
     }
   }, {
     "dataType" : 9,
@@ -270,6 +263,34 @@
     }
   }, {
     "dataType" : 9,
+    "name" : "bugbydesign",
+    "getPSAppDEField" : {
+      "name" : "BUGBYDESIGN",
+      "codeName" : "Bugbydesign"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugduplicate",
+    "getPSAppDEField" : {
+      "name" : "BUGDUPLICATE",
+      "codeName" : "Bugduplicate"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugexternal",
+    "getPSAppDEField" : {
+      "name" : "BUGEXTERNAL",
+      "codeName" : "Bugexternal"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugfixed",
+    "getPSAppDEField" : {
+      "name" : "BUGFIXED",
+      "codeName" : "Bugfixed"
+    }
+  }, {
+    "dataType" : 9,
     "name" : "bugnotrepro",
     "getPSAppDEField" : {
       "name" : "BUGNOTREPRO",
@@ -277,17 +298,45 @@
     }
   }, {
     "dataType" : 9,
-    "name" : "bugbydesign",
+    "name" : "bugpostponed",
     "getPSAppDEField" : {
-      "name" : "BUGBYDESIGN",
-      "codeName" : "Bugbydesign"
+      "name" : "BUGPOSTPONED",
+      "codeName" : "Bugpostponed"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugwillnotfix",
+    "getPSAppDEField" : {
+      "name" : "BUGWILLNOTFIX",
+      "codeName" : "Bugwillnotfix"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugtostory",
+    "getPSAppDEField" : {
+      "name" : "BUGTOSTORY",
+      "codeName" : "Bugtostory"
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "bugefficient",
     "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
+      "name" : "BUGEFFICIENT",
+      "codeName" : "Bugefficient"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugtotal",
+    "getPSAppDEField" : {
+      "name" : "BUGTOTAL",
+      "codeName" : "Bugtotal"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -297,20 +346,6 @@
       "codeName" : "Id"
     },
     "dataAccessAction" : true
-  }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugtostory",
-    "getPSAppDEField" : {
-      "name" : "BUGTOSTORY",
-      "codeName" : "Bugtostory"
-    }
   }, {
     "dataType" : 1,
     "name" : "product",
@@ -326,46 +361,11 @@
       "codeName" : "Project"
     }
   }, {
-    "dataType" : 9,
-    "name" : "bugexternal",
-    "getPSAppDEField" : {
-      "name" : "BUGEXTERNAL",
-      "codeName" : "Bugexternal"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugpostponed",
-    "getPSAppDEField" : {
-      "name" : "BUGPOSTPONED",
-      "codeName" : "Bugpostponed"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugduplicate",
-    "getPSAppDEField" : {
-      "name" : "BUGDUPLICATE",
-      "codeName" : "Bugduplicate"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugtotal",
-    "getPSAppDEField" : {
-      "name" : "BUGTOTAL",
-      "codeName" : "Bugtotal"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "productname",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "PRODUCTNAME",
-      "codeName" : "ProductName"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugwillnotfix",
-    "getPSAppDEField" : {
-      "name" : "BUGWILLNOTFIX",
-      "codeName" : "Bugwillnotfix"
+      "name" : "TITLE",
+      "codeName" : "Title"
     }
   } ],
   "getPSDEGridEditItems" : [ {

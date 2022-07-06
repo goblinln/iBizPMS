@@ -1720,6 +1720,25 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
+    "codeName" : "RedirectView",
+    "logicName" : "history实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "history实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "history实体编辑视图（左右关系）",
+    "name" : "history实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "history实体选择表格视图（部件视图）",
+    "name" : "history实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "PickupView",
     "logicName" : "history实体数据选择视图",
     "modelTag" : "PICKUPVIEW",
@@ -1741,11 +1760,11 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "history实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "history实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
+    "codeName" : "MPickupView",
+    "logicName" : "history实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "history实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Main",
@@ -1754,25 +1773,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "history实体编辑视图（左右关系）",
-    "name" : "history实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "history实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "history实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "history实体选择表格视图（部件视图）",
-    "name" : "history实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "History",
   "dEType" : 1,
@@ -1817,10 +1817,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/History.json"
     },
     "name" : "DER1N_ZT_HISTORY_ZT_ACTION_ACTION",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "ACTION",
@@ -1838,7 +1834,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

@@ -46,7 +46,7 @@ export class AppMobFormModel {
             }
         ]
         const allFormDetails = ModelTool.getAllFormDetails(this.FormInstance)
-        const formItems = ModelTool.getAllFormItems(this.FormInstance)
+        const formItems:any = this.FormInstance.getPSDEFormItems();
         const appDataEntity = this.FormInstance?.getPSAppDataEntity();
         // 表单部件
         allFormDetails.forEach((detail: any) => {
@@ -59,14 +59,14 @@ export class AppMobFormModel {
         });
         // 表单项
         formItems.forEach((item: IPSDEEditFormItem) => {
-            let temp: any = { name: item.name };
+            let temp: any = { name: item.id };
             if (item?.getPSAppDEField()) {
                 temp.prop = item.getPSAppDEField()?.codeName?.toLowerCase();
                 temp.dataType = DataTypes.toString(item.getPSAppDEField()?.stdDataType || -1)?.toLowerCase();
             } else if (item.getPSEditor()?.editorType !== 'HIDDEN') {
                 //表单项无属性且界面显示类型（供开始流程、提交流程使用）
                 if (!item.hidden) {
-                    temp.prop = item.name;
+                    temp.prop = item.id;
                 }
                 temp.dataType = 'FORMITEM';
             }

@@ -22,4 +22,7 @@ export const rootstate: any = {
     orgDataMap:{},
     depDataMap:{},
     departmentPersonnel:[],
+    appGlobal:{},
+    routeViewGlobal: {},
+    appViews:{}         
 }

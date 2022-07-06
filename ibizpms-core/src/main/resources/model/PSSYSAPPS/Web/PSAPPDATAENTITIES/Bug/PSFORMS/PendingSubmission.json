@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "待办提交",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -487,14 +487,9 @@
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BugModule.json"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "N_BRANCH_EQ",
-              "name" : "N_BRANCH_EQ",
+              "key" : "BRANCH",
+              "name" : "BRANCH",
               "value" : "branch",
-              "rawValue" : false
-            }, {
-              "key" : "PRODUCT",
-              "name" : "PRODUCT",
-              "value" : "product",
               "rawValue" : false
             }, {
               "key" : "N_ROOT_EQ",
@@ -502,12 +497,27 @@
               "value" : "product",
               "rawValue" : false
             }, {
-              "key" : "BRANCH",
-              "name" : "BRANCH",
+              "key" : "PRODUCT",
+              "name" : "PRODUCT",
+              "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "N_BRANCH_EQ",
+              "name" : "N_BRANCH_EQ",
               "value" : "branch",
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
+              "key" : "n_branch_eq",
+              "name" : "n_branch_eq",
+              "value" : "branch",
+              "rawValue" : false
+            }, {
+              "key" : "branch",
+              "name" : "branch",
+              "value" : "branch",
+              "rawValue" : false
+            }, {
               "key" : "product",
               "name" : "product",
               "value" : "product",
@@ -516,16 +526,6 @@
               "key" : "n_root_eq",
               "name" : "n_root_eq",
               "value" : "product",
-              "rawValue" : false
-            }, {
-              "key" : "branch",
-              "name" : "branch",
-              "value" : "branch",
-              "rawValue" : false
-            }, {
-              "key" : "n_branch_eq",
-              "name" : "n_branch_eq",
-              "value" : "branch",
               "rawValue" : false
             } ],
             "singleSelect" : true
@@ -667,25 +667,25 @@
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductBuild.json"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "BUGPRODUCT",
-              "name" : "BUGPRODUCT",
-              "value" : "product",
-              "rawValue" : false
-            }, {
               "key" : "BUGPROJECT",
               "name" : "BUGPROJECT",
               "value" : "project",
               "rawValue" : false
+            }, {
+              "key" : "BUGPRODUCT",
+              "name" : "BUGPRODUCT",
+              "value" : "product",
+              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "bugproject",
-              "name" : "bugproject",
-              "value" : "project",
-              "rawValue" : false
-            }, {
               "key" : "bugproduct",
               "name" : "bugproduct",
               "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "bugproject",
+              "name" : "bugproject",
+              "value" : "project",
               "rawValue" : false
             } ],
             "singleSelect" : false
@@ -1104,11 +1104,6 @@
               "value" : "product",
               "rawValue" : false
             }, {
-              "key" : "N_MODULE_EQ",
-              "name" : "N_MODULE_EQ",
-              "value" : "module",
-              "rawValue" : false
-            }, {
               "key" : "PROJECT",
               "name" : "PROJECT",
               "value" : "project",
@@ -1118,11 +1113,21 @@
               "name" : "PRODUCT",
               "value" : "product",
               "rawValue" : false
+            }, {
+              "key" : "N_MODULE_EQ",
+              "name" : "N_MODULE_EQ",
+              "value" : "module",
+              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "product",
-              "name" : "product",
+              "key" : "n_product_eq",
+              "name" : "n_product_eq",
               "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "n_module_eq",
+              "name" : "n_module_eq",
+              "value" : "module",
               "rawValue" : false
             }, {
               "key" : "project",
@@ -1130,8 +1135,8 @@
               "value" : "project",
               "rawValue" : false
             }, {
-              "key" : "n_product_eq",
-              "name" : "n_product_eq",
+              "key" : "product",
+              "name" : "product",
               "value" : "product",
               "rawValue" : false
             }, {
@@ -1139,11 +1144,6 @@
               "name" : "n_parent_gtandeq",
               "value" : "0",
               "rawValue" : true
-            }, {
-              "key" : "n_module_eq",
-              "name" : "n_module_eq",
-              "value" : "module",
-              "rawValue" : false
             }, {
               "key" : "type",
               "name" : "type",
@@ -1244,25 +1244,25 @@
               "rawValue" : true
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "project",
-              "name" : "project",
-              "value" : "project",
-              "rawValue" : false
-            }, {
               "key" : "n_project_eq",
               "name" : "n_project_eq",
               "value" : "project",
               "rawValue" : false
+            }, {
+              "key" : "size",
+              "name" : "size",
+              "value" : "1000",
+              "rawValue" : true
             }, {
               "key" : "type",
               "name" : "type",
               "value" : "BugTask",
               "rawValue" : true
             }, {
-              "key" : "size",
-              "name" : "size",
-              "value" : "1000",
-              "rawValue" : true
+              "key" : "project",
+              "name" : "project",
+              "value" : "project",
+              "rawValue" : false
             } ],
             "paramJOString" : "{\"n_project_eq\":\"%project%\"}",
             "getPickupPSAppView" : {

@@ -56,6 +56,30 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
     "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:tabviewpanel2",
+      "realTitle" : "任务移动端多数据视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobMDView.json",
+        "viewType" : "DEMOBMDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:tabviewpanel4",
+      "realTitle" : "版本移动端多数据视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BuildMobMDView.json",
+        "viewType" : "DEMOBMDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:tabviewpanel5",
+      "realTitle" : "Bug移动端多数据视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugMobMDView.json",
+        "viewType" : "DEMOBMDVIEW"
+      }
+    }, {
       "name" : "EXPITEM:tabviewpanel6",
       "realTitle" : "需求移动端多数据视图",
       "getRefPSAppView" : {
@@ -69,30 +93,6 @@
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectTeamMobMDView.json",
-        "viewType" : "DEMOBMDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:tabviewpanel5",
-      "realTitle" : "Bug移动端多数据视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugMobMDView.json",
-        "viewType" : "DEMOBMDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:tabviewpanel4",
-      "realTitle" : "版本移动端多数据视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BuildMobMDView.json",
-        "viewType" : "DEMOBMDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:tabviewpanel2",
-      "realTitle" : "任务移动端多数据视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobMDView.json",
         "viewType" : "DEMOBMDVIEW"
       }
     } ],
@@ -279,10 +279,10 @@
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
               "actionType" : "FILTERACTION",
-              "name" : "search",
+              "name" : "load",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterSearch"
+                "id" : "FilterGet"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -301,10 +301,10 @@
               }
             }, {
               "actionType" : "FILTERACTION",
-              "name" : "load",
+              "name" : "search",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FilterGet"
+                "id" : "FilterSearch"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -550,7 +550,7 @@
             "id" : "load"
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+          "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
           "getItemPSLayoutPanel" : {
             "getAllPSPanelFields" : [ {
               "id" : "pri",
@@ -1691,15 +1691,15 @@
                   "rawValue" : false
                 } ],
                 "getPSNavigateParams" : [ {
-                  "key" : "project",
-                  "name" : "project",
-                  "value" : "project",
-                  "rawValue" : false
-                }, {
                   "key" : "actioninfo",
                   "name" : "actioninfo",
                   "value" : "当前任务只有%1$s才可以记录工时。",
                   "rawValue" : true
+                }, {
+                  "key" : "project",
+                  "name" : "project",
+                  "value" : "project",
+                  "rawValue" : false
                 } ],
                 "getPSSysImage" : {
                   "glyph" : "xf017@FontAwesome",

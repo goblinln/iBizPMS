@@ -1,5 +1,5 @@
 import { IPSDEMultiEditViewPanel } from '@ibiz/dynamic-model-api';
-import { MobMEditView9Engine, ModelTool } from 'ibiz-core'
+import { MobMEditView9Engine, MobMEditViewInterface, ModelTool } from 'ibiz-core'
 import { MDViewBase } from "./md-view-base";
 
 /**
@@ -9,7 +9,7 @@ import { MDViewBase } from "./md-view-base";
  * @class MobMeditViewBase
  * @extends {MDViewBase}
  */
-export class MobMeditViewBase extends MDViewBase {
+export class MobMeditViewBase extends MDViewBase implements MobMEditViewInterface {
 
     /**
      * 视图实例

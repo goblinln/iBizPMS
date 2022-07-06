@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（报告下属）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -176,27 +176,74 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "pri",
+    "getPSAppDEField" : {
+      "name" : "PRI",
+      "codeName" : "Pri"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "title",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "openedby",
+    "getPSAppDEField" : {
+      "name" : "OPENEDBY",
+      "codeName" : "OpenedBy"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "resolvedby",
+    "getPSAppDEField" : {
+      "name" : "RESOLVEDBY",
+      "codeName" : "ResolvedBy"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "resolveddate",
+    "getPSAppDEField" : {
+      "name" : "RESOLVEDDATE",
+      "codeName" : "ResolvedDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "status",
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    }
+  }, {
+    "dataType" : 1,
     "name" : "bugsn",
     "getPSAppDEField" : {
       "name" : "BUGSN",
       "codeName" : "Bugsn"
     }
   }, {
-    "dataType" : 1,
-    "name" : "tostory",
+    "dataType" : 9,
+    "name" : "confirmed",
     "getPSAppDEField" : {
-      "name" : "TOSTORY",
-      "codeName" : "ToStory"
+      "name" : "CONFIRMED",
+      "codeName" : "Confirmed"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -208,59 +255,24 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "tostory",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "openedby",
-    "getPSAppDEField" : {
-      "name" : "OPENEDBY",
-      "codeName" : "OpenedBy"
+      "name" : "TOSTORY",
+      "codeName" : "ToStory"
     }
   }, {
     "dataType" : 1,
-    "name" : "duplicatebug",
+    "name" : "entry",
     "getPSAppDEField" : {
-      "name" : "DUPLICATEBUG",
-      "codeName" : "DuplicateBug"
+      "name" : "ENTRY",
+      "codeName" : "Entry"
     }
   }, {
     "dataType" : 1,
-    "name" : "id",
+    "name" : "product",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "story",
-    "getPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "title",
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "confirmed",
-    "getPSAppDEField" : {
-      "name" : "CONFIRMED",
-      "codeName" : "Confirmed"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "repo",
-    "getPSAppDEField" : {
-      "name" : "REPO",
-      "codeName" : "Repo"
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     }
   }, {
     "dataType" : 1,
@@ -271,17 +283,59 @@
     }
   }, {
     "dataType" : 1,
+    "name" : "plan",
+    "getPSAppDEField" : {
+      "name" : "PLAN",
+      "codeName" : "Plan"
+    }
+  }, {
+    "dataType" : 1,
     "name" : "module",
     "getPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
     }
   }, {
-    "dataType" : 25,
-    "name" : "status",
+    "dataType" : 1,
+    "name" : "branch",
     "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "duplicatebug",
+    "getPSAppDEField" : {
+      "name" : "DUPLICATEBUG",
+      "codeName" : "DuplicateBug"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "repo",
+    "getPSAppDEField" : {
+      "name" : "REPO",
+      "codeName" : "Repo"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "story",
+    "getPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "case",
+    "getPSAppDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
     }
   }, {
     "dataType" : 1,
@@ -298,69 +352,15 @@
       "codeName" : "Testtask"
     }
   }, {
-    "dataType" : 1,
-    "name" : "product",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "project",
-    "getPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "pri",
-    "getPSAppDEField" : {
-      "name" : "PRI",
-      "codeName" : "Pri"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "plan",
-    "getPSAppDEField" : {
-      "name" : "PLAN",
-      "codeName" : "Plan"
-    }
-  }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "dataType" : 5,
-    "name" : "resolveddate",
-    "getPSAppDEField" : {
-      "name" : "RESOLVEDDATE",
-      "codeName" : "ResolvedDate"
+      "name" : "TITLE",
+      "codeName" : "Title"
     }
   }, {
     "dataType" : 25,
-    "name" : "resolvedby",
-    "getPSAppDEField" : {
-      "name" : "RESOLVEDBY",
-      "codeName" : "ResolvedBy"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "entry",
-    "getPSAppDEField" : {
-      "name" : "ENTRY",
-      "codeName" : "Entry"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "branch",
-    "getPSAppDEField" : {
-      "name" : "BRANCH",
-      "codeName" : "Branch"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "case",
-    "getPSAppDEField" : {
-      "name" : "CASE",
-      "codeName" : "IBizCase"
-    }
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "Bug编号",

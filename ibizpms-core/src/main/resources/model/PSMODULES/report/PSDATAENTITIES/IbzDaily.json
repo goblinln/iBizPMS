@@ -692,6 +692,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "1",
+          "fieldName" : "ISSUBMIT",
           "name" : "ISSUBMIT 等于(=) (1)",
           "getPSDEField" : {
             "name" : "ISSUBMIT",
@@ -3381,17 +3382,11 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "MobDailyEdit",
-    "logicName" : "移动端日报编辑",
-    "modelTag2" : "1",
-    "name" : "移动端日报编辑",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "日报实体选择表格视图（部件视图）",
-    "name" : "日报实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "codeName" : "MobRedirectView",
+    "logicName" : "日报实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "日报实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "mainEditView",
@@ -3400,35 +3395,28 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "DailyInfoEditView",
+    "logicName" : "日报实体编辑视图(日报描述)",
+    "name" : "日报实体编辑视图(日报描述)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "日报实体编辑视图（左右关系）",
+    "name" : "日报实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MyDailyGridView",
+    "logicName" : "日报实体表格视图（主表格）（我收到的）",
+    "name" : "日报实体表格视图（主表格）（我收到的）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "DailyCompleteTaskMobMDView",
     "logicName" : "日报实体移动端多数据视图(完成任务)",
     "name" : "日报实体移动端多数据视图(完成任务)",
     "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyDailyMobTabExpView",
-    "logicName" : "日报实体移动端分页导航视图（我收到的）",
-    "name" : "日报实体移动端分页导航视图（我收到的）",
-    "realModelSubType" : "DEMOBTABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProductDailyGridView",
-    "logicName" : "日报实体表格视图（产品日报）",
-    "name" : "日报实体表格视图（产品日报）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DailyGridView",
-    "logicName" : "日报实体表格视图（主表格）",
-    "name" : "日报实体表格视图（主表格）",
-    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMPickupView",
@@ -3438,120 +3426,10 @@
     "realModelSubType" : "DEMOBMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "DailyMobMDView",
-    "logicName" : "日报实体移动端多数据视图（主数据）",
-    "name" : "日报实体移动端多数据视图（主数据）",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DailyMobTabExpView",
-    "logicName" : "日报实体移动端分页导航视图",
-    "name" : "日报实体移动端分页导航视图",
+    "codeName" : "MyDailyMobTabExpView",
+    "logicName" : "日报实体移动端分页导航视图（我收到的）",
+    "name" : "日报实体移动端分页导航视图（我收到的）",
     "realModelSubType" : "DEMOBTABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MyReMobEditView",
-    "logicName" : "日报实体移动端编辑视图(我收到的)",
-    "name" : "日报实体移动端编辑视图(我收到的)",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectDailyGridView",
-    "logicName" : "日报实体表格视图（项目日报）",
-    "name" : "日报实体表格视图（项目日报）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyDailyGridView",
-    "logicName" : "日报实体表格视图（主表格）（我收到的）",
-    "name" : "日报实体表格视图（主表格）（我收到的）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DailyInfoMob",
-    "logicName" : "日报描述（移动端）",
-    "modelTag2" : "1",
-    "name" : "日报描述（移动端）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditDailyEditForm",
-    "logicName" : "日报编辑表单（编辑时）",
-    "modelTag2" : "0",
-    "name" : "日报编辑表单（编辑时）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "DailyMobEditView",
-    "logicName" : "日报实体移动端编辑视图（编辑）",
-    "name" : "日报实体移动端编辑视图（编辑）",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DailyCreateMobEditView",
-    "logicName" : "日报实体移动端编辑视图（新建）",
-    "name" : "日报实体移动端编辑视图（新建）",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "日报实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "日报实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DailyInfoCalendarEditView",
-    "logicName" : "日报实体编辑视图(日历显示)",
-    "name" : "日报实体编辑视图(日历显示)",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "日报实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "日报实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DailyInfoCalendar",
-    "logicName" : "日报描述（日历显示）",
-    "modelTag2" : "0",
-    "name" : "日报描述（日历显示）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "DailyReportSubmitMobMDView",
-    "logicName" : "日报实体移动端多数据视图(我提交的日报)",
-    "name" : "日报实体移动端多数据视图(我提交的日报)",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DailyPlansTomorrowTaskMobMDView",
-    "logicName" : "日报实体移动端多数据视图(明日计划及计划参与)",
-    "name" : "日报实体移动端多数据视图(明日计划及计划参与)",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DailyInfoDingDing",
-    "logicName" : "日报描述（移动端-待阅）",
-    "modelTag2" : "1",
-    "name" : "日报描述（移动端-待阅）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobEditView",
-    "logicName" : "日报实体移动端编辑视图（待阅）",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "日报实体移动端编辑视图（待阅）",
-    "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MymainEditView",
@@ -3560,36 +3438,42 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "日报实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "日报实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ReportReceivedMobMDView",
-    "logicName" : "日报实体移动端多数据视图(我收到的日报)",
-    "name" : "日报实体移动端多数据视图(我收到的日报)",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "DailyEditView",
     "logicName" : "日报实体编辑视图（新建）",
     "name" : "日报实体编辑视图（新建）",
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "CreateDailyEditForm",
-    "logicName" : "日报编辑表单（新建时）",
-    "modelTag2" : "0",
-    "name" : "日报编辑表单（新建时）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "GridView",
+    "logicName" : "日报实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "日报实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "DailyInfoMobEditView",
-    "logicName" : "日报实体移动端编辑视图(日报描述)",
-    "name" : "日报实体移动端编辑视图(日报描述)",
+    "codeName" : "EditView",
+    "logicName" : "日报实体编辑视图",
+    "name" : "日报实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProductDailyGridView",
+    "logicName" : "日报实体表格视图（产品日报）",
+    "name" : "日报实体表格视图（产品日报）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DailyMobEditView",
+    "logicName" : "日报实体移动端编辑视图（编辑）",
+    "name" : "日报实体移动端编辑视图（编辑）",
     "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "日报实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "日报实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MyMobMDView",
@@ -3605,18 +3489,17 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "日报实体编辑视图（左右关系）",
-    "name" : "日报实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "ReportReceivedMobMDView",
+    "logicName" : "日报实体移动端多数据视图(我收到的日报)",
+    "name" : "日报实体移动端多数据视图(我收到的日报)",
+    "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MainInfo",
-    "logicName" : "日报描述",
-    "modelTag2" : "0",
-    "name" : "日报描述",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "DailyMobTabExpView",
+    "logicName" : "日报实体移动端分页导航视图",
+    "name" : "日报实体移动端分页导航视图",
+    "realModelSubType" : "DEMOBTABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobPickupMDView",
     "logicName" : "日报实体移动端选择多数据视图（部件视图）",
@@ -3624,10 +3507,79 @@
     "realModelSubType" : "DEMOBPICKUPMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "日报实体编辑视图",
-    "name" : "日报实体编辑视图",
+    "codeName" : "DailyMobMDView",
+    "logicName" : "日报实体移动端多数据视图（主数据）",
+    "name" : "日报实体移动端多数据视图（主数据）",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DailyReportSubmitMobMDView",
+    "logicName" : "日报实体移动端多数据视图(我提交的日报)",
+    "name" : "日报实体移动端多数据视图(我提交的日报)",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DailyInfoMobEditView",
+    "logicName" : "日报实体移动端编辑视图(日报描述)",
+    "name" : "日报实体移动端编辑视图(日报描述)",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DailyCreateMobEditView",
+    "logicName" : "日报实体移动端编辑视图（新建）",
+    "name" : "日报实体移动端编辑视图（新建）",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "日报实体选择表格视图（部件视图）",
+    "name" : "日报实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "日报实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "日报实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DailyPlansTomorrowTaskMobMDView",
+    "logicName" : "日报实体移动端多数据视图(明日计划及计划参与)",
+    "name" : "日报实体移动端多数据视图(明日计划及计划参与)",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProjectDailyGridView",
+    "logicName" : "日报实体表格视图（项目日报）",
+    "name" : "日报实体表格视图（项目日报）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "日报实体移动端编辑视图（待阅）",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "日报实体移动端编辑视图（待阅）",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DailyInfoCalendarEditView",
+    "logicName" : "日报实体编辑视图(日历显示)",
+    "name" : "日报实体编辑视图(日历显示)",
     "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "日报实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "日报实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DailyGridView",
+    "logicName" : "日报实体表格视图（主表格）",
+    "name" : "日报实体表格视图（主表格）",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMDView",
@@ -3637,25 +3589,74 @@
     "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "日报实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "日报实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "MyReMobEditView",
+    "logicName" : "日报实体移动端编辑视图(我收到的)",
+    "name" : "日报实体移动端编辑视图(我收到的)",
+    "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "日报实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "日报实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "DailyInfoDingDing",
+    "logicName" : "日报描述（移动端-待阅）",
+    "modelTag2" : "1",
+    "name" : "日报描述（移动端-待阅）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "DailyInfoEditView",
-    "logicName" : "日报实体编辑视图(日报描述)",
-    "name" : "日报实体编辑视图(日报描述)",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "CreateDailyEditForm",
+    "logicName" : "日报编辑表单（新建时）",
+    "modelTag2" : "0",
+    "name" : "日报编辑表单（新建时）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobDailyEdit",
+    "logicName" : "移动端日报编辑",
+    "modelTag2" : "1",
+    "name" : "移动端日报编辑",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "DailyInfoCalendar",
+    "logicName" : "日报描述（日历显示）",
+    "modelTag2" : "0",
+    "name" : "日报描述（日历显示）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "EditDailyEditForm",
+    "logicName" : "日报编辑表单（编辑时）",
+    "modelTag2" : "0",
+    "name" : "日报编辑表单（编辑时）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MainInfo",
+    "logicName" : "日报描述",
+    "modelTag2" : "0",
+    "name" : "日报描述",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "DailyInfoMob",
+    "logicName" : "日报描述（移动端）",
+    "modelTag2" : "1",
+    "name" : "日报描述（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "IbzDaily",
   "dEType" : 1,
@@ -3735,7 +3736,7 @@
   "name" : "IBZ_DAILY",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

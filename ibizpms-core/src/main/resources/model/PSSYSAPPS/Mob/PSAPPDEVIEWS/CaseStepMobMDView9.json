@@ -85,7 +85,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "type",
@@ -417,6 +417,7 @@
       "codeName" : "IBizCase"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   } ] ]
 }

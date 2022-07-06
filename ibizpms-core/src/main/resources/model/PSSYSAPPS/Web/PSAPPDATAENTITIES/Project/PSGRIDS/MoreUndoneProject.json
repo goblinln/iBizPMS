@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "未完成项目（更多）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -112,11 +112,11 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "id",
+    "dataType" : 25,
+    "name" : "name",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   }, {
     "dataType" : 9,
@@ -124,6 +124,13 @@
     "getPSAppDEField" : {
       "name" : "DOCLIBCNT",
       "codeName" : "Doclibcnt"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "openedby",
+    "getPSAppDEField" : {
+      "name" : "OPENEDBY",
+      "codeName" : "OpenedBy"
     }
   }, {
     "format" : "YYYY-MM-DD HH:mm:ss",
@@ -134,28 +141,18 @@
       "codeName" : "OpenedDate"
     }
   }, {
-    "dataType" : 25,
-    "name" : "name",
+    "dataType" : 1,
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
-    "name" : "parent",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -167,18 +164,21 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "parent",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PARENT",
+      "codeName" : "Parent"
     }
   }, {
     "dataType" : 25,
-    "name" : "openedby",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "OPENEDBY",
-      "codeName" : "OpenedBy"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "项目编号",

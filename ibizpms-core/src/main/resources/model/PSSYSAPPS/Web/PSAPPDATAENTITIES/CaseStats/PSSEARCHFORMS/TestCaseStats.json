@@ -2,7 +2,7 @@
   "codeName" : "TestCaseStats",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats/PSSEARCHFORMS/TestCaseStats.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "用例统计表专用",
   "getPSAppDataEntity" : {
     "modelref" : true,

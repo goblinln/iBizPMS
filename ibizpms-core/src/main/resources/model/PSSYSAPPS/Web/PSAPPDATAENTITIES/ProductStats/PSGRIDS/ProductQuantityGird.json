@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "产品质量表主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -170,32 +170,18 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 9,
-    "name" : "importantbugcnt",
-    "getPSAppDEField" : {
-      "name" : "IMPORTANTBUGCNT",
-      "codeName" : "IMPORtantBUGCNT"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugstory",
-    "getPSAppDEField" : {
-      "name" : "BUGSTORY",
-      "codeName" : "BugStory"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugcnt",
-    "getPSAppDEField" : {
-      "name" : "BUGCNT",
-      "codeName" : "BugCnt"
-    }
-  }, {
     "dataType" : 25,
     "name" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "storycnt",
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
     }
   }, {
     "dataType" : 9,
@@ -206,6 +192,13 @@
     }
   }, {
     "dataType" : 9,
+    "name" : "bugcnt",
+    "getPSAppDEField" : {
+      "name" : "BUGCNT",
+      "codeName" : "BugCnt"
+    }
+  }, {
+    "dataType" : 9,
     "name" : "resolvedbugcnt",
     "getPSAppDEField" : {
       "name" : "RESOLVEDBUGCNT",
@@ -213,17 +206,31 @@
     }
   }, {
     "dataType" : 9,
-    "name" : "storycnt",
+    "name" : "bugstory",
     "getPSAppDEField" : {
-      "name" : "STORYCNT",
-      "codeName" : "StoryCnt"
+      "name" : "BUGSTORY",
+      "codeName" : "BugStory"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "importantbugcnt",
+    "getPSAppDEField" : {
+      "name" : "IMPORTANTBUGCNT",
+      "codeName" : "IMPORtantBUGCNT"
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "importantbugpercent",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "IMPORTANTBUGPERCENT",
+      "codeName" : "Importantbugpercent"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -234,18 +241,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "importantbugpercent",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "IMPORTANTBUGPERCENT",
-      "codeName" : "Importantbugpercent"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {

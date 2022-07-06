@@ -56,6 +56,22 @@ export class AppMobListModel {
           prop: 'srffrontuf',
           dataType: 'TEXT',
         },
+        // 预置工作流数据字段
+        {
+          name: 'srfprocessdefinitionkey',
+          prop: 'srfprocessdefinitionkey',
+          dataType: 'TEXT'
+        },
+        {
+          name: 'srftaskdefinitionkey',
+          prop: 'srftaskdefinitionkey',
+          dataType: 'TEXT'
+        },
+        {
+          name: 'srfprocessinstanceid',
+          prop: 'srfprocessinstanceid',
+          dataType: 'TEXT'
+        }
       ]
       if (this.MDCtrlInstance.getPSDEListDataItems()) {
         this.MDCtrlInstance.getPSDEListDataItems()?.forEach((dataitem:IPSDEListDataItem)=>{

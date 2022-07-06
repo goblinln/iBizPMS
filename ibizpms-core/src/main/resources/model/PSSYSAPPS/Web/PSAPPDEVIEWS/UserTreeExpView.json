@@ -45,14 +45,14 @@
   "getPSControls" : [ {
     "codeName" : "TreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:deptroot",
+      "name" : "EXPITEM:ChildDept",
       "parentDataJO" : {
         "srfparentdefname" : "n_dept_eq"
       },
@@ -71,7 +71,7 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:ChildDept",
+      "name" : "EXPITEM:deptroot",
       "parentDataJO" : {
         "srfparentdefname" : "n_dept_eq"
       },

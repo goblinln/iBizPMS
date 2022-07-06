@@ -23,24 +23,6 @@ export class MyTerritoryCountLogicBase extends EntityLogicBase {
     }
 
     /**
-     * 获取我的需求数「RAWSQLCALL」
-     */
-    private async executeRawsqlcall1(): Promise<any> {
-        // RAWSQLCALL暂未支持
-        console.log("RAWSQLCALL暂未支持");
-        return this.default;
-    }
-
-    /**
-     * 我的待办数「RAWSQLCALL」
-     */
-    private async executeRawsqlcall4(): Promise<any> {
-        // RAWSQLCALL暂未支持
-        console.log("RAWSQLCALL暂未支持");
-        return this.default;
-    }
-
-    /**
      * 开始
      */
     private async executeBegin(): Promise<any> {
@@ -62,6 +44,24 @@ export class MyTerritoryCountLogicBase extends EntityLogicBase {
      * 获取我的Bug数「RAWSQLCALL」
      */
     private async executeRawsqlcall3(): Promise<any> {
+        // RAWSQLCALL暂未支持
+        console.log("RAWSQLCALL暂未支持");
+        return this.default;
+    }
+
+    /**
+     * 我的待办数「RAWSQLCALL」
+     */
+    private async executeRawsqlcall4(): Promise<any> {
+        // RAWSQLCALL暂未支持
+        console.log("RAWSQLCALL暂未支持");
+        return this.default;
+    }
+
+    /**
+     * 获取我的需求数「RAWSQLCALL」
+     */
+    private async executeRawsqlcall1(): Promise<any> {
         // RAWSQLCALL暂未支持
         console.log("RAWSQLCALL暂未支持");
         return this.default;

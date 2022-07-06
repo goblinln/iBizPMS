@@ -7,7 +7,7 @@
         <template v-else>
             <template v-if="labelPos == 'LEFT'">
                 <ion-label  :class="classes" :style="{minWidth:labelWidth+'px'}" v-if="isShowCaption && labelWidth > 0">{{isEmptyCaption ? '' : caption}}</ion-label>
-                <div :style="contentStyle" style="display: flex;align-items: center;justify-content: flex-end;">
+                <div class="item-editor-content" :style="contentStyle" style="display: flex;align-items: center;justify-content: flex-end;">
                     <slot></slot>
                 </div>
                 <div class="prompt_text">{{error}}</div>

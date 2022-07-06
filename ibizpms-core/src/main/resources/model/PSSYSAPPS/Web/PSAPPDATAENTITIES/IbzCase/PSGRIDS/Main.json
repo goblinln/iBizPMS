@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -273,10 +273,17 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
-    "name" : "module",
+    "name" : "lib",
     "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
+      "name" : "LIB",
+      "codeName" : "Lib"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "pri",
+    "getPSAppDEField" : {
+      "name" : "PRI",
+      "codeName" : "Pri"
     }
   }, {
     "dataType" : 25,
@@ -287,17 +294,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "pri",
+    "name" : "type",
     "getPSAppDEField" : {
-      "name" : "PRI",
-      "codeName" : "Pri"
+      "name" : "TYPE",
+      "codeName" : "Type"
     }
   }, {
-    "dataType" : 1,
-    "name" : "lib",
+    "dataType" : 25,
+    "name" : "openedby",
     "getPSAppDEField" : {
-      "name" : "LIB",
-      "codeName" : "Lib"
+      "name" : "OPENEDBY",
+      "codeName" : "OpenedBy"
     }
   }, {
     "dataType" : 25,
@@ -307,18 +314,11 @@
       "codeName" : "Status"
     }
   }, {
-    "dataType" : 25,
-    "name" : "type",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -330,17 +330,17 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "module",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "MODULE",
+      "codeName" : "Module"
     }
   }, {
     "dataType" : 25,
-    "name" : "openedby",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "OPENEDBY",
-      "codeName" : "OpenedBy"
+      "name" : "TITLE",
+      "codeName" : "Title"
     }
   } ],
   "getPSDEGridEditItems" : [ {

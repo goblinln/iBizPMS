@@ -20,6 +20,8 @@ import systeammember_zh_CN from '@locale/lanres/sys-team-member/sys-team-member_
 import testsuite_zh_CN from '@locale/lanres/test-suite/test-suite_zh_CN';
 import projectteam_zh_CN from '@locale/lanres/project-team/project-team_zh_CN';
 import file_zh_CN from '@locale/lanres/file/file_zh_CN';
+import storyspec_zh_CN from '@locale/lanres/story-spec/story-spec_zh_CN';
+import history_zh_CN from '@locale/lanres/history/history_zh_CN';
 import productbranch_zh_CN from '@locale/lanres/product-branch/product-branch_zh_CN';
 import productrelease_zh_CN from '@locale/lanres/product-release/product-release_zh_CN';
 import testcase_zh_CN from '@locale/lanres/test-case/test-case_zh_CN';
@@ -41,6 +43,7 @@ import productmodule_zh_CN from '@locale/lanres/product-module/product-module_zh
 import reportsummary_zh_CN from '@locale/lanres/report-summary/report-summary_zh_CN';
 import productstats_zh_CN from '@locale/lanres/product-stats/product-stats_zh_CN';
 import usercontact_zh_CN from '@locale/lanres/user-contact/user-contact_zh_CN';
+import storystage_zh_CN from '@locale/lanres/story-stage/story-stage_zh_CN';
 import sysupdatefeatures_zh_CN from '@locale/lanres/sys-update-features/sys-update-features_zh_CN';
 import task_zh_CN from '@locale/lanres/task/task_zh_CN';
 import todo_zh_CN from '@locale/lanres/todo/todo_zh_CN';
@@ -113,6 +116,7 @@ export default {
         },
         searchForm:{
             title:'条件搜索',
+            globalerrortip:"填写信息有误，请检查",
             searchButton: {
                 search: '搜索',
                 reset: '重置'
@@ -407,6 +411,8 @@ export default {
     testsuite: testsuite_zh_CN,
     projectteam: projectteam_zh_CN,
     file: file_zh_CN,
+    storyspec: storyspec_zh_CN,
+    history: history_zh_CN,
     productbranch: productbranch_zh_CN,
     productrelease: productrelease_zh_CN,
     testcase: testcase_zh_CN,
@@ -428,6 +434,7 @@ export default {
     reportsummary: reportsummary_zh_CN,
     productstats: productstats_zh_CN,
     usercontact: usercontact_zh_CN,
+    storystage: storystage_zh_CN,
     sysupdatefeatures: sysupdatefeatures_zh_CN,
     task: task_zh_CN,
     todo: todo_zh_CN,

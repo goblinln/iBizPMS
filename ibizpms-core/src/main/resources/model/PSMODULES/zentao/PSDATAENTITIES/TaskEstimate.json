@@ -765,6 +765,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "project",
+          "fieldName" : "PROJECT",
           "name" : "PROJECT 等于(=) 网页请求上下文(project)",
           "getPSDEField" : {
             "name" : "PROJECT",
@@ -775,6 +776,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "0",
+          "fieldName" : "DELETED",
           "name" : "DELETED 等于(=) (0)",
           "getPSDEField" : {
             "name" : "DELETED",
@@ -4402,10 +4404,11 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "OptionView",
-    "logicName" : "任务预计实体选项操作视图",
-    "name" : "任务预计实体选项操作视图",
-    "realModelSubType" : "DEOPTVIEW",
+    "codeName" : "EditView",
+    "logicName" : "taskestimate实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "taskestimate实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
@@ -4415,16 +4418,22 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "taskestimate实体选择表格视图（部件视图）",
-    "name" : "taskestimate实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "codeName" : "MobEditView9",
+    "logicName" : "任务预计实体移动端编辑视图（部件视图）",
+    "name" : "任务预计实体移动端编辑视图（部件视图）",
+    "realModelSubType" : "DEMOBEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobMEditView9",
-    "logicName" : "任务预计实体移动端多表单编辑视图（部件视图）",
-    "name" : "任务预计实体移动端多表单编辑视图（部件视图）",
-    "realModelSubType" : "DEMOBMEDITVIEW9",
+    "codeName" : "OptionView",
+    "logicName" : "任务预计实体选项操作视图",
+    "name" : "任务预计实体选项操作视图",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "taskestimate实体编辑视图（左右关系）",
+    "name" : "taskestimate实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -4434,11 +4443,10 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupView",
-    "logicName" : "taskestimate实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "taskestimate实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
+    "codeName" : "PickupGridView",
+    "logicName" : "taskestimate实体选择表格视图（部件视图）",
+    "name" : "taskestimate实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobOptionView",
@@ -4447,82 +4455,10 @@
     "realModelSubType" : "DEMOBOPTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobEditView9",
-    "logicName" : "任务预计实体移动端编辑视图（部件视图）",
-    "name" : "任务预计实体移动端编辑视图（部件视图）",
-    "realModelSubType" : "DEMOBEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "MobPickupMDView",
     "logicName" : "任务预计实体移动端选择多数据视图（部件视图）",
     "name" : "任务预计实体移动端选择多数据视图（部件视图）",
     "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "NewForm",
-    "logicName" : "添加工时",
-    "modelTag2" : "1",
-    "name" : "添加工时",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "任务预计实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "任务预计实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "任务预计实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "任务预计实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "AddEstimateGridView",
-    "logicName" : "任务预计实体表格视图（记录工时）",
-    "name" : "任务预计实体表格视图（记录工时）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView9",
-    "logicName" : "任务预计实体表格视图（部件视图）",
-    "name" : "任务预计实体表格视图（部件视图）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "任务预计实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "任务预计实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "LookGridView9",
-    "logicName" : "任务预计实体表格视图（部件视图）（查看）",
-    "name" : "任务预计实体表格视图（部件视图）（查看）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView9",
-    "logicName" : "任务预计实体移动端多数据视图（部件视图）",
-    "name" : "任务预计实体移动端多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "taskestimate实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "taskestimate实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMPickupView",
@@ -4532,12 +4468,11 @@
     "realModelSubType" : "DEMOBMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "AddEstimateGridView",
+    "logicName" : "任务预计实体表格视图（记录工时）",
+    "name" : "任务预计实体表格视图（记录工时）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditGridView9",
     "logicName" : "任务预计实体表格视图（部件视图）（编辑）",
@@ -4545,18 +4480,85 @@
     "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "taskestimate实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "taskestimate实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "MobPickupView",
+    "logicName" : "任务预计实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "任务预计实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "taskestimate实体编辑视图（左右关系）",
-    "name" : "taskestimate实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "MobMDView",
+    "logicName" : "任务预计实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "任务预计实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "taskestimate实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "taskestimate实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMEditView9",
+    "logicName" : "任务预计实体移动端多表单编辑视图（部件视图）",
+    "name" : "任务预计实体移动端多表单编辑视图（部件视图）",
+    "realModelSubType" : "DEMOBMEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "任务预计实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "任务预计实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "taskestimate实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "taskestimate实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView9",
+    "logicName" : "任务预计实体表格视图（部件视图）",
+    "name" : "任务预计实体表格视图（部件视图）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView9",
+    "logicName" : "任务预计实体移动端多数据视图（部件视图）",
+    "name" : "任务预计实体移动端多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "LookGridView9",
+    "logicName" : "任务预计实体表格视图（部件视图）（查看）",
+    "name" : "任务预计实体表格视图（部件视图）（查看）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "NewForm",
+    "logicName" : "添加工时",
+    "modelTag2" : "1",
+    "name" : "添加工时",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "TaskEstimate",
   "dEType" : 1,
@@ -4600,10 +4602,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
     },
     "name" : "DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "TASK",
@@ -4625,7 +4623,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

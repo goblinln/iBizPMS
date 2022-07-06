@@ -84,22 +84,17 @@
     "value" : "project",
     "rawValue" : false
   }, {
-    "key" : "OBJECTTYPE",
-    "name" : "OBJECTTYPE",
-    "value" : "build",
-    "rawValue" : true
-  }, {
     "key" : "SRFPARENTKEY",
     "name" : "SRFPARENTKEY",
     "value" : "build",
     "rawValue" : false
+  }, {
+    "key" : "OBJECTTYPE",
+    "name" : "OBJECTTYPE",
+    "value" : "build",
+    "rawValue" : true
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "srfparentkey",
-    "name" : "srfparentkey",
-    "value" : "build",
-    "rawValue" : false
-  }, {
     "key" : "project",
     "name" : "project",
     "value" : "project",
@@ -109,6 +104,11 @@
     "name" : "objecttype",
     "value" : "build",
     "rawValue" : true
+  }, {
+    "key" : "srfparentkey",
+    "name" : "srfparentkey",
+    "value" : "build",
+    "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
@@ -153,7 +153,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__status.json"
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "pri",

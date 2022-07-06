@@ -21,7 +21,7 @@
       </div>
       <div class="tree-partition" v-if="valueNodes.length > 0"></div>
       <ion-list>
-        <template v-for="(item, index) in readerData">
+        <template v-for="(item, index) in renderData">
           <ion-item :key="index" @click="click_node(item)">
             <ion-label>{{ item.label }}<span class="node_length" v-if="item.children && item.children.length > 0"> ({{item.children.length}})</span></ion-label>
             <app-mob-icon class="tree-icon" position="end" :name="geticon(item.status)" @onClick="icon_click(item)"></app-mob-icon>
@@ -61,17 +61,23 @@ export default class AppTree extends Vue {
     public selectTreeValue?: string;
 
 
-    @Prop() public _viewparams?: string;
+    @Prop() public dynamicProps?: string;
 
 
-    @Watch('_viewparams', { immediate: true })
-    on__viewparams_change(newVale: any, oldVal: any) {
-      
-      const data = JSON.parse(newVale);
+    @Watch('dynamicProps', { immediate: true })
+    on_dynamicProps_change(newVal: any, oldVal: any) {
+      const _context = newVal._context;
+      let _viewparams :any;
+      if(newVal._viewparams){
+        _viewparams = typeof newVal._viewparams == 'string'?JSON.parse(newVal._viewparams):newVal._viewparams;
+      }
       const _this: any = this;
-      for (let index = 0; index < Object.keys(data).length; index++) {
-        const item = Object.keys(data)[index];
-        _this[item] = data[item];
+      if(!_viewparams){
+        return;
+      }
+      for (let index = 0; index < Object.keys(_viewparams).length; index++) {
+        const item = Object.keys(_viewparams)[index];
+        _this[item] = _viewparams[item];
       }
     }
 
@@ -167,7 +173,7 @@ export default class AppTree extends Vue {
     /**
      * 渲染数据
      */
-    public readerData: any = [];
+    public renderData: any = [];
 
     /**
      * 解析节点数据
@@ -175,14 +181,14 @@ export default class AppTree extends Vue {
      * @param {*} nodes
      * @memberof EmpTreeBase
      */
-    public parseNodes(nodes: any, isReader: boolean = false) {
-        if (isReader) {
-            this.readerData = []
+    public parseNodes(nodes: any, isRender: boolean = false) {
+        if (isRender) {
+            this.renderData = []
         }
         for (let index = 0; index < nodes.length; index++) {
             const node: any = nodes[index];
-            if (isReader) {
-                this.readerData.push(Object.assign({ status: this.getSelectStatus(node) }, node));
+            if (isRender) {
+                this.renderData.push(Object.assign({ status: this.getSelectStatus(node) }, node));
             }
         }
     }
@@ -199,10 +205,11 @@ export default class AppTree extends Vue {
         if (this.curValue.length <= 0) {
             return 0
         }
-        if (node.isLeaf) {
-            return this.curValue.some((item: any) => { return Object.is(item.id, node.id) }) ? 1 : 0;
-        } else {
+        if (node.children?.length >0) {
             let temp_arr = [];
+            if(!node.children){
+              return 0;
+            }
             for (let index = 0; index < node.children.length; index++) {
                 const node_item = node.children[index];
                 temp_arr.push(this.getSelectStatus(node_item));
@@ -216,6 +223,8 @@ export default class AppTree extends Vue {
             if (temp_arr.some((item: any) => { return Object.is(item, 1) }) || temp_arr.some((item: any) => { return Object.is(item, 2) })) {
                 return 2;
             }
+        } else {
+          return this.curValue.some((item: any) => { return Object.is(item.id, node.id) }) ? 1 : 0;
         }
         return 0;
     }
@@ -241,12 +250,12 @@ export default class AppTree extends Vue {
      * 节点点击
      */
     public click_node(item: any) {
-        if (item.isLeaf) {
-            this.icon_click(item);
+        if (item.children?.length > 0) {
+            this.treeNav.push(item);
+            this.parseNodes(item.children, true)
             return
         }
-        this.treeNav.push(item);
-        this.parseNodes(item.children, true)
+        this.icon_click(item);
     }
 
     /**
@@ -285,12 +294,14 @@ export default class AppTree extends Vue {
     public getNodeChild(node: any): any[] {
         let allchildren: any[] = [];
         allchildren.push(node);
-        for (let index = 0; index < node.children.length; index++) {
-            const element = node.children[index];
-            if (element.children && element.children.length > 0) {
-                allchildren.push(this.getNodeChild(element));
-            } else {
-                allchildren.push(element)
+        if(node.children){
+          for (let index = 0; index < node.children.length; index++) {
+              const element = node.children[index];
+                if (element.children && element.children.length > 0) {
+                    allchildren.push(this.getNodeChild(element));
+                } else {
+                    allchildren.push(element)
+                }
             }
         }
         return allchildren;
@@ -318,8 +329,8 @@ export default class AppTree extends Vue {
      * @memberof IbzDailyDailyCreateMobEditViewBase
      */
     protected  thirdPartyInit(){
-      this.$viewTool.setViewTitleOfThirdParty(this.$t('choose'));
-      this.$viewTool.setThirdPartyEvent(this.closeView);
+      // this.$viewTool.setViewTitleOfThirdParty(this.$t('choose'));
+      // this.$viewTool.setThirdPartyEvent(this.closeView);
     }
 
 

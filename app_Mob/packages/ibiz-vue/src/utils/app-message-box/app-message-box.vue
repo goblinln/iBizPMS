@@ -159,7 +159,7 @@ export default class AppMessageBox extends Vue {
      */
     public buttonModel = [
         // 多语言
-        {text: this.$t('app.commonWords.ok') , value: 'confirm' , type: 'primary',visibel: false },
+        {text: this.$t('app.commonWords.ok') , value: 'ok' , type: 'primary',visibel: false },
         {text: this.$t('app.commonWords.yes') , value: 'yes', type:'primary',visibel: false},
         {text: this.$t('app.commonWords.no') , value: 'no', visibel: false},
         {text: this.$t('app.commonWords.cancel') , value: 'cancel', visibel: false},
@@ -256,20 +256,20 @@ export default class AppMessageBox extends Vue {
             return;
         }
         switch(this.buttonType) {
-            case 'confirmOrCancel':
+            case 'okcancel':
                 this.buttonModel[0].visibel = true;
                 this.buttonModel[3].visibel = true;
                 break;
-            case 'yesOrNo':
+            case 'yesno':
                 this.buttonModel[1].visibel = true;
                 this.buttonModel[2].visibel = true;
                 break;
-            case 'yesOrNoOrCancel':
+            case 'yesnocancel':
                 this.buttonModel[1].visibel = true;
                 this.buttonModel[2].visibel = true;
                 this.buttonModel[3].visibel = true;
                 break;
-            case 'confirm':
+            case 'ok':
                 this.buttonModel[0].visibel = true;
                 break;
         }

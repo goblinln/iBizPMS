@@ -85,7 +85,7 @@ export class AppMobDrtabBase extends MobDrtabControlBase {
      */
     public renderDrView(tabPage: any){
         let viewData: any = Util.deepCopy(this.context);
-        viewData.viewpath = tabPage?.getPSAppView?.path;
+        viewData.viewpath = tabPage?.getPSAppView()?.modelPath;
         let viewParam = this.viewparams;
         return this.$createElement('app-view-shell', {
             props: { 

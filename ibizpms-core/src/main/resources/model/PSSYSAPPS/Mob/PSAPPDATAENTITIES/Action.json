@@ -36,12 +36,46 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -49,6 +83,21 @@
     "codeName" : "CreateHis",
     "methodType" : "DEACTION",
     "name" : "CreateHis",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateHisInput",
+      "name" : "CreateHisInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateHisResult",
+      "name" : "CreateHisResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -56,6 +105,20 @@
     "codeName" : "EditComment",
     "methodType" : "DEACTION",
     "name" : "editComment",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "EditCommentInput",
+      "name" : "EditCommentInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "EditCommentResult",
+      "name" : "EditCommentResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -63,12 +126,51 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -77,6 +179,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -85,54 +201,148 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
     "name" : "FetchAccount",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchaccount",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "getADPSDEDQConditions" : [ {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "srfparentkey",
+      "fieldName" : "OBJECTID",
       "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
       "getPSVARTypeId" : "DATACONTEXT"
     }, {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "objecttype",
+      "fieldName" : "OBJECTTYPE",
       "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
     "codeName" : "FetchMain",
     "methodType" : "FETCH",
     "name" : "FetchType",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchmain",
     "builtinMethod" : false
   }, {
     "getADPSDEDQConditions" : [ {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "srfparentkey",
+      "fieldName" : "OBJECTID",
       "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
       "getPSVARTypeId" : "DATACONTEXT"
     }, {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "objecttype",
+      "fieldName" : "OBJECTTYPE",
       "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
@@ -140,38 +350,201 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MobType",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MobTypeInput",
+      "name" : "MobTypeInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MobTypeResult",
+      "name" : "MobTypeResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "srfparentkey",
+        "fieldName" : "OBJECTID",
+        "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
+        "getPSVARTypeId" : "DATACONTEXT"
+      }, {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "objecttype",
+        "fieldName" : "OBJECTTYPE",
+        "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
+        "getPSVARTypeId" : "DATACONTEXT"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "FetchMy",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchmy",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAction",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAction",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyActionInput",
+      "name" : "MyActionInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyActionResult",
+      "name" : "MyActionResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "srfloginname",
+        "fieldName" : "ACTOR",
+        "name" : "ACTOR 等于(=) 用户上下文(srfloginname)",
+        "getPSVARTypeId" : "SESSIONCONTEXT"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTrends",
     "methodType" : "FETCH",
     "name" : "FetchMyTrends",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchmytrends",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProduct",
     "methodType" : "FETCH",
     "name" : "FetchProductTrends",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproduct",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProject",
     "methodType" : "FETCH",
     "name" : "FetchProjectTrends",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproject",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchQueryUserYEAR",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "QueryUserYEAR",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "QueryUserYEARInput",
+      "name" : "QueryUserYEARInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "QueryUserYEARResult",
+      "name" : "QueryUserYEARResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -364,18 +737,635 @@
     "name" : "PROJECT",
     "stdDataType" : 1
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "ActionDTO",
+    "name" : "ActionDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "Action",
+      "logicName" : "动作",
+      "name" : "Action",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACTION",
+        "codeName" : "Action"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Actionmanner",
+      "logicName" : "操作方式",
+      "name" : "Actionmanner",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACTIONMANNER",
+        "codeName" : "Actionmanner"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Actionsn",
+      "logicName" : "系统日志编号",
+      "name" : "Actionsn",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACTIONSN",
+        "codeName" : "Actionsn"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Actor",
+      "logicName" : "操作者",
+      "name" : "Actor",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACTOR",
+        "codeName" : "Actor"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Comment",
+      "logicName" : "备注",
+      "name" : "Comment",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreateMan",
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Date",
+      "logicName" : "日期",
+      "name" : "Date",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Date1",
+      "logicName" : "显示日期",
+      "name" : "Date1",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DATE1",
+        "codeName" : "Date1"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Dept",
+      "logicName" : "归属部门",
+      "name" : "Dept",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "DeptName",
+      "logicName" : "归属部门名",
+      "name" : "DeptName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Extra",
+      "logicName" : "附加值",
+      "name" : "Extra",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "EXTRA",
+        "codeName" : "Extra"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Files",
+      "logicName" : "文件",
+      "name" : "Files",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "FILES",
+        "codeName" : "Files"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Id",
+      "logicName" : "id",
+      "name" : "Id",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Isactorss",
+      "logicName" : "当前用户",
+      "name" : "Isactorss",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ISACTORSS",
+        "codeName" : "Isactorss"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Lastcomment",
+      "logicName" : "备注",
+      "name" : "Lastcomment",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "LASTCOMMENT",
+        "codeName" : "Lastcomment"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Lastmonth",
+      "logicName" : "上月",
+      "name" : "Lastmonth",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "LASTMONTH",
+        "codeName" : "Lastmonth"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Lastweek",
+      "logicName" : "上周",
+      "name" : "Lastweek",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "LASTWEEK",
+        "codeName" : "Lastweek"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Noticeusers",
+      "logicName" : "消息通知用户",
+      "name" : "Noticeusers",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "NOTICEUSERS",
+        "codeName" : "Noticeusers"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ObjectID",
+      "logicName" : "对象ID",
+      "name" : "ObjectID",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "OBJECTID",
+        "codeName" : "ObjectID"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ObjectType",
+      "logicName" : "对象类型",
+      "name" : "ObjectType",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "OBJECTTYPE",
+        "codeName" : "ObjectType"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Org",
+      "logicName" : "归属组织",
+      "name" : "Org",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORG",
+        "codeName" : "Org"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OrgName",
+      "logicName" : "归属组织名",
+      "name" : "OrgName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Product",
+      "logicName" : "产品",
+      "name" : "Product",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Project",
+      "logicName" : "项目",
+      "name" : "Project",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Read",
+      "logicName" : "已读",
+      "name" : "Read",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "READ",
+        "codeName" : "Read"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Srfkey",
+      "logicName" : "前端键值",
+      "name" : "Srfkey",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SRFKEY",
+        "codeName" : "Srfkey"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Thismonth",
+      "logicName" : "本月",
+      "name" : "Thismonth",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "THISMONTH",
+        "codeName" : "Thismonth"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Thisweek",
+      "logicName" : "本周",
+      "name" : "Thisweek",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "THISWEEK",
+        "codeName" : "Thisweek"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Today",
+      "logicName" : "今天",
+      "name" : "Today",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TODAY",
+        "codeName" : "Today"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateDate",
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Yesterday",
+      "logicName" : "昨天",
+      "name" : "Yesterday",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "YESTERDAY",
+        "codeName" : "Yesterday"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Historys",
+      "name" : "Historys",
+      "orderValue" : 99999,
+      "getRefPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "HistoryDTO"
+      },
+      "getRefPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/History.json"
+      },
+      "sourceType" : "DER",
+      "type" : "DTOS"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "ActionFilterDTO",
+    "name" : "ActionFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_ACTIONMANNER_EQ",
+      "logicName" : "操作方式",
+      "name" : "N_ACTIONMANNER_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ACTIONMANNER",
+        "codeName" : "Actionmanner"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ACTION_EQ",
+      "logicName" : "动作",
+      "name" : "N_ACTION_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ACTION",
+        "codeName" : "Action"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_COMMENT_LIKE",
+      "logicName" : "备注",
+      "name" : "N_COMMENT_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ID_EQ",
+      "logicName" : "id",
+      "name" : "N_ID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_LASTMONTH_EQ",
+      "logicName" : "上月",
+      "name" : "N_LASTMONTH_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "LASTMONTH",
+        "codeName" : "Lastmonth"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_LASTWEEK_EQ",
+      "logicName" : "上周",
+      "name" : "N_LASTWEEK_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "LASTWEEK",
+        "codeName" : "Lastweek"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_OBJECTID_EQ",
+      "logicName" : "对象ID",
+      "name" : "N_OBJECTID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "OBJECTID",
+        "codeName" : "ObjectID"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_OBJECTTYPE_EQ",
+      "logicName" : "对象类型",
+      "name" : "N_OBJECTTYPE_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "OBJECTTYPE",
+        "codeName" : "ObjectType"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PROJECT_EQ",
+      "logicName" : "项目",
+      "name" : "N_PROJECT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_READ_EQ",
+      "logicName" : "已读",
+      "name" : "N_READ_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "READ",
+        "codeName" : "Read"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_THISMONTH_EQ",
+      "logicName" : "本月",
+      "name" : "N_THISMONTH_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "THISMONTH",
+        "codeName" : "Thismonth"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_THISWEEK_EQ",
+      "logicName" : "本周",
+      "name" : "N_THISWEEK_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "THISWEEK",
+        "codeName" : "Thisweek"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TODAY_EQ",
+      "logicName" : "今天",
+      "name" : "N_TODAY_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "TODAY",
+        "codeName" : "Today"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_YESTERDAY_EQ",
+      "logicName" : "昨天",
+      "name" : "N_YESTERDAY_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "YESTERDAY",
+        "codeName" : "Yesterday"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -383,6 +1373,21 @@
     "codeName" : "CreateHis",
     "methodType" : "DEACTION",
     "name" : "CreateHis",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateHisInput",
+      "name" : "CreateHisInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateHisResult",
+      "name" : "CreateHisResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -390,6 +1395,20 @@
     "codeName" : "EditComment",
     "methodType" : "DEACTION",
     "name" : "editComment",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "EditCommentInput",
+      "name" : "EditCommentInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "EditCommentResult",
+      "name" : "EditCommentResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -397,12 +1416,51 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -411,6 +1469,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -419,53 +1491,147 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
     "name" : "FetchAccount",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchaccount",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "getADPSDEDQConditions" : [ {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "srfparentkey",
+      "fieldName" : "OBJECTID",
       "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
       "getPSVARTypeId" : "DATACONTEXT"
     }, {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "objecttype",
+      "fieldName" : "OBJECTTYPE",
       "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
     "codeName" : "FetchMain",
     "methodType" : "FETCH",
     "name" : "FetchType",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchmain",
     "builtinMethod" : false
   }, {
     "getADPSDEDQConditions" : [ {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "srfparentkey",
+      "fieldName" : "OBJECTID",
       "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
       "getPSVARTypeId" : "DATACONTEXT"
     }, {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "objecttype",
+      "fieldName" : "OBJECTTYPE",
       "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
@@ -473,38 +1639,201 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MobType",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MobTypeInput",
+      "name" : "MobTypeInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MobTypeResult",
+      "name" : "MobTypeResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "srfparentkey",
+        "fieldName" : "OBJECTID",
+        "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
+        "getPSVARTypeId" : "DATACONTEXT"
+      }, {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "objecttype",
+        "fieldName" : "OBJECTTYPE",
+        "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
+        "getPSVARTypeId" : "DATACONTEXT"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "FetchMy",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchmy",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAction",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAction",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyActionInput",
+      "name" : "MyActionInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyActionResult",
+      "name" : "MyActionResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "srfloginname",
+        "fieldName" : "ACTOR",
+        "name" : "ACTOR 等于(=) 用户上下文(srfloginname)",
+        "getPSVARTypeId" : "SESSIONCONTEXT"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTrends",
     "methodType" : "FETCH",
     "name" : "FetchMyTrends",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchmytrends",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProduct",
     "methodType" : "FETCH",
     "name" : "FetchProductTrends",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproduct",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProject",
     "methodType" : "FETCH",
     "name" : "FetchProjectTrends",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproject",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchQueryUserYEAR",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "QueryUserYEAR",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "QueryUserYEARInput",
+      "name" : "QueryUserYEARInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "QueryUserYEARResult",
+      "name" : "QueryUserYEARResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ActionDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -975,7 +2304,15 @@
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "系统日志",
+  "getMajorPSAppDEField" : {
+    "name" : "COMMENT",
+    "codeName" : "Comment"
+  },
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "Actions",
@@ -1011,7 +2348,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "BUG__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Actions",
@@ -1029,7 +2367,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "BUILD__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Actions",
@@ -1119,7 +2458,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "PRODUCT_PLAN__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Actions",
@@ -1137,7 +2477,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "PRODUCT_RELEASE__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Actions",
@@ -1209,7 +2550,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "STORY__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Actions",
@@ -1227,7 +2569,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TASK__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Actions",
@@ -1245,7 +2588,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_CASE_ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Actions",
@@ -1263,7 +2607,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_SUITE__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Actions",
@@ -1281,7 +2626,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_TASK__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Actions",

@@ -13,7 +13,7 @@
     "name" : "STORYNAME",
     "codeName" : "Storyname"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "任务分组（需求分组）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -581,33 +581,18 @@
             "id" : "TOBUG"
           },
           "getPSNavigateContexts" : [ {
-            "key" : "MAILTO",
-            "name" : "MAILTO",
-            "value" : "mailto",
-            "rawValue" : false
-          }, {
-            "key" : "ASSIGNEDTO",
-            "name" : "ASSIGNEDTO",
-            "value" : "assignedto",
-            "rawValue" : false
-          }, {
             "key" : "TASK",
             "name" : "TASK",
             "value" : "task",
             "rawValue" : false
           }, {
-            "key" : "STORYNAME",
-            "name" : "STORYNAME",
-            "value" : "storyname",
+            "key" : "COLOR",
+            "name" : "COLOR",
+            "value" : "color",
             "rawValue" : false
           }, {
-            "key" : "MODULE",
-            "name" : "MODULE",
-            "value" : "module",
-            "rawValue" : false
-          }, {
-            "key" : "CURPROJECT",
-            "name" : "CURPROJECT",
+            "key" : "PROJECT",
+            "name" : "PROJECT",
             "value" : "project",
             "rawValue" : false
           }, {
@@ -616,9 +601,24 @@
             "value" : "story",
             "rawValue" : false
           }, {
-            "key" : "PROJECT",
-            "name" : "PROJECT",
+            "key" : "CURPROJECT",
+            "name" : "CURPROJECT",
             "value" : "project",
+            "rawValue" : false
+          }, {
+            "key" : "TITLE",
+            "name" : "TITLE",
+            "value" : "name",
+            "rawValue" : false
+          }, {
+            "key" : "ASSIGNEDTO",
+            "name" : "ASSIGNEDTO",
+            "value" : "assignedto",
+            "rawValue" : false
+          }, {
+            "key" : "MAILTO",
+            "name" : "MAILTO",
+            "value" : "mailto",
             "rawValue" : false
           }, {
             "key" : "MODULENAME",
@@ -626,9 +626,9 @@
             "value" : "modulename",
             "rawValue" : false
           }, {
-            "key" : "COLOR",
-            "name" : "COLOR",
-            "value" : "color",
+            "key" : "STORYNAME",
+            "name" : "STORYNAME",
+            "value" : "storyname",
             "rawValue" : false
           }, {
             "key" : "BRANCH",
@@ -636,9 +636,9 @@
             "value" : "0",
             "rawValue" : true
           }, {
-            "key" : "TITLE",
-            "name" : "TITLE",
-            "value" : "name",
+            "key" : "MODULE",
+            "name" : "MODULE",
+            "value" : "module",
             "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
@@ -647,14 +647,9 @@
             "value" : "mailto",
             "rawValue" : false
           }, {
-            "key" : "modulename",
-            "name" : "modulename",
-            "value" : "modulename",
-            "rawValue" : false
-          }, {
-            "key" : "story",
-            "name" : "story",
-            "value" : "story",
+            "key" : "project",
+            "name" : "project",
+            "value" : "project",
             "rawValue" : false
           }, {
             "key" : "assignedto",
@@ -662,14 +657,14 @@
             "value" : "assignedto",
             "rawValue" : false
           }, {
-            "key" : "project",
-            "name" : "project",
-            "value" : "project",
+            "key" : "color",
+            "name" : "color",
+            "value" : "color",
             "rawValue" : false
           }, {
-            "key" : "title",
-            "name" : "title",
-            "value" : "name",
+            "key" : "story",
+            "name" : "story",
+            "value" : "story",
             "rawValue" : false
           }, {
             "key" : "module",
@@ -677,14 +672,24 @@
             "value" : "module",
             "rawValue" : false
           }, {
-            "key" : "curproject",
-            "name" : "curproject",
-            "value" : "project",
+            "key" : "branch",
+            "name" : "branch",
+            "value" : "0",
+            "rawValue" : true
+          }, {
+            "key" : "modulename",
+            "name" : "modulename",
+            "value" : "modulename",
             "rawValue" : false
           }, {
-            "key" : "color",
-            "name" : "color",
-            "value" : "color",
+            "key" : "title",
+            "name" : "title",
+            "value" : "name",
+            "rawValue" : false
+          }, {
+            "key" : "storyname",
+            "name" : "storyname",
+            "value" : "storyname",
             "rawValue" : false
           }, {
             "key" : "task",
@@ -692,14 +697,9 @@
             "value" : "task",
             "rawValue" : false
           }, {
-            "key" : "branch",
-            "name" : "branch",
-            "value" : "0",
-            "rawValue" : true
-          }, {
-            "key" : "storyname",
-            "name" : "storyname",
-            "value" : "storyname",
+            "key" : "curproject",
+            "name" : "curproject",
+            "value" : "project",
             "rawValue" : false
           } ],
           "getPSSysImage" : {
@@ -948,9 +948,9 @@
             "id" : "SUBTASKS"
           },
           "getPSNavigateContexts" : [ {
-            "key" : "PARENT",
-            "name" : "PARENT",
-            "value" : "id",
+            "key" : "MODULE",
+            "name" : "MODULE",
+            "value" : "module",
             "rawValue" : false
           }, {
             "key" : "PROJECT",
@@ -958,17 +958,12 @@
             "value" : "project",
             "rawValue" : false
           }, {
-            "key" : "MODULE",
-            "name" : "MODULE",
-            "value" : "module",
+            "key" : "PARENT",
+            "name" : "PARENT",
+            "value" : "id",
             "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
-            "key" : "project",
-            "name" : "project",
-            "value" : "project",
-            "rawValue" : false
-          }, {
             "key" : "module",
             "name" : "module",
             "value" : "module",
@@ -977,6 +972,11 @@
             "key" : "parent",
             "name" : "parent",
             "value" : "id",
+            "rawValue" : false
+          }, {
+            "key" : "project",
+            "name" : "project",
+            "value" : "project",
             "rawValue" : false
           } ],
           "getPSSysImage" : {
@@ -1108,18 +1108,25 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 25,
-    "name" : "tasktype",
+    "dataType" : 1,
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "TASKTYPE",
-      "codeName" : "Tasktype"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
-    "dataType" : 1,
-    "name" : "frombug",
+    "dataType" : 9,
+    "name" : "pri",
     "getPSAppDEField" : {
-      "name" : "FROMBUG",
-      "codeName" : "FromBug"
+      "name" : "PRI",
+      "codeName" : "Pri"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   }, {
     "dataType" : 25,
@@ -1130,13 +1137,88 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "assignedto",
+    "getPSAppDEField" : {
+      "name" : "ASSIGNEDTO",
+      "codeName" : "AssignedTo"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "finishedby",
+    "getPSAppDEField" : {
+      "name" : "FINISHEDBY",
+      "codeName" : "FinishedBy"
+    }
   }, {
     "dataType" : 7,
     "name" : "estimate",
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "consumed",
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "left",
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "deadline",
+    "getPSAppDEField" : {
+      "name" : "DEADLINE",
+      "codeName" : "Deadline"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "tasksn",
+    "getPSAppDEField" : {
+      "name" : "TASKSN",
+      "codeName" : "Tasksn"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "status",
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "storyname",
+    "getPSAppDEField" : {
+      "name" : "STORYNAME",
+      "codeName" : "Storyname"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "isfavorites",
+    "getPSAppDEField" : {
+      "name" : "ISFAVORITES",
+      "codeName" : "Isfavorites"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "tasktype",
+    "getPSAppDEField" : {
+      "name" : "TASKTYPE",
+      "codeName" : "Tasktype"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "module",
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
     }
   }, {
     "dataType" : 1,
@@ -1154,109 +1236,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "assignedto",
-    "getPSAppDEField" : {
-      "name" : "ASSIGNEDTO",
-      "codeName" : "AssignedTo"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "story",
-    "getPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
-    }
-  }, {
-    "dataType" : 7,
-    "name" : "consumed",
-    "getPSAppDEField" : {
-      "name" : "CONSUMED",
-      "codeName" : "Consumed"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "name",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 7,
-    "name" : "left",
-    "getPSAppDEField" : {
-      "name" : "LEFT",
-      "codeName" : "Left"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "isfavorites",
-    "getPSAppDEField" : {
-      "name" : "ISFAVORITES",
-      "codeName" : "Isfavorites"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "module",
-    "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "finishedby",
-    "getPSAppDEField" : {
-      "name" : "FINISHEDBY",
-      "codeName" : "FinishedBy"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "status",
-    "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "parent",
-    "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "storyname",
-    "getPSAppDEField" : {
-      "name" : "STORYNAME",
-      "codeName" : "Storyname"
-    }
-  }, {
     "dataType" : 1,
     "name" : "project",
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "pri",
-    "getPSAppDEField" : {
-      "name" : "PRI",
-      "codeName" : "Pri"
     }
   }, {
     "dataType" : 1,
@@ -1267,19 +1251,35 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "tasksn",
+    "name" : "story",
     "getPSAppDEField" : {
-      "name" : "TASKSN",
-      "codeName" : "Tasksn"
+      "name" : "STORY",
+      "codeName" : "Story"
     }
   }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "deadline",
+    "dataType" : 1,
+    "name" : "parent",
     "getPSAppDEField" : {
-      "name" : "DEADLINE",
-      "codeName" : "Deadline"
+      "name" : "PARENT",
+      "codeName" : "Parent"
     }
+  }, {
+    "dataType" : 1,
+    "name" : "frombug",
+    "getPSAppDEField" : {
+      "name" : "FROMBUG",
+      "codeName" : "FromBug"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "编号",

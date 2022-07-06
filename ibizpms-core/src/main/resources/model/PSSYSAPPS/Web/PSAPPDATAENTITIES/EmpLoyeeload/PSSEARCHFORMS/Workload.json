@@ -2,7 +2,7 @@
   "codeName" : "Workload",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload/PSSEARCHFORMS/Workload.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "员工负载",
   "getPSAppDataEntity" : {
     "modelref" : true,

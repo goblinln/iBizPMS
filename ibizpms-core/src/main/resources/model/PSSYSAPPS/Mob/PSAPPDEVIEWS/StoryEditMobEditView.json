@@ -64,7 +64,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD", "SAVE", "BEFORESAVE", "REMOVE" ],
     "logicName" : "编辑表单（移动端）",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -1005,14 +1005,14 @@
               "value" : "srfloginname",
               "rawValue" : false
             }, {
-              "key" : "public",
-              "name" : "public",
-              "value" : "0",
-              "rawValue" : true
-            }, {
               "key" : "type",
               "name" : "type",
               "value" : "story",
+              "rawValue" : true
+            }, {
+              "key" : "public",
+              "name" : "public",
+              "value" : "0",
               "rawValue" : true
             } ],
             "getPSSysPFPlugin" : {

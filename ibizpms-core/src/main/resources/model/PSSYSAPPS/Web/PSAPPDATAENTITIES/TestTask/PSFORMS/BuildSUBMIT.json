@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "版本提交测试",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -348,14 +348,14 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "PRODUCT",
-              "name" : "PRODUCT",
-              "value" : "product",
-              "rawValue" : false
-            }, {
               "key" : "N_ID_EQ",
               "name" : "N_ID_EQ",
               "value" : "project",
+              "rawValue" : false
+            }, {
+              "key" : "PRODUCT",
+              "name" : "PRODUCT",
+              "value" : "product",
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {

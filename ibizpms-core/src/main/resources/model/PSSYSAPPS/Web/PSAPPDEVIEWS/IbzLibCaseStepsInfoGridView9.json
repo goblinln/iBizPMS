@@ -67,7 +67,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主数据",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -246,11 +246,11 @@
       "hideDefault" : true
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 21,
-      "name" : "expect",
+      "dataType" : 1,
+      "name" : "case",
       "getPSAppDEField" : {
-        "name" : "EXPECT",
-        "codeName" : "Expect"
+        "name" : "CASE",
+        "codeName" : "IBizCase"
       }
     }, {
       "dataType" : 21,
@@ -260,18 +260,11 @@
         "codeName" : "Desc"
       }
     }, {
-      "dataType" : 1,
-      "name" : "parent",
+      "dataType" : 21,
+      "name" : "expect",
       "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "case",
-      "getPSAppDEField" : {
-        "name" : "CASE",
-        "codeName" : "IBizCase"
+        "name" : "EXPECT",
+        "codeName" : "Expect"
       }
     }, {
       "dataType" : 25,
@@ -281,11 +274,11 @@
         "codeName" : "Type"
       }
     }, {
-      "dataType" : 21,
-      "name" : "srfmajortext",
+      "dataType" : 1,
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "EXPECT",
-        "codeName" : "Expect"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -297,10 +290,17 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "parent",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      }
+    }, {
+      "dataType" : 21,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "EXPECT",
+        "codeName" : "Expect"
       }
     } ],
     "getPSDEGridEditItems" : [ {

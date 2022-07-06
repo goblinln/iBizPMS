@@ -1,6 +1,6 @@
 import { Vue, Component, Watch } from 'vue-property-decorator';
 import { Subject, Subscription } from 'rxjs';
-import { Util, ViewTool, ModelTool } from 'ibiz-core';
+import { Util, ViewTool, ModelTool, MobCalendarControlInterface } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { GlobalService } from 'ibiz-service';
 import { AppMobCalendarService } from '../ctrl-service';
@@ -14,7 +14,7 @@ import moment from 'moment';
 
     }
 })
-export class MobCalendarControlBase extends MDControlBase{
+export class MobCalendarControlBase extends MDControlBase implements MobCalendarControlInterface{
 
     /**
      * 数据视图模型实例
@@ -458,7 +458,7 @@ export class MobCalendarControlBase extends MDControlBase{
      * @returns
      * @memberof MobCalendarControlBase
      */
-    protected ionChange($event:any) {
+    public ionChange($event:any) {
         let { detail: _detail } = $event;
         if (!_detail) {
             return ;
@@ -484,7 +484,7 @@ export class MobCalendarControlBase extends MDControlBase{
      *
      * @memberof MobCalendarControlBase
      */
-    protected prev(year: any, month: any, weekIndex: any) {
+    public prev(year: any, month: any, weekIndex: any) {
         if(this.calendarStyle == "MONTH_TIMELINE" || this.calendarStyle == "MONTH"){
             this.selectday(year, month, this.day);
             this.formatData(new Date(year+'/'+month+'/'+'1'));
@@ -499,7 +499,7 @@ export class MobCalendarControlBase extends MDControlBase{
      *
      * @memberof MobCalendarControlBase
      */
-    protected next(year: any, month: any, weekIndex: any) {
+    public next(year: any, month: any, weekIndex: any) {
         if(this.calendarStyle == "MONTH_TIMELINE" || this.calendarStyle == "MONTH" ){
             this.selectday(year, month, this.day);
             this.formatData(new Date(year+'/'+month+'/'+'1'));
@@ -567,7 +567,7 @@ export class MobCalendarControlBase extends MDControlBase{
      *
      * @memberof MobCalendarControlBase
      */
-    protected selectYear(year: any) {
+    public selectYear(year: any) {
       this.value = [year, this.month, this.day];
       this.formatData(new Date(year+'/'+this.month+'/'+this.day));
     }
@@ -577,7 +577,7 @@ export class MobCalendarControlBase extends MDControlBase{
      *
      * @memberof MobCalendarControlBase
      */
-    protected selectMonth(month: any, year: any) {
+    public selectMonth(month: any, year: any) {
       this.selectday(year, month, this.day);
       this.formatData(new Date(year+'/'+month+'/'+this.day));
     }
@@ -760,7 +760,7 @@ export class MobCalendarControlBase extends MDControlBase{
      * @param any 
      * @memberof MobCalendarControlBase
      */
-    protected clickDay(data: any) {
+    public clickDay(data: any) {
       if (data) {
         let reTime = data.join('/');
         let temptime = new Date(reTime);
@@ -821,7 +821,7 @@ export class MobCalendarControlBase extends MDControlBase{
      * @param {*} $event 事件信息
      * @memberof MobCalendarControlBase
      */
-    protected async onEventClick($event: any): Promise<any> {
+    public async onEventClick($event: any): Promise<any> {
         const calendarItems = (this.controlInstance as IPSSysCalendar).getPSSysCalendarItems() || [];
         let itemType = $event.itemType.toLowerCase();
         const calendarItem = calendarItems.find((item:IPSSysCalendarItem)=>{return itemType == item.itemType.toLowerCase()});

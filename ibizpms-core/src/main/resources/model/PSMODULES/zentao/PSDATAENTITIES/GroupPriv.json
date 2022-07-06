@@ -727,19 +727,11 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "grouppriv实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "grouppriv实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "grouppriv实体编辑视图（左右关系）",
+    "name" : "grouppriv实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "RedirectView",
     "logicName" : "grouppriv实体数据重定向视图",
@@ -748,16 +740,24 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "MPickupView",
+    "logicName" : "grouppriv实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "grouppriv实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "grouppriv实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "grouppriv实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "PickupGridView",
     "logicName" : "grouppriv实体选择表格视图（部件视图）",
     "name" : "grouppriv实体选择表格视图（部件视图）",
     "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "grouppriv实体编辑视图（左右关系）",
-    "name" : "grouppriv实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -767,12 +767,12 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "grouppriv实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "grouppriv实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "GroupPriv",
   "dEType" : 1,
@@ -803,7 +803,7 @@
   "name" : "ZT_GROUPPRIV",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

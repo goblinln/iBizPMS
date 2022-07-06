@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格_行编辑（执行）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -165,13 +165,6 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 25,
-    "name" : "files",
-    "getPSAppDEField" : {
-      "name" : "FILES",
-      "codeName" : "Files"
-    }
-  }, {
     "dataType" : 21,
     "name" : "desc",
     "getPSAppDEField" : {
@@ -179,11 +172,11 @@
       "codeName" : "Desc"
     }
   }, {
-    "dataType" : 1,
-    "name" : "parent",
+    "dataType" : 21,
+    "name" : "expect",
     "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
+      "name" : "EXPECT",
+      "codeName" : "Expect"
     }
   }, {
     "dataType" : 25,
@@ -194,28 +187,6 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "type",
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    }
-  }, {
-    "dataType" : 21,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "EXPECT",
-      "codeName" : "Expect"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "srfdataaccaction",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true
-  }, {
-    "dataType" : 25,
     "name" : "reals",
     "getPSAppDEField" : {
       "name" : "REALS",
@@ -223,10 +194,10 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "casestepsn",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "CASESTEPSN",
+      "codeName" : "Casestepsn"
     }
   }, {
     "dataType" : 9,
@@ -236,6 +207,13 @@
       "codeName" : "Runid"
     }
   }, {
+    "dataType" : 25,
+    "name" : "type",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
     "dataType" : 9,
     "name" : "version",
     "getPSAppDEField" : {
@@ -243,11 +221,18 @@
       "codeName" : "Version"
     }
   }, {
-    "dataType" : 21,
-    "name" : "expect",
+    "dataType" : 1,
+    "name" : "case",
     "getPSAppDEField" : {
-      "name" : "EXPECT",
-      "codeName" : "Expect"
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "files",
+    "getPSAppDEField" : {
+      "name" : "FILES",
+      "codeName" : "Files"
     }
   }, {
     "dataType" : 1,
@@ -258,51 +243,35 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "case",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "CASE",
-      "codeName" : "IBizCase"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
-    "name" : "casestepsn",
+    "name" : "srfdataaccaction",
     "getPSAppDEField" : {
-      "name" : "CASESTEPSN",
-      "codeName" : "Casestepsn"
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "parent",
+    "getPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    }
+  }, {
+    "dataType" : 21,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "EXPECT",
+      "codeName" : "Expect"
     }
   } ],
   "getPSDEGridEditItems" : [ {
-    "caption" : "附件",
-    "codeName" : "files",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "files",
-    "getPSAppDEField" : {
-      "name" : "FILES",
-      "codeName" : "Files"
-    },
-    "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "maxLength" : 100,
-      "name" : "files"
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "用例",
-    "codeName" : "case",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "case",
-    "getPSAppDEField" : {
-      "name" : "CASE",
-      "codeName" : "IBizCase"
-    },
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "case"
-    },
-    "allowEmpty" : true
-  }, {
     "caption" : "测试结果",
     "codeName" : "steps",
     "enableCond" : 3,
@@ -327,6 +296,25 @@
     "allowEmpty" : true,
     "needCodeListConfig" : true
   }, {
+    "caption" : "实际情况",
+    "codeName" : "reals",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "reals",
+    "getPSAppDEField" : {
+      "name" : "REALS",
+      "codeName" : "Reals"
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "showLogic" : "(row.type != 'group')"
+      },
+      "editorType" : "TEXTBOX",
+      "maxLength" : 100,
+      "name" : "reals"
+    },
+    "allowEmpty" : true
+  }, {
     "caption" : "类型",
     "codeName" : "type",
     "enableCond" : 3,
@@ -348,40 +336,6 @@
     "allowEmpty" : true,
     "needCodeListConfig" : true
   }, {
-    "caption" : "编号",
-    "codeName" : "srfkey",
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "实际情况",
-    "codeName" : "reals",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "reals",
-    "getPSAppDEField" : {
-      "name" : "REALS",
-      "codeName" : "Reals"
-    },
-    "getPSEditor" : {
-      "editorParams" : {
-        "showLogic" : "(row.type != 'group')"
-      },
-      "editorType" : "TEXTBOX",
-      "maxLength" : 100,
-      "name" : "reals"
-    },
-    "allowEmpty" : true
-  }, {
     "caption" : "用例版本",
     "codeName" : "version",
     "enableCond" : 3,
@@ -394,6 +348,52 @@
     "getPSEditor" : {
       "editorType" : "TEXTBOX",
       "name" : "version"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "用例",
+    "codeName" : "case",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "case",
+    "getPSAppDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "case"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "附件",
+    "codeName" : "files",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "files",
+    "getPSAppDEField" : {
+      "name" : "FILES",
+      "codeName" : "Files"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "maxLength" : 100,
+      "name" : "files"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "编号",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
     },
     "allowEmpty" : true
   } ],

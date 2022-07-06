@@ -77,8 +77,6 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA"
-  }, {
     "name" : "EDITDATA",
     "realTitle" : "产品详情",
     "getRefPSAppView" : {
@@ -86,6 +84,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductStatsMobTabExpView.json",
       "viewType" : "DEMOBTABEXPVIEW"
     }
+  }, {
+    "name" : "NEWDATA"
   } ],
   "getPSAppViewUIActions" : [ {
     "name" : "righttoolbar_tbitem1",
@@ -113,7 +113,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "MOB",
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {

@@ -249,6 +249,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "library",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (library)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -1335,18 +1336,6 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "OpenLibView",
-    "logicName" : "用例库实体数据看板视图",
-    "name" : "用例库实体数据看板视图",
-    "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "用例库实体编辑视图（左右关系）",
-    "name" : "用例库实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "PickupView",
     "logicName" : "用例库实体数据选择视图",
     "modelTag" : "PICKUPVIEW",
@@ -1354,37 +1343,11 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "TabExpView",
-    "logicName" : "用例库实体分页导航视图",
-    "name" : "用例库实体分页导航视图",
-    "realModelSubType" : "DETABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "用例库实体选择表格视图（部件视图）",
-    "name" : "用例库实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "用例库实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "用例库实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "用例库实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "用例库实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
+    "codeName" : "GridView",
+    "logicName" : "用例库实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "用例库实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -1394,25 +1357,63 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Desc",
-    "logicName" : "描述",
-    "modelTag2" : "0",
-    "name" : "描述",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
     "codeName" : "EditView9",
     "logicName" : "用例库实体编辑视图（部件视图）",
     "name" : "用例库实体编辑视图（部件视图）",
     "realModelSubType" : "DEEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "用例库实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "用例库实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "PickupGridView",
+    "logicName" : "用例库实体选择表格视图（部件视图）",
+    "name" : "用例库实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TabExpView",
+    "logicName" : "用例库实体分页导航视图",
+    "name" : "用例库实体分页导航视图",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "用例库实体编辑视图（左右关系）",
+    "name" : "用例库实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "OpenLibView",
+    "logicName" : "用例库实体数据看板视图",
+    "name" : "用例库实体数据看板视图",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "用例库实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "用例库实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "用例库实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "用例库实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Desc",
+    "logicName" : "描述",
+    "modelTag2" : "0",
+    "name" : "描述",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "IbzLib",
   "dEType" : 1,
@@ -1543,7 +1544,7 @@
   "name" : "IBZ_LIB",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

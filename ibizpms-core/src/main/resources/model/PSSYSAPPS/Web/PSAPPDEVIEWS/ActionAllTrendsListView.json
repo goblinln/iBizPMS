@@ -115,7 +115,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "GroupTrends",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -506,7 +506,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_TASK__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -564,7 +565,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_REPORT",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -618,7 +620,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "STORY__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -676,7 +679,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TASK__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -734,7 +738,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "BUILD__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -792,7 +797,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "BUG__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -846,7 +852,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "PRODUCT_PLAN__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -1006,7 +1013,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_REPORT",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "TestCases",
@@ -1046,7 +1054,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_CASE_ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Bugs",
@@ -1086,7 +1095,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "BUG__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",
@@ -1126,7 +1136,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_TASK__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",
@@ -1166,7 +1177,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_REPORT",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",
@@ -1202,7 +1214,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "STORY__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Tasks",
@@ -1242,7 +1255,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TASK__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",
@@ -1282,7 +1296,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "BUILD__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Bugs",
@@ -1322,7 +1337,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "BUG__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",
@@ -1358,7 +1374,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "PRODUCT_PLAN__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "DocLibs",
@@ -1474,7 +1491,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "STORY__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "ProductReleases",
@@ -1514,7 +1532,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "PRODUCT_RELEASE__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",
@@ -1554,7 +1573,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "PRODUCT_PLAN__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",
@@ -1594,7 +1614,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "BUILD__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "DocLibs",
@@ -1674,7 +1695,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_TASK__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Docs",
@@ -1840,7 +1862,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "TEST_SUITE__ACTION",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Actions",

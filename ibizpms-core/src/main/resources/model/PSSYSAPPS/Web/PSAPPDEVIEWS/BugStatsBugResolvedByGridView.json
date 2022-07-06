@@ -112,7 +112,7 @@
     },
     "gridStyle" : "GROUPGRID",
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "Bug完成表",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -297,6 +297,49 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
+      "dataType" : 25,
+      "name" : "resolvedby",
+      "getPSAppDEField" : {
+        "name" : "RESOLVEDBY",
+        "codeName" : "ResolvedBy"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "productname",
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugcnt",
+      "getPSAppDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugtotal",
+      "getPSAppDEField" : {
+        "name" : "BUGTOTAL",
+        "codeName" : "Bugtotal"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataAccessAction" : true
+    }, {
       "dataType" : 1,
       "name" : "product",
       "getPSAppDEField" : {
@@ -311,54 +354,11 @@
         "codeName" : "Project"
       }
     }, {
-      "dataType" : 9,
-      "name" : "bugcnt",
-      "getPSAppDEField" : {
-        "name" : "BUGCNT",
-        "codeName" : "BugCnt"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "resolvedby",
-      "getPSAppDEField" : {
-        "name" : "RESOLVEDBY",
-        "codeName" : "ResolvedBy"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "bugtotal",
-      "getPSAppDEField" : {
-        "name" : "BUGTOTAL",
-        "codeName" : "Bugtotal"
-      }
-    }, {
       "dataType" : 25,
       "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "srfdataaccaction",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataAccessAction" : true
-    }, {
-      "dataType" : 1,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "productname",
-      "getPSAppDEField" : {
-        "name" : "PRODUCTNAME",
-        "codeName" : "ProductName"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -412,7 +412,7 @@
     "codeName" : "BugResolvedBy",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSSEARCHFORMS/BugResolvedBy.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "完成Bug",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -421,10 +421,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -443,10 +443,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

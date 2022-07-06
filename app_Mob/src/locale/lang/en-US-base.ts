@@ -20,6 +20,8 @@ import systeammember_en_US from '@locale/lanres/sys-team-member/sys-team-member_
 import testsuite_en_US from '@locale/lanres/test-suite/test-suite_en_US';
 import projectteam_en_US from '@locale/lanres/project-team/project-team_en_US';
 import file_en_US from '@locale/lanres/file/file_en_US';
+import storyspec_en_US from '@locale/lanres/story-spec/story-spec_en_US';
+import history_en_US from '@locale/lanres/history/history_en_US';
 import productbranch_en_US from '@locale/lanres/product-branch/product-branch_en_US';
 import productrelease_en_US from '@locale/lanres/product-release/product-release_en_US';
 import testcase_en_US from '@locale/lanres/test-case/test-case_en_US';
@@ -41,6 +43,7 @@ import productmodule_en_US from '@locale/lanres/product-module/product-module_en
 import reportsummary_en_US from '@locale/lanres/report-summary/report-summary_en_US';
 import productstats_en_US from '@locale/lanres/product-stats/product-stats_en_US';
 import usercontact_en_US from '@locale/lanres/user-contact/user-contact_en_US';
+import storystage_en_US from '@locale/lanres/story-stage/story-stage_en_US';
 import sysupdatefeatures_en_US from '@locale/lanres/sys-update-features/sys-update-features_en_US';
 import task_en_US from '@locale/lanres/task/task_en_US';
 import todo_en_US from '@locale/lanres/todo/todo_en_US';
@@ -113,6 +116,7 @@ export default {
         },
         searchForm:{
             title:'Conditional search',
+            globalerrortip:"Please check if the information is incorrect",
             searchButton: {
                 search: 'Search',
                 reset: 'Reset'
@@ -407,6 +411,8 @@ export default {
     testsuite: testsuite_en_US,
     projectteam: projectteam_en_US,
     file: file_en_US,
+    storyspec: storyspec_en_US,
+    history: history_en_US,
     productbranch: productbranch_en_US,
     productrelease: productrelease_en_US,
     testcase: testcase_en_US,
@@ -428,6 +434,7 @@ export default {
     reportsummary: reportsummary_en_US,
     productstats: productstats_en_US,
     usercontact: usercontact_en_US,
+    storystage: storystage_en_US,
     sysupdatefeatures: sysupdatefeatures_en_US,
     task: task_en_US,
     todo: todo_en_US,

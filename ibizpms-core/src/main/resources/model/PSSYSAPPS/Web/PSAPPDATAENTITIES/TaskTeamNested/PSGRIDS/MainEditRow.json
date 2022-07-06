@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（启用行编辑-新建模式）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -114,13 +114,6 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "root",
-    "getPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    }
-  }, {
     "dataType" : 25,
     "name" : "account_text",
     "getPSAppDEField" : {
@@ -135,13 +128,6 @@
       "codeName" : "Account"
     }
   }, {
-    "dataType" : 25,
-    "name" : "type",
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    }
-  }, {
     "dataType" : 7,
     "name" : "estimate",
     "getPSAppDEField" : {
@@ -150,10 +136,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "type",
     "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -165,10 +158,17 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "root",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "ROOT",
+      "codeName" : "Root"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
     }
   } ],
   "getPSDEGridEditItemVRs" : [ {
@@ -242,6 +242,24 @@
     "allowEmpty" : true,
     "needCodeListConfig" : true
   }, {
+    "caption" : "预计",
+    "codeName" : "estimate",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "estimate",
+    "getPSAppDEField" : {
+      "name" : "ESTIMATE",
+      "codeName" : "Estimate"
+    },
+    "getPSEditor" : {
+      "editorType" : "NUMBER",
+      "name" : "estimate",
+      "placeHolder" : "预计"
+    },
+    "unitName" : "小时",
+    "allowEmpty" : true,
+    "enableUnitName" : true
+  }, {
     "caption" : "团队类型",
     "codeName" : "type",
     "createDV" : "task",
@@ -264,22 +282,6 @@
     "updateDV" : "task",
     "allowEmpty" : true,
     "needCodeListConfig" : true
-  }, {
-    "caption" : "预计",
-    "codeName" : "estimate",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "estimate",
-    "getPSAppDEField" : {
-      "name" : "ESTIMATE",
-      "codeName" : "Estimate"
-    },
-    "getPSEditor" : {
-      "editorType" : "NUMBER",
-      "name" : "estimate",
-      "placeHolder" : "预计"
-    },
-    "allowEmpty" : true
   }, {
     "caption" : "编号",
     "codeName" : "srfkey",

@@ -334,14 +334,30 @@ export class UIServiceBase {
      * @param enableWorkflowParam  重定向视图需要处理流程中的数据
      * @memberof  UIServiceBase
      */
-    protected async getRDAppView(srfkey: string, enableWorkflowParam: any) {
+     protected async getRDAppView(context: any, srfkey: string, enableWorkflowParam: any, dataSetParams: any = {}) {
         // 进行数据查询
         let returnData: any = {};
-        let result: any = await this.dataService.Get({ [this.entityModel.codeName.toLowerCase()]: srfkey });
+        Object.assign(context, { [this.entityModel.codeName.toLowerCase()]: srfkey });
+        let result: any = {};
+        if (
+            dataSetParams &&
+            dataSetParams.action &&
+            this.dataService[dataSetParams.action] && this.dataService[dataSetParams.action] instanceof Function
+        ) {
+            result = await this.dataService[dataSetParams.action](context);
+        } else {
+            result = await this.dataService.Get(context);
+        }
+        if (result.status != 200) {
+            return {
+                isError:true,
+                response:result
+            };
+        }
         const curData: any = result.data;
-        // 设置临时组织标识（用于获取多实例）
-        if (this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]) {
-            Object.assign(returnData, { 'srfsandboxtag': curData[this.tempOrgIdDEField] });
+        // 设置原始数据
+        if (curData && Object.keys(curData).length > 0) {
+            Object.assign(returnData, { 'srfdata': curData });
         }
         //判断当前数据模式,默认为true，todo
         const iRealDEModel: boolean = true;
@@ -357,6 +373,12 @@ export class UIServiceBase {
         ) {
             bDataInWF = true;
         }
+        if (bDataInWF) {
+            // 设置临时组织标识（用于工作流获取多实例）
+            if (this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]) {
+                Object.assign(returnData, { 'srfsandboxtag': curData[this.tempOrgIdDEField] });
+            }
+        }
         let strPDTViewParam: string = await this.getDESDDEViewPDTParam(curData, bDataInWF, bWFMode);
         //若不是当前数据模式，处理strPDTViewParam，todo
 
@@ -364,16 +386,18 @@ export class UIServiceBase {
             Object.assign(returnData, { 'param': strPDTViewParam });
             return returnData;
         }
-        if (this.multiFormDEField || this.indexTypeDEField) {
-            Object.assign(returnData, { 'param': strPDTViewParam });
+        if (this.multiFormDEField) {
+            Object.assign(returnData, { 'param': strPDTViewParam, 'multiform': true });
+            return returnData;
+        } else if (this.indexTypeDEField) {
+            Object.assign(returnData, { 'param': strPDTViewParam, 'indextype': true });
             return returnData;
         } else {
             //返回视图功能数据
-            Object.assign(returnData, { 'param': `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : ''}` });
+            Object.assign(returnData, { 'param': `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : strPDTViewParam}` });
             return returnData;
         }
     }
-
     /**
      * 获取实际的数据类型
      *
@@ -389,7 +413,7 @@ export class UIServiceBase {
      * @param bWFMode   是否工作流模式
      * @memberof  UIServiceBase
      */
-    protected async getDESDDEViewPDTParam(curData: any, bDataInWF: boolean, bWFMode: boolean) {
+     protected async getDESDDEViewPDTParam(curData: any, bDataInWF: boolean, bWFMode: boolean) {
         let strPDTParam: string = '';
         const Environment = AppServiceBase.getInstance().getAppEnvironment();
         if (bDataInWF) {
@@ -400,8 +424,9 @@ export class UIServiceBase {
                 if (formFieldValue) {
                     if (!Environment.isAppMode) {
                         strPDTParam += 'MOBWFEDITVIEW:' + formFieldValue;
+                    }else{
+                        strPDTParam += 'WFEDITVIEW:' + formFieldValue;
                     }
-                    strPDTParam += 'WFEDITVIEW:' + formFieldValue;
                 }
             }
             // 存在索引类型属性
@@ -411,23 +436,30 @@ export class UIServiceBase {
                 if (indexTypeValue) {
                     if (!Environment.isAppMode) {
                         strPDTParam += 'MOBWFEDITVIEW:' + indexTypeValue;
+                    }else{
+                        strPDTParam += 'WFEDITVIEW:' + indexTypeValue;
                     }
-                    strPDTParam += 'WFEDITVIEW:' + indexTypeValue;
                 }
             }
-            if (strPDTParam && this.dynaInstTag) {
-                strPDTParam += `:${this.dynaInstTag}`;
-            }
-            return strPDTParam ? strPDTParam : 'WFEDITVIEW';
+            return strPDTParam ? strPDTParam : 'MOBWFEDITVIEW';
         }
         // 存在多表单属性
         if (this.multiFormDEField) {
             const formFieldValue: string = curData[this.multiFormDEField] ? curData[this.multiFormDEField] : '';
             if (formFieldValue) {
+                // 非流程中数据支持多实例
                 if (!Environment.isAppMode) {
-                    return 'MOBEDITVIEW:' + formFieldValue;
+                    let tempParam = 'MOBEDITVIEW:' + formFieldValue;
+                    if (this.dynaInstTag) {
+                        tempParam += `:${this.dynaInstTag}`;
+                    }
+                    return tempParam;
                 }
-                return 'EDITVIEW:' + formFieldValue;
+                let tempParam = 'EDITVIEW:' + formFieldValue;
+                if (this.dynaInstTag) {
+                    tempParam += `:${this.dynaInstTag}`;
+                }
+                return tempParam;
             }
         }
         // 存在索引类型属性
@@ -435,9 +467,9 @@ export class UIServiceBase {
             const indexTypeValue: string = curData[this.indexTypeDEField] ? curData[this.indexTypeDEField] : '';
             if (indexTypeValue) {
                 if (!Environment.isAppMode) {
-                    return 'MOBEDITVIEW:' + indexTypeValue;
+                    return indexTypeValue;
                 }
-                return 'EDITVIEW:' + indexTypeValue;
+                return indexTypeValue;
             }
         }
         if (!Environment.isAppMode) {

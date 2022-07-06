@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "所有项目",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -185,61 +185,11 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 7,
-    "name" : "totalleft",
-    "getPSAppDEField" : {
-      "name" : "TOTALLEFT",
-      "codeName" : "TotalLeft"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "status",
-    "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
-    }
-  }, {
-    "dataType" : 7,
-    "name" : "totalconsumed",
-    "getPSAppDEField" : {
-      "name" : "TOTALCONSUMED",
-      "codeName" : "TotalConsumed"
-    }
-  }, {
-    "dataType" : 7,
-    "name" : "totalestimate",
-    "getPSAppDEField" : {
-      "name" : "TOTALESTIMATE",
-      "codeName" : "TotalEstimate"
-    }
-  }, {
     "dataType" : 25,
     "name" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "srfdataaccaction",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true
-  }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
     }
   }, {
     "format" : "YYYY-MM-DD",
@@ -250,11 +200,61 @@
       "codeName" : "End"
     }
   }, {
+    "dataType" : 25,
+    "name" : "status",
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "totalestimate",
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATE",
+      "codeName" : "TotalEstimate"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "totalconsumed",
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "totalleft",
+    "getPSAppDEField" : {
+      "name" : "TOTALLEFT",
+      "codeName" : "TotalLeft"
+    }
+  }, {
     "dataType" : 9,
     "name" : "totalwh",
     "getPSAppDEField" : {
       "name" : "TOTALWH",
       "codeName" : "Totalwh"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {

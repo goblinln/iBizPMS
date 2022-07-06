@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "所有产品",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -141,18 +141,25 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "currproject",
+    "getPSAppDEField" : {
+      "name" : "CURRPROJECT",
+      "codeName" : "Currproject"
+    }
+  }, {
     "dataType" : 9,
     "name" : "productplancnt",
     "getPSAppDEField" : {
       "name" : "PRODUCTPLANCNT",
       "codeName" : "ProductPlanCnt"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "activebugcnt",
-    "getPSAppDEField" : {
-      "name" : "ACTIVEBUGCNT",
-      "codeName" : "ActiveBugCnt"
     }
   }, {
     "dataType" : 9,
@@ -169,25 +176,18 @@
       "codeName" : "ActiveStoryCnt"
     }
   }, {
-    "dataType" : 25,
-    "name" : "currproject",
+    "dataType" : 9,
+    "name" : "activebugcnt",
     "getPSAppDEField" : {
-      "name" : "CURRPROJECT",
-      "codeName" : "Currproject"
+      "name" : "ACTIVEBUGCNT",
+      "codeName" : "ActiveBugCnt"
     }
   }, {
-    "dataType" : 25,
-    "name" : "name",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -198,11 +198,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {

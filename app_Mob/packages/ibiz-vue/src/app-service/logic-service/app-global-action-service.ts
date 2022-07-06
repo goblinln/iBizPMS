@@ -1,3 +1,6 @@
+import { DynamicInstanceConfig, IPSAppView, IPSAppViewRef } from "@ibiz/dynamic-model-api";
+import { GetModelService, Util } from "ibiz-core";
+
 /**
  * 全局界面行为服务
  * 
@@ -456,19 +459,98 @@ export class AppGlobalService {
      * @param {*} [actionContext]  执行行为上下文
      * @memberof AppGlobalService
      */
-    public SaveAndStart(args: any[],contextJO?:any, params?: any, $event?: any, xData?: any,actionContext?:any,srfParentDeName?:string) {
+     public async SaveAndStart(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
         const _this: any = actionContext;
-        if (!xData || !(xData.wfstart instanceof Function)) {
+        if (!xData || !(xData.wfstart instanceof Function) || (!_this.appEntityService)) {
             return;
         }
-        let localdata:any = {processDefinitionKey:null};
-        xData.wfstart(args,localdata).then((response: any) => {
-            if (!response || response.status !== 200) {
+        if (!(xData && await xData.validAll())) {
+            return;
+        }
+        const startWorkFlow: Function = (param: any, localdata: any) => {
+            xData.wfstart(param, localdata).then((response: any) => {
+                if (!response || response.status !== 200) {
+                    return;
+                }
+                const { data: _data } = response;
+                _this.closeView(_data);
+            });
+        }
+        const openStartView: Function = async (item: any, localdata: any) => {
+            if (item['wfversion']) {
+                if ((_this.viewInstance as IPSAppView)?.getPSAppViewRefs?.()?.length) {
+                    let targetView: IPSAppViewRef = _this.viewInstance.getPSAppViewRefs().find((element: any) => {
+                        return `WFSTART@${item['wfversion']}` === element.name;
+                    })
+                    let targetOpenView: any = targetView.getRefPSAppView();
+                    if (targetOpenView) {
+                        await targetOpenView.fill(true);
+                        // 准备参数
+                        let tempContext: any = Util.deepCopy(_this.context);
+                     
+                        let tempViewParam: any = { actionView: `WFSTART@${item['wfversion']}`, actionForm: item['process-mobform'] };
+                        Object.assign(tempContext, { viewpath: targetOpenView.modelFilePath });
+                        if(args && args[0]){
+                            let keyFile  = xData.appDeCodeName.toLowerCase();
+                            if(args[0].srfuf ==  "0"){
+                                tempContext[keyFile]= null;
+                            }else{
+                                tempContext[keyFile] = args[0][keyFile+'id']?args[0][keyFile+'id']:tempContext[keyFile];
+                            }
+                        }
+                        const result = await _this.$appmodal.openModal({ viewname: 'app-view-shell',  height: targetOpenView.height, width: targetOpenView.width }, tempContext, tempViewParam);
+                            if (!result || !Object.is(result.ret, 'OK')) {
+                                return;
+                            }
+                            let tempSubmitData: any = Util.deepCopy(args[0]);
+                            if (result.datas && result.datas[0]) {
+                                const resultData: any = result.datas[0];
+                                if (Object.keys(resultData).length > 0) {
+                                    let tempData: any = {};
+                                    Object.keys(resultData).forEach((key: any) => {
+                                        if (resultData[key] || (resultData[key] === 0) || (resultData[key] === false)) {
+                                            tempData[key] = resultData[key];
+                                        }
+                                    })
+                                    Object.assign(tempSubmitData, tempData);
+                                }
+                            }
+                            startWorkFlow([tempSubmitData], localdata);
+                    }
+                } else {
+                    startWorkFlow(args, localdata);
+                }
+            } else {
+                startWorkFlow(args, localdata);
+            }
+        }
+        let localdata: any;
+        let requestResult: Promise<any>;
+        let copyContext: any = Util.deepCopy(_this.context);
+        if (copyContext.srfdynainstid) {
+            let dynainstParam: DynamicInstanceConfig = (await GetModelService(copyContext)).getDynaInsConfig();
+            Object.assign(copyContext, dynainstParam ? dynainstParam : {});
+            requestResult = _this.appEntityService.getCopyWorkflow(copyContext);
+        } else {
+            requestResult = _this.appEntityService.getStandWorkflow(copyContext);
+        }
+        requestResult.then((response: any) => {
+            const { data: targetData, status: status } = response;
+            if ((status !== 200) || (targetData.length === 0)) {
                 return;
             }
-            const { data: _data } = response;
-            _this.closeView(_data);
-        });
+            if (targetData && targetData.length > 1) {
+                targetData.forEach((element: any) => {
+                    Object.assign(element, { value: element.definitionkey, label: element.definitionname });
+                })
+                const h = _this.$createElement;
+                // todo 多流程版本
+            } else {
+                localdata = { processDefinitionKey: targetData[0]['definitionkey'] };
+                targetData[0]['process-view'] = "WFSTART@1";
+                openStartView(targetData[0], localdata);
+            }
+        })
     }
 
     /**

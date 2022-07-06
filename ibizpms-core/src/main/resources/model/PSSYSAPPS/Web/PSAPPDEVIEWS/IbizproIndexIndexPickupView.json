@@ -131,17 +131,17 @@
         },
         "getPSDEDataViewDataItems" : [ {
           "dataType" : 25,
-          "name" : "srfmajortext",
-          "getPSAppDEField" : {
-            "name" : "INDEXNAME",
-            "codeName" : "Indexname"
-          }
-        }, {
-          "dataType" : 25,
           "name" : "srfkey",
           "getPSAppDEField" : {
             "name" : "INDEXID",
             "codeName" : "Indexid"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfmajortext",
+          "getPSAppDEField" : {
+            "name" : "INDEXNAME",
+            "codeName" : "Indexname"
           }
         } ],
         "pagingSize" : 1000,
@@ -194,7 +194,7 @@
       "modelid" : "b73c533bd0b7c0813dc5fa85f2b3549f",
       "modeltype" : "PSAPPDEVIEW"
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,

@@ -73,7 +73,6 @@ export abstract class UserContactBase extends EntityBase implements IUserContact
      * account
      */
     account?: any;
-
     /**
      * 重置实体数据
      *

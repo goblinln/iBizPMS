@@ -149,10 +149,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -171,10 +171,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -460,6 +460,16 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "CASE",
+          "name" : "CASE",
+          "value" : "0",
+          "rawValue" : true
+        }, {
+          "key" : "VERSIONS",
+          "name" : "VERSIONS",
+          "value" : "version",
+          "rawValue" : false
+        }, {
           "key" : "IDS",
           "name" : "IDS",
           "value" : "id",
@@ -469,20 +479,10 @@
           "name" : "ID",
           "value" : "0",
           "rawValue" : true
-        }, {
-          "key" : "VERSIONS",
-          "name" : "VERSIONS",
-          "value" : "version",
-          "rawValue" : false
-        }, {
-          "key" : "CASE",
-          "name" : "CASE",
-          "value" : "0",
-          "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "id",
-          "name" : "id",
+          "key" : "case",
+          "name" : "case",
           "value" : "0",
           "rawValue" : true
         }, {
@@ -491,18 +491,18 @@
           "value" : "version",
           "rawValue" : false
         }, {
-          "key" : "ids",
-          "name" : "ids",
-          "value" : "id",
-          "rawValue" : false
-        }, {
           "key" : "testtask",
           "name" : "testtask",
           "value" : "testtask",
           "rawValue" : false
         }, {
-          "key" : "case",
-          "name" : "case",
+          "key" : "ids",
+          "name" : "ids",
+          "value" : "id",
+          "rawValue" : false
+        }, {
+          "key" : "id",
+          "name" : "id",
           "value" : "0",
           "rawValue" : true
         } ],
@@ -540,7 +540,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "pri",

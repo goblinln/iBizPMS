@@ -197,11 +197,14 @@ export class AppFuncService {
      */
     public openModal(context: any, viewparam: any, appView: any) {
         const view = {
-            viewname: Util.srfFilePath2(appView.codeName),
-            title: appView.title,
+            viewname: 'app-view-shell',
+            title: this.v.$tl(appView.getCapPSLanguageRes()?.lanResTag, appView.caption),
             height: appView.height,
             width: appView.width,
         };
+        if (appView.modelPath) {
+            Object.assign(context, { viewpath: appView.modelPath });
+        }
         this.v.$appmodal.openModal(view, Util.deepCopy(context), viewparam).then((result: any) => {
             console.log(result);
         });
@@ -237,12 +240,15 @@ export class AppFuncService {
      */
     public openDrawer(context: any, viewparam: any, appView: any) {
         const view = {
-            viewname: Util.srfFilePath2(appView.codeName),
+            viewname: 'app-view-shell',
             title: appView.title,
             height: appView.height,
             width: appView.width,
             placement: appView.openMode
         };
+        if (appView.modelPath) {
+            Object.assign(context, { viewpath: appView.modelPath });
+        }
         this.v.$appdrawer.openDrawer(view, Util.getViewProps(context, viewparam), { viewModelData: appView }).then((result: any) => {
             console.log(result);
         });

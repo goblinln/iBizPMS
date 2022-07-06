@@ -125,7 +125,6 @@ export abstract class ProductModuleBase extends EntityBase implements IProductMo
      * id
      */
     parent?: any;
-
     /**
      * 重置实体数据
      *

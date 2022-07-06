@@ -91,20 +91,20 @@
     }
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "n_lib_eq",
-    "name" : "n_lib_eq",
-    "value" : "srfparentkey",
-    "rawValue" : false
+    "key" : "parent",
+    "name" : "parent",
+    "value" : "0",
+    "rawValue" : true
   }, {
     "key" : "n_project_eq",
     "name" : "n_project_eq",
     "value" : "project",
     "rawValue" : false
   }, {
-    "key" : "parent",
-    "name" : "parent",
-    "value" : "0",
-    "rawValue" : true
+    "key" : "n_lib_eq",
+    "name" : "n_lib_eq",
+    "value" : "srfparentkey",
+    "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
@@ -134,79 +134,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "RecentMoreGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "过滤工具栏",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.FILTER"
-      },
-      "caption" : "过滤",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0b0@FontAwesome",
-        "cssClass" : "fa fa-filter"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.FILTER"
-        },
-        "caption" : "过滤",
-        "codeName" : "ToggleFilter",
-        "fullCodeName" : "ToggleFilter",
-        "name" : "表格界面_搜索栏",
-        "getPSSysImage" : {
-          "glyph" : "xf0b0@FontAwesome",
-          "cssClass" : "fa fa-filter"
-        },
-        "predefinedType" : "GRIDVIEW_SEARCHBAR",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ToggleFilter",
-        "uIActionType" : "DEUIACTION",
-        "enableToggleMode" : true
-      },
-      "tooltip" : "过滤",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-      },
-      "enableToggleMode" : true,
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "7167528aee7341e0abb009dc91a9b012",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "MoreRecentUpdate",
     "columnEnableLink" : 2,
@@ -217,7 +144,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "最近更新（更多）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -486,14 +413,14 @@
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "lib",
-          "name" : "lib",
-          "value" : "lib",
-          "rawValue" : false
-        }, {
           "key" : "docqtype",
           "name" : "docqtype",
           "value" : "docqtype",
+          "rawValue" : false
+        }, {
+          "key" : "lib",
+          "name" : "lib",
+          "value" : "lib",
           "rawValue" : false
         } ],
         "timeout" : 60000,
@@ -750,10 +677,24 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "module",
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "addedby",
+      "getPSAppDEField" : {
+        "name" : "ADDEDBY",
+        "codeName" : "AddedBy"
       }
     }, {
       "format" : "YYYY-MM-DD HH:mm:ss",
@@ -765,13 +706,18 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "editedby",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "EDITEDBY",
+        "codeName" : "EditedBy"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "editeddate",
+      "getPSAppDEField" : {
+        "name" : "EDITEDDATE",
+        "codeName" : "EditedDate"
       }
     }, {
       "dataType" : 1,
@@ -779,6 +725,20 @@
       "getPSAppDEField" : {
         "name" : "DOCSN",
         "codeName" : "Docsn"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "docqtype",
+      "getPSAppDEField" : {
+        "name" : "DOCQTYPE",
+        "codeName" : "Docqtype"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "isfavourites",
+      "getPSAppDEField" : {
+        "name" : "ISFAVOURITES",
+        "codeName" : "Isfavourites"
       }
     }, {
       "dataType" : 1,
@@ -797,17 +757,10 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "product",
+      "name" : "lib",
       "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "LIB",
+        "codeName" : "Lib"
       }
     }, {
       "dataType" : 1,
@@ -817,55 +770,29 @@
         "codeName" : "Project"
       }
     }, {
+      "dataType" : 1,
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
+      }
+    }, {
       "dataType" : 25,
-      "name" : "title",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       }
     }, {
-      "dataType" : 1,
-      "name" : "lib",
-      "getPSAppDEField" : {
-        "name" : "LIB",
-        "codeName" : "Lib"
-      }
-    }, {
       "dataType" : 25,
-      "name" : "addedby",
-      "getPSAppDEField" : {
-        "name" : "ADDEDBY",
-        "codeName" : "AddedBy"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "isfavourites",
-      "getPSAppDEField" : {
-        "name" : "ISFAVOURITES",
-        "codeName" : "Isfavourites"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "editedby",
-      "getPSAppDEField" : {
-        "name" : "EDITEDBY",
-        "codeName" : "EditedBy"
-      }
-    }, {
-      "format" : "YYYY-MM-DD HH:mm:ss",
-      "dataType" : 5,
-      "name" : "editeddate",
-      "getPSAppDEField" : {
-        "name" : "EDITEDDATE",
-        "codeName" : "EditedDate"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "docqtype",
-      "getPSAppDEField" : {
-        "name" : "DOCQTYPE",
-        "codeName" : "Docqtype"
-      }
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "文档编号",
@@ -1468,6 +1395,79 @@
     "name" : "searchbar",
     "modelid" : "4cbc385c5b8f4ba42049d423374d92c4",
     "modeltype" : "PSSYSSEARCHBAR"
+  }, {
+    "codeName" : "RecentMoreGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "过滤工具栏",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.FILTER"
+      },
+      "caption" : "过滤",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0b0@FontAwesome",
+        "cssClass" : "fa fa-filter"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.FILTER"
+        },
+        "caption" : "过滤",
+        "codeName" : "ToggleFilter",
+        "fullCodeName" : "ToggleFilter",
+        "name" : "表格界面_搜索栏",
+        "getPSSysImage" : {
+          "glyph" : "xf0b0@FontAwesome",
+          "cssClass" : "fa fa-filter"
+        },
+        "predefinedType" : "GRIDVIEW_SEARCHBAR",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ToggleFilter",
+        "uIActionType" : "DEUIACTION",
+        "enableToggleMode" : true
+      },
+      "tooltip" : "过滤",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+      },
+      "enableToggleMode" : true,
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "7167528aee7341e0abb009dc91a9b012",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "RecentMoreGridView",
   "getPSDEViewId" : "3b7912589ce1f7c3ebbcb70df1044259",

@@ -14,30 +14,13 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
   "getPSAppViewRefs" : [ {
-    "name" : "RDITEM:EDITVIEW:DOC",
+    "name" : "RDITEM:EDITVIEW:BUG",
     "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "文档数据看板视图",
+    "realTitle" : "Bug数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
-    }
-  }, {
-    "name" : "RDITEM:EDITVIEW:TASK",
-    "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "任务主数据看板视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
-    }
-  }, {
-    "name" : "RDITEM:EDITVIEW:PRODUCT",
-    "realTitle" : "产品",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
-      "viewType" : "DETABEXPVIEW"
     }
   }, {
     "name" : "RDITEM:EDITVIEW:PROJECT",
@@ -46,6 +29,15 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
+    }
+  }, {
+    "name" : "RDITEM:EDITVIEW:DOC",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "文档数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "RDITEM:EDITVIEW:CASE",
@@ -57,6 +49,14 @@
       "viewType" : "DEPORTALVIEW"
     }
   }, {
+    "name" : "RDITEM:EDITVIEW:PRODUCT",
+    "realTitle" : "产品",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    }
+  }, {
     "name" : "RDITEM:EDITVIEW:STORY",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "需求数据看板视图",
@@ -66,12 +66,12 @@
       "viewType" : "DEPORTALVIEW"
     }
   }, {
-    "name" : "RDITEM:EDITVIEW:BUG",
+    "name" : "RDITEM:EDITVIEW:TASK",
     "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "Bug数据看板视图",
+    "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     }
   } ],
@@ -92,20 +92,12 @@
     "useDefaultLayout" : true
   },
   "getRedirectPSAppViewRefs" : [ {
-    "name" : "EDITVIEW:PRODUCT",
-    "realTitle" : "产品",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
-      "viewType" : "DETABEXPVIEW"
-    }
-  }, {
-    "name" : "EDITVIEW:STORY",
+    "name" : "EDITVIEW:BUG",
     "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "需求数据看板视图",
+    "realTitle" : "Bug数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     }
   }, {
@@ -118,12 +110,28 @@
       "viewType" : "DEPORTALVIEW"
     }
   }, {
-    "name" : "EDITVIEW:BUG",
-    "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "Bug数据看板视图",
+    "name" : "EDITVIEW:PRODUCT",
+    "realTitle" : "产品",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    }
+  }, {
+    "name" : "EDITVIEW:PROJECT",
+    "realTitle" : "项目",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    }
+  }, {
+    "name" : "EDITVIEW:STORY",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "需求数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
       "viewType" : "DEPORTALVIEW"
     }
   }, {
@@ -143,14 +151,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
       "viewType" : "DEPORTALVIEW"
-    }
-  }, {
-    "name" : "EDITVIEW:PROJECT",
-    "realTitle" : "项目",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
-      "viewType" : "DETABEXPVIEW"
     }
   } ],
   "title" : "索引检索数据重定向视图",

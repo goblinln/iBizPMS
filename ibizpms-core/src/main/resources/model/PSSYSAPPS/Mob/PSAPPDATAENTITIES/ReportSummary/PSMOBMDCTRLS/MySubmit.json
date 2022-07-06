@@ -20,7 +20,7 @@
     "name" : "DATE",
     "codeName" : "Date"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
   "logicName" : "MySubmit",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {

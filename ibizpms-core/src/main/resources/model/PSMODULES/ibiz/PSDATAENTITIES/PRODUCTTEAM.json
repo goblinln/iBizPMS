@@ -303,6 +303,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "product",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (product)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -384,6 +385,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "product",
+          "fieldName" : "ROOT",
           "name" : "ROOT 等于(=) 网页请求上下文(product)",
           "getPSDEField" : {
             "name" : "ROOT",
@@ -394,6 +396,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "product",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (product)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -3315,30 +3318,16 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "EditView2",
+    "logicName" : "产品团队实体编辑视图（左右关系）",
+    "name" : "产品团队实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "ProductTeamListView",
     "logicName" : "产品团队实体列表视图",
     "name" : "产品团队实体列表视图",
     "realModelSubType" : "DELISTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "产品团队实体选择表格视图（部件视图）",
-    "name" : "产品团队实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "产品团队实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "产品团队实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -3348,17 +3337,11 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "产品团队实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "产品团队实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "产品团队实体编辑视图（左右关系）",
-    "name" : "产品团队实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "PickupView",
+    "logicName" : "产品团队实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "产品团队实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -3368,10 +3351,10 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RowEditGridView",
-    "logicName" : "产品团队实体表格视图(团队管理)",
-    "name" : "产品团队实体表格视图(团队管理)",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "PickupGridView",
+    "logicName" : "产品团队实体选择表格视图（部件视图）",
+    "name" : "产品团队实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
@@ -3380,6 +3363,26 @@
     "name" : "产品团队实体数据重定向视图",
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RowEditGridView",
+    "logicName" : "产品团队实体表格视图(团队管理)",
+    "name" : "产品团队实体表格视图(团队管理)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "产品团队实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "产品团队实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "PRODUCTTEAM",
   "dEType" : 1,
@@ -3422,10 +3425,6 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
     },
     "name" : "DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "ROOT",
@@ -3443,7 +3442,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

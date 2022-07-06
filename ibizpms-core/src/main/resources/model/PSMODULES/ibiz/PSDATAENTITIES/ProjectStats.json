@@ -388,6 +388,7 @@
           "condOp" : "NOTEQ",
           "condType" : "SINGLE",
           "condValue" : "closed",
+          "fieldName" : "STATUS",
           "name" : "STATUS 不等于(<>) (closed)",
           "getPSDEField" : {
             "name" : "STATUS",
@@ -6433,15 +6434,53 @@
     "defaultMode" : true
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "ALLGridView",
-    "logicName" : "项目统计实体表格视图(所有项目)",
-    "name" : "项目统计实体表格视图(所有项目)",
+    "codeName" : "ProjectBugTypeSumUsr2GridView",
+    "logicName" : "项目统计实体表格视图(bug类型统计)",
+    "name" : "项目统计实体表格视图(bug类型统计)",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Usr2GridViewTaskStatusCount",
-    "logicName" : "项目统计实体表格视图（任务状态统计）",
-    "name" : "项目统计实体表格视图（任务状态统计）",
+    "codeName" : "Usr2GridViewTaskTypeCount",
+    "logicName" : "项目统计实体表格视图（任务类型统计）",
+    "name" : "项目统计实体表格视图（任务类型统计）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "项目统计实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "项目统计实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProjectStoryStageStatusGridView",
+    "logicName" : "项目统计实体表格视图（项目需求阶段统计）",
+    "name" : "项目统计实体表格视图（项目需求阶段统计）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "项目统计实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "项目统计实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProjectStoryStatusStatsGridView",
+    "logicName" : "项目统计实体表格视图（项目需求状态统计）",
+    "name" : "项目统计实体表格视图（项目需求状态统计）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "项目统计实体编辑视图（左右关系）",
+    "name" : "项目统计实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProjectProgressUsr2GridView",
+    "logicName" : "项目统计实体表格视图(项目进度表)",
+    "name" : "项目统计实体表格视图(项目进度表)",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -6452,6 +6491,19 @@
     "realModelSubType" : "DEMOBPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "Usr2GridViewTaskStatusCount",
+    "logicName" : "项目统计实体表格视图（任务状态统计）",
+    "name" : "项目统计实体表格视图（任务状态统计）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "项目统计实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "项目统计实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "MobEditView",
     "logicName" : "项目统计实体移动端编辑视图",
     "modelTag" : "MOBEDITVIEW",
@@ -6459,12 +6511,56 @@
     "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "ProjectQualityUsr2GridView",
+    "logicName" : "项目统计实体表格视图(项目质量表)",
+    "name" : "项目统计实体表格视图(项目质量表)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "项目统计实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "项目统计实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "项目统计实体移动端选择多数据视图（部件视图）",
+    "name" : "项目统计实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProjectInputStatsGridView",
+    "logicName" : "项目统计实体表格视图（项目投入统计）",
+    "name" : "项目统计实体表格视图（项目投入统计）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "项目统计实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "项目统计实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ALLGridView",
+    "logicName" : "项目统计实体表格视图(所有项目)",
+    "name" : "项目统计实体表格视图(所有项目)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "项目统计实体选择表格视图（部件视图）",
+    "name" : "项目统计实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "项目统计实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "项目统计实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMPickupView",
     "logicName" : "项目统计实体移动端多数据选择视图",
@@ -6479,26 +6575,6 @@
     "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupView",
-    "logicName" : "项目统计实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "项目统计实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "项目统计实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "项目统计实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "项目统计实体移动端选择多数据视图（部件视图）",
-    "name" : "项目统计实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "RedirectView",
     "logicName" : "项目统计实体数据重定向视图",
     "modelTag" : "REDIRECTVIEW",
@@ -6506,72 +6582,10 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "项目统计实体编辑视图（左右关系）",
-    "name" : "项目统计实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2GridViewTaskTypeCount",
-    "logicName" : "项目统计实体表格视图（任务类型统计）",
-    "name" : "项目统计实体表格视图（任务类型统计）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectBugTypeSumUsr2GridView",
-    "logicName" : "项目统计实体表格视图(bug类型统计)",
-    "name" : "项目统计实体表格视图(bug类型统计)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "项目统计实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "项目统计实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "EditView9",
     "logicName" : "项目统计实体编辑视图（嵌入看板）",
     "name" : "项目统计实体编辑视图（嵌入看板）",
     "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectStoryStatusStatsGridView",
-    "logicName" : "项目统计实体表格视图（项目需求状态统计）",
-    "name" : "项目统计实体表格视图（项目需求状态统计）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectStoryStageStatusGridView",
-    "logicName" : "项目统计实体表格视图（项目需求阶段统计）",
-    "name" : "项目统计实体表格视图（项目需求阶段统计）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectQualityUsr2GridView",
-    "logicName" : "项目统计实体表格视图(项目质量表)",
-    "name" : "项目统计实体表格视图(项目质量表)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectProgressUsr2GridView",
-    "logicName" : "项目统计实体表格视图(项目进度表)",
-    "name" : "项目统计实体表格视图(项目进度表)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "项目统计实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "项目统计实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "项目统计实体选择表格视图（部件视图）",
-    "name" : "项目统计实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMain",
@@ -6581,25 +6595,12 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "项目统计实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "项目统计实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "项目统计实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "项目统计实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectInputStatsGridView",
-    "logicName" : "项目统计实体表格视图（项目投入统计）",
-    "name" : "项目统计实体表格视图（项目投入统计）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "ProjectStats",
   "dEType" : 1,
@@ -6635,7 +6636,7 @@
   "name" : "IBZ_PROJECTSTATS",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

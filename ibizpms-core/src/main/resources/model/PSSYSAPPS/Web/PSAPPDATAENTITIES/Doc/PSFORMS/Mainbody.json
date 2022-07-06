@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "正文",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -342,7 +342,7 @@
                 "id" : "load"
               },
               "groupMode" : "NONE",
-              "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+              "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
               "logicName" : "List",
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -627,7 +627,8 @@
                 "name" : "CASE",
                 "codeName" : "IBizCase"
               },
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             }, {
               "actionRSMode" : 1,
               "codeName" : "Files",
@@ -645,7 +646,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TEST_RESULT__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "TestCases",
@@ -690,7 +692,8 @@
                 "codeName" : "IBizCase"
               },
               "rSMode" : 2,
-              "tempDataOrder" : 10
+              "tempDataOrder" : 10,
+              "majorDEMajor" : false
             }, {
               "actionRSMode" : 1,
               "codeName" : "Files",
@@ -708,7 +711,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TEST_CASE_STEP__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "DocLibs",
@@ -828,7 +832,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TEST_TASK__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Projects",
@@ -886,7 +891,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TEST_REPORT__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Projects",
@@ -940,7 +946,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "STORY__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Projects",
@@ -998,7 +1005,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TASK__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Projects",
@@ -1056,7 +1064,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "BUILD__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Projects",
@@ -1114,7 +1123,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "BUG__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Projects",
@@ -1168,7 +1178,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "PRODUCT_PLAN__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Projects",
@@ -1328,7 +1339,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TEST_REPORT__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "TestCases",
@@ -1368,7 +1380,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TEST_CASE__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Bugs",
@@ -1408,7 +1421,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "BUG__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "TestTasks",
@@ -1448,7 +1462,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TEST_TASK__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "TestReports",
@@ -1488,7 +1503,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TEST_REPORT__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -1524,7 +1540,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "STORY__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Tasks",
@@ -1564,7 +1581,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TASK__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Builds",
@@ -1604,7 +1622,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "BUILD__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Bugs",
@@ -1644,7 +1663,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "BUG__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "ProductPlans",
@@ -1680,7 +1700,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "PRODUCT_PLAN__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "DocLibs",
@@ -1796,7 +1817,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "STORY__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "ProductReleases",
@@ -1836,7 +1858,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "PRODUCT_RELEASE__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "ProductPlans",
@@ -1876,7 +1899,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "PRODUCT_PLAN__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Builds",
@@ -1916,7 +1940,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "BUILD__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "DocLibs",
@@ -1996,7 +2021,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TEST_TASK__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Docs",
@@ -2162,7 +2188,8 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "name" : "TEST_SUITE__FILE",
-              "rSMode" : 2
+              "rSMode" : 2,
+              "majorDEMajor" : false
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Files",

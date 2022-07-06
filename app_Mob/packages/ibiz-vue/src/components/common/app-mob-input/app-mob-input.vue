@@ -1,6 +1,6 @@
 <template>
     <div class="editor-input">
-        <ion-input class="app-mob-input" debounce="300" :type="type" :min="min" :disabled="disabled" :value="value" :placeholder="placeholder" @ionChange="change" @ionBlur="()=>{this.$emit('blur')}" ref="ioninput"></ion-input>
+        <ion-input class="app-mob-input form-value-content" debounce="300" :type="type" :min="min" :disabled="disabled" :value="value" :placeholder="placeholder" @ionChange="change" @ionBlur="()=>{this.$emit('blur')}" ref="ioninput"></ion-input>
         <div class="app-mob-unit" v-if="unit">{{unit}}</div>
     </div>
 </template>

@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "BEFORELOAD", "SAVE", "BEFORESAVE", "REMOVE" ],
   "logicName" : "看板主数据编辑（移动端）",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -669,14 +669,9 @@
               "editorType" : "HIDDEN",
               "name" : "module",
               "getPSNavigateContexts" : [ {
-                "key" : "N_BRANCH_EQ",
-                "name" : "N_BRANCH_EQ",
+                "key" : "BRANCH",
+                "name" : "BRANCH",
                 "value" : "branch",
-                "rawValue" : false
-              }, {
-                "key" : "PRODUCT",
-                "name" : "PRODUCT",
-                "value" : "product",
                 "rawValue" : false
               }, {
                 "key" : "N_ROOT_EQ",
@@ -684,12 +679,27 @@
                 "value" : "product",
                 "rawValue" : false
               }, {
-                "key" : "BRANCH",
-                "name" : "BRANCH",
+                "key" : "PRODUCT",
+                "name" : "PRODUCT",
+                "value" : "product",
+                "rawValue" : false
+              }, {
+                "key" : "N_BRANCH_EQ",
+                "name" : "N_BRANCH_EQ",
                 "value" : "branch",
                 "rawValue" : false
               } ],
               "getPSNavigateParams" : [ {
+                "key" : "n_branch_eq",
+                "name" : "n_branch_eq",
+                "value" : "branch",
+                "rawValue" : false
+              }, {
+                "key" : "branch",
+                "name" : "branch",
+                "value" : "branch",
+                "rawValue" : false
+              }, {
                 "key" : "product",
                 "name" : "product",
                 "value" : "product",
@@ -698,16 +708,6 @@
                 "key" : "n_root_eq",
                 "name" : "n_root_eq",
                 "value" : "product",
-                "rawValue" : false
-              }, {
-                "key" : "branch",
-                "name" : "branch",
-                "value" : "branch",
-                "rawValue" : false
-              }, {
-                "key" : "n_branch_eq",
-                "name" : "n_branch_eq",
-                "value" : "branch",
                 "rawValue" : false
               } ]
             },
@@ -785,8 +785,8 @@
                 "rawValue" : false
               } ],
               "getPSNavigateParams" : [ {
-                "key" : "product",
-                "name" : "product",
+                "key" : "n_root_eq",
+                "name" : "n_root_eq",
                 "value" : "product",
                 "rawValue" : false
               }, {
@@ -795,14 +795,14 @@
                 "value" : "branch",
                 "rawValue" : false
               }, {
-                "key" : "n_root_eq",
-                "name" : "n_root_eq",
-                "value" : "product",
-                "rawValue" : false
-              }, {
                 "key" : "n_branch_eq",
                 "name" : "n_branch_eq",
                 "value" : "branch",
+                "rawValue" : false
+              }, {
+                "key" : "product",
+                "name" : "product",
+                "value" : "product",
                 "rawValue" : false
               } ],
               "getPickupPSAppView" : {
@@ -1564,9 +1564,9 @@
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
               },
               "getPSNavigateContexts" : [ {
-                "key" : "N_MODULE_EQ",
-                "name" : "N_MODULE_EQ",
-                "value" : "module",
+                "key" : "PRODUCT",
+                "name" : "PRODUCT",
+                "value" : "product",
                 "rawValue" : false
               }, {
                 "key" : "N_PROJECT_EQ",
@@ -1574,17 +1574,12 @@
                 "value" : "project",
                 "rawValue" : false
               }, {
-                "key" : "PRODUCT",
-                "name" : "PRODUCT",
-                "value" : "product",
+                "key" : "N_MODULE_EQ",
+                "name" : "N_MODULE_EQ",
+                "value" : "module",
                 "rawValue" : false
               } ],
               "getPSNavigateParams" : [ {
-                "key" : "product",
-                "name" : "product",
-                "value" : "product",
-                "rawValue" : false
-              }, {
                 "key" : "n_project_eq",
                 "name" : "n_project_eq",
                 "value" : "project",
@@ -1593,6 +1588,11 @@
                 "key" : "n_module_eq",
                 "name" : "n_module_eq",
                 "value" : "module",
+                "rawValue" : false
+              }, {
+                "key" : "product",
+                "name" : "product",
+                "value" : "product",
                 "rawValue" : false
               } ],
               "getPickupPSAppView" : {
@@ -1766,25 +1766,25 @@
                 "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/CurProductBuild.json"
               },
               "getPSNavigateContexts" : [ {
-                "key" : "BUGPRODUCT",
-                "name" : "BUGPRODUCT",
-                "value" : "product",
-                "rawValue" : false
-              }, {
                 "key" : "BUGPROJECT",
                 "name" : "BUGPROJECT",
                 "value" : "project",
                 "rawValue" : false
+              }, {
+                "key" : "BUGPRODUCT",
+                "name" : "BUGPRODUCT",
+                "value" : "product",
+                "rawValue" : false
               } ],
               "getPSNavigateParams" : [ {
-                "key" : "bugproject",
-                "name" : "bugproject",
-                "value" : "project",
-                "rawValue" : false
-              }, {
                 "key" : "bugproduct",
                 "name" : "bugproduct",
                 "value" : "product",
+                "rawValue" : false
+              }, {
+                "key" : "bugproject",
+                "name" : "bugproject",
+                "value" : "project",
                 "rawValue" : false
               } ]
             },
@@ -1889,25 +1889,25 @@
                 "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/CurProductBuild.json"
               },
               "getPSNavigateContexts" : [ {
-                "key" : "BUGPRODUCT",
-                "name" : "BUGPRODUCT",
-                "value" : "product",
-                "rawValue" : false
-              }, {
                 "key" : "BUGPROJECT",
                 "name" : "BUGPROJECT",
                 "value" : "project",
                 "rawValue" : false
+              }, {
+                "key" : "BUGPRODUCT",
+                "name" : "BUGPRODUCT",
+                "value" : "product",
+                "rawValue" : false
               } ],
               "getPSNavigateParams" : [ {
-                "key" : "bugproject",
-                "name" : "bugproject",
-                "value" : "project",
-                "rawValue" : false
-              }, {
                 "key" : "bugproduct",
                 "name" : "bugproduct",
                 "value" : "product",
+                "rawValue" : false
+              }, {
+                "key" : "bugproject",
+                "name" : "bugproject",
+                "value" : "project",
                 "rawValue" : false
               } ],
               "singleSelect" : true
@@ -2184,7 +2184,7 @@
                     "id" : "load"
                   },
                   "groupMode" : "NONE",
-                  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+                  "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
                   "getItemPSLayoutPanel" : {
                     "getAllPSPanelFields" : [ {
                       "id" : "date",
@@ -2696,7 +2696,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "TEST_TASK__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Projects",
@@ -2750,7 +2751,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "STORY__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Projects",
@@ -2808,7 +2810,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "TASK__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Projects",
@@ -2866,7 +2869,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "BUILD__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Projects",
@@ -2924,7 +2928,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "BUG__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Projects",
@@ -2978,7 +2983,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "PRODUCT_PLAN__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Projects",
@@ -3138,7 +3144,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "TEST_CASE_ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Bugs",
@@ -3178,7 +3185,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "BUG__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "TestTasks",
@@ -3218,7 +3226,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "TEST_TASK__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Stories",
@@ -3254,7 +3263,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "STORY__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Tasks",
@@ -3294,7 +3304,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "TASK__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Builds",
@@ -3334,7 +3345,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "BUILD__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Bugs",
@@ -3374,7 +3386,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "BUG__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "ProductPlans",
@@ -3410,7 +3423,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "PRODUCT_PLAN__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "DocLibs",
@@ -3526,7 +3540,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "STORY__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "ProductReleases",
@@ -3566,7 +3581,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "PRODUCT_RELEASE__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "ProductPlans",
@@ -3606,7 +3622,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "PRODUCT_PLAN__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Builds",
@@ -3646,7 +3663,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "BUILD__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "DocLibs",
@@ -3726,7 +3744,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "TEST_TASK__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Docs",
@@ -3892,7 +3911,8 @@
                     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                   },
                   "name" : "TEST_SUITE__ACTION",
-                  "rSMode" : 2
+                  "rSMode" : 2,
+                  "majorDEMajor" : false
                 } ], [ {
                   "actionRSMode" : 1,
                   "codeName" : "Actions",

@@ -82,10 +82,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "TEAMNAME",
-      "codeName" : "TeamName"
+      "name" : "TEAMID",
+      "codeName" : "TeamId"
     }
   }, {
     "dataType" : 25,
@@ -97,10 +97,10 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "srfkey",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "TEAMID",
-      "codeName" : "TeamId"
+      "name" : "TEAMNAME",
+      "codeName" : "TeamName"
     }
   } ],
   "getPSDEGridEditItems" : [ {

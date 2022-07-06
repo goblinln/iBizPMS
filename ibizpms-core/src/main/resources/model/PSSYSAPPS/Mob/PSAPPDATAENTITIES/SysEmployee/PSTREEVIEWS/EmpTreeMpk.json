@@ -14,7 +14,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SELECTCHANGE", "CLICK", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "CLICK", "SELECTCHANGE" ],
   "logicName" : "人员（多选）",
   "getPSAppDataEntity" : {
     "modelref" : true,

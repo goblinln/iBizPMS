@@ -279,6 +279,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "0",
+          "fieldName" : "PARENT",
           "name" : "PARENT 等于(=) (0)",
           "getPSDEField" : {
             "name" : "PARENT",
@@ -1709,17 +1710,43 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
+    "codeName" : "PickupView",
+    "logicName" : "部门实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "部门实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "dept实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "dept实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "PickupGridView",
     "logicName" : "部门实体选择表格视图（部件视图）",
     "name" : "部门实体选择表格视图（部件视图）",
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "dept实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "dept实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "dept实体编辑视图（左右关系）",
+    "name" : "dept实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainGridView",
+    "logicName" : "部门实体表格视图（主数据）",
+    "name" : "部门实体表格视图（主数据）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "部门实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "部门实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MPickupView",
@@ -1735,12 +1762,12 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "RedirectView",
+    "logicName" : "dept实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "dept实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Info",
     "logicName" : "信息表单",
@@ -1749,38 +1776,12 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "MainGridView",
-    "logicName" : "部门实体表格视图（主数据）",
-    "name" : "部门实体表格视图（主数据）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "dept实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "dept实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "部门实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "部门实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "dept实体编辑视图（左右关系）",
-    "name" : "dept实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "部门实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "部门实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "Dept",
   "dEType" : 1,
@@ -1867,7 +1868,7 @@
   "name" : "ZT_DEPT",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

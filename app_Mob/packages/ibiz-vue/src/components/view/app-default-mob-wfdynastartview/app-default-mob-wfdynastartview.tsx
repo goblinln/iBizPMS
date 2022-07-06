@@ -90,11 +90,11 @@ export class AppDefaultMobWFDynaStartView extends MobWFDynaStartViewBase {
             this.renderBodyMessage(),
             this.renderBottomMessage(),            
             this.renderMainContent(),
-            <div slot="button" dis-hover bordered={false} class='footer'>
+            <div slot="footer" dis-hover bordered={false} class='footer'>
                 <van-row style=" text-align: right ">
-                <app-mob-button type='primary' on-click={this.onClickOk.bind(this)} >确认</app-mob-button>
+                <app-mob-button text="确认" type='primary' on-click={this.onClickOk.bind(this)} ></app-mob-button>
                     &nbsp;&nbsp;
-                <app-mob-button on-click={this.onClickCancel.bind(this)}>取消</app-mob-button>
+                <app-mob-button text="取消" on-click={this.onClickCancel.bind(this)}></app-mob-button>
                 </van-row>
             </div>  
         ]);

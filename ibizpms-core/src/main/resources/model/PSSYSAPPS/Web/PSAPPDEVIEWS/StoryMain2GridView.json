@@ -112,15 +112,6 @@
     "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "需求",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-      "viewType" : "DEEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "需求数据看板视图",
@@ -128,6 +119,15 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
       "viewType" : "DEPORTALVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "需求",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+      "viewType" : "DEEDITVIEW"
     }
   } ],
   "getPSAppViewUIActions" : [ {
@@ -146,133 +146,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "Main2GridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "工具栏模板（默认表格界面）",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "tbitem13",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_tbitem13_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_tbitem13_click"
-      }
-    }, {
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT"
-      },
-      "caption" : "导出",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "tbitem13",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_tbitem13"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT"
-        },
-        "caption" : "导出",
-        "codeName" : "ExportExcel",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）",
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "predefinedType" : "GRIDVIEW_EXPORTACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "导出",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.FILTER"
-      },
-      "caption" : "过滤",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0b0@FontAwesome",
-        "cssClass" : "fa fa-filter"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.FILTER"
-        },
-        "caption" : "过滤",
-        "codeName" : "ToggleFilter",
-        "fullCodeName" : "ToggleFilter",
-        "name" : "表格界面_搜索栏",
-        "getPSSysImage" : {
-          "glyph" : "xf0b0@FontAwesome",
-          "cssClass" : "fa fa-filter"
-        },
-        "predefinedType" : "GRIDVIEW_SEARCHBAR",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ToggleFilter",
-        "uIActionType" : "DEUIACTION",
-        "enableToggleMode" : true
-      },
-      "tooltip" : "过滤",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-      },
-      "enableToggleMode" : true,
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "b912ff540f5614f63914a38067d84728",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "Main2",
     "columnEnableLink" : 2,
@@ -283,7 +156,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（无模块）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -671,9 +544,9 @@
               "id" : "TOBUG"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "TEST",
-              "name" : "TEST",
-              "value" : "product",
+              "key" : "MODULE",
+              "name" : "MODULE",
+              "value" : "module",
               "rawValue" : false
             }, {
               "key" : "ASSIGNEDTO",
@@ -681,19 +554,19 @@
               "value" : "assignedto",
               "rawValue" : false
             }, {
-              "key" : "STORY",
-              "name" : "STORY",
-              "value" : "story",
-              "rawValue" : false
-            }, {
               "key" : "PROJECT",
               "name" : "PROJECT",
               "value" : "project",
               "rawValue" : false
             }, {
-              "key" : "MODULE",
-              "name" : "MODULE",
-              "value" : "module",
+              "key" : "TITLE",
+              "name" : "TITLE",
+              "value" : "title",
+              "rawValue" : false
+            }, {
+              "key" : "STORY",
+              "name" : "STORY",
+              "value" : "story",
               "rawValue" : false
             }, {
               "key" : "MODULENAME",
@@ -706,42 +579,12 @@
               "value" : "branch",
               "rawValue" : false
             }, {
-              "key" : "TITLE",
-              "name" : "TITLE",
-              "value" : "title",
+              "key" : "TEST",
+              "name" : "TEST",
+              "value" : "product",
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "product",
-              "name" : "product",
-              "value" : "product",
-              "rawValue" : false
-            }, {
-              "key" : "modulename",
-              "name" : "modulename",
-              "value" : "modulename",
-              "rawValue" : false
-            }, {
-              "key" : "project",
-              "name" : "project",
-              "value" : "project",
-              "rawValue" : false
-            }, {
-              "key" : "assignedto",
-              "name" : "assignedto",
-              "value" : "assignedto",
-              "rawValue" : false
-            }, {
-              "key" : "story",
-              "name" : "story",
-              "value" : "story",
-              "rawValue" : false
-            }, {
-              "key" : "module",
-              "name" : "module",
-              "value" : "module",
-              "rawValue" : false
-            }, {
               "key" : "title",
               "name" : "title",
               "value" : "title",
@@ -750,6 +593,36 @@
               "key" : "branch",
               "name" : "branch",
               "value" : "branch",
+              "rawValue" : false
+            }, {
+              "key" : "story",
+              "name" : "story",
+              "value" : "story",
+              "rawValue" : false
+            }, {
+              "key" : "assignedto",
+              "name" : "assignedto",
+              "value" : "assignedto",
+              "rawValue" : false
+            }, {
+              "key" : "project",
+              "name" : "project",
+              "value" : "project",
+              "rawValue" : false
+            }, {
+              "key" : "product",
+              "name" : "product",
+              "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "module",
+              "name" : "module",
+              "value" : "module",
+              "rawValue" : false
+            }, {
+              "key" : "modulename",
+              "name" : "modulename",
+              "value" : "modulename",
               "rawValue" : false
             } ],
             "getPSSysImage" : {
@@ -920,14 +793,14 @@
               "id" : "CCASE"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "TEST",
-              "name" : "TEST",
-              "value" : "product",
-              "rawValue" : false
-            }, {
               "key" : "PRODUCTMODULE",
               "name" : "PRODUCTMODULE",
               "value" : "module",
+              "rawValue" : false
+            }, {
+              "key" : "TEST",
+              "name" : "TEST",
+              "value" : "product",
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
@@ -980,14 +853,14 @@
               "id" : "ISCHILD"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "PARENT",
-              "name" : "PARENT",
-              "value" : "id",
-              "rawValue" : false
-            }, {
               "key" : "MODULE",
               "name" : "MODULE",
               "value" : "module",
+              "rawValue" : false
+            }, {
+              "key" : "PARENT",
+              "name" : "PARENT",
+              "value" : "id",
               "rawValue" : false
             }, {
               "key" : "PRODUCT",
@@ -996,11 +869,6 @@
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "product",
-              "name" : "product",
-              "value" : "product",
-              "rawValue" : false
-            }, {
               "key" : "module",
               "name" : "module",
               "value" : "module",
@@ -1009,6 +877,11 @@
               "key" : "parent",
               "name" : "parent",
               "value" : "id",
+              "rawValue" : false
+            }, {
+              "key" : "product",
+              "name" : "product",
+              "value" : "product",
               "rawValue" : false
             } ],
             "getPSSysImage" : {
@@ -1143,17 +1016,24 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "module",
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
-      "dataType" : 1,
-      "name" : "frombug",
+      "dataType" : 9,
+      "name" : "pri",
       "getPSAppDEField" : {
-        "name" : "FROMBUG",
-        "codeName" : "FromBug"
+        "name" : "PRI",
+        "codeName" : "Pri"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
     }, {
       "dataType" : 1,
@@ -1163,28 +1043,18 @@
         "codeName" : "Storysn"
       }
     }, {
-      "dataType" : 1,
-      "name" : "parent",
+      "dataType" : 25,
+      "name" : "isfavorites",
       "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
+        "name" : "ISFAVORITES",
+        "codeName" : "Isfavorites"
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "ischild",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "tobug",
-      "getPSAppDEField" : {
-        "name" : "TOBUG",
-        "codeName" : "ToBug"
+        "name" : "ISCHILD",
+        "codeName" : "Ischild"
       }
     }, {
       "dataType" : 1,
@@ -1203,10 +1073,24 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "frombug",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "parent",
+      "getPSAppDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
       }
     }, {
       "dataType" : 1,
@@ -1216,18 +1100,11 @@
         "codeName" : "Product"
       }
     }, {
-      "dataType" : 9,
-      "name" : "pri",
+      "dataType" : 1,
+      "name" : "duplicatestory",
       "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "DUPLICATESTORY",
+        "codeName" : "DuplicateStory"
       }
     }, {
       "dataType" : 1,
@@ -1238,25 +1115,21 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "duplicatestory",
+      "name" : "tobug",
       "getPSAppDEField" : {
-        "name" : "DUPLICATESTORY",
-        "codeName" : "DuplicateStory"
+        "name" : "TOBUG",
+        "codeName" : "ToBug"
       }
     }, {
       "dataType" : 25,
-      "name" : "isfavorites",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "ISFAVORITES",
-        "codeName" : "Isfavorites"
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
     }, {
       "dataType" : 25,
-      "name" : "ischild",
-      "getPSAppDEField" : {
-        "name" : "ISCHILD",
-        "codeName" : "Ischild"
-      }
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "编号",
@@ -2647,7 +2520,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -2656,10 +2529,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -2678,10 +2551,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -2731,6 +2604,133 @@
     "name" : "searchform",
     "modelid" : "dcd84cd37548c3cde5f23d6c0421f1ae",
     "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "codeName" : "Main2GridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "工具栏模板（默认表格界面）",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "tbitem13",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem13_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem13_click"
+      }
+    }, {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "tbitem13",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem13"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "predefinedType" : "GRIDVIEW_EXPORTACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.FILTER"
+      },
+      "caption" : "过滤",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0b0@FontAwesome",
+        "cssClass" : "fa fa-filter"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.FILTER"
+        },
+        "caption" : "过滤",
+        "codeName" : "ToggleFilter",
+        "fullCodeName" : "ToggleFilter",
+        "name" : "表格界面_搜索栏",
+        "getPSSysImage" : {
+          "glyph" : "xf0b0@FontAwesome",
+          "cssClass" : "fa fa-filter"
+        },
+        "predefinedType" : "GRIDVIEW_SEARCHBAR",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ToggleFilter",
+        "uIActionType" : "DEUIACTION",
+        "enableToggleMode" : true
+      },
+      "tooltip" : "过滤",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+      },
+      "enableToggleMode" : true,
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "b912ff540f5614f63914a38067d84728",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "Main2GridView",
   "getPSDEViewId" : "1554106fbc31a5b613a46dd79427a3f8",

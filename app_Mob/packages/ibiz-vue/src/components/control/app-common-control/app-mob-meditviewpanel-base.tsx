@@ -84,6 +84,13 @@ export class AppMobMeditViewPanelBase extends MobMeditViewPanelControlBase {
      * @memberof AppMEditViewPanelBase
      */
     public renderContent() {
+        const appView = this.controlInstance.getEmbeddedPSAppView();
+        const style = {
+            height: appView?.height ? appView.height + 'px' : '300px'
+        };
+        if (appView?.width) {
+            Object.assign(style, { width: appView.width + 'px' });
+        }
         return this.items.map((item: any) => {
             return [
                 <div class="app-medit-view-panel-card">
@@ -94,12 +101,13 @@ export class AppMobMeditViewPanelBase extends MobMeditViewPanelControlBase {
                         <ion-card-content>
                             {
                                 this.$createElement("app-view-shell", {
+                                    style: style,
                                     props: {
                                         staticProps: {
                                             viewDefaultUsage: 'includedView',
-                                            viewModelData: this.controlInstance.getEmbeddedPSAppView(),
+                                            viewModelData: appView,
                                             panelState: this.panelState,
-                                            showTitle: false,
+                                            showCaption: false,
                                             isChildView: true
                                         },
                                         dynamicProps: {

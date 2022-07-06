@@ -31,15 +31,15 @@
     "getPSViewCtrlName" : "righttoolbar"
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "objecttype",
-    "name" : "objecttype",
-    "value" : "release",
-    "rawValue" : true
-  }, {
     "key" : "objectid",
     "name" : "objectid",
     "value" : "id",
     "rawValue" : false
+  }, {
+    "key" : "objecttype",
+    "name" : "objecttype",
+    "value" : "release",
+    "rawValue" : true
   } ],
   "getPSAppViewUIActions" : [ {
     "name" : "righttoolbar_tbitem1",
@@ -69,7 +69,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD", "SAVE", "BEFORESAVE", "REMOVE" ],
     "logicName" : "编辑模式（移动端）",
     "getPSAppDataEntity" : {
       "modelref" : true,

@@ -84,7 +84,7 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realTitle" : "人员编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -92,7 +92,7 @@
       "viewType" : "DEEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realTitle" : "人员编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -111,7 +111,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -319,10 +319,10 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 25,
-      "name" : "phone",
+      "name" : "userid",
       "getPSAppDEField" : {
-        "name" : "PHONE",
-        "codeName" : "Phone"
+        "name" : "USERID",
+        "codeName" : "UserId"
       }
     }, {
       "dataType" : 25,
@@ -330,34 +330,6 @@
       "getPSAppDEField" : {
         "name" : "SEX",
         "codeName" : "Sex"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "orgid",
-      "getPSAppDEField" : {
-        "name" : "ORGID",
-        "codeName" : "OrgId"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "nickname",
-      "getPSAppDEField" : {
-        "name" : "NICKNAME",
-        "codeName" : "NickName"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "mdeptid",
-      "getPSAppDEField" : {
-        "name" : "MDEPTID",
-        "codeName" : "MdeptId"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "userid",
-      "getPSAppDEField" : {
-        "name" : "USERID",
-        "codeName" : "UserId"
       }
     }, {
       "dataType" : 25,
@@ -375,10 +347,24 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "nickname",
       "getPSAppDEField" : {
-        "name" : "PERSONNAME",
-        "codeName" : "PersonName"
+        "name" : "NICKNAME",
+        "codeName" : "NickName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "phone",
+      "getPSAppDEField" : {
+        "name" : "PHONE",
+        "codeName" : "Phone"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "USERID",
+        "codeName" : "UserId"
       }
     }, {
       "dataType" : 25,
@@ -390,10 +376,24 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 25,
-      "name" : "srfkey",
+      "name" : "mdeptid",
       "getPSAppDEField" : {
-        "name" : "USERID",
-        "codeName" : "UserId"
+        "name" : "MDEPTID",
+        "codeName" : "MdeptId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "orgid",
+      "getPSAppDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "PERSONNAME",
+        "codeName" : "PersonName"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -447,7 +447,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -456,10 +456,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -478,10 +478,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

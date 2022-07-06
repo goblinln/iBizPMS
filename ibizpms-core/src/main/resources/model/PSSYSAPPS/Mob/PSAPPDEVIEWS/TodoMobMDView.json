@@ -97,30 +97,30 @@
     "rawValue" : false
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "n_account_eq",
-    "name" : "n_account_eq",
-    "value" : "srfloginname",
-    "rawValue" : false
-  }, {
     "key" : "n_cycle_eq",
     "name" : "n_cycle_eq",
     "value" : "0",
     "rawValue" : true
+  }, {
+    "key" : "n_account_eq",
+    "name" : "n_account_eq",
+    "value" : "srfloginname",
+    "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realTitle" : "快速新建",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoNewMobEditView.json",
-      "viewType" : "DEMOBEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "realTitle" : "待办事宜表移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoMobEditView.json",
+      "viewType" : "DEMOBEDITVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
+    "realTitle" : "快速新建",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoNewMobEditView.json",
       "viewType" : "DEMOBEDITVIEW"
     }
   } ],
@@ -163,7 +163,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Todo__status.json"
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "pri",

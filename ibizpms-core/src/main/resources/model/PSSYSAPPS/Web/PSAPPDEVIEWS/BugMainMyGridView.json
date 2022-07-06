@@ -129,79 +129,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "MainMyGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "过滤工具栏",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.FILTER"
-      },
-      "caption" : "过滤",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0b0@FontAwesome",
-        "cssClass" : "fa fa-filter"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.FILTER"
-        },
-        "caption" : "过滤",
-        "codeName" : "ToggleFilter",
-        "fullCodeName" : "ToggleFilter",
-        "name" : "表格界面_搜索栏",
-        "getPSSysImage" : {
-          "glyph" : "xf0b0@FontAwesome",
-          "cssClass" : "fa fa-filter"
-        },
-        "predefinedType" : "GRIDVIEW_SEARCHBAR",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ToggleFilter",
-        "uIActionType" : "DEUIACTION",
-        "enableToggleMode" : true
-      },
-      "tooltip" : "过滤",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-      },
-      "enableToggleMode" : true,
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "229594a60f3e1e4d9f17f9f2905b13dc",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "MyGroupMain",
     "columnEnableLink" : 2,
@@ -212,7 +139,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（我的地盘）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -603,17 +530,81 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "bugsn",
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "BUGSN",
-        "codeName" : "Bugsn"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
-      "dataType" : 1,
-      "name" : "tostory",
+      "dataType" : 9,
+      "name" : "severity",
       "getPSAppDEField" : {
-        "name" : "TOSTORY",
-        "codeName" : "ToStory"
+        "name" : "SEVERITY",
+        "codeName" : "Severity"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "pri",
+      "getPSAppDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "confirmed",
+      "getPSAppDEField" : {
+        "name" : "CONFIRMED",
+        "codeName" : "Confirmed"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "productname",
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "projectname",
+      "getPSAppDEField" : {
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "status",
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "openedby",
+      "getPSAppDEField" : {
+        "name" : "OPENEDBY",
+        "codeName" : "OpenedBy"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "openeddate",
+      "getPSAppDEField" : {
+        "name" : "OPENEDDATE",
+        "codeName" : "OpenedDate"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "assignedto",
+      "getPSAppDEField" : {
+        "name" : "ASSIGNEDTO",
+        "codeName" : "AssignedTo"
       }
     }, {
       "dataType" : 25,
@@ -624,13 +615,38 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "isfavorites",
+      "getPSAppDEField" : {
+        "name" : "ISFAVORITES",
+        "codeName" : "Isfavorites"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "bugsn",
+      "getPSAppDEField" : {
+        "name" : "BUGSN",
+        "codeName" : "Bugsn"
+      }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "color",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "COLOR",
+        "codeName" : "Color"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "project",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
       }
     }, {
       "dataType" : 1,
@@ -649,73 +665,17 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "duplicatebug",
+      "name" : "tostory",
       "getPSAppDEField" : {
-        "name" : "DUPLICATEBUG",
-        "codeName" : "DuplicateBug"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "openedby",
-      "getPSAppDEField" : {
-        "name" : "OPENEDBY",
-        "codeName" : "OpenedBy"
+        "name" : "TOSTORY",
+        "codeName" : "ToStory"
       }
     }, {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "entry",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "story",
-      "getPSAppDEField" : {
-        "name" : "STORY",
-        "codeName" : "Story"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "assignedto",
-      "getPSAppDEField" : {
-        "name" : "ASSIGNEDTO",
-        "codeName" : "AssignedTo"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "confirmed",
-      "getPSAppDEField" : {
-        "name" : "CONFIRMED",
-        "codeName" : "Confirmed"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "repo",
-      "getPSAppDEField" : {
-        "name" : "REPO",
-        "codeName" : "Repo"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "isfavorites",
-      "getPSAppDEField" : {
-        "name" : "ISFAVORITES",
-        "codeName" : "Isfavorites"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "productname",
-      "getPSAppDEField" : {
-        "name" : "PRODUCTNAME",
-        "codeName" : "ProductName"
+        "name" : "ENTRY",
+        "codeName" : "Entry"
       }
     }, {
       "dataType" : 1,
@@ -726,25 +686,52 @@
       }
     }, {
       "dataType" : 1,
+      "name" : "plan",
+      "getPSAppDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      }
+    }, {
+      "dataType" : 1,
       "name" : "module",
       "getPSAppDEField" : {
         "name" : "MODULE",
         "codeName" : "Module"
       }
     }, {
-      "format" : "YYYY-MM-DD HH:mm:ss",
-      "dataType" : 5,
-      "name" : "openeddate",
+      "dataType" : 1,
+      "name" : "branch",
       "getPSAppDEField" : {
-        "name" : "OPENEDDATE",
-        "codeName" : "OpenedDate"
+        "name" : "BRANCH",
+        "codeName" : "Branch"
       }
     }, {
-      "dataType" : 25,
-      "name" : "status",
+      "dataType" : 1,
+      "name" : "duplicatebug",
       "getPSAppDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
+        "name" : "DUPLICATEBUG",
+        "codeName" : "DuplicateBug"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "repo",
+      "getPSAppDEField" : {
+        "name" : "REPO",
+        "codeName" : "Repo"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "story",
+      "getPSAppDEField" : {
+        "name" : "STORY",
+        "codeName" : "Story"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "case",
+      "getPSAppDEField" : {
+        "name" : "CASE",
+        "codeName" : "IBizCase"
       }
     }, {
       "dataType" : 1,
@@ -762,74 +749,14 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "projectname",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "PROJECTNAME",
-        "codeName" : "ProjectName"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "severity",
-      "getPSAppDEField" : {
-        "name" : "SEVERITY",
-        "codeName" : "Severity"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "project",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "pri",
-      "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "plan",
-      "getPSAppDEField" : {
-        "name" : "PLAN",
-        "codeName" : "Plan"
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
     }, {
       "dataType" : 25,
-      "name" : "color",
-      "getPSAppDEField" : {
-        "name" : "COLOR",
-        "codeName" : "Color"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "entry",
-      "getPSAppDEField" : {
-        "name" : "ENTRY",
-        "codeName" : "Entry"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "branch",
-      "getPSAppDEField" : {
-        "name" : "BRANCH",
-        "codeName" : "Branch"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "case",
-      "getPSAppDEField" : {
-        "name" : "CASE",
-        "codeName" : "IBizCase"
-      }
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "Bug编号",
@@ -2504,6 +2431,79 @@
     "name" : "searchbar",
     "modelid" : "b15ebe8f6547321abe40858a702d54c6",
     "modeltype" : "PSSYSSEARCHBAR"
+  }, {
+    "codeName" : "MainMyGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "过滤工具栏",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.FILTER"
+      },
+      "caption" : "过滤",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0b0@FontAwesome",
+        "cssClass" : "fa fa-filter"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.FILTER"
+        },
+        "caption" : "过滤",
+        "codeName" : "ToggleFilter",
+        "fullCodeName" : "ToggleFilter",
+        "name" : "表格界面_搜索栏",
+        "getPSSysImage" : {
+          "glyph" : "xf0b0@FontAwesome",
+          "cssClass" : "fa fa-filter"
+        },
+        "predefinedType" : "GRIDVIEW_SEARCHBAR",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ToggleFilter",
+        "uIActionType" : "DEUIACTION",
+        "enableToggleMode" : true
+      },
+      "tooltip" : "过滤",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+      },
+      "enableToggleMode" : true,
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "229594a60f3e1e4d9f17f9f2905b13dc",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "MainMyGridView",
   "getPSDEViewId" : "994697e33e6ab8ba377b017a67b0b3ec",

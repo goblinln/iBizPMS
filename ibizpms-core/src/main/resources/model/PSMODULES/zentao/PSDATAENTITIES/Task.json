@@ -2075,6 +2075,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "OPENEDBY",
             "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "OPENEDBY",
@@ -2085,6 +2086,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "LASTEDITEDBY",
             "name" : "LASTEDITEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "LASTEDITEDBY",
@@ -2095,6 +2097,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "CLOSEDBY",
             "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "CLOSEDBY",
@@ -2105,6 +2108,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "FINISHEDBY",
             "name" : "FINISHEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "FINISHEDBY",
@@ -2115,6 +2119,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "CANCELEDBY",
             "name" : "CANCELEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "CANCELEDBY",
@@ -2125,6 +2130,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "ASSIGNEDTO",
             "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "ASSIGNEDTO",
@@ -2443,6 +2449,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
+          "fieldName" : "OPENEDBY",
           "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
           "getPSDEField" : {
             "name" : "OPENEDBY",
@@ -2496,6 +2503,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "OPENEDBY",
             "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "OPENEDBY",
@@ -2506,6 +2514,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "LASTEDITEDBY",
             "name" : "LASTEDITEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "LASTEDITEDBY",
@@ -2516,6 +2525,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "CLOSEDBY",
             "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "CLOSEDBY",
@@ -2526,6 +2536,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "FINISHEDBY",
             "name" : "FINISHEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "FINISHEDBY",
@@ -2536,6 +2547,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "CANCELEDBY",
             "name" : "CANCELEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "CANCELEDBY",
@@ -2546,6 +2558,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "ASSIGNEDTO",
             "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "ASSIGNEDTO",
@@ -3048,6 +3061,7 @@
             "condOp" : "NOTEQ",
             "condType" : "SINGLE",
             "condValue" : "productplan",
+            "fieldName" : "PLAN",
             "name" : "PLAN 不等于(<>) 网页请求上下文(productplan)",
             "getPSDEField" : {
               "name" : "PLAN",
@@ -3057,6 +3071,7 @@
           }, {
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
+            "fieldName" : "PLAN",
             "name" : "PLAN 值为空(Nil)",
             "getPSDEField" : {
               "name" : "PLAN",
@@ -34318,84 +34333,10 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "MobNewFrom",
-    "logicName" : "移动端新建表单",
-    "modelTag2" : "1",
-    "name" : "移动端新建表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "FavoriteMobMDView",
-    "logicName" : "任务实体移动端多数据视图（我的收藏）",
-    "name" : "任务实体移动端多数据视图（我的收藏）",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "WeeklyPlansTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图（部件视图）（周报报计划参与）",
-    "name" : "任务实体移动端多数据视图（部件视图）（周报报计划参与）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TaskTypeGanttView",
-    "logicName" : "任务实体甘特视图（任务类型分类）",
-    "name" : "任务实体甘特视图（任务类型分类）",
-    "realModelSubType" : "DEGANTTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DailyPlansTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图（部件视图）（日报计划参与）",
-    "name" : "任务实体移动端多数据视图（部件视图）（日报计划参与）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ActiveMobTask",
-    "logicName" : "任务实体移动端选项操作视图(激活)",
-    "name" : "任务实体移动端选项操作视图(激活)",
-    "realModelSubType" : "DEMOBOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "FavoriteMoreMobMDView",
-    "logicName" : "任务实体移动端多数据视图（我的收藏）（更多）",
-    "name" : "任务实体移动端多数据视图（我的收藏）（更多）",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyCompleteTaskMobMDView1",
-    "logicName" : "任务实体移动端多数据视图(我的已完成任务)",
-    "name" : "任务实体移动端多数据视图(我的已完成任务)",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "StoryNewEditView",
-    "logicName" : "任务实体编辑视图（需求分解）",
-    "name" : "任务实体编辑视图（需求分解）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CancelMobOptionView",
-    "logicName" : "任务实体移动端选项操作视图（取消）",
-    "name" : "任务实体移动端选项操作视图（取消）",
-    "realModelSubType" : "DEMOBOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainGridView",
-    "logicName" : "任务实体表格视图（默认）",
-    "name" : "任务实体表格视图（默认）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Forward",
-    "logicName" : "任务转交",
-    "modelTag2" : "0",
-    "name" : "任务转交",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "任务实体编辑视图",
-    "name" : "任务实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "GroupTreeExpView",
+    "logicName" : "任务实体树导航视图(分组树)",
+    "name" : "任务实体树导航视图(分组树)",
+    "realModelSubType" : "DETREEEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobOptionView",
@@ -34404,115 +34345,16 @@
     "realModelSubType" : "DEMOBOPTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "CloseTaskView",
-    "logicName" : "任务实体选项操作视图（关闭任务）",
-    "name" : "任务实体选项操作视图（关闭任务）",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CompleteFormMob",
-    "logicName" : "完成任务（移动端）",
-    "modelTag2" : "1",
-    "name" : "完成任务（移动端）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "CloseMobOptionView",
-    "logicName" : "任务实体移动端选项操作视图（关闭）",
-    "name" : "任务实体移动端选项操作视图（关闭）",
-    "realModelSubType" : "DEMOBOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "StartForm",
-    "logicName" : "开始表单",
-    "modelTag2" : "0",
-    "name" : "开始表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "waitEditView3",
-    "logicName" : "任务实体编辑视图（分页关系）(未进行)",
-    "name" : "任务实体编辑视图（分页关系）(未进行)",
-    "realModelSubType" : "DEEDITVIEW3",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "reportPickupGridView",
-    "logicName" : "任务实体选择表格视图（部件视图）（汇报）",
-    "name" : "任务实体选择表格视图（部件视图）（汇报）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainEditView",
-    "logicName" : "任务实体编辑视图（主信息编辑）",
-    "name" : "任务实体编辑视图（主信息编辑）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyCompleteTaskMobMDViewNextPlanWeekly",
-    "logicName" : "任务实体移动端多数据视图(下周计划参与任务）（周报）",
-    "name" : "任务实体移动端多数据视图(下周计划参与任务）（周报）",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CancelTaskView",
-    "logicName" : "任务实体选项操作视图（取消任务）",
-    "name" : "任务实体选项操作视图（取消任务）",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "maindashboardview_link",
-    "logicName" : "任务实体数据看板视图（主数据_链接）",
-    "name" : "任务实体数据看板视图（主数据_链接）",
-    "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DoneTaskView",
-    "logicName" : "任务实体选项操作视图（完成任务）",
-    "name" : "任务实体选项操作视图（完成任务）",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ChartView9",
-    "logicName" : "任务实体图表视图（部件视图）",
-    "name" : "任务实体图表视图（部件视图）",
-    "realModelSubType" : "DECHARTVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "任务实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "任务实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TypeTaskGroupGridView",
-    "logicName" : "任务实体表格视图(类型分组)",
-    "name" : "任务实体表格视图(类型分组)",
+    "codeName" : "PriTaskGroupGridView",
+    "logicName" : "任务实体表格视图(优先级分组)",
+    "name" : "任务实体表格视图(优先级分组)",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "doingEditView3",
-    "logicName" : "任务实体编辑视图（分页关系）(进行中)",
-    "name" : "任务实体编辑视图（分页关系）(进行中)",
-    "realModelSubType" : "DEEDITVIEW3",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "AssMobMDView9",
-    "logicName" : "（仪表盘）任务实体移动端多数据视图（指派给我）",
-    "name" : "（仪表盘）任务实体移动端多数据视图（指派给我）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MonthlyMyPlansTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图（我的计划参与任务）（月报）",
-    "name" : "任务实体移动端多数据视图（我的计划参与任务）（月报）",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "FavoriteMobMDView9",
-    "logicName" : "（仪表盘）任务实体移动端多数据视图（我的收藏）",
-    "name" : "（仪表盘）任务实体移动端多数据视图（我的收藏）",
-    "realModelSubType" : "DEMOBMDVIEW9",
+    "codeName" : "EditView2",
+    "logicName" : "task实体编辑视图（左右关系）",
+    "name" : "task实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "SubTaskNewView",
@@ -34521,378 +34363,10 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView9_AssignedToMe",
-    "logicName" : "任务实体表格视图（部件视图）（指派给我）",
-    "name" : "任务实体表格视图（部件视图）（指派给我）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyFavoriteGridView",
-    "logicName" : "任务实体表格视图（我的收藏）",
-    "name" : "任务实体表格视图（我的收藏）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CalendarEditView",
-    "logicName" : "任务实体编辑视图(日历导航显示)",
-    "name" : "任务实体编辑视图(日历导航显示)",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "task实体选择表格视图（部件视图）",
-    "name" : "task实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "NewMobEditView",
-    "logicName" : "任务实体移动端编辑视图(新建)",
-    "name" : "任务实体移动端编辑视图(新建)",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView9_StoryRelated",
-    "logicName" : "任务实体表格视图（部件视图）(需求相关任务)",
-    "name" : "任务实体表格视图（部件视图）(需求相关任务)",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TreeEditView",
-    "logicName" : "任务实体编辑视图(树导航显示)",
-    "name" : "任务实体编辑视图(树导航显示)",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainDashboardView",
-    "logicName" : "任务实体数据看板视图（主数据）",
-    "modelTag" : "EDITVIEW",
-    "name" : "任务实体数据看板视图（主数据）",
-    "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobStartForm",
-    "logicName" : "开始表单（移动端）",
-    "modelTag2" : "1",
-    "name" : "开始表单（移动端）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MonthlyPlansTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图（部件视图）（月报计划参与）",
-    "name" : "任务实体移动端多数据视图（部件视图）（月报计划参与）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "WHEditView",
-    "logicName" : "任务实体编辑视图（工时）",
-    "name" : "任务实体编辑视图（工时）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ZsGridView9Week",
-    "logicName" : "任务实体表格视图（部件视图）（汇报周报）（展示）",
-    "name" : "任务实体表格视图（部件视图）（汇报周报）（展示）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainGridView_ByModule",
-    "logicName" : "任务实体表格视图（通过模块查询）",
-    "name" : "任务实体表格视图（通过模块查询）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ActivationTaskView",
-    "logicName" : "任务实体选项操作视图（激活任务）",
-    "name" : "任务实体选项操作视图（激活任务）",
+    "codeName" : "PauseTaskView",
+    "logicName" : "任务实体选项操作视图（暂停任务）",
+    "name" : "任务实体选项操作视图（暂停任务）",
     "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "KanbanView",
-    "logicName" : "任务实体看板视图",
-    "name" : "任务实体看板视图",
-    "realModelSubType" : "DEKANBANVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PendingSubmission",
-    "logicName" : "待办转任务",
-    "modelTag2" : "0",
-    "name" : "待办转任务",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobActiviteForm",
-    "logicName" : "激活任务（移动端）",
-    "modelTag2" : "1",
-    "name" : "激活任务（移动端）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "AssignFormMob",
-    "logicName" : "任务指派（移动端）",
-    "modelTag2" : "1",
-    "name" : "任务指派（移动端）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "任务实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "任务实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TodoEditView",
-    "logicName" : "任务实体编辑视图（待办转任务）",
-    "name" : "任务实体编辑视图（待办转任务）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CalendarMain",
-    "logicName" : "日历导航显示",
-    "modelTag2" : "0",
-    "name" : "日历导航显示",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "WorkHoursView",
-    "logicName" : "任务实体选项操作视图（工时）",
-    "name" : "任务实体选项操作视图（工时）",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RestartTaskView",
-    "logicName" : "任务实体选项操作视图（继续任务）",
-    "name" : "任务实体选项操作视图（继续任务）",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PivotTableView",
-    "logicName" : "任务实体表格视图（透视表）",
-    "name" : "任务实体表格视图（透视表）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MonthlyCompleteZsGridView",
-    "logicName" : "任务实体表格视图（部件视图）（汇报）（展示）（月报完成）",
-    "name" : "任务实体表格视图（部件视图）（汇报）（展示）（月报完成）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "reportMPickupView",
-    "logicName" : "任务实体数据多项选择视图（汇报）",
-    "name" : "任务实体数据多项选择视图（汇报）",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "AssignForm",
-    "logicName" : "指派表单",
-    "modelTag2" : "0",
-    "name" : "指派表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "ClosePauseCancelView",
-    "logicName" : "任务实体选项操作视图（关闭、暂停、取消）",
-    "name" : "任务实体选项操作视图（关闭、暂停、取消）",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "任务实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "任务实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainDetailView9",
-    "logicName" : "任务实体编辑视图（主信息详情嵌入）",
-    "name" : "任务实体编辑视图（主信息详情嵌入）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TaskEstimate",
-    "logicName" : "工时",
-    "modelTag2" : "0",
-    "name" : "工时",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "任务实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "任务实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MonthlyDoneTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图（部件视图）（月报已完成）",
-    "name" : "任务实体移动端多数据视图（部件视图）（月报已完成）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ZsGridView9",
-    "logicName" : "任务实体表格视图（部件视图）（汇报）（展示）（计划参与）",
-    "name" : "任务实体表格视图（部件视图）（汇报）（展示）（计划参与）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "StopMobOptionView",
-    "logicName" : "任务实体移动端选项操作视图（暂停）",
-    "name" : "任务实体移动端选项操作视图（暂停）",
-    "realModelSubType" : "DEMOBOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ClosePauseCancelFormMob",
-    "logicName" : "关闭、暂停、取消表单（移动端）",
-    "modelTag2" : "1",
-    "name" : "关闭、暂停、取消表单（移动端）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditMobEditView",
-    "logicName" : "任务实体移动端编辑视图（编辑）",
-    "name" : "任务实体移动端编辑视图（编辑）",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "AssignTaskView",
-    "logicName" : "任务实体选项操作视图（指派任务）",
-    "name" : "任务实体选项操作视图（指派任务）",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyCompleteTaskMobMDViewWeekly",
-    "logicName" : "任务实体移动端多数据视图（我的已完成任务）（周报）",
-    "name" : "任务实体移动端多数据视图（我的已完成任务）（周报）",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainGridView9_Child",
-    "logicName" : "任务实体表格视图（部件视图）（子任务）",
-    "name" : "任务实体表格视图（部件视图）（子任务）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GroupTreeExpView",
-    "logicName" : "任务实体树导航视图(分组树)",
-    "name" : "任务实体树导航视图(分组树)",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "task实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "task实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EstimateMob",
-    "logicName" : "工时（移动端）",
-    "modelTag2" : "1",
-    "name" : "工时（移动端）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MonthlyMyCompleteTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图（我的已完成任务）（月报）",
-    "name" : "任务实体移动端多数据视图（我的已完成任务）（月报）",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "任务实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "任务实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Activation",
-    "logicName" : "激活任务",
-    "modelTag2" : "0",
-    "name" : "激活任务",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MainEdit",
-    "logicName" : "主信息编辑",
-    "modelTag2" : "0",
-    "name" : "主信息编辑",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "AssMoreMobMDView",
-    "logicName" : "任务实体移动端多数据视图（指派给我）（更多）",
-    "name" : "任务实体移动端多数据视图（指派给我）（更多）",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DailyDoneTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图（部件视图）（日报已完成）",
-    "name" : "任务实体移动端多数据视图（部件视图）（日报已完成）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PriTaskGroupGridView",
-    "logicName" : "任务实体表格视图(优先级分组)",
-    "name" : "任务实体表格视图(优先级分组)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainInfoView9",
-    "logicName" : "任务实体编辑视图（主信息嵌入）",
-    "name" : "任务实体编辑视图（主信息嵌入）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ComMobOptionView",
-    "logicName" : "任务实体移动端选项操作视图（完成）",
-    "name" : "任务实体移动端选项操作视图（完成）",
-    "realModelSubType" : "DEMOBOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "StorySubTaskNewView",
-    "logicName" : "任务实体表格视图（批量新建子任务）（需求分解）",
-    "name" : "任务实体表格视图（批量新建子任务）（需求分解）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MoreTabExpView",
-    "logicName" : "任务实体分页导航视图（更多）",
-    "name" : "任务实体分页导航视图（更多）",
-    "realModelSubType" : "DETABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "OpenTaskView",
-    "logicName" : "任务实体选项操作视图（开始任务）",
-    "name" : "任务实体选项操作视图（开始任务）",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainDetail",
-    "logicName" : "主信息详情表单",
-    "modelTag2" : "0",
-    "name" : "主信息详情表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "任务实体移动端多数据视图",
-    "name" : "任务实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "WorkInfoEditView9",
@@ -34901,58 +34375,46 @@
     "realModelSubType" : "DEEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "TaskGroupGridView",
-    "logicName" : "任务实体表格视图(任务分组)",
-    "name" : "任务实体表格视图(任务分组)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GSMobOptionView",
-    "logicName" : "任务实体移动端选项操作视图（工时）",
-    "name" : "任务实体移动端选项操作视图（工时）",
-    "realModelSubType" : "DEMOBOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ZsGridView9WeekNextWeekPlan",
-    "logicName" : "任务实体表格视图（部件视图）（汇报周报计划参与）（展示）",
-    "name" : "任务实体表格视图（部件视图）（汇报周报计划参与）（展示）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TreeExpView",
-    "logicName" : "任务实体树导航视图",
-    "name" : "任务实体树导航视图",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView9_Project",
-    "logicName" : "任务实体表格视图（部件视图）(嵌入项目)",
-    "name" : "任务实体表格视图（部件视图）(嵌入项目)",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "AssMobMDView",
-    "logicName" : "任务实体移动端多数据视图（指派给我）",
-    "name" : "任务实体移动端多数据视图（指派给我）",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyCompleteTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图（我的已完成任务）（部件视图）",
-    "name" : "任务实体移动端多数据视图（我的已完成任务）（部件视图）",
+    "codeName" : "WeeklylyDoneTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图（部件视图）（周报报已完成任务）",
+    "name" : "任务实体移动端多数据视图（部件视图）（周报报已完成任务）",
     "realModelSubType" : "DEMOBMDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MainMyGridView",
-    "logicName" : "任务实体表格视图（我的地盘）",
-    "name" : "任务实体表格视图（我的地盘）",
+    "codeName" : "MobPickupMDView",
+    "logicName" : "任务实体移动端选择多数据视图（部件视图）",
+    "name" : "任务实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainGridView9_Child",
+    "logicName" : "任务实体表格视图（部件视图）（子任务）",
+    "name" : "任务实体表格视图（部件视图）（子任务）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "AssignedtoTaskGroupGridView",
+    "logicName" : "任务实体表格视图(指派分组)",
+    "name" : "任务实体表格视图(指派分组)",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "STARTMobOptionView",
-    "logicName" : "任务实体移动端选项操作视图（开始）",
-    "name" : "任务实体移动端选项操作视图（开始）",
-    "realModelSubType" : "DEMOBOPTVIEW",
+    "codeName" : "ZsGridView9",
+    "logicName" : "任务实体表格视图（部件视图）（汇报）（展示）（计划参与）",
+    "name" : "任务实体表格视图（部件视图）（汇报）（展示）（计划参与）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "StoryTaskGroupGridView",
+    "logicName" : "任务实体表格视图(需求分组)",
+    "name" : "任务实体表格视图(需求分组)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView9_StoryRelated",
+    "logicName" : "任务实体表格视图（部件视图）(需求相关任务)",
+    "name" : "任务实体表格视图（部件视图）(需求相关任务)",
+    "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "DailyCompleteZsGridView",
@@ -34961,28 +34423,29 @@
     "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PlansTomorrowTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图（明日计划任务）（部件视图）",
-    "name" : "任务实体移动端多数据视图（明日计划任务）（部件视图）",
-    "realModelSubType" : "DEMOBMDVIEW9",
+    "codeName" : "MobMDView",
+    "logicName" : "任务实体移动端多数据视图",
+    "name" : "任务实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "task实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "task实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
+    "codeName" : "MobPickupView",
+    "logicName" : "任务实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "任务实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ForwardView",
-    "logicName" : "任务实体选项操作视图（转交任务）",
-    "name" : "任务实体选项操作视图（转交任务）",
-    "realModelSubType" : "DEOPTVIEW",
+    "codeName" : "GridView9_AssignedToMe",
+    "logicName" : "任务实体表格视图（部件视图）（指派给我）",
+    "name" : "任务实体表格视图（部件视图）（指派给我）",
+    "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ChildTaskMoreGridView",
-    "logicName" : "任务实体表格视图(子任务)",
-    "name" : "任务实体表格视图(子任务)",
+    "codeName" : "GridView",
+    "logicName" : "任务实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "任务实体表格视图",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -34993,10 +34456,484 @@
     "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "AssignedtoTaskGroupGridView",
-    "logicName" : "任务实体表格视图(指派分组)",
-    "name" : "任务实体表格视图(指派分组)",
+    "codeName" : "StopMobOptionView",
+    "logicName" : "任务实体移动端选项操作视图（暂停）",
+    "name" : "任务实体移动端选项操作视图（暂停）",
+    "realModelSubType" : "DEMOBOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ZsGridView9WeekNextWeekPlan",
+    "logicName" : "任务实体表格视图（部件视图）（汇报周报计划参与）（展示）",
+    "name" : "任务实体表格视图（部件视图）（汇报周报计划参与）（展示）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CloseMobOptionView",
+    "logicName" : "任务实体移动端选项操作视图（关闭）",
+    "name" : "任务实体移动端选项操作视图（关闭）",
+    "realModelSubType" : "DEMOBOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainGridView",
+    "logicName" : "任务实体表格视图（默认）",
+    "name" : "任务实体表格视图（默认）",
     "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ChildTaskMoreGridView",
+    "logicName" : "任务实体表格视图(子任务)",
+    "name" : "任务实体表格视图(子任务)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MoreTabExpView",
+    "logicName" : "任务实体分页导航视图（更多）",
+    "name" : "任务实体分页导航视图（更多）",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ForwardView",
+    "logicName" : "任务实体选项操作视图（转交任务）",
+    "name" : "任务实体选项操作视图（转交任务）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "STARTMobOptionView",
+    "logicName" : "任务实体移动端选项操作视图（开始）",
+    "name" : "任务实体移动端选项操作视图（开始）",
+    "realModelSubType" : "DEMOBOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "task实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "task实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "waitEditView3",
+    "logicName" : "任务实体编辑视图（分页关系）(未进行)",
+    "name" : "任务实体编辑视图（分页关系）(未进行)",
+    "realModelSubType" : "DEEDITVIEW3",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "WeeklyPlansTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图（部件视图）（周报报计划参与）",
+    "name" : "任务实体移动端多数据视图（部件视图）（周报报计划参与）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ClosePauseCancelView",
+    "logicName" : "任务实体选项操作视图（关闭、暂停、取消）",
+    "name" : "任务实体选项操作视图（关闭、暂停、取消）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CloseTaskView",
+    "logicName" : "任务实体选项操作视图（关闭任务）",
+    "name" : "任务实体选项操作视图（关闭任务）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainMyGridView",
+    "logicName" : "任务实体表格视图（我的地盘）",
+    "name" : "任务实体表格视图（我的地盘）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "OpenTaskView",
+    "logicName" : "任务实体选项操作视图（开始任务）",
+    "name" : "任务实体选项操作视图（开始任务）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainEditView",
+    "logicName" : "任务实体编辑视图（主信息编辑）",
+    "name" : "任务实体编辑视图（主信息编辑）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MyCompleteTaskMobMDView1",
+    "logicName" : "任务实体移动端多数据视图(我的已完成任务)",
+    "name" : "任务实体移动端多数据视图(我的已完成任务)",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TaskTypeGanttView",
+    "logicName" : "任务实体甘特视图（任务类型分类）",
+    "name" : "任务实体甘特视图（任务类型分类）",
+    "realModelSubType" : "DEGANTTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainDetailView9",
+    "logicName" : "任务实体编辑视图（主信息详情嵌入）",
+    "name" : "任务实体编辑视图（主信息详情嵌入）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "任务实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "任务实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditMobEditView",
+    "logicName" : "任务实体移动端编辑视图（编辑）",
+    "name" : "任务实体移动端编辑视图（编辑）",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MonthlyDoneTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图（部件视图）（月报已完成）",
+    "name" : "任务实体移动端多数据视图（部件视图）（月报已完成）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "FavoriteMobMDView9",
+    "logicName" : "（仪表盘）任务实体移动端多数据视图（我的收藏）",
+    "name" : "（仪表盘）任务实体移动端多数据视图（我的收藏）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ChildMoreGridView",
+    "logicName" : "任务实体表格视图(子任务-更多)",
+    "name" : "任务实体表格视图(子任务-更多)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2MobOptionView",
+    "logicName" : "任务实体移动端选项操作视图(继续)",
+    "name" : "任务实体移动端选项操作视图(继续)",
+    "realModelSubType" : "DEMOBOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CancelMobOptionView",
+    "logicName" : "任务实体移动端选项操作视图（取消）",
+    "name" : "任务实体移动端选项操作视图（取消）",
+    "realModelSubType" : "DEMOBOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MyPlansTomorrowTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图(明日计划及计划参与)",
+    "name" : "任务实体移动端多数据视图(明日计划及计划参与)",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView9_Project",
+    "logicName" : "任务实体表格视图（部件视图）(嵌入项目)",
+    "name" : "任务实体表格视图（部件视图）(嵌入项目)",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "maindashboardview_link",
+    "logicName" : "任务实体数据看板视图（主数据_链接）",
+    "name" : "任务实体数据看板视图（主数据_链接）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MonthlyMyPlansTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图（我的计划参与任务）（月报）",
+    "name" : "任务实体移动端多数据视图（我的计划参与任务）（月报）",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "StoryNewEditView",
+    "logicName" : "任务实体编辑视图（需求分解）",
+    "name" : "任务实体编辑视图（需求分解）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "reportMPickupView",
+    "logicName" : "任务实体数据多项选择视图（汇报）",
+    "name" : "任务实体数据多项选择视图（汇报）",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TypeTaskGroupGridView",
+    "logicName" : "任务实体表格视图(类型分组)",
+    "name" : "任务实体表格视图(类型分组)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GSMobOptionView",
+    "logicName" : "任务实体移动端选项操作视图（工时）",
+    "name" : "任务实体移动端选项操作视图（工时）",
+    "realModelSubType" : "DEMOBOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "任务实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "任务实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "WorkHoursView",
+    "logicName" : "任务实体选项操作视图（工时）",
+    "name" : "任务实体选项操作视图（工时）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DailyPlansTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图（部件视图）（日报计划参与）",
+    "name" : "任务实体移动端多数据视图（部件视图）（日报计划参与）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ActivationTaskView",
+    "logicName" : "任务实体选项操作视图（激活任务）",
+    "name" : "任务实体选项操作视图（激活任务）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MyCompleteTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图（我的已完成任务）（部件视图）",
+    "name" : "任务实体移动端多数据视图（我的已完成任务）（部件视图）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "reportPickupGridView",
+    "logicName" : "任务实体选择表格视图（部件视图）（汇报）",
+    "name" : "任务实体选择表格视图（部件视图）（汇报）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "doingEditView3",
+    "logicName" : "任务实体编辑视图（分页关系）(进行中)",
+    "name" : "任务实体编辑视图（分页关系）(进行中)",
+    "realModelSubType" : "DEEDITVIEW3",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TaskGroupGridView",
+    "logicName" : "任务实体表格视图(任务分组)",
+    "name" : "任务实体表格视图(任务分组)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "AssMobMDView9",
+    "logicName" : "（仪表盘）任务实体移动端多数据视图（指派给我）",
+    "name" : "（仪表盘）任务实体移动端多数据视图（指派给我）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "任务实体编辑视图",
+    "name" : "任务实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "AssMobMDView",
+    "logicName" : "任务实体移动端多数据视图（指派给我）",
+    "name" : "任务实体移动端多数据视图（指派给我）",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainDashboardView",
+    "logicName" : "任务实体数据看板视图（主数据）",
+    "modelTag" : "EDITVIEW",
+    "name" : "任务实体数据看板视图（主数据）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MyFavoriteGridView",
+    "logicName" : "任务实体表格视图（我的收藏）",
+    "name" : "任务实体表格视图（我的收藏）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeEditView",
+    "logicName" : "任务实体编辑视图(树导航显示)",
+    "name" : "任务实体编辑视图(树导航显示)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "FavoriteMobMDView",
+    "logicName" : "任务实体移动端多数据视图（我的收藏）",
+    "name" : "任务实体移动端多数据视图（我的收藏）",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "KanbanView",
+    "logicName" : "任务实体看板视图",
+    "name" : "任务实体看板视图",
+    "realModelSubType" : "DEKANBANVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "FavoriteMoreMobMDView",
+    "logicName" : "任务实体移动端多数据视图（我的收藏）（更多）",
+    "name" : "任务实体移动端多数据视图（我的收藏）（更多）",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MonthlyMyCompleteTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图（我的已完成任务）（月报）",
+    "name" : "任务实体移动端多数据视图（我的已完成任务）（月报）",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "task实体选择表格视图（部件视图）",
+    "name" : "task实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PivotTableView",
+    "logicName" : "任务实体表格视图（透视表）",
+    "name" : "任务实体表格视图（透视表）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "任务实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "任务实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ActiveMobTask",
+    "logicName" : "任务实体移动端选项操作视图(激活)",
+    "name" : "任务实体移动端选项操作视图(激活)",
+    "realModelSubType" : "DEMOBOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "NewMobEditView",
+    "logicName" : "任务实体移动端编辑视图(新建)",
+    "name" : "任务实体移动端编辑视图(新建)",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MonthlyPlansTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图（部件视图）（月报计划参与）",
+    "name" : "任务实体移动端多数据视图（部件视图）（月报计划参与）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeExpView",
+    "logicName" : "任务实体树导航视图",
+    "name" : "任务实体树导航视图",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MyCompleteTaskMobMDViewWeekly",
+    "logicName" : "任务实体移动端多数据视图（我的已完成任务）（周报）",
+    "name" : "任务实体移动端多数据视图（我的已完成任务）（周报）",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TodoEditView",
+    "logicName" : "任务实体编辑视图（待办转任务）",
+    "name" : "任务实体编辑视图（待办转任务）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DoneTaskView",
+    "logicName" : "任务实体选项操作视图（完成任务）",
+    "name" : "任务实体选项操作视图（完成任务）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PlansTomorrowTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图（明日计划任务）（部件视图）",
+    "name" : "任务实体移动端多数据视图（明日计划任务）（部件视图）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MyCompleteTaskMobMDViewNextPlanWeekly",
+    "logicName" : "任务实体移动端多数据视图(下周计划参与任务）（周报）",
+    "name" : "任务实体移动端多数据视图(下周计划参与任务）（周报）",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainGridView_ByModule",
+    "logicName" : "任务实体表格视图（通过模块查询）",
+    "name" : "任务实体表格视图（通过模块查询）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "AssignTaskView",
+    "logicName" : "任务实体选项操作视图（指派任务）",
+    "name" : "任务实体选项操作视图（指派任务）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MonthlyCompleteZsGridView",
+    "logicName" : "任务实体表格视图（部件视图）（汇报）（展示）（月报完成）",
+    "name" : "任务实体表格视图（部件视图）（汇报）（展示）（月报完成）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "WHEditView",
+    "logicName" : "任务实体编辑视图（工时）",
+    "name" : "任务实体编辑视图（工时）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ComMobOptionView",
+    "logicName" : "任务实体移动端选项操作视图（完成）",
+    "name" : "任务实体移动端选项操作视图（完成）",
+    "realModelSubType" : "DEMOBOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CancelTaskView",
+    "logicName" : "任务实体选项操作视图（取消任务）",
+    "name" : "任务实体选项操作视图（取消任务）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ZsGridView9Week",
+    "logicName" : "任务实体表格视图（部件视图）（汇报周报）（展示）",
+    "name" : "任务实体表格视图（部件视图）（汇报周报）（展示）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ChartView9",
+    "logicName" : "任务实体图表视图（部件视图）",
+    "name" : "任务实体图表视图（部件视图）",
+    "realModelSubType" : "DECHARTVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainInfoView9",
+    "logicName" : "任务实体编辑视图（主信息嵌入）",
+    "name" : "任务实体编辑视图（主信息嵌入）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "StorySubTaskNewView",
+    "logicName" : "任务实体表格视图（批量新建子任务）（需求分解）",
+    "name" : "任务实体表格视图（批量新建子任务）（需求分解）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CalendarEditView",
+    "logicName" : "任务实体编辑视图(日历导航显示)",
+    "name" : "任务实体编辑视图(日历导航显示)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "task实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "task实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DailyDoneTaskMobMDView",
+    "logicName" : "任务实体移动端多数据视图（部件视图）（日报已完成）",
+    "name" : "任务实体移动端多数据视图（部件视图）（日报已完成）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RestartTaskView",
+    "logicName" : "任务实体选项操作视图（继续任务）",
+    "name" : "任务实体选项操作视图（继续任务）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "AssMoreMobMDView",
+    "logicName" : "任务实体移动端多数据视图（指派给我）（更多）",
+    "name" : "任务实体移动端多数据视图（指派给我）（更多）",
+    "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "ClosePauseCancelForm",
@@ -35006,60 +34943,38 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "任务实体移动端选择多数据视图（部件视图）",
-    "name" : "任务实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TreeInfo",
-    "logicName" : "树导航显示",
+    "codeName" : "TaskEstimate",
+    "logicName" : "工时",
     "modelTag2" : "0",
-    "name" : "树导航显示",
+    "name" : "工时",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "PauseTaskView",
-    "logicName" : "任务实体选项操作视图（暂停任务）",
-    "name" : "任务实体选项操作视图（暂停任务）",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "task实体编辑视图（左右关系）",
-    "name" : "task实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyPlansTomorrowTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图(明日计划及计划参与)",
-    "name" : "任务实体移动端多数据视图(明日计划及计划参与)",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2MobOptionView",
-    "logicName" : "任务实体移动端选项操作视图(继续)",
-    "name" : "任务实体移动端选项操作视图(继续)",
-    "realModelSubType" : "DEMOBOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "StoryTaskGroupGridView",
-    "logicName" : "任务实体表格视图(需求分组)",
-    "name" : "任务实体表格视图(需求分组)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CompleteForm",
-    "logicName" : "完成表单",
+    "codeName" : "MainEdit",
+    "logicName" : "主信息编辑",
     "modelTag2" : "0",
-    "name" : "完成表单",
+    "name" : "主信息编辑",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "MobMainEdit",
-    "logicName" : "主信息编辑（移动端）",
+    "codeName" : "PendingSubmission",
+    "logicName" : "待办转任务",
+    "modelTag2" : "0",
+    "name" : "待办转任务",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MainInfo",
+    "logicName" : "主信息表单",
+    "modelTag2" : "0",
+    "name" : "主信息表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "AssignFormMob",
+    "logicName" : "任务指派（移动端）",
     "modelTag2" : "1",
-    "name" : "主信息编辑（移动端）",
+    "name" : "任务指派（移动端）",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
@@ -35070,22 +34985,122 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "WeeklylyDoneTaskMobMDView",
-    "logicName" : "任务实体移动端多数据视图（部件视图）（周报报已完成任务）",
-    "name" : "任务实体移动端多数据视图（部件视图）（周报报已完成任务）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ChildMoreGridView",
-    "logicName" : "任务实体表格视图(子任务-更多)",
-    "name" : "任务实体表格视图(子任务-更多)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainInfo",
-    "logicName" : "主信息表单",
+    "codeName" : "TreeInfo",
+    "logicName" : "树导航显示",
     "modelTag2" : "0",
-    "name" : "主信息表单",
+    "name" : "树导航显示",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "AssignForm",
+    "logicName" : "指派表单",
+    "modelTag2" : "0",
+    "name" : "指派表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobNewFrom",
+    "logicName" : "移动端新建表单",
+    "modelTag2" : "1",
+    "name" : "移动端新建表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobStartForm",
+    "logicName" : "开始表单（移动端）",
+    "modelTag2" : "1",
+    "name" : "开始表单（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobActiviteForm",
+    "logicName" : "激活任务（移动端）",
+    "modelTag2" : "1",
+    "name" : "激活任务（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "ClosePauseCancelFormMob",
+    "logicName" : "关闭、暂停、取消表单（移动端）",
+    "modelTag2" : "1",
+    "name" : "关闭、暂停、取消表单（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "CompleteForm",
+    "logicName" : "完成表单",
+    "modelTag2" : "0",
+    "name" : "完成表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MainDetail",
+    "logicName" : "主信息详情表单",
+    "modelTag2" : "0",
+    "name" : "主信息详情表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "CalendarMain",
+    "logicName" : "日历导航显示",
+    "modelTag2" : "0",
+    "name" : "日历导航显示",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "EstimateMob",
+    "logicName" : "工时（移动端）",
+    "modelTag2" : "1",
+    "name" : "工时（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "CompleteFormMob",
+    "logicName" : "完成任务（移动端）",
+    "modelTag2" : "1",
+    "name" : "完成任务（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Activation",
+    "logicName" : "激活任务",
+    "modelTag2" : "0",
+    "name" : "激活任务",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "StartForm",
+    "logicName" : "开始表单",
+    "modelTag2" : "0",
+    "name" : "开始表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMainEdit",
+    "logicName" : "主信息编辑（移动端）",
+    "modelTag2" : "1",
+    "name" : "主信息编辑（移动端）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Forward",
+    "logicName" : "任务转交",
+    "modelTag2" : "0",
+    "name" : "任务转交",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   } ],
@@ -35146,10 +35161,6 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"
     },
     "name" : "DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "ROOT",
@@ -35266,10 +35277,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
     },
     "name" : "DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "TASK",
@@ -35572,7 +35579,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

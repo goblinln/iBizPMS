@@ -35,24 +35,98 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/checkkey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "PSSYSSFPUBID",
+        "codeName" : "PSSysSFPubId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "PSSYSSFPUBID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -60,30 +134,120 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "PSSYSSFPUBID",
+        "codeName" : "PSSysSFPubId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "PSSYSSFPUBID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/save",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchBuild",
     "methodType" : "FETCH",
     "name" : "FetchBuild",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchbuild",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -303,29 +467,649 @@
     "stdDataType" : 25,
     "stringLength" : 100
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "PSSysSFPubDTO",
+    "name" : "PSSysSFPubDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "BaseCLSPKGCodeName",
+      "logicName" : "基类代码包名",
+      "name" : "BaseCLSPKGCodeName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BASECLSPKGCODENAME",
+        "codeName" : "BaseCLSPKGCodeName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CodeName",
+      "logicName" : "代码名称",
+      "name" : "CodeName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CODENAME",
+        "codeName" : "CodeName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ContentType",
+      "logicName" : "发布内容类型",
+      "name" : "ContentType",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CONTENTTYPE",
+        "codeName" : "ContentType"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreateDate",
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "CreateMan",
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "DefaultPub",
+      "logicName" : "默认后台服务",
+      "name" : "DefaultPub",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEFAULTPUB",
+        "codeName" : "DefaultPub"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "DocPSSFStyleId",
+      "logicName" : "文档模板样式",
+      "name" : "DocPSSFStyleId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DOCPSSFSTYLEID",
+        "codeName" : "DocPSSFStyleId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "DocPSSFStyleName",
+      "logicName" : "文档模板样式",
+      "name" : "DocPSSFStyleName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DOCPSSFSTYLENAME",
+        "codeName" : "DocPSSFStyleName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Memo",
+      "logicName" : "备注",
+      "name" : "Memo",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MEMO",
+        "codeName" : "Memo"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PKGCodeName",
+      "logicName" : "代码包名",
+      "name" : "PKGCodeName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PKGCODENAME",
+        "codeName" : "PKGCodeName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PPSSysSFPubId",
+      "logicName" : "父后台服务体系",
+      "name" : "PPSSysSFPubId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PPSSYSSFPUBID",
+        "codeName" : "PPSSysSFPubId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PPSSysSFPubName",
+      "logicName" : "父后台服务体系",
+      "name" : "PPSSysSFPubName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PPSSYSSFPUBNAME",
+        "codeName" : "PPSSysSFPubName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PSSFStyleId",
+      "logicName" : "服务框架",
+      "name" : "PSSFStyleId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PSSFSTYLEID",
+        "codeName" : "PSSFStyleId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PSSFStyleParamId",
+      "logicName" : "服务框架参数",
+      "name" : "PSSFStyleParamId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PSSFSTYLEPARAMID",
+        "codeName" : "PSSFStyleParamId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PSSFStyleParamName",
+      "logicName" : "服务框架参数",
+      "name" : "PSSFStyleParamName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PSSFSTYLEPARAMNAME",
+        "codeName" : "PSSFStyleParamName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PSSFStyleVerId",
+      "logicName" : "服务框架扩展",
+      "name" : "PSSFStyleVerId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PSSFSTYLEVERID",
+        "codeName" : "PSSFStyleVerId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PSSysSFPubId",
+      "logicName" : "后台服务架构标识",
+      "name" : "PSSysSFPubId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PSSYSSFPUBID",
+        "codeName" : "PSSysSFPubId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "PSSysSFPubName",
+      "logicName" : "后台服务架构名称",
+      "name" : "PSSysSFPubName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PSSYSSFPUBNAME",
+        "codeName" : "PSSysSFPubName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PSSystemId",
+      "logicName" : "系统",
+      "name" : "PSSystemId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PSSYSTEMID",
+        "codeName" : "PSSystemId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PSSystemName",
+      "logicName" : "系统",
+      "name" : "PSSystemName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PSSYSTEMNAME",
+        "codeName" : "PSSystemName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PubFolder",
+      "logicName" : "服务目录",
+      "name" : "PubFolder",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PUBFOLDER",
+        "codeName" : "PubFolder"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PubTag",
+      "logicName" : "发布标记",
+      "name" : "PubTag",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PUBTAG",
+        "codeName" : "PubTag"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PubTag2",
+      "logicName" : "发布标记2",
+      "name" : "PubTag2",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PUBTAG2",
+        "codeName" : "PubTag2"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PubTag3",
+      "logicName" : "发布标记3",
+      "name" : "PubTag3",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PUBTAG3",
+        "codeName" : "PubTag3"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PubTag4",
+      "logicName" : "发布标记4",
+      "name" : "PubTag4",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PUBTAG4",
+        "codeName" : "PubTag4"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "RemoveFlag",
+      "logicName" : "删除模式",
+      "name" : "RemoveFlag",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "REMOVEFLAG",
+        "codeName" : "RemoveFlag"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "StyleParams",
+      "logicName" : "服务框架参数",
+      "name" : "StyleParams",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "STYLEPARAMS",
+        "codeName" : "StyleParams"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "SubSysPkgFlag",
+      "logicName" : "引用系统组件",
+      "name" : "SubSysPkgFlag",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SUBSYSPKGFLAG",
+        "codeName" : "SubSysPkgFlag"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateDate",
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UserCat",
+      "logicName" : "用户分类",
+      "name" : "UserCat",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "USERCAT",
+        "codeName" : "UserCat"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UserTag",
+      "logicName" : "用户标记",
+      "name" : "UserTag",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "USERTAG",
+        "codeName" : "UserTag"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UserTag2",
+      "logicName" : "用户标记2",
+      "name" : "UserTag2",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "USERTAG2",
+        "codeName" : "UserTag2"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UserTag3",
+      "logicName" : "用户标记3",
+      "name" : "UserTag3",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "USERTAG3",
+        "codeName" : "UserTag3"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UserTag4",
+      "logicName" : "用户标记4",
+      "name" : "UserTag4",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "USERTAG4",
+        "codeName" : "UserTag4"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "VerStr",
+      "logicName" : "版本号",
+      "name" : "VerStr",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "VERSTR",
+        "codeName" : "VerStr"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "PSSysSFPubFilterDTO",
+    "name" : "PSSysSFPubFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_CONTENTTYPE_EQ",
+      "logicName" : "发布内容类型",
+      "name" : "N_CONTENTTYPE_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "CONTENTTYPE",
+        "codeName" : "ContentType"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PPSSYSSFPUBID_EQ",
+      "logicName" : "父后台服务体系",
+      "name" : "N_PPSSYSSFPUBID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PPSSYSSFPUBID",
+        "codeName" : "PPSSysSFPubId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PPSSYSSFPUBNAME_EQ",
+      "logicName" : "父后台服务体系",
+      "name" : "N_PPSSYSSFPUBNAME_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PPSSYSSFPUBNAME",
+        "codeName" : "PPSSysSFPubName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PPSSYSSFPUBNAME_LIKE",
+      "logicName" : "父后台服务体系",
+      "name" : "N_PPSSYSSFPUBNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PPSSYSSFPUBNAME",
+        "codeName" : "PPSSysSFPubName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PSSYSSFPUBID_EQ",
+      "logicName" : "后台服务架构标识",
+      "name" : "N_PSSYSSFPUBID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PSSYSSFPUBID",
+        "codeName" : "PSSysSFPubId"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PSSYSSFPUBNAME_LIKE",
+      "logicName" : "后台服务架构名称",
+      "name" : "N_PSSYSSFPUBNAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PSSYSSFPUBNAME",
+        "codeName" : "PSSysSFPubName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_REMOVEFLAG_EQ",
+      "logicName" : "删除模式",
+      "name" : "N_REMOVEFLAG_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "REMOVEFLAG",
+        "codeName" : "RemoveFlag"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_USERCAT_EQ",
+      "logicName" : "用户分类",
+      "name" : "N_USERCAT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "USERCAT",
+        "codeName" : "UserCat"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/checkkey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "PSSYSSFPUBID",
+        "codeName" : "PSSysSFPubId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "PSSYSSFPUBID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -333,29 +1117,119 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "PSSYSSFPUBID",
+        "codeName" : "PSSysSFPubId"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "PSSYSSFPUBID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/save",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "codeName" : "FetchBuild",
     "methodType" : "FETCH",
     "name" : "FetchBuild",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchbuild",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "PSSysSFPubDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -396,6 +1270,17 @@
     "codeName" : "Select",
     "methodType" : "SELECT",
     "name" : "Select",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "type" : "UNKNOWN"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "UNKNOWN"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "URIPARAM",
+    "requestPath" : "/select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -417,7 +1302,15 @@
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PSSysSFPub.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "PSSYSSFPUBID",
+    "codeName" : "PSSysSFPubId"
+  },
   "logicName" : "后台服务架构",
+  "getMajorPSAppDEField" : {
+    "name" : "PSSYSSFPUBNAME",
+    "codeName" : "PSSysSFPubName"
+  },
   "name" : "PSSYSSFPUB",
   "getPSDEName" : "PSSYSSFPUB",
   "getQuickSearchPSAppDEFields" : [ {

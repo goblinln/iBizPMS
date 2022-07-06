@@ -2,7 +2,7 @@
   "codeName" : "CompanyDynamicStatic",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats/PSSEARCHFORMS/CompanyDynamicStatic.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "公司动态统计专用",
   "getPSAppDataEntity" : {
     "modelref" : true,

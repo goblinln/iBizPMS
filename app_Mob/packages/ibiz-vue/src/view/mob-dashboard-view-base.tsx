@@ -1,4 +1,4 @@
-import { ModelTool, MobPortalViewEngine } from 'ibiz-core';
+import { ModelTool, MobPortalViewEngine, MobDataViewInterface } from 'ibiz-core';
 import { GlobalService } from 'ibiz-service';
 import { MainViewBase } from './main-view-base';
 import { IPSAppDEDashboardView, IPSDEDashboard } from '@ibiz/dynamic-model-api';
@@ -10,7 +10,7 @@ import { IPSAppDEDashboardView, IPSDEDashboard } from '@ibiz/dynamic-model-api';
  * @class MobDashboardViewBase
  * @extends {MainViewBase}
  */
-export class MobDashboardViewBase extends MainViewBase {
+export class MobDashboardViewBase extends MainViewBase implements MobDataViewInterface {
 
     /**
      * 数据视图视图实例

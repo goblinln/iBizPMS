@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -205,18 +205,53 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "po",
+    "getPSAppDEField" : {
+      "name" : "PO",
+      "codeName" : "PO"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "plan",
+    "getPSAppDEField" : {
+      "name" : "PLAN",
+      "codeName" : "Plan"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "begin",
+    "getPSAppDEField" : {
+      "name" : "BEGIN",
+      "codeName" : "Begin"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "end",
+    "getPSAppDEField" : {
+      "name" : "END",
+      "codeName" : "End"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "waitstorycnt",
+    "getPSAppDEField" : {
+      "name" : "WAITSTORYCNT",
+      "codeName" : "WaitStoryCnt"
+    }
+  }, {
     "dataType" : 9,
     "name" : "activestorycnt",
     "getPSAppDEField" : {
       "name" : "ACTIVESTORYCNT",
       "codeName" : "ActiveStoryCnt"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "closedstorycnt",
-    "getPSAppDEField" : {
-      "name" : "CLOSEDSTORYCNT",
-      "codeName" : "ClosedStoryCnt"
     }
   }, {
     "dataType" : 9,
@@ -227,17 +262,17 @@
     }
   }, {
     "dataType" : 9,
+    "name" : "closedstorycnt",
+    "getPSAppDEField" : {
+      "name" : "CLOSEDSTORYCNT",
+      "codeName" : "ClosedStoryCnt"
+    }
+  }, {
+    "dataType" : 9,
     "name" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
     }
   }, {
     "dataType" : 1,
@@ -256,45 +291,10 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "begin",
-    "getPSAppDEField" : {
-      "name" : "BEGIN",
-      "codeName" : "Begin"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "plan",
-    "getPSAppDEField" : {
-      "name" : "PLAN",
-      "codeName" : "Plan"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "waitstorycnt",
-    "getPSAppDEField" : {
-      "name" : "WAITSTORYCNT",
-      "codeName" : "WaitStoryCnt"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "name",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "po",
-    "getPSAppDEField" : {
-      "name" : "PO",
-      "codeName" : "PO"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "end",
-    "getPSAppDEField" : {
-      "name" : "END",
-      "codeName" : "End"
     }
   } ],
   "getPSDEGridEditItems" : [ {

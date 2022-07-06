@@ -42,7 +42,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "看板信息表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -691,7 +691,7 @@
                 "id" : "fetch"
               },
               "groupMode" : "NONE",
-              "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+              "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
               "logicName" : "主表格（项目）",
               "minorSortDir" : "DESC",
               "getMinorSortPSAppDEField" : {
@@ -842,32 +842,11 @@
                 "enableSort" : true
               } ],
               "getPSDEGridDataItems" : [ {
-                "dataType" : 1,
-                "name" : "id",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                }
-              }, {
-                "dataType" : 25,
-                "name" : "status",
-                "getPSAppDEField" : {
-                  "name" : "STATUS",
-                  "codeName" : "Status"
-                }
-              }, {
                 "dataType" : 25,
                 "name" : "name",
                 "getPSAppDEField" : {
                   "name" : "NAME",
                   "codeName" : "Name"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "line",
-                "getPSAppDEField" : {
-                  "name" : "LINE",
-                  "codeName" : "Line"
                 }
               }, {
                 "dataType" : 25,
@@ -878,20 +857,31 @@
                 }
               }, {
                 "dataType" : 25,
+                "name" : "status",
+                "getPSAppDEField" : {
+                  "name" : "STATUS",
+                  "codeName" : "Status"
+                }
+              }, {
+                "dataType" : 25,
                 "name" : "type",
                 "getPSAppDEField" : {
                   "name" : "TYPE",
                   "codeName" : "Type"
                 }
               }, {
-                "dataType" : 25,
-                "name" : "srfmstag"
-              }, {
-                "dataType" : 25,
-                "name" : "srfmajortext",
+                "dataType" : 1,
+                "name" : "id",
                 "getPSAppDEField" : {
-                  "name" : "NAME",
-                  "codeName" : "Name"
+                  "name" : "ID",
+                  "codeName" : "Id"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "srfkey",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
                 }
               }, {
                 "dataType" : 1,
@@ -903,11 +893,21 @@
                 "dataAccessAction" : true
               }, {
                 "dataType" : 1,
-                "name" : "srfkey",
+                "name" : "line",
                 "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
+                  "name" : "LINE",
+                  "codeName" : "Line"
                 }
+              }, {
+                "dataType" : 25,
+                "name" : "srfmajortext",
+                "getPSAppDEField" : {
+                  "name" : "NAME",
+                  "codeName" : "Name"
+                }
+              }, {
+                "dataType" : 25,
+                "name" : "srfmstag"
               } ],
               "getPSDEGridEditItems" : [ {
                 "caption" : "编号",
@@ -1141,7 +1141,7 @@
                 "id" : "fetch"
               },
               "groupMode" : "NONE",
-              "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+              "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
               "logicName" : "主表格（项目）",
               "minorSortDir" : "DESC",
               "getMinorSortPSAppDEField" : {
@@ -1275,13 +1275,6 @@
                 "enableSort" : false
               } ],
               "getPSDEGridDataItems" : [ {
-                "dataType" : 1,
-                "name" : "product",
-                "getPSAppDEField" : {
-                  "name" : "PRODUCT",
-                  "codeName" : "Product"
-                }
-              }, {
                 "dataType" : 25,
                 "name" : "title",
                 "getPSAppDEField" : {
@@ -1290,27 +1283,10 @@
                 }
               }, {
                 "dataType" : 1,
-                "name" : "parent",
+                "name" : "srfkey",
                 "getPSAppDEField" : {
-                  "name" : "PARENT",
-                  "codeName" : "Parent"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "branch",
-                "getPSAppDEField" : {
-                  "name" : "BRANCH",
-                  "codeName" : "Branch"
-                }
-              }, {
-                "dataType" : 25,
-                "name" : "srfmstag"
-              }, {
-                "dataType" : 25,
-                "name" : "srfmajortext",
-                "getPSAppDEField" : {
-                  "name" : "TITLE",
-                  "codeName" : "Title"
+                  "name" : "ID",
+                  "codeName" : "Id"
                 }
               }, {
                 "dataType" : 1,
@@ -1322,11 +1298,35 @@
                 "dataAccessAction" : true
               }, {
                 "dataType" : 1,
-                "name" : "srfkey",
+                "name" : "branch",
                 "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
+                  "name" : "BRANCH",
+                  "codeName" : "Branch"
                 }
+              }, {
+                "dataType" : 1,
+                "name" : "parent",
+                "getPSAppDEField" : {
+                  "name" : "PARENT",
+                  "codeName" : "Parent"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "product",
+                "getPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                }
+              }, {
+                "dataType" : 25,
+                "name" : "srfmajortext",
+                "getPSAppDEField" : {
+                  "name" : "TITLE",
+                  "codeName" : "Title"
+                }
+              }, {
+                "dataType" : 25,
+                "name" : "srfmstag"
               } ],
               "getPSDEGridEditItems" : [ {
                 "caption" : "编号",

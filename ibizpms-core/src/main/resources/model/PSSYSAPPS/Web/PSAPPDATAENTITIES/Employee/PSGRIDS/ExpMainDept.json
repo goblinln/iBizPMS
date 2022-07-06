@@ -85,27 +85,6 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 25,
-    "name" : "orgid",
-    "getPSAppDEField" : {
-      "name" : "ORGID",
-      "codeName" : "OrgId"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "nickname",
-    "getPSAppDEField" : {
-      "name" : "NICKNAME",
-      "codeName" : "NickName"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "mdeptid",
-    "getPSAppDEField" : {
-      "name" : "MDEPTID",
-      "codeName" : "MdeptId"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "userid",
     "getPSAppDEField" : {
       "name" : "USERID",
@@ -120,10 +99,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "nickname",
     "getPSAppDEField" : {
-      "name" : "PERSONNAME",
-      "codeName" : "PersonName"
+      "name" : "NICKNAME",
+      "codeName" : "NickName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
     }
   }, {
     "dataType" : 25,
@@ -135,10 +121,24 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "srfkey",
+    "name" : "mdeptid",
     "getPSAppDEField" : {
-      "name" : "USERID",
-      "codeName" : "UserId"
+      "name" : "MDEPTID",
+      "codeName" : "MdeptId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "orgid",
+    "getPSAppDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "PERSONNAME",
+      "codeName" : "PersonName"
     }
   } ],
   "getPSDEGridEditItems" : [ {

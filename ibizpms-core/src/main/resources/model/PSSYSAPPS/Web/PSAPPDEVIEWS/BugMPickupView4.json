@@ -65,7 +65,7 @@
           "id" : "fetch"
         },
         "groupMode" : "NONE",
-        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+        "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "LOAD", "BEFORELOAD" ],
         "logicName" : "数据选择表格",
         "minorSortDir" : "DESC",
         "getMinorSortPSAppDEField" : {
@@ -294,24 +294,38 @@
         } ],
         "getPSDEGridDataItems" : [ {
           "dataType" : 1,
-          "name" : "totask",
+          "name" : "id",
           "getPSAppDEField" : {
-            "name" : "TOTASK",
-            "codeName" : "ToTask"
+            "name" : "ID",
+            "codeName" : "Id"
           }
         }, {
-          "dataType" : 1,
-          "name" : "module",
+          "dataType" : 9,
+          "name" : "pri",
           "getPSAppDEField" : {
-            "name" : "MODULE",
-            "codeName" : "Module"
+            "name" : "PRI",
+            "codeName" : "Pri"
           }
         }, {
-          "dataType" : 1,
-          "name" : "bugsn",
+          "dataType" : 25,
+          "name" : "title",
           "getPSAppDEField" : {
-            "name" : "BUGSN",
-            "codeName" : "Bugsn"
+            "name" : "TITLE",
+            "codeName" : "Title"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "openedby",
+          "getPSAppDEField" : {
+            "name" : "OPENEDBY",
+            "codeName" : "OpenedBy"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "resolvedby",
+          "getPSAppDEField" : {
+            "name" : "RESOLVEDBY",
+            "codeName" : "ResolvedBy"
           }
         }, {
           "dataType" : 25,
@@ -322,34 +336,10 @@
           }
         }, {
           "dataType" : 1,
-          "name" : "task",
+          "name" : "bugsn",
           "getPSAppDEField" : {
-            "name" : "TASK",
-            "codeName" : "Task"
-          }
-        }, {
-          "dataType" : 1,
-          "name" : "testtask",
-          "getPSAppDEField" : {
-            "name" : "TESTTASK",
-            "codeName" : "Testtask"
-          }
-        }, {
-          "dataType" : 1,
-          "name" : "tostory",
-          "getPSAppDEField" : {
-            "name" : "TOSTORY",
-            "codeName" : "ToStory"
-          }
-        }, {
-          "dataType" : 25,
-          "name" : "srfmstag"
-        }, {
-          "dataType" : 25,
-          "name" : "srfmajortext",
-          "getPSAppDEField" : {
-            "name" : "TITLE",
-            "codeName" : "Title"
+            "name" : "BUGSN",
+            "codeName" : "Bugsn"
           }
         }, {
           "dataType" : 1,
@@ -368,80 +358,10 @@
           "dataAccessAction" : true
         }, {
           "dataType" : 1,
-          "name" : "duplicatebug",
+          "name" : "tostory",
           "getPSAppDEField" : {
-            "name" : "DUPLICATEBUG",
-            "codeName" : "DuplicateBug"
-          }
-        }, {
-          "dataType" : 25,
-          "name" : "openedby",
-          "getPSAppDEField" : {
-            "name" : "OPENEDBY",
-            "codeName" : "OpenedBy"
-          }
-        }, {
-          "dataType" : 1,
-          "name" : "id",
-          "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
-          }
-        }, {
-          "dataType" : 1,
-          "name" : "product",
-          "getPSAppDEField" : {
-            "name" : "PRODUCT",
-            "codeName" : "Product"
-          }
-        }, {
-          "dataType" : 1,
-          "name" : "project",
-          "getPSAppDEField" : {
-            "name" : "PROJECT",
-            "codeName" : "Project"
-          }
-        }, {
-          "dataType" : 1,
-          "name" : "story",
-          "getPSAppDEField" : {
-            "name" : "STORY",
-            "codeName" : "Story"
-          }
-        }, {
-          "dataType" : 9,
-          "name" : "pri",
-          "getPSAppDEField" : {
-            "name" : "PRI",
-            "codeName" : "Pri"
-          }
-        }, {
-          "dataType" : 25,
-          "name" : "title",
-          "getPSAppDEField" : {
-            "name" : "TITLE",
-            "codeName" : "Title"
-          }
-        }, {
-          "dataType" : 1,
-          "name" : "plan",
-          "getPSAppDEField" : {
-            "name" : "PLAN",
-            "codeName" : "Plan"
-          }
-        }, {
-          "dataType" : 1,
-          "name" : "repo",
-          "getPSAppDEField" : {
-            "name" : "REPO",
-            "codeName" : "Repo"
-          }
-        }, {
-          "dataType" : 25,
-          "name" : "resolvedby",
-          "getPSAppDEField" : {
-            "name" : "RESOLVEDBY",
-            "codeName" : "ResolvedBy"
+            "name" : "TOSTORY",
+            "codeName" : "ToStory"
           }
         }, {
           "dataType" : 1,
@@ -452,10 +372,59 @@
           }
         }, {
           "dataType" : 1,
+          "name" : "product",
+          "getPSAppDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "totask",
+          "getPSAppDEField" : {
+            "name" : "TOTASK",
+            "codeName" : "ToTask"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "plan",
+          "getPSAppDEField" : {
+            "name" : "PLAN",
+            "codeName" : "Plan"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "module",
+          "getPSAppDEField" : {
+            "name" : "MODULE",
+            "codeName" : "Module"
+          }
+        }, {
+          "dataType" : 1,
           "name" : "branch",
           "getPSAppDEField" : {
             "name" : "BRANCH",
             "codeName" : "Branch"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "duplicatebug",
+          "getPSAppDEField" : {
+            "name" : "DUPLICATEBUG",
+            "codeName" : "DuplicateBug"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "repo",
+          "getPSAppDEField" : {
+            "name" : "REPO",
+            "codeName" : "Repo"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "story",
+          "getPSAppDEField" : {
+            "name" : "STORY",
+            "codeName" : "Story"
           }
         }, {
           "dataType" : 1,
@@ -464,6 +433,37 @@
             "name" : "CASE",
             "codeName" : "IBizCase"
           }
+        }, {
+          "dataType" : 1,
+          "name" : "project",
+          "getPSAppDEField" : {
+            "name" : "PROJECT",
+            "codeName" : "Project"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "task",
+          "getPSAppDEField" : {
+            "name" : "TASK",
+            "codeName" : "Task"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "testtask",
+          "getPSAppDEField" : {
+            "name" : "TESTTASK",
+            "codeName" : "Testtask"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfmajortext",
+          "getPSAppDEField" : {
+            "name" : "TITLE",
+            "codeName" : "Title"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfmstag"
         } ],
         "getPSDEGridEditItems" : [ {
           "caption" : "Bug编号",
@@ -634,7 +634,7 @@
         "rSMode" : 2
       } ] ]
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,

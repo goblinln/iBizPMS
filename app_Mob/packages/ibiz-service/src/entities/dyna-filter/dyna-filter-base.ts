@@ -77,7 +77,6 @@ export abstract class DynaFilterBase extends EntityBase implements IDynaFilter {
      * 建立人
      */
     createman?: any;
-
     /**
      * 重置实体数据
      *

@@ -1,9 +1,9 @@
-import { ViewTool, Util, ModelTool } from 'ibiz-core';
+import { ViewTool, Util, ModelTool, MobMdctrlControlInterface, AppServiceBase } from 'ibiz-core';
 import { Subscription } from 'rxjs';
 import { AppMobMDCtrlService } from '../ctrl-service';
 import { MDControlBase } from "./md-control-base";
 import { AppViewLogicService } from '../app-service';
-import { IPSDEMobMDCtrl, IPSAppDataEntity, IPSAppDEField, IPSDEUIAction, IPSUIAction, IPSUIActionGroupDetail, IPSCodeItem } from '@ibiz/dynamic-model-api';
+import { IPSDEMobMDCtrl, IPSAppDataEntity, IPSAppDEField, IPSDEUIAction, IPSUIAction, IPSUIActionGroupDetail, IPSCodeItem, DynamicInstanceConfig, IPSDEListDataItem } from '@ibiz/dynamic-model-api';
 
 /**
  * 多数据部件基类
@@ -12,7 +12,7 @@ import { IPSDEMobMDCtrl, IPSAppDataEntity, IPSAppDEField, IPSDEUIAction, IPSUIAc
  * @class AppControlBase
  * @extends {MDCtrlControlBase}
  */
-export class MobMDCtrlControlBase extends MDControlBase {
+export class MobMDCtrlControlBase extends MDControlBase implements MobMdctrlControlInterface{
 
     /**
      * 菜单部件实例
@@ -392,6 +392,23 @@ export class MobMDCtrlControlBase extends MDControlBase {
         this.onCtrlEvent(this.controlInstance.name, 'beforeload', parentdata);
         Object.assign(data, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
+        // 多实例查询数据处理
+        let appEnvironment = AppServiceBase.getInstance().getAppEnvironment();
+        if (appEnvironment.bDynamic) {
+            if (tempViewParams.hasOwnProperty("srfdynainstid")) {
+                let dynainstParam: DynamicInstanceConfig = this.modelService?.getDynaInsConfig();
+                Object.assign(tempViewParams, { srfinsttag: dynainstParam.instTag, srfinsttag2: dynainstParam.instTag2 });
+                delete tempViewParams.srfdynainstid;
+            } else {
+                if (!tempViewParams.hasOwnProperty("srfinsttag")) {
+                    Object.assign(tempViewParams, { srfinsttag: "__srfstdinst__" });
+                }
+            }
+        } else {
+            if (data.hasOwnProperty("srfwf")) {
+                Object.assign(tempViewParams, { srfinsttag: "__srfstdinst__" });
+            }
+        }
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
         Object.assign(data, { viewparams: tempViewParams });
         this.onControlRequset('load', { ...this.context },  data);
@@ -443,6 +460,34 @@ export class MobMDCtrlControlBase extends MDControlBase {
     }
 
     /**
+     * 计算部件所需参数
+     *
+     * @param {*} controlInstance 部件模型对象
+     * @param {*} item 列表行数据
+     * @returns
+     * @memberof ListControlBase
+     */
+    public computeTargetCtrlData(controlInstance: any, item?: any) {
+        const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
+        Object.assign(targetCtrlParam.dynamicProps, {
+            navdatas: [item],
+        })
+        Object.assign(targetCtrlParam.staticProps, {
+            transformData: this.transformData,
+            isLoadDefault: true,
+            opendata: this.opendata,
+            newdata: this.newdata,
+            remove: this.remove,
+            refresh: this.refresh,
+            dataMap: this.dataMap,
+        })
+        targetCtrlEvent['ctrl-event'] = ({ controlname, action, data }: { controlname: string, action: string, data: any }) => {
+            this.onCtrlEvent(controlname, action, { item: item, data: data });
+        };
+        return { targetCtrlName, targetCtrlParam, targetCtrlEvent };
+    }
+
+    /**
      * 获取界面行为权限状态
      *
      * @param {*} data 当前列表行数据
@@ -472,6 +517,20 @@ export class MobMDCtrlControlBase extends MDControlBase {
                 this.initCtrlActionModelDetail(detail);
             });
         }
+    }
+
+    /**
+     * 初始化数据映射
+     * 
+     * @memberof ListControlBase
+     */
+    public initDataMap() {
+        const dataItems: IPSDEListDataItem[] | null = this.controlInstance.getPSDEListDataItems();
+        if (dataItems && dataItems.length > 0) {
+            dataItems.forEach((dataItem: IPSDEListDataItem) => {
+                this.dataMap.set(dataItem.name,{ customCode: dataItem.customCode ? true : false });
+            });
+        };
     }
 
     /**

@@ -84,21 +84,21 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "系统更新功能编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateFeaturesEditView.json",
-      "viewType" : "DEEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "realOpenMode" : "DRAWER_RIGHT",
     "realTitle" : "系统更新功能编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateFeaturesInfoEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "系统更新功能编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateFeaturesEditView.json",
       "viewType" : "DEEDITVIEW"
     }
   } ],
@@ -113,7 +113,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -344,10 +344,17 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "updateman",
+      "name" : "upfeatures",
       "getPSAppDEField" : {
-        "name" : "UPDATEMAN",
-        "codeName" : "UpdateMan"
+        "name" : "UPFEATURES",
+        "codeName" : "Upfeatures"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "type",
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
       }
     }, {
       "dataType" : 9,
@@ -358,10 +365,10 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "sys_update_logid",
+      "name" : "updateman",
       "getPSAppDEField" : {
-        "name" : "SYS_UPDATE_LOGID",
-        "codeName" : "SysUpdateLogId"
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
       }
     }, {
       "format" : "YYYY-MM-DD HH:mm:ss",
@@ -373,24 +380,10 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "type",
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "TYPE",
-        "codeName" : "Type"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "upfeatures",
-      "getPSAppDEField" : {
-        "name" : "UPFEATURES",
-        "codeName" : "Upfeatures"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "SYS_UPDATE_FEATURESNAME",
-        "codeName" : "SysUpdateFeaturesName"
+        "name" : "SYS_UPDATE_FEATURESID",
+        "codeName" : "SysUpdateFeaturesId"
       }
     }, {
       "dataType" : 25,
@@ -402,10 +395,17 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 25,
-      "name" : "srfkey",
+      "name" : "sys_update_logid",
       "getPSAppDEField" : {
-        "name" : "SYS_UPDATE_FEATURESID",
-        "codeName" : "SysUpdateFeaturesId"
+        "name" : "SYS_UPDATE_LOGID",
+        "codeName" : "SysUpdateLogId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "SYS_UPDATE_FEATURESNAME",
+        "codeName" : "SysUpdateFeaturesName"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -459,7 +459,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateFeatures/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -468,10 +468,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -490,10 +490,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

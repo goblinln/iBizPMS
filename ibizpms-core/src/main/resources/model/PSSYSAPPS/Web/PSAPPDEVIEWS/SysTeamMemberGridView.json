@@ -228,7 +228,7 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realTitle" : "组成员编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -236,7 +236,7 @@
       "viewType" : "DEEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realTitle" : "组成员编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -342,6 +342,430 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
+    "aggMode" : "NONE",
+    "codeName" : "Main",
+    "columnEnableLink" : 2,
+    "controlType" : "GRID",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember/PSGRIDS/Main.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
+    "logicName" : "主表格",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+        }
+      }, {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "grid",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_grid",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "getPSDEGridColumns" : [ {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "组成员标识",
+      "codeName" : "teammemberid",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "teammemberid",
+      "excelCaption" : "组成员标识",
+      "name" : "teammemberid",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TEAMMEMBERID",
+        "codeName" : "TeamMemberId"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "姓名",
+      "codeName" : "personname",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "personname",
+      "excelCaption" : "姓名",
+      "name" : "personname",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PERSONNAME",
+        "codeName" : "PersonName"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "用户标识",
+      "codeName" : "userid",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "userid",
+      "excelCaption" : "用户标识",
+      "name" : "userid",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "USERID",
+        "codeName" : "UserId"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "组名称",
+      "codeName" : "teamname",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "teamname",
+      "excelCaption" : "组名称",
+      "getLinkPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridView.json",
+        "viewType" : "DEGRIDVIEW"
+      },
+      "linkValueItem" : "teamid",
+      "name" : "teamname",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TEAMNAME",
+        "codeName" : "TeamName"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableLinkView" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "组标识",
+      "codeName" : "teamid",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "teamid",
+      "excelCaption" : "组标识",
+      "name" : "teamid",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TEAMID",
+        "codeName" : "TeamId"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "岗位标识",
+      "codeName" : "postid",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "postid",
+      "excelCaption" : "岗位标识",
+      "name" : "postid",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "POSTID",
+        "codeName" : "PostId"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    } ],
+    "getPSDEGridDataItems" : [ {
+      "dataType" : 25,
+      "name" : "teammemberid",
+      "getPSAppDEField" : {
+        "name" : "TEAMMEMBERID",
+        "codeName" : "TeamMemberId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "personname",
+      "getPSAppDEField" : {
+        "name" : "PERSONNAME",
+        "codeName" : "PersonName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "userid",
+      "getPSAppDEField" : {
+        "name" : "USERID",
+        "codeName" : "UserId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "teamname",
+      "getPSAppDEField" : {
+        "name" : "TEAMNAME",
+        "codeName" : "TeamName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "teamid",
+      "getPSAppDEField" : {
+        "name" : "TEAMID",
+        "codeName" : "TeamId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "postid",
+      "getPSAppDEField" : {
+        "name" : "POSTID",
+        "codeName" : "PostId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "TEAMMEMBERID",
+        "codeName" : "TeamMemberId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "TEAMMEMBERID",
+        "codeName" : "TeamMemberId"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "TEAMID",
+        "codeName" : "TeamId"
+      }
+    } ],
+    "getPSDEGridEditItems" : [ {
+      "caption" : "组成员标识",
+      "codeName" : "srfkey",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "TEAMMEMBERID",
+        "codeName" : "TeamMemberId"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "allowEmpty" : true
+    } ],
+    "pagingSize" : 20,
+    "getRemovePSControlAction" : {
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "DELETE",
+      "name" : "remove",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+      }
+    },
+    "sortMode" : "REMOTE",
+    "hasWFDataItems" : false,
+    "enableColFilter" : false,
+    "enableCustomized" : true,
+    "enableGroup" : false,
+    "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "forceFit" : false,
+    "hideHeader" : false,
+    "noSort" : false,
+    "singleSelect" : false,
+    "name" : "grid",
+    "modelid" : "6cc2420b1228bf3f08d6113a2cb29259",
+    "modeltype" : "PSDEGRID"
+  }, {
+    "codeName" : "Default",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember/PSSEARCHFORMS/Default.json",
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
+    "logicName" : "默认搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD;SAVE",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "daa31474fe92b3502712a2d1d418d99e",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
     "codeName" : "GridViewtoolbar",
     "controlType" : "TOOLBAR",
     "hookEventNames" : [ "CLICK" ],
@@ -907,430 +1331,6 @@
     } ],
     "modelid" : "f41d31cabfd45aa26034f1c0b03986d1",
     "modeltype" : "PSDETOOLBAR"
-  }, {
-    "aggMode" : "NONE",
-    "codeName" : "Main",
-    "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember/PSGRIDS/Main.json",
-    "getFetchPSControlAction" : {
-      "modelref" : true,
-      "id" : "fetch"
-    },
-    "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-    "logicName" : "主表格",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-    },
-    "getPSControlHandler" : {
-      "getPSHandlerActions" : [ {
-        "actionName" : "Get",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "READ",
-        "name" : "load",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-        }
-      }, {
-        "actionName" : "Create",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "create",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-        }
-      }, {
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "UPDATE",
-        "name" : "update",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-        }
-      }, {
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "DELETE",
-        "name" : "remove",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-        }
-      }, {
-        "actionName" : "GetDraft",
-        "actionType" : "DEACTION",
-        "dataAccessAction" : "CREATE",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-        }
-      }, {
-        "actionType" : "DEDATASET",
-        "name" : "fetch",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-        }
-      } ],
-      "userDRAction" : "READ",
-      "enableDEFieldPrivilege" : false,
-      "id" : "数据表格处理器"
-    },
-    "getPSControlLogics" : [ {
-      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
-      "logicTag" : "grid",
-      "logicType" : "APPVIEWENGINE",
-      "name" : "engine_grid",
-      "getPSAppViewEngine" : {
-        "modelref" : true,
-        "id" : "engine"
-      }
-    } ],
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "getPSDEGridColumns" : [ {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "组成员标识",
-      "codeName" : "teammemberid",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "teammemberid",
-      "excelCaption" : "组成员标识",
-      "name" : "teammemberid",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "TEAMMEMBERID",
-        "codeName" : "TeamMemberId"
-      },
-      "width" : 100,
-      "widthUnit" : "PX",
-      "enableSort" : true
-    }, {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "姓名",
-      "codeName" : "personname",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "personname",
-      "excelCaption" : "姓名",
-      "name" : "personname",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "PERSONNAME",
-        "codeName" : "PersonName"
-      },
-      "width" : 100,
-      "widthUnit" : "PX",
-      "enableSort" : true
-    }, {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "用户标识",
-      "codeName" : "userid",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "userid",
-      "excelCaption" : "用户标识",
-      "name" : "userid",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "USERID",
-        "codeName" : "UserId"
-      },
-      "width" : 100,
-      "widthUnit" : "PX",
-      "enableSort" : true
-    }, {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "组名称",
-      "codeName" : "teamname",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "teamname",
-      "excelCaption" : "组名称",
-      "getLinkPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridView.json",
-        "viewType" : "DEGRIDVIEW"
-      },
-      "linkValueItem" : "teamid",
-      "name" : "teamname",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "TEAMNAME",
-        "codeName" : "TeamName"
-      },
-      "width" : 100,
-      "widthUnit" : "PX",
-      "enableLinkView" : true,
-      "enableSort" : true
-    }, {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "组标识",
-      "codeName" : "teamid",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "teamid",
-      "excelCaption" : "组标识",
-      "name" : "teamid",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "TEAMID",
-        "codeName" : "TeamId"
-      },
-      "width" : 100,
-      "widthUnit" : "PX",
-      "enableSort" : true
-    }, {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "岗位标识",
-      "codeName" : "postid",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "postid",
-      "excelCaption" : "岗位标识",
-      "name" : "postid",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "POSTID",
-        "codeName" : "PostId"
-      },
-      "width" : 100,
-      "widthUnit" : "PX",
-      "enableSort" : true
-    } ],
-    "getPSDEGridDataItems" : [ {
-      "dataType" : 25,
-      "name" : "postid",
-      "getPSAppDEField" : {
-        "name" : "POSTID",
-        "codeName" : "PostId"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "teamid",
-      "getPSAppDEField" : {
-        "name" : "TEAMID",
-        "codeName" : "TeamId"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "teamname",
-      "getPSAppDEField" : {
-        "name" : "TEAMNAME",
-        "codeName" : "TeamName"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "userid",
-      "getPSAppDEField" : {
-        "name" : "USERID",
-        "codeName" : "UserId"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "personname",
-      "getPSAppDEField" : {
-        "name" : "PERSONNAME",
-        "codeName" : "PersonName"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "TEAMID",
-        "codeName" : "TeamId"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfdataaccaction",
-      "getPSAppDEField" : {
-        "name" : "TEAMMEMBERID",
-        "codeName" : "TeamMemberId"
-      },
-      "dataAccessAction" : true
-    }, {
-      "dataType" : 25,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "TEAMMEMBERID",
-        "codeName" : "TeamMemberId"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "teammemberid",
-      "getPSAppDEField" : {
-        "name" : "TEAMMEMBERID",
-        "codeName" : "TeamMemberId"
-      }
-    } ],
-    "getPSDEGridEditItems" : [ {
-      "caption" : "组成员标识",
-      "codeName" : "srfkey",
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "TEAMMEMBERID",
-        "codeName" : "TeamMemberId"
-      },
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "srfkey"
-      },
-      "allowEmpty" : true
-    } ],
-    "pagingSize" : 20,
-    "getRemovePSControlAction" : {
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "dataAccessAction" : "DELETE",
-      "name" : "remove",
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-      }
-    },
-    "sortMode" : "REMOTE",
-    "hasWFDataItems" : false,
-    "enableColFilter" : false,
-    "enableCustomized" : true,
-    "enableGroup" : false,
-    "enablePagingBar" : true,
-    "enableRowEdit" : false,
-    "enableRowEditOrder" : false,
-    "enableRowNew" : false,
-    "forceFit" : false,
-    "hideHeader" : false,
-    "noSort" : false,
-    "singleSelect" : false,
-    "name" : "grid",
-    "modelid" : "6cc2420b1228bf3f08d6113a2cb29259",
-    "modeltype" : "PSDEGRID"
-  }, {
-    "codeName" : "Default",
-    "controlType" : "SEARCHFORM",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
-    "logicName" : "默认搜索表单",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-    },
-    "getPSControlHandler" : {
-      "getPSHandlerActions" : [ {
-        "actionType" : "FILTERACTION",
-        "name" : "search",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterSearch"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-        }
-      }, {
-        "actionType" : "FILTERACTION",
-        "name" : "loaddraft",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGetDraft"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-        }
-      }, {
-        "actionType" : "FILTERACTION",
-        "name" : "load",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGet"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-        }
-      } ],
-      "enableDEFieldPrivilege" : false,
-      "id" : "搜索表单处理器"
-    },
-    "getPSControlLogics" : [ {
-      "eventNames" : "SEARCH;LOAD;SAVE",
-      "logicTag" : "searchform",
-      "logicType" : "APPVIEWENGINE",
-      "name" : "engine_searchform",
-      "getPSAppViewEngine" : {
-        "modelref" : true,
-        "id" : "engine"
-      }
-    } ],
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "getPSDEFormPages" : [ {
-      "caption" : "常规条件",
-      "codeName" : "formpage1",
-      "detailStyle" : "DEFAULT",
-      "detailType" : "FORMPAGE",
-      "name" : "formpage1",
-      "getPSLayout" : {
-        "columnCount" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "infoGroupMode" : false
-    } ],
-    "getPSLayout" : {
-      "columnCount" : 24,
-      "layout" : "TABLE_24COL"
-    },
-    "searchButtonStyle" : "DEFAULT",
-    "tabHeaderPos" : "TOP",
-    "enableAdvanceSearch" : false,
-    "enableAutoSearch" : false,
-    "enableFilterSave" : false,
-    "noTabHeader" : true,
-    "name" : "searchform",
-    "modelid" : "daa31474fe92b3502712a2d1d418d99e",
-    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "GridView",
   "getPSDEViewId" : "726cd26a7f29e91bf2409f65613b2e6b",

@@ -1,7 +1,8 @@
-import { ViewTool, Verify, Util } from 'ibiz-core';
+import { ViewTool, Verify, Util, MobPanelControlInterface, LogUtil, PanelButtonModel, PanelTabPanelModel, PanelTabPageModel, PanelContainerModel, PanelFieldModel, PanelRawitemModel, PanelControlModel, PanelUserControlModel } from 'ibiz-core';
 import { MDControlBase } from "./md-control-base";
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
-import { IPSPanel, IPSPanelField, IPSPanelItem, IPSPanelItemGroupLogic, IPSPanelItemSingleLogic, IPSSysPanelButton, IPSSysPanelContainer, IPSSysPanelField } from '@ibiz/dynamic-model-api';
+import { IPSPanel, IPSPanelField, IPSPanelItem, IPSPanelItemGroupLogic, IPSPanelItemSingleLogic, IPSPanelTabPage, IPSPanelTabPanel, IPSSysPanelButton, IPSSysPanelContainer, IPSSysPanelField, IPSSysPanelTabPanel } from '@ibiz/dynamic-model-api';
+import { GlobalService } from 'ibiz-service';
 
 /**
  * 面板部件基类
@@ -10,7 +11,7 @@ import { IPSPanel, IPSPanelField, IPSPanelItem, IPSPanelItemGroupLogic, IPSPanel
  * @class MobPanelControlBase
  * @extends {MDControlBase}
  */
-export class MobPanelControlBase extends MDControlBase {
+export class MobPanelControlBase extends MDControlBase implements MobPanelControlInterface{
 
     /**
      * 值规则对象
@@ -45,14 +46,6 @@ export class MobPanelControlBase extends MDControlBase {
     public data: any = {};
 
     /**
-     * 面板数据
-     *
-     * @type {*}
-     * @memberof MobPanelControlBase
-     */
-    public panelData: any = null;
-
-    /**
      * 详情模型集合
      *
      * @type {*}
@@ -68,16 +61,40 @@ export class MobPanelControlBase extends MDControlBase {
     public allPanelItemGroupLogic: any[] = [];
 
     /**
+     * 是否需要查找属性
+     * 
+     * @type {boolean}
+     * @memberof MobPanelControlBase
+     */
+    public needFindDEField: boolean = false;
+
+    /**
+     * 父容器数据项
+     * 
+     * @type {any[]}
+     * @memberof MobPanelControlBase
+     */
+    public parentDataItems: any[] = [];
+
+    /**
+    * 默认加载
+    *
+    * @type {boolean}
+    * @memberof MobPanelControlBase
+    */
+    public isLoadDefault!: boolean;    
+
+    /**
      * 接口实现
      *
      * @returns {any[]}
      * @memberof MobPanelControlBase
      */
     public getDatas(): any[] {
-        if (!this.panelData) {
+        if (!this.data) {
             return [];
         }
-        return [this.panelData];
+        return [this.data];
     }
 
     /**
@@ -87,16 +104,8 @@ export class MobPanelControlBase extends MDControlBase {
      * @memberof MobPanelControlBase
      */
     public getData() {
-        return this.panelData;
+        return this.data;
     }
-
-    /**
-     * 面板数据对象
-     *
-     * @type {*}
-     * @memberof MobPanelControlBase
-     */
-    public inputData?: any;
 
     /**
      * 部件模型初始化
@@ -109,6 +118,10 @@ export class MobPanelControlBase extends MDControlBase {
         if ((this.controlInstance.getRootPSPanelItems() as any)?.length > 0) {
             this.initRules(this.controlInstance.getRootPSPanelItems());
         }
+        this.computedUIData();
+        this.computeButtonState(this.data);
+        this.panelLogic({ name: '', newVal: null, oldVal: null });
+        this.computeParentDataItems();        
     }
 
     /**
@@ -227,31 +240,80 @@ export class MobPanelControlBase extends MDControlBase {
      * @param {*} newVal
      * @memberof MobPanelControlBase
      */
-    public async computedUIData(newVal: any) {
+    public async computedUIData(newVal?: any) {
         if (this.controlInstance?.getAllPSPanelFields() && this.getDataItems().length > 0) {
             this.getDataItems().forEach((item: any) => {
-                this.data[item.name] = newVal[item.prop];
+                // this.data[item.name] = newVal[item.prop];
+                this.$set(this.data, item.name, null);
             });
+        }
+        const dataMode = this.controlInstance.dataMode;
+        if (dataMode === 3) {
+            this.viewCtx.appGlobal[this.controlInstance.M.dataName] = this.data;
+        } else if (dataMode === 4) {
+            this.viewCtx.routeViewGlobal[this.controlInstance.M.dataName] = this.data;
+        } else if (dataMode === 5) {
+            this.viewCtx.viewGlobal[this.controlInstance.M.dataName] = this.data;
+        } else {
+            if (this.isLoadDefault) {
+                await this.computeLoadState(dataMode);
+            }
+        }        
+    }
+
+    /**
+     * 计算数据加载模式
+     *
+     * @memberof PanelControlBase
+     */
+    public async computeLoadState(dataMode: number, args?: any) {
+        if (dataMode === 0) {
+            //  0：不获取，使用传入数据
+            if (this.navdatas && (this.navdatas.length > 0)) {
+                this.data = this.navdatas[0];
+                this.fillPanelData(this.data);            
+            }
+        } else if (dataMode === 1) {
+            //  1：存在传入数据时，不获取
+            if (this.navdatas && this.navdatas.length > 0) {
+                if (this.navdatas && (this.navdatas.length > 0)) {
+                    this.data = this.navdatas[0];
+                }
+            } else {
+                await this.loadPanelData(args);
+            }
+        } else if (dataMode === 2) {
+            //  2：始终获取
+            await this.loadPanelData(args);
         }
     }
 
     /**
-  * 获取name找到对应field
-  *
-  * @returns {any[]}
-  * @memberof AppPanelModel
-  */
-    public findField(arr: Array<IPSPanelItem> | null, name: string): any {
-        let _result = null;
-        if (!arr) {
-            return
+     * 加载数据
+     *
+     * @memberof PanelControlBase
+     */
+    public async loadPanelData(args?: any) {
+        const action = this.controlInstance.getGetPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || '';
+        if (!action) {
+            LogUtil.warn(this.$t('app.viewpanel.nofconfig.getaction'));
         }
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].name == name) return arr[i];
-            if ((arr[i] as any)?.getPSPanelItems?.()) _result = this.findField((arr[i] as any)?.getPSPanelItems?.(), name)
-            if (_result != null) return _result;
+        const service = await new GlobalService().getService(this.appDeCodeName, this.context).catch((error: any) => {
+            LogUtil.warn(this.$t('app.viewpanel.error.notgetservice'));
+        });
+        if (args && Object.keys(args).length > 0) {
+            Object.assign(this.data, args);
         }
-        return _result
+        if (service && service[action] && service[action] instanceof Function) {
+            try {
+                const response: any = await service[action](Util.deepCopy(this.context), this.data);
+                if (response && response.status == 200 && response.data) {
+                    this.fillPanelData(response.data);
+                }
+            } catch (response: any) {
+                // this.$throw(response, 'load');
+            }
+        }
     }
 
     /**
@@ -262,15 +324,30 @@ export class MobPanelControlBase extends MDControlBase {
       */
     public getDataItems(): any[] {
         let arr: any = [];
-        this.controlInstance.M?.getAllPSPanelFields?.forEach((datafield: IPSPanelField) => {
-            let field: any = this.findField(this.controlInstance.getRootPSPanelItems(), datafield.id);
+        this.controlInstance.M?.getAllPSPanelFields?.forEach((datafield: any) => {
             let obj: any = {};
-            obj.name = field?.name.toLowerCase();
-            obj.prop = field?.viewFieldName?.toLowerCase();
+            obj.name = datafield?.id?.toLowerCase();
+            obj.prop = datafield?.viewFieldName?.toLowerCase();
             arr.push(obj);
         });
-        return arr
+        return arr;
     }
+
+    /**
+     * 填充面板数据
+     *
+     * @param {*} data
+     * @memberof PanelControlBase
+     */
+    public fillPanelData(data: any) {
+        this.getDataItems().forEach((item: any) => {
+            if (item?.prop) {
+                this.data[item.name] = data?.[item.prop];
+            } else {
+                this.data[item.name] = data?.[item.name];
+            }
+        });
+    }    
 
     /**
      * 获取所有代码表
@@ -375,8 +452,11 @@ export class MobPanelControlBase extends MDControlBase {
      * @param {*} [args]
      * @memberof MobPanelControlBase
      */
-    public refresh(args?: any) {
-        this.$Notice.error(this.$t('app.error.unrefresh'));
+    public async refresh(args?: any) {
+        const dataMode = this.controlInstance.dataMode;
+        if ((dataMode !== 3) && (dataMode !== 4) && (dataMode !== 5)) {
+            await this.computeLoadState(dataMode, args);
+        }
     }
 
     /**
@@ -473,6 +553,11 @@ export class MobPanelControlBase extends MDControlBase {
             } else if (panelItem?.itemType == 'BUTTON' && panelButtomItem.getPSUIAction()) {
                 const appUIAction: any = panelButtomItem.getPSUIAction();
                 this.actionModel[appUIAction.uIActionTag] = Object.assign(appUIAction, { disabled: false, visabled: true, getNoPrivDisplayMode: appUIAction.getNoPrivDisplayMode ? appUIAction.getNoPrivDisplayMode : 6 });
+            } else if (item.itemType == 'TABPANEL') {
+                const tabPages: IPSPanelTabPage[] = (item as IPSSysPanelTabPanel).getPSPanelTabPages() || [];
+                tabPages.forEach((page: IPSPanelTabPage) => {
+                    this.initItemsActionModel(page.getPSPanelItems());
+                })
             }
         })
     }
@@ -486,11 +571,8 @@ export class MobPanelControlBase extends MDControlBase {
      */
     public onDynamicPropsChange(newVal: any, oldVal: any) {
         super.onDynamicPropsChange(newVal, oldVal);
-        if (newVal?.inputData && !Util.isFieldsSame(newVal.inputData, oldVal?.inputData)){
-            this.inputData = newVal?.inputData;
-            if(this.controlIsLoaded){
-                this.onInputDataChange(newVal.inputData, oldVal?.inputData);
-            }
+        if (this.controlIsLoaded && newVal?.navdatas?.[0] != oldVal?.navdatas?.[0]) {
+            this.computedUIData();
         }
 
     }
@@ -509,6 +591,7 @@ export class MobPanelControlBase extends MDControlBase {
         this.newdata = newVal?.newdata || this.newdata;
         this.remove = newVal?.remove || this.remove;
         this.refresh = newVal?.refresh || this.refresh;
+        this.isLoadDefault = newVal?.isLoadDefault;        
         // 初始化面板详情模型集合
         this.detailsModel = {};
         this.allPanelItemGroupLogic = [];
@@ -526,34 +609,29 @@ export class MobPanelControlBase extends MDControlBase {
     }
 
     /**
-     * 监控数据对象
-     *
-     * @param {*} newVal
-     * @param {*} oldVal
-     * @memberof MobPanelControlBase
-     */
-    public onInputDataChange(newVal: any, oldVal: any) {
-        if (newVal) {
-            this.computedUIData(newVal);
-            this.panelData = Util.deepCopy(newVal);
-            this.computeButtonState(newVal);
-            this.panelLogic({ name: '', newVal: null, oldVal: null });
-            this.$forceUpdate();
-        }
-    }
-
-    /**
      * 面板部件初始化
      *
      * @memberof MDControlBase
      */
     public ctrlInit() {
         super.ctrlInit();
+        if (this.viewState) {
+            this.viewStateEvent = this.viewState.subscribe(async ({ tag, action, data }: { tag: string, action: string, data: any }) => {
+                if (!Object.is(tag, this.name)) {
+                    return;
+                }
+                if (Object.is('load', action)) {
+                    const dataMode = this.controlInstance.dataMode;
+                    if ((dataMode !== 3) && (dataMode !== 4) && (dataMode !== 5)) {
+                        await this.computeLoadState(dataMode, data);
+                    }
+                }
+            });
+        }        
         // 面板不需要应用全局刷新
         if (this.appStateEvent) {
             this.appStateEvent.unsubscribe();
         }
-        this.onInputDataChange(this.inputData, undefined);
     }
 
     /**
@@ -572,6 +650,7 @@ export class MobPanelControlBase extends MDControlBase {
                     itemType: panelItem.itemType,
                     visible: !panelItem?.getPSPanelItemGroupLogics?.(),
                 };
+                let model: any;
                 switch (panelItem.itemType) {
                     case 'BUTTON':
                         const panelButtomItem = panelItem as IPSSysPanelButton
@@ -586,23 +665,100 @@ export class MobPanelControlBase extends MDControlBase {
                                 disabled: false
                             }
                         });
+                        model = new PanelButtonModel(detailModel);
                         break;
                     case 'TABPANEL':
+                        const tabPages: IPSPanelTabPage[] = (panelItem as IPSPanelTabPanel).getPSPanelTabPages() || [];
+                        const pageNames: any[] = [];
+                        if (tabPages.length > 0) {
+                            tabPages.forEach((page: IPSPanelTabPage) => {
+                                pageNames.push({ name: page.name });
+                            })
+                        }
                         Object.assign(detailModel, {
-                            tabPages: [
-                                // todo
-                            ]
-                        })
+                            tabPages: pageNames
+                        });
+                        model = new PanelTabPanelModel(detailModel);
+                        break;
+                    case 'TABPAGE':
+                        model = new PanelTabPageModel(detailModel);
+                        break;
+                    case 'CONTAINER':
+                        model = new PanelContainerModel(detailModel);
+                        break;
+                    case 'FIELD':
+                        model = new PanelFieldModel(detailModel);
+                        break;
+                    case 'RAWITEM':
+                        model = new PanelRawitemModel(detailModel);
+                        break;
+                    case 'CONTROL':
+                        model = new PanelControlModel(detailModel);
+                        break;
+                    case 'USERCONTROL':
+                        model = new PanelUserControlModel(detailModel);
                         break;
                 }
-                this.$set(this.detailsModel, panelItem.name, detailModel);
+                this.$set(this.detailsModel, panelItem.name, model);
                 if (Object.is(panelItem.itemType, 'CONTAINER')) {
                     this.initDetailsModel((panelItem as IPSSysPanelContainer)?.getPSPanelItems?.());
                 }
+                if ((panelItem as any).getPSPanelTabPages?.()?.length > 0) {
+                    (panelItem as any).getPSPanelTabPages?.().forEach((tabpage: any) => {
+                        this.initDetailsModel(tabpage?.getPSPanelItems?.() || []);
+                    })
+                }                
                 if (panelItem.getPSPanelItemGroupLogics()) {
                     this.allPanelItemGroupLogic.push({ name: panelItem.name, panelItemGroupLogic: panelItem.getPSPanelItemGroupLogics() })
                 }
             })
         }
     }
+
+    /**
+     * 计算父容器数据项
+     *
+     * @param {*} [args]
+     * @memberof PanelControlBase
+     */
+    public computeParentDataItems() {
+        const parent: any = this.controlInstance.getParentPSModelObject?.();
+        if (
+            parent.controlType &&
+            (parent.controlType == 'MOBMDCTRL')
+        ) {
+            this.needFindDEField = true;
+        }
+        if (!this.needFindDEField) {
+            return;
+        }
+        switch (parent.controlType) {
+            case 'MOBMDCTRL':
+                this.parentDataItems = parent.getPSDEListDataItems?.();
+                break;
+        }
+    }
+
+    /**
+     * 面板属性项查找对应父容器实体实体属性项
+     *
+     * @returns
+     * @memberof PanelControlBase
+     */
+    public findDEFieldForPanelField(target: any) {
+        const parent: any = this.controlInstance.getParentPSModelObject();
+        const entity = parent.getPSAppDataEntity?.();
+        if (entity && this.parentDataItems.length > 0) {
+            const valueItemName = (this.controlInstance.getAllPSPanelFields()?.find((item: any) => Object.is(item.id.toLowerCase(), target.name.toLowerCase())) as any)?.viewFieldName;
+            const dataItem = this.parentDataItems.find((item: any) => Object.is(valueItemName?.toLowerCase(), item.name?.toLowerCase()));
+            if (dataItem) {
+                Object.assign(target, {
+                    getPSAppDEField: () => {
+                        return dataItem.getPSAppDEField?.();
+                    }
+                })
+            }
+
+        }
+    }    
 }

@@ -45,7 +45,7 @@
   "getPSControls" : [ {
     "codeName" : "GridExpViewgridexpbar",
     "controlType" : "GRIDEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "gridexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -261,13 +261,6 @@
         }
       }, {
         "dataType" : 25,
-        "name" : "memo",
-        "getPSAppDEField" : {
-          "name" : "MEMO",
-          "codeName" : "Memo"
-        }
-      }, {
-        "dataType" : 25,
         "name" : "postname",
         "getPSAppDEField" : {
           "name" : "POSTNAME",
@@ -275,10 +268,17 @@
         }
       }, {
         "dataType" : 25,
-        "name" : "srfmajortext",
+        "name" : "memo",
         "getPSAppDEField" : {
-          "name" : "POSTNAME",
-          "codeName" : "PostName"
+          "name" : "MEMO",
+          "codeName" : "Memo"
+        }
+      }, {
+        "dataType" : 25,
+        "name" : "srfkey",
+        "getPSAppDEField" : {
+          "name" : "POSTID",
+          "codeName" : "PostId"
         }
       }, {
         "dataType" : 25,
@@ -290,10 +290,10 @@
         "dataAccessAction" : true
       }, {
         "dataType" : 25,
-        "name" : "srfkey",
+        "name" : "srfmajortext",
         "getPSAppDEField" : {
-          "name" : "POSTID",
-          "codeName" : "PostId"
+          "name" : "POSTNAME",
+          "codeName" : "PostName"
         }
       } ],
       "getPSDEGridEditItems" : [ {

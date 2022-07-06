@@ -116,77 +116,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "ProductBugTypeSumUsr4GridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "产品汇总表操作栏",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT"
-      },
-      "caption" : "导出",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT"
-        },
-        "caption" : "导出",
-        "codeName" : "ExportExcel",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）",
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "predefinedType" : "GRIDVIEW_EXPORTACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "导出",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "PAGE",
     "codeName" : "ProductBugTypeSumForm",
     "columnEnableLink" : 2,
@@ -197,7 +126,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "产品Bug类型统计表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -499,6 +428,27 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
+      "dataType" : 25,
+      "name" : "name",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "codeerror",
+      "getPSAppDEField" : {
+        "name" : "CODEERROR",
+        "codeName" : "Codeerror"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "config",
+      "getPSAppDEField" : {
+        "name" : "CONFIG",
+        "codeName" : "Config"
+      }
+    }, {
       "dataType" : 9,
       "name" : "install",
       "getPSAppDEField" : {
@@ -507,17 +457,17 @@
       }
     }, {
       "dataType" : 9,
-      "name" : "designdefect",
+      "name" : "security",
       "getPSAppDEField" : {
-        "name" : "DESIGNDEFECT",
-        "codeName" : "Designdefect"
+        "name" : "SECURITY",
+        "codeName" : "Security"
       }
     }, {
       "dataType" : 9,
-      "name" : "others",
+      "name" : "performance",
       "getPSAppDEField" : {
-        "name" : "OTHERS",
-        "codeName" : "Others"
+        "name" : "PERFORMANCE",
+        "codeName" : "Performance"
       }
     }, {
       "dataType" : 9,
@@ -535,17 +485,38 @@
       }
     }, {
       "dataType" : 9,
-      "name" : "security",
+      "name" : "designdefect",
       "getPSAppDEField" : {
-        "name" : "SECURITY",
-        "codeName" : "Security"
+        "name" : "DESIGNDEFECT",
+        "codeName" : "Designdefect"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "dataType" : 9,
+      "name" : "others",
       "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "OTHERS",
+        "codeName" : "Others"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugsum",
+      "getPSAppDEField" : {
+        "name" : "BUGSUM",
+        "codeName" : "Bugsum"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -556,53 +527,11 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "codeerror",
-      "getPSAppDEField" : {
-        "name" : "CODEERROR",
-        "codeName" : "Codeerror"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "bugsum",
-      "getPSAppDEField" : {
-        "name" : "BUGSUM",
-        "codeName" : "Bugsum"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "performance",
-      "getPSAppDEField" : {
-        "name" : "PERFORMANCE",
-        "codeName" : "Performance"
-      }
-    }, {
       "dataType" : 25,
-      "name" : "name",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "config",
-      "getPSAppDEField" : {
-        "name" : "CONFIG",
-        "codeName" : "Config"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -652,6 +581,77 @@
     "name" : "grid",
     "modelid" : "a2e6af3651bb0375e1ff0b79ac5fddc9",
     "modeltype" : "PSDEGRID"
+  }, {
+    "codeName" : "ProductBugTypeSumUsr4GridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "产品汇总表操作栏",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "predefinedType" : "GRIDVIEW_EXPORTACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "ProductBugTypeSumUsr4GridView",
   "getPSDEViewId" : "1763b2d6c8e774bd651c06558de35110",

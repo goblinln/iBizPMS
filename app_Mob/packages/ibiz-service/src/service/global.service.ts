@@ -180,7 +180,7 @@ export class GlobalService {
         return (await import('./ibztaskteam/ibztaskteam.service')).default.getInstance(context);
     }
     /**
-     * 任务团队（嵌套）服务
+     * 任务预计服务
      *
      * @param context 应用上下文
      * @return {IbzTaskestimate}
@@ -238,6 +238,26 @@ export class GlobalService {
      */
     async getFileService(context?: any) {
         return (await import('./file/file.service')).default.getInstance(context);
+    }
+    /**
+     * 需求描述服务
+     *
+     * @param context 应用上下文
+     * @return {StorySpec}
+     * @memberof GlobalService
+     */
+    async getStorySpecService(context?: any) {
+        return (await import('./story-spec/story-spec.service')).default.getInstance(context);
+    }
+    /**
+     * 操作历史服务
+     *
+     * @param context 应用上下文
+     * @return {History}
+     * @memberof GlobalService
+     */
+    async getHistoryService(context?: any) {
+        return (await import('./history/history.service')).default.getInstance(context);
     }
     /**
      * 产品的分支和平台信息服务
@@ -448,6 +468,16 @@ export class GlobalService {
      */
     async getUserContactService(context?: any) {
         return (await import('./user-contact/user-contact.service')).default.getInstance(context);
+    }
+    /**
+     * 需求阶段服务
+     *
+     * @param context 应用上下文
+     * @return {StoryStage}
+     * @memberof GlobalService
+     */
+    async getStoryStageService(context?: any) {
+        return (await import('./story-stage/story-stage.service')).default.getInstance(context);
     }
     /**
      * 系统更新功能服务

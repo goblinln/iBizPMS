@@ -51,34 +51,34 @@
   "getPSControls" : [ {
     "codeName" : "CalendarExpViewcalendarexpbar",
     "controlType" : "CALENDAREXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "calendarexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:todo",
-      "realTitle" : "待办编辑视图（日历导航）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCalendarEditView.json",
-        "viewType" : "DEEDITVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:reportly",
-      "realTitle" : "汇报编辑视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCalendarEditView.json",
-        "viewType" : "DEEDITVIEW"
-      }
-    }, {
       "name" : "EXPITEM:Bug",
       "realTitle" : "Bug编辑视图（日历导航）",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCalendarEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:task",
+      "realTitle" : "任务编辑视图（日历航显示）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCalendarEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:todo",
+      "realTitle" : "待办编辑视图（日历导航）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCalendarEditView.json",
         "viewType" : "DEEDITVIEW"
       }
     }, {
@@ -90,11 +90,11 @@
         "viewType" : "DEEDITVIEW"
       }
     }, {
-      "name" : "EXPITEM:task",
-      "realTitle" : "任务编辑视图（日历航显示）",
+      "name" : "EXPITEM:reportly",
+      "realTitle" : "汇报编辑视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCalendarEditView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCalendarEditView.json",
         "viewType" : "DEEDITVIEW"
       }
     }, {

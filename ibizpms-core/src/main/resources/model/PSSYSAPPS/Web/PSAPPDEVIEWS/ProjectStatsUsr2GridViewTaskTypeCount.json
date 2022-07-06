@@ -120,77 +120,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "Usr2GridViewTaskTypeCounttoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "项目任务类型统计-数据导出",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT"
-      },
-      "caption" : "导出",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT"
-        },
-        "caption" : "导出",
-        "codeName" : "ExportExcel",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）",
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "predefinedType" : "GRIDVIEW_EXPORTACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "导出",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "6065fc11751cf6e97006ea35d90520cf",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "PAGE",
     "codeName" : "ProjectTaskTypeCount",
     "columnEnableLink" : 2,
@@ -201,7 +130,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "项目任务类型统计",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -503,11 +432,67 @@
       "enableSort" : true
     } ],
     "getPSDEGridDataItems" : [ {
+      "dataType" : 25,
+      "name" : "name",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
       "dataType" : 9,
       "name" : "designtaskcnt",
       "getPSAppDEField" : {
         "name" : "DESIGNTASKCNT",
         "codeName" : "DesignTASKCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "develtaskcnt",
+      "getPSAppDEField" : {
+        "name" : "DEVELTASKCNT",
+        "codeName" : "DEVELTASKCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "testtaskcnt",
+      "getPSAppDEField" : {
+        "name" : "TESTTASKCNT",
+        "codeName" : "TESTTASKCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "studytaskcnt",
+      "getPSAppDEField" : {
+        "name" : "STUDYTASKCNT",
+        "codeName" : "StudyTASKCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "discusstaskcnt",
+      "getPSAppDEField" : {
+        "name" : "DISCUSSTASKCNT",
+        "codeName" : "DiscussTASKCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "uitaskcnt",
+      "getPSAppDEField" : {
+        "name" : "UITASKCNT",
+        "codeName" : "UiTASKCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "affairtaskcnt",
+      "getPSAppDEField" : {
+        "name" : "AFFAIRTASKCNT",
+        "codeName" : "AFFAIRTASKCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "servetaskcnt",
+      "getPSAppDEField" : {
+        "name" : "SERVETASKCNT",
+        "codeName" : "SERVETASKCNT"
       }
     }, {
       "dataType" : 9,
@@ -524,18 +509,11 @@
         "codeName" : "TaskCnt"
       }
     }, {
-      "dataType" : 9,
-      "name" : "servetaskcnt",
+      "dataType" : 1,
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "SERVETASKCNT",
-        "codeName" : "SERVETASKCNT"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -546,60 +524,11 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "discusstaskcnt",
-      "getPSAppDEField" : {
-        "name" : "DISCUSSTASKCNT",
-        "codeName" : "DiscussTASKCNT"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "develtaskcnt",
-      "getPSAppDEField" : {
-        "name" : "DEVELTASKCNT",
-        "codeName" : "DEVELTASKCNT"
-      }
-    }, {
       "dataType" : 25,
-      "name" : "name",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "studytaskcnt",
-      "getPSAppDEField" : {
-        "name" : "STUDYTASKCNT",
-        "codeName" : "StudyTASKCNT"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "affairtaskcnt",
-      "getPSAppDEField" : {
-        "name" : "AFFAIRTASKCNT",
-        "codeName" : "AFFAIRTASKCNT"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "testtaskcnt",
-      "getPSAppDEField" : {
-        "name" : "TESTTASKCNT",
-        "codeName" : "TESTTASKCNT"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "uitaskcnt",
-      "getPSAppDEField" : {
-        "name" : "UITASKCNT",
-        "codeName" : "UiTASKCNT"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -653,7 +582,7 @@
     "codeName" : "ProjectTaskTypeCount",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSSEARCHFORMS/ProjectTaskTypeCount.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "项目任务类型统计搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -662,10 +591,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -684,10 +613,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -859,6 +788,77 @@
     "name" : "searchform",
     "modelid" : "55031318ddf81a1ab02532326c1c94d6",
     "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "codeName" : "Usr2GridViewTaskTypeCounttoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "项目任务类型统计-数据导出",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "predefinedType" : "GRIDVIEW_EXPORTACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "6065fc11751cf6e97006ea35d90520cf",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "Usr2GridViewTaskTypeCount",
   "getPSDEViewId" : "1203a6546623167d26309e5fd37a80c9",

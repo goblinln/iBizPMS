@@ -36,6 +36,22 @@ export default class AppMobMpicker extends Vue {
     @Prop({default:false}) public disabled?: boolean;
 
     /**
+     * 值项名称
+     *
+     * @type {string}
+     * @memberof AppPicker
+     */
+    @Prop() public valueitem?: string;
+
+    /**
+     * 应用实体主键属性名称
+     *
+     * @type {string}
+     * @memberof AppPicker
+     */
+    @Prop({ default: 'srfkey' }) public deKeyField!: string;
+
+    /**
      * 值
      *
      * @type {*}
@@ -255,12 +271,19 @@ export default class AppMobMpicker extends Vue {
      */
     public openViewClose(result: any) {
       let datas: any = [];
+      let valueDatas: any = [];
       if (result.datas && Array.isArray(result.datas)) {
         result.datas.forEach((data: any) => {
           datas.push({ text: data.srfmajortext, value: data.srfkey });
+          if (this.valueitem && data[this.deKeyField ]) {
+            valueDatas.push(data[this.deKeyField ]);
+          }
         });
       }
-
+      if (this.valueitem && valueDatas) {
+          let valueStr = valueDatas.join(';')
+          this.$emit('formitemvaluechange', { name: this.valueitem, value: valueStr });
+      }
       if (this.name) {
         this.$emit("formitemvaluechange", {
           name: this.name,
@@ -273,6 +296,9 @@ export default class AppMobMpicker extends Vue {
      * 清除
      */
     public onClear($event: any): void {
+        if (this.valueitem) {
+            this.$emit('formitemvaluechange', { name: this.valueitem, value: '' });
+        }      
         if (this.name) {
             this.$emit('formitemvaluechange', { name: this.name, value: '' });
         }

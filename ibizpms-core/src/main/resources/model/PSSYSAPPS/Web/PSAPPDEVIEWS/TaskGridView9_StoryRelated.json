@@ -92,7 +92,7 @@
     "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
@@ -101,7 +101,7 @@
       "viewType" : "DEPORTALVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
@@ -121,7 +121,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "嵌入需求任务表格（无分页）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -297,24 +297,17 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "module",
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
-      "dataType" : 1,
-      "name" : "frombug",
+      "dataType" : 25,
+      "name" : "name",
       "getPSAppDEField" : {
-        "name" : "FROMBUG",
-        "codeName" : "FromBug"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "parent",
-      "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
+        "name" : "NAME",
+        "codeName" : "Name"
       }
     }, {
       "dataType" : 25,
@@ -324,14 +317,11 @@
         "codeName" : "ProjectName"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "dataType" : 1,
+      "name" : "tasksn",
       "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "TASKSN",
+        "codeName" : "Tasksn"
       }
     }, {
       "dataType" : 1,
@@ -350,17 +340,24 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 1,
       "name" : "project",
       "getPSAppDEField" : {
         "name" : "PROJECT",
         "codeName" : "Project"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "plan",
+      "getPSAppDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
       }
     }, {
       "dataType" : 1,
@@ -371,25 +368,28 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "plan",
+      "name" : "parent",
       "getPSAppDEField" : {
-        "name" : "PLAN",
-        "codeName" : "Plan"
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "frombug",
+      "getPSAppDEField" : {
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
       }
     }, {
       "dataType" : 25,
-      "name" : "name",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       }
     }, {
-      "dataType" : 1,
-      "name" : "tasksn",
-      "getPSAppDEField" : {
-        "name" : "TASKSN",
-        "codeName" : "Tasksn"
-      }
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "编号",

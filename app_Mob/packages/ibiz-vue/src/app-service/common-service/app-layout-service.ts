@@ -22,6 +22,9 @@ import { AppDefaultMobWFDynaEditView3Layout } from "../../components/layout/app-
 import { AppDefaultMobWFDynaStartViewLayout } from "../../components/layout/app-default-layout/app-default-mob-wfdynastartview-layout/app-default-mob-wfdynastartview-layout";
 import { AppDefaultMobDeRedirectViewLayout } from "../../components/layout/app-default-layout/app-default-mob-deredirectview-layout/app-default-mob-deredirectview-layout";
 import { AppDefaultMobMapViewLayout } from "../../components/layout/app-default-layout/app-default-mob-mapview-layout/app-default-mob-mapview-layout";
+import { AppDefaultMobCustomViewLayout } from "../../components/layout/app-default-layout/app-default-mob-customview-layout/app-default-mob-customview-layout";
+import { AppDefaultWfStepTraceViewLayout } from "../../components/layout/app-default-layout/app-default-wfsteptraceview-layout/app-default-wfsteptraceview-layout";
+import { AppDefaultMobDePanelViewLayout } from "../../components/layout/app-default-layout/app-default-mob-depanelview-layout/app-default-mob-depanelview-layout";
 
 /**
  * 应用组件服务
@@ -69,6 +72,9 @@ export class AppLayoutService {
         this.layoutMap.set("DEMOBWFDYNASTARTVIEW-DEFAULT", AppDefaultMobWFDynaStartViewLayout);
         this.layoutMap.set("DEMOBREDIRECTVIEW-DEFAULT", AppDefaultMobDeRedirectViewLayout);
         this.layoutMap.set("DEMAPVIEW-DEFAULT", AppDefaultMobMapViewLayout);
+        this.layoutMap.set("DEMOBCUSTOMVIEW-DEFAULT", AppDefaultMobCustomViewLayout);
+        this.layoutMap.set("APPWFSTEPTRACEVIEW-DEFAULT", AppDefaultWfStepTraceViewLayout);
+        this.layoutMap.set("DEMOBPANELVIEW-DEFAULT", AppDefaultMobDePanelViewLayout);
     }
 
     /**

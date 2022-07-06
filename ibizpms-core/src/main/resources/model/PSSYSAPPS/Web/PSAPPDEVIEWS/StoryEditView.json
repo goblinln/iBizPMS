@@ -36,37 +36,27 @@
     "getPSViewCtrlName" : "toolbar"
   } ],
   "getPSAppViewNavContexts" : [ {
+    "key" : "SYSACCOUNT",
+    "name" : "SYSACCOUNT",
+    "value" : "srfuserid",
+    "rawValue" : false
+  }, {
     "key" : "PROJECT",
     "name" : "PROJECT",
     "value" : "project",
     "rawValue" : false
   }, {
-    "key" : "SYSACCOUNT",
-    "name" : "SYSACCOUNT",
-    "value" : "srfuserid",
+    "key" : "BRANCH",
+    "name" : "BRANCH",
+    "value" : "branch",
     "rawValue" : false
   }, {
     "key" : "SRFPARENTDENAME",
     "name" : "SRFPARENTDENAME",
     "value" : "Project",
     "rawValue" : true
-  }, {
-    "key" : "BRANCH",
-    "name" : "BRANCH",
-    "value" : "branch",
-    "rawValue" : false
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "modulename",
-    "name" : "modulename",
-    "value" : "modulename",
-    "rawValue" : false
-  }, {
-    "key" : "project",
-    "name" : "project",
-    "value" : "project",
-    "rawValue" : false
-  }, {
     "key" : "srfparentdename",
     "name" : "srfparentdename",
     "value" : "Project",
@@ -80,6 +70,16 @@
     "key" : "storybranch",
     "name" : "storybranch",
     "value" : "branch",
+    "rawValue" : false
+  }, {
+    "key" : "project",
+    "name" : "project",
+    "value" : "project",
+    "rawValue" : false
+  }, {
+    "key" : "modulename",
+    "name" : "modulename",
+    "value" : "modulename",
     "rawValue" : false
   } ],
   "getPSAppViewUIActions" : [ {
@@ -179,7 +179,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "新建模式",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -744,6 +744,11 @@
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
+              "key" : "n_branch_eq",
+              "name" : "n_branch_eq",
+              "value" : "branch",
+              "rawValue" : false
+            }, {
               "key" : "product",
               "name" : "product",
               "value" : "product",
@@ -753,11 +758,6 @@
               "name" : "sort",
               "value" : "path,asc",
               "rawValue" : true
-            }, {
-              "key" : "n_branch_eq",
-              "name" : "n_branch_eq",
-              "value" : "branch",
-              "rawValue" : false
             }, {
               "key" : "type",
               "name" : "type",
@@ -1226,14 +1226,14 @@
               "value" : "srfloginname",
               "rawValue" : false
             }, {
-              "key" : "public",
-              "name" : "public",
-              "value" : "0",
-              "rawValue" : true
-            }, {
               "key" : "type",
               "name" : "type",
               "value" : "story",
+              "rawValue" : true
+            }, {
+              "key" : "public",
+              "name" : "public",
+              "value" : "0",
               "rawValue" : true
             } ],
             "getPSSysPFPlugin" : {

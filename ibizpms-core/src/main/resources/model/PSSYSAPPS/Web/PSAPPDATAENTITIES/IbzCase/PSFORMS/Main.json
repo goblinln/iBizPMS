@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "主编辑表单",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -583,70 +583,6 @@
           "xDataControlName" : "grid"
         } ],
         "getPSControls" : [ {
-          "codeName" : "GridView9toolbar",
-          "controlType" : "TOOLBAR",
-          "hookEventNames" : [ "CLICK" ],
-          "logicName" : "表格界面（行编辑仅新建行）",
-          "name" : "toolbar",
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibCaseStepNested.json"
-          },
-          "getPSControlLogics" : [ {
-            "eventArg" : "deuiaction2",
-            "eventNames" : "CLICK",
-            "logicTag" : "toolbar",
-            "logicType" : "APPVIEWLOGIC",
-            "name" : "toolbar_deuiaction2_click",
-            "getPSAppViewLogic" : {
-              "modelref" : true,
-              "id" : "toolbar_deuiaction2_click"
-            }
-          } ],
-          "getPSControlParam" : {
-            "id" : "TOOLBAR"
-          },
-          "getPSDEToolbarItems" : [ {
-            "caption" : "新建行",
-            "groupExtractMode" : "ITEM",
-            "itemType" : "DEUIACTION",
-            "name" : "deuiaction2",
-            "noPrivDisplayMode" : 2,
-            "getPSAppViewUIAction" : {
-              "modelref" : true,
-              "id" : "toolbar_deuiaction2"
-            },
-            "getPSSysImage" : {
-              "glyph" : "xf067@FontAwesome",
-              "cssClass" : "fa fa-plus"
-            },
-            "getPSUIAction" : {
-              "caption" : "新建行",
-              "codeName" : "NewRow",
-              "dataAccessAction" : "CREATE",
-              "fullCodeName" : "NewRow",
-              "name" : "表格界面_新建行",
-              "getPSDEOPPriv" : {
-                "modelref" : true,
-                "id" : "CREATE"
-              },
-              "getPSSysImage" : {
-                "glyph" : "xf067@FontAwesome",
-                "cssClass" : "fa fa-plus"
-              },
-              "predefinedType" : "GRIDVIEW_NEWROWACTION",
-              "timeout" : 60000,
-              "uIActionMode" : "SYS",
-              "uIActionTag" : "NewRow",
-              "uIActionType" : "DEUIACTION"
-            },
-            "tooltip" : "新建行",
-            "showCaption" : true,
-            "showIcon" : true
-          } ],
-          "modelid" : "a5cf3f211750844db193707184d135a6",
-          "modeltype" : "PSDETOOLBAR"
-        }, {
           "aggMode" : "NONE",
           "codeName" : "Main",
           "columnEnableLink" : 2,
@@ -699,7 +635,7 @@
             }
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+          "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
           "logicName" : "主表格",
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -864,31 +800,17 @@
           } ],
           "getPSDEGridDataItems" : [ {
             "dataType" : 21,
-            "name" : "expect",
-            "getPSAppDEField" : {
-              "name" : "EXPECT",
-              "codeName" : "Expect"
-            }
-          }, {
-            "dataType" : 21,
             "name" : "desc",
             "getPSAppDEField" : {
               "name" : "DESC",
               "codeName" : "Desc"
             }
           }, {
-            "dataType" : 1,
-            "name" : "parent",
+            "dataType" : 21,
+            "name" : "expect",
             "getPSAppDEField" : {
-              "name" : "PARENT",
-              "codeName" : "Parent"
-            }
-          }, {
-            "dataType" : 1,
-            "name" : "case",
-            "getPSAppDEField" : {
-              "name" : "CASE",
-              "codeName" : "IBizCase"
+              "name" : "EXPECT",
+              "codeName" : "Expect"
             }
           }, {
             "dataType" : 25,
@@ -898,11 +820,18 @@
               "codeName" : "Type"
             }
           }, {
-            "dataType" : 21,
-            "name" : "srfmajortext",
+            "dataType" : 1,
+            "name" : "case",
             "getPSAppDEField" : {
-              "name" : "EXPECT",
-              "codeName" : "Expect"
+              "name" : "CASE",
+              "codeName" : "IBizCase"
+            }
+          }, {
+            "dataType" : 1,
+            "name" : "srfkey",
+            "getPSAppDEField" : {
+              "name" : "ID",
+              "codeName" : "Id"
             }
           }, {
             "dataType" : 1,
@@ -914,29 +843,20 @@
             "dataAccessAction" : true
           }, {
             "dataType" : 1,
-            "name" : "srfkey",
+            "name" : "parent",
             "getPSAppDEField" : {
-              "name" : "ID",
-              "codeName" : "Id"
+              "name" : "PARENT",
+              "codeName" : "Parent"
             }
-          } ],
-          "getPSDEGridEditItems" : [ {
-            "caption" : "预期",
-            "codeName" : "expect",
-            "enableCond" : 3,
-            "ignoreInput" : 0,
-            "name" : "expect",
+          }, {
+            "dataType" : 21,
+            "name" : "srfmajortext",
             "getPSAppDEField" : {
               "name" : "EXPECT",
               "codeName" : "Expect"
-            },
-            "getPSEditor" : {
-              "editorType" : "TEXTBOX",
-              "maxLength" : 65535,
-              "name" : "expect"
-            },
-            "allowEmpty" : true
-          }, {
+            }
+          } ],
+          "getPSDEGridEditItems" : [ {
             "caption" : "步骤",
             "codeName" : "desc",
             "enableCond" : 3,
@@ -953,18 +873,19 @@
             },
             "allowEmpty" : true
           }, {
-            "caption" : "用例编号",
-            "codeName" : "case",
+            "caption" : "预期",
+            "codeName" : "expect",
             "enableCond" : 3,
             "ignoreInput" : 0,
-            "name" : "case",
+            "name" : "expect",
             "getPSAppDEField" : {
-              "name" : "CASE",
-              "codeName" : "IBizCase"
+              "name" : "EXPECT",
+              "codeName" : "Expect"
             },
             "getPSEditor" : {
-              "editorType" : "HIDDEN",
-              "name" : "case"
+              "editorType" : "TEXTBOX",
+              "maxLength" : 65535,
+              "name" : "expect"
             },
             "allowEmpty" : true
           }, {
@@ -988,6 +909,21 @@
             },
             "allowEmpty" : true,
             "needCodeListConfig" : true
+          }, {
+            "caption" : "用例编号",
+            "codeName" : "case",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "name" : "case",
+            "getPSAppDEField" : {
+              "name" : "CASE",
+              "codeName" : "IBizCase"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "case"
+            },
+            "allowEmpty" : true
           }, {
             "caption" : "编号",
             "codeName" : "srfkey",
@@ -1053,6 +989,70 @@
           "name" : "grid",
           "modelid" : "40dce36ee967b93c834c209e40d007ca",
           "modeltype" : "PSDEGRID"
+        }, {
+          "codeName" : "GridView9toolbar",
+          "controlType" : "TOOLBAR",
+          "hookEventNames" : [ "CLICK" ],
+          "logicName" : "表格界面（行编辑仅新建行）",
+          "name" : "toolbar",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibCaseStepNested.json"
+          },
+          "getPSControlLogics" : [ {
+            "eventArg" : "deuiaction2",
+            "eventNames" : "CLICK",
+            "logicTag" : "toolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "toolbar_deuiaction2_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction2_click"
+            }
+          } ],
+          "getPSControlParam" : {
+            "id" : "TOOLBAR"
+          },
+          "getPSDEToolbarItems" : [ {
+            "caption" : "新建行",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction2",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction2"
+            },
+            "getPSSysImage" : {
+              "glyph" : "xf067@FontAwesome",
+              "cssClass" : "fa fa-plus"
+            },
+            "getPSUIAction" : {
+              "caption" : "新建行",
+              "codeName" : "NewRow",
+              "dataAccessAction" : "CREATE",
+              "fullCodeName" : "NewRow",
+              "name" : "表格界面_新建行",
+              "getPSDEOPPriv" : {
+                "modelref" : true,
+                "id" : "CREATE"
+              },
+              "getPSSysImage" : {
+                "glyph" : "xf067@FontAwesome",
+                "cssClass" : "fa fa-plus"
+              },
+              "predefinedType" : "GRIDVIEW_NEWROWACTION",
+              "timeout" : 60000,
+              "uIActionMode" : "SYS",
+              "uIActionTag" : "NewRow",
+              "uIActionType" : "DEUIACTION"
+            },
+            "tooltip" : "新建行",
+            "showCaption" : true,
+            "showIcon" : true
+          } ],
+          "modelid" : "a5cf3f211750844db193707184d135a6",
+          "modeltype" : "PSDETOOLBAR"
         } ],
         "getPSDEViewCodeName" : "GridView9",
         "getPSDEViewId" : "3a707767e36b51b53b0da7fd1aecc1d7",

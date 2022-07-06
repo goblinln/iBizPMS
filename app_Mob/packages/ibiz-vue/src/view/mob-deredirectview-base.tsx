@@ -1,6 +1,6 @@
 
 import { DynamicInstanceConfig, IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppView, IPSAppViewRef } from "@ibiz/dynamic-model-api";
-import { GetModelService, LogUtil, Util, ViewTool } from "ibiz-core";
+import { GetModelService, LogUtil, MobRedirectViewInterface, Util, ViewTool } from "ibiz-core";
 import { MainViewBase } from "./main-view-base";
 
 /**
@@ -10,7 +10,7 @@ import { MainViewBase } from "./main-view-base";
  * @class MobDeRedirectViewBase
  * @extends {MainViewBase}
  */
-export class MobDeRedirectViewBase extends MainViewBase {
+export class MobDeRedirectViewBase extends MainViewBase implements MobRedirectViewInterface  {
 
   /**
    * 视图实例
@@ -44,15 +44,15 @@ export class MobDeRedirectViewBase extends MainViewBase {
         return;
       }
       let targetOpenViewRef: IPSAppViewRef | null | undefined = (this.viewInstance.getRedirectPSAppViewRefs() as IPSAppViewRef[]).find((item: any) => {
-        return item.name === result.split(":")[0];
+        return item.name === result?.param?.split(":")[0];
       })
       if(!targetOpenViewRef){
         return;
       }
       // 存在动态实例
-      let splitArray: Array<any> = result.split(":");
-      if (splitArray && (splitArray.length == 3)) {
-        let curDynaInst: DynamicInstanceConfig = (await GetModelService({ instTag: splitArray[2], instTag2: splitArray[1] })).getDynaInsConfig();
+      let splitArray: Array<any> = result?.param?.split(":");
+      if (splitArray && (splitArray.length == 4)) {
+        let curDynaInst: DynamicInstanceConfig = (await GetModelService({ instTag: splitArray[3], instTag2: splitArray[2] })).getDynaInsConfig();
         if (curDynaInst) {
           Object.assign(tempContext, { srfdynainstid: curDynaInst.id });
         }

@@ -1,5 +1,5 @@
 import { IPSAppDataEntity, IPSAppDEField, IPSAppDEMobChartView, IPSDEChart } from '@ibiz/dynamic-model-api';
-import { MobChartViewEngine, ModelTool } from 'ibiz-core';
+import { MobChartViewEngine, MobChartViewInterface, ModelTool } from 'ibiz-core';
 import { MDViewBase } from './md-view-base';
 
 /**
@@ -9,7 +9,7 @@ import { MDViewBase } from './md-view-base';
  * @class MobChartViewBase
  * @extends {MDViewBase}
  */
-export class MobChartViewBase extends MDViewBase {
+export class MobChartViewBase extends MDViewBase implements MobChartViewInterface {
 
     /**
      * 视图实例

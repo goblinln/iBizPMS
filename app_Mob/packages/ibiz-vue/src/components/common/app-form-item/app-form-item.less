@@ -43,8 +43,17 @@
   }
 }
 .app-form-item {
-  ion-label {
-    min-width: 34px;
+  --border-color: #d8d8d8;
+  --background: #FFF;
+  ion-label.app-form-item,.label-floating.sc-ion-label-ios-h {
+    color: #4e4e4e;
+    font-size: 15px;
+    opacity: 1;
+    transform: none;
+  }
+  // 表单项编辑器通用容器类
+  .item-editor-content {
+    height: 100%;
   }
 }
 .left {

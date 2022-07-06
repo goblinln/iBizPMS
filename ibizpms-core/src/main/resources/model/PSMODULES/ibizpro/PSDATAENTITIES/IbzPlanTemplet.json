@@ -552,6 +552,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "open",
+            "fieldName" : "ACL",
             "name" : "ACL 等于(=) (open)",
             "getPSDEField" : {
               "name" : "ACL",
@@ -561,6 +562,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "CREATEMANNAME",
             "name" : "CREATEMANNAME 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "CREATEMANNAME",
@@ -1712,10 +1714,17 @@
     "realModelSubType" : "DEOPTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "产品计划模板实体编辑视图（左右关系）",
-    "name" : "产品计划模板实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "RedirectView",
+    "logicName" : "产品计划模板实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "产品计划模板实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "产品计划模板实体选择表格视图（部件视图）",
+    "name" : "产品计划模板实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -1725,11 +1734,10 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "产品计划模板实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "产品计划模板实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "产品计划模板实体编辑视图（左右关系）",
+    "name" : "产品计划模板实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -1739,24 +1747,11 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "产品计划模板实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "产品计划模板实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "产品计划模板实体选择表格视图（部件视图）",
-    "name" : "产品计划模板实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "codeName" : "EditView",
+    "logicName" : "产品计划模板实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "产品计划模板实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MPickupView",
@@ -1765,6 +1760,13 @@
     "name" : "产品计划模板实体数据多项选择视图",
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "IbzPlanTemplet",
   "dEType" : 1,
@@ -1808,10 +1810,6 @@
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail.json"
     },
     "name" : "DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "PLANTEMPLETID",
@@ -1825,7 +1823,7 @@
   "name" : "IBZ_PLANTEMPLET",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

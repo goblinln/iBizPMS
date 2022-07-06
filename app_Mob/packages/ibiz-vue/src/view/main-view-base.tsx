@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs';
-import { ModelTool, Util, ViewTool } from 'ibiz-core';
+import { MobMainViewInterface, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
 import { ViewBase } from './view-base';
 import { GlobalService, UIServiceRegister } from 'ibiz-service';
@@ -12,7 +12,7 @@ import { IPSAppDataEntity, IPSAppDEField, IPSAppDERedirectView, IPSAppDEView, IP
  * @class MainViewBase
  * @extends {ViewBase}
  */
-export class MainViewBase extends ViewBase {
+export class MainViewBase extends ViewBase implements MobMainViewInterface {
 
     /**
      * 视图引擎
@@ -305,16 +305,25 @@ export class MainViewBase extends ViewBase {
                 let _param: any = Util.computedNavData(fullargs[0], this.context, this.viewparams, localViewParam);
                 Object.assign(data, _param);
             }
-            if (fullargs && (fullargs.length > 0) && fullargs[0]['srfprocessdefinitionkey'] && fullargs[0]['srftaskdefinitionkey']) {
+            if (fullargs && (fullargs.length > 0)) {
+              if(fullargs[0]['srfprocessdefinitionkey']){
                 Object.assign(data, { 'processDefinitionKey': fullargs[0]['srfprocessdefinitionkey'] });
+              }
+              if(fullargs[0]['srftaskdefinitionkey']){
                 Object.assign(data, { 'taskDefinitionKey': fullargs[0]['srftaskdefinitionkey'] });
+              }
+              if(fullargs[0]['srfprocessinstanceid']){
+                Object.assign(data, { 'processinstanceid': fullargs[0]['srfprocessinstanceid'] });
+              }
+              if(fullargs[0]['srfprocessdefinitionkey'] && fullargs[0]['srftaskdefinitionkey'] && fullargs[0]['srfprocessinstanceid']){
                 // 将待办任务标记为已读准备参数
                 const that: any = this;
                 if (that.quickGroupData && that.quickGroupData.hasOwnProperty("srfwf") && fullargs[0]['srftaskid']) {
                     Object.assign(data, { 'srfwf': that.quickGroupData['srfwf'] });
                     Object.assign(data, { 'srftaskid': fullargs[0]['srftaskid'] });
                 }
-            }
+              }
+          }
             let deResParameters: any[] = [];
             let parameters: any[] = [];
             const openView: IPSAppView | null = openViewRef.getRefPSAppView();
@@ -362,12 +371,15 @@ export class MainViewBase extends ViewBase {
                 if (targetRedirectView.getRedirectPSAppViewRefs() && (targetRedirectView.getRedirectPSAppViewRefs()?.length === 0)) {
                     return;
                 }
-                this.appUIService.getRDAppView(args[0][(ModelTool.getViewAppEntityCodeName(this.viewInstance) as string)?.toLowerCase()], targetRedirectView.enableWorkflow).then(async (result: any) => {
+                this.appUIService.getRDAppView(  
+                    tempContext,
+                    args[0][(ModelTool.getViewAppEntityCodeName(this.viewInstance) as string)?.toLowerCase()],
+                    params).then(async (result: any) => {
                     if (!result) {
                         return;
                     }
                     let targetOpenViewRef: IPSAppViewRef | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
-                        return item.name === result;
+                        return item.name === result.param.toLocaleUpperCase();
                     })
                     if (!targetOpenViewRef) {
                         return;
@@ -588,6 +600,7 @@ export class MainViewBase extends ViewBase {
                 let parameters: any[] = [];
                 const dataview: IPSAppView | null = newviewRef.getRefPSAppView();
                 if (!dataview) return;
+                await dataview.fill(true);
                 if (dataview.getPSAppDataEntity() && tempContext[(dataview.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()]) {
                     delete tempContext[(dataview.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()];
                 }

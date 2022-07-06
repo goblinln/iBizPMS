@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "Bug转需求",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -962,14 +962,14 @@
             "value" : "srfloginname",
             "rawValue" : false
           }, {
-            "key" : "public",
-            "name" : "public",
-            "value" : "0",
-            "rawValue" : true
-          }, {
             "key" : "type",
             "name" : "type",
             "value" : "story",
+            "rawValue" : true
+          }, {
+            "key" : "public",
+            "name" : "public",
+            "value" : "0",
             "rawValue" : true
           } ],
           "getPSSysPFPlugin" : {

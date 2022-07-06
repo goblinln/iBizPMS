@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -129,31 +129,17 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 21,
-    "name" : "expect",
-    "getPSAppDEField" : {
-      "name" : "EXPECT",
-      "codeName" : "Expect"
-    }
-  }, {
-    "dataType" : 21,
     "name" : "desc",
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     }
   }, {
-    "dataType" : 1,
-    "name" : "parent",
+    "dataType" : 21,
+    "name" : "expect",
     "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "case",
-    "getPSAppDEField" : {
-      "name" : "CASE",
-      "codeName" : "IBizCase"
+      "name" : "EXPECT",
+      "codeName" : "Expect"
     }
   }, {
     "dataType" : 25,
@@ -163,11 +149,18 @@
       "codeName" : "Type"
     }
   }, {
-    "dataType" : 21,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "case",
     "getPSAppDEField" : {
-      "name" : "EXPECT",
-      "codeName" : "Expect"
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -179,29 +172,20 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "parent",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PARENT",
+      "codeName" : "Parent"
     }
-  } ],
-  "getPSDEGridEditItems" : [ {
-    "caption" : "预期",
-    "codeName" : "expect",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "expect",
+  }, {
+    "dataType" : 21,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
-    },
-    "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "maxLength" : 65535,
-      "name" : "expect"
-    },
-    "allowEmpty" : true
-  }, {
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
     "caption" : "步骤",
     "codeName" : "desc",
     "enableCond" : 3,
@@ -218,18 +202,19 @@
     },
     "allowEmpty" : true
   }, {
-    "caption" : "用例编号",
-    "codeName" : "case",
+    "caption" : "预期",
+    "codeName" : "expect",
     "enableCond" : 3,
     "ignoreInput" : 0,
-    "name" : "case",
+    "name" : "expect",
     "getPSAppDEField" : {
-      "name" : "CASE",
-      "codeName" : "IBizCase"
+      "name" : "EXPECT",
+      "codeName" : "Expect"
     },
     "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "case"
+      "editorType" : "TEXTBOX",
+      "maxLength" : 65535,
+      "name" : "expect"
     },
     "allowEmpty" : true
   }, {
@@ -253,6 +238,21 @@
     },
     "allowEmpty" : true,
     "needCodeListConfig" : true
+  }, {
+    "caption" : "用例编号",
+    "codeName" : "case",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "case",
+    "getPSAppDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "case"
+    },
+    "allowEmpty" : true
   }, {
     "caption" : "编号",
     "codeName" : "srfkey",

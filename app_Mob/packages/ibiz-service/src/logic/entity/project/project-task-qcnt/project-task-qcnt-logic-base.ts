@@ -32,72 +32,9 @@ export class ProjectTaskQCntLogicBase extends EntityLogicBase {
     }
 
     /**
-     * 进行中的任务「RAWSQLCALL」
-     */
-    private async executeRawsqlcall8(): Promise<any> {
-        // RAWSQLCALL暂未支持
-        console.log("RAWSQLCALL暂未支持");
-        return this.default;
-    }
-
-    /**
      * 未关闭的任务数「RAWSQLCALL」
      */
     private async executeRawsqlcall10(): Promise<any> {
-        // RAWSQLCALL暂未支持
-        console.log("RAWSQLCALL暂未支持");
-        return this.default;
-    }
-
-    /**
-     * 未关闭任务数「RAWSQLCALL」
-     */
-    private async executeRawsqlcall1(): Promise<any> {
-        // RAWSQLCALL暂未支持
-        console.log("RAWSQLCALL暂未支持");
-        return this.default;
-    }
-
-    /**
-     * 已关闭的任务数「RAWSQLCALL」
-     */
-    private async executeRawsqlcall7(): Promise<any> {
-        // RAWSQLCALL暂未支持
-        console.log("RAWSQLCALL暂未支持");
-        return this.default;
-    }
-
-    /**
-     * 指派给我的任务数「RAWSQLCALL」
-     */
-    private async executeRawsqlcall2(): Promise<any> {
-        // RAWSQLCALL暂未支持
-        console.log("RAWSQLCALL暂未支持");
-        return this.default;
-    }
-
-    /**
-     * 所有任务「RAWSQLCALL」
-     */
-    private async executeRawsqlcall5(): Promise<any> {
-        // RAWSQLCALL暂未支持
-        console.log("RAWSQLCALL暂未支持");
-        return this.default;
-    }
-
-    /**
-     * 已完成的任务数「RAWSQLCALL」
-     */
-    private async executeRawsqlcall3(): Promise<any> {
-        // RAWSQLCALL暂未支持
-        console.log("RAWSQLCALL暂未支持");
-        return this.default;
-    }
-
-    /**
-     * 已取消任务「RAWSQLCALL」
-     */
-    private async executeRawsqlcall6(): Promise<any> {
         // RAWSQLCALL暂未支持
         console.log("RAWSQLCALL暂未支持");
         return this.default;
@@ -113,9 +50,27 @@ export class ProjectTaskQCntLogicBase extends EntityLogicBase {
     }
 
     /**
-     * 我完成的任务数「RAWSQLCALL」
+     * 已关闭的任务数「RAWSQLCALL」
      */
-    private async executeRawsqlcall4(): Promise<any> {
+    private async executeRawsqlcall7(): Promise<any> {
+        // RAWSQLCALL暂未支持
+        console.log("RAWSQLCALL暂未支持");
+        return this.default;
+    }
+
+    /**
+     * 进行中的任务「RAWSQLCALL」
+     */
+    private async executeRawsqlcall8(): Promise<any> {
+        // RAWSQLCALL暂未支持
+        console.log("RAWSQLCALL暂未支持");
+        return this.default;
+    }
+
+    /**
+     * 指派给我的任务数「RAWSQLCALL」
+     */
+    private async executeRawsqlcall2(): Promise<any> {
         // RAWSQLCALL暂未支持
         console.log("RAWSQLCALL暂未支持");
         return this.default;
@@ -125,6 +80,51 @@ export class ProjectTaskQCntLogicBase extends EntityLogicBase {
      * 需求变更数「RAWSQLCALL」
      */
     private async executeRawsqlcall11(): Promise<any> {
+        // RAWSQLCALL暂未支持
+        console.log("RAWSQLCALL暂未支持");
+        return this.default;
+    }
+
+    /**
+     * 未关闭任务数「RAWSQLCALL」
+     */
+    private async executeRawsqlcall1(): Promise<any> {
+        // RAWSQLCALL暂未支持
+        console.log("RAWSQLCALL暂未支持");
+        return this.default;
+    }
+
+    /**
+     * 我完成的任务数「RAWSQLCALL」
+     */
+    private async executeRawsqlcall4(): Promise<any> {
+        // RAWSQLCALL暂未支持
+        console.log("RAWSQLCALL暂未支持");
+        return this.default;
+    }
+
+    /**
+     * 已取消任务「RAWSQLCALL」
+     */
+    private async executeRawsqlcall6(): Promise<any> {
+        // RAWSQLCALL暂未支持
+        console.log("RAWSQLCALL暂未支持");
+        return this.default;
+    }
+
+    /**
+     * 已完成的任务数「RAWSQLCALL」
+     */
+    private async executeRawsqlcall3(): Promise<any> {
+        // RAWSQLCALL暂未支持
+        console.log("RAWSQLCALL暂未支持");
+        return this.default;
+    }
+
+    /**
+     * 所有任务「RAWSQLCALL」
+     */
+    private async executeRawsqlcall5(): Promise<any> {
         // RAWSQLCALL暂未支持
         console.log("RAWSQLCALL暂未支持");
         return this.default;

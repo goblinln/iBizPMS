@@ -2,7 +2,7 @@
   "codeName" : "UserFinishTask",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats/PSSEARCHFORMS/UserFinishTask.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "用户完成任务",
   "getPSAppDataEntity" : {
     "modelref" : true,

@@ -1,12 +1,6 @@
 <template>
-    <div class="app-mob-department-personnel">
-        <ion-select :disabled="disabled" @ionChange="change" :multiple="multiple" @click="onClick" :ok-text="$t('app.button.confirm')" :cancel-text="$t('app.button.cancel')">
-          <ion-select-option v-for="(item, index) in items" :key="index" :value="item.id">{{item.label}}
-          </ion-select-option>
-        </ion-select>
-        <!-- <template>
-          <ion-icon v-if="!disabled" @click="openView" name="search-outline"></ion-icon>
-        </template> -->
+    <div class="app-mob-department-personnel" @click="openView">
+      <div class="form-value-content select-value-content">{{visibleLabel}}</div><van-icon class="app-mob-select-vant-icon" name="arrow" />
     </div>
 </template>
 
@@ -119,7 +113,7 @@ export default class AppMobDepartmentPersonnel extends Vue {
      * @type {*}
      * @memberof AppMobDepartmentPersonnel
      */  
-    @Prop() public fillmap: any;
+    @Prop() public fillMap: any;
 
     /**
      * 选中项对象集合
@@ -185,7 +179,7 @@ export default class AppMobDepartmentPersonnel extends Vue {
             }else{
                 this.getDepertmentId();
                 if(this.treeurl){
-                    let tempUrl = this.treeurl.replace('{deptId}',this.filtervalue);
+                    let tempUrl = this.treeurl.replace('${deptId}',this.filtervalue);
                     let get = Http.getInstance().get(tempUrl, true);
                     get.then((response: any)=>{
                         if(response.status === 200) {
@@ -219,12 +213,12 @@ export default class AppMobDepartmentPersonnel extends Vue {
      * @memberof AppMobDepartmentPersonnel
      */
     public getPersonnelItems($event: string){
-        let tempUrl = this.url.replace('{deptId}',$event);
+        let tempUrl = this.url.replace('${deptId}',$event);
         let get = Http.getInstance().get(tempUrl, true);
         get.then((response: any) => {
             if(response.status === 200 && response.data.length > 0) {
                 response.data.forEach((item: any)=>{
-                    this.items.push(item);
+                    this.items.push(Object.assign({item,name:item[this.fillMap.label]}));
                 });
             }
             this.$store.commit("addDepartmentPersonnel",this.items);
@@ -247,9 +241,9 @@ export default class AppMobDepartmentPersonnel extends Vue {
             let item: any = {};
             item.label = this.data[this.name]?this.data[this.name].split(','):[];
             item.id = this.data[this.valueitem] ? this.data[this.valueitem].split(',') : [];
-            if(this.fillmap) {
-                for(let key in this.fillmap) {
-                    item[this.fillmap[key]] = this.data[key] ? this.data[key].split(',') : [];
+            if(this.fillMap) {
+                for(let key in this.fillMap) {
+                    item[this.fillMap[key]] = this.data[key] ? this.data[key].split(',') : [];
                 }
             }
             const callback:any = (item:any) =>{
@@ -311,8 +305,8 @@ export default class AppMobDepartmentPersonnel extends Vue {
      */  
     public openView() {
         const view: any = {
-            viewname: 'app-group-picker',
-            title: (this.$t('components.appGroupSelect.groupSelect') as string)
+            viewname: 'app-mob-group-picker',
+            title: (this.$t('components.AppMobGroupSelect.groupSelect') as string)
         };
         const context: any = JSON.parse(JSON.stringify(this.context));
         this.getDepertmentId();
@@ -326,13 +320,12 @@ export default class AppMobDepartmentPersonnel extends Vue {
             selects: this.selects,
             selectType: 'dept',
         });
-        // let container: Subject<any> = this.$appmodal.openModal(view, context, param);
-        // container.subscribe((result: any) => {
-        //     if (!result || !Object.is(result.ret, 'OK')) {
-        //         return;
-        //     }
-        //     this.openViewClose(result);
-        // });
+        this.$appmodal.openModal(view, context,param).then((result:any)=>{
+          if(result.ret != "OK"){
+            return;
+          }
+          this.openViewClose(result);
+        });
     }
 
     /**
@@ -395,8 +388,8 @@ export default class AppMobDepartmentPersonnel extends Vue {
         if(this.valueitem) {
             item[this.valueitem] = null;
         }
-        if(this.fillmap) {
-            for(let key in this.fillmap) {
+        if(this.fillMap) {
+            for(let key in this.fillMap) {
                 item[key] = null;
             }
         }
@@ -406,9 +399,9 @@ export default class AppMobDepartmentPersonnel extends Vue {
                 if(this.valueitem) {
                     item[this.valueitem] = item[this.valueitem] ? `${item[this.valueitem]},${select.id}` : select.id;
                 }
-                if(this.fillmap) {
-                    for(let key in this.fillmap) {
-                        item[key] = item[key] ? `${item[key]},${select[this.fillmap[key]]}` : select[this.fillmap[key]];
+                if(this.fillMap) {
+                    for(let key in this.fillMap) {
+                        item[key] = item[key] ? `${item[key]},${select[this.fillMap[key]]}` : select[this.fillMap[key]];
                     }
                 }
             });
@@ -417,9 +410,9 @@ export default class AppMobDepartmentPersonnel extends Vue {
             if(this.valueitem) {
                 item[this.valueitem] = this.selects.length > 0 ? this.selects[0].id : null;
             }
-            if(this.fillmap) {
-                for(let key in this.fillmap) {
-                    item[key] = this.selects.length > 0 ? this.selects[0][this.fillmap[key]] : null;
+            if(this.fillMap) {
+                for(let key in this.fillMap) {
+                    item[key] = this.selects.length > 0 ? this.selects[0][this.fillMap[key]] : null;
                 }
             }
         }
@@ -427,6 +420,20 @@ export default class AppMobDepartmentPersonnel extends Vue {
             this.$emit('formitemvaluechange', { name: key, value: item[key] });
         }
     }
+
+  get visibleLabel(){
+      if(this.selects.length > 0){
+        let text = '';
+        this.selects.forEach((item:any)=>{
+          if(item.label){
+            text = text?text+','+item.label:text+item.label;
+          }
+        })
+        return text;
+      }else{
+        return  '';
+      }
+  }
 }
 
 </script>

@@ -53,7 +53,6 @@ export abstract class SysPostBase extends EntityBase implements ISysPost {
      * 备注
      */
     memo?: any;
-
     /**
      * 重置实体数据
      *

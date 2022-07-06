@@ -105,7 +105,6 @@ export abstract class ReportlyBase extends EntityBase implements IReportly {
      * 抄送给（选择）
      */
     mailtopk?: any;
-
     /**
      * 重置实体数据
      *

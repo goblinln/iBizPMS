@@ -2011,17 +2011,23 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "MPickupView",
-    "logicName" : "testrun实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "testrun实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
+    "codeName" : "RedirectView",
+    "logicName" : "testrun实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "testrun实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView9",
     "logicName" : "测试运行实体编辑视图（部件视图）",
     "name" : "测试运行实体编辑视图（部件视图）",
     "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MEditView9",
+    "logicName" : "测试运行实体多表单编辑视图（部件视图）",
+    "name" : "测试运行实体多表单编辑视图（部件视图）",
+    "realModelSubType" : "DEMEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -2031,10 +2037,11 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MEditView9",
-    "logicName" : "测试运行实体多表单编辑视图（部件视图）",
-    "name" : "测试运行实体多表单编辑视图（部件视图）",
-    "realModelSubType" : "DEMEDITVIEW9",
+    "codeName" : "EditView",
+    "logicName" : "testrun实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "testrun实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView2",
@@ -2043,12 +2050,11 @@
     "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "PickupGridView",
+    "logicName" : "testrun实体选择表格视图（部件视图）",
+    "name" : "testrun实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
     "logicName" : "testrun实体数据选择视图",
@@ -2057,25 +2063,19 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "testrun实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "testrun实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "MPickupView",
+    "logicName" : "testrun实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "testrun实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "RedirectView",
-    "logicName" : "testrun实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "testrun实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "testrun实体选择表格视图（部件视图）",
-    "name" : "testrun实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "TestRun",
   "dEType" : 1,
@@ -2119,10 +2119,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
     },
     "name" : "DER1N_ZT_TESTRESULT_ZT_TESTRUN_RUN",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "RUN",
@@ -2187,7 +2183,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

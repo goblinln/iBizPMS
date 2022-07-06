@@ -1370,10 +1370,37 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "CompanyDynamicStatsGridView",
-    "logicName" : "公司动态汇总实体表格视图（公司动态统计表）",
-    "name" : "公司动态汇总实体表格视图（公司动态统计表）",
+    "codeName" : "GridView",
+    "logicName" : "公司动态汇总实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "公司动态汇总实体表格视图",
     "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "公司动态汇总实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "公司动态汇总实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "公司动态汇总实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "公司动态汇总实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "公司动态汇总实体编辑视图（左右关系）",
+    "name" : "公司动态汇总实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "公司动态汇总实体选择表格视图（部件视图）",
+    "name" : "公司动态汇总实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -1390,29 +1417,9 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "公司动态汇总实体编辑视图（左右关系）",
-    "name" : "公司动态汇总实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "公司动态汇总实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "公司动态汇总实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "公司动态汇总实体选择表格视图（部件视图）",
-    "name" : "公司动态汇总实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "公司动态汇总实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "公司动态汇总实体表格视图",
+    "codeName" : "CompanyDynamicStatsGridView",
+    "logicName" : "公司动态汇总实体表格视图（公司动态统计表）",
+    "name" : "公司动态汇总实体表格视图（公司动态统计表）",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -1422,13 +1429,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "公司动态汇总实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "公司动态汇总实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "CompanyStats",
   "dEType" : 1,
@@ -1459,7 +1459,7 @@
   "name" : "IBZ_COMPANYSTATS",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

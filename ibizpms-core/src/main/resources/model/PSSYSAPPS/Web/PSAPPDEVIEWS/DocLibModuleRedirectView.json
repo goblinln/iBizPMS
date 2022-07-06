@@ -26,7 +26,7 @@
     "useDefaultLayout" : true
   },
   "getRedirectPSAppViewRefs" : [ {
-    "name" : "EDITVIEW",
+    "name" : "IBZ_DOCLIBMODULE:EDITVIEW",
     "realTitle" : "文档库分类编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -34,7 +34,7 @@
       "viewType" : "DEEDITVIEW"
     }
   }, {
-    "name" : "IBZ_DOCLIBMODULE:EDITVIEW",
+    "name" : "EDITVIEW",
     "realTitle" : "文档库分类编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,

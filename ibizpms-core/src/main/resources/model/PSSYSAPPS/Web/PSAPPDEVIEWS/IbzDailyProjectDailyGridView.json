@@ -90,7 +90,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（项目日报）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -322,10 +322,10 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 25,
-      "name" : "issubmit",
+      "name" : "ibz_dailyname",
       "getPSAppDEField" : {
-        "name" : "ISSUBMIT",
-        "codeName" : "Issubmit"
+        "name" : "IBZ_DAILYNAME",
+        "codeName" : "IbzDailyName"
       }
     }, {
       "dataType" : 25,
@@ -333,13 +333,6 @@
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
         "codeName" : "Account"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "ibz_dailyid",
-      "getPSAppDEField" : {
-        "name" : "IBZ_DAILYID",
-        "codeName" : "IbzDailyId"
       }
     }, {
       "format" : "YYYY-MM-DD",
@@ -351,20 +344,31 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "ibz_dailyname",
+      "name" : "reportto",
       "getPSAppDEField" : {
-        "name" : "IBZ_DAILYNAME",
-        "codeName" : "IbzDailyName"
+        "name" : "REPORTTO",
+        "codeName" : "Reportto"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "ibz_dailyid",
+      "getPSAppDEField" : {
+        "name" : "IBZ_DAILYID",
+        "codeName" : "IbzDailyId"
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "issubmit",
       "getPSAppDEField" : {
-        "name" : "IBZ_DAILYNAME",
-        "codeName" : "IbzDailyName"
+        "name" : "ISSUBMIT",
+        "codeName" : "Issubmit"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "IBZ_DAILYID",
+        "codeName" : "IbzDailyId"
       }
     }, {
       "dataType" : 1,
@@ -375,19 +379,15 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
+      "dataType" : 25,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "IBZ_DAILYID",
-        "codeName" : "IbzDailyId"
+        "name" : "IBZ_DAILYNAME",
+        "codeName" : "IbzDailyName"
       }
     }, {
       "dataType" : 25,
-      "name" : "reportto",
-      "getPSAppDEField" : {
-        "name" : "REPORTTO",
-        "codeName" : "Reportto"
-      }
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "日报标识",
@@ -440,7 +440,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -449,10 +449,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -471,10 +471,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格（启用行编辑-编辑模式）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -150,20 +150,6 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 7,
-    "name" : "consumed",
-    "getPSAppDEField" : {
-      "name" : "CONSUMED",
-      "codeName" : "Consumed"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "root",
-    "getPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    }
-  }, {
     "dataType" : 25,
     "name" : "account_text",
     "getPSAppDEField" : {
@@ -176,6 +162,20 @@
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "estimate",
+    "getPSAppDEField" : {
+      "name" : "ESTIMATE",
+      "codeName" : "Estimate"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "consumed",
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
     }
   }, {
     "dataType" : 7,
@@ -192,18 +192,18 @@
       "codeName" : "Type"
     }
   }, {
-    "dataType" : 7,
-    "name" : "estimate",
+    "dataType" : 1,
+    "name" : "root",
     "getPSAppDEField" : {
-      "name" : "ESTIMATE",
-      "codeName" : "Estimate"
+      "name" : "ROOT",
+      "codeName" : "Root"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -214,11 +214,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
     }
   } ],
   "getPSDEGridEditItemVRs" : [ {
@@ -307,36 +307,6 @@
     "valueRuleType" : "DEFVALUERULE"
   } ],
   "getPSDEGridEditItems" : [ {
-    "caption" : "总计消耗",
-    "codeName" : "consumed",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "consumed",
-    "getPSAppDEField" : {
-      "name" : "CONSUMED",
-      "codeName" : "Consumed"
-    },
-    "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "name" : "consumed"
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "编号",
-    "codeName" : "root",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "root",
-    "getPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    },
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "root"
-    },
-    "allowEmpty" : true
-  }, {
     "caption" : "用户",
     "codeName" : "account",
     "enableCond" : 3,
@@ -363,6 +333,38 @@
     "valueItemName" : "account",
     "allowEmpty" : true,
     "needCodeListConfig" : true
+  }, {
+    "caption" : "预计",
+    "codeName" : "estimate",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "estimate",
+    "getPSAppDEField" : {
+      "name" : "ESTIMATE",
+      "codeName" : "Estimate"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "name" : "estimate"
+    },
+    "unitName" : "小时",
+    "allowEmpty" : true,
+    "enableUnitName" : true
+  }, {
+    "caption" : "总计消耗",
+    "codeName" : "consumed",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "consumed",
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "name" : "consumed"
+    },
+    "allowEmpty" : true
   }, {
     "caption" : "预计剩余",
     "codeName" : "left",
@@ -402,18 +404,18 @@
     "allowEmpty" : true,
     "needCodeListConfig" : true
   }, {
-    "caption" : "预计",
-    "codeName" : "estimate",
+    "caption" : "编号",
+    "codeName" : "root",
     "enableCond" : 3,
     "ignoreInput" : 0,
-    "name" : "estimate",
+    "name" : "root",
     "getPSAppDEField" : {
-      "name" : "ESTIMATE",
-      "codeName" : "Estimate"
+      "name" : "ROOT",
+      "codeName" : "Root"
     },
     "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "name" : "estimate"
+      "editorType" : "HIDDEN",
+      "name" : "root"
     },
     "allowEmpty" : true
   }, {

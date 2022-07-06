@@ -265,7 +265,6 @@ export abstract class TestBase extends EntityBase implements ITest {
      * id
      */
     line?: any;
-
     /**
      * 重置实体数据
      *

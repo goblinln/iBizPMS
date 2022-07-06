@@ -4,7 +4,6 @@ import { IIbzTaskestimate, IbzTaskestimate } from '../../entities';
 import keys from '../../entities/ibz-taskestimate/ibz-taskestimate-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { SearchFilter } from 'ibiz-core';
 
 /**
  * 任务预计服务对象基类
@@ -23,7 +22,7 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
     protected APPDENAMEPLURAL = 'IbzTaskestimates';
     protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json';
     protected APPDEKEY = 'id';
-    protected APPDETEXT = 'account';
+    protected APPDETEXT = 'id';
     protected quickSearchFields = ['id',];
     protected selectContextParam = {
     };
@@ -118,6 +117,65 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
         return this.condCache.get('view');
     }
     /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzTaskestimateService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        const res = await this.http.post(`/ibztaskestimates`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzTaskestimateService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.get(`/ibztaskestimates/${_context.ibztaskestimate}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzTaskestimateService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/ibztaskestimates/getdraft`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
      * PMEvaluation
      *
      * @param {*} [_context={}]
@@ -126,7 +184,46 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
      * @memberof IbzTaskestimateService
      */
     async PMEvaluation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        throw new Error('自定义实体行为「PMEvaluation」需要重写实现');
+        try {
+        const res = await this.http.post(`/ibztaskestimates/${_context.ibztaskestimate}/pmevaluation`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzTaskestimateService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.delete(`/ibztaskestimates/${_context.ibztaskestimate}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzTaskestimateService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/ibztaskestimates/${_context.ibztaskestimate}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchActionMonth
@@ -137,8 +234,13 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
      * @memberof IbzTaskestimateService
      */
     async FetchActionMonth(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const cond: any = this.getActionMonthCond();
-        return this.searchAppLocal(cond, new SearchFilter(_context, _data));
+        try {
+        const res = await this.http.post(`/ibztaskestimates/fetchactionmonth`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchActionMonth');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchActionYear
@@ -149,8 +251,13 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
      * @memberof IbzTaskestimateService
      */
     async FetchActionYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const cond: any = this.getActionYearCond();
-        return this.searchAppLocal(cond, new SearchFilter(_context, _data));
+        try {
+        const res = await this.http.post(`/ibztaskestimates/fetchactionyear`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchActionYear');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -161,8 +268,13 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
      * @memberof IbzTaskestimateService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const cond: any = this.getDefaultCond();
-        return this.searchAppLocal(cond, new SearchFilter(_context, _data));
+        try {
+        const res = await this.http.post(`/ibztaskestimates/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefaults
@@ -173,8 +285,13 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
      * @memberof IbzTaskestimateService
      */
     async FetchDefaults(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const cond: any = this.getDefaultsCond();
-        return this.searchAppLocal(cond, new SearchFilter(_context, _data));
+        try {
+        const res = await this.http.post(`/ibztaskestimates/fetchdefaults`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefaults');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectActionMonth
@@ -185,8 +302,13 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
      * @memberof IbzTaskestimateService
      */
     async FetchProjectActionMonth(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const cond: any = this.getProjectActionMonthCond();
-        return this.searchAppLocal(cond, new SearchFilter(_context, _data));
+        try {
+        const res = await this.http.post(`/ibztaskestimates/fetchprojectactionmonth`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectActionMonth');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectActionYear
@@ -197,8 +319,13 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
      * @memberof IbzTaskestimateService
      */
     async FetchProjectActionYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const cond: any = this.getProjectActionYearCond();
-        return this.searchAppLocal(cond, new SearchFilter(_context, _data));
+        try {
+        const res = await this.http.post(`/ibztaskestimates/fetchprojectactionyear`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectActionYear');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectTaskEstimate
@@ -209,7 +336,43 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
      * @memberof IbzTaskestimateService
      */
     async FetchProjectTaskEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const cond: any = this.getProjectTaskEstimateCond();
-        return this.searchAppLocal(cond, new SearchFilter(_context, _data));
+        try {
+        const res = await this.http.post(`/ibztaskestimates/fetchprojecttaskestimate`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTaskEstimate');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzTaskestimateService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.get(`/ibztaskestimates/${_context.ibztaskestimate}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+
+    /**
+     * PMEvaluationBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzTaskestimateServiceBase
+     */
+    public async PMEvaluationBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        const res = await this.http.post(`/ibztaskestimates/pmevaluationbatch`,_data);
+        return res;
     }
 }

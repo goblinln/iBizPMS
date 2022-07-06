@@ -1,4 +1,4 @@
-import { Util, ModelParser} from "ibiz-core";
+import { Util, ModelParser, MobContextMenuControlInterface} from "ibiz-core";
 import { MainControlBase } from './main-control-base';
 import { IPSDEContextMenu } from '@ibiz/dynamic-model-api';
 
@@ -9,7 +9,7 @@ import { IPSDEContextMenu } from '@ibiz/dynamic-model-api';
  * @class MobContextMenuBase
  * @extends {MainControlBase}
  */
-export class MobContextMenuControlBase extends MainControlBase {
+export class MobContextMenuControlBase extends MainControlBase implements MobContextMenuControlInterface{
 
     /**
      * 部件模型

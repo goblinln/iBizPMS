@@ -79,7 +79,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（结果）",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -299,11 +299,11 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 25,
-      "name" : "files",
+      "dataType" : 1,
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "FILES",
-        "codeName" : "Files"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 21,
@@ -311,20 +311,6 @@
       "getPSAppDEField" : {
         "name" : "DESC",
         "codeName" : "Desc"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "parent",
-      "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "steps",
-      "getPSAppDEField" : {
-        "name" : "STEPS",
-        "codeName" : "Steps"
       }
     }, {
       "dataType" : 25,
@@ -335,10 +321,17 @@
       }
     }, {
       "dataType" : 21,
-      "name" : "srfmajortext",
+      "name" : "expect",
       "getPSAppDEField" : {
         "name" : "EXPECT",
         "codeName" : "Expect"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "steps",
+      "getPSAppDEField" : {
+        "name" : "STEPS",
+        "codeName" : "Steps"
       }
     }, {
       "dataType" : 25,
@@ -346,6 +339,34 @@
       "getPSAppDEField" : {
         "name" : "REALS",
         "codeName" : "Reals"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "casestepsn",
+      "getPSAppDEField" : {
+        "name" : "CASESTEPSN",
+        "codeName" : "Casestepsn"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "version",
+      "getPSAppDEField" : {
+        "name" : "VERSION",
+        "codeName" : "Version"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "case",
+      "getPSAppDEField" : {
+        "name" : "CASE",
+        "codeName" : "IBizCase"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "files",
+      "getPSAppDEField" : {
+        "name" : "FILES",
+        "codeName" : "Files"
       }
     }, {
       "dataType" : 1,
@@ -363,39 +384,18 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 9,
-      "name" : "version",
-      "getPSAppDEField" : {
-        "name" : "VERSION",
-        "codeName" : "Version"
-      }
-    }, {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "parent",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PARENT",
+        "codeName" : "Parent"
       }
     }, {
       "dataType" : 21,
-      "name" : "expect",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "EXPECT",
         "codeName" : "Expect"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "case",
-      "getPSAppDEField" : {
-        "name" : "CASE",
-        "codeName" : "IBizCase"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "casestepsn",
-      "getPSAppDEField" : {
-        "name" : "CASESTEPSN",
-        "codeName" : "Casestepsn"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -524,6 +524,7 @@
       "codeName" : "IBizCase"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   } ] ]
 }

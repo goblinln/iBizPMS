@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "产品bug状态统计",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -140,32 +140,11 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "bugefficient",
+    "name" : "productname",
     "getPSAppDEField" : {
-      "name" : "BUGEFFICIENT",
-      "codeName" : "Bugefficient"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugactive",
-    "getPSAppDEField" : {
-      "name" : "BUGACTIVE",
-      "codeName" : "Bugactive"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "project",
-    "getPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
     }
   }, {
     "dataType" : 9,
@@ -183,17 +162,31 @@
     }
   }, {
     "dataType" : 9,
+    "name" : "bugactive",
+    "getPSAppDEField" : {
+      "name" : "BUGACTIVE",
+      "codeName" : "Bugactive"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "bugefficient",
+    "getPSAppDEField" : {
+      "name" : "BUGEFFICIENT",
+      "codeName" : "Bugefficient"
+    }
+  }, {
+    "dataType" : 9,
     "name" : "bugtotal",
     "getPSAppDEField" : {
       "name" : "BUGTOTAL",
       "codeName" : "Bugtotal"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -205,17 +198,24 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "product",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
     }
   }, {
     "dataType" : 25,
-    "name" : "productname",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "PRODUCTNAME",
-      "codeName" : "ProductName"
+      "name" : "TITLE",
+      "codeName" : "Title"
     }
   } ],
   "getPSDEGridEditItems" : [ {

@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -153,10 +153,17 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "updateman",
+    "name" : "upfeatures",
     "getPSAppDEField" : {
-      "name" : "UPDATEMAN",
-      "codeName" : "UpdateMan"
+      "name" : "UPFEATURES",
+      "codeName" : "Upfeatures"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "type",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
     }
   }, {
     "dataType" : 9,
@@ -167,10 +174,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "sys_update_logid",
+    "name" : "updateman",
     "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_LOGID",
-      "codeName" : "SysUpdateLogId"
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
     }
   }, {
     "format" : "YYYY-MM-DD HH:mm:ss",
@@ -182,24 +189,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "type",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "upfeatures",
-    "getPSAppDEField" : {
-      "name" : "UPFEATURES",
-      "codeName" : "Upfeatures"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_FEATURESNAME",
-      "codeName" : "SysUpdateFeaturesName"
+      "name" : "SYS_UPDATE_FEATURESID",
+      "codeName" : "SysUpdateFeaturesId"
     }
   }, {
     "dataType" : 25,
@@ -211,10 +204,17 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "srfkey",
+    "name" : "sys_update_logid",
     "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_FEATURESID",
-      "codeName" : "SysUpdateFeaturesId"
+      "name" : "SYS_UPDATE_LOGID",
+      "codeName" : "SysUpdateLogId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "SYS_UPDATE_FEATURESNAME",
+      "codeName" : "SysUpdateFeaturesName"
     }
   } ],
   "getPSDEGridEditItems" : [ {

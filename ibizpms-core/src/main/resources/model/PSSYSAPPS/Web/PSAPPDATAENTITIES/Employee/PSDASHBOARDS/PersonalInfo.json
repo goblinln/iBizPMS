@@ -150,7 +150,7 @@
               "modelref" : true,
               "id" : "load"
             },
-            "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
             "logicName" : "个人信息详情表单",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -832,7 +832,7 @@
               "id" : "load"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "getItemPSLayoutPanel" : {
               "getAllPSPanelFields" : [ {
                 "id" : "mytodocnt",

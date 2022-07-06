@@ -1654,42 +1654,10 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "EditView2",
-    "logicName" : "组成员实体编辑视图（左右关系）",
-    "name" : "组成员实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "Usr2GridViewPostMembers",
-    "logicName" : "组成员实体表格视图(通讯录-岗位组员)",
-    "name" : "组成员实体表格视图(通讯录-岗位组员)",
+    "codeName" : "Usr2GridView",
+    "logicName" : "组成员实体表格视图(通讯录-团队组员)",
+    "name" : "组成员实体表格视图(通讯录-团队组员)",
     "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "组成员实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "组成员实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridExpViewTeam",
-    "logicName" : "组成员实体表格导航视图（通讯录团队下）",
-    "name" : "组成员实体表格导航视图（通讯录团队下）",
-    "realModelSubType" : "DEGRIDEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "组成员实体选择表格视图（部件视图）",
-    "name" : "组成员实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -1699,22 +1667,42 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "RedirectView",
+    "logicName" : "组成员实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "组成员实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "组成员实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "组成员实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "GridExpView",
     "logicName" : "组成员实体表格导航视图（通讯录岗位下）",
     "name" : "组成员实体表格导航视图（通讯录岗位下）",
     "realModelSubType" : "DEGRIDEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ExpMainEdit",
-    "logicName" : "通讯录编辑表单",
-    "modelTag2" : "0",
-    "name" : "通讯录编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "EditView2",
+    "logicName" : "组成员实体编辑视图（左右关系）",
+    "name" : "组成员实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Usr2GridView",
-    "logicName" : "组成员实体表格视图(通讯录-团队组员)",
-    "name" : "组成员实体表格视图(通讯录-团队组员)",
+    "codeName" : "GridExpViewTeam",
+    "logicName" : "组成员实体表格导航视图（通讯录团队下）",
+    "name" : "组成员实体表格导航视图（通讯录团队下）",
+    "realModelSubType" : "DEGRIDEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "组成员实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "组成员实体表格视图",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -1725,19 +1713,31 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "组成员实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "组成员实体表格视图",
+    "codeName" : "Usr2GridViewPostMembers",
+    "logicName" : "组成员实体表格视图(通讯录-岗位组员)",
+    "name" : "组成员实体表格视图(通讯录-岗位组员)",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "组成员实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "组成员实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
+    "codeName" : "PickupGridView",
+    "logicName" : "组成员实体选择表格视图（部件视图）",
+    "name" : "组成员实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "ExpMainEdit",
+    "logicName" : "通讯录编辑表单",
+    "modelTag2" : "0",
+    "name" : "通讯录编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "SysTeamMember",
   "dEType" : 1,
@@ -1858,7 +1858,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

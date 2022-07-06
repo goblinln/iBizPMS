@@ -82,6 +82,7 @@ export default class TextboxEditor extends EditorBase {
                 name: this.editorInstance.name,
                 value: this.value,
                 data: this.contextData,
+                disabled: this.disabled,                
                 ...this.customProps,
             },
             on: { change: this.handleChange, colorChange: ($event: any) => { this.editorChange($event) } },

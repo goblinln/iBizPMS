@@ -2,7 +2,7 @@
   "codeName" : "ProductTeamSearchForm",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam/PSSEARCHFORMS/ProductTeamSearchForm.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "产品团队管理搜索表单",
   "getPSAppDataEntity" : {
     "modelref" : true,

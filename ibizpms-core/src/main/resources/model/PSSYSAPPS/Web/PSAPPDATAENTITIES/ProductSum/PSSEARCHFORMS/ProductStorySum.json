@@ -2,7 +2,7 @@
   "codeName" : "ProductStorySum",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSSEARCHFORMS/ProductStorySum.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "搜索表单（产品需求汇总下）",
   "getPSAppDataEntity" : {
     "modelref" : true,

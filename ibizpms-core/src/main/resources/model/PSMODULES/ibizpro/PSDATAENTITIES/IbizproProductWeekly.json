@@ -1823,11 +1823,10 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "PickupView",
-    "logicName" : "产品周报实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "产品周报实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
+    "codeName" : "Usr2GridView",
+    "logicName" : "产品周报实体表格视图(主数据)",
+    "name" : "产品周报实体表格视图(主数据)",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
@@ -1837,10 +1836,24 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "产品周报实体编辑视图（左右关系）",
-    "name" : "产品周报实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "GridView",
+    "logicName" : "产品周报实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "产品周报实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "产品周报实体选择表格视图（部件视图）",
+    "name" : "产品周报实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "产品周报实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "产品周报实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -1850,10 +1863,17 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "产品周报实体选择表格视图（部件视图）",
-    "name" : "产品周报实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "codeName" : "MPickupView",
+    "logicName" : "产品周报实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "产品周报实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "产品周报实体编辑视图（左右关系）",
+    "name" : "产品周报实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Main",
@@ -1862,26 +1882,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "产品周报实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "产品周报实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2GridView",
-    "logicName" : "产品周报实体表格视图(主数据)",
-    "name" : "产品周报实体表格视图(主数据)",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "产品周报实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "产品周报实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "IbizproProductWeekly",
   "dEType" : 1,
@@ -1944,7 +1944,7 @@
   "name" : "IBIZPRO_PRODUCTWEEKLY",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

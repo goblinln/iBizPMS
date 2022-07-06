@@ -73,7 +73,6 @@ export abstract class DynaDashboardBase extends EntityBase implements IDynaDashb
      * 模型
      */
     model?: any;
-
     /**
      * 重置实体数据
      *

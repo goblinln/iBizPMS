@@ -16,7 +16,7 @@ import { AppMobMDCtrlBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class MobUpdateLogInfo extends AppMobMDCtrlBase {
 
-    render() {
+        render() {
         return this.$createElement('app-pms-update-log-info', {
             props: { items: this.items }
         })

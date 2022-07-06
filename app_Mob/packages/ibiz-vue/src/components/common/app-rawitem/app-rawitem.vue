@@ -1,6 +1,6 @@
 <template>
-    <div :style="sizeStyle">
-        <span>{{caption}}</span>
+    <div :style="sizeStyle" class="app-rawitem">
+        <span>{{content}}</span>
         <div v-if="Object.is(contentType,'RAW')" :class="contentStyle">
             <slot></slot>
         </div>
@@ -58,20 +58,21 @@ export default class AppRawItem extends Vue {
     @Prop() public imageClass?: string;
 
     /**
-     * 标题
-     *  
-     * @type {string}
-     * @memberof AppRawItem
-     */
-    @Prop() public caption?: string;
-
-    /**
      * 内容样式
      * 
      * @type {strin}
      * @memberof AppRawItem
      */
     @Prop() public contentStyle!: string;
+
+    
+    /**
+     * 内容
+     * 
+     * @type {string}
+     * @memberof AppRawItem
+     */
+    @Prop() public content?: string;
 
     /**
      * 内容宽高
@@ -86,5 +87,9 @@ export default class AppRawItem extends Vue {
 </script>
 
 <style lang='less'>
-
+.app-rawitem{
+  pre,p{
+    margin: 0;
+  }
+}
 </style>

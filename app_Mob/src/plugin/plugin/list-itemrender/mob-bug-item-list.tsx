@@ -18,7 +18,7 @@ import '../plugin-style.less';
 @VueLifeCycleProcessing()
 export class MobBugItemList extends AppMobMDCtrlBase {
 
-
+    
     /**
      * 数据加载
      */  

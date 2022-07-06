@@ -44,6 +44,14 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
+    "name" : "EDITDATA@Bug",
+    "realTitle" : "Bug移动端编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugMobEditView.json",
+      "viewType" : "DEMOBEDITVIEW"
+    }
+  }, {
     "name" : "EDITDATA@task",
     "realTitle" : "任务移动端编辑视图",
     "getRefPSAppView" : {
@@ -66,14 +74,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyDailyMobTabExpView.json",
       "viewType" : "DEMOBTABEXPVIEW"
-    }
-  }, {
-    "name" : "EDITDATA@Bug",
-    "realTitle" : "Bug移动端编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugMobEditView.json",
-      "viewType" : "DEMOBEDITVIEW"
     }
   } ],
   "getPSControls" : [ {

@@ -407,6 +407,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "normal",
+          "fieldName" : "STATUS",
           "name" : "STATUS 等于(=) (normal)",
           "getPSDEField" : {
             "name" : "STATUS",
@@ -3513,29 +3514,23 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "TestMain2",
-    "logicName" : "嵌入测试统计",
-    "modelTag2" : "0",
-    "name" : "嵌入测试统计",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "RedirectView",
+    "logicName" : "产品统计实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "产品统计实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Usr2GridViewPRoductComplete",
-    "logicName" : "产品统计实体表格视图(产品完成度统计表)",
-    "name" : "产品统计实体表格视图(产品完成度统计表)",
+    "codeName" : "EditView2",
+    "logicName" : "产品统计实体编辑视图（左右关系）",
+    "name" : "产品统计实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ALLGridView",
+    "logicName" : "产品统计实体表格视图（产品管理）",
+    "name" : "产品统计实体表格视图（产品管理）",
     "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "产品统计实体选择表格视图（部件视图）",
-    "name" : "产品统计实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView9",
-    "logicName" : "产品统计实体编辑视图（嵌入产品主页）",
-    "name" : "产品统计实体编辑视图（嵌入产品主页）",
-    "realModelSubType" : "DEEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobTabExpView",
@@ -3544,31 +3539,55 @@
     "realModelSubType" : "DEMOBTABEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "产品统计实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "产品统计实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "产品统计实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "产品统计实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "产品统计实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "产品统计实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "产品统计实体选择表格视图（部件视图）",
+    "name" : "产品统计实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "产品统计实体移动端选择多数据视图（部件视图）",
+    "name" : "产品统计实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "产品统计实体表格视图（产品质量表）",
+    "name" : "产品统计实体表格视图（产品质量表）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2GridViewPRoductComplete",
+    "logicName" : "产品统计实体表格视图(产品完成度统计表)",
+    "name" : "产品统计实体表格视图(产品完成度统计表)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "TestMobMDView",
     "logicName" : "产品统计实体移动端多数据视图（测试）",
     "name" : "产品统计实体移动端多数据视图（测试）",
     "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "产品统计实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "产品统计实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main2",
-    "logicName" : "嵌入统计",
-    "modelTag2" : "0",
-    "name" : "嵌入统计",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "产品统计实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "产品统计实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -3585,11 +3604,11 @@
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "产品统计实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "产品统计实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "codeName" : "MobPickupView",
+    "logicName" : "产品统计实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "产品统计实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridViewProducntInputTable",
@@ -3598,23 +3617,36 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "TestEditView9",
+    "logicName" : "产品统计实体编辑视图（嵌入测试统计）",
+    "name" : "产品统计实体编辑视图（嵌入测试统计）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView9",
+    "logicName" : "产品统计实体编辑视图（嵌入产品主页）",
+    "name" : "产品统计实体编辑视图（嵌入产品主页）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "产品统计实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "产品统计实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "GridView9",
     "logicName" : "产品统计实体表格视图（部件视图）",
     "name" : "产品统计实体表格视图（部件视图）",
     "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobEditView",
-    "logicName" : "产品统计实体移动端编辑视图",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "产品统计实体移动端编辑视图",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "产品统计实体编辑视图（左右关系）",
-    "name" : "产品统计实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "MobRedirectView",
+    "logicName" : "产品统计实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "产品统计实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMain",
@@ -3624,31 +3656,12 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "产品统计实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "产品统计实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "产品统计实体表格视图（产品质量表）",
-    "name" : "产品统计实体表格视图（产品质量表）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "产品统计实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "产品统计实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "产品统计实体移动端选择多数据视图（部件视图）",
-    "name" : "产品统计实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "TestMain2",
+    "logicName" : "嵌入测试统计",
+    "modelTag2" : "0",
+    "name" : "嵌入测试统计",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "Main",
     "logicName" : "主编辑表单",
@@ -3657,24 +3670,12 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "ALLGridView",
-    "logicName" : "产品统计实体表格视图（产品管理）",
-    "name" : "产品统计实体表格视图（产品管理）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "产品统计实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "产品统计实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TestEditView9",
-    "logicName" : "产品统计实体编辑视图（嵌入测试统计）",
-    "name" : "产品统计实体编辑视图（嵌入测试统计）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "Main2",
+    "logicName" : "嵌入统计",
+    "modelTag2" : "0",
+    "name" : "嵌入统计",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "ProductStats",
   "dEType" : 1,
@@ -3710,7 +3711,7 @@
   "name" : "IBZ_PRODUCTSTATS",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

@@ -157,7 +157,6 @@ export abstract class SysEmployeeBase extends EntityBase implements ISysEmployee
      * 建立人
      */
     createman?: any;
-
     /**
      * 重置实体数据
      *

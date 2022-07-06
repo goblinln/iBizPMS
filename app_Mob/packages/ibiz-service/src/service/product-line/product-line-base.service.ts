@@ -19,8 +19,8 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
     protected APPDENAME = 'ProductLine';
     protected APPDENAMEPLURAL = 'ProductLines';
     protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductLine.json';
-    protected APPDEKEY = 'id';
-    protected APPDETEXT = 'name';
+    protected APPDEKEY = 'productlineid';
+    protected APPDETEXT = 'productlinename';
     protected quickSearchFields = ['productlinename',];
     protected selectContextParam = {
     };
@@ -65,115 +65,5 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
             entity = result.data;
         }
         return new HttpResponse(entity);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        try {
-        _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data,'Create');
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        const res = await this.http.post(`/productlines`, _data);
-        return res;
-            } catch (error) {
-                return this.handleResponseError(error);
-            }
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        try {
-        const res = await this.http.get(`/productlines/${_context.productline}`);
-        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
-        return res;
-            } catch (error) {
-                return this.handleResponseError(error);
-            }
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        try {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/productlines/getdraft`, _data);
-        return res;
-            } catch (error) {
-                return this.handleResponseError(error);
-            }
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        try {
-        const res = await this.http.delete(`/productlines/${_context.productline}`);
-        return res;
-            } catch (error) {
-                return this.handleResponseError(error);
-            }
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        try {
-        _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data,'Update');
-        const res = await this.http.put(`/productlines/${_context.productline}`, _data);
-        return res;
-            } catch (error) {
-                return this.handleResponseError(error);
-            }
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        try {
-        const res = await this.http.post(`/productlines/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
-        return res;
-            } catch (error) {
-                return this.handleResponseError(error);
-            }
     }
 }

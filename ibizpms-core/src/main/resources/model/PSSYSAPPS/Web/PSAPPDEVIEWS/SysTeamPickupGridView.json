@@ -34,7 +34,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -222,13 +222,6 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "memo",
-      "getPSAppDEField" : {
-        "name" : "MEMO",
-        "codeName" : "Memo"
-      }
-    }, {
-      "dataType" : 25,
       "name" : "teamname",
       "getPSAppDEField" : {
         "name" : "TEAMNAME",
@@ -243,10 +236,17 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "memo",
       "getPSAppDEField" : {
-        "name" : "TEAMNAME",
-        "codeName" : "TeamName"
+        "name" : "MEMO",
+        "codeName" : "Memo"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "TEAMID",
+        "codeName" : "TeamId"
       }
     }, {
       "dataType" : 25,
@@ -258,10 +258,10 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 25,
-      "name" : "srfkey",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "TEAMID",
-        "codeName" : "TeamId"
+        "name" : "TEAMNAME",
+        "codeName" : "TeamName"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -315,7 +315,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -324,10 +324,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -346,10 +346,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

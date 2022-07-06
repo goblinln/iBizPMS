@@ -23,15 +23,15 @@
     } ]
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "CURYEAR",
-    "name" : "CURYEAR",
-    "value" : "curyear",
-    "rawValue" : false
-  }, {
     "key" : "USERYEARWORKSTATS",
     "name" : "USERYEARWORKSTATS",
     "value" : "0",
     "rawValue" : true
+  }, {
+    "key" : "CURYEAR",
+    "name" : "CURYEAR",
+    "value" : "curyear",
+    "rawValue" : false
   } ],
   "getPSAppViewNavParams" : [ {
     "key" : "curyear",
@@ -64,7 +64,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "基础信息",
     "getPSAppDataEntity" : {
       "modelref" : true,

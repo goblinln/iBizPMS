@@ -1,4 +1,4 @@
-import { AppServiceBase, Util, ModelTool } from "ibiz-core";
+import { AppServiceBase, Util, ModelTool, MobDashboardControlInterface } from "ibiz-core";
 import { UtilServiceRegister } from "ibiz-service";
 import { MainControlBase } from "./main-control-base";
 import { IPSAppPortlet, IPSDEDashboard } from "@ibiz/dynamic-model-api";
@@ -10,7 +10,7 @@ import { IPSAppPortlet, IPSDEDashboard } from "@ibiz/dynamic-model-api";
  * @class AppControlBase
  * @extends {MobDashboardControlBase}
  */
-export class MobDashboardControlBase extends MainControlBase {
+export class MobDashboardControlBase extends MainControlBase implements MobDashboardControlInterface{
     /**
      * 部件模型实例对象
      *

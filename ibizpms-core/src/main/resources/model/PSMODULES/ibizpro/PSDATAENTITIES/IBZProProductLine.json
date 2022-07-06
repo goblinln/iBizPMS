@@ -254,6 +254,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "line",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (line)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -303,6 +304,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "line",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (line)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -1819,30 +1821,10 @@
     "enableOrgDR" : true
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "EditView2",
-    "logicName" : "生产线实体编辑视图（左右关系）",
-    "name" : "生产线实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "生产线实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "生产线实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "PickupGridView",
     "logicName" : "生产线实体选择表格视图（部件视图）",
     "name" : "生产线实体选择表格视图（部件视图）",
     "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "生产线实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "生产线实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -1852,11 +1834,31 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "RedirectView",
+    "logicName" : "生产线实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "生产线实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "生产线实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "生产线实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "PickupView",
     "logicName" : "生产线实体数据选择视图",
     "modelTag" : "PICKUPVIEW",
     "name" : "生产线实体数据选择视图",
     "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "生产线实体编辑视图（左右关系）",
+    "name" : "生产线实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MPickupView",
@@ -1941,7 +1943,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

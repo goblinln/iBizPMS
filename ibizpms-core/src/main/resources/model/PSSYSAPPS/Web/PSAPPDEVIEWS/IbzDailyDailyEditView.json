@@ -132,7 +132,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "日报编辑表单（新建时）",
     "getPSAppDataEntity" : {
       "modelref" : true,

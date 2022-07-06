@@ -41,7 +41,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SELECTCHANGE", "CLICK", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "CLICK", "SELECTCHANGE" ],
     "logicName" : "文档",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -406,140 +406,6 @@
       "id" : "TREE"
     },
     "getPSControls" : [ {
-      "codeName" : "MobProductTreeViewchilddoclibmodule_cm",
-      "controlType" : "CONTEXTMENU",
-      "hookEventNames" : [ "CLICK" ],
-      "logicName" : "移动端文档分类上下文菜单",
-      "name" : "childdoclibmodule_cm",
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
-      },
-      "getPSControlLogics" : [ {
-        "eventArg" : "deuiaction1",
-        "eventNames" : "CLICK",
-        "logicTag" : "childdoclibmodule_cm",
-        "logicType" : "APPVIEWLOGIC",
-        "name" : "childdoclibmodule_cm_deuiaction1_click",
-        "getPSAppViewLogic" : {
-          "modelref" : true,
-          "id" : "childdoclibmodule_cm_deuiaction1_click"
-        }
-      }, {
-        "eventArg" : "deuiaction2",
-        "eventNames" : "CLICK",
-        "logicTag" : "childdoclibmodule_cm",
-        "logicType" : "APPVIEWLOGIC",
-        "name" : "childdoclibmodule_cm_deuiaction2_click",
-        "getPSAppViewLogic" : {
-          "modelref" : true,
-          "id" : "childdoclibmodule_cm_deuiaction2_click"
-        }
-      } ],
-      "getPSControlParam" : {
-        "id" : "childdoclibmodule_cm"
-      },
-      "getPSDEToolbarItems" : [ {
-        "caption" : "取消收藏",
-        "groupExtractMode" : "ITEM",
-        "itemType" : "DEUIACTION",
-        "name" : "deuiaction1",
-        "noPrivDisplayMode" : 2,
-        "getPSAppViewUIAction" : {
-          "modelref" : true,
-          "id" : "childdoclibmodule_cm_deuiaction1"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf005@FontAwesome",
-          "cssClass" : "fa fa-star"
-        },
-        "getPSUIAction" : {
-          "actionTarget" : "SINGLEKEY",
-          "caption" : "取消收藏",
-          "codeName" : "NFavorite",
-          "dataAccessAction" : "UNCOLLECT",
-          "fullCodeName" : "DocLibModule_NFavorite",
-          "name" : "取消收藏",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "UnCollect"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
-          },
-          "getPSDEOPPriv" : {
-            "modelref" : true,
-            "id" : "UNCOLLECT"
-          },
-          "getPSSysImage" : {
-            "glyph" : "xf005@FontAwesome",
-            "cssClass" : "fa fa-star"
-          },
-          "refreshMode" : 1,
-          "timeout" : 60000,
-          "uIActionMode" : "BACKEND",
-          "uIActionTag" : "NFavorite",
-          "uIActionType" : "DEUIACTION",
-          "enableConfirm" : true,
-          "reloadData" : true,
-          "id" : "NFavorite@DocLibModule"
-        },
-        "tooltip" : "取消收藏",
-        "showCaption" : true,
-        "showIcon" : true
-      }, {
-        "caption" : "收藏",
-        "groupExtractMode" : "ITEM",
-        "itemType" : "DEUIACTION",
-        "name" : "deuiaction2",
-        "noPrivDisplayMode" : 2,
-        "getPSAppViewUIAction" : {
-          "modelref" : true,
-          "id" : "childdoclibmodule_cm_deuiaction2"
-        },
-        "getPSSysImage" : {
-          "cssClass" : "star-outline"
-        },
-        "getPSUIAction" : {
-          "actionTarget" : "SINGLEKEY",
-          "caption" : "收藏",
-          "codeName" : "Favorite",
-          "dataAccessAction" : "COLLECT",
-          "fullCodeName" : "DocLibModule_Favorite",
-          "name" : "收藏",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Collect"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
-          },
-          "getPSDEOPPriv" : {
-            "modelref" : true,
-            "id" : "COLLECT"
-          },
-          "getPSSysImage" : {
-            "glyph" : "xf006@FontAwesome",
-            "cssClass" : "fa fa-star-o"
-          },
-          "refreshMode" : 1,
-          "timeout" : 60000,
-          "uIActionMode" : "BACKEND",
-          "uIActionTag" : "Favorite",
-          "uIActionType" : "DEUIACTION",
-          "enableConfirm" : true,
-          "reloadData" : true,
-          "id" : "Favorite@DocLibModule"
-        },
-        "tooltip" : "收藏",
-        "showCaption" : true,
-        "showIcon" : true
-      } ],
-      "modelid" : "3cb7552aa4fc69cff860c9a97fb2387c",
-      "modeltype" : "PSDETOOLBAR"
-    }, {
       "codeName" : "MobProductTreeViewdoclib_cm",
       "controlType" : "CONTEXTMENU",
       "hookEventNames" : [ "CLICK" ],
@@ -810,6 +676,264 @@
       "modelid" : "dd3b0ccd0d4ee97eacb6a428abd98dc1",
       "modeltype" : "PSDETOOLBAR"
     }, {
+      "codeName" : "MobProductTreeViewchilddoclibmodule_cm",
+      "controlType" : "CONTEXTMENU",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "移动端文档分类上下文菜单",
+      "name" : "childdoclibmodule_cm",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
+      },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "childdoclibmodule_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "childdoclibmodule_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "childdoclibmodule_cm_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "childdoclibmodule_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "childdoclibmodule_cm_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "childdoclibmodule_cm_deuiaction2_click"
+        }
+      } ],
+      "getPSControlParam" : {
+        "id" : "childdoclibmodule_cm"
+      },
+      "getPSDEToolbarItems" : [ {
+        "caption" : "取消收藏",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "childdoclibmodule_cm_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf005@FontAwesome",
+          "cssClass" : "fa fa-star"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "caption" : "取消收藏",
+          "codeName" : "NFavorite",
+          "dataAccessAction" : "UNCOLLECT",
+          "fullCodeName" : "DocLibModule_NFavorite",
+          "name" : "取消收藏",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "UnCollect"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "UNCOLLECT"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf005@FontAwesome",
+            "cssClass" : "fa fa-star"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "NFavorite",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "reloadData" : true,
+          "id" : "NFavorite@DocLibModule"
+        },
+        "tooltip" : "取消收藏",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "收藏",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction2",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "childdoclibmodule_cm_deuiaction2"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "star-outline"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "caption" : "收藏",
+          "codeName" : "Favorite",
+          "dataAccessAction" : "COLLECT",
+          "fullCodeName" : "DocLibModule_Favorite",
+          "name" : "收藏",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Collect"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
+          },
+          "getPSDEOPPriv" : {
+            "modelref" : true,
+            "id" : "COLLECT"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf006@FontAwesome",
+            "cssClass" : "fa fa-star-o"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "Favorite",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "reloadData" : true,
+          "id" : "Favorite@DocLibModule"
+        },
+        "tooltip" : "收藏",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "3cb7552aa4fc69cff860c9a97fb2387c",
+      "modeltype" : "PSDETOOLBAR"
+    }, {
+      "codeName" : "MobProductTreeViewfile_cm",
+      "controlType" : "CONTEXTMENU",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "附件树节点上下文菜单",
+      "name" : "file_cm",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+      },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "file_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "file_cm_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "file_cm_deuiaction2_click"
+        }
+      }, {
+        "eventArg" : "deuiaction3",
+        "eventNames" : "CLICK",
+        "logicTag" : "file_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "file_cm_deuiaction3_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "file_cm_deuiaction3_click"
+        }
+      } ],
+      "getPSControlParam" : {
+        "id" : "file_cm"
+      },
+      "getPSDEToolbarItems" : [ {
+        "caption" : "下载",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction2",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "file_cm_deuiaction2"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf019@FontAwesome",
+          "cssClass" : "fa fa-download"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "caption" : "下载",
+          "codeName" : "ibzdownload",
+          "frontProcessType" : "OTHER",
+          "fullCodeName" : "File_ibzdownload",
+          "name" : "下载",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf019@FontAwesome",
+            "cssClass" : "fa fa-download"
+          },
+          "getPSSysPFPlugin" : {
+            "pluginType" : "DEUIACTION",
+            "pluginCode" : "fileibzdownload"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "ibzdownload",
+          "uIActionType" : "DEUIACTION",
+          "id" : "ibzdownload@File"
+        },
+        "tooltip" : "下载",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "删除",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction3",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "file_cm_deuiaction3"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf00d@FontAwesome",
+          "cssClass" : "fa fa-remove"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "caption" : "删除",
+          "codeName" : "delete",
+          "confirmMsg" : "您确定删除该附件吗？",
+          "fullCodeName" : "File_delete",
+          "name" : "删除",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-remove"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "delete",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "reloadData" : true,
+          "id" : "delete@File"
+        },
+        "tooltip" : "删除",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "41940344eb2ecce1ebfbe089e9953c92",
+      "modeltype" : "PSDETOOLBAR"
+    }, {
       "codeName" : "MobProductTreeViewrootdoclibmodule_cm",
       "controlType" : "CONTEXTMENU",
       "hookEventNames" : [ "CLICK" ],
@@ -1078,130 +1202,6 @@
         "showIcon" : true
       } ],
       "modelid" : "dd3b0ccd0d4ee97eacb6a428abd98dc1",
-      "modeltype" : "PSDETOOLBAR"
-    }, {
-      "codeName" : "MobProductTreeViewfile_cm",
-      "controlType" : "CONTEXTMENU",
-      "hookEventNames" : [ "CLICK" ],
-      "logicName" : "附件树节点上下文菜单",
-      "name" : "file_cm",
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
-      },
-      "getPSControlLogics" : [ {
-        "eventArg" : "deuiaction2",
-        "eventNames" : "CLICK",
-        "logicTag" : "file_cm",
-        "logicType" : "APPVIEWLOGIC",
-        "name" : "file_cm_deuiaction2_click",
-        "getPSAppViewLogic" : {
-          "modelref" : true,
-          "id" : "file_cm_deuiaction2_click"
-        }
-      }, {
-        "eventArg" : "deuiaction3",
-        "eventNames" : "CLICK",
-        "logicTag" : "file_cm",
-        "logicType" : "APPVIEWLOGIC",
-        "name" : "file_cm_deuiaction3_click",
-        "getPSAppViewLogic" : {
-          "modelref" : true,
-          "id" : "file_cm_deuiaction3_click"
-        }
-      } ],
-      "getPSControlParam" : {
-        "id" : "file_cm"
-      },
-      "getPSDEToolbarItems" : [ {
-        "caption" : "下载",
-        "groupExtractMode" : "ITEM",
-        "itemType" : "DEUIACTION",
-        "name" : "deuiaction2",
-        "noPrivDisplayMode" : 2,
-        "getPSAppViewUIAction" : {
-          "modelref" : true,
-          "id" : "file_cm_deuiaction2"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf019@FontAwesome",
-          "cssClass" : "fa fa-download"
-        },
-        "getPSUIAction" : {
-          "actionTarget" : "SINGLEKEY",
-          "caption" : "下载",
-          "codeName" : "ibzdownload",
-          "frontProcessType" : "OTHER",
-          "fullCodeName" : "File_ibzdownload",
-          "name" : "下载",
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
-          },
-          "getPSSysImage" : {
-            "glyph" : "xf019@FontAwesome",
-            "cssClass" : "fa fa-download"
-          },
-          "getPSSysPFPlugin" : {
-            "pluginType" : "DEUIACTION",
-            "pluginCode" : "fileibzdownload"
-          },
-          "timeout" : 60000,
-          "uIActionMode" : "FRONT",
-          "uIActionTag" : "ibzdownload",
-          "uIActionType" : "DEUIACTION",
-          "id" : "ibzdownload@File"
-        },
-        "tooltip" : "下载",
-        "showCaption" : true,
-        "showIcon" : true
-      }, {
-        "caption" : "删除",
-        "groupExtractMode" : "ITEM",
-        "itemType" : "DEUIACTION",
-        "name" : "deuiaction3",
-        "noPrivDisplayMode" : 2,
-        "getPSAppViewUIAction" : {
-          "modelref" : true,
-          "id" : "file_cm_deuiaction3"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf00d@FontAwesome",
-          "cssClass" : "fa fa-remove"
-        },
-        "getPSUIAction" : {
-          "actionTarget" : "SINGLEKEY",
-          "caption" : "删除",
-          "codeName" : "delete",
-          "confirmMsg" : "您确定删除该附件吗？",
-          "fullCodeName" : "File_delete",
-          "name" : "删除",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
-          },
-          "getPSSysImage" : {
-            "glyph" : "xf00d@FontAwesome",
-            "cssClass" : "fa fa-remove"
-          },
-          "refreshMode" : 1,
-          "timeout" : 60000,
-          "uIActionMode" : "BACKEND",
-          "uIActionTag" : "delete",
-          "uIActionType" : "DEUIACTION",
-          "enableConfirm" : true,
-          "reloadData" : true,
-          "id" : "delete@File"
-        },
-        "tooltip" : "删除",
-        "showCaption" : true,
-        "showIcon" : true
-      } ],
-      "modelid" : "41940344eb2ecce1ebfbe089e9953c92",
       "modeltype" : "PSDETOOLBAR"
     } ],
     "getPSDETreeNodeRSs" : [ {

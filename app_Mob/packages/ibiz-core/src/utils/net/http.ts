@@ -1,5 +1,6 @@
 import axios from 'axios';
 import qs from 'qs';
+import { Util } from '../util/util';
 
 /**
  * Http net 对象
@@ -45,8 +46,8 @@ export class Http {
      * 网络请求对象
      * 
      * @memberof Http
-     */    
-    public static getHttp(){
+     */
+    public static getHttp() {
         return axios;
     }
 
@@ -61,6 +62,7 @@ export class Http {
      */
     public post(url: string, params: any = {}, isloading?: boolean): Promise<any> {
         params = this.handleRequestData(params);
+        url = this.handleAppParam(url, params);
         return new Promise((resolve: any, reject: any) => {
             axios({
                 method: 'post',
@@ -86,16 +88,16 @@ export class Http {
      * @returns {Promise<any>}
      * @memberof Http
      */
-    public get(url: string,params: any = {}, isloading?: boolean, serialnumber?: number): Promise<any> {
+    public get(url: string, params: any = {}, isloading?: boolean, serialnumber?: number): Promise<any> {
         params = this.handleRequestData(params);
-        if(params.srfparentdata){
-            Object.assign(params,params.srfparentdata);
+        if (params.srfparentdata) {
+            Object.assign(params, params.srfparentdata);
             delete params.srfparentdata;
         }
-        if((Object.keys(params)).length>0){
-            let tempParam:any = {};
-            Object.keys(params).forEach((item:any) =>{
-                if( params[item] || Object.is(params[item],0) ){
+        if ((Object.keys(params)).length > 0) {
+            let tempParam: any = {};
+            Object.keys(params).forEach((item: any) => {
+                if (params[item] || Object.is(params[item], 0)) {
                     tempParam[item] = params[item];
                 }
             })
@@ -118,16 +120,17 @@ export class Http {
      * @returns {Promise<any>}
      * @memberof Http
      */
-    public delete(url: string, isloading?: boolean,data?:any): Promise<any> {
+    public delete(url: string, isloading?: boolean, data?: any): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
-            if(!data){
+            url = this.handleAppParam(url, data);
+            if (!data) {
                 axios.delete(url).then((response: any) => {
                     this.doResponseRresult(response, resolve, isloading);
                 }).catch((response: any) => {
                     this.doResponseRresult(response, reject, isloading);
                 });
-            }else{
-                axios.delete(url,{data:data}).then((response: any) => {
+            } else {
+                axios.delete(url, { data: data }).then((response: any) => {
                     this.doResponseRresult(response, resolve, isloading);
                 }).catch((response: any) => {
                     this.doResponseRresult(response, reject, isloading);
@@ -148,6 +151,7 @@ export class Http {
      */
     public put(url: string, data: any, isloading?: boolean, serialnumber?: number): Promise<any> {
         data = this.handleRequestData(data);
+        url = this.handleAppParam(url, data);
         return new Promise((resolve: any, reject: any) => {
             axios.put(url, data).then((response: any) => {
                 this.doResponseRresult(response, resolve, isloading);
@@ -177,14 +181,80 @@ export class Http {
      * @param data 
      * @memberof Http
      */
-    private handleRequestData(data:any){
-        if(data.srfsessionkey){
+    private handleRequestData(data: any) {
+        if (data.srfsessionkey) {
             delete data.srfsessionkey;
         }
-        if(data.srfsessionid){
+        if (data.srfsessionid) {
             delete data.srfsessionid;
         }
         return data;
     }
 
+    /**
+     * 处理响应结果
+     *
+     * @private
+     * @param {*} response
+     * @param {Function} fn
+     * @param {boolean} [isloading]
+     * @memberof Http
+     */
+    private doResponseResult(response: any, fn: Function): void {
+        if (response.status === 200) {
+            response.ok = true;
+        }
+        fn(response);
+    }
+
+    /**
+     * 处理系统级数据（以srf开始的字段）
+     *
+     * @private
+     * @param url 原始路径
+     * @param params 原始参数
+     * @memberof Http
+     */
+    private handleAppParam(url: string, params: any): string {
+        if (params && (Object.keys(params).length > 0)) {
+            let tempParam: any = {};
+            Object.keys(params).forEach((item: string) => {
+                if (item.startsWith('srf') && !Util.isEmpty(params[item])) {
+                    tempParam[item] = params[item];
+                }
+            });
+            // 过滤前端标识属性
+            if (tempParam && Object.is(tempParam['srfinsttag'], '__srfstdinst__')) {
+                delete tempParam['srfinsttag'];
+            }
+            if (tempParam && (Object.keys(tempParam).length > 0)) {
+                url += `?${qs.stringify(tempParam)}`;
+            }
+            return url;
+        }
+        return url;
+    }
+
+    /**
+     * 获取模型
+     *
+     * @param {string} url
+     * @param {*} [headers={}]
+     * @returns {Promise<any>}
+     * @memberof Http
+     */
+    public getModel(url: string, headers: any = {}): Promise<any> {
+        return new Promise((resolve: any, reject: any) => {
+            axios
+                .get(url, {
+                    headers: headers
+                })
+                .then((response: any) => {
+                    this.doResponseResult(response, resolve);
+                })
+                .catch((response: any) => {
+                    this.doResponseResult(response, reject);
+                });
+        });
+    }
 }

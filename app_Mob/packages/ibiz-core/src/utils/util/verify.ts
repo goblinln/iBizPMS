@@ -597,7 +597,7 @@ export class Verify {
     public static verifyDeRules(name: string, data: any, condition: any): { isPast: boolean; infoMessage: string } {
         let flag = { isPast: true, infoMessage: condition.ruleInfo };
         if (condition.condType == 'GROUP') {
-            let childRules = condition.getPSDEFVRConditions;
+            let childRules = condition.getPSDEFVRConditions();
             if (childRules?.length > 0) {
                 flag.isPast = this.logicForEach(
                     childRules,
@@ -630,8 +630,8 @@ export class Verify {
                 } else if (condition.condType == 'STRINGLENGTH') {
                     flag.isPast = !Verify.checkFieldStringLengthRule(data[name], condition.minValue, condition.includeMinValue, condition.maxValue, condition.includeMaxValue, condition.ruleInfo, condition.isKeyCond);
                     // 系统值规则
-                } else if (condition.condType == 'SYSVALUERULE' && condition?.getPSSysValueRule) {
-                    const { ruleType, regExCode, scriptCode, ruleInfo } = condition.getPSSysValueRule;
+                } else if (condition.condType == 'SYSVALUERULE' && condition?.getPSSysValueRule?.()) {
+                    const { ruleType, regExCode, scriptCode, ruleInfo } = condition.getPSSysValueRule();
                     flag.infoMessage = condition.ruleInfo || ruleInfo;
                     if (ruleType == 'REG') {
                         flag.isPast = !Verify.checkFieldRegExRule(data[name], regExCode, flag.infoMessage, condition.isKeyCond);

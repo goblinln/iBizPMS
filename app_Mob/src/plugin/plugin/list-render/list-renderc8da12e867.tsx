@@ -16,7 +16,7 @@ import { AppMobControlBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class LIST_RENDERc8da12e867 extends AppMobControlBase {
 
-
+    
 
 }
 

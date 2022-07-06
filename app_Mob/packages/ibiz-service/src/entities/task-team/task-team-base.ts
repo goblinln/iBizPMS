@@ -121,7 +121,6 @@ export abstract class TaskTeamBase extends EntityBase implements ITaskTeam {
      * 编号
      */
     root?: any;
-
     /**
      * 重置实体数据
      *

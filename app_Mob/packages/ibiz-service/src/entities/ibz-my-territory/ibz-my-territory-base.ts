@@ -247,7 +247,6 @@ export abstract class IbzMyTerritoryBase extends EntityBase implements IIbzMyTer
      * 项目成员（今日截止）
      */
     projectteamjzcnt?: any;
-
     /**
      * 重置实体数据
      *

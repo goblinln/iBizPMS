@@ -18,7 +18,7 @@
     "modelref" : true,
     "id" : "load"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
   "logicName" : "主编辑表单",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -509,7 +509,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "产品周报报",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -775,10 +775,62 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "taskname",
+              "getPSAppDEField" : {
+                "name" : "TASKNAME",
+                "codeName" : "TaskName"
+              }
+            }, {
+              "dataType" : 25,
               "name" : "tasktype",
               "getPSAppDEField" : {
                 "name" : "TASKTYPE",
                 "codeName" : "TaskType"
+              }
+            }, {
+              "dataType" : 7,
+              "name" : "consumed",
+              "getPSAppDEField" : {
+                "name" : "CONSUMED",
+                "codeName" : "Consumed"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "eststarted",
+              "getPSAppDEField" : {
+                "name" : "ESTSTARTED",
+                "codeName" : "EstStarted"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "deadline",
+              "getPSAppDEField" : {
+                "name" : "DEADLINE",
+                "codeName" : "Deadline"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "date",
+              "getPSAppDEField" : {
+                "name" : "DATE",
+                "codeName" : "Date"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "progressrate",
+              "getPSAppDEField" : {
+                "name" : "PROGRESSRATE",
+                "codeName" : "Progressrate"
               }
             }, {
               "dataType" : 25,
@@ -795,16 +847,15 @@
                 "codeName" : "Task"
               }
             }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "date",
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
-                "name" : "DATE",
-                "codeName" : "Date"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
-              "name" : "srfmajortext",
+              "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
@@ -819,61 +870,10 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "eststarted",
-              "getPSAppDEField" : {
-                "name" : "ESTSTARTED",
-                "codeName" : "EstStarted"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "taskname",
-              "getPSAppDEField" : {
-                "name" : "TASKNAME",
-                "codeName" : "TaskName"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "progressrate",
-              "getPSAppDEField" : {
-                "name" : "PROGRESSRATE",
-                "codeName" : "Progressrate"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "deadline",
-              "getPSAppDEField" : {
-                "name" : "DEADLINE",
-                "codeName" : "Deadline"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -959,6 +959,16 @@
           "layout" : "TABLE_24COL"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "BEGIN",
+          "name" : "BEGIN",
+          "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "END",
+          "name" : "END",
+          "value" : "Enddatestats",
+          "rawValue" : false
+        }, {
           "key" : "TASKS",
           "name" : "TASKS",
           "value" : "tasks",
@@ -968,36 +978,26 @@
           "name" : "N_TASKTYPE_EQ",
           "value" : "design",
           "rawValue" : true
-        }, {
-          "key" : "END",
-          "name" : "END",
-          "value" : "Enddatestats",
-          "rawValue" : false
-        }, {
-          "key" : "BEGIN",
-          "name" : "BEGIN",
-          "value" : "Begindatestats",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "n_tasktype_eq",
-          "name" : "n_tasktype_eq",
-          "value" : "design",
-          "rawValue" : true
-        }, {
-          "key" : "tasks",
-          "name" : "tasks",
-          "value" : "tasks",
-          "rawValue" : false
-        }, {
           "key" : "end",
           "name" : "end",
           "value" : "Enddatestats",
           "rawValue" : false
         }, {
+          "key" : "n_tasktype_eq",
+          "name" : "n_tasktype_eq",
+          "value" : "design",
+          "rawValue" : true
+        }, {
           "key" : "begin",
           "name" : "begin",
           "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "tasks",
+          "name" : "tasks",
+          "value" : "tasks",
           "rawValue" : false
         } ],
         "parentDataJO" : {
@@ -1101,7 +1101,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "产品周报报",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -1367,10 +1367,62 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "taskname",
+              "getPSAppDEField" : {
+                "name" : "TASKNAME",
+                "codeName" : "TaskName"
+              }
+            }, {
+              "dataType" : 25,
               "name" : "tasktype",
               "getPSAppDEField" : {
                 "name" : "TASKTYPE",
                 "codeName" : "TaskType"
+              }
+            }, {
+              "dataType" : 7,
+              "name" : "consumed",
+              "getPSAppDEField" : {
+                "name" : "CONSUMED",
+                "codeName" : "Consumed"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "eststarted",
+              "getPSAppDEField" : {
+                "name" : "ESTSTARTED",
+                "codeName" : "EstStarted"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "deadline",
+              "getPSAppDEField" : {
+                "name" : "DEADLINE",
+                "codeName" : "Deadline"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "date",
+              "getPSAppDEField" : {
+                "name" : "DATE",
+                "codeName" : "Date"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "progressrate",
+              "getPSAppDEField" : {
+                "name" : "PROGRESSRATE",
+                "codeName" : "Progressrate"
               }
             }, {
               "dataType" : 25,
@@ -1387,16 +1439,15 @@
                 "codeName" : "Task"
               }
             }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "date",
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
-                "name" : "DATE",
-                "codeName" : "Date"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
-              "name" : "srfmajortext",
+              "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
@@ -1411,61 +1462,10 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "eststarted",
-              "getPSAppDEField" : {
-                "name" : "ESTSTARTED",
-                "codeName" : "EstStarted"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "taskname",
-              "getPSAppDEField" : {
-                "name" : "TASKNAME",
-                "codeName" : "TaskName"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "progressrate",
-              "getPSAppDEField" : {
-                "name" : "PROGRESSRATE",
-                "codeName" : "Progressrate"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "deadline",
-              "getPSAppDEField" : {
-                "name" : "DEADLINE",
-                "codeName" : "Deadline"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -1551,6 +1551,16 @@
           "layout" : "TABLE_24COL"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "BEGIN",
+          "name" : "BEGIN",
+          "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "END",
+          "name" : "END",
+          "value" : "Enddatestats",
+          "rawValue" : false
+        }, {
           "key" : "TASKS",
           "name" : "TASKS",
           "value" : "tasks",
@@ -1560,36 +1570,26 @@
           "name" : "N_TASKTYPE_EQ",
           "value" : "devel",
           "rawValue" : true
-        }, {
-          "key" : "END",
-          "name" : "END",
-          "value" : "Enddatestats",
-          "rawValue" : false
-        }, {
-          "key" : "BEGIN",
-          "name" : "BEGIN",
-          "value" : "Begindatestats",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "n_tasktype_eq",
-          "name" : "n_tasktype_eq",
-          "value" : "devel",
-          "rawValue" : true
-        }, {
-          "key" : "tasks",
-          "name" : "tasks",
-          "value" : "tasks",
-          "rawValue" : false
-        }, {
           "key" : "end",
           "name" : "end",
           "value" : "Enddatestats",
           "rawValue" : false
         }, {
+          "key" : "n_tasktype_eq",
+          "name" : "n_tasktype_eq",
+          "value" : "devel",
+          "rawValue" : true
+        }, {
           "key" : "begin",
           "name" : "begin",
           "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "tasks",
+          "name" : "tasks",
+          "value" : "tasks",
           "rawValue" : false
         } ],
         "parentDataJO" : {
@@ -1693,7 +1693,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "产品周报报",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -1959,10 +1959,62 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "taskname",
+              "getPSAppDEField" : {
+                "name" : "TASKNAME",
+                "codeName" : "TaskName"
+              }
+            }, {
+              "dataType" : 25,
               "name" : "tasktype",
               "getPSAppDEField" : {
                 "name" : "TASKTYPE",
                 "codeName" : "TaskType"
+              }
+            }, {
+              "dataType" : 7,
+              "name" : "consumed",
+              "getPSAppDEField" : {
+                "name" : "CONSUMED",
+                "codeName" : "Consumed"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "eststarted",
+              "getPSAppDEField" : {
+                "name" : "ESTSTARTED",
+                "codeName" : "EstStarted"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "deadline",
+              "getPSAppDEField" : {
+                "name" : "DEADLINE",
+                "codeName" : "Deadline"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "date",
+              "getPSAppDEField" : {
+                "name" : "DATE",
+                "codeName" : "Date"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "progressrate",
+              "getPSAppDEField" : {
+                "name" : "PROGRESSRATE",
+                "codeName" : "Progressrate"
               }
             }, {
               "dataType" : 25,
@@ -1979,16 +2031,15 @@
                 "codeName" : "Task"
               }
             }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "date",
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
-                "name" : "DATE",
-                "codeName" : "Date"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
-              "name" : "srfmajortext",
+              "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
@@ -2003,61 +2054,10 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "eststarted",
-              "getPSAppDEField" : {
-                "name" : "ESTSTARTED",
-                "codeName" : "EstStarted"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "taskname",
-              "getPSAppDEField" : {
-                "name" : "TASKNAME",
-                "codeName" : "TaskName"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "progressrate",
-              "getPSAppDEField" : {
-                "name" : "PROGRESSRATE",
-                "codeName" : "Progressrate"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "deadline",
-              "getPSAppDEField" : {
-                "name" : "DEADLINE",
-                "codeName" : "Deadline"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -2143,6 +2143,16 @@
           "layout" : "TABLE_24COL"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "BEGIN",
+          "name" : "BEGIN",
+          "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "END",
+          "name" : "END",
+          "value" : "Enddatestats",
+          "rawValue" : false
+        }, {
           "key" : "TASKS",
           "name" : "TASKS",
           "value" : "tasks",
@@ -2152,36 +2162,26 @@
           "name" : "N_TASKTYPE_EQ",
           "value" : "test",
           "rawValue" : true
-        }, {
-          "key" : "END",
-          "name" : "END",
-          "value" : "Enddatestats",
-          "rawValue" : false
-        }, {
-          "key" : "BEGIN",
-          "name" : "BEGIN",
-          "value" : "Begindatestats",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "n_tasktype_eq",
-          "name" : "n_tasktype_eq",
-          "value" : "test",
-          "rawValue" : true
-        }, {
-          "key" : "tasks",
-          "name" : "tasks",
-          "value" : "tasks",
-          "rawValue" : false
-        }, {
           "key" : "end",
           "name" : "end",
           "value" : "Enddatestats",
           "rawValue" : false
         }, {
+          "key" : "n_tasktype_eq",
+          "name" : "n_tasktype_eq",
+          "value" : "test",
+          "rawValue" : true
+        }, {
           "key" : "begin",
           "name" : "begin",
           "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "tasks",
+          "name" : "tasks",
+          "value" : "tasks",
           "rawValue" : false
         } ],
         "parentDataJO" : {
@@ -2285,7 +2285,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "产品周报报",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -2551,10 +2551,62 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "taskname",
+              "getPSAppDEField" : {
+                "name" : "TASKNAME",
+                "codeName" : "TaskName"
+              }
+            }, {
+              "dataType" : 25,
               "name" : "tasktype",
               "getPSAppDEField" : {
                 "name" : "TASKTYPE",
                 "codeName" : "TaskType"
+              }
+            }, {
+              "dataType" : 7,
+              "name" : "consumed",
+              "getPSAppDEField" : {
+                "name" : "CONSUMED",
+                "codeName" : "Consumed"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "eststarted",
+              "getPSAppDEField" : {
+                "name" : "ESTSTARTED",
+                "codeName" : "EstStarted"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "deadline",
+              "getPSAppDEField" : {
+                "name" : "DEADLINE",
+                "codeName" : "Deadline"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "date",
+              "getPSAppDEField" : {
+                "name" : "DATE",
+                "codeName" : "Date"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "progressrate",
+              "getPSAppDEField" : {
+                "name" : "PROGRESSRATE",
+                "codeName" : "Progressrate"
               }
             }, {
               "dataType" : 25,
@@ -2571,16 +2623,15 @@
                 "codeName" : "Task"
               }
             }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "date",
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
-                "name" : "DATE",
-                "codeName" : "Date"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
-              "name" : "srfmajortext",
+              "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
@@ -2595,61 +2646,10 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "eststarted",
-              "getPSAppDEField" : {
-                "name" : "ESTSTARTED",
-                "codeName" : "EstStarted"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "taskname",
-              "getPSAppDEField" : {
-                "name" : "TASKNAME",
-                "codeName" : "TaskName"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "progressrate",
-              "getPSAppDEField" : {
-                "name" : "PROGRESSRATE",
-                "codeName" : "Progressrate"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "deadline",
-              "getPSAppDEField" : {
-                "name" : "DEADLINE",
-                "codeName" : "Deadline"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -2735,6 +2735,16 @@
           "layout" : "TABLE_24COL"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "BEGIN",
+          "name" : "BEGIN",
+          "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "END",
+          "name" : "END",
+          "value" : "Enddatestats",
+          "rawValue" : false
+        }, {
           "key" : "TASKS",
           "name" : "TASKS",
           "value" : "tasks",
@@ -2744,36 +2754,26 @@
           "name" : "N_TASKTYPE_EQ",
           "value" : "study",
           "rawValue" : true
-        }, {
-          "key" : "END",
-          "name" : "END",
-          "value" : "Enddatestats",
-          "rawValue" : false
-        }, {
-          "key" : "BEGIN",
-          "name" : "BEGIN",
-          "value" : "Begindatestats",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "n_tasktype_eq",
-          "name" : "n_tasktype_eq",
-          "value" : "study",
-          "rawValue" : true
-        }, {
-          "key" : "tasks",
-          "name" : "tasks",
-          "value" : "tasks",
-          "rawValue" : false
-        }, {
           "key" : "end",
           "name" : "end",
           "value" : "Enddatestats",
           "rawValue" : false
         }, {
+          "key" : "n_tasktype_eq",
+          "name" : "n_tasktype_eq",
+          "value" : "study",
+          "rawValue" : true
+        }, {
           "key" : "begin",
           "name" : "begin",
           "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "tasks",
+          "name" : "tasks",
+          "value" : "tasks",
           "rawValue" : false
         } ],
         "parentDataJO" : {
@@ -2877,7 +2877,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "产品周报报",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -3143,10 +3143,62 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "taskname",
+              "getPSAppDEField" : {
+                "name" : "TASKNAME",
+                "codeName" : "TaskName"
+              }
+            }, {
+              "dataType" : 25,
               "name" : "tasktype",
               "getPSAppDEField" : {
                 "name" : "TASKTYPE",
                 "codeName" : "TaskType"
+              }
+            }, {
+              "dataType" : 7,
+              "name" : "consumed",
+              "getPSAppDEField" : {
+                "name" : "CONSUMED",
+                "codeName" : "Consumed"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "eststarted",
+              "getPSAppDEField" : {
+                "name" : "ESTSTARTED",
+                "codeName" : "EstStarted"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "deadline",
+              "getPSAppDEField" : {
+                "name" : "DEADLINE",
+                "codeName" : "Deadline"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "date",
+              "getPSAppDEField" : {
+                "name" : "DATE",
+                "codeName" : "Date"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "progressrate",
+              "getPSAppDEField" : {
+                "name" : "PROGRESSRATE",
+                "codeName" : "Progressrate"
               }
             }, {
               "dataType" : 25,
@@ -3163,16 +3215,15 @@
                 "codeName" : "Task"
               }
             }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "date",
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
-                "name" : "DATE",
-                "codeName" : "Date"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
-              "name" : "srfmajortext",
+              "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
@@ -3187,61 +3238,10 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "eststarted",
-              "getPSAppDEField" : {
-                "name" : "ESTSTARTED",
-                "codeName" : "EstStarted"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "taskname",
-              "getPSAppDEField" : {
-                "name" : "TASKNAME",
-                "codeName" : "TaskName"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "progressrate",
-              "getPSAppDEField" : {
-                "name" : "PROGRESSRATE",
-                "codeName" : "Progressrate"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "deadline",
-              "getPSAppDEField" : {
-                "name" : "DEADLINE",
-                "codeName" : "Deadline"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -3327,6 +3327,16 @@
           "layout" : "TABLE_24COL"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "BEGIN",
+          "name" : "BEGIN",
+          "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "END",
+          "name" : "END",
+          "value" : "Enddatestats",
+          "rawValue" : false
+        }, {
           "key" : "TASKS",
           "name" : "TASKS",
           "value" : "tasks",
@@ -3336,36 +3346,26 @@
           "name" : "N_TASKTYPE_EQ",
           "value" : "discuss",
           "rawValue" : true
-        }, {
-          "key" : "END",
-          "name" : "END",
-          "value" : "Enddatestats",
-          "rawValue" : false
-        }, {
-          "key" : "BEGIN",
-          "name" : "BEGIN",
-          "value" : "Begindatestats",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "n_tasktype_eq",
-          "name" : "n_tasktype_eq",
-          "value" : "discuss",
-          "rawValue" : true
-        }, {
-          "key" : "tasks",
-          "name" : "tasks",
-          "value" : "tasks",
-          "rawValue" : false
-        }, {
           "key" : "end",
           "name" : "end",
           "value" : "Enddatestats",
           "rawValue" : false
         }, {
+          "key" : "n_tasktype_eq",
+          "name" : "n_tasktype_eq",
+          "value" : "discuss",
+          "rawValue" : true
+        }, {
           "key" : "begin",
           "name" : "begin",
           "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "tasks",
+          "name" : "tasks",
+          "value" : "tasks",
           "rawValue" : false
         } ],
         "parentDataJO" : {
@@ -3469,7 +3469,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "产品周报报",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -3735,10 +3735,62 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "taskname",
+              "getPSAppDEField" : {
+                "name" : "TASKNAME",
+                "codeName" : "TaskName"
+              }
+            }, {
+              "dataType" : 25,
               "name" : "tasktype",
               "getPSAppDEField" : {
                 "name" : "TASKTYPE",
                 "codeName" : "TaskType"
+              }
+            }, {
+              "dataType" : 7,
+              "name" : "consumed",
+              "getPSAppDEField" : {
+                "name" : "CONSUMED",
+                "codeName" : "Consumed"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "eststarted",
+              "getPSAppDEField" : {
+                "name" : "ESTSTARTED",
+                "codeName" : "EstStarted"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "deadline",
+              "getPSAppDEField" : {
+                "name" : "DEADLINE",
+                "codeName" : "Deadline"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "date",
+              "getPSAppDEField" : {
+                "name" : "DATE",
+                "codeName" : "Date"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "progressrate",
+              "getPSAppDEField" : {
+                "name" : "PROGRESSRATE",
+                "codeName" : "Progressrate"
               }
             }, {
               "dataType" : 25,
@@ -3755,16 +3807,15 @@
                 "codeName" : "Task"
               }
             }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "date",
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
-                "name" : "DATE",
-                "codeName" : "Date"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
-              "name" : "srfmajortext",
+              "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
@@ -3779,61 +3830,10 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "eststarted",
-              "getPSAppDEField" : {
-                "name" : "ESTSTARTED",
-                "codeName" : "EstStarted"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "taskname",
-              "getPSAppDEField" : {
-                "name" : "TASKNAME",
-                "codeName" : "TaskName"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "progressrate",
-              "getPSAppDEField" : {
-                "name" : "PROGRESSRATE",
-                "codeName" : "Progressrate"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "deadline",
-              "getPSAppDEField" : {
-                "name" : "DEADLINE",
-                "codeName" : "Deadline"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -3919,6 +3919,16 @@
           "layout" : "TABLE_24COL"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "BEGIN",
+          "name" : "BEGIN",
+          "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "END",
+          "name" : "END",
+          "value" : "Enddatestats",
+          "rawValue" : false
+        }, {
           "key" : "TASKS",
           "name" : "TASKS",
           "value" : "tasks",
@@ -3928,36 +3938,26 @@
           "name" : "N_TASKTYPE_EQ",
           "value" : "ui",
           "rawValue" : true
-        }, {
-          "key" : "END",
-          "name" : "END",
-          "value" : "Enddatestats",
-          "rawValue" : false
-        }, {
-          "key" : "BEGIN",
-          "name" : "BEGIN",
-          "value" : "Begindatestats",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "n_tasktype_eq",
-          "name" : "n_tasktype_eq",
-          "value" : "ui",
-          "rawValue" : true
-        }, {
-          "key" : "tasks",
-          "name" : "tasks",
-          "value" : "tasks",
-          "rawValue" : false
-        }, {
           "key" : "end",
           "name" : "end",
           "value" : "Enddatestats",
           "rawValue" : false
         }, {
+          "key" : "n_tasktype_eq",
+          "name" : "n_tasktype_eq",
+          "value" : "ui",
+          "rawValue" : true
+        }, {
           "key" : "begin",
           "name" : "begin",
           "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "tasks",
+          "name" : "tasks",
+          "value" : "tasks",
           "rawValue" : false
         } ],
         "parentDataJO" : {
@@ -4061,7 +4061,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "产品周报报",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -4327,10 +4327,62 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "taskname",
+              "getPSAppDEField" : {
+                "name" : "TASKNAME",
+                "codeName" : "TaskName"
+              }
+            }, {
+              "dataType" : 25,
               "name" : "tasktype",
               "getPSAppDEField" : {
                 "name" : "TASKTYPE",
                 "codeName" : "TaskType"
+              }
+            }, {
+              "dataType" : 7,
+              "name" : "consumed",
+              "getPSAppDEField" : {
+                "name" : "CONSUMED",
+                "codeName" : "Consumed"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "eststarted",
+              "getPSAppDEField" : {
+                "name" : "ESTSTARTED",
+                "codeName" : "EstStarted"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "deadline",
+              "getPSAppDEField" : {
+                "name" : "DEADLINE",
+                "codeName" : "Deadline"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "date",
+              "getPSAppDEField" : {
+                "name" : "DATE",
+                "codeName" : "Date"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "progressrate",
+              "getPSAppDEField" : {
+                "name" : "PROGRESSRATE",
+                "codeName" : "Progressrate"
               }
             }, {
               "dataType" : 25,
@@ -4347,16 +4399,15 @@
                 "codeName" : "Task"
               }
             }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "date",
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
-                "name" : "DATE",
-                "codeName" : "Date"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
-              "name" : "srfmajortext",
+              "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
@@ -4371,61 +4422,10 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "eststarted",
-              "getPSAppDEField" : {
-                "name" : "ESTSTARTED",
-                "codeName" : "EstStarted"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "taskname",
-              "getPSAppDEField" : {
-                "name" : "TASKNAME",
-                "codeName" : "TaskName"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "progressrate",
-              "getPSAppDEField" : {
-                "name" : "PROGRESSRATE",
-                "codeName" : "Progressrate"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "deadline",
-              "getPSAppDEField" : {
-                "name" : "DEADLINE",
-                "codeName" : "Deadline"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -4511,6 +4511,16 @@
           "layout" : "TABLE_24COL"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "BEGIN",
+          "name" : "BEGIN",
+          "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "END",
+          "name" : "END",
+          "value" : "Enddatestats",
+          "rawValue" : false
+        }, {
           "key" : "TASKS",
           "name" : "TASKS",
           "value" : "tasks",
@@ -4520,36 +4530,26 @@
           "name" : "N_TASKTYPE_EQ",
           "value" : "affair",
           "rawValue" : true
-        }, {
-          "key" : "END",
-          "name" : "END",
-          "value" : "Enddatestats",
-          "rawValue" : false
-        }, {
-          "key" : "BEGIN",
-          "name" : "BEGIN",
-          "value" : "Begindatestats",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "n_tasktype_eq",
-          "name" : "n_tasktype_eq",
-          "value" : "affair",
-          "rawValue" : true
-        }, {
-          "key" : "tasks",
-          "name" : "tasks",
-          "value" : "tasks",
-          "rawValue" : false
-        }, {
           "key" : "end",
           "name" : "end",
           "value" : "Enddatestats",
           "rawValue" : false
         }, {
+          "key" : "n_tasktype_eq",
+          "name" : "n_tasktype_eq",
+          "value" : "affair",
+          "rawValue" : true
+        }, {
           "key" : "begin",
           "name" : "begin",
           "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "tasks",
+          "name" : "tasks",
+          "value" : "tasks",
           "rawValue" : false
         } ],
         "parentDataJO" : {
@@ -4653,7 +4653,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "产品周报报",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -4919,10 +4919,62 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "taskname",
+              "getPSAppDEField" : {
+                "name" : "TASKNAME",
+                "codeName" : "TaskName"
+              }
+            }, {
+              "dataType" : 25,
               "name" : "tasktype",
               "getPSAppDEField" : {
                 "name" : "TASKTYPE",
                 "codeName" : "TaskType"
+              }
+            }, {
+              "dataType" : 7,
+              "name" : "consumed",
+              "getPSAppDEField" : {
+                "name" : "CONSUMED",
+                "codeName" : "Consumed"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "eststarted",
+              "getPSAppDEField" : {
+                "name" : "ESTSTARTED",
+                "codeName" : "EstStarted"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "deadline",
+              "getPSAppDEField" : {
+                "name" : "DEADLINE",
+                "codeName" : "Deadline"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "date",
+              "getPSAppDEField" : {
+                "name" : "DATE",
+                "codeName" : "Date"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "progressrate",
+              "getPSAppDEField" : {
+                "name" : "PROGRESSRATE",
+                "codeName" : "Progressrate"
               }
             }, {
               "dataType" : 25,
@@ -4939,16 +4991,15 @@
                 "codeName" : "Task"
               }
             }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "date",
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
-                "name" : "DATE",
-                "codeName" : "Date"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
-              "name" : "srfmajortext",
+              "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
@@ -4963,61 +5014,10 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "eststarted",
-              "getPSAppDEField" : {
-                "name" : "ESTSTARTED",
-                "codeName" : "EstStarted"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "taskname",
-              "getPSAppDEField" : {
-                "name" : "TASKNAME",
-                "codeName" : "TaskName"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "progressrate",
-              "getPSAppDEField" : {
-                "name" : "PROGRESSRATE",
-                "codeName" : "Progressrate"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "deadline",
-              "getPSAppDEField" : {
-                "name" : "DEADLINE",
-                "codeName" : "Deadline"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -5103,6 +5103,16 @@
           "layout" : "TABLE_24COL"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "BEGIN",
+          "name" : "BEGIN",
+          "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "END",
+          "name" : "END",
+          "value" : "Enddatestats",
+          "rawValue" : false
+        }, {
           "key" : "TASKS",
           "name" : "TASKS",
           "value" : "tasks",
@@ -5112,36 +5122,26 @@
           "name" : "N_TASKTYPE_EQ",
           "value" : "serve",
           "rawValue" : true
-        }, {
-          "key" : "END",
-          "name" : "END",
-          "value" : "Enddatestats",
-          "rawValue" : false
-        }, {
-          "key" : "BEGIN",
-          "name" : "BEGIN",
-          "value" : "Begindatestats",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "n_tasktype_eq",
-          "name" : "n_tasktype_eq",
-          "value" : "serve",
-          "rawValue" : true
-        }, {
-          "key" : "tasks",
-          "name" : "tasks",
-          "value" : "tasks",
-          "rawValue" : false
-        }, {
           "key" : "end",
           "name" : "end",
           "value" : "Enddatestats",
           "rawValue" : false
         }, {
+          "key" : "n_tasktype_eq",
+          "name" : "n_tasktype_eq",
+          "value" : "serve",
+          "rawValue" : true
+        }, {
           "key" : "begin",
           "name" : "begin",
           "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "tasks",
+          "name" : "tasks",
+          "value" : "tasks",
           "rawValue" : false
         } ],
         "parentDataJO" : {
@@ -5245,7 +5245,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "产品周报报",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -5511,10 +5511,62 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "taskname",
+              "getPSAppDEField" : {
+                "name" : "TASKNAME",
+                "codeName" : "TaskName"
+              }
+            }, {
+              "dataType" : 25,
               "name" : "tasktype",
               "getPSAppDEField" : {
                 "name" : "TASKTYPE",
                 "codeName" : "TaskType"
+              }
+            }, {
+              "dataType" : 7,
+              "name" : "consumed",
+              "getPSAppDEField" : {
+                "name" : "CONSUMED",
+                "codeName" : "Consumed"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "eststarted",
+              "getPSAppDEField" : {
+                "name" : "ESTSTARTED",
+                "codeName" : "EstStarted"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "deadline",
+              "getPSAppDEField" : {
+                "name" : "DEADLINE",
+                "codeName" : "Deadline"
+              }
+            }, {
+              "format" : "YYYY-MM-DD",
+              "dataType" : 5,
+              "name" : "date",
+              "getPSAppDEField" : {
+                "name" : "DATE",
+                "codeName" : "Date"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "progressrate",
+              "getPSAppDEField" : {
+                "name" : "PROGRESSRATE",
+                "codeName" : "Progressrate"
               }
             }, {
               "dataType" : 25,
@@ -5531,16 +5583,15 @@
                 "codeName" : "Task"
               }
             }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "date",
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
-                "name" : "DATE",
-                "codeName" : "Date"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
-              "name" : "srfmajortext",
+              "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
@@ -5555,61 +5606,10 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "eststarted",
-              "getPSAppDEField" : {
-                "name" : "ESTSTARTED",
-                "codeName" : "EstStarted"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "taskname",
-              "getPSAppDEField" : {
-                "name" : "TASKNAME",
-                "codeName" : "TaskName"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "progressrate",
-              "getPSAppDEField" : {
-                "name" : "PROGRESSRATE",
-                "codeName" : "Progressrate"
-              }
-            }, {
-              "format" : "YYYY-MM-DD",
-              "dataType" : 5,
-              "name" : "deadline",
-              "getPSAppDEField" : {
-                "name" : "DEADLINE",
-                "codeName" : "Deadline"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -5695,6 +5695,16 @@
           "layout" : "TABLE_24COL"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "BEGIN",
+          "name" : "BEGIN",
+          "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "END",
+          "name" : "END",
+          "value" : "Enddatestats",
+          "rawValue" : false
+        }, {
           "key" : "TASKS",
           "name" : "TASKS",
           "value" : "tasks",
@@ -5704,36 +5714,26 @@
           "name" : "N_TASKTYPE_EQ",
           "value" : "misc",
           "rawValue" : true
-        }, {
-          "key" : "END",
-          "name" : "END",
-          "value" : "Enddatestats",
-          "rawValue" : false
-        }, {
-          "key" : "BEGIN",
-          "name" : "BEGIN",
-          "value" : "Begindatestats",
-          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "n_tasktype_eq",
-          "name" : "n_tasktype_eq",
-          "value" : "misc",
-          "rawValue" : true
-        }, {
-          "key" : "tasks",
-          "name" : "tasks",
-          "value" : "tasks",
-          "rawValue" : false
-        }, {
           "key" : "end",
           "name" : "end",
           "value" : "Enddatestats",
           "rawValue" : false
         }, {
+          "key" : "n_tasktype_eq",
+          "name" : "n_tasktype_eq",
+          "value" : "misc",
+          "rawValue" : true
+        }, {
           "key" : "begin",
           "name" : "begin",
           "value" : "Begindatestats",
+          "rawValue" : false
+        }, {
+          "key" : "tasks",
+          "name" : "tasks",
+          "value" : "tasks",
           "rawValue" : false
         } ],
         "parentDataJO" : {
@@ -5854,7 +5854,7 @@
             }
           } ],
           "getPSAppViewRefs" : [ {
-            "name" : "NEWDATA",
+            "name" : "EDITDATA",
             "realOpenMode" : "INDEXVIEWTAB",
             "realTitle" : "实体2编辑视图",
             "getRefPSAppView" : {
@@ -5863,7 +5863,7 @@
               "viewType" : "DEEDITVIEW"
             }
           }, {
-            "name" : "EDITDATA",
+            "name" : "NEWDATA",
             "realOpenMode" : "INDEXVIEWTAB",
             "realTitle" : "实体2编辑视图",
             "getRefPSAppView" : {
@@ -5883,7 +5883,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "主表格（项目周报）",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -6072,20 +6072,6 @@
               "enableSort" : true
             } ],
             "getPSDEGridDataItems" : [ {
-              "dataType" : 1,
-              "name" : "ibz_weeklyid",
-              "getPSAppDEField" : {
-                "name" : "IBZ_WEEKLYID",
-                "codeName" : "IbzWeeklyId"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "issubmit",
-              "getPSAppDEField" : {
-                "name" : "ISSUBMIT",
-                "codeName" : "Issubmit"
-              }
-            }, {
               "dataType" : 25,
               "name" : "ibz_weeklyname",
               "getPSAppDEField" : {
@@ -6109,13 +6095,31 @@
               }
             }, {
               "dataType" : 25,
-              "name" : "srfmstag"
+              "name" : "reportto",
+              "getPSAppDEField" : {
+                "name" : "REPORTTO",
+                "codeName" : "Reportto"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "ibz_weeklyid",
+              "getPSAppDEField" : {
+                "name" : "IBZ_WEEKLYID",
+                "codeName" : "IbzWeeklyId"
+              }
             }, {
               "dataType" : 25,
-              "name" : "srfmajortext",
+              "name" : "issubmit",
               "getPSAppDEField" : {
-                "name" : "IBZ_WEEKLYNAME",
-                "codeName" : "IbzWeeklyName"
+                "name" : "ISSUBMIT",
+                "codeName" : "Issubmit"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "srfkey",
+              "getPSAppDEField" : {
+                "name" : "IBZ_WEEKLYID",
+                "codeName" : "IbzWeeklyId"
               }
             }, {
               "dataType" : 1,
@@ -6126,19 +6130,15 @@
               },
               "dataAccessAction" : true
             }, {
-              "dataType" : 1,
-              "name" : "srfkey",
+              "dataType" : 25,
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
-                "name" : "IBZ_WEEKLYID",
-                "codeName" : "IbzWeeklyId"
+                "name" : "IBZ_WEEKLYNAME",
+                "codeName" : "IbzWeeklyName"
               }
             }, {
               "dataType" : 25,
-              "name" : "reportto",
-              "getPSAppDEField" : {
-                "name" : "REPORTTO",
-                "codeName" : "Reportto"
-              }
+              "name" : "srfmstag"
             } ],
             "getPSDEGridEditItems" : [ {
               "caption" : "周报标识",
@@ -6191,7 +6191,7 @@
             "codeName" : "Default",
             "controlType" : "SEARCHFORM",
             "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly/PSSEARCHFORMS/Default.json",
-            "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+            "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
             "logicName" : "默认搜索表单",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -6200,10 +6200,10 @@
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
                 "actionType" : "FILTERACTION",
-                "name" : "search",
+                "name" : "load",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "FilterSearch"
+                  "id" : "FilterGet"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -6222,10 +6222,10 @@
                 }
               }, {
                 "actionType" : "FILTERACTION",
-                "name" : "load",
+                "name" : "search",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "FilterGet"
+                  "id" : "FilterSearch"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,

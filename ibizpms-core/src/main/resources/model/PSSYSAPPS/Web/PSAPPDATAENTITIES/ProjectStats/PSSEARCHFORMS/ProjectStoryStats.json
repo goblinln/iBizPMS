@@ -2,7 +2,7 @@
   "codeName" : "ProjectStoryStats",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSSEARCHFORMS/ProjectStoryStats.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "项目需求统计多用",
   "getPSAppDataEntity" : {
     "modelref" : true,

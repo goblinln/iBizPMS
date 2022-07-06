@@ -45,7 +45,7 @@
   "getPSControls" : [ {
     "codeName" : "GridExpViewgridexpbar",
     "controlType" : "GRIDEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "gridexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -243,6 +243,13 @@
           "codeName" : "Id"
         }
       }, {
+        "dataType" : 25,
+        "name" : "listname",
+        "getPSAppDEField" : {
+          "name" : "LISTNAME",
+          "codeName" : "ListName"
+        }
+      }, {
         "dataType" : 1,
         "name" : "usercontactsn",
         "getPSAppDEField" : {
@@ -250,11 +257,11 @@
           "codeName" : "Usercontactsn"
         }
       }, {
-        "dataType" : 25,
-        "name" : "srfmajortext",
+        "dataType" : 1,
+        "name" : "srfkey",
         "getPSAppDEField" : {
-          "name" : "LISTNAME",
-          "codeName" : "ListName"
+          "name" : "ID",
+          "codeName" : "Id"
         }
       }, {
         "dataType" : 1,
@@ -265,15 +272,8 @@
         },
         "dataAccessAction" : true
       }, {
-        "dataType" : 1,
-        "name" : "srfkey",
-        "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        }
-      }, {
         "dataType" : 25,
-        "name" : "listname",
+        "name" : "srfmajortext",
         "getPSAppDEField" : {
           "name" : "LISTNAME",
           "codeName" : "ListName"

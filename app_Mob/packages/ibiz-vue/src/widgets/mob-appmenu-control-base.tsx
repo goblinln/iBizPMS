@@ -1,9 +1,9 @@
 import { AppControlBase } from "./app-control-base";
 import { AppFuncService } from '../app-service';
 import { IPSAppMenu, IPSAppMenuItem } from '@ibiz/dynamic-model-api';
-import { AuthServiceBase, Util } from "ibiz-core";
+import { AuthServiceBase, MobMenuControlInterface, Util } from "ibiz-core";
 import { AppMobMenuService } from "../ctrl-service";
-
+import { Environment } from '@/environments/environment';
 /**
  * 菜单部件基类
  *
@@ -11,7 +11,7 @@ import { AppMobMenuService } from "../ctrl-service";
  * @class AppControlBase
  * @extends {MobAppMenuControlBase}
  */
-export class MobAppMenuControlBase extends AppControlBase {
+export class MobAppMenuControlBase extends AppControlBase implements MobMenuControlInterface{
 
     /**
      * 菜单部件实例
@@ -132,7 +132,7 @@ export class MobAppMenuControlBase extends AppControlBase {
      * @returns
      * @memberof MobAppMenuControlBase
      */
-    private compute(items: any[], name: string) {
+    public compute(items: any[], name: string) {
         return items.find((_item: IPSAppMenuItem) => {
             return _item.name == name;
         })
@@ -265,7 +265,7 @@ export class MobAppMenuControlBase extends AppControlBase {
             return;
         }
         let _this: any = this;
-        if (_this.$store.getters['authresource/getEnablePermissionValid']) {
+        if(Environment.enablePermissionValid){
             this.computedEffectiveMenus(inputMenus);
         }
         this.dataProcess(inputMenus);

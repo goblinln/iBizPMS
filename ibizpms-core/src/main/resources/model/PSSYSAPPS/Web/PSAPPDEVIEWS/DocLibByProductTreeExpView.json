@@ -57,27 +57,27 @@
   "getPSControls" : [ {
     "codeName" : "ByProductTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
     "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:ALL",
+      "realTitle" : "文档库树视图（产品）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibProductTreeView.json",
+        "viewType" : "DETREEVIEW"
+      }
+    }, {
       "name" : "EXPITEM:Files",
       "realTitle" : "file表格视图",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProductGridView.json",
         "viewType" : "DEGRIDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:ChildDocLibModule",
-      "realTitle" : "文档库树视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeView.json",
-        "viewType" : "DETREEVIEW"
       }
     }, {
       "name" : "EXPITEM:DocLibModule",
@@ -96,11 +96,11 @@
         "viewType" : "DETREEVIEW"
       }
     }, {
-      "name" : "EXPITEM:ALL",
-      "realTitle" : "文档库树视图（产品）",
+      "name" : "EXPITEM:ChildDocLibModule",
+      "realTitle" : "文档库树视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibProductTreeView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeView.json",
         "viewType" : "DETREEVIEW"
       }
     } ],

@@ -80,77 +80,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "UserFinishTaskGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "任务完成汇总表-数据导出",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT"
-      },
-      "caption" : "导出",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT"
-        },
-        "caption" : "导出",
-        "codeName" : "ExportExcel",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）",
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "predefinedType" : "GRIDVIEW_EXPORTACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "导出",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "b9fe1849d6192ef0f24d2c58f51fc039",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "TaskFinishGird",
     "columnEnableLink" : 2,
@@ -161,7 +90,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "任务完成汇总表",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -533,61 +462,11 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 9,
-      "name" : "taskcnt",
-      "getPSAppDEField" : {
-        "name" : "TASKCNT",
-        "codeName" : "TaskCnt"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "taskdelay",
-      "getPSAppDEField" : {
-        "name" : "TASKDELAY",
-        "codeName" : "Taskdelay"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "projectconsumed",
-      "getPSAppDEField" : {
-        "name" : "PROJECTCONSUMED",
-        "codeName" : "Projectconsumed"
-      }
-    }, {
       "dataType" : 25,
       "name" : "finishedby",
       "getPSAppDEField" : {
         "name" : "FINISHEDBY",
         "codeName" : "FinishedBy"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "taskestimate",
-      "getPSAppDEField" : {
-        "name" : "TASKESTIMATE",
-        "codeName" : "Taskestimate"
-      }
-    }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "taskdeadline",
-      "getPSAppDEField" : {
-        "name" : "TASKDEADLINE",
-        "codeName" : "Taskdeadline"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "taskid",
-      "getPSAppDEField" : {
-        "name" : "TASKID",
-        "codeName" : "Taskid"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "taskpri",
-      "getPSAppDEField" : {
-        "name" : "TASKPRI",
-        "codeName" : "Taskpri"
       }
     }, {
       "dataType" : 25,
@@ -597,57 +476,11 @@
         "codeName" : "ProjectName"
       }
     }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "taskeststarted",
-      "getPSAppDEField" : {
-        "name" : "TASKESTSTARTED",
-        "codeName" : "Taskeststarted"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "srfdataaccaction",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataAccessAction" : true
-    }, {
-      "dataType" : 1,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "taskfinisheddate",
-      "getPSAppDEField" : {
-        "name" : "TASKFINISHEDDATE",
-        "codeName" : "Taskfinisheddate"
-      }
-    }, {
       "dataType" : 9,
-      "name" : "totalconsumed",
+      "name" : "taskid",
       "getPSAppDEField" : {
-        "name" : "TOTALCONSUMED",
-        "codeName" : "TotalConsumed"
-      }
-    }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "taskrealstart",
-      "getPSAppDEField" : {
-        "name" : "TASKREALSTART",
-        "codeName" : "Taskrealstart"
+        "name" : "TASKID",
+        "codeName" : "Taskid"
       }
     }, {
       "dataType" : 25,
@@ -658,10 +491,106 @@
       }
     }, {
       "dataType" : 9,
+      "name" : "taskpri",
+      "getPSAppDEField" : {
+        "name" : "TASKPRI",
+        "codeName" : "Taskpri"
+      }
+    }, {
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "taskeststarted",
+      "getPSAppDEField" : {
+        "name" : "TASKESTSTARTED",
+        "codeName" : "Taskeststarted"
+      }
+    }, {
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "taskrealstart",
+      "getPSAppDEField" : {
+        "name" : "TASKREALSTART",
+        "codeName" : "Taskrealstart"
+      }
+    }, {
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "taskdeadline",
+      "getPSAppDEField" : {
+        "name" : "TASKDEADLINE",
+        "codeName" : "Taskdeadline"
+      }
+    }, {
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "taskfinisheddate",
+      "getPSAppDEField" : {
+        "name" : "TASKFINISHEDDATE",
+        "codeName" : "Taskfinisheddate"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "taskdelay",
+      "getPSAppDEField" : {
+        "name" : "TASKDELAY",
+        "codeName" : "Taskdelay"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "taskestimate",
+      "getPSAppDEField" : {
+        "name" : "TASKESTIMATE",
+        "codeName" : "Taskestimate"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "totalconsumed",
+      "getPSAppDEField" : {
+        "name" : "TOTALCONSUMED",
+        "codeName" : "TotalConsumed"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "taskcnt",
+      "getPSAppDEField" : {
+        "name" : "TASKCNT",
+        "codeName" : "TaskCnt"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "projectconsumed",
+      "getPSAppDEField" : {
+        "name" : "PROJECTCONSUMED",
+        "codeName" : "Projectconsumed"
+      }
+    }, {
+      "dataType" : 9,
       "name" : "userconsumed",
       "getPSAppDEField" : {
         "name" : "USERCONSUMED",
         "codeName" : "Userconsumed"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -715,7 +644,7 @@
     "codeName" : "TaskFinshSearchGird",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats/PSSEARCHFORMS/TaskFinshSearchGird.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "任务完成汇总表搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -724,10 +653,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -746,10 +675,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -942,6 +871,77 @@
     "name" : "searchform",
     "modelid" : "497f162549be9f6c019a3ca31ace3f74",
     "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "codeName" : "UserFinishTaskGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "任务完成汇总表-数据导出",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "predefinedType" : "GRIDVIEW_EXPORTACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "b9fe1849d6192ef0f24d2c58f51fc039",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "UserFinishTaskGridView",
   "getPSDEViewId" : "d4a9d27dd70d487af52e36dcceb11690",

@@ -43,7 +43,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "通讯录编辑表单",
     "getPSAppDataEntity" : {
       "modelref" : true,

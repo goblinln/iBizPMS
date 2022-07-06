@@ -144,7 +144,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "主编辑表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -1018,20 +1018,6 @@
           },
           "getPSDEFDGroupLogics" : [ {
             "groupOP" : "AND",
-            "logicCat" : "ITEMBLANK",
-            "logicType" : "GROUP",
-            "name" : "表单成员[task][表单项空输入]逻辑",
-            "getPSDEFDLogics" : [ {
-              "condOP" : "NOTEQ",
-              "dEFDName" : "type",
-              "logicType" : "SINGLE",
-              "name" : "type 不等于(<>) (task)",
-              "value" : "task"
-            } ],
-            "relatedDetailNames" : [ "type" ],
-            "notMode" : false
-          }, {
-            "groupOP" : "AND",
             "logicCat" : "PANELVISIBLE",
             "logicType" : "GROUP",
             "name" : "表单成员[task][面板显示]逻辑",
@@ -1040,6 +1026,20 @@
               "dEFDName" : "type",
               "logicType" : "SINGLE",
               "name" : "type 等于(=) (task)",
+              "value" : "task"
+            } ],
+            "relatedDetailNames" : [ "type" ],
+            "notMode" : false
+          }, {
+            "groupOP" : "AND",
+            "logicCat" : "ITEMBLANK",
+            "logicType" : "GROUP",
+            "name" : "表单成员[task][表单项空输入]逻辑",
+            "getPSDEFDLogics" : [ {
+              "condOP" : "NOTEQ",
+              "dEFDName" : "type",
+              "logicType" : "SINGLE",
+              "name" : "type 不等于(<>) (task)",
               "value" : "task"
             } ],
             "relatedDetailNames" : [ "type" ],
@@ -1112,20 +1112,6 @@
           },
           "getPSDEFDGroupLogics" : [ {
             "groupOP" : "AND",
-            "logicCat" : "ITEMBLANK",
-            "logicType" : "GROUP",
-            "name" : "表单成员[story][表单项空输入]逻辑",
-            "getPSDEFDLogics" : [ {
-              "condOP" : "NOTEQ",
-              "dEFDName" : "type",
-              "logicType" : "SINGLE",
-              "name" : "type 不等于(<>) (story)",
-              "value" : "story"
-            } ],
-            "relatedDetailNames" : [ "type" ],
-            "notMode" : false
-          }, {
-            "groupOP" : "AND",
             "logicCat" : "PANELVISIBLE",
             "logicType" : "GROUP",
             "name" : "表单成员[story][面板显示]逻辑",
@@ -1134,6 +1120,20 @@
               "dEFDName" : "type",
               "logicType" : "SINGLE",
               "name" : "type 等于(=) (story)",
+              "value" : "story"
+            } ],
+            "relatedDetailNames" : [ "type" ],
+            "notMode" : false
+          }, {
+            "groupOP" : "AND",
+            "logicCat" : "ITEMBLANK",
+            "logicType" : "GROUP",
+            "name" : "表单成员[story][表单项空输入]逻辑",
+            "getPSDEFDLogics" : [ {
+              "condOP" : "NOTEQ",
+              "dEFDName" : "type",
+              "logicType" : "SINGLE",
+              "name" : "type 不等于(<>) (story)",
               "value" : "story"
             } ],
             "relatedDetailNames" : [ "type" ],
@@ -1206,20 +1206,6 @@
           },
           "getPSDEFDGroupLogics" : [ {
             "groupOP" : "AND",
-            "logicCat" : "ITEMBLANK",
-            "logicType" : "GROUP",
-            "name" : "表单成员[bug][表单项空输入]逻辑",
-            "getPSDEFDLogics" : [ {
-              "condOP" : "NOTEQ",
-              "dEFDName" : "type",
-              "logicType" : "SINGLE",
-              "name" : "type 不等于(<>) (bug)",
-              "value" : "bug"
-            } ],
-            "relatedDetailNames" : [ "type" ],
-            "notMode" : false
-          }, {
-            "groupOP" : "AND",
             "logicCat" : "PANELVISIBLE",
             "logicType" : "GROUP",
             "name" : "表单成员[bug][面板显示]逻辑",
@@ -1228,6 +1214,20 @@
               "dEFDName" : "type",
               "logicType" : "SINGLE",
               "name" : "type 等于(=) (bug)",
+              "value" : "bug"
+            } ],
+            "relatedDetailNames" : [ "type" ],
+            "notMode" : false
+          }, {
+            "groupOP" : "AND",
+            "logicCat" : "ITEMBLANK",
+            "logicType" : "GROUP",
+            "name" : "表单成员[bug][表单项空输入]逻辑",
+            "getPSDEFDLogics" : [ {
+              "condOP" : "NOTEQ",
+              "dEFDName" : "type",
+              "logicType" : "SINGLE",
+              "name" : "type 不等于(<>) (bug)",
               "value" : "bug"
             } ],
             "relatedDetailNames" : [ "type" ],
@@ -1300,25 +1300,6 @@
           },
           "getPSDEFDGroupLogics" : [ {
             "groupOP" : "AND",
-            "logicCat" : "ITEMBLANK",
-            "logicType" : "GROUP",
-            "name" : "表单成员[name][表单项空输入]逻辑",
-            "getPSDEFDLogics" : [ {
-              "condOP" : "NOTEQ",
-              "dEFDName" : "type",
-              "logicType" : "SINGLE",
-              "name" : "type 不等于(<>) (custom)",
-              "value" : "custom"
-            }, {
-              "condOP" : "ISNOTNULL",
-              "dEFDName" : "type",
-              "logicType" : "SINGLE",
-              "name" : "type 值不为空(NotNil)"
-            } ],
-            "relatedDetailNames" : [ "type" ],
-            "notMode" : false
-          }, {
-            "groupOP" : "AND",
             "logicCat" : "PANELVISIBLE",
             "logicType" : "GROUP",
             "name" : "表单成员[name][面板显示]逻辑",
@@ -1339,6 +1320,25 @@
                 "name" : "type 值为空(Nil)"
               } ],
               "notMode" : false
+            } ],
+            "relatedDetailNames" : [ "type" ],
+            "notMode" : false
+          }, {
+            "groupOP" : "AND",
+            "logicCat" : "ITEMBLANK",
+            "logicType" : "GROUP",
+            "name" : "表单成员[name][表单项空输入]逻辑",
+            "getPSDEFDLogics" : [ {
+              "condOP" : "NOTEQ",
+              "dEFDName" : "type",
+              "logicType" : "SINGLE",
+              "name" : "type 不等于(<>) (custom)",
+              "value" : "custom"
+            }, {
+              "condOP" : "ISNOTNULL",
+              "dEFDName" : "type",
+              "logicType" : "SINGLE",
+              "name" : "type 值不为空(NotNil)"
             } ],
             "relatedDetailNames" : [ "type" ],
             "notMode" : false

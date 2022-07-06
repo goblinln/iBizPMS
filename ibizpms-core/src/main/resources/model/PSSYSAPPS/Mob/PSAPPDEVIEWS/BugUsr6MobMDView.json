@@ -90,13 +90,13 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "PLAN",
-    "name" : "PLAN",
+    "key" : "N_PLAN_EQ",
+    "name" : "N_PLAN_EQ",
     "value" : "productplan",
     "rawValue" : false
   }, {
-    "key" : "N_PLAN_EQ",
-    "name" : "N_PLAN_EQ",
+    "key" : "PLAN",
+    "name" : "PLAN",
     "value" : "productplan",
     "rawValue" : false
   } ],
@@ -112,7 +112,7 @@
     "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realTitle" : "Bug移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -120,7 +120,7 @@
       "viewType" : "DEMOBEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realTitle" : "Bug移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -159,7 +159,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
         "id" : "pri",

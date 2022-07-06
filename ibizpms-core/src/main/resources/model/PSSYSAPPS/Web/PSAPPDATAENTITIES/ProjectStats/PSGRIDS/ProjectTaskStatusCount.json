@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "项目任务状态统计",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -170,34 +170,6 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 9,
-    "name" : "taskcnt",
-    "getPSAppDEField" : {
-      "name" : "TASKCNT",
-      "codeName" : "TaskCnt"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "canceltaskcnt",
-    "getPSAppDEField" : {
-      "name" : "CANCELTASKCNT",
-      "codeName" : "Canceltaskcnt"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "waittaskcnt",
-    "getPSAppDEField" : {
-      "name" : "WAITTASKCNT",
-      "codeName" : "Waittaskcnt"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "donetaskcnt",
-    "getPSAppDEField" : {
-      "name" : "DONETASKCNT",
-      "codeName" : "Donetaskcnt"
-    }
-  }, {
     "dataType" : 25,
     "name" : "name",
     "getPSAppDEField" : {
@@ -213,10 +185,10 @@
     }
   }, {
     "dataType" : 9,
-    "name" : "closedtaskcnt",
+    "name" : "waittaskcnt",
     "getPSAppDEField" : {
-      "name" : "CLOSEDTASKCNT",
-      "codeName" : "Closedtaskcnt"
+      "name" : "WAITTASKCNT",
+      "codeName" : "Waittaskcnt"
     }
   }, {
     "dataType" : 9,
@@ -226,11 +198,39 @@
       "codeName" : "Pausetaskcnt"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 9,
+    "name" : "closedtaskcnt",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "CLOSEDTASKCNT",
+      "codeName" : "Closedtaskcnt"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "canceltaskcnt",
+    "getPSAppDEField" : {
+      "name" : "CANCELTASKCNT",
+      "codeName" : "Canceltaskcnt"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "donetaskcnt",
+    "getPSAppDEField" : {
+      "name" : "DONETASKCNT",
+      "codeName" : "Donetaskcnt"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "taskcnt",
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -241,11 +241,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   } ],
   "getPSDEGridEditItems" : [ {

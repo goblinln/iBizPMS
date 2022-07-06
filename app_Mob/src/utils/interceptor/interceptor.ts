@@ -1,11 +1,11 @@
 import { Store } from 'vuex';
-import axios from 'axios';
 import Router from 'vue-router';
 import i18n from '@/locale';
-import ignoreProxyMap from './ignore-proxy';
-import { Http, getSessionStorage } from 'ibiz-core';
 import { Environment } from '@/environments/environment';
-import { getCookie } from 'qx-util';
+import { Http, getSessionStorage, LogUtil } from 'ibiz-core';
+import { AppLoadingService } from 'ibiz-vue';
+import { clearCookie, getCookie, setCookie, SyncSeriesHook } from 'qx-util';
+
 /**
  * 拦截器
  *
@@ -32,14 +32,12 @@ export class Interceptors {
      */
     private store: Store<any> | any;
 
-
-
     /**
      *  单列对象
      *
      * @private
      * @static
-     * @type {LoadAppData}
+     * @type { Interceptors }
      * @memberof Interceptors
      */
     private static readonly instance: Interceptors = new Interceptors();
@@ -59,7 +57,7 @@ export class Interceptors {
     }
 
     /**
-     * 获取 LoadAppData 单例对象
+     * 获取 Interceptors 单例对象
      *
      * @static
      * @param {Router} route
@@ -74,51 +72,101 @@ export class Interceptors {
     }
 
     /**
+     * 执行钩子(请求、响应)
+     *
+     * @memberof Interceptors
+     */
+    public static hooks = {
+        request: new SyncSeriesHook<[], { config: any }>(),
+        response: new SyncSeriesHook<[], { response: any }>()
+    };
+
+    /**
      * 拦截器实现接口
      *
      * @private
      * @memberof Interceptors
      */
     private intercept(): void {
-        axios.interceptors.request.use((config: any) => {
-            let appdata: any = this.store.getters.getAppData();;
+        Http.getHttp().interceptors.request.use((config: any) => {
+            Interceptors.hooks.request.callSync({ config: config });
+            let appdata: any;
+            if (this.router) {
+                appdata = this.store.getters.getAppData();
+            }
             if (appdata && appdata.context) {
                 config.headers['srforgsectorid'] = appdata.context.srforgsectorid;
             }
+            if (Environment.SaaSMode) {
+                const user = getCookie('ibzuaa-user');
+                let activeOrgData = getSessionStorage('activeOrgData');
+                config.headers['srfsystemid'] = activeOrgData?.systemid;
+                if(user){
+                    const userData = JSON.parse(user)
+                    config.headers['srforgid'] = userData.orgid;
+                }
+            }
             if (getCookie('ibzuaa-token')) {
                 config.headers['Authorization'] = `Bearer ${getCookie('ibzuaa-token')}`;
-            }
-            if (Environment.SaaSMode) {
-                let activeOrgData = getSessionStorage('activeOrgData');
-                config.headers['srforgid'] = activeOrgData?.orgid;
-                config.headers['srfsystemid'] = activeOrgData?.systemid;
+            } else {
+                // 第三方应用打开免登
+                if (sessionStorage.getItem("srftoken")) {
+                    const token = sessionStorage.getItem('srftoken');
+                    config.headers['Authorization'] = `Bearer ${token}`;
+                }
             }
             config.headers['Accept-Language'] = i18n.locale;
-            // 混合 app 代理处理
+            if (!Object.is(Environment.BaseUrl, "") && !config.url.startsWith('https://') && !config.url.startsWith('http://') && !config.url.startsWith('./assets')) {
+                config.url = Environment.BaseUrl + config.url;
+            }
+
+            // 开启loading
+            this.beginLoading();
+
             return config;
         }, (error: any) => {
             return Promise.reject(error);
         });
 
-        axios.interceptors.response.use((response: any) => {
+        Http.getHttp().interceptors.response.use((response: any) => {
+            Interceptors.hooks.response.callSync({ response: response });
             if (response.headers && response.headers['refreshtoken'] && localStorage.getItem('token')) {
                 this.refreshToken(response);
             }
+
+            // 关闭loading
+            this.endLoading();
+
             return response;
         }, (error: any) => {
+            // 关闭loading
+            this.endLoading();
+
             error = error ? error : { response: {} };
             let { response: res } = error;
             let { data: _data } = res;
-
+            // 处理异常
+            if (res.headers && res.headers['x-ibz-error']) {
+                res.data.errorKey = res.headers['x-ibz-error'];
+            }
+            if (res.headers && res.headers['x-ibz-params']) {
+                res.data.entityName = res.headers['x-ibz-params'];
+            }
             if (res.status === 401) {
-                this.store.state.appdata = null;
-                this.doNoLogin(_data.data);
+                this.doNoLogin(res, _data.data);
             }
-            if (res.status === 404) {
-                // this.router.push({ path: '/404' });
-            } else if (res.status === 500) {
-                // this.router.push({ path: '/500' });
+            if (res.status === 403) {
+                if (res.data && res.data.status && Object.is(res.data.status, "FORBIDDEN")) {
+                    let alertMessage: string = "非常抱歉，您无权操作此数据，如需操作请联系管理员！";
+                    Object.assign(res.data, { localizedMessage: alertMessage, message: alertMessage });
+                }
             }
+            // if (res.status === 404) {
+            //     this.router.push({ path: '/404' });
+            // } else if (res.status === 500) {
+            //     this.router.push({ path: '/500' });
+            // }
+
             return Promise.reject(res);
         });
     }
@@ -130,26 +178,23 @@ export class Interceptors {
      * @param {*} [data={}]
      * @memberof Interceptors
      */
-    private doNoLogin(data: any = {}): void {
-        this.clearAppData()
-        if (data.loginurl && !Object.is(data.loginurl, '') && data.originurl && !Object.is(data.originurl, '')) {
-            let _url = encodeURIComponent(encodeURIComponent(window.location.href));
-            let loginurl: string = data.loginurl;
-            const originurl: string = data.originurl;
-
-            if (originurl.indexOf('?') === -1) {
-                _url = `${encodeURIComponent('?RU=')}${_url}`;
-            } else {
-                _url = `${encodeURIComponent('&RU=')}${_url}`;
+    private async doNoLogin(response: any, data: any = {}): Promise<void> {
+        // 交由路由守卫自行处理
+        if (response && response.config && response.config.url && (Object.is(response.config.url, '/appdata') || Object.is(response.config.url, 'getNowWebEnvironment'))) {
+            return;
+        }
+        this.clearAppData();
+        const _response = await Http.getInstance().get('getNowWebEnvironment');
+        if (_response.status == 200) {
+            const { data } = _response;
+            if (data.PortalAddress) {
+                window.location.href = `${data.PortalAddress}?redirect=${window.location.href}`;
             }
-            loginurl = `${loginurl}${_url}`;
-
-            window.location.href = loginurl;
         } else {
             if (Object.is(this.router.currentRoute.name, 'login')) {
                 return;
             }
-            this.router.push({ name: 'login', query: { redirect: this.router.currentRoute.fullPath } });
+            this.router.push({ name: 'login', query: { redirect: window.location.hash.replace("#", '') } });
         }
     }
 
@@ -161,10 +206,8 @@ export class Interceptors {
      */
     private clearAppData() {
         // 清除user、token
-        let leftTime = new Date();
-        leftTime.setTime(leftTime.getSeconds() - 1);
-        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
-        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        clearCookie('ibzuaa-token', true);
+        clearCookie('ibzuaa-user', true);
         // 清除应用级数据
         localStorage.removeItem('localdata')
         this.store.commit('addAppData', {});
@@ -186,14 +229,34 @@ export class Interceptors {
             if (response && response.status === 200) {
                 const data = response.data;
                 if (data) {
-                    localStorage.setItem('token', data);
+                    setCookie('ibzuaa-token', data, 7, true);
                 }
             } else {
-                console.log("刷新token出错");
+                LogUtil.log("刷新token出错");
             }
         }).catch((error: any) => {
-            console.log("刷新token出错");
+            LogUtil.log("刷新token出错");
         });
     }
-}
 
+    /**
+     * 开始加载
+     *
+     * @private
+     * @memberof Http
+     */
+    private beginLoading(): void {
+        AppLoadingService.getInstance().beginLoading();
+    }
+
+    /**
+     * 加载结束
+     *
+     * @private
+     * @memberof Http
+     */
+    private endLoading(): void {
+        AppLoadingService.getInstance().endLoading();
+    }
+
+}

@@ -116,7 +116,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "子计划",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -268,24 +268,10 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
       "name" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "statuss",
-      "getPSAppDEField" : {
-        "name" : "STATUSS",
-        "codeName" : "Statuss"
       }
     }, {
       "dataType" : 25,
@@ -302,28 +288,34 @@
         "codeName" : "Productplansn"
       }
     }, {
-      "dataType" : 1,
-      "name" : "parent",
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "begin",
       "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
+        "name" : "BEGIN",
+        "codeName" : "Begin"
       }
     }, {
-      "dataType" : 1,
-      "name" : "branch",
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "end",
       "getPSAppDEField" : {
-        "name" : "BRANCH",
-        "codeName" : "Branch"
+        "name" : "END",
+        "codeName" : "End"
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "statuss",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "STATUSS",
+        "codeName" : "Statuss"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -335,27 +327,35 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "branch",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "BRANCH",
+        "codeName" : "Branch"
       }
     }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "end",
+      "dataType" : 1,
+      "name" : "parent",
       "getPSAppDEField" : {
-        "name" : "END",
-        "codeName" : "End"
+        "name" : "PARENT",
+        "codeName" : "Parent"
       }
     }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "begin",
+      "dataType" : 1,
+      "name" : "product",
       "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
+        "name" : "PRODUCT",
+        "codeName" : "Product"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "编号",

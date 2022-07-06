@@ -14,10 +14,6 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent.json"
   },
   "name" : "DER1N_ZT_DOCCONTENT_ZT_DOC_DOC",
-  "getNestedPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "Default"
-  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "DOC",

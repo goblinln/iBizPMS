@@ -1647,10 +1647,11 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "MainView9",
-    "logicName" : "需求描述实体编辑视图（嵌入需求主信息）",
-    "name" : "需求描述实体编辑视图（嵌入需求主信息）",
-    "realModelSubType" : "DEEDITVIEW9",
+    "codeName" : "EditView",
+    "logicName" : "storyspec实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "storyspec实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MPickupView",
@@ -1658,6 +1659,33 @@
     "modelTag" : "MPICKUPVIEW",
     "name" : "storyspec实体数据多项选择视图",
     "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "storyspec实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "storyspec实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainView9",
+    "logicName" : "需求描述实体编辑视图（嵌入需求主信息）",
+    "name" : "需求描述实体编辑视图（嵌入需求主信息）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "storyspec实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "storyspec实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "storyspec实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "storyspec实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupGridView",
@@ -1678,34 +1706,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "storyspec实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "storyspec实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "storyspec实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "storyspec实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "storyspec实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "storyspec实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "storyspec实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "storyspec实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "StorySpec",
   "dEType" : 1,
@@ -1749,10 +1749,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec.json"
     },
     "name" : "DER1N_ZT_STORYSPEC_ZT_STORY_STORY",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "STORY",
@@ -1770,7 +1766,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

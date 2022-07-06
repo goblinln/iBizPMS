@@ -93,8 +93,6 @@
     "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA"
-  }, {
     "name" : "EDITDATA",
     "realTitle" : "代理编辑视图",
     "getRefPSAppView" : {
@@ -102,6 +100,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentMainInfoEditView.json",
       "viewType" : "DEEDITVIEW"
     }
+  }, {
+    "name" : "NEWDATA"
   } ],
   "getPSAppViewUIActions" : [ {
     "name" : "toolbar_deuiaction1_create",
@@ -117,76 +117,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "MainGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "行为组(1~6)",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1_create",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_create_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_create_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "caption" : "新建",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1_create",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_create"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf067@FontAwesome",
-        "cssClass" : "fa fa-plus"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "NONE",
-        "caption" : "新建",
-        "codeName" : "Create",
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
-          "viewType" : "DEEDITVIEW"
-        },
-        "frontProcessType" : "WIZARD",
-        "fullCodeName" : "IbzAgent_Create",
-        "name" : "新建",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf067@FontAwesome",
-          "cssClass" : "fa fa-plus"
-        },
-        "timeout" : 60000,
-        "uIActionMode" : "FRONT",
-        "uIActionTag" : "Create",
-        "uIActionType" : "DEUIACTION",
-        "id" : "Create@IbzAgent"
-      },
-      "tooltip" : "新建",
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "5ad21b662e43fd5724b41620471178d8",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "Main",
     "columnEnableLink" : 2,
@@ -197,7 +127,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -445,11 +375,26 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
+      "dataType" : 1,
+      "name" : "ibz_agentid",
+      "getPSAppDEField" : {
+        "name" : "IBZ_AGENTID",
+        "codeName" : "IbzAgentId"
+      }
+    }, {
       "dataType" : 25,
       "name" : "agentuser",
       "getPSAppDEField" : {
         "name" : "AGENTUSER",
         "codeName" : "Agentuser"
+      }
+    }, {
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "agentbegin",
+      "getPSAppDEField" : {
+        "name" : "AGENTBEGIN",
+        "codeName" : "Agentbegin"
       }
     }, {
       "format" : "YYYY-MM-DD",
@@ -461,25 +406,10 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "ibz_agentid",
+      "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "IBZ_AGENTID",
         "codeName" : "IbzAgentId"
-      }
-    }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "agentbegin",
-      "getPSAppDEField" : {
-        "name" : "AGENTBEGIN",
-        "codeName" : "Agentbegin"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
-      "getPSAppDEField" : {
-        "name" : "IBZ_AGENTNAME",
-        "codeName" : "IbzAgentName"
       }
     }, {
       "dataType" : 1,
@@ -490,11 +420,11 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
+      "dataType" : 25,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "IBZ_AGENTID",
-        "codeName" : "IbzAgentId"
+        "name" : "IBZ_AGENTNAME",
+        "codeName" : "IbzAgentName"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -548,7 +478,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -557,10 +487,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -579,10 +509,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -632,6 +562,76 @@
     "name" : "searchform",
     "modelid" : "cfdfd36681a9de660c4281d6e61868d2",
     "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "codeName" : "MainGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "行为组(1~6)",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1_create",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_create_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_create_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "新建",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1_create",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_create"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "新建",
+        "codeName" : "Create",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "IbzAgent_Create",
+        "name" : "新建",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "Create",
+        "uIActionType" : "DEUIACTION",
+        "id" : "Create@IbzAgent"
+      },
+      "tooltip" : "新建",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "5ad21b662e43fd5724b41620471178d8",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "MainGridView",
   "getPSDEViewId" : "6a657e2419638b682242a2bdea583eed",

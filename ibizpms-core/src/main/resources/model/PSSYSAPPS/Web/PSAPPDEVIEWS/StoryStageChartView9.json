@@ -26,7 +26,7 @@
       "modelref" : true,
       "id" : "fetch"
     },
-    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD" ],
     "logicName" : "MyOpenedStory_Stage",
     "getPSAppDataEntity" : {
       "modelref" : true,

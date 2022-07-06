@@ -2,10 +2,11 @@
   <div class="ion-textarea">
         <ion-textarea
         :placeholder="placeholder"
+        class="form-value-content"
         :auto-grow="true"
         :disabled="disabled"
         :value="value"
-        @ionChange = "valueChange($event)"
+        @ionChange="valueChange($event)"
       ></ion-textarea>
   </div>
 </template>
@@ -49,7 +50,7 @@ export default class AppTextarea extends Vue {
      * @type {string}
      * @memberof AppTextarea
      */
-    @Prop() public placeholder?:string;       
+    @Prop({default:'暂无内容'}) public placeholder?:string;       
 }
 </script>
 <style lang="less">

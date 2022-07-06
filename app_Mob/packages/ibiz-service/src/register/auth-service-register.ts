@@ -75,6 +75,8 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('testsuite', () => import('../authservice/test-suite/test-suite-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectteam', () => import('../authservice/project-team/project-team-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('file', () => import('../authservice/file/file-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('storyspec', () => import('../authservice/story-spec/story-spec-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('history', () => import('../authservice/history/history-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productbranch', () => import('../authservice/product-branch/product-branch-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productrelease', () => import('../authservice/product-release/product-release-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testcase', () => import('../authservice/test-case/test-case-auth-service'));
@@ -96,6 +98,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('reportsummary', () => import('../authservice/report-summary/report-summary-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productstats', () => import('../authservice/product-stats/product-stats-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('usercontact', () => import('../authservice/user-contact/user-contact-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('storystage', () => import('../authservice/story-stage/story-stage-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysupdatefeatures', () => import('../authservice/sys-update-features/sys-update-features-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('task', () => import('../authservice/task/task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('todo', () => import('../authservice/todo/todo-auth-service'));

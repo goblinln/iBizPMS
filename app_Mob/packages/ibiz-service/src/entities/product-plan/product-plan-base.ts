@@ -199,7 +199,6 @@ export abstract class ProductPlanBase extends EntityBase implements IProductPlan
      * 产品
      */
     product?: any;
-
     /**
      * 重置实体数据
      *

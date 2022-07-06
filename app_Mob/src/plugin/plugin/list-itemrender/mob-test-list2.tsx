@@ -16,7 +16,7 @@ import { AppMobMDCtrlBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class MobTestList2 extends AppMobMDCtrlBase {
 
-    /**
+        /**
      * 绘制列表项集合
      * @return {*} 
      * @memberof AppDefaultMobMDCtrlBase

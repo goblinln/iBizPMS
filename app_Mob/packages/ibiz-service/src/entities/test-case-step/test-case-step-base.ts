@@ -113,7 +113,6 @@ export abstract class TestCaseStepBase extends EntityBase implements ITestCaseSt
      * 分组用例步骤的组编号
      */
     parent?: any;
-
     /**
      * 重置实体数据
      *

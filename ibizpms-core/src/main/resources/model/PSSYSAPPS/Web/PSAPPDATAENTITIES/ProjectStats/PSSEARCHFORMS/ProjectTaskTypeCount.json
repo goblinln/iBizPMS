@@ -2,7 +2,7 @@
   "codeName" : "ProjectTaskTypeCount",
   "controlType" : "SEARCHFORM",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSSEARCHFORMS/ProjectTaskTypeCount.json",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
   "logicName" : "项目任务类型统计搜索表单",
   "getPSAppDataEntity" : {
     "modelref" : true,

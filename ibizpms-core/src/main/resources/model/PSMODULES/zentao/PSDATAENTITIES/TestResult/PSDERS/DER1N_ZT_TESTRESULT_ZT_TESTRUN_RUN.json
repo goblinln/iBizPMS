@@ -14,10 +14,6 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
   },
   "name" : "DER1N_ZT_TESTRESULT_ZT_TESTRUN_RUN",
-  "getNestedPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "Default"
-  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "RUN",

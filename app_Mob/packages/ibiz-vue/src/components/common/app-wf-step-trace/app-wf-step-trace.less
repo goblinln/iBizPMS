@@ -1,0 +1,78 @@
+.app-wf-step-trace {
+    display: flex;
+    flex-direction: column-reverse;
+    .wf-action-item {
+        height: 6rem;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    .action-line {
+        width: 1.5rem;
+        height: 1.5rem;
+        position: relative;
+        margin: 0 20px;
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+    .action-line::before {
+        content: '';
+        width: 2.2px;
+        height: 40px;
+        background: #476cea;
+        position: absolute;
+        left: calc(50% - 2.2px);
+        bottom: 20px;
+    }
+    .action-line::after {
+        content: '';
+        width: 2.2px;
+        height: 40px;
+        background: #476cea;
+        position: absolute;
+        left: calc(50% - 2.2px);
+        top: 20px;
+    }
+    .content-info {
+        font-size: 16px;
+        color: #9f9e9e;
+    }
+    span.name {
+        font-size: 16px;
+        color: #486ce8;
+    }
+    .action-line-now {
+        width: 1.5rem;
+        height: 1.5rem;
+        position: relative;
+        margin: 0 20px;
+        background: #ccc;
+        border-radius: 50%;
+        transform: scale(0.5, 0.5);
+        .action-top {
+            position: relative;
+            top: 10px;
+        }
+    }
+    .action-line-now::before {
+        content: '';
+        width: 2.2px;
+        height: 40px;
+        background: #ccc;
+        position: absolute;
+        left: calc(50% - 3.2px);
+        top: 49px;
+        transform: scale(2, 2);
+    }
+    .time {
+        font-size: 16px;
+    }
+    .wf-action-item:first-child {
+        .action-line::after {
+            display: none;
+        }
+    }
+}

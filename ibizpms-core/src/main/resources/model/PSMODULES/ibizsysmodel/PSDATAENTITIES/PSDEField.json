@@ -8207,32 +8207,11 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "实体属性实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "实体属性实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "MPickupView",
     "logicName" : "实体属性实体数据多项选择视图",
     "modelTag" : "MPICKUPVIEW",
     "name" : "实体属性实体数据多项选择视图",
     "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "实体属性实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "实体属性实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
@@ -8242,11 +8221,17 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "实体属性实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "实体属性实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "实体属性实体编辑视图（左右关系）",
+    "name" : "实体属性实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "实体属性实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "实体属性实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupGridView",
@@ -8255,11 +8240,26 @@
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "实体属性实体编辑视图（左右关系）",
-    "name" : "实体属性实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "EditView",
+    "logicName" : "实体属性实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "实体属性实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "实体属性实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "实体属性实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "PSDEField",
   "dEType" : 1,
@@ -8600,7 +8600,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

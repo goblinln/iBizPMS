@@ -1,5 +1,5 @@
 import { IPSAppDEMobEditView, IPSDEForm } from "@ibiz/dynamic-model-api";
-import {  MobEditViewEngine, ModelTool } from "ibiz-core";
+import {  MobEditViewEngine, MobEditViewInterface, ModelTool } from "ibiz-core";
 import { MainViewBase } from "./main-view-base";
 
 /**
@@ -9,7 +9,7 @@ import { MainViewBase } from "./main-view-base";
  * @class MobEditViewBase
  * @extends {MainViewBase}
  */
-export class MobEditViewBase extends MainViewBase {
+export class MobEditViewBase extends MainViewBase implements MobEditViewInterface {
 
     /**
      * 视图引擎
@@ -137,6 +137,31 @@ export class MobEditViewBase extends MainViewBase {
         if(result){
           super.closeView(args);
         }
+    }
+
+    /**
+     * 绘制头部标题栏
+     * 
+     * @memberof MobEditViewBase
+     */
+    public renderViewHeaderCaptionBar() {
+        if (this.showCaption === false) {
+            return null;
+        }
+        const srfCaption = this.model.srfCaption;
+        const dataInfo: string = this.model.dataInfo ? (`-${this.model.dataInfo}`) : '';
+        const showInfoBar: boolean = (this.viewInstance as IPSAppDEMobEditView).showDataInfoBar;
+        const psimage = this.viewInstance.getPSSysImage();
+        return <ion-toolbar v-show="titleStatus" class="ionoc-view-header" slot="captionbar">
+            <ion-buttons slot="start">
+                {this.isShowBackButton &&
+                    <ion-button on-click={this.closeView.bind(this)}>
+                        <ion-icon name="chevron-back" />
+            {this.$t('app.button.back')}
+          </ion-button>}
+            </ion-buttons>
+            <ion-title class="view-title"><app-ps-sys-image imageModel={psimage}></app-ps-sys-image>{dataInfo && showInfoBar ? srfCaption + dataInfo : srfCaption}</ion-title>
+        </ion-toolbar>
     }
 
 }

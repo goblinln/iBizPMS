@@ -84,6 +84,14 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
+    "name" : "EDITDATA",
+    "realTitle" : "人员表格视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr3GridViewUserConcat.json",
+      "viewType" : "DEGRIDVIEW"
+    }
+  }, {
     "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_RIGHT",
     "realTitle" : "usercontact编辑视图",
@@ -91,14 +99,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserContactEditView.json",
       "viewType" : "DEEDITVIEW"
-    }
-  }, {
-    "name" : "EDITDATA",
-    "realTitle" : "人员表格视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr3GridViewUserConcat.json",
-      "viewType" : "DEGRIDVIEW"
     }
   } ],
   "getPSControls" : [ {
@@ -112,7 +112,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -332,6 +332,13 @@
         "codeName" : "Id"
       }
     }, {
+      "dataType" : 25,
+      "name" : "listname",
+      "getPSAppDEField" : {
+        "name" : "LISTNAME",
+        "codeName" : "ListName"
+      }
+    }, {
       "dataType" : 1,
       "name" : "usercontactsn",
       "getPSAppDEField" : {
@@ -339,11 +346,11 @@
         "codeName" : "Usercontactsn"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "dataType" : 1,
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "LISTNAME",
-        "codeName" : "ListName"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -354,15 +361,8 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
       "dataType" : 25,
-      "name" : "listname",
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
         "name" : "LISTNAME",
         "codeName" : "ListName"
@@ -419,7 +419,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -428,10 +428,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -450,10 +450,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

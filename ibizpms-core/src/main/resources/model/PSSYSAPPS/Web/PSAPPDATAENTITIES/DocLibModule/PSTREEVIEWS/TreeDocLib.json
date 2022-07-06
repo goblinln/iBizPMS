@@ -297,8 +297,8 @@
       "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
-      "key" : "srfparentkey",
-      "name" : "srfparentkey",
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
       "value" : "0",
       "rawValue" : true
     }, {
@@ -307,8 +307,8 @@
       "value" : "srfroot",
       "rawValue" : false
     }, {
-      "key" : "n_parent_eq",
-      "name" : "n_parent_eq",
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
       "value" : "0",
       "rawValue" : true
     } ],

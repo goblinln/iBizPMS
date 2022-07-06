@@ -43,7 +43,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "项目团队管理",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -408,117 +408,6 @@
             "xDataControlName" : "grid"
           } ],
           "getPSControls" : [ {
-            "codeName" : "MainGridView_EditRowtoolbar",
-            "controlType" : "TOOLBAR",
-            "hookEventNames" : [ "CLICK" ],
-            "logicName" : "表格界面（行编辑无开关）",
-            "name" : "toolbar",
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
-            },
-            "getPSControlLogics" : [ {
-              "eventArg" : "deuiaction2",
-              "eventNames" : "CLICK",
-              "logicTag" : "toolbar",
-              "logicType" : "APPVIEWLOGIC",
-              "name" : "toolbar_deuiaction2_click",
-              "getPSAppViewLogic" : {
-                "modelref" : true,
-                "id" : "toolbar_deuiaction2_click"
-              }
-            }, {
-              "eventArg" : "deuiaction3",
-              "eventNames" : "CLICK",
-              "logicTag" : "toolbar",
-              "logicType" : "APPVIEWLOGIC",
-              "name" : "toolbar_deuiaction3_click",
-              "getPSAppViewLogic" : {
-                "modelref" : true,
-                "id" : "toolbar_deuiaction3_click"
-              }
-            } ],
-            "getPSControlParam" : {
-              "id" : "TOOLBAR"
-            },
-            "getPSDEToolbarItems" : [ {
-              "caption" : "新建行",
-              "groupExtractMode" : "ITEM",
-              "itemType" : "DEUIACTION",
-              "name" : "deuiaction2",
-              "noPrivDisplayMode" : 2,
-              "getPSAppViewUIAction" : {
-                "modelref" : true,
-                "id" : "toolbar_deuiaction2"
-              },
-              "getPSSysImage" : {
-                "glyph" : "xf067@FontAwesome",
-                "cssClass" : "fa fa-plus"
-              },
-              "getPSUIAction" : {
-                "caption" : "新建行",
-                "codeName" : "NewRow",
-                "dataAccessAction" : "CREATE",
-                "fullCodeName" : "NewRow",
-                "name" : "表格界面_新建行",
-                "getPSDEOPPriv" : {
-                  "modelref" : true,
-                  "id" : "CREATE"
-                },
-                "getPSSysImage" : {
-                  "glyph" : "xf067@FontAwesome",
-                  "cssClass" : "fa fa-plus"
-                },
-                "predefinedType" : "GRIDVIEW_NEWROWACTION",
-                "timeout" : 60000,
-                "uIActionMode" : "SYS",
-                "uIActionTag" : "NewRow",
-                "uIActionType" : "DEUIACTION"
-              },
-              "tooltip" : "新建行",
-              "showCaption" : true,
-              "showIcon" : true
-            }, {
-              "caption" : "保存行",
-              "groupExtractMode" : "ITEM",
-              "itemType" : "DEUIACTION",
-              "name" : "deuiaction3",
-              "noPrivDisplayMode" : 2,
-              "getPSAppViewUIAction" : {
-                "modelref" : true,
-                "id" : "toolbar_deuiaction3"
-              },
-              "getPSSysImage" : {
-                "glyph" : "xf0c7@FontAwesome",
-                "cssClass" : "fa fa-save"
-              },
-              "getPSUIAction" : {
-                "caption" : "保存行",
-                "codeName" : "SaveRow",
-                "dataAccessAction" : "CREATE",
-                "fullCodeName" : "SaveRow",
-                "name" : "表格界面_保存行",
-                "getPSDEOPPriv" : {
-                  "modelref" : true,
-                  "id" : "CREATE"
-                },
-                "getPSSysImage" : {
-                  "glyph" : "xf0c7@FontAwesome",
-                  "cssClass" : "fa fa-save"
-                },
-                "predefinedType" : "GRIDVIEW_SAVEROWACTION",
-                "timeout" : 60000,
-                "uIActionMode" : "SYS",
-                "uIActionTag" : "SaveRow",
-                "uIActionType" : "DEUIACTION"
-              },
-              "tooltip" : "保存行",
-              "showCaption" : true,
-              "showIcon" : true
-            } ],
-            "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4",
-            "modeltype" : "PSDETOOLBAR"
-          }, {
             "aggMode" : "NONE",
             "codeName" : "Main_EditRow",
             "columnEnableLink" : 2,
@@ -571,7 +460,7 @@
               }
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "主表格（行编辑）",
             "minorSortDir" : "DESC",
             "getMinorSortPSAppDEField" : {
@@ -888,24 +777,31 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 25,
-              "name" : "limited",
-              "getPSAppDEField" : {
-                "name" : "LIMITED",
-                "codeName" : "Limited"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "root",
-              "getPSAppDEField" : {
-                "name" : "ROOT",
-                "codeName" : "Root"
-              }
-            }, {
-              "dataType" : 25,
               "name" : "account_text",
               "getPSAppDEField" : {
                 "name" : "ACCOUNT",
                 "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "role",
+              "getPSAppDEField" : {
+                "name" : "ROLE",
+                "codeName" : "Role"
+              }
+            }, {
+              "dataType" : 9,
+              "name" : "days",
+              "getPSAppDEField" : {
+                "name" : "DAYS",
+                "codeName" : "Days"
               }
             }, {
               "dataType" : 7,
@@ -915,19 +811,33 @@
                 "codeName" : "Hours"
               }
             }, {
+              "dataType" : 25,
+              "name" : "limited",
+              "getPSAppDEField" : {
+                "name" : "LIMITED",
+                "codeName" : "Limited"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "username",
+              "getPSAppDEField" : {
+                "name" : "USERNAME",
+                "codeName" : "Username"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "id",
+              "getPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
+              }
+            }, {
               "format" : "YYYY-MM-DD",
               "dataType" : 5,
               "name" : "join",
               "getPSAppDEField" : {
                 "name" : "JOIN",
                 "codeName" : "Join"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "srfmajortext",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
               }
             }, {
               "dataType" : 1,
@@ -946,38 +856,17 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "id",
+              "name" : "root",
               "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
+                "name" : "ROOT",
+                "codeName" : "Root"
               }
             }, {
               "dataType" : 25,
-              "name" : "username",
-              "getPSAppDEField" : {
-                "name" : "USERNAME",
-                "codeName" : "Username"
-              }
-            }, {
-              "dataType" : 9,
-              "name" : "days",
-              "getPSAppDEField" : {
-                "name" : "DAYS",
-                "codeName" : "Days"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "account",
+              "name" : "srfmajortext",
               "getPSAppDEField" : {
                 "name" : "ACCOUNT",
                 "codeName" : "Account"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "role",
-              "getPSAppDEField" : {
-                "name" : "ROLE",
-                "codeName" : "Role"
               }
             } ],
             "getPSDEGridEditItemUpdates" : [ {
@@ -1023,89 +912,6 @@
               "valueRuleType" : "DEFVALUERULE"
             } ],
             "getPSDEGridEditItems" : [ {
-              "caption" : "编号",
-              "codeName" : "id",
-              "enableCond" : 0,
-              "ignoreInput" : 0,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              },
-              "getPSEditor" : {
-                "editorType" : "TEXTBOX",
-                "name" : "id"
-              },
-              "allowEmpty" : true
-            }, {
-              "caption" : "受限用户",
-              "codeName" : "limited",
-              "createDV" : "no",
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "name" : "limited",
-              "getPSAppDEField" : {
-                "name" : "LIMITED",
-                "codeName" : "Limited"
-              },
-              "getPSEditor" : {
-                "editorType" : "RADIOBUTTONLIST",
-                "name" : "limited",
-                "getPSAppCodeList" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
-                }
-              },
-              "allowEmpty" : true,
-              "needCodeListConfig" : true
-            }, {
-              "caption" : "可用工日",
-              "codeName" : "days",
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "name" : "days",
-              "getPSAppDEField" : {
-                "name" : "DAYS",
-                "codeName" : "Days"
-              },
-              "getPSEditor" : {
-                "editorType" : "NUMBER",
-                "name" : "days"
-              },
-              "allowEmpty" : true
-            }, {
-              "caption" : "可用工时/天",
-              "codeName" : "hours",
-              "createDV" : "7",
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "name" : "hours",
-              "getPSAppDEField" : {
-                "name" : "HOURS",
-                "codeName" : "Hours"
-              },
-              "getPSEditor" : {
-                "editorType" : "NUMBER",
-                "name" : "hours"
-              },
-              "allowEmpty" : false
-            }, {
-              "caption" : "角色",
-              "codeName" : "role",
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "name" : "role",
-              "getPSAppDEField" : {
-                "name" : "ROLE",
-                "codeName" : "Role"
-              },
-              "getPSEditor" : {
-                "editorType" : "TEXTBOX",
-                "maxLength" : 30,
-                "name" : "role"
-              },
-              "allowEmpty" : true
-            }, {
               "caption" : "用户",
               "codeName" : "account",
               "enableCond" : 1,
@@ -1149,6 +955,89 @@
               "valueItemName" : "account",
               "allowEmpty" : false,
               "needCodeListConfig" : true
+            }, {
+              "caption" : "角色",
+              "codeName" : "role",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "name" : "role",
+              "getPSAppDEField" : {
+                "name" : "ROLE",
+                "codeName" : "Role"
+              },
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "maxLength" : 30,
+                "name" : "role"
+              },
+              "allowEmpty" : true
+            }, {
+              "caption" : "可用工日",
+              "codeName" : "days",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "name" : "days",
+              "getPSAppDEField" : {
+                "name" : "DAYS",
+                "codeName" : "Days"
+              },
+              "getPSEditor" : {
+                "editorType" : "NUMBER",
+                "name" : "days"
+              },
+              "allowEmpty" : true
+            }, {
+              "caption" : "可用工时/天",
+              "codeName" : "hours",
+              "createDV" : "7",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "name" : "hours",
+              "getPSAppDEField" : {
+                "name" : "HOURS",
+                "codeName" : "Hours"
+              },
+              "getPSEditor" : {
+                "editorType" : "NUMBER",
+                "name" : "hours"
+              },
+              "allowEmpty" : false
+            }, {
+              "caption" : "受限用户",
+              "codeName" : "limited",
+              "createDV" : "no",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "name" : "limited",
+              "getPSAppDEField" : {
+                "name" : "LIMITED",
+                "codeName" : "Limited"
+              },
+              "getPSEditor" : {
+                "editorType" : "RADIOBUTTONLIST",
+                "name" : "limited",
+                "getPSAppCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
+                }
+              },
+              "allowEmpty" : true,
+              "needCodeListConfig" : true
+            }, {
+              "caption" : "编号",
+              "codeName" : "id",
+              "enableCond" : 0,
+              "ignoreInput" : 0,
+              "name" : "id",
+              "getPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
+              },
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "name" : "id"
+              },
+              "allowEmpty" : true
             }, {
               "caption" : "加盟日",
               "codeName" : "join",
@@ -1239,7 +1128,7 @@
             "codeName" : "Default",
             "controlType" : "SEARCHFORM",
             "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam/PSSEARCHFORMS/Default.json",
-            "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+            "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
             "logicName" : "默认搜索表单",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -1248,10 +1137,10 @@
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
                 "actionType" : "FILTERACTION",
-                "name" : "search",
+                "name" : "load",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "FilterSearch"
+                  "id" : "FilterGet"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1270,10 +1159,10 @@
                 }
               }, {
                 "actionType" : "FILTERACTION",
-                "name" : "load",
+                "name" : "search",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "FilterGet"
+                  "id" : "FilterSearch"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1409,6 +1298,117 @@
             "name" : "searchform",
             "modelid" : "0ac976dfa685fda49fe3e6f81a2854b4",
             "modeltype" : "PSDEFORM_SEARCHFORM"
+          }, {
+            "codeName" : "MainGridView_EditRowtoolbar",
+            "controlType" : "TOOLBAR",
+            "hookEventNames" : [ "CLICK" ],
+            "logicName" : "表格界面（行编辑无开关）",
+            "name" : "toolbar",
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+            },
+            "getPSControlLogics" : [ {
+              "eventArg" : "deuiaction2",
+              "eventNames" : "CLICK",
+              "logicTag" : "toolbar",
+              "logicType" : "APPVIEWLOGIC",
+              "name" : "toolbar_deuiaction2_click",
+              "getPSAppViewLogic" : {
+                "modelref" : true,
+                "id" : "toolbar_deuiaction2_click"
+              }
+            }, {
+              "eventArg" : "deuiaction3",
+              "eventNames" : "CLICK",
+              "logicTag" : "toolbar",
+              "logicType" : "APPVIEWLOGIC",
+              "name" : "toolbar_deuiaction3_click",
+              "getPSAppViewLogic" : {
+                "modelref" : true,
+                "id" : "toolbar_deuiaction3_click"
+              }
+            } ],
+            "getPSControlParam" : {
+              "id" : "TOOLBAR"
+            },
+            "getPSDEToolbarItems" : [ {
+              "caption" : "新建行",
+              "groupExtractMode" : "ITEM",
+              "itemType" : "DEUIACTION",
+              "name" : "deuiaction2",
+              "noPrivDisplayMode" : 2,
+              "getPSAppViewUIAction" : {
+                "modelref" : true,
+                "id" : "toolbar_deuiaction2"
+              },
+              "getPSSysImage" : {
+                "glyph" : "xf067@FontAwesome",
+                "cssClass" : "fa fa-plus"
+              },
+              "getPSUIAction" : {
+                "caption" : "新建行",
+                "codeName" : "NewRow",
+                "dataAccessAction" : "CREATE",
+                "fullCodeName" : "NewRow",
+                "name" : "表格界面_新建行",
+                "getPSDEOPPriv" : {
+                  "modelref" : true,
+                  "id" : "CREATE"
+                },
+                "getPSSysImage" : {
+                  "glyph" : "xf067@FontAwesome",
+                  "cssClass" : "fa fa-plus"
+                },
+                "predefinedType" : "GRIDVIEW_NEWROWACTION",
+                "timeout" : 60000,
+                "uIActionMode" : "SYS",
+                "uIActionTag" : "NewRow",
+                "uIActionType" : "DEUIACTION"
+              },
+              "tooltip" : "新建行",
+              "showCaption" : true,
+              "showIcon" : true
+            }, {
+              "caption" : "保存行",
+              "groupExtractMode" : "ITEM",
+              "itemType" : "DEUIACTION",
+              "name" : "deuiaction3",
+              "noPrivDisplayMode" : 2,
+              "getPSAppViewUIAction" : {
+                "modelref" : true,
+                "id" : "toolbar_deuiaction3"
+              },
+              "getPSSysImage" : {
+                "glyph" : "xf0c7@FontAwesome",
+                "cssClass" : "fa fa-save"
+              },
+              "getPSUIAction" : {
+                "caption" : "保存行",
+                "codeName" : "SaveRow",
+                "dataAccessAction" : "CREATE",
+                "fullCodeName" : "SaveRow",
+                "name" : "表格界面_保存行",
+                "getPSDEOPPriv" : {
+                  "modelref" : true,
+                  "id" : "CREATE"
+                },
+                "getPSSysImage" : {
+                  "glyph" : "xf0c7@FontAwesome",
+                  "cssClass" : "fa fa-save"
+                },
+                "predefinedType" : "GRIDVIEW_SAVEROWACTION",
+                "timeout" : 60000,
+                "uIActionMode" : "SYS",
+                "uIActionTag" : "SaveRow",
+                "uIActionType" : "DEUIACTION"
+              },
+              "tooltip" : "保存行",
+              "showCaption" : true,
+              "showIcon" : true
+            } ],
+            "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4",
+            "modeltype" : "PSDETOOLBAR"
           } ],
           "getPSDEViewCodeName" : "MainGridView_EditRow",
           "getPSDEViewId" : "f55aef38347fe3b87a564f26e9d6d139",

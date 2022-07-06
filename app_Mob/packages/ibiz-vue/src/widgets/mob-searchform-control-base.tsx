@@ -1,4 +1,5 @@
 import { IPSControlHandler } from '@ibiz/dynamic-model-api';
+import { MobSearchFormControlInterface } from 'ibiz-core';
 import { MobFormControlBase } from './mob-form-control-base';
 
 /**
@@ -8,7 +9,7 @@ import { MobFormControlBase } from './mob-form-control-base';
  * @class SearchFormControlBase
  * @extends {EditFormControlBase}
  */
-export class MobSearchFormControlBase extends MobFormControlBase {
+export class MobSearchFormControlBase extends MobFormControlBase implements MobSearchFormControlInterface{
 
     /**
      * 是否展开搜索表单

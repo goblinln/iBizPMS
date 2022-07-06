@@ -45,13 +45,21 @@
   "getPSControls" : [ {
     "codeName" : "GroupTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:PriGroup",
+      "realTitle" : "任务表格视图（优先级分组）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPriTaskGroupGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
       "name" : "EXPITEM:AssignedtoGroup",
       "realTitle" : "任务表格视图（指派分组）",
       "getRefPSAppView" : {
@@ -68,11 +76,11 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:PriGroup",
-      "realTitle" : "任务表格视图（优先级分组）",
+      "name" : "EXPITEM:StatusGroup",
+      "realTitle" : "任务表格视图（任务分组）",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPriTaskGroupGridView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTaskGroupGridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     }, {
@@ -81,14 +89,6 @@
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryTaskGroupGridView.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:StatusGroup",
-      "realTitle" : "任务表格视图（任务分组）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTaskGroupGridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     } ],

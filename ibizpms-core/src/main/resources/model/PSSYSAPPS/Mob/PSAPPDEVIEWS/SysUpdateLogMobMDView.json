@@ -92,7 +92,7 @@
     "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realTitle" : "系统更新日志移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -100,7 +100,7 @@
       "viewType" : "DEMOBEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realTitle" : "系统更新日志移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -126,7 +126,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "MOB",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {

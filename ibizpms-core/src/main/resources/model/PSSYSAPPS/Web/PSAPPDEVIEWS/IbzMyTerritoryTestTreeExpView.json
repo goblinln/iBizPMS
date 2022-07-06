@@ -45,34 +45,18 @@
   "getPSControls" : [ {
     "codeName" : "TestTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:BugassignedTo",
-      "realTitle" : "Bug统计表格视图（Bug指派表）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsAssigntoGridView.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
       "name" : "EXPITEM:TestCaseStats",
       "realTitle" : "测试用例统计表格视图",
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseStatsTestCaseStatsGridView.json",
-        "viewType" : "DEGRIDVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:BugResolvedBy",
-      "realTitle" : "Bug统计表格视图（Bug完成表）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsBugResolvedByGridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     }, {
@@ -84,6 +68,22 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
+      "name" : "EXPITEM:ProductBugResolutionStats",
+      "realTitle" : "Bug统计表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsProductBugResolutionGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:BugResolvedBy",
+      "realTitle" : "Bug统计表格视图（Bug完成表）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsBugResolvedByGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
       "name" : "EXPITEM:ProductBugStatusSum",
       "realTitle" : "Bug统计表格视图",
       "getRefPSAppView" : {
@@ -92,11 +92,11 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:ProductBugResolutionStats",
-      "realTitle" : "Bug统计表格视图",
+      "name" : "EXPITEM:BugassignedTo",
+      "realTitle" : "Bug统计表格视图（Bug指派表）",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsProductBugResolutionGridView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsAssigntoGridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     } ],

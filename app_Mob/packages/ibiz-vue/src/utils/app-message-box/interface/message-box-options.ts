@@ -7,7 +7,7 @@ export interface MessageBoxOptions {
      * @type {('info' | 'success' | 'warning' | 'error' | 'confirm')}
      * @memberof AppModalConfirm
      */
-    type?: 'info' | 'success' | 'warning' | 'error';
+    type?: string | 'info' | 'success' | 'warning' | 'error';
 
 
     /**

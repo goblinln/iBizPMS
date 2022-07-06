@@ -168,7 +168,7 @@ export class AppDefaultMobFormItem extends AppDefaultMobFormDetail {
         // 设置高宽
         let contentStyle: string = '';
         contentStyle += this.runtimeModel?.visible ? '' : 'display: none;';
-        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes).lanResTag, caption);
+        let labelCaption: any = this.$tl((this.detailsInstance?.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             <app-form-item
                 name={name}

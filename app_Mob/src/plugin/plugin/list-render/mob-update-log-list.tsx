@@ -16,7 +16,7 @@ import { AppMobMDCtrlBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class MobUpdateLogList extends AppMobMDCtrlBase {
 
-    render() {
+        render() {
         return this.$createElement('app-update-log-list', {
             props: { items: this.items },
 		       on:{

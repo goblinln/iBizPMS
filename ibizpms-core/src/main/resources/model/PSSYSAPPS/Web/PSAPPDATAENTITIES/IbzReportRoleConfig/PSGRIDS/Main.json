@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -126,25 +126,10 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 25,
-    "name" : "updateman",
-    "getPSAppDEField" : {
-      "name" : "UPDATEMAN",
-      "codeName" : "UpdateMan"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "ibz_report_role_configname",
     "getPSAppDEField" : {
       "name" : "IBZ_REPORT_ROLE_CONFIGNAME",
       "codeName" : "IbzReportRoleConfigName"
-    }
-  }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "dataType" : 5,
-    "name" : "updatedate",
-    "getPSAppDEField" : {
-      "name" : "UPDATEDATE",
-      "codeName" : "UpdateDate"
     }
   }, {
     "dataType" : 25,
@@ -162,10 +147,25 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "updateman",
     "getPSAppDEField" : {
-      "name" : "IBZ_REPORT_ROLE_CONFIGNAME",
-      "codeName" : "IbzReportRoleConfigName"
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "updatedate",
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBZ_REPORT_ROLE_CONFIGID",
+      "codeName" : "IbzReportRoleConfigId"
     }
   }, {
     "dataType" : 25,
@@ -177,10 +177,10 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "srfkey",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "IBZ_REPORT_ROLE_CONFIGID",
-      "codeName" : "IbzReportRoleConfigId"
+      "name" : "IBZ_REPORT_ROLE_CONFIGNAME",
+      "codeName" : "IbzReportRoleConfigName"
     }
   } ],
   "getPSDEGridEditItems" : [ {

@@ -1581,7 +1581,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         return Http.getInstance().post(
             `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
             }/usertasks/${data['taskDefinitionKey']}/ways`,
-            { 'activedata': data.activedata }
+            { 'activedata': data.activedata,'processDefinitionKey':data.processDefinitionKey }
         );
     }
 
@@ -1643,7 +1643,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     public async GetWFHistory(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
             `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
-            }/process-instances/alls/history`,
+            }/process-instances/${data.processinstanceid}/history`,
         );
     }
 

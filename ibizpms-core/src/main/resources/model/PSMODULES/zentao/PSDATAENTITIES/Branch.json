@@ -320,6 +320,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "product",
+            "fieldName" : "PRODUCT",
             "name" : "PRODUCT 等于(=) 网页请求上下文(product)",
             "getPSDEField" : {
               "name" : "PRODUCT",
@@ -330,6 +331,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "product",
+            "fieldName" : "PRODUCT",
             "name" : "PRODUCT 等于(=) 数据上下文(product)",
             "getPSDEField" : {
               "name" : "PRODUCT",
@@ -340,6 +342,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "products",
+            "fieldName" : "PRODUCT",
             "name" : "PRODUCT 等于(=) 数据上下文(products)",
             "getPSDEField" : {
               "name" : "PRODUCT",
@@ -427,6 +430,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "product",
+            "fieldName" : "PRODUCT",
             "name" : "PRODUCT 等于(=) 网页请求上下文(product)",
             "getPSDEField" : {
               "name" : "PRODUCT",
@@ -437,6 +441,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "product",
+            "fieldName" : "PRODUCT",
             "name" : "PRODUCT 等于(=) 数据上下文(product)",
             "getPSDEField" : {
               "name" : "PRODUCT",
@@ -1933,6 +1938,27 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
+    "codeName" : "MPickupView",
+    "logicName" : "branch实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "branch实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "平台实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "平台实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "branch实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "branch实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "RedirectView",
     "logicName" : "branch实体数据重定向视图",
     "modelTag" : "REDIRECTVIEW",
@@ -1946,25 +1972,11 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PMGridView",
-    "logicName" : "平台管理表格视图",
-    "name" : "平台管理表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "PickupGridView",
+    "logicName" : "平台实体选择表格视图（部件视图）",
+    "name" : "平台实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "平台实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "平台实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PlatformManagement",
-    "logicName" : "平台管理",
-    "modelTag2" : "0",
-    "name" : "平台管理",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "PMInfoEditView",
     "logicName" : "平台管理编辑视图（查看）",
@@ -1972,17 +1984,23 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "平台实体选择表格视图（部件视图）",
-    "name" : "平台实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "branch实体编辑视图（左右关系）",
+    "name" : "branch实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "branch实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "branch实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
+    "codeName" : "PMGridView",
+    "logicName" : "平台管理表格视图",
+    "name" : "平台管理表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "branch实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "branch实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Main",
@@ -1992,25 +2010,12 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "branch实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "branch实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "branch实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "branch实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "branch实体编辑视图（左右关系）",
-    "name" : "branch实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "PlatformManagement",
+    "logicName" : "平台管理",
+    "modelTag2" : "0",
+    "name" : "平台管理",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "Branch",
   "dEType" : 1,
@@ -2291,7 +2296,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

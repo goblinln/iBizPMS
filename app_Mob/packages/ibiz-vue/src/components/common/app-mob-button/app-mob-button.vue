@@ -1,7 +1,12 @@
 <template>
     <ion-button v-if="styleType==='default'" class="app-mob-button" :disabled="disabled" @click.stop="on_button_click">
-        <ion-icon v-if="iconName" :name="parsedName" />
-        {{ text }} 
+        <div :class="['button-content',flexType == 'horizontal' ? 'horizontal' : 'vertical']" >
+        <img v-if="imagePath" class="button-images" :src="imagePath" alt="">
+        <i v-else-if="fontClass" :class="fontClass" class="button-icon button-font-icon"></i>
+        <ion-icon v-else-if="iconName"  class="button-icon button-ionic-icon" :name="parsedName" />
+        <ion-icon v-else-if="showDefaultIcon && !imagePath && !fontClass && !iconName"  class="button-icon button-ionic-icon" name="file-text-o" />
+        <span v-if="text" class="button-text">{{ text }} </span>
+        </div>
     </ion-button>
 </template>
 
@@ -20,6 +25,12 @@ export default class AppMobButton extends Vue {
     private iconName?: string;
 
     /**
+     * 按钮图标名称
+     */
+    @Prop() 
+    private imagePath?: string;
+
+    /**
      * 按钮名称
      */
     @Prop() 
@@ -32,12 +43,31 @@ export default class AppMobButton extends Vue {
     private type?: string;
 
     /**
+     * 按钮内容 水平还是垂直
+     */
+    @Prop() 
+    private flexType?: string;
+
+    /**
+     * 是否显示默认图标
+     */
+    @Prop({ default: true }) 
+    private showDefaultIcon?: boolean;
+
+    /**
+     * fa 图标类
+     */
+    private fontClass = ''
+
+    /**
      * 监听图标名称变化
      */
     @Watch('iconName', { immediate: true })
     public iconNameChange(newVal: any, oldVal: any){
-        if (newVal) {
-          this.parsedName = ViewTool.setIcon(newVal);
+        if (newVal && newVal.startsWith('fa fa-')) {
+            this.fontClass = newVal;
+        }else{
+            this.parsedName = newVal?ViewTool.setIcon(newVal) : 'file-text-o';
         }
     }
 

@@ -25,7 +25,7 @@
                   <ion-list class="group-list">
                     <template v-for="(item, index) in item.value">
                       <ion-item :key="index" @click="click_node(item)" class="list-item">
-                        <ion-label>{{ item.label }}</ion-label>
+                        <ion-label>{{ item.label|| item.personname }}</ion-label>
                         <app-mob-icon class="tree-icon" position="end" :name="geticon(item.status)" @onClick="icon_click(item)"></app-mob-icon>
                       </ion-item>
                     </template>
@@ -49,20 +49,12 @@ import { Http } from "ibiz-core";
 export default class AppMobGroupPicker extends Vue {
 
     /**
-     * 视图上下文参数
-     *
-     * @type {*}
-     * @memberof AppMobGroupPicker
-     */  
-    @Prop() _context: any;
+     * 动态参数
+     * 
+     * @memberof AppGroupPicker
+     */
+    @Prop() dynamicProps?:any;
 
-    /**
-     * 视图参数
-     *
-     * @type {*}
-     * @memberof AppMobGroupPicker
-     */  
-    @Prop() _viewparams: any;
 
     /**
      * 侧边栏激活项
@@ -173,10 +165,10 @@ export default class AppMobGroupPicker extends Vue {
      * @memberof IbzDailyDailyCreateMobEditViewBase
      */
     public setViewTitleStatus(){
-        const thirdPartyName = this.$store.getters.getThirdPartyName();
-        if(thirdPartyName){
-            this.titleStatus = false;
-        }
+        // const thirdPartyName = this.$store.getters.getThirdPartyName();
+        // if(thirdPartyName){
+        //     this.titleStatus = false;
+        // }
     }
 
 
@@ -199,11 +191,13 @@ export default class AppMobGroupPicker extends Vue {
      * @memberof AppMobGroupPicker
      */  
     public created() {
-        if(!this._context || !this._viewparams) {
+        const _context = this.dynamicProps._context;
+        const _viewparams = this.dynamicProps._viewparams;
+        if(!_context || !_viewparams) {
             return;
         }
-        this.viewData = JSON.parse(this._context);
-        this.viewParam = JSON.parse(this._viewparams);
+        this.viewData = JSON.parse(_context);
+        this.viewParam = JSON.parse(_viewparams);
         this.multiple = this.viewParam.multiple;
         this.treeurl = this.viewParam.treeurl;
         this.url = this.viewParam.url;
@@ -241,7 +235,7 @@ export default class AppMobGroupPicker extends Vue {
         let orgid = this.viewParam.filtervalue;
         let tempTreeUrl: string = '';
         if(this.viewParam.selectType && Object.is(this.viewParam.selectType,"dept")){
-            tempTreeUrl = this.treeurl.replace('{deptId}',orgid);
+            tempTreeUrl = this.treeurl.replace('${deptId}',orgid);
         }else{
             tempTreeUrl = this.treeurl.replace('${orgid}',orgid);
         }
@@ -264,7 +258,7 @@ export default class AppMobGroupPicker extends Vue {
     public loadGroupData(key: string) {
         let tempUrl: string = '';
         if(this.viewParam.selectType && Object.is(this.viewParam.selectType,"dept")){
-            tempUrl = this.url.replace('{deptId}',key);
+            tempUrl = this.url.replace('${deptId}',key);
         }else{
             tempUrl = this.url.replace('${selected-orgid}',key);
         }
@@ -307,7 +301,11 @@ export default class AppMobGroupPicker extends Vue {
             // 初始化图标状态
             for (let i = 0; i < array.length; i++) {
               let element = array[i];
-              element.status = 0
+              element.status = 0;
+            //   注释
+              element.label = element.label?element.label:element.personname;
+              element.id = element.id?element.id:element.userid;
+
             }
             this.handledCardItems[i] = {}
             this.handledCardItems[i].title = array[0].group
@@ -411,8 +409,8 @@ export default class AppMobGroupPicker extends Vue {
      * @memberof IbzDailyDailyCreateMobEditViewBase
      */
     protected  thirdPartyInit(){
-      this.$viewTool.setViewTitleOfThirdParty(this.$t('app.title.choose'));
-      this.$viewTool.setThirdPartyEvent(this.closeView);
+    //   this.$viewTool.setViewTitleOfThirdParty(this.$t('app.title.choose'));
+    //   this.$viewTool.setThirdPartyEvent(this.closeView);
     }
 
     /**

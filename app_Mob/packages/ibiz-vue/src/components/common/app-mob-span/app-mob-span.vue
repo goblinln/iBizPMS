@@ -1,8 +1,8 @@
 <template>
     <div class="app-mob-span" oncontextmenu="return false;" :class="currentItem && currentItem.className?currentItem.className:''" >
-        <ion-input v-if="!codeListType" readonly :value="text" ></ion-input>
-        <ion-input v-if="codeListType == 'DYNAMIC'" readonly :value="($t('userCustom.'+tag+'.'+value)!== ('userCustom.'+tag+'.'+value))?$t('userCustom.'+tag+'.'+value) : text" ></ion-input>
-        <ion-input :style="{color:currentItem && currentItem.color?currentItem.color:''}"  v-if="codeListType == 'STATIC'" readonly :value="($t('codelist.'+tag+'.'+value)!== ('codelist.'+tag+'.'+value))?$t('codelist.'+tag+'.'+value) : text" ></ion-input>
+        <ion-input v-if="!codeListType" readonly :value="text" :disabled="disabled"></ion-input>
+        <ion-input v-if="codeListType == 'DYNAMIC'" readonly :value="($t('userCustom.'+tag+'.'+value)!== ('userCustom.'+tag+'.'+value))?$t('userCustom.'+tag+'.'+value) : text" :disabled="disabled"></ion-input>
+        <ion-input :style="{color:currentItem && currentItem.color?currentItem.color:''}"  v-if="codeListType == 'STATIC'" readonly :value="($t('codelist.'+tag+'.'+value)!== ('codelist.'+tag+'.'+value))?$t('codelist.'+tag+'.'+value) : text" :disabled="disabled"></ion-input>
     </div>
 </template>
 
@@ -130,6 +130,22 @@ export default class AppSpan extends Vue {
     @Prop({ default: () => {}}) protected navigateContext?: any;
 
     /**
+     * 是否禁用
+     *
+     * @type {string}
+     * @memberof AppSelect
+     */
+    @Prop({default:false}) public disabled?: boolean;
+
+    /**
+     * 代码表
+     *
+     * @type {string}
+     * @memberof DropDownList
+     */    
+    @Prop() public codeList?: any;
+
+    /**
       * 当前值项
       *
       * @type {*}
@@ -237,7 +253,7 @@ export default class AppSpan extends Vue {
      */
     public created() {
         if (Object.is(this.codeListType, "STATIC")) {
-            this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: null, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
+            this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: this.codeList, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
                 this.items = codelistItems;
             }).catch((error: any) => {
                 LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codeNotExist')}`);

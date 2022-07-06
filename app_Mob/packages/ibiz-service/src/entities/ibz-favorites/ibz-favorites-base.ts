@@ -69,7 +69,6 @@ export abstract class IbzFavoritesBase extends EntityBase implements IIbzFavorit
      * 更新时间
      */
     updatedate?: any;
-
     /**
      * 重置实体数据
      *

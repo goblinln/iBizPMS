@@ -1,5 +1,4 @@
-import { Subject } from 'rxjs';
-import { MobEditView3Engine, MobEditViewEngine, ModelTool, ViewState } from 'ibiz-core';
+import { MobEditView3Engine, MobEditView3Interface, ModelTool } from 'ibiz-core';
 import { MobEditViewBase } from './mob-edit-view-base';
 import { IPSAppDEMobEditView, IPSDRTab } from '@ibiz/dynamic-model-api';
 
@@ -10,7 +9,7 @@ import { IPSAppDEMobEditView, IPSDRTab } from '@ibiz/dynamic-model-api';
  * @class MobEditView3Base
  * @extends {MainViewBase}
  */
-export class MobEditView3Base extends MobEditViewBase {
+export class MobEditView3Base extends MobEditViewBase implements MobEditView3Interface {
 
     /**
      * 视图实例

@@ -1,4 +1,4 @@
-import { CodeListServiceBase, ModelTool, Util } from 'ibiz-core';
+import { CodeListServiceBase, ModelTool, Util, MobMDCtrlViewInterface } from 'ibiz-core';
 import { IPSDESearchForm, IPSSearchBar, IPSAppDEMultiDataView, IPSAppCodeList, IPSCodeItem, IPSAppDEField, IPSDEMobMDCtrl, IPSDEListItem, IPSDEListDataItem } from '@ibiz/dynamic-model-api';
 import { MainViewBase } from "./main-view-base";
 
@@ -9,7 +9,7 @@ import { MainViewBase } from "./main-view-base";
  * @class MDViewBase
  * @extends {MainViewBase}
  */
-export class MDViewBase extends MainViewBase {
+export class MDViewBase extends MainViewBase implements MobMDCtrlViewInterface  {
 
    /**
     * 视图实例
@@ -177,7 +177,7 @@ export class MDViewBase extends MainViewBase {
         if ($event) {
             this.quickGroupData = $event.data;
             if (this.isEmitQuickGroupValue) {
-                this.onSearch();
+                this.refresh();
             }
         }
         this.isEmitQuickGroupValue = true;
@@ -434,6 +434,10 @@ export class MDViewBase extends MainViewBase {
      * @memberof ViewBase
      */
     public renderPullDownRefresh() {
+        const enablePullDownRefresh =  this.viewInstance.enablePullDownRefresh;
+        if(!enablePullDownRefresh){
+            return;
+        }
         const h = this.$createElement;
         return h("ion-refresher", {
           "slot": "fixed",

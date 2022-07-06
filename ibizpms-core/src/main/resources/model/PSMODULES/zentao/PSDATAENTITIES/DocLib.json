@@ -326,6 +326,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "custom",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (custom)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -335,6 +336,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "SRFORGID",
+          "fieldName" : "ORGID",
           "name" : "ORGID 等于(=) 用户上下文(SRFORGID)",
           "getPSDEField" : {
             "name" : "ORGID",
@@ -383,6 +385,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "product",
+          "fieldName" : "PRODUCT",
           "name" : "PRODUCT 等于(=) 数据上下文(product)",
           "getPSDEField" : {
             "name" : "PRODUCT",
@@ -432,6 +435,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "product",
+          "fieldName" : "PRODUCT",
           "name" : "PRODUCT 等于(=) 数据上下文(product)",
           "getPSDEField" : {
             "name" : "PRODUCT",
@@ -580,6 +584,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "SRFORGID",
+          "fieldName" : "ORGID",
           "name" : "ORGID 等于(=) 用户上下文(SRFORGID)",
           "getPSDEField" : {
             "name" : "ORGID",
@@ -629,6 +634,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
+          "fieldName" : "CREATEBY",
           "name" : "CREATEBY 等于(=) 用户上下文(srfloginname)",
           "getPSDEField" : {
             "name" : "CREATEBY",
@@ -5382,9 +5388,85 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "Usr3TreeView",
-    "logicName" : "文档库实体树视图（项目子目录）",
-    "name" : "文档库实体树视图（项目子目录）",
+    "codeName" : "LibTabExpView",
+    "logicName" : "文档库实体分页导航视图（文档）",
+    "name" : "文档库实体分页导航视图（文档）",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "UnDoneProjectTreeExpView",
+    "logicName" : "文档库实体树导航视图（未完成项目）",
+    "name" : "文档库实体树导航视图（未完成项目）",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "文档库实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "文档库实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CustomDocLibChildTreeView",
+    "logicName" : "文档库实体树视图（自定义文档库-子目录）",
+    "name" : "文档库实体树视图（自定义文档库-子目录）",
+    "realModelSubType" : "DETREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "创建文档库",
+    "name" : "创建文档库",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "doclib实体选择表格视图（部件视图）",
+    "name" : "doclib实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "doclib实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "doclib实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CustomTreeExpView",
+    "logicName" : "文档库实体树导航视图（自定义文档库）",
+    "name" : "文档库实体树导航视图（自定义文档库）",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "doclib实体表格视图（项目文档库）",
+    "modelTag" : "MDATAVIEW",
+    "name" : "doclib实体表格视图（项目文档库）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProjectDocLibMobTreeView",
+    "logicName" : "文档库实体移动端树视图（项目）",
+    "name" : "文档库实体移动端树视图（项目）",
+    "realModelSubType" : "DEMOBTREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "doclib实体编辑视图（左右关系）",
+    "name" : "doclib实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "文档库实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "文档库实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2TreeView",
+    "logicName" : "文档库实体树视图（项目根目录）",
+    "name" : "文档库实体树视图（项目根目录）",
     "realModelSubType" : "DETREEVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -5395,21 +5477,27 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ProductTreeViewCust",
-    "logicName" : "文档库实体树视图（自定义文档库）",
-    "name" : "文档库实体树视图（自定义文档库）",
+    "codeName" : "MobProductTreeView",
+    "logicName" : "文档库实体移动端树视图（产品）",
+    "name" : "文档库实体移动端树视图（产品）",
+    "realModelSubType" : "DEMOBTREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CustomDocLibRootTreeView",
+    "logicName" : "文档库实体树视图（自定义文档库-根目录）",
+    "name" : "文档库实体树视图（自定义文档库-根目录）",
     "realModelSubType" : "DETREEVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ProductTreeView",
-    "logicName" : "文档库实体树视图（产品）",
-    "name" : "文档库实体树视图（产品）",
-    "realModelSubType" : "DETREEVIEW",
+    "codeName" : "UndoneProjectGridView",
+    "logicName" : "doclib实体表格视图（项目文档库）(未完成项目）",
+    "name" : "doclib实体表格视图（项目文档库）(未完成项目）",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "UnDoneProjectTreeExpView",
-    "logicName" : "文档库实体树导航视图（未完成项目）",
-    "name" : "文档库实体树导航视图（未完成项目）",
+    "codeName" : "ProjectTreeExpView",
+    "logicName" : "文档库实体树导航视图（项目文档库）",
+    "name" : "文档库实体树导航视图（项目文档库）",
     "realModelSubType" : "DETREEEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -5419,167 +5507,10 @@
     "realModelSubType" : "DEGRIDEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "doclib实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "doclib实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CustomDocLibChildTreeView",
-    "logicName" : "文档库实体树视图（自定义文档库-子目录）",
-    "name" : "文档库实体树视图（自定义文档库-子目录）",
+    "codeName" : "ProductTreeViewCust",
+    "logicName" : "文档库实体树视图（自定义文档库）",
+    "name" : "文档库实体树视图（自定义文档库）",
     "realModelSubType" : "DETREEVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "doclib实体表格视图（项目文档库）",
-    "modelTag" : "MDATAVIEW",
-    "name" : "doclib实体表格视图（项目文档库）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TreeViewProductRoot",
-    "logicName" : "文档库实体树视图（产品根目录）",
-    "name" : "文档库实体树视图（产品根目录）",
-    "realModelSubType" : "DETREEVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectTreeView",
-    "logicName" : "文档库实体树视图（项目）",
-    "name" : "文档库实体树视图（项目）",
-    "realModelSubType" : "DETREEVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProductGridView",
-    "logicName" : "doclib实体表格视图（产品文档库）",
-    "name" : "doclib实体表格视图（产品文档库）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "doclib实体编辑视图（左右关系）",
-    "name" : "doclib实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "doclib实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "doclib实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ByProjectTreeExpView",
-    "logicName" : "文档库实体树导航视图（项目下属）",
-    "name" : "文档库实体树导航视图（项目下属）",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "文档库实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "文档库实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectTreeExpView",
-    "logicName" : "文档库实体树导航视图（项目文档库）",
-    "name" : "文档库实体树导航视图（项目文档库）",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProductTreeExpView",
-    "logicName" : "文档库实体树导航视图（产品文档库）",
-    "name" : "文档库实体树导航视图（产品文档库）",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CustomDocLibRootTreeView",
-    "logicName" : "文档库实体树视图（自定义文档库-根目录）",
-    "name" : "文档库实体树视图（自定义文档库-根目录）",
-    "realModelSubType" : "DETREEVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "doclib实体选择表格视图（部件视图）",
-    "name" : "doclib实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DashboardView",
-    "logicName" : "文档库实体数据看板视图（文档）",
-    "name" : "文档库实体数据看板视图（文档）",
-    "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "LibTabExpView",
-    "logicName" : "文档库实体分页导航视图（文档）",
-    "name" : "文档库实体分页导航视图（文档）",
-    "realModelSubType" : "DETABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "UndoneProjectGridView",
-    "logicName" : "doclib实体表格视图（项目文档库）(未完成项目）",
-    "name" : "doclib实体表格视图（项目文档库）(未完成项目）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "文档库实体移动端选择多数据视图（部件视图）",
-    "name" : "文档库实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2EditView",
-    "logicName" : "文档库实体编辑视图(主信息编辑)",
-    "name" : "文档库实体编辑视图(主信息编辑)",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectDocLibMobTreeView",
-    "logicName" : "文档库实体移动端树视图（项目）",
-    "name" : "文档库实体移动端树视图（项目）",
-    "realModelSubType" : "DEMOBTREEVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "文档库实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "文档库实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobEditView",
-    "logicName" : "文档库实体移动端编辑视图",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "文档库实体移动端编辑视图",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2TreeView",
-    "logicName" : "文档库实体树视图（项目根目录）",
-    "name" : "文档库实体树视图（项目根目录）",
-    "realModelSubType" : "DETREEVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "TreeView",
-    "logicName" : "文档库实体树视图（产品子目录）",
-    "name" : "文档库实体树视图（产品子目录）",
-    "realModelSubType" : "DETREEVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "创建文档库",
-    "name" : "创建文档库",
-    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobRedirectView",
@@ -5589,18 +5520,73 @@
     "realModelSubType" : "DEMOBREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobProductTreeView",
-    "logicName" : "文档库实体移动端树视图（产品）",
-    "name" : "文档库实体移动端树视图（产品）",
-    "realModelSubType" : "DEMOBTREEVIEW",
+    "codeName" : "ProjectTreeView",
+    "logicName" : "文档库实体树视图（项目）",
+    "name" : "文档库实体树视图（项目）",
+    "realModelSubType" : "DETREEVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "ByProjectTreeExpView",
+    "logicName" : "文档库实体树导航视图（项目下属）",
+    "name" : "文档库实体树导航视图（项目下属）",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DashboardView",
+    "logicName" : "文档库实体数据看板视图（文档）",
+    "name" : "文档库实体数据看板视图（文档）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "文档库实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "文档库实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeViewProductRoot",
+    "logicName" : "文档库实体树视图（产品根目录）",
+    "name" : "文档库实体树视图（产品根目录）",
+    "realModelSubType" : "DETREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "文档库实体移动端选择多数据视图（部件视图）",
+    "name" : "文档库实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3TreeView",
+    "logicName" : "文档库实体树视图（项目子目录）",
+    "name" : "文档库实体树视图（项目子目录）",
+    "realModelSubType" : "DETREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2EditView",
+    "logicName" : "文档库实体编辑视图(主信息编辑)",
+    "name" : "文档库实体编辑视图(主信息编辑)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "文档库实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "文档库实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProductTreeView",
+    "logicName" : "文档库实体树视图（产品）",
+    "name" : "文档库实体树视图（产品）",
+    "realModelSubType" : "DETREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProductTreeExpView",
+    "logicName" : "文档库实体树导航视图（产品文档库）",
+    "name" : "文档库实体树导航视图（产品文档库）",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "ByProductTreeExpView",
     "logicName" : "文档库实体树导航视图（产品下属）",
@@ -5608,18 +5594,38 @@
     "realModelSubType" : "DETREEEXPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "文档库实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "文档库实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "codeName" : "ProductGridView",
+    "logicName" : "doclib实体表格视图（产品文档库）",
+    "name" : "doclib实体表格视图（产品文档库）",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "CustomTreeExpView",
-    "logicName" : "文档库实体树导航视图（自定义文档库）",
-    "name" : "文档库实体树导航视图（自定义文档库）",
-    "realModelSubType" : "DETREEEXPVIEW",
+    "codeName" : "TreeView",
+    "logicName" : "文档库实体树视图（产品子目录）",
+    "name" : "文档库实体树视图（产品子目录）",
+    "realModelSubType" : "DETREEVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "doclib实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "doclib实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "DocLib",
   "dEType" : 1,
@@ -5821,7 +5827,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

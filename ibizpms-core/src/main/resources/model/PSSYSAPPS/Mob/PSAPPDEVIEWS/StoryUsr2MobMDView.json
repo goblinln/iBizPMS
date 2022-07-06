@@ -112,13 +112,13 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "PLAN",
-    "name" : "PLAN",
+    "key" : "N_PLAN_EQ",
+    "name" : "N_PLAN_EQ",
     "value" : "productplan",
     "rawValue" : false
   }, {
-    "key" : "N_PLAN_EQ",
-    "name" : "N_PLAN_EQ",
+    "key" : "PLAN",
+    "name" : "PLAN",
     "value" : "productplan",
     "rawValue" : false
   } ],
@@ -205,7 +205,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "MOB",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -577,15 +577,15 @@
           "id" : "PROJECTLINK"
         },
         "getPSNavigateContexts" : [ {
-          "key" : "STORY",
-          "name" : "STORY",
-          "value" : "0",
-          "rawValue" : true
-        }, {
           "key" : "PROJECT",
           "name" : "PROJECT",
           "value" : "project",
           "rawValue" : false
+        }, {
+          "key" : "STORY",
+          "name" : "STORY",
+          "value" : "0",
+          "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
           "key" : "project",

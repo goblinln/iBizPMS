@@ -177,7 +177,6 @@ export abstract class BuildBase extends EntityBase implements IBuild {
      * 所属项目
      */
     project?: any;
-
     /**
      * 重置实体数据
      *

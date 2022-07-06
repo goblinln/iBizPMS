@@ -1,8 +1,8 @@
-import { MobPickupTreeViewEngine, ModelTool } from 'ibiz-core';
+import { MobPickupTreeViewEngine, MobPickupTreeViewInterface, ModelTool } from 'ibiz-core';
 import { MDViewBase } from './md-view-base';
 import { IPSAppDETreeView, IPSDETree } from '@ibiz/dynamic-model-api';
 
-export class MobPickupTreeViewBase extends MDViewBase {
+export class MobPickupTreeViewBase extends MDViewBase implements MobPickupTreeViewInterface {
 
     /**
      * 选中数据字符串

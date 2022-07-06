@@ -57,12 +57,13 @@ export default class AppRedirectView extends Vue {
             this.$Notice.error('跳转参数不足，无法完成跳转操作!');
             return;
         }
+        const viewShell = 'viewshell'
         // 避免数据污染
         delete tempViewParam['srfdename'];
         delete tempViewParam['srfindexname'];
         delete tempViewParam[srfdename];
         // 计算路径
-        let viewPath:string = `${srfindexname ? '/'+ srfindexname : ''}/${Util.srfpluralize(srfdename)}/${viewparam[srfdename]}/views/mobredirectview`;
+        let viewPath:string = `${viewShell ? '/'+ viewShell : ''}/${Util.srfpluralize(srfdename)}/${viewparam[srfdename]}/views/mobredirectview`;
          if (Object.keys(tempViewParam).length > 0) {
             viewPath = `${viewPath}?${qs.stringify(tempViewParam, { delimiter: ';' })}`;
         }

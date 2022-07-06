@@ -45,20 +45,20 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "MODULETYPE",
-    "name" : "MODULETYPE",
-    "value" : "doc",
-    "rawValue" : true
-  }, {
     "key" : "SRFROOT",
     "name" : "SRFROOT",
     "value" : "srfroot",
     "rawValue" : false
+  }, {
+    "key" : "MODULETYPE",
+    "name" : "MODULETYPE",
+    "value" : "doc",
+    "rawValue" : true
   } ],
   "getPSControls" : [ {
     "codeName" : "TreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -73,7 +73,7 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:RootModule",
+      "name" : "EXPITEM:ChildModule",
       "parentDataJO" : {
         "srfparentdefname" : "n_parent_eq"
       },
@@ -84,7 +84,7 @@
         "viewType" : "DEGRIDVIEW"
       }
     }, {
-      "name" : "EXPITEM:ChildModule",
+      "name" : "EXPITEM:RootModule",
       "parentDataJO" : {
         "srfparentdefname" : "n_parent_eq"
       },
@@ -484,8 +484,8 @@
           "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
           "value" : "0",
           "rawValue" : true
         }, {
@@ -494,8 +494,8 @@
           "value" : "srfroot",
           "rawValue" : false
         }, {
-          "key" : "n_parent_eq",
-          "name" : "n_parent_eq",
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
           "value" : "0",
           "rawValue" : true
         } ],

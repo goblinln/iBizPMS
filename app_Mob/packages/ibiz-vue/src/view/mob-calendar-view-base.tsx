@@ -1,8 +1,8 @@
 import { MDViewBase } from './md-view-base';
-import { MobCalendarViewEngine, ModelTool } from 'ibiz-core';
+import { MobCalendarViewEngine, MobCalendarViewInterface, ModelTool } from 'ibiz-core';
 import { IPSAppDEMobCalendarView, IPSDECalendar } from '@ibiz/dynamic-model-api';
 
-export class MobCalendarViewBase extends MDViewBase {
+export class MobCalendarViewBase extends MDViewBase implements MobCalendarViewInterface {
 
     /**
      * 视图引擎

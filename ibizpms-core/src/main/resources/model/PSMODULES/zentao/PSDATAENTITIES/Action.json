@@ -525,6 +525,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfparentkey",
+          "fieldName" : "OBJECTID",
           "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
           "getPSDEField" : {
             "name" : "OBJECTID",
@@ -535,6 +536,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "objecttype",
+          "fieldName" : "OBJECTTYPE",
           "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
           "getPSDEField" : {
             "name" : "OBJECTTYPE",
@@ -617,6 +619,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
+          "fieldName" : "ACTOR",
           "name" : "ACTOR 等于(=) 用户上下文(srfloginname)",
           "getPSDEField" : {
             "name" : "ACTOR",
@@ -798,6 +801,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfparentkey",
+          "fieldName" : "OBJECTID",
           "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
           "getPSDEField" : {
             "name" : "OBJECTID",
@@ -808,6 +812,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "objecttype",
+          "fieldName" : "OBJECTTYPE",
           "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
           "getPSDEField" : {
             "name" : "OBJECTTYPE",
@@ -5746,62 +5751,10 @@
     "defaultMode" : true
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "AllTrendsListView",
-    "logicName" : "全部动态列表视图",
-    "name" : "全部动态列表视图",
+    "codeName" : "ProductTrendsListView",
+    "logicName" : "产品动态列表视图",
+    "name" : "产品动态列表视图",
     "realModelSubType" : "DELISTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProductTrendsListView9",
-    "logicName" : "看板产品动态时间轴（部件视图）",
-    "name" : "看板产品动态时间轴（部件视图）",
-    "realModelSubType" : "DELISTVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "系统日志实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "系统日志实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyAllTrendsListView",
-    "logicName" : "全部动态列表视图（我的地盘）",
-    "name" : "全部动态列表视图（我的地盘）",
-    "realModelSubType" : "DELISTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ProjectTrendsListView9",
-    "logicName" : "看板项目动态时间轴（部件视图）",
-    "name" : "看板项目动态时间轴（部件视图）",
-    "realModelSubType" : "DELISTVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "系统日志实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "系统日志实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "系统日志实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "系统日志实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView9",
-    "logicName" : "系统日志实体移动端多数据视图（部件视图）（通用）",
-    "name" : "系统日志实体移动端多数据视图（部件视图）（通用）",
-    "realModelSubType" : "DEMOBMDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
@@ -5811,16 +5764,36 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "HistoryListView",
-    "logicName" : "操作历史列表视图（通用）",
-    "name" : "操作历史列表视图（通用）",
-    "realModelSubType" : "DELISTVIEW",
+    "codeName" : "PickupView",
+    "logicName" : "action实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "action实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "OptionView",
-    "logicName" : "系统日志实体选项操作视图（添加备注）",
-    "name" : "系统日志实体选项操作视图（添加备注）",
-    "realModelSubType" : "DEOPTVIEW",
+    "codeName" : "ProjectTrendsListView9",
+    "logicName" : "看板项目动态时间轴（部件视图）",
+    "name" : "看板项目动态时间轴（部件视图）",
+    "realModelSubType" : "DELISTVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "系统日志实体移动端选择多数据视图（部件视图）",
+    "name" : "系统日志实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "系统日志实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "系统日志实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProductTrendsListView9",
+    "logicName" : "看板产品动态时间轴（部件视图）",
+    "name" : "看板产品动态时间轴（部件视图）",
+    "realModelSubType" : "DELISTVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMDView",
@@ -5830,6 +5803,37 @@
     "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "HistoryListView",
+    "logicName" : "操作历史列表视图（通用）",
+    "name" : "操作历史列表视图（通用）",
+    "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MyTrendsListView",
+    "logicName" : "我的动态列表视图",
+    "name" : "我的动态列表视图",
+    "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "系统日志实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "系统日志实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "action实体选择表格视图（部件视图）",
+    "name" : "action实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "AllTrendsListView",
+    "logicName" : "全部动态列表视图",
+    "name" : "全部动态列表视图",
+    "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "GridView",
     "logicName" : "action实体表格视图",
     "modelTag" : "MDATAVIEW",
@@ -5837,16 +5841,48 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ProductTrendsListView",
-    "logicName" : "产品动态列表视图",
-    "name" : "产品动态列表视图",
+    "codeName" : "AddCommentHistoryListView",
+    "logicName" : "操作历史列表视图（通用）（添加备注）",
+    "name" : "操作历史列表视图（通用）（添加备注）",
     "realModelSubType" : "DELISTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "ProjectTrendsListView",
-    "logicName" : "项目动态列表视图",
-    "name" : "项目动态列表视图",
+    "codeName" : "ALLMobMDView9",
+    "logicName" : "系统日志实体移动端多数据视图（部件视图）（全部动态）",
+    "name" : "系统日志实体移动端多数据视图（部件视图）（全部动态）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMapView",
+    "logicName" : "系统日志实体移动端地图视图",
+    "name" : "系统日志实体移动端地图视图",
+    "realModelSubType" : "DEMOBMAPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "action实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "action实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "系统日志实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "系统日志实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MyAllTrendsListView",
+    "logicName" : "全部动态列表视图（我的地盘）",
+    "name" : "全部动态列表视图（我的地盘）",
     "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MoreMobMDView",
+    "logicName" : "系统日志实体移动端多数据视图(更多)",
+    "name" : "系统日志实体移动端多数据视图(更多)",
+    "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobRedirectView",
@@ -5862,38 +5898,37 @@
     "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "ProjectTrendsListView",
+    "logicName" : "项目动态列表视图",
+    "name" : "项目动态列表视图",
+    "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "OptionView",
+    "logicName" : "系统日志实体选项操作视图（添加备注）",
+    "name" : "系统日志实体选项操作视图（添加备注）",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView9",
+    "logicName" : "系统日志实体移动端多数据视图（部件视图）（通用）",
+    "name" : "系统日志实体移动端多数据视图（部件视图）（通用）",
+    "realModelSubType" : "DEMOBMDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "系统日志实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "系统日志实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "AddComment",
     "logicName" : "添加备注",
     "modelTag2" : "0",
     "name" : "添加备注",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobEditView",
-    "logicName" : "系统日志实体移动端编辑视图",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "系统日志实体移动端编辑视图",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ALLMobMDView9",
-    "logicName" : "系统日志实体移动端多数据视图（部件视图）（全部动态）",
-    "name" : "系统日志实体移动端多数据视图（部件视图）（全部动态）",
-    "realModelSubType" : "DEMOBMDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "系统日志实体移动端选择多数据视图（部件视图）",
-    "name" : "系统日志实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "action实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "action实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Main",
     "logicName" : "主编辑表单",
@@ -5902,42 +5937,12 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "action实体选择表格视图（部件视图）",
-    "name" : "action实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "AddCommentHistoryListView",
-    "logicName" : "操作历史列表视图（通用）（添加备注）",
-    "name" : "操作历史列表视图（通用）（添加备注）",
-    "realModelSubType" : "DELISTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMapView",
-    "logicName" : "系统日志实体移动端地图视图",
-    "name" : "系统日志实体移动端地图视图",
-    "realModelSubType" : "DEMOBMAPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyTrendsListView",
-    "logicName" : "我的动态列表视图",
-    "name" : "我的动态列表视图",
-    "realModelSubType" : "DELISTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "action实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "action实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MoreMobMDView",
-    "logicName" : "系统日志实体移动端多数据视图(更多)",
-    "name" : "系统日志实体移动端多数据视图(更多)",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "Action",
   "dEType" : 4,
@@ -5982,10 +5987,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/History.json"
     },
     "name" : "DER1N_ZT_HISTORY_ZT_ACTION_ACTION",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "ACTION",
@@ -6528,7 +6529,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

@@ -45,7 +45,7 @@
   "getPSControls" : [ {
     "codeName" : "GridExpViewgridexpbar",
     "controlType" : "GRIDEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "gridexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -240,31 +240,10 @@
       } ],
       "getPSDEGridDataItems" : [ {
         "dataType" : 25,
-        "name" : "orgid",
-        "getPSAppDEField" : {
-          "name" : "ORGID",
-          "codeName" : "OrgId"
-        }
-      }, {
-        "dataType" : 25,
         "name" : "orgname",
         "getPSAppDEField" : {
           "name" : "ORGNAME",
           "codeName" : "OrgName"
-        }
-      }, {
-        "dataType" : 25,
-        "name" : "porgid",
-        "getPSAppDEField" : {
-          "name" : "PORGID",
-          "codeName" : "ParentOrgId"
-        }
-      }, {
-        "dataType" : 9,
-        "name" : "orglevel",
-        "getPSAppDEField" : {
-          "name" : "ORGLEVEL",
-          "codeName" : "OrgLevel"
         }
       }, {
         "dataType" : 25,
@@ -275,10 +254,24 @@
         }
       }, {
         "dataType" : 25,
-        "name" : "srfmajortext",
+        "name" : "orgid",
         "getPSAppDEField" : {
-          "name" : "ORGNAME",
-          "codeName" : "OrgName"
+          "name" : "ORGID",
+          "codeName" : "OrgId"
+        }
+      }, {
+        "dataType" : 9,
+        "name" : "orglevel",
+        "getPSAppDEField" : {
+          "name" : "ORGLEVEL",
+          "codeName" : "OrgLevel"
+        }
+      }, {
+        "dataType" : 25,
+        "name" : "srfkey",
+        "getPSAppDEField" : {
+          "name" : "ORGID",
+          "codeName" : "OrgId"
         }
       }, {
         "dataType" : 25,
@@ -290,10 +283,17 @@
         "dataAccessAction" : true
       }, {
         "dataType" : 25,
-        "name" : "srfkey",
+        "name" : "porgid",
         "getPSAppDEField" : {
-          "name" : "ORGID",
-          "codeName" : "OrgId"
+          "name" : "PORGID",
+          "codeName" : "ParentOrgId"
+        }
+      }, {
+        "dataType" : 25,
+        "name" : "srfmajortext",
+        "getPSAppDEField" : {
+          "name" : "ORGNAME",
+          "codeName" : "OrgName"
         }
       } ],
       "getPSDEGridEditItems" : [ {

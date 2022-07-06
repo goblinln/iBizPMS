@@ -78,115 +78,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "ProductGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "下载",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_click"
-      }
-    }, {
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "caption" : "批量下载",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getPSSysImage" : {
-        "cssClass" : "download"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "MULTIKEY",
-        "caption" : "批量下载",
-        "codeName" : "BatchDownload",
-        "frontProcessType" : "OTHER",
-        "fullCodeName" : "File_BatchDownload",
-        "name" : "批量下载",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
-        },
-        "getPSSysImage" : {
-          "cssClass" : "download"
-        },
-        "timeout" : 60000,
-        "uIActionMode" : "FRONT",
-        "uIActionTag" : "BatchDownload",
-        "uIActionType" : "DEUIACTION",
-        "id" : "BatchDownload@File"
-      },
-      "tooltip" : "批量下载",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "caption" : "全部下载",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "cssClass" : "download"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "NONE",
-        "caption" : "全部下载",
-        "codeName" : "AllDownload",
-        "frontProcessType" : "OTHER",
-        "fullCodeName" : "File_AllDownload",
-        "name" : "全部下载",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
-        },
-        "getPSSysImage" : {
-          "cssClass" : "download"
-        },
-        "timeout" : 60000,
-        "uIActionMode" : "FRONT",
-        "uIActionTag" : "AllDownload",
-        "uIActionType" : "DEUIACTION",
-        "id" : "AllDownload@File"
-      },
-      "tooltip" : "全部下载",
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "c81e19117fe7f489d7a2872c176bfda4",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "DocLibL",
     "columnEnableLink" : 2,
@@ -197,7 +88,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "文档库查看",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -598,13 +489,6 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 25,
-      "name" : "strsize",
-      "getPSAppDEField" : {
-        "name" : "STRSIZE",
-        "codeName" : "Strsize"
-      }
-    }, {
       "dataType" : 1,
       "name" : "id",
       "getPSAppDEField" : {
@@ -612,40 +496,11 @@
         "codeName" : "Id"
       }
     }, {
-      "dataType" : 1,
-      "name" : "filesn",
-      "getPSAppDEField" : {
-        "name" : "FILESN",
-        "codeName" : "Filesn"
-      }
-    }, {
       "dataType" : 25,
       "name" : "title",
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
-      }
-    }, {
-      "format" : "YYYY-MM-DD HH:mm:ss",
-      "dataType" : 5,
-      "name" : "addeddate",
-      "getPSAppDEField" : {
-        "name" : "ADDEDDATE",
-        "codeName" : "AddedDate"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "addedby",
-      "getPSAppDEField" : {
-        "name" : "ADDEDBY",
-        "codeName" : "AddedBy"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "objecttype",
-      "getPSAppDEField" : {
-        "name" : "OBJECTTYPE",
-        "codeName" : "ObjectType"
       }
     }, {
       "dataType" : 25,
@@ -656,10 +511,53 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "objecttype",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "OBJECTTYPE",
+        "codeName" : "ObjectType"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "strsize",
+      "getPSAppDEField" : {
+        "name" : "STRSIZE",
+        "codeName" : "Strsize"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "addedby",
+      "getPSAppDEField" : {
+        "name" : "ADDEDBY",
+        "codeName" : "AddedBy"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "addeddate",
+      "getPSAppDEField" : {
+        "name" : "ADDEDDATE",
+        "codeName" : "AddedDate"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "filesn",
+      "getPSAppDEField" : {
+        "name" : "FILESN",
+        "codeName" : "Filesn"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "size",
+      "getPSAppDEField" : {
+        "name" : "SIZE",
+        "codeName" : "Size"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -670,18 +568,11 @@
       },
       "dataAccessAction" : true
     }, {
-      "dataType" : 1,
-      "name" : "srfkey",
+      "dataType" : 25,
+      "name" : "srfmajortext",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "size",
-      "getPSAppDEField" : {
-        "name" : "SIZE",
-        "codeName" : "Size"
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -735,7 +626,7 @@
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File/PSSEARCHFORMS/Default.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -744,10 +635,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -766,10 +657,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -819,6 +710,115 @@
     "name" : "searchform",
     "modelid" : "c95b13341abf1b7a8f37e3ca51127a4e",
     "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "codeName" : "ProductGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "下载",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "批量下载",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "cssClass" : "download"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "MULTIKEY",
+        "caption" : "批量下载",
+        "codeName" : "BatchDownload",
+        "frontProcessType" : "OTHER",
+        "fullCodeName" : "File_BatchDownload",
+        "name" : "批量下载",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "download"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "BatchDownload",
+        "uIActionType" : "DEUIACTION",
+        "id" : "BatchDownload@File"
+      },
+      "tooltip" : "批量下载",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "全部下载",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "cssClass" : "download"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "全部下载",
+        "codeName" : "AllDownload",
+        "frontProcessType" : "OTHER",
+        "fullCodeName" : "File_AllDownload",
+        "name" : "全部下载",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "download"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "AllDownload",
+        "uIActionType" : "DEUIACTION",
+        "id" : "AllDownload@File"
+      },
+      "tooltip" : "全部下载",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "c81e19117fe7f489d7a2872c176bfda4",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "ProductGridView",
   "getPSDEViewId" : "355fbb0690343881f2daae7db2145359",
@@ -973,7 +973,8 @@
       "name" : "CASE",
       "codeName" : "IBizCase"
     },
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -991,7 +992,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_RESULT__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "TestCases",
@@ -1036,7 +1038,8 @@
       "codeName" : "IBizCase"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10
+    "tempDataOrder" : 10,
+    "majorDEMajor" : false
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1054,7 +1057,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_CASE_STEP__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "DocLibs",
@@ -1174,7 +1178,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_TASK__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -1232,7 +1237,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_REPORT__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -1286,7 +1292,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "STORY__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -1344,7 +1351,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TASK__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -1402,7 +1410,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "BUILD__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -1460,7 +1469,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "BUG__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -1514,7 +1524,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "PRODUCT_PLAN__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Projects",
@@ -1674,7 +1685,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_REPORT__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "TestCases",
@@ -1714,7 +1726,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_CASE__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Bugs",
@@ -1754,7 +1767,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "BUG__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",
@@ -1794,7 +1808,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_TASK__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",
@@ -1834,7 +1849,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_REPORT__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",
@@ -1870,7 +1886,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "STORY__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Tasks",
@@ -1910,7 +1927,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TASK__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",
@@ -1950,7 +1968,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "BUILD__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Bugs",
@@ -1990,7 +2009,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "BUG__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",
@@ -2026,7 +2046,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "PRODUCT_PLAN__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "DocLibs",
@@ -2142,7 +2163,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "STORY__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "ProductReleases",
@@ -2182,7 +2204,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "PRODUCT_RELEASE__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",
@@ -2222,7 +2245,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "PRODUCT_PLAN__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",
@@ -2262,7 +2286,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "BUILD__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "DocLibs",
@@ -2342,7 +2367,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_TASK__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Docs",
@@ -2508,7 +2534,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_SUITE__FILE",
-    "rSMode" : 2
+    "rSMode" : 2,
+    "majorDEMajor" : false
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Files",

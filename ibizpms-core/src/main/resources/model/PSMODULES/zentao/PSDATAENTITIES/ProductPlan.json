@@ -895,6 +895,7 @@
             "condOp" : "LTANDEQ",
             "condType" : "SINGLE",
             "condValue" : "0",
+            "fieldName" : "PARENT",
             "name" : "PARENT 小于等于(<=) (0)",
             "getPSDEField" : {
               "name" : "PARENT",
@@ -947,6 +948,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "product",
+            "fieldName" : "PRODUCT",
             "name" : "PRODUCT 等于(=) 数据上下文(product)",
             "getPSDEField" : {
               "name" : "PRODUCT",
@@ -957,6 +959,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "products",
+            "fieldName" : "PRODUCT",
             "name" : "PRODUCT 等于(=) 数据上下文(products)",
             "getPSDEField" : {
               "name" : "PRODUCT",
@@ -1105,6 +1108,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "product",
+          "fieldName" : "PRODUCT",
           "name" : "PRODUCT 等于(=) 网页请求上下文(product)",
           "getPSDEField" : {
             "name" : "PRODUCT",
@@ -1162,6 +1166,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfparentkey",
+            "fieldName" : "PROJECT",
             "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
             "getPSDEField" : {
               "name" : "PROJECT",
@@ -5781,12 +5786,7 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
     },
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEMAPS/ProductPlanMap.json",
-    "name" : "产品计划映射",
-    "autoDEActionMap" : false,
-    "autoDEDataQueryMap" : false,
-    "autoDEDataSetMap" : false,
-    "autoDEFieldMap" : false
+    "name" : "产品计划映射"
   } ],
   "getAllPSDEMethodDTOs" : [ {
     "name" : "ProductPlanDTO",
@@ -6682,16 +6682,30 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "SubPlanEditView",
-    "logicName" : "子计划实体编辑视图",
-    "name" : "子计划实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "MobRedirectView",
+    "logicName" : "产品计划实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "产品计划实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobTabExpView",
-    "logicName" : "产品计划实体移动端分页导航视图",
-    "name" : "产品计划实体移动端分页导航视图",
-    "realModelSubType" : "DEMOBTABEXPVIEW",
+    "codeName" : "SubPlanGridView",
+    "logicName" : "产品计划实体表格视图（子计划）",
+    "name" : "产品计划实体表格视图（子计划）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "productplan实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "productplan实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainDataEditView",
+    "logicName" : "产品计划实体编辑视图(主信息)",
+    "name" : "产品计划实体编辑视图(主信息)",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditMobEditView",
@@ -6700,18 +6714,133 @@
     "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "Usr2MobPickupMDView",
+    "logicName" : "产品计划实体移动端选择多数据视图（部件视图）(项目按计划关联需求)",
+    "name" : "产品计划实体移动端选择多数据视图（部件视图）(项目按计划关联需求)",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobTabExpView",
+    "logicName" : "产品计划实体移动端分页导航视图",
+    "name" : "产品计划实体移动端分页导航视图",
+    "realModelSubType" : "DEMOBTABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "SubPlanEditView",
+    "logicName" : "子计划实体编辑视图",
+    "name" : "子计划实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "NewMobEditView",
+    "logicName" : "产品计划实体移动端编辑视图（新建）",
+    "name" : "产品计划实体移动端编辑视图（新建）",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "产品计划实体移动端选择多数据视图（部件视图）",
+    "name" : "产品计划实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "productplan实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "productplan实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "产品计划实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "产品计划实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "productplan实体选择表格视图（部件视图）",
+    "name" : "productplan实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainEditView",
+    "logicName" : "产品计划实体编辑视图（信息模式）",
+    "name" : "产品计划实体编辑视图（信息模式）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "OptionView",
+    "logicName" : "导入计划模板",
+    "name" : "导入计划模板",
+    "realModelSubType" : "DEOPTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "产品计划实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "产品计划实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "产品计划实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "产品计划实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "产品计划实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "产品计划实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "EditView2",
     "logicName" : "productplan实体编辑视图（左右关系）",
     "name" : "productplan实体编辑视图（左右关系）",
     "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobNewForm",
-    "logicName" : "移动端新建",
-    "modelTag2" : "1",
-    "name" : "移动端新建",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "PickupView",
+    "logicName" : "productplan实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "productplan实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ProjectGridView9",
+    "logicName" : "产品计划实体表格视图（部件视图）（项目）",
+    "name" : "产品计划实体表格视图（部件视图）（项目）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "SubPlanCreateView",
+    "logicName" : "子产品计划实体编辑视图（新建模式）",
+    "name" : "子产品计划实体编辑视图（新建模式）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "产品计划实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "产品计划实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "产品计划实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "产品计划实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainTabExp",
+    "logicName" : "产品计划实体分页导航视图（主信息）",
+    "name" : "产品计划实体分页导航视图（主信息）",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobMainTable",
     "logicName" : "主编辑表单（移动端）",
@@ -6727,24 +6856,6 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "NewMobEditView",
-    "logicName" : "产品计划实体移动端编辑视图（新建）",
-    "name" : "产品计划实体移动端编辑视图（新建）",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "SubPlanCreateView",
-    "logicName" : "子产品计划实体编辑视图（新建模式）",
-    "name" : "子产品计划实体编辑视图（新建模式）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2MobPickupMDView",
-    "logicName" : "产品计划实体移动端选择多数据视图（部件视图）(项目按计划关联需求)",
-    "name" : "产品计划实体移动端选择多数据视图（部件视图）(项目按计划关联需求)",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "MainSubPlan",
     "logicName" : "子计划主编辑表单",
     "modelTag2" : "0",
@@ -6752,49 +6863,17 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "ProjectGridView9",
-    "logicName" : "产品计划实体表格视图（部件视图）（项目）",
-    "name" : "产品计划实体表格视图（部件视图）（项目）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "MobNewForm",
+    "logicName" : "移动端新建",
+    "modelTag2" : "1",
+    "name" : "移动端新建",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "EditView",
-    "logicName" : "产品计划实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "产品计划实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "产品计划实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "产品计划实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "SubPlanGridView",
-    "logicName" : "产品计划实体表格视图（子计划）",
-    "name" : "产品计划实体表格视图（子计划）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "productplan实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "productplan实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "产品计划实体移动端选择多数据视图（部件视图）",
-    "name" : "产品计划实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ImportPlanTemplet",
-    "logicName" : "导入模板",
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
     "modelTag2" : "0",
-    "name" : "导入模板",
+    "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
@@ -6805,51 +6884,12 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "MainTabExp",
-    "logicName" : "产品计划实体分页导航视图（主信息）",
-    "name" : "产品计划实体分页导航视图（主信息）",
-    "realModelSubType" : "DETABEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
+    "codeName" : "ImportPlanTemplet",
+    "logicName" : "导入模板",
     "modelTag2" : "0",
-    "name" : "主编辑表单",
+    "name" : "导入模板",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "产品计划实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "产品计划实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "productplan实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "productplan实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "OptionView",
-    "logicName" : "导入计划模板",
-    "name" : "导入计划模板",
-    "realModelSubType" : "DEOPTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "productplan实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "productplan实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "productplan实体选择表格视图（部件视图）",
-    "name" : "productplan实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MainData",
     "logicName" : "主数据",
@@ -6857,46 +6897,6 @@
     "name" : "主数据",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MainDataEditView",
-    "logicName" : "产品计划实体编辑视图(主信息)",
-    "name" : "产品计划实体编辑视图(主信息)",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobEditView",
-    "logicName" : "产品计划实体移动端编辑视图",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "产品计划实体移动端编辑视图",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "产品计划实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "产品计划实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainEditView",
-    "logicName" : "产品计划实体编辑视图（信息模式）",
-    "name" : "产品计划实体编辑视图（信息模式）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "产品计划实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "产品计划实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "产品计划实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "产品计划实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "ProductPlan",
   "dEType" : 1,
@@ -7184,7 +7184,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

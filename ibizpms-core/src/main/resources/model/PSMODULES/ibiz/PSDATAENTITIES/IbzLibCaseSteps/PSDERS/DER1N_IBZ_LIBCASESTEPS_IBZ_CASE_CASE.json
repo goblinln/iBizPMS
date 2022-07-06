@@ -15,10 +15,6 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
   },
   "name" : "DER1N_IBZ_LIBCASESTEPS_IBZ_CASE_CASE",
-  "getNestedPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "Default"
-  },
   "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "CASE",

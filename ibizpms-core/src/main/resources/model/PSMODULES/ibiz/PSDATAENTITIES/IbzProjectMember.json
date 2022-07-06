@@ -274,6 +274,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "private",
+          "fieldName" : "ACL",
           "name" : "ACL 等于(=) (private)",
           "getPSDEField" : {
             "name" : "ACL",
@@ -326,6 +327,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "OPENEDBY",
             "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "OPENEDBY",
@@ -336,6 +338,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "PM",
             "name" : "PM 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "PM",
@@ -346,6 +349,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "RD",
             "name" : "RD 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "RD",
@@ -356,6 +360,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "QD",
             "name" : "QD 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "QD",
@@ -366,6 +371,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "PO",
             "name" : "PO 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "PO",
@@ -376,6 +382,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "CANCELEDBY",
             "name" : "CANCELEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "CANCELEDBY",
@@ -386,6 +393,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "CLOSEDBY",
             "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "CLOSEDBY",
@@ -396,6 +404,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
+            "fieldName" : "UPDATEBY",
             "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
             "getPSDEField" : {
               "name" : "UPDATEBY",
@@ -407,6 +416,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "private",
+          "fieldName" : "ACL",
           "name" : "ACL 等于(=) (private)",
           "getPSDEField" : {
             "name" : "ACL",
@@ -455,6 +465,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "open",
+          "fieldName" : "ACL",
           "name" : "ACL 等于(=) (open)",
           "getPSDEField" : {
             "name" : "ACL",
@@ -2386,18 +2397,11 @@
     "defaultMode" : true
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "affectProject",
-    "logicName" : "影响的项目",
-    "modelTag2" : "0",
-    "name" : "影响的项目",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "项目相关成员实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "项目相关成员实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "GridView",
+    "logicName" : "项目相关成员实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "项目相关成员实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
@@ -2407,16 +2411,36 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "MPickupView",
+    "logicName" : "项目相关成员实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "项目相关成员实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "affectEditView9",
+    "logicName" : "项目相关成员实体编辑视图（部件视图）（影响的项目）",
+    "name" : "项目相关成员实体编辑视图（部件视图）（影响的项目）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "EditView9",
     "logicName" : "项目相关成员实体编辑视图（部件视图）（相关成员）",
     "name" : "项目相关成员实体编辑视图（部件视图）（相关成员）",
     "realModelSubType" : "DEEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "EditView2",
-    "logicName" : "项目相关成员实体编辑视图（左右关系）",
-    "name" : "项目相关成员实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
+    "codeName" : "EditView",
+    "logicName" : "项目相关成员实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "项目相关成员实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "项目相关成员实体选择表格视图（部件视图）",
+    "name" : "项目相关成员实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -2426,25 +2450,18 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "项目相关成员实体选择表格视图（部件视图）",
-    "name" : "项目相关成员实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "项目相关成员实体编辑视图（左右关系）",
+    "name" : "项目相关成员实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MPickupView",
-    "logicName" : "项目相关成员实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "项目相关成员实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "项目相关成员实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "项目相关成员实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "affectProject",
+    "logicName" : "影响的项目",
+    "modelTag2" : "0",
+    "name" : "影响的项目",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "Main",
     "logicName" : "主编辑表单",
@@ -2452,12 +2469,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "affectEditView9",
-    "logicName" : "项目相关成员实体编辑视图（部件视图）（影响的项目）",
-    "name" : "项目相关成员实体编辑视图（部件视图）（影响的项目）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "IbzProjectMember",
   "dEType" : 1,
@@ -2488,7 +2499,7 @@
   "name" : "IBZ_PROJECTMEMBER",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

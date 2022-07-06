@@ -58,7 +58,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD", "SAVE", "BEFORESAVE", "REMOVE" ],
     "logicName" : "移动端编辑表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -448,25 +448,25 @@
               "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "N_PRODUCT_EQ",
-              "name" : "N_PRODUCT_EQ",
-              "value" : "product",
-              "rawValue" : false
-            }, {
               "key" : "N_PROJECT_EQ",
               "name" : "N_PROJECT_EQ",
               "value" : "project",
               "rawValue" : false
-            } ],
-            "getPSNavigateParams" : [ {
-              "key" : "n_product_eq",
-              "name" : "n_product_eq",
+            }, {
+              "key" : "N_PRODUCT_EQ",
+              "name" : "N_PRODUCT_EQ",
               "value" : "product",
               "rawValue" : false
-            }, {
+            } ],
+            "getPSNavigateParams" : [ {
               "key" : "n_project_eq",
               "name" : "n_project_eq",
               "value" : "project",
+              "rawValue" : false
+            }, {
+              "key" : "n_product_eq",
+              "name" : "n_product_eq",
+              "value" : "product",
               "rawValue" : false
             } ],
             "getPickupPSAppView" : {

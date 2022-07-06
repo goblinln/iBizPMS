@@ -112,7 +112,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -347,27 +347,6 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 9,
-      "name" : "taskcnt",
-      "getPSAppDEField" : {
-        "name" : "TASKCNT",
-        "codeName" : "TaskCnt"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "project",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "workload",
-      "getPSAppDEField" : {
-        "name" : "WORKLOAD",
-        "codeName" : "Workload"
-      }
-    }, {
       "dataType" : 25,
       "name" : "assignedto",
       "getPSAppDEField" : {
@@ -375,11 +354,25 @@
         "codeName" : "AssignedTo"
       }
     }, {
-      "dataType" : 9,
-      "name" : "totalleft",
+      "dataType" : 25,
+      "name" : "projectname",
       "getPSAppDEField" : {
-        "name" : "TOTALLEFT",
-        "codeName" : "TotalLeft"
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "taskcnt",
+      "getPSAppDEField" : {
+        "name" : "TASKCNT",
+        "codeName" : "TaskCnt"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "left",
+      "getPSAppDEField" : {
+        "name" : "LEFT",
+        "codeName" : "Left"
       }
     }, {
       "dataType" : 9,
@@ -390,24 +383,24 @@
       }
     }, {
       "dataType" : 9,
-      "name" : "left",
+      "name" : "totalleft",
       "getPSAppDEField" : {
-        "name" : "LEFT",
-        "codeName" : "Left"
+        "name" : "TOTALLEFT",
+        "codeName" : "TotalLeft"
       }
     }, {
       "dataType" : 25,
-      "name" : "projectname",
+      "name" : "workload",
       "getPSAppDEField" : {
-        "name" : "PROJECTNAME",
-        "codeName" : "ProjectName"
+        "name" : "WORKLOAD",
+        "codeName" : "Workload"
       }
     }, {
-      "dataType" : 25,
-      "name" : "srfmajortext",
+      "dataType" : 1,
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -419,10 +412,17 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "project",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
       }
     } ],
     "getPSDEGridEditItems" : [ {
@@ -476,7 +476,7 @@
     "codeName" : "Workload",
     "controlType" : "SEARCHFORM",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload/PSSEARCHFORMS/Workload.json",
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "hookEventNames" : [ "SEARCH", "LOAD", "SAVE" ],
     "logicName" : "员工负载",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -485,10 +485,10 @@
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionType" : "FILTERACTION",
-        "name" : "search",
+        "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterSearch"
+          "id" : "FilterGet"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -507,10 +507,10 @@
         }
       }, {
         "actionType" : "FILTERACTION",
-        "name" : "load",
+        "name" : "search",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FilterGet"
+          "id" : "FilterSearch"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

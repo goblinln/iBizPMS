@@ -42,7 +42,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "主信息表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -1464,7 +1464,7 @@
               "id" : "fetch"
             },
             "groupMode" : "NONE",
-            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
             "logicName" : "主表格",
             "minorSortDir" : "ASC",
             "getMinorSortPSAppDEField" : {
@@ -1646,32 +1646,11 @@
               "enableSort" : true
             } ],
             "getPSDEGridDataItems" : [ {
-              "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "root",
-              "getPSAppDEField" : {
-                "name" : "ROOT",
-                "codeName" : "Root"
-              }
-            }, {
               "dataType" : 25,
               "name" : "account",
               "getPSAppDEField" : {
                 "name" : "ACCOUNT",
                 "codeName" : "Account"
-              }
-            }, {
-              "dataType" : 7,
-              "name" : "left",
-              "getPSAppDEField" : {
-                "name" : "LEFT",
-                "codeName" : "Left"
               }
             }, {
               "dataType" : 7,
@@ -1681,11 +1660,25 @@
                 "codeName" : "Estimate"
               }
             }, {
-              "dataType" : 25,
-              "name" : "srfmajortext",
+              "dataType" : 7,
+              "name" : "consumed",
               "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
+                "name" : "CONSUMED",
+                "codeName" : "Consumed"
+              }
+            }, {
+              "dataType" : 7,
+              "name" : "left",
+              "getPSAppDEField" : {
+                "name" : "LEFT",
+                "codeName" : "Left"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "srfkey",
+              "getPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
@@ -1697,10 +1690,17 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "root",
               "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
+                "name" : "ROOT",
+                "codeName" : "Root"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "srfmajortext",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -1842,7 +1842,8 @@
               "codeName" : "Root"
             },
             "rSMode" : 2,
-            "tempDataOrder" : 10
+            "tempDataOrder" : 10,
+            "majorDEMajor" : false
           } ], [ {
             "actionRSMode" : 1,
             "codeName" : "Tasks",
@@ -1887,7 +1888,8 @@
               "codeName" : "Root"
             },
             "rSMode" : 2,
-            "tempDataOrder" : 10
+            "tempDataOrder" : 10,
+            "majorDEMajor" : false
           } ] ]
         },
         "getPSDEFDGroupLogics" : [ {

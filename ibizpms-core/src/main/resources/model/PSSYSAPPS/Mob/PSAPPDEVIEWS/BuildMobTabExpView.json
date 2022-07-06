@@ -44,19 +44,11 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:tabviewpanel5",
-      "realTitle" : "版本移动端编辑视图",
+      "name" : "EXPITEM:tabviewpanel2",
+      "realTitle" : "需求移动端多数据视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BuildMobEditView.json",
-        "viewType" : "DEMOBEDITVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:tabviewpanel3",
-      "realTitle" : "Bug移动端多数据视图",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugUsr5MobMDView.json",
+        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryUsr4MobMDView.json",
         "viewType" : "DEMOBMDVIEW"
       }
     }, {
@@ -68,12 +60,20 @@
         "viewType" : "DEMOBMDVIEW"
       }
     }, {
-      "name" : "EXPITEM:tabviewpanel2",
-      "realTitle" : "需求移动端多数据视图",
+      "name" : "EXPITEM:tabviewpanel3",
+      "realTitle" : "Bug移动端多数据视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryUsr4MobMDView.json",
+        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugUsr5MobMDView.json",
         "viewType" : "DEMOBMDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:tabviewpanel5",
+      "realTitle" : "版本移动端编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BuildMobEditView.json",
+        "viewType" : "DEMOBEDITVIEW"
       }
     } ],
     "getPSControlParam" : { },
@@ -189,14 +189,14 @@
           "rawValue" : false
         } ],
         "getPSAppViewNavParams" : [ {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
-          "value" : "build",
-          "rawValue" : false
-        }, {
           "key" : "project",
           "name" : "project",
           "value" : "project",
+          "rawValue" : false
+        }, {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "build",
           "rawValue" : false
         } ],
         "getPSAppViewRefs" : [ {
@@ -247,7 +247,7 @@
             "id" : "load"
           },
           "groupMode" : "NONE",
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+          "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
           "logicName" : "MOB_Build_Story",
           "minorSortDir" : "DESC",
           "getMinorSortPSAppDEField" : {
@@ -605,9 +605,9 @@
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
               },
               "getPSNavigateContexts" : [ {
-                "key" : "BUILD",
-                "name" : "BUILD",
-                "value" : "build",
+                "key" : "PROJECT",
+                "name" : "PROJECT",
+                "value" : "project",
                 "rawValue" : false
               }, {
                 "key" : "STORY",
@@ -615,9 +615,9 @@
                 "value" : "0",
                 "rawValue" : true
               }, {
-                "key" : "PROJECT",
-                "name" : "PROJECT",
-                "value" : "project",
+                "key" : "BUILD",
+                "name" : "BUILD",
+                "value" : "build",
                 "rawValue" : false
               } ],
               "getPSNavigateParams" : [ {

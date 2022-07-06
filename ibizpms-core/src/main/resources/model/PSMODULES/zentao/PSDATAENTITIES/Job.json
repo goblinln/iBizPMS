@@ -2279,31 +2279,11 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "EditView2",
-    "logicName" : "job实体编辑视图（左右关系）",
-    "name" : "job实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "job实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "job实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "RedirectView",
     "logicName" : "job实体数据重定向视图",
     "modelTag" : "REDIRECTVIEW",
     "name" : "job实体数据重定向视图",
     "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "job实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "job实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -2313,12 +2293,25 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
+    "codeName" : "GridView",
+    "logicName" : "job实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "job实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "job实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "job实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "job实体编辑视图（左右关系）",
+    "name" : "job实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupGridView",
     "logicName" : "job实体选择表格视图（部件视图）",
@@ -2326,12 +2319,19 @@
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "job实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "job实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
+    "codeName" : "MPickupView",
+    "logicName" : "job实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "job实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "Job",
   "dEType" : 1,
@@ -2391,7 +2391,7 @@
   "name" : "ZT_JOB",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

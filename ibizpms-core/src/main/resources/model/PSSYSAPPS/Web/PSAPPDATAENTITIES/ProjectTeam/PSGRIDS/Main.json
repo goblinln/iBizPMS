@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
@@ -245,6 +245,42 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "account",
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "role",
+    "getPSAppDEField" : {
+      "name" : "ROLE",
+      "codeName" : "Role"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "join",
+    "getPSAppDEField" : {
+      "name" : "JOIN",
+      "codeName" : "Join"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "days",
+    "getPSAppDEField" : {
+      "name" : "DAYS",
+      "codeName" : "Days"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "hours",
+    "getPSAppDEField" : {
+      "name" : "HOURS",
+      "codeName" : "Hours"
+    }
+  }, {
     "dataType" : 9,
     "name" : "total",
     "getPSAppDEField" : {
@@ -259,54 +295,11 @@
       "codeName" : "Limited"
     }
   }, {
-    "dataType" : 9,
-    "name" : "days",
-    "getPSAppDEField" : {
-      "name" : "DAYS",
-      "codeName" : "Days"
-    }
-  }, {
     "dataType" : 1,
-    "name" : "root",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    }
-  }, {
-    "dataType" : 7,
-    "name" : "hours",
-    "getPSAppDEField" : {
-      "name" : "HOURS",
-      "codeName" : "Hours"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "role",
-    "getPSAppDEField" : {
-      "name" : "ROLE",
-      "codeName" : "Role"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "account",
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    }
-  }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "join",
-    "getPSAppDEField" : {
-      "name" : "JOIN",
-      "codeName" : "Join"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -318,10 +311,17 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
+    "name" : "root",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "ROOT",
+      "codeName" : "Root"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
     }
   } ],
   "getPSDEGridEditItems" : [ {

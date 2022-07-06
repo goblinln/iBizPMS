@@ -152,15 +152,6 @@
     "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "需求",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
-      "viewType" : "DEEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "需求数据看板视图",
@@ -168,6 +159,15 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMainView.json",
       "viewType" : "DEPORTALVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "需求",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
+      "viewType" : "DEEDITVIEW"
     }
   } ],
   "getPSAppViewUIActions" : [ {
@@ -229,394 +229,6 @@
     "xDataControlName" : "grid"
   } ],
   "getPSControls" : [ {
-    "codeName" : "CurProjectGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "项目需求工具栏",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSControlLogics" : [ {
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction1_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_click"
-      }
-    }, {
-      "eventArg" : "deuiaction3",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction3_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction3_click"
-      }
-    }, {
-      "eventArg" : "deuiaction4",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction4_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction4_click"
-      }
-    }, {
-      "eventArg" : "deuiaction5",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction5_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction5_click"
-      }
-    }, {
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction2_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2_click"
-      }
-    }, {
-      "eventArg" : "deuiaction6",
-      "eventNames" : "CLICK",
-      "logicTag" : "toolbar",
-      "logicType" : "APPVIEWLOGIC",
-      "name" : "toolbar_deuiaction6_click",
-      "getPSAppViewLogic" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction6_click"
-      }
-    } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "getPSDEToolbarItems" : [ {
-      "caption" : "新建",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf067@FontAwesome",
-        "cssClass" : "fa fa-plus"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "NONE",
-        "caption" : "新建",
-        "codeName" : "ProjectCreateView",
-        "dataAccessAction" : "CREATE",
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
-          "viewType" : "DEEDITVIEW"
-        },
-        "frontProcessType" : "WIZARD",
-        "fullCodeName" : "Story_ProjectCreateView",
-        "name" : "项目新建",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "CREATE"
-        },
-        "getPSNavigateContexts" : [ {
-          "key" : "PROJECT",
-          "name" : "PROJECT",
-          "value" : "project",
-          "rawValue" : false
-        }, {
-          "key" : "SRFPARENTDENAME",
-          "name" : "SRFPARENTDENAME",
-          "value" : "Project",
-          "rawValue" : true
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "srfparentdename",
-          "name" : "srfparentdename",
-          "value" : "Project",
-          "rawValue" : true
-        }, {
-          "key" : "project",
-          "name" : "project",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "getPSSysImage" : {
-          "glyph" : "xf067@FontAwesome",
-          "cssClass" : "fa fa-plus"
-        },
-        "refreshMode" : 1,
-        "timeout" : 60000,
-        "uIActionMode" : "FRONT",
-        "uIActionTag" : "ProjectCreateView",
-        "uIActionType" : "DEUIACTION",
-        "reloadData" : true,
-        "id" : "ProjectCreateView@Story"
-      },
-      "tooltip" : "新建",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "caption" : "关联需求",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction3",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction3"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0c1@FontAwesome",
-        "cssClass" : "fa fa-link"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "NONE",
-        "caption" : "关联需求",
-        "codeName" : "projectLinkStories",
-        "dataAccessAction" : "LINKSTORY",
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",
-          "viewType" : "DEMPICKUPVIEW"
-        },
-        "fullCodeName" : "Project_projectLinkStories",
-        "name" : "关联需求（项目—需求）",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "LinkStory"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "LINKSTORY"
-        },
-        "getPSNavigateContexts" : [ {
-          "key" : "PROJECT",
-          "name" : "PROJECT",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "project",
-          "name" : "project",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "refreshMode" : 1,
-        "timeout" : 60000,
-        "uIActionMode" : "BACKEND",
-        "uIActionTag" : "projectLinkStories",
-        "uIActionType" : "DEUIACTION",
-        "enableConfirm" : true,
-        "globalUIAction" : true,
-        "reloadData" : true,
-        "id" : "projectLinkStories@Project"
-      },
-      "tooltip" : "关联需求",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "caption" : "按照计划关联",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction4",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction4"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0c1@FontAwesome",
-        "cssClass" : "fa fa-link"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "NONE",
-        "caption" : "按照计划关联",
-        "codeName" : "ProjecPlanLink",
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPlanLinkStoryOptionView.json",
-          "viewType" : "DEOPTVIEW"
-        },
-        "frontProcessType" : "WIZARD",
-        "fullCodeName" : "Project_ProjecPlanLink",
-        "name" : "按照计划关联",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "getPSNavigateContexts" : [ {
-          "key" : "PROJECT",
-          "name" : "PROJECT",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "project",
-          "name" : "project",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "refreshMode" : 1,
-        "timeout" : 60000,
-        "uIActionMode" : "FRONT",
-        "uIActionTag" : "ProjecPlanLink",
-        "uIActionType" : "DEUIACTION",
-        "globalUIAction" : true,
-        "reloadData" : true,
-        "id" : "ProjecPlanLink@Project"
-      },
-      "tooltip" : "按照计划关联",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT"
-      },
-      "caption" : "导出",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction5",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction5"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT"
-        },
-        "caption" : "导出",
-        "codeName" : "ExportExcel",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）",
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "predefinedType" : "GRIDVIEW_EXPORTACTION",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "导出",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "caption" : "刷新",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf021@FontAwesome",
-        "cssClass" : "fa fa-refresh"
-      },
-      "getPSUIAction" : {
-        "caption" : "刷新",
-        "codeName" : "Refresh",
-        "fullCodeName" : "Refresh",
-        "name" : "表格界面_刷新操作",
-        "getPSSysImage" : {
-          "glyph" : "xf021@FontAwesome",
-          "cssClass" : "fa fa-refresh"
-        },
-        "predefinedType" : "GRIDVIEW_REFRESHACTION",
-        "timeout" : 60000,
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "Refresh",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "刷新",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.FILTER"
-      },
-      "caption" : "过滤",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction6",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction6"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0b0@FontAwesome",
-        "cssClass" : "fa fa-filter"
-      },
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.FILTER"
-        },
-        "caption" : "过滤",
-        "codeName" : "ToggleFilter",
-        "fullCodeName" : "ToggleFilter",
-        "name" : "表格界面_搜索栏",
-        "getPSSysImage" : {
-          "glyph" : "xf0b0@FontAwesome",
-          "cssClass" : "fa fa-filter"
-        },
-        "predefinedType" : "GRIDVIEW_SEARCHBAR",
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "ToggleFilter",
-        "uIActionType" : "DEUIACTION",
-        "enableToggleMode" : true
-      },
-      "tooltip" : "过滤",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
-      },
-      "enableToggleMode" : true,
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "7e4b15d5035eb095df2d19abb7fdda7a",
-    "modeltype" : "PSDETOOLBAR"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "ProjectStory",
     "columnEnableLink" : 2,
@@ -627,7 +239,7 @@
       "id" : "fetch"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
     "logicName" : "主表格（项目关联需求）",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
@@ -1011,9 +623,14 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "CURPROJECT",
-              "name" : "CURPROJECT",
-              "value" : "project",
+              "key" : "MODULE",
+              "name" : "MODULE",
+              "value" : "module",
+              "rawValue" : false
+            }, {
+              "key" : "TITLE",
+              "name" : "TITLE",
+              "value" : "title",
               "rawValue" : false
             }, {
               "key" : "PROJECT",
@@ -1021,30 +638,20 @@
               "value" : "project",
               "rawValue" : false
             }, {
-              "key" : "MODULE",
-              "name" : "MODULE",
-              "value" : "module",
+              "key" : "CURPROJECT",
+              "name" : "CURPROJECT",
+              "value" : "project",
               "rawValue" : false
             }, {
               "key" : "MODULENAME",
               "name" : "MODULENAME",
               "value" : "modulename",
               "rawValue" : false
-            }, {
-              "key" : "TITLE",
-              "name" : "TITLE",
-              "value" : "title",
-              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "modulename",
-              "name" : "modulename",
-              "value" : "modulename",
-              "rawValue" : false
-            }, {
-              "key" : "project",
-              "name" : "project",
-              "value" : "project",
+              "key" : "title",
+              "name" : "title",
+              "value" : "title",
               "rawValue" : false
             }, {
               "key" : "story",
@@ -1052,19 +659,24 @@
               "value" : "id",
               "rawValue" : false
             }, {
+              "key" : "project",
+              "name" : "project",
+              "value" : "project",
+              "rawValue" : false
+            }, {
               "key" : "module",
               "name" : "module",
               "value" : "module",
               "rawValue" : false
             }, {
-              "key" : "title",
-              "name" : "title",
-              "value" : "title",
-              "rawValue" : false
-            }, {
               "key" : "curproject",
               "name" : "curproject",
               "value" : "project",
+              "rawValue" : false
+            }, {
+              "key" : "modulename",
+              "name" : "modulename",
+              "value" : "modulename",
               "rawValue" : false
             } ],
             "getPSSysImage" : {
@@ -1102,9 +714,14 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "CURPROJECT",
-              "name" : "CURPROJECT",
-              "value" : "project",
+              "key" : "MODULE",
+              "name" : "MODULE",
+              "value" : "module",
+              "rawValue" : false
+            }, {
+              "key" : "TITLE",
+              "name" : "TITLE",
+              "value" : "title",
               "rawValue" : false
             }, {
               "key" : "PROJECT",
@@ -1112,30 +729,20 @@
               "value" : "project",
               "rawValue" : false
             }, {
-              "key" : "MODULE",
-              "name" : "MODULE",
-              "value" : "module",
+              "key" : "CURPROJECT",
+              "name" : "CURPROJECT",
+              "value" : "project",
               "rawValue" : false
             }, {
               "key" : "MODULENAME",
               "name" : "MODULENAME",
               "value" : "modulename",
               "rawValue" : false
-            }, {
-              "key" : "TITLE",
-              "name" : "TITLE",
-              "value" : "title",
-              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "modulename",
-              "name" : "modulename",
-              "value" : "modulename",
-              "rawValue" : false
-            }, {
-              "key" : "project",
-              "name" : "project",
-              "value" : "project",
+              "key" : "title",
+              "name" : "title",
+              "value" : "title",
               "rawValue" : false
             }, {
               "key" : "story",
@@ -1143,19 +750,24 @@
               "value" : "id",
               "rawValue" : false
             }, {
+              "key" : "project",
+              "name" : "project",
+              "value" : "project",
+              "rawValue" : false
+            }, {
               "key" : "module",
               "name" : "module",
               "value" : "module",
               "rawValue" : false
             }, {
-              "key" : "title",
-              "name" : "title",
-              "value" : "title",
-              "rawValue" : false
-            }, {
               "key" : "curproject",
               "name" : "curproject",
               "value" : "project",
+              "rawValue" : false
+            }, {
+              "key" : "modulename",
+              "name" : "modulename",
+              "value" : "modulename",
               "rawValue" : false
             } ],
             "getPSSysImage" : {
@@ -1234,20 +846,45 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "frombug",
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "FROMBUG",
-        "codeName" : "FromBug"
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "pri",
+      "getPSAppDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
     }, {
       "dataType" : 25,
-      "name" : "stage",
+      "name" : "planname",
       "getPSAppDEField" : {
-        "name" : "STAGE",
-        "codeName" : "Stage"
+        "name" : "PLANNAME",
+        "codeName" : "Planname"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "openedby",
+      "getPSAppDEField" : {
+        "name" : "OPENEDBY",
+        "codeName" : "OpenedBy"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "assignedto",
+      "getPSAppDEField" : {
+        "name" : "ASSIGNEDTO",
+        "codeName" : "AssignedTo"
       }
     }, {
       "dataType" : 7,
@@ -1258,10 +895,66 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "srfmajortext",
+      "name" : "status",
       "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
+        "name" : "STATUS",
+        "codeName" : "Status"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "stage",
+      "getPSAppDEField" : {
+        "name" : "STAGE",
+        "codeName" : "Stage"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "storysn",
+      "getPSAppDEField" : {
+        "name" : "STORYSN",
+        "codeName" : "Storysn"
+      }
+    }, {
+      "dataType" : 21,
+      "name" : "plan",
+      "getPSAppDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "modulename",
+      "getPSAppDEField" : {
+        "name" : "MODULENAME",
+        "codeName" : "Modulename"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "isfavorites",
+      "getPSAppDEField" : {
+        "name" : "ISFAVORITES",
+        "codeName" : "Isfavorites"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "ischild",
+      "getPSAppDEField" : {
+        "name" : "ISCHILD",
+        "codeName" : "Ischild"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "project",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "module",
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
       }
     }, {
       "dataType" : 1,
@@ -1280,87 +973,10 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "tobug",
+      "name" : "frombug",
       "getPSAppDEField" : {
-        "name" : "TOBUG",
-        "codeName" : "ToBug"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "openedby",
-      "getPSAppDEField" : {
-        "name" : "OPENEDBY",
-        "codeName" : "OpenedBy"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "modulename",
-      "getPSAppDEField" : {
-        "name" : "MODULENAME",
-        "codeName" : "Modulename"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "assignedto",
-      "getPSAppDEField" : {
-        "name" : "ASSIGNEDTO",
-        "codeName" : "AssignedTo"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "duplicatestory",
-      "getPSAppDEField" : {
-        "name" : "DUPLICATESTORY",
-        "codeName" : "DuplicateStory"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "isfavorites",
-      "getPSAppDEField" : {
-        "name" : "ISFAVORITES",
-        "codeName" : "Isfavorites"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "module",
-      "getPSAppDEField" : {
-        "name" : "MODULE",
-        "codeName" : "Module"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "planname",
-      "getPSAppDEField" : {
-        "name" : "PLANNAME",
-        "codeName" : "Planname"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "status",
-      "getPSAppDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "storysn",
-      "getPSAppDEField" : {
-        "name" : "STORYSN",
-        "codeName" : "Storysn"
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
       }
     }, {
       "dataType" : 1,
@@ -1378,24 +994,10 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "project",
+      "name" : "duplicatestory",
       "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      }
-    }, {
-      "dataType" : 9,
-      "name" : "pri",
-      "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
-      }
-    }, {
-      "dataType" : 21,
-      "name" : "plan",
-      "getPSAppDEField" : {
-        "name" : "PLAN",
-        "codeName" : "Plan"
+        "name" : "DUPLICATESTORY",
+        "codeName" : "DuplicateStory"
       }
     }, {
       "dataType" : 1,
@@ -1405,12 +1007,22 @@
         "codeName" : "Branch"
       }
     }, {
-      "dataType" : 25,
-      "name" : "ischild",
+      "dataType" : 1,
+      "name" : "tobug",
       "getPSAppDEField" : {
-        "name" : "ISCHILD",
-        "codeName" : "Ischild"
+        "name" : "TOBUG",
+        "codeName" : "ToBug"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
     "getPSDEGridEditItems" : [ {
       "caption" : "编号",
@@ -2801,6 +2413,394 @@
     "name" : "searchbar",
     "modelid" : "195849838c242281e8361cde56aa4654",
     "modeltype" : "PSSYSSEARCHBAR"
+  }, {
+    "codeName" : "CurProjectGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "项目需求工具栏",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_click"
+      }
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction4_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4_click"
+      }
+    }, {
+      "eventArg" : "deuiaction5",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction5_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction5_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction6",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction6_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction6_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "新建",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "新建",
+        "codeName" : "ProjectCreateView",
+        "dataAccessAction" : "CREATE",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Story_ProjectCreateView",
+        "name" : "项目新建",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "CREATE"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "PROJECT",
+          "name" : "PROJECT",
+          "value" : "project",
+          "rawValue" : false
+        }, {
+          "key" : "SRFPARENTDENAME",
+          "name" : "SRFPARENTDENAME",
+          "value" : "Project",
+          "rawValue" : true
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "project",
+          "name" : "project",
+          "value" : "project",
+          "rawValue" : false
+        }, {
+          "key" : "srfparentdename",
+          "name" : "srfparentdename",
+          "value" : "Project",
+          "rawValue" : true
+        } ],
+        "getPSSysImage" : {
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "ProjectCreateView",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "ProjectCreateView@Story"
+      },
+      "tooltip" : "新建",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "关联需求",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction3",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0c1@FontAwesome",
+        "cssClass" : "fa fa-link"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "关联需求",
+        "codeName" : "projectLinkStories",
+        "dataAccessAction" : "LINKSTORY",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",
+          "viewType" : "DEMPICKUPVIEW"
+        },
+        "fullCodeName" : "Project_projectLinkStories",
+        "name" : "关联需求（项目—需求）",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "LinkStory"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "LINKSTORY"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "PROJECT",
+          "name" : "PROJECT",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "project",
+          "name" : "project",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "projectLinkStories",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "globalUIAction" : true,
+        "reloadData" : true,
+        "id" : "projectLinkStories@Project"
+      },
+      "tooltip" : "关联需求",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "按照计划关联",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction4",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0c1@FontAwesome",
+        "cssClass" : "fa fa-link"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "按照计划关联",
+        "codeName" : "ProjecPlanLink",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPlanLinkStoryOptionView.json",
+          "viewType" : "DEOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Project_ProjecPlanLink",
+        "name" : "按照计划关联",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "PROJECT",
+          "name" : "PROJECT",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "project",
+          "name" : "project",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "ProjecPlanLink",
+        "uIActionType" : "DEUIACTION",
+        "globalUIAction" : true,
+        "reloadData" : true,
+        "id" : "ProjecPlanLink@Project"
+      },
+      "tooltip" : "按照计划关联",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction5",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction5"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "predefinedType" : "GRIDVIEW_EXPORTACTION",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "getPSUIAction" : {
+        "caption" : "刷新",
+        "codeName" : "Refresh",
+        "fullCodeName" : "Refresh",
+        "name" : "表格界面_刷新操作",
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "predefinedType" : "GRIDVIEW_REFRESHACTION",
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "Refresh",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "刷新",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.FILTER"
+      },
+      "caption" : "过滤",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction6",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction6"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0b0@FontAwesome",
+        "cssClass" : "fa fa-filter"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.FILTER"
+        },
+        "caption" : "过滤",
+        "codeName" : "ToggleFilter",
+        "fullCodeName" : "ToggleFilter",
+        "name" : "表格界面_搜索栏",
+        "getPSSysImage" : {
+          "glyph" : "xf0b0@FontAwesome",
+          "cssClass" : "fa fa-filter"
+        },
+        "predefinedType" : "GRIDVIEW_SEARCHBAR",
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ToggleFilter",
+        "uIActionType" : "DEUIACTION",
+        "enableToggleMode" : true
+      },
+      "tooltip" : "过滤",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+      },
+      "enableToggleMode" : true,
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "7e4b15d5035eb095df2d19abb7fdda7a",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "CurProjectGridView",
   "getPSDEViewId" : "7919a4e3c719728d1b93c1383ddb8ca0",

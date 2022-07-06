@@ -8,6 +8,7 @@ import * as getters from './getters';
 
 import viewaction from './modules/view-action'
 import authresource from './modules/auth-resource'
+import loadingService from './modules/loading-service'
 
 const state = {
     ...rootstate
@@ -22,7 +23,8 @@ const store = new Vuex.Store({
     getters,
     modules: {
         viewaction,
-        authresource
+        authresource,
+        loadingService
     },
 });
 

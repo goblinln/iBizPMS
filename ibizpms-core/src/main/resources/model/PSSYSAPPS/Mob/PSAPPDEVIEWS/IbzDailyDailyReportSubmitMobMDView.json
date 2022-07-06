@@ -79,20 +79,20 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realTitle" : "日报移动端编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyMobEditView.json",
-      "viewType" : "DEMOBEDITVIEW"
-    }
-  }, {
     "name" : "EDITDATA",
     "realTitle" : "日报分页导航视图",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyDailyMobTabExpView.json",
       "viewType" : "DEMOBTABEXPVIEW"
+    }
+  }, {
+    "name" : "NEWDATA",
+    "realTitle" : "日报移动端编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyMobEditView.json",
+      "viewType" : "DEMOBEDITVIEW"
     }
   } ],
   "getPSControls" : [ {
@@ -113,7 +113,7 @@
       "id" : "load"
     },
     "groupMode" : "NONE",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
     "logicName" : "DailyReportSubmitMob",
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {

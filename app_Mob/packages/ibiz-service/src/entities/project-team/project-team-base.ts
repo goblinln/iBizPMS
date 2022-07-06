@@ -137,7 +137,6 @@ export abstract class ProjectTeamBase extends EntityBase implements IProjectTeam
      * 项目编号
      */
     root?: any;
-
     /**
      * 重置实体数据
      *

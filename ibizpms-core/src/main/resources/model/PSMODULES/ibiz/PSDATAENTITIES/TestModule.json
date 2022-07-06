@@ -343,6 +343,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "bug",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (bug)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -391,6 +392,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "story",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (story)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -400,6 +402,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "0",
+          "fieldName" : "DELETED",
           "name" : "DELETED 等于(=) (0)",
           "getPSDEField" : {
             "name" : "DELETED",
@@ -481,6 +484,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "story",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (story)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -493,6 +497,7 @@
           "getPSDEDQConditions" : [ {
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
+            "fieldName" : "PARENT",
             "name" : "PARENT 值为空(Nil)",
             "getPSDEField" : {
               "name" : "PARENT",
@@ -502,6 +507,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
+            "fieldName" : "PARENT",
             "name" : "PARENT 等于(=) (0)",
             "getPSDEField" : {
               "name" : "PARENT",
@@ -550,6 +556,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "story",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (story)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -559,6 +566,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "0",
+          "fieldName" : "BRANCH",
           "name" : "BRANCH 等于(=) (0)",
           "getPSDEField" : {
             "name" : "BRANCH",
@@ -571,6 +579,7 @@
           "getPSDEDQConditions" : [ {
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
+            "fieldName" : "PARENT",
             "name" : "PARENT 值为空(Nil)",
             "getPSDEField" : {
               "name" : "PARENT",
@@ -580,6 +589,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
+            "fieldName" : "PARENT",
             "name" : "PARENT 等于(=) (0)",
             "getPSDEField" : {
               "name" : "PARENT",
@@ -628,6 +638,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "story",
+          "fieldName" : "TYPE",
           "name" : "TYPE 等于(=) (story)",
           "getPSDEField" : {
             "name" : "TYPE",
@@ -637,6 +648,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "0",
+          "fieldName" : "DELETED",
           "name" : "DELETED 等于(=) (0)",
           "getPSDEField" : {
             "name" : "DELETED",
@@ -3570,10 +3582,42 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "QuickCfgView",
-    "logicName" : "需求模块实体选项操作视图（快速编辑）",
-    "name" : "需求模块实体选项操作视图（快速编辑）",
-    "realModelSubType" : "DEOPTVIEW",
+    "codeName" : "EditView2",
+    "logicName" : "测试模块实体编辑视图（左右关系）",
+    "name" : "测试模块实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridViewMain",
+    "logicName" : "测试模块实体表格视图（主数据）",
+    "name" : "测试模块实体表格视图（主数据）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "测试模块实体选择表格视图（部件视图）",
+    "name" : "测试模块实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "测试模块实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "测试模块实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "测试模块实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "测试模块实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridViewBranch",
+    "logicName" : "测试模块实体表格视图（平台主数据）",
+    "name" : "测试模块实体表格视图（平台主数据）",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
@@ -3583,17 +3627,11 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridViewMain",
-    "logicName" : "测试模块实体表格视图（主数据）",
-    "name" : "测试模块实体表格视图（主数据）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "测试模块实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "测试模块实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "MobEditView",
+    "logicName" : "测试模块实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "测试模块实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -3607,6 +3645,13 @@
     "logicName" : "测试模块实体树导航视图（模块编辑）",
     "name" : "测试模块实体树导航视图（模块编辑）",
     "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "测试模块实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "测试模块实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
@@ -3623,64 +3668,10 @@
     "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobEditView",
-    "logicName" : "测试模块实体移动端编辑视图",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "测试模块实体移动端编辑视图",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "测试模块实体选择表格视图（部件视图）",
-    "name" : "测试模块实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "测试模块实体编辑视图（左右关系）",
-    "name" : "测试模块实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "测试模块实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "测试模块实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridViewBranch",
-    "logicName" : "测试模块实体表格视图（平台主数据）",
-    "name" : "测试模块实体表格视图（平台主数据）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "测试模块实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "测试模块实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "测试模块实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "测试模块实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
+    "codeName" : "QuickCfgView",
+    "logicName" : "需求模块实体选项操作视图（快速编辑）",
+    "name" : "需求模块实体选项操作视图（快速编辑）",
+    "realModelSubType" : "DEOPTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobRedirectView",
@@ -3695,6 +3686,27 @@
     "name" : "测试模块实体移动端选择多数据视图（部件视图）",
     "realModelSubType" : "DEMOBPICKUPMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "测试模块实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "测试模块实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "TestModule",
   "dEType" : 1,
@@ -3871,7 +3883,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

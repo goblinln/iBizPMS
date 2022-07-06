@@ -35,24 +35,98 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/checkkey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -60,55 +134,240 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/save",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductBugcnt_QA",
     "methodType" : "FETCH",
     "name" : "FetchProductBugcnt_QA",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductbugcnt_qa",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductCreateStory",
     "methodType" : "FETCH",
     "name" : "FetchProductCreateStory",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductcreatestory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductStoryHoursSum",
     "methodType" : "FETCH",
     "name" : "FetchProductStoryHoursSum",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductstoryhourssum",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductStorySum",
     "methodType" : "FETCH",
     "name" : "FetchProductStorySum",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductstorysum",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductStorycntAndPlancnt",
     "methodType" : "FETCH",
     "name" : "FetchProductStorycntAndPlancnt",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductstorycntandplancnt",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductSumBugType",
     "methodType" : "FETCH",
     "name" : "FetchProductSumBugType",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductsumbugtype",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -334,29 +593,668 @@
     "name" : "CLOSEDSTAGESTORYCNT",
     "stdDataType" : 9
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "ProductSumDTO",
+    "name" : "ProductSumDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "ActiveStoryCnt",
+      "logicName" : "激活",
+      "name" : "ActiveStoryCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACTIVESTORYCNT",
+        "codeName" : "ActiveStoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Automation",
+      "logicName" : "测试脚本",
+      "name" : "Automation",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "AUTOMATION",
+        "codeName" : "Automation"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Begin",
+      "logicName" : "开始日期",
+      "name" : "Begin",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "BugCnt",
+      "logicName" : "Bug数",
+      "name" : "BugCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Bugsum",
+      "logicName" : "bug总计",
+      "name" : "Bugsum",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BUGSUM",
+        "codeName" : "Bugsum"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Changedstorycnt",
+      "logicName" : "已变更",
+      "name" : "Changedstorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CHANGEDSTORYCNT",
+        "codeName" : "Changedstorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ClosedStoryCnt",
+      "logicName" : "已关闭",
+      "name" : "ClosedStoryCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CLOSEDSTORYCNT",
+        "codeName" : "ClosedStoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Closedstagestorycnt",
+      "logicName" : "已关闭阶段需求数量",
+      "name" : "Closedstagestorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CLOSEDSTAGESTORYCNT",
+        "codeName" : "Closedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Closedstagestoryhours",
+      "logicName" : "已关闭阶段需求工时",
+      "name" : "Closedstagestoryhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CLOSEDSTAGESTORYHOURS",
+        "codeName" : "Closedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Codeerror",
+      "logicName" : "代码错误",
+      "name" : "Codeerror",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CODEERROR",
+        "codeName" : "Codeerror"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Config",
+      "logicName" : "配置相关",
+      "name" : "Config",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CONFIG",
+        "codeName" : "Config"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Designdefect",
+      "logicName" : "设计缺陷",
+      "name" : "Designdefect",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DESIGNDEFECT",
+        "codeName" : "Designdefect"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Developedstagestorycnt",
+      "logicName" : "研发完毕阶段需求数量",
+      "name" : "Developedstagestorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEVELOPEDSTAGESTORYCNT",
+        "codeName" : "Developedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Developedstagestoryhours",
+      "logicName" : "研发完毕阶段需求工时",
+      "name" : "Developedstagestoryhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEVELOPEDSTAGESTORYHOURS",
+        "codeName" : "Developedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Developingstagestorycnt",
+      "logicName" : "研发中阶段需求数量",
+      "name" : "Developingstagestorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEVELOPINGSTAGESTORYCNT",
+        "codeName" : "Developingstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Developingstagestoryhours",
+      "logicName" : "研发中阶段需求工时",
+      "name" : "Developingstagestoryhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DEVELOPINGSTAGESTORYHOURS",
+        "codeName" : "Developingstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "End",
+      "logicName" : "结束日期",
+      "name" : "End",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Id",
+      "logicName" : "主键标识",
+      "name" : "Id",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Install",
+      "logicName" : "安装部署",
+      "name" : "Install",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "INSTALL",
+        "codeName" : "Install"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Name",
+      "logicName" : "产品名称",
+      "name" : "Name",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Others",
+      "logicName" : "其他",
+      "name" : "Others",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "OTHERS",
+        "codeName" : "Others"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PO",
+      "logicName" : "产品负责人",
+      "name" : "PO",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PO",
+        "codeName" : "PO"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Performance",
+      "logicName" : "性能问题",
+      "name" : "Performance",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PERFORMANCE",
+        "codeName" : "Performance"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Plan",
+      "logicName" : "计划",
+      "name" : "Plan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Planedstagestorycnt",
+      "logicName" : "已计划阶段需求数量",
+      "name" : "Planedstagestorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PLANEDSTAGESTORYCNT",
+        "codeName" : "Planedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Planedstagestoryhours",
+      "logicName" : "已计划阶段需求工时",
+      "name" : "Planedstagestoryhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PLANEDSTAGESTORYHOURS",
+        "codeName" : "Planedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Projectedstagestorycnt",
+      "logicName" : "已立项阶段需求数量",
+      "name" : "Projectedstagestorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PROJECTEDSTAGESTORYCNT",
+        "codeName" : "Projectedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Projectedstagestoryhours",
+      "logicName" : "已立项阶段需求工时",
+      "name" : "Projectedstagestoryhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PROJECTEDSTAGESTORYHOURS",
+        "codeName" : "Projectedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Releasedstagestorycnt",
+      "logicName" : "已发布阶段需求数量",
+      "name" : "Releasedstagestorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "RELEASEDSTAGESTORYCNT",
+        "codeName" : "Releasedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Releasedstagestoryhours",
+      "logicName" : "已发布阶段需求工时",
+      "name" : "Releasedstagestoryhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "RELEASEDSTAGESTORYHOURS",
+        "codeName" : "Releasedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Security",
+      "logicName" : "安全相关",
+      "name" : "Security",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SECURITY",
+        "codeName" : "Security"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Standard",
+      "logicName" : "标准规范",
+      "name" : "Standard",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "STANDARD",
+        "codeName" : "Standard"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "StoryCnt",
+      "logicName" : "总计",
+      "name" : "StoryCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Testedstagestorycnt",
+      "logicName" : "测试完毕阶段需求数量",
+      "name" : "Testedstagestorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TESTEDSTAGESTORYCNT",
+        "codeName" : "Testedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Testedstagestoryhours",
+      "logicName" : "测试完毕阶段需求工时",
+      "name" : "Testedstagestoryhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TESTEDSTAGESTORYHOURS",
+        "codeName" : "Testedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Testingstagestorycnt",
+      "logicName" : "测试中阶段需求数量",
+      "name" : "Testingstagestorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TESTINGSTAGESTORYCNT",
+        "codeName" : "Testingstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Testingstagestoryhours",
+      "logicName" : "测试中阶段需求工时",
+      "name" : "Testingstagestoryhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TESTINGSTAGESTORYHOURS",
+        "codeName" : "Testingstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Totalhours",
+      "logicName" : "总工时",
+      "name" : "Totalhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TOTALHOURS",
+        "codeName" : "Totalhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Verifiedstagestorycnt",
+      "logicName" : "已验收阶段需求数量",
+      "name" : "Verifiedstagestorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "VERIFIEDSTAGESTORYCNT",
+        "codeName" : "Verifiedstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Verifiedstagestoryhours",
+      "logicName" : "已验收阶段需求工时",
+      "name" : "Verifiedstagestoryhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "VERIFIEDSTAGESTORYHOURS",
+        "codeName" : "Verifiedstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "WaitStoryCnt",
+      "logicName" : "草稿",
+      "name" : "WaitStoryCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "WAITSTORYCNT",
+        "codeName" : "WaitStoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Waitstagestorycnt",
+      "logicName" : "未开始阶段需求数量",
+      "name" : "Waitstagestorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "WAITSTAGESTORYCNT",
+        "codeName" : "Waitstagestorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Waitstagestoryhours",
+      "logicName" : "未开始阶段需求工时",
+      "name" : "Waitstagestoryhours",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "WAITSTAGESTORYHOURS",
+        "codeName" : "Waitstagestoryhours"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "ProductSumFilterDTO",
+    "name" : "ProductSumFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_ID_EQ",
+      "logicName" : "主键标识",
+      "name" : "N_ID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PLAN_EQ",
+      "logicName" : "计划",
+      "name" : "N_PLAN_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PO_EQ",
+      "logicName" : "产品负责人",
+      "name" : "N_PO_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PO",
+        "codeName" : "PO"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/checkkey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "NONE",
+    "requestPath" : "/getdraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -364,54 +1262,239 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "DELETE",
+    "requestParamType" : "FIELD",
     "builtinMethod" : false,
-    "enableBatchAction" : true
+    "enableBatchAction" : true,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/save",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestMethod" : "PUT",
+    "requestParamType" : "ENTITY",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchdefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductBugcnt_QA",
     "methodType" : "FETCH",
     "name" : "FetchProductBugcnt_QA",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductbugcnt_qa",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductCreateStory",
     "methodType" : "FETCH",
     "name" : "FetchProductCreateStory",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductcreatestory",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductStoryHoursSum",
     "methodType" : "FETCH",
     "name" : "FetchProductStoryHoursSum",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductstoryhourssum",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductStorySum",
     "methodType" : "FETCH",
     "name" : "FetchProductStorySum",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductstorysum",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductStorycntAndPlancnt",
     "methodType" : "FETCH",
     "name" : "FetchProductStorycntAndPlancnt",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductstorycntandplancnt",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductSumBugType",
     "methodType" : "FETCH",
     "name" : "FetchProductSumBugType",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSumDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchproductsumbugtype",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -452,6 +1535,17 @@
     "codeName" : "Select",
     "methodType" : "SELECT",
     "name" : "Select",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "type" : "UNKNOWN"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "UNKNOWN"
+    },
+    "requestMethod" : "GET",
+    "requestParamType" : "URIPARAM",
+    "requestPath" : "/select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -473,7 +1567,15 @@
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "产品汇总表",
+  "getMajorPSAppDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
+  },
   "name" : "IBZ_PRODUCTSUM",
   "getPSDEName" : "IBZ_PRODUCTSUM",
   "getQuickSearchPSAppDEFields" : [ {

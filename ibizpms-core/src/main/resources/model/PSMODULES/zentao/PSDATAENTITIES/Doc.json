@@ -652,6 +652,7 @@
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "srfparentkey",
+          "fieldName" : "MODULE",
           "name" : "MODULE 等于(=) 网页请求上下文(srfparentkey)",
           "getPSDEField" : {
             "name" : "MODULE",
@@ -704,6 +705,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginnane",
+            "fieldName" : "ADDEDBY",
             "name" : "ADDEDBY 等于(=) 用户上下文(srfloginnane)",
             "getPSDEField" : {
               "name" : "ADDEDBY",
@@ -714,6 +716,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginnane",
+            "fieldName" : "EDITEDBY",
             "name" : "EDITEDBY 等于(=) 用户上下文(srfloginnane)",
             "getPSDEField" : {
               "name" : "EDITEDBY",
@@ -724,6 +727,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginnane",
+            "fieldName" : "UPDATEBY",
             "name" : "UPDATEBY 等于(=) 用户上下文(srfloginnane)",
             "getPSDEField" : {
               "name" : "UPDATEBY",
@@ -6400,115 +6404,17 @@
     "userDRAction" : "READ"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "GridView9",
-    "logicName" : "文档实体表格视图（部件视图）（最近更新）",
-    "name" : "文档实体表格视图（部件视图）（最近更新）",
+    "codeName" : "GridView10",
+    "logicName" : "文档实体表格视图（部件视图）（我的文档）",
+    "name" : "文档实体表格视图（部件视图）（我的文档）",
     "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "DOCSTATUS",
-    "logicName" : "文档统计表单",
-    "modelTag2" : "0",
-    "name" : "文档统计表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "文档实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "文档实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "codeName" : "MianBEditView9",
+    "logicName" : "文档实体编辑视图（部件视图）（正文）",
+    "name" : "文档实体编辑视图（部件视图）（正文）",
+    "realModelSubType" : "DEEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RecentMoreGridView",
-    "logicName" : "doc实体表格视图（最近更新）（更多）",
-    "name" : "doc实体表格视图（最近更新）（更多）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "ModuleGridView",
-    "logicName" : "doc实体表格视图（分类）",
-    "name" : "doc实体表格视图（分类）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MoreRecentUpdateTreeView",
-    "logicName" : "文档实体树视图（最近更新）（更多）",
-    "name" : "文档实体树视图（最近更新）（更多）",
-    "realModelSubType" : "DETREEVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "文档实体移动端选择多数据视图（部件视图）",
-    "name" : "文档实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "doc实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "doc实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MoreMyDocTreeView",
-    "logicName" : "文档实体树视图（我的文档）（更多）",
-    "name" : "文档实体树视图（我的文档）（更多）",
-    "realModelSubType" : "DETREEVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "doc实体编辑视图（左右关系）",
-    "name" : "doc实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "doc实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "doc实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "DocSummary",
-    "logicName" : "文档摘要",
-    "modelTag2" : "0",
-    "name" : "文档摘要",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "doc实体选择表格视图（部件视图）",
-    "name" : "doc实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMain",
-    "logicName" : "移动端默认编辑表单",
-    "modelTag2" : "1",
-    "name" : "移动端默认编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "DashboardView",
-    "logicName" : "文档实体数据看板视图（主信息）",
-    "name" : "文档实体数据看板视图（主信息）",
-    "realModelSubType" : "DEPORTALVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Keywords",
-    "logicName" : "关键字",
-    "modelTag2" : "0",
-    "name" : "关键字",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "DocModuleGridView",
     "logicName" : "doc实体表格视图（分类）(树视图导航视图)",
@@ -6516,49 +6422,9 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "DocSumEditView9",
-    "logicName" : "文档实体编辑视图（部件视图）（文档摘要）",
-    "name" : "文档实体编辑视图（部件视图）（文档摘要）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MyMoreGridView",
-    "logicName" : "doc实体表格视图（我的文档）（更多）",
-    "name" : "doc实体表格视图（我的文档）（更多）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditForm",
-    "logicName" : "编辑模式",
-    "modelTag2" : "0",
-    "name" : "编辑模式",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "mainbody",
-    "logicName" : "正文",
-    "modelTag2" : "0",
-    "name" : "正文",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "doc实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "doc实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "文档实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "文档实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "KEditView9",
-    "logicName" : "文档实体编辑视图（部件视图）（关键字）",
-    "name" : "文档实体编辑视图（部件视图）（关键字）",
+    "codeName" : "BasicEditView9",
+    "logicName" : "文档实体编辑视图（部件视图）（基本信息）",
+    "name" : "文档实体编辑视图（部件视图）（基本信息）",
     "realModelSubType" : "DEEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
@@ -6568,23 +6434,17 @@
     "realModelSubType" : "DEGRIDVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "文档实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "文档实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "codeName" : "RecentMoreGridView",
+    "logicName" : "doc实体表格视图（最近更新）（更多）",
+    "name" : "doc实体表格视图（最近更新）（更多）",
+    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridView10",
-    "logicName" : "文档实体表格视图（部件视图）（我的文档）",
-    "name" : "文档实体表格视图（部件视图）（我的文档）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CreateEditView",
-    "logicName" : "doc实体编辑视图（新建）",
-    "name" : "doc实体编辑视图（新建）",
-    "realModelSubType" : "DEEDITVIEW",
+    "codeName" : "MobRedirectView",
+    "logicName" : "文档实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "文档实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MobEditView",
@@ -6594,42 +6454,43 @@
     "realModelSubType" : "DEMOBEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "EditView2",
+    "logicName" : "doc实体编辑视图（左右关系）",
+    "name" : "doc实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "文档实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "文档实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "文档实体移动端选择多数据视图（部件视图）",
+    "name" : "文档实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "doc实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "doc实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "MyFavouriteGridView",
     "logicName" : "doc实体表格视图（我的收藏）",
     "name" : "doc实体表格视图（我的收藏）",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "GridViewLookDoc",
-    "logicName" : "doc实体表格视图（查看主文档库）",
-    "name" : "doc实体表格视图（查看主文档库）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "CreateEditForm",
-    "logicName" : "编辑表单（新建）",
-    "modelTag2" : "0",
-    "name" : "编辑表单（新建）",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
     "codeName" : "PickupView",
     "logicName" : "doc实体数据选择视图",
     "modelTag" : "PICKUPVIEW",
     "name" : "doc实体数据选择视图",
     "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MianBEditView9",
-    "logicName" : "文档实体编辑视图（部件视图）（正文）",
-    "name" : "文档实体编辑视图（部件视图）（正文）",
-    "realModelSubType" : "DEEDITVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "BasicEditView9",
-    "logicName" : "文档实体编辑视图（部件视图）（基本信息）",
-    "name" : "文档实体编辑视图（部件视图）（基本信息）",
-    "realModelSubType" : "DEEDITVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "DocStatusEditView",
@@ -6645,10 +6506,11 @@
     "realModelSubType" : "DEMOBMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MoreMyFavouritesTreeView",
-    "logicName" : "文档实体树视图（我的收藏）（更多）",
-    "name" : "文档实体树视图（我的收藏）（更多）",
-    "realModelSubType" : "DETREEVIEW",
+    "codeName" : "MPickupView",
+    "logicName" : "doc实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "doc实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "GridView",
@@ -6657,6 +6519,148 @@
     "name" : "doc实体表格视图（文档和文档分类）",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "doc实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "doc实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView9",
+    "logicName" : "文档实体表格视图（部件视图）（最近更新）",
+    "name" : "文档实体表格视图（部件视图）（最近更新）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MoreRecentUpdateTreeView",
+    "logicName" : "文档实体树视图（最近更新）（更多）",
+    "name" : "文档实体树视图（最近更新）（更多）",
+    "realModelSubType" : "DETREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MoreMyDocTreeView",
+    "logicName" : "文档实体树视图（我的文档）（更多）",
+    "name" : "文档实体树视图（我的文档）（更多）",
+    "realModelSubType" : "DETREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "doc实体选择表格视图（部件视图）",
+    "name" : "doc实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DocSumEditView9",
+    "logicName" : "文档实体编辑视图（部件视图）（文档摘要）",
+    "name" : "文档实体编辑视图（部件视图）（文档摘要）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "KEditView9",
+    "logicName" : "文档实体编辑视图（部件视图）（关键字）",
+    "name" : "文档实体编辑视图（部件视图）（关键字）",
+    "realModelSubType" : "DEEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MoreMyFavouritesTreeView",
+    "logicName" : "文档实体树视图（我的收藏）（更多）",
+    "name" : "文档实体树视图（我的收藏）（更多）",
+    "realModelSubType" : "DETREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DashboardView",
+    "logicName" : "文档实体数据看板视图（主信息）",
+    "name" : "文档实体数据看板视图（主信息）",
+    "realModelSubType" : "DEPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "文档实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "文档实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridViewLookDoc",
+    "logicName" : "doc实体表格视图（查看主文档库）",
+    "name" : "doc实体表格视图（查看主文档库）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MyMoreGridView",
+    "logicName" : "doc实体表格视图（我的文档）（更多）",
+    "name" : "doc实体表格视图（我的文档）（更多）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CreateEditView",
+    "logicName" : "doc实体编辑视图（新建）",
+    "name" : "doc实体编辑视图（新建）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ModuleGridView",
+    "logicName" : "doc实体表格视图（分类）",
+    "name" : "doc实体表格视图（分类）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DocSummary",
+    "logicName" : "文档摘要",
+    "modelTag2" : "0",
+    "name" : "文档摘要",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "DOCSTATUS",
+    "logicName" : "文档统计表单",
+    "modelTag2" : "0",
+    "name" : "文档统计表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "CreateEditForm",
+    "logicName" : "编辑表单（新建）",
+    "modelTag2" : "0",
+    "name" : "编辑表单（新建）",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "mainbody",
+    "logicName" : "正文",
+    "modelTag2" : "0",
+    "name" : "正文",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MobMain",
+    "logicName" : "移动端默认编辑表单",
+    "modelTag2" : "1",
+    "name" : "移动端默认编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Keywords",
+    "logicName" : "关键字",
+    "modelTag2" : "0",
+    "name" : "关键字",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "EditForm",
+    "logicName" : "编辑模式",
+    "modelTag2" : "0",
+    "name" : "编辑模式",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "Doc",
   "dEType" : 1,
@@ -6712,10 +6716,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent.json"
     },
     "name" : "DER1N_ZT_DOCCONTENT_ZT_DOC_DOC",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "DOC",
@@ -6886,7 +6886,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

@@ -24,7 +24,7 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__status.json"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
   "getItemPSLayoutPanel" : {
     "getAllPSPanelFields" : [ {
       "id" : "pri",

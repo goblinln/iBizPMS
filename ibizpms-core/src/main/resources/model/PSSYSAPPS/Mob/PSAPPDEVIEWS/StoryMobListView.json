@@ -61,7 +61,7 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
+    "name" : "EDITDATA",
     "realTitle" : "需求移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -69,7 +69,7 @@
       "viewType" : "DEMOBEDITVIEW"
     }
   }, {
-    "name" : "EDITDATA",
+    "name" : "NEWDATA",
     "realTitle" : "需求移动端编辑视图",
     "getRefPSAppView" : {
       "modelref" : true,

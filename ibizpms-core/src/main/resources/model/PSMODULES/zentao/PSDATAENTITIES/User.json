@@ -449,6 +449,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "account",
+            "fieldName" : "ACCOUNT",
             "name" : "ACCOUNT 等于(=) (account)",
             "getPSDEField" : {
               "name" : "ACCOUNT",
@@ -458,6 +459,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "mobile",
+            "fieldName" : "MOBILE",
             "name" : "MOBILE 等于(=) (mobile)",
             "getPSDEField" : {
               "name" : "MOBILE",
@@ -467,6 +469,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "email",
+            "fieldName" : "EMAIL",
             "name" : "EMAIL 等于(=) (email)",
             "getPSDEField" : {
               "name" : "EMAIL",
@@ -476,6 +479,7 @@
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "commiter",
+            "fieldName" : "COMMITER",
             "name" : "COMMITER 等于(=) (commiter)",
             "getPSDEField" : {
               "name" : "COMMITER",
@@ -4745,44 +4749,42 @@
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "用户实体移动端选择多数据视图（部件视图）",
-    "name" : "用户实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "user实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "user实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "用户实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "用户实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "TreeExpView",
-    "logicName" : "用户实体树导航视图",
-    "name" : "用户实体树导航视图",
-    "realModelSubType" : "DETREEEXPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "UserCenter",
-    "logicName" : "个人中心",
-    "modelTag2" : "1",
-    "name" : "个人中心",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
     "codeName" : "MobMDView",
     "logicName" : "用户实体移动端多数据视图",
     "modelTag" : "MOBMDATAVIEW",
     "name" : "用户实体移动端多数据视图",
     "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "user实体编辑视图（左右关系）",
+    "name" : "user实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "INFOEditView",
+    "logicName" : "用户实体编辑视图（主数据）",
+    "name" : "用户实体编辑视图（主数据）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "user实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "user实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MainGridView",
+    "logicName" : "用户实体表格视图（主数据）",
+    "name" : "用户实体表格视图（主数据）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "用户实体移动端选择多数据视图（部件视图）",
+    "name" : "用户实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
@@ -4792,10 +4794,56 @@
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "INFO",
-    "logicName" : "描述",
+    "codeName" : "MobPickupView",
+    "logicName" : "用户实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "用户实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "UserCenterMobEditView",
+    "logicName" : "用户实体移动端编辑视图",
+    "name" : "用户实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeExpView",
+    "logicName" : "用户实体树导航视图",
+    "name" : "用户实体树导航视图",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "用户实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "用户实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "用户实体选择表格视图（部件视图）",
+    "name" : "用户实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "用户实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "用户实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "user实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "user实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
     "modelTag2" : "0",
-    "name" : "描述",
+    "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
@@ -4806,63 +4854,19 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "用户实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "用户实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "UserCenterMobEditView",
-    "logicName" : "用户实体移动端编辑视图",
-    "name" : "用户实体移动端编辑视图",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "user实体编辑视图（左右关系）",
-    "name" : "user实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "用户实体选择表格视图（部件视图）",
-    "name" : "用户实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MainGridView",
-    "logicName" : "用户实体表格视图（主数据）",
-    "name" : "用户实体表格视图（主数据）",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "用户实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "用户实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
+    "codeName" : "INFO",
+    "logicName" : "描述",
     "modelTag2" : "0",
-    "name" : "主编辑表单",
+    "name" : "描述",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "GridView",
-    "logicName" : "user实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "user实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "INFOEditView",
-    "logicName" : "用户实体编辑视图（主数据）",
-    "name" : "用户实体编辑视图（主数据）",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
+    "codeName" : "UserCenter",
+    "logicName" : "个人中心",
+    "modelTag2" : "1",
+    "name" : "个人中心",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "User",
   "dEType" : 1,
@@ -4898,7 +4902,7 @@
   "name" : "ZT_USER",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

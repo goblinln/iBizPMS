@@ -2,15 +2,17 @@ import { getPSUIActionByModelObject, IPSAppDataEntity, IPSAppDEField, IPSAppDEMe
 import { ModelTool, UIActionTool, Util } from "ibiz-core";
 import { GlobalService } from "ibiz-service";
 import { AppGlobalService } from "../app-service";
+import { AppDEUIAction } from './app-ui-action';
+import { UIActionResult } from './appuilogic';
 
-export class AppBackEndAction {
+export class AppBackEndAction extends AppDEUIAction {
 
     /**
-     * 模型数据
-     * 
+     * 是否合并参数
+     *
      * @memberof AppBackEndAction
      */
-    private actionModel !: IPSAppDEUIAction;
+     public isMergeParam: boolean = false;
 
     /**
      * 初始化AppBackEndAction
@@ -18,7 +20,11 @@ export class AppBackEndAction {
      * @memberof AppBackEndAction
      */
     constructor(opts: any, context?: any) {
-        this.actionModel = opts;
+        super(opts, context);
+        const method: IPSAppDEMethod = this.actionModel.getPSAppDEMethod() as IPSAppDEMethod;
+        if (method?.M && (method.M.customCode || !method.M.getPSDEServiceAPIMethod)) {
+            this.isMergeParam = true;
+        }
     }
 
     /**
@@ -35,6 +41,12 @@ export class AppBackEndAction {
      * @memberof AppBackEndAction
      */
     public async execute(args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string, deUIService?: any) {
+        if (Object.is(this.actionModel?.uILogicAttachMode, 'REPLACE')) {
+            if (actionContext.context) {
+                Object.assign(context, actionContext.context);
+            }
+            return this.executeDEUILogic(args, context, params, $event, xData, actionContext, srfParentDeName);
+        }      
         const actionTarget: string | null = this.actionModel.actionTarget;
         if (this.actionModel.enableConfirm && this.actionModel.confirmMsg) {
             let confirmResult: boolean = await actionContext.$Notice.confirm.call(actionContext,
@@ -113,11 +125,22 @@ export class AppBackEndAction {
             const backend = () => {
                 if (this.actionModel.getPSAppDataEntity() && this.actionModel.getPSAppDEMethod()) {
                     new GlobalService().getService((this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName).then((curService: any) => {
-                        curService[(this.actionModel.getPSAppDEMethod() as IPSAppDEMethod)?.codeName](context, data, this.actionModel.showBusyIndicator).then((response: any) => {
+                        // todo 后台调用实体行为类型缺失getPSDEAction.getActionMode 暂时使用多数据做批操作Batch判断
+                        const method: IPSAppDEMethod = this.actionModel.getPSAppDEMethod() as IPSAppDEMethod;
+                        const methodCodeName = Object.is(actionTarget, 'MULTIKEY') ? method.codeName + 'Batch' : method?.codeName;
+                        let viewLoadingService = actionContext.viewLoadingService ? actionContext.viewLoadingService : {};
+                        viewLoadingService.isLoading = true;                      
+                        curService[methodCodeName](context, data, this.actionModel.showBusyIndicator).then((response: any) => {
                             if (!response || response.status !== 200) {
                                 actionContext.$Notice.error(response.message);
                                 return;
                             }
+                            const { data } = response;
+                            if (this.isMergeParam && args && args.length > 0) {
+                                Object.assign(args[0], data);
+                                actionContext.$forceUpdate();
+                            }
+                            viewLoadingService.isLoading = false;                            
                             if (this.actionModel.showBusyIndicator) {
                                 if (this.actionModel.successMsg) {
                                     actionContext.$Notice.success(actionContext.$tl(this.actionModel.getSMPSLanguageRes()?.lanResTag,this.actionModel.confirmMsg));
@@ -152,6 +175,15 @@ export class AppBackEndAction {
                                         (AppGlobalService.getInstance() as any).executeGlobalAction(nextUIaction.id, _args, context, params, $event, xData, actionContext, undefined);
                                     }
                                 })
+                            } else {
+                                if (Object.is(this.actionModel?.uILogicAttachMode, 'AFTER')) {
+                                    if (actionContext.context) {
+                                        Object.assign(context, actionContext.context);
+                                    }
+                                    return this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
+                                } else {
+                                    return new UIActionResult({ ok: true, result: args });
+                                }
                             }
                         }).catch((response: any) => {
                             if (response && response.data && response.data.message) {

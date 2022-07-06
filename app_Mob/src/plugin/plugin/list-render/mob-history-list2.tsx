@@ -16,7 +16,7 @@ import { AppMobMDCtrlBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class MobHistoryList2 extends AppMobMDCtrlBase {
 
-    render() {
+        render() {
         return this.$createElement('app-history-list', {
             props: { items: this.items }
         })

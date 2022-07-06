@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "主表格",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -150,6 +150,13 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "sys_update_logname",
+    "getPSAppDEField" : {
+      "name" : "SYS_UPDATE_LOGNAME",
+      "codeName" : "SysUpdateLogName"
+    }
+  }, {
     "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "update",
@@ -159,10 +166,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "sys_update_logname",
+    "name" : "updatebranch",
     "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_LOGNAME",
-      "codeName" : "SysUpdateLogName"
+      "name" : "UPDATEBRANCH",
+      "codeName" : "Updatebranch"
     }
   }, {
     "dataType" : 9,
@@ -170,13 +177,6 @@
     "getPSAppDEField" : {
       "name" : "LATESTUPDATE",
       "codeName" : "Latestupdate"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "updatebranch",
-    "getPSAppDEField" : {
-      "name" : "UPDATEBRANCH",
-      "codeName" : "Updatebranch"
     }
   }, {
     "dataType" : 25,
@@ -195,10 +195,10 @@
     }
   }, {
     "dataType" : 25,
-    "name" : "srfmajortext",
+    "name" : "srfkey",
     "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_LOGNAME",
-      "codeName" : "SysUpdateLogName"
+      "name" : "SYS_UPDATE_LOGID",
+      "codeName" : "SysUpdateLogId"
     }
   }, {
     "dataType" : 25,
@@ -210,10 +210,10 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 25,
-    "name" : "srfkey",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_LOGID",
-      "codeName" : "SysUpdateLogId"
+      "name" : "SYS_UPDATE_LOGNAME",
+      "codeName" : "SysUpdateLogName"
     }
   } ],
   "getPSDEGridEditItems" : [ {

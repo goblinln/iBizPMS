@@ -22,6 +22,7 @@ import { AppDefaultPickUpMDView } from './view/app-default-mob-pickmdview/app-de
 import { AppDefaultPickUpView } from './view/app-default-mob-pickview/app-default-mob-pickview';
 import { AppDefaultMobMPickUpView } from './view/app-default-mob-mpickview/app-default-mob-mpickview';
 import { AppDefaultMobDePortalView } from './view/app-default-mob-deportalview/app-default-mob-deportalview';
+import { AppDefaultMobDePanelView } from './view/app-default-mob-depanelview/app-default-mob-depanelview';
 import { AppDefaultMobPickUpTreeView } from './view/app-default-mob-pickuptreeview/app-default-mob-pickuptreeview';
 import { AppViewShell } from '../view-container/app-view-shell';
 import { AppDefaultMobWFDynaEditView } from './view/app-default-mob-wfdynaeditview/app-default-mob-wfdynaeditview';
@@ -31,6 +32,8 @@ import { AppDefaultMobWFDynaStartView } from './view/app-default-mob-wfdynastart
 import { AppDedaultMobWFDynaEditView3 } from './view/app-default-mob-wfdynaeditview3/app-default-mob-wfdynaeditview3';
 import { AppDefaultMobDeRedirectView } from './view/app-default-mob-deredirectview/app-default-mob-deredirectview';
 import { AppDefaultMobMapView } from './view/app-default-mob-mapview/app-default-mob-mapview';
+import { AppDefaultMobCustomView } from './view/app-default-mob-customview/app-default-mob-customview';
+import { AppDefaultWfStepTraceView } from './view/app-default-wfsteptraceview/app-default-wfsteptraceview';
 import { AppDefaultNotSupportedView } from './view/app-default-notsupportedview';
 
 // 部件组件
@@ -56,6 +59,8 @@ import { AppDefaultMobPanel } from './control/app-default-mob-panel/app-default-
 import { AppDefaultMobDrtab } from './control/app-default-mob-drtab/app-default-mob-drtab';
 import { AppDefaultMobMap } from './control/app-default-mob-map/app-default-mob-map';
 import { AppDefaultNotSupportedControl } from './control/app-default-notsupportedcontrol/app-default-notsupportedcontrol';
+// 模型组件 
+import { AppPSSysImage } from './common/model-components/app-ps-sys-image/app-ps-sys-image';
 
 export const ComponentsRegister = {
     install(v: any, opt: any) {
@@ -66,6 +71,7 @@ export const ComponentsRegister = {
         v.component('app-slider-menu', () => import('../components/common/app-slider-menu/app-slider-menu.vue'));
         v.component('app-icon-menu', () => import('../components/common/app-icon-menu/app-icon-menu.vue'));
         v.component('app-radio', () => import('../components/common/app-radio/app-radio.vue'));
+        v.component('app-wf-step-trace', () => import('../components/common/app-wf-step-trace/app-wf-step-trace.vue'));
         v.component('app-multiple-select', () => import('../components/common/app-multiple-select/app-multiple-select.vue'));
         v.component('app-form-druipart', () => import('../components/common/app-form-druipart/app-form-druipart.vue'));
         v.component('app-card-list', () => import('../components/common/app-card-list/app-card-list.vue'));
@@ -89,6 +95,7 @@ export const ComponentsRegister = {
         v.component('app-list-default', () => import('../components/common/app-list-default/app-list-default.vue'));
         v.component('app-list-swipe', () => import('../components/common/app-list-swipe/app-list-swipe.vue'));
         v.component('app-mob-file-list', () => import('../components/common/app-mob-file-list/app-mob-file-list.vue'));
+        v.component('app-panel-field', () => import('../components/common/app-panel-field/app-panel-field.vue'));        
         // 日历组件
         v.component('app-calendar', () => import('../components/common/app-calendar/app-calendar.vue'));
         v.component('app-vcalendar', () => import('../components/common/app-vcalendar/app-vcalendar.vue'));
@@ -133,7 +140,7 @@ export const ComponentsRegister = {
         // 数据选择多选
         v.component('app-mob-picker', () => import('../components/common/app-mob-picker/app-mob-picker.vue'));
         // 下拉选择
-        v.component('app-mob-select', () => import('../components/common/app-mob-select/app-mob-select.vue'));
+        v.component('app-mob-select', () => import('../components/common/app-mob-select-vant/app-mob-select-vant.vue'));
         // 时间选择器
         v.component('app-mob-datetime-picker', () => import('../components/common/app-mob-datetime-picker/app-mob-datetime-picker.vue'));
         // 输入框
@@ -146,6 +153,8 @@ export const ComponentsRegister = {
         v.component('app-mob-rich-text-editor', () => import('../components/common/app-mob-rich-text-editor/app-mob-rich-text-editor.vue'));
         // 下拉多选（带搜索）
         v.component('app-mob-check-list-search', () => import('../components/common/app-mob-check-list-search/app-mob-check-list-search.vue'));
+        // COMMONMICROCOM 编辑器样式
+        v.component('app-cur-org-dept', () => import('../components/common/app-cur-org-dept/app-cur-org-dept.vue'));        
         // 编辑器 END
 
         // 菜单样式 BEGIN
@@ -175,6 +184,7 @@ export const ComponentsRegister = {
         v.component('app-mob-select-changeStyle', () => import('../components/common/app-mob-select-changeStyle/app-mob-select-changeStyle.vue'));
         // setting组件
         v.component('app-setting', () => import('../components/common/app-setting/app-setting.vue'));
+        v.component('app-precut-component', () => import('../components/common/app-precut-component/app-precut-component.vue'));
         // 定制组件
         v.component('app-customize', () => import('../components/common/app-customize/app-customize.vue'));
         // 主题切换组件
@@ -226,6 +236,7 @@ export const ComponentsRegister = {
         v.component('app-default-mob-pickview', AppDefaultPickUpView);
         v.component('app-default-mob-mpickview', AppDefaultMobMPickUpView);
         v.component('app-default-mob-deportalview', AppDefaultMobDePortalView);
+        v.component('app-default-mob-depanelview', AppDefaultMobDePanelView);
         v.component('app-default-mob-pickuptreeview', AppDefaultMobPickUpTreeView);
         v.component('app-default-mob-wfdynaeditview', AppDefaultMobWFDynaEditView);
         v.component('app-default-mob-wfdynaactionview', AppDefaultMobWFDynaActionView);
@@ -234,6 +245,8 @@ export const ComponentsRegister = {
         v.component('app-default-mob-wfdynaeditview3', AppDedaultMobWFDynaEditView3);
         v.component('app-default-mob-deredirectview', AppDefaultMobDeRedirectView);
         v.component('app-default-mob-mapview', AppDefaultMobMapView);
+        v.component('app-default-mob-customview', AppDefaultMobCustomView);
+        v.component('app-default-wf-step-trace-view', AppDefaultWfStepTraceView);
         v.component('app-default-notsupportedview', AppDefaultNotSupportedView);
         // 部件组件
         v.component('app-default-mob-appmenu', AppDefaultMobAppMenu);
@@ -257,5 +270,8 @@ export const ComponentsRegister = {
         v.component('app-default-mob-drtab', AppDefaultMobDrtab);
         v.component('app-default-mob-map', AppDefaultMobMap);
         v.component('app-default-notsupportedcontrol', AppDefaultNotSupportedControl);
+        // 模型组件
+        v.component('app-ps-sys-image', AppPSSysImage);
+        
     }
 }

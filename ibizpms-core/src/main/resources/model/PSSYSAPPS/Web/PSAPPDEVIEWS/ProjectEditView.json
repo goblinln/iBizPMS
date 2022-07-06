@@ -139,7 +139,7 @@
       "modelref" : true,
       "id" : "load"
     },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "SAVE", "REMOVE" ],
     "logicName" : "新建模式",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -240,6 +240,16 @@
       "id" : "FORM"
     },
     "getPSDEFormItemUpdates" : [ {
+      "codeName" : "UpdateCycle",
+      "name" : "更新可用工作日",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "UpdateCycle"
+      },
+      "getPSDEFIUpdateDetails" : [ {
+        "name" : "days"
+      } ]
+    }, {
       "codeName" : "UpdateProjectCycle",
       "name" : "更新项目周期",
       "getPSAppDEMethod" : {
@@ -249,16 +259,6 @@
       "getPSDEFIUpdateDetails" : [ {
         "name" : "end"
       }, {
-        "name" : "days"
-      } ]
-    }, {
-      "codeName" : "UpdateCycle",
-      "name" : "更新可用工作日",
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "UpdateCycle"
-      },
-      "getPSDEFIUpdateDetails" : [ {
         "name" : "days"
       } ]
     } ],

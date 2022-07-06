@@ -51,7 +51,7 @@
     }
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "产品团队管理-行编辑",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -258,24 +258,24 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 25,
-    "name" : "limited",
-    "getPSAppDEField" : {
-      "name" : "LIMITED",
-      "codeName" : "Limited"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "root",
-    "getPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    }
-  }, {
-    "dataType" : 25,
     "name" : "account_text",
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "account",
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "role",
+    "getPSAppDEField" : {
+      "name" : "ROLE",
+      "codeName" : "Role"
     }
   }, {
     "dataType" : 7,
@@ -283,6 +283,27 @@
     "getPSAppDEField" : {
       "name" : "HOURS",
       "codeName" : "Hours"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "limited",
+    "getPSAppDEField" : {
+      "name" : "LIMITED",
+      "codeName" : "Limited"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "username",
+    "getPSAppDEField" : {
+      "name" : "USERNAME",
+      "codeName" : "Username"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "format" : "YYYY-MM-DD",
@@ -298,13 +319,6 @@
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
     }
   }, {
     "dataType" : 1,
@@ -323,102 +337,20 @@
     "dataAccessAction" : true
   }, {
     "dataType" : 1,
-    "name" : "id",
+    "name" : "root",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "ROOT",
+      "codeName" : "Root"
     }
   }, {
     "dataType" : 25,
-    "name" : "username",
-    "getPSAppDEField" : {
-      "name" : "USERNAME",
-      "codeName" : "Username"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "account",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     }
-  }, {
-    "dataType" : 25,
-    "name" : "role",
-    "getPSAppDEField" : {
-      "name" : "ROLE",
-      "codeName" : "Role"
-    }
   } ],
   "getPSDEGridEditItems" : [ {
-    "caption" : "编号",
-    "codeName" : "id",
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "name" : "id"
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "受限用户",
-    "codeName" : "limited",
-    "createDV" : "no",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "limited",
-    "getPSAppDEField" : {
-      "name" : "LIMITED",
-      "codeName" : "Limited"
-    },
-    "getPSEditor" : {
-      "editorType" : "RADIOBUTTONLIST",
-      "name" : "limited",
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
-      }
-    },
-    "allowEmpty" : true,
-    "needCodeListConfig" : true
-  }, {
-    "caption" : "可用工时/天",
-    "codeName" : "hours",
-    "createDV" : "7",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "hours",
-    "getPSAppDEField" : {
-      "name" : "HOURS",
-      "codeName" : "Hours"
-    },
-    "getPSEditor" : {
-      "editorType" : "NUMBER",
-      "name" : "hours"
-    },
-    "allowEmpty" : false
-  }, {
-    "caption" : "角色",
-    "codeName" : "role",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "name" : "role",
-    "getPSAppDEField" : {
-      "name" : "ROLE",
-      "codeName" : "Role"
-    },
-    "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "maxLength" : 30,
-      "name" : "role"
-    },
-    "allowEmpty" : true
-  }, {
     "caption" : "用户",
     "codeName" : "account",
     "enableCond" : 1,
@@ -456,6 +388,74 @@
     "valueItemName" : "account",
     "allowEmpty" : false,
     "needCodeListConfig" : true
+  }, {
+    "caption" : "角色",
+    "codeName" : "role",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "role",
+    "getPSAppDEField" : {
+      "name" : "ROLE",
+      "codeName" : "Role"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "maxLength" : 30,
+      "name" : "role"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "可用工时/天",
+    "codeName" : "hours",
+    "createDV" : "7",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "hours",
+    "getPSAppDEField" : {
+      "name" : "HOURS",
+      "codeName" : "Hours"
+    },
+    "getPSEditor" : {
+      "editorType" : "NUMBER",
+      "name" : "hours"
+    },
+    "allowEmpty" : false
+  }, {
+    "caption" : "受限用户",
+    "codeName" : "limited",
+    "createDV" : "no",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "limited",
+    "getPSAppDEField" : {
+      "name" : "LIMITED",
+      "codeName" : "Limited"
+    },
+    "getPSEditor" : {
+      "editorType" : "RADIOBUTTONLIST",
+      "name" : "limited",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
+      }
+    },
+    "allowEmpty" : true,
+    "needCodeListConfig" : true
+  }, {
+    "caption" : "编号",
+    "codeName" : "id",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "name" : "id"
+    },
+    "allowEmpty" : true
   }, {
     "caption" : "加盟日",
     "codeName" : "join",

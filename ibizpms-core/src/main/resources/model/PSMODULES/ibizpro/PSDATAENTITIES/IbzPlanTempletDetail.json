@@ -1778,6 +1778,93 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
+    "codeName" : "EditView",
+    "logicName" : "计划模板详情实体编辑视图",
+    "name" : "计划模板详情实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "计划模板详情实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "计划模板详情实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupMDView",
+    "logicName" : "计划模板详情实体移动端选择多数据视图（部件视图）",
+    "name" : "计划模板详情实体移动端选择多数据视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "计划模板详情实体移动端数据选择视图",
+    "modelTag" : "MOBPICKUPVIEW",
+    "name" : "计划模板详情实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "计划模板详情实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "计划模板详情实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "计划模板详情实体移动端编辑视图",
+    "modelTag" : "MOBEDITVIEW",
+    "name" : "计划模板详情实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "计划模板详情实体移动端多数据视图",
+    "modelTag" : "MOBMDATAVIEW",
+    "name" : "计划模板详情实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "计划模板详情实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "计划模板详情实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMPickupView",
+    "logicName" : "计划模板详情实体移动端多数据选择视图",
+    "modelTag" : "MOBMPICKUPVIEW",
+    "name" : "计划模板详情实体移动端多数据选择视图",
+    "realModelSubType" : "DEMOBMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobRedirectView",
+    "logicName" : "计划模板详情实体移动端数据重定向视图",
+    "modelTag" : "MOBREDIRECTVIEW",
+    "name" : "计划模板详情实体移动端数据重定向视图",
+    "realModelSubType" : "DEMOBREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "计划模板详情实体选择表格视图（部件视图）",
+    "name" : "计划模板详情实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "计划模板详情实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "计划模板详情实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView9",
+    "logicName" : "计划模板详情实体表格视图（部件视图）",
+    "name" : "计划模板详情实体表格视图（部件视图）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "EditView2",
     "logicName" : "计划模板详情实体编辑视图（左右关系）",
     "name" : "计划模板详情实体编辑视图（左右关系）",
@@ -1791,99 +1878,12 @@
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
-    "codeName" : "PickupView",
-    "logicName" : "计划模板详情实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "计划模板详情实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMPickupView",
-    "logicName" : "计划模板详情实体移动端多数据选择视图",
-    "modelTag" : "MOBMPICKUPVIEW",
-    "name" : "计划模板详情实体移动端多数据选择视图",
-    "realModelSubType" : "DEMOBMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "计划模板详情实体选择表格视图（部件视图）",
-    "name" : "计划模板详情实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView9",
-    "logicName" : "计划模板详情实体表格视图（部件视图）",
-    "name" : "计划模板详情实体表格视图（部件视图）",
-    "realModelSubType" : "DEGRIDVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobMDView",
-    "logicName" : "计划模板详情实体移动端多数据视图",
-    "modelTag" : "MOBMDATAVIEW",
-    "name" : "计划模板详情实体移动端多数据视图",
-    "realModelSubType" : "DEMOBMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupView",
-    "logicName" : "计划模板详情实体移动端数据选择视图",
-    "modelTag" : "MOBPICKUPVIEW",
-    "name" : "计划模板详情实体移动端数据选择视图",
-    "realModelSubType" : "DEMOBPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobPickupMDView",
-    "logicName" : "计划模板详情实体移动端选择多数据视图（部件视图）",
-    "name" : "计划模板详情实体移动端选择多数据视图（部件视图）",
-    "realModelSubType" : "DEMOBPICKUPMDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "计划模板详情实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "计划模板详情实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "MobMain",
     "logicName" : "移动端默认编辑表单",
     "modelTag2" : "1",
     "name" : "移动端默认编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "计划模板详情实体编辑视图",
-    "name" : "计划模板详情实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobRedirectView",
-    "logicName" : "计划模板详情实体移动端数据重定向视图",
-    "modelTag" : "MOBREDIRECTVIEW",
-    "name" : "计划模板详情实体移动端数据重定向视图",
-    "realModelSubType" : "DEMOBREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "计划模板详情实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "计划模板详情实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "计划模板详情实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "计划模板详情实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MobEditView",
-    "logicName" : "计划模板详情实体移动端编辑视图",
-    "modelTag" : "MOBEDITVIEW",
-    "name" : "计划模板详情实体移动端编辑视图",
-    "realModelSubType" : "DEMOBEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "IbzPlanTempletDetail",
   "dEType" : 1,
@@ -1927,10 +1927,6 @@
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail.json"
     },
     "name" : "DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID",
-    "getNestedPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "PLANTEMPLETID",
@@ -1944,7 +1940,7 @@
   "name" : "IBZ_PLANTEMPLETDETAIL",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

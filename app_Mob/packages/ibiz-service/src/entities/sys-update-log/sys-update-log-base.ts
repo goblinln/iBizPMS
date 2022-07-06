@@ -77,7 +77,6 @@ export abstract class SysUpdateLogBase extends EntityBase implements ISysUpdateL
      * 更新日期
      */
     update?: any;
-
     /**
      * 重置实体数据
      *

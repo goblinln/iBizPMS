@@ -19,26 +19,26 @@
     } ]
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "TASK",
-    "name" : "TASK",
-    "value" : "testtask",
-    "rawValue" : false
-  }, {
     "key" : "SRFPARENTDENAME",
     "name" : "SRFPARENTDENAME",
     "value" : "Case",
     "rawValue" : true
+  }, {
+    "key" : "TASK",
+    "name" : "TASK",
+    "value" : "testtask",
+    "rawValue" : false
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "srfparentdename",
-    "name" : "srfparentdename",
-    "value" : "Case",
-    "rawValue" : true
-  }, {
     "key" : "task",
     "name" : "task",
     "value" : "testtask",
     "rawValue" : false
+  }, {
+    "key" : "srfparentdename",
+    "name" : "srfparentdename",
+    "value" : "Case",
+    "rawValue" : true
   } ],
   "getPSControls" : [ {
     "codeName" : "Usr2MobMPickupViewpickupviewpanel",
@@ -88,10 +88,10 @@
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
             "actionType" : "FILTERACTION",
-            "name" : "search",
+            "name" : "load",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FilterSearch"
+              "id" : "FilterGet"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -110,10 +110,10 @@
             }
           }, {
             "actionType" : "FILTERACTION",
-            "name" : "load",
+            "name" : "search",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FilterGet"
+              "id" : "FilterSearch"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -349,7 +349,7 @@
           "id" : "load"
         },
         "groupMode" : "NONE",
-        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+        "hookEventNames" : [ "ROWCLICK", "LOAD", "SELECTIONCHANGE", "BEFORELOAD" ],
         "logicName" : "MOB_TASK_CASE",
         "minorSortDir" : "DESC",
         "getMinorSortPSAppDEField" : {

@@ -196,7 +196,7 @@ export class AppMobFormService extends ControlServiceBase {
      */
     @Errorlog
     public add(action: string, context: any = {}, data: any = {}, isloading?: boolean, isWorkflow?: boolean): Promise<any> {
-        const { data: Data, context: Context } = this.handleRequestData(action, context, data);
+        const { data: Data, context: Context } = this.handleRequestData(action, context, data, isWorkflow);
         // 手动修改数据主键的情况
         this.controlInstance.getPSDEFormItems()?.find((item: IPSDEFormItem) => {
             if (!item.hidden && item.getPSAppDEField()?.keyField) {
@@ -270,7 +270,7 @@ export class AppMobFormService extends ControlServiceBase {
      */
     @Errorlog
     public update(action: string, context: any = {}, data: any = {}, isloading?: boolean, isWorkflow?: boolean): Promise<any> {
-        const { data: Data, context: Context } = this.handleRequestData(action, context, data);
+        const { data: Data, context: Context } = this.handleRequestData(action, context, data, isWorkflow);
         return new Promise((resolve: any, reject: any) => {
             let result: Promise<any>;
             const _appEntityService: any = this.appEntityService;
@@ -422,7 +422,7 @@ export class AppMobFormService extends ControlServiceBase {
                     requestData[item.prop] = context[item.name];
                 }
             } else {
-                if (item && item.prop  && item.name && (data[item.name] || data[item.name] === 0)) {
+                if (item && item.prop  && item.name && (data[item.name] || data[item.name] === 0 || data[item.name] === null)) {
                     requestData[item.prop] = data[item.name];
                 } else {
                     if (item.dataType && Object.is(item.dataType, "FORMPART")) {

@@ -3591,19 +3591,6 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "RedirectView",
-    "logicName" : "产品汇总表实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "产品汇总表实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "QaChartView9",
-    "logicName" : "产品汇总表实体图表视图（部件视图）（测试）",
-    "name" : "产品汇总表实体图表视图（部件视图）（测试）",
-    "realModelSubType" : "DECHARTVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "StoryHoursSumGridView",
     "logicName" : "产品汇总表实体表格视图（需求工时汇总）",
     "name" : "产品汇总表实体表格视图（需求工时汇总）",
@@ -3622,11 +3609,61 @@
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "产品汇总表实体选择表格视图（部件视图）",
+    "name" : "产品汇总表实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PoChartView9",
+    "logicName" : "产品汇总表实体图表视图（部件视图）（产品经理）",
+    "name" : "产品汇总表实体图表视图（部件视图）（产品经理）",
+    "realModelSubType" : "DECHARTVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "产品汇总表实体编辑视图（左右关系）",
+    "name" : "产品汇总表实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "产品汇总表实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "产品汇总表实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "GridView",
     "logicName" : "产品汇总表实体表格视图",
     "modelTag" : "MDATAVIEW",
     "name" : "产品汇总表实体表格视图",
     "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "产品汇总表实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "产品汇总表实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3GridView",
+    "logicName" : "产品创建bug数实体表格视图_测试",
+    "name" : "产品创建bug数实体表格视图_测试",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2GridView",
+    "logicName" : "产品计划数和需求数实体表格视图_产品经理",
+    "name" : "产品计划数和需求数实体表格视图_产品经理",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "QaChartView9",
+    "logicName" : "产品汇总表实体图表视图（部件视图）（测试）",
+    "name" : "产品汇总表实体图表视图（部件视图）（测试）",
+    "realModelSubType" : "DECHARTVIEW9",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
@@ -3636,23 +3673,11 @@
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "PoChartView9",
-    "logicName" : "产品汇总表实体图表视图（部件视图）（产品经理）",
-    "name" : "产品汇总表实体图表视图（部件视图）（产品经理）",
-    "realModelSubType" : "DECHARTVIEW9",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "PickupView",
     "logicName" : "产品汇总表实体数据选择视图",
     "modelTag" : "PICKUPVIEW",
     "name" : "产品汇总表实体数据选择视图",
     "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr2GridView",
-    "logicName" : "产品计划数和需求数实体表格视图_产品经理",
-    "name" : "产品计划数和需求数实体表格视图_产品经理",
-    "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Main",
@@ -3661,31 +3686,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "产品汇总表实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "产品汇总表实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "产品汇总表实体编辑视图（左右关系）",
-    "name" : "产品汇总表实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "Usr3GridView",
-    "logicName" : "产品创建bug数实体表格视图_测试",
-    "name" : "产品创建bug数实体表格视图_测试",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "产品汇总表实体选择表格视图（部件视图）",
-    "name" : "产品汇总表实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "ProductSum",
   "dEType" : 1,
@@ -3716,7 +3716,7 @@
   "name" : "IBZ_PRODUCTSUM",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

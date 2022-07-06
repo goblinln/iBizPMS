@@ -1670,6 +1670,47 @@
     "enableOrgDR" : true
   } ],
   "getAllPSModelDatas" : [ {
+    "codeName" : "PickupView",
+    "logicName" : "动态搜索栏实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "动态搜索栏实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "动态搜索栏实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "动态搜索栏实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "动态搜索栏实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "动态搜索栏实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "动态搜索栏实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "动态搜索栏实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "动态搜索栏实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "动态搜索栏实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "动态搜索栏实体编辑视图（左右关系）",
+    "name" : "动态搜索栏实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
     "codeName" : "PickupGridView",
     "logicName" : "动态搜索栏实体选择表格视图（部件视图）",
     "name" : "动态搜索栏实体选择表格视图（部件视图）",
@@ -1682,47 +1723,6 @@
     "name" : "主编辑表单",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
-  }, {
-    "codeName" : "GridView",
-    "logicName" : "动态搜索栏实体表格视图",
-    "modelTag" : "MDATAVIEW",
-    "name" : "动态搜索栏实体表格视图",
-    "realModelSubType" : "DEGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "动态搜索栏实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "动态搜索栏实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "RedirectView",
-    "logicName" : "动态搜索栏实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "动态搜索栏实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView2",
-    "logicName" : "动态搜索栏实体编辑视图（左右关系）",
-    "name" : "动态搜索栏实体编辑视图（左右关系）",
-    "realModelSubType" : "DEEDITVIEW2",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "动态搜索栏实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "动态搜索栏实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupView",
-    "logicName" : "动态搜索栏实体数据选择视图",
-    "modelTag" : "PICKUPVIEW",
-    "name" : "动态搜索栏实体数据选择视图",
-    "realModelSubType" : "DEPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
   } ],
   "codeName" : "DynaFilter",
   "dEType" : 1,
@@ -1765,7 +1765,7 @@
   },
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

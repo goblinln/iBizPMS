@@ -27,7 +27,7 @@
       "modelref" : true,
       "id" : "fetch"
     },
-    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+    "hookEventNames" : [ "LOAD", "BEFORELOAD" ],
     "logicName" : "CaseModule",
     "getPSAppDataEntity" : {
       "modelref" : true,

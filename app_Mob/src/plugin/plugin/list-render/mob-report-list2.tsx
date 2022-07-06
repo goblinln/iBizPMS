@@ -17,7 +17,7 @@ import '../plugin-style.less';
 @VueLifeCycleProcessing()
 export class MobReportList2 extends AppMobMDCtrlBase {
 
-
+    
     /**
      * 代码表服务对象
      *

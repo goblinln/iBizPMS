@@ -76,6 +76,8 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('testsuite', () => import('../uiservice/test-suite/test-suite-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectteam', () => import('../uiservice/project-team/project-team-ui-service'));
         UIServiceRegister.allUIServiceMap.set('file', () => import('../uiservice/file/file-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('storyspec', () => import('../uiservice/story-spec/story-spec-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('history', () => import('../uiservice/history/history-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productbranch', () => import('../uiservice/product-branch/product-branch-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productrelease', () => import('../uiservice/product-release/product-release-ui-service'));
         UIServiceRegister.allUIServiceMap.set('testcase', () => import('../uiservice/test-case/test-case-ui-service'));
@@ -97,6 +99,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('reportsummary', () => import('../uiservice/report-summary/report-summary-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productstats', () => import('../uiservice/product-stats/product-stats-ui-service'));
         UIServiceRegister.allUIServiceMap.set('usercontact', () => import('../uiservice/user-contact/user-contact-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('storystage', () => import('../uiservice/story-stage/story-stage-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysupdatefeatures', () => import('../uiservice/sys-update-features/sys-update-features-ui-service'));
         UIServiceRegister.allUIServiceMap.set('task', () => import('../uiservice/task/task-ui-service'));
         UIServiceRegister.allUIServiceMap.set('todo', () => import('../uiservice/todo/todo-ui-service'));

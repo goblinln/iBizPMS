@@ -1509,33 +1509,6 @@
     "name" : "UPDATE"
   } ],
   "getAllPSModelDatas" : [ {
-    "codeName" : "RedirectView",
-    "logicName" : "im_chatuser实体数据重定向视图",
-    "modelTag" : "REDIRECTVIEW",
-    "name" : "im_chatuser实体数据重定向视图",
-    "realModelSubType" : "DEREDIRECTVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "MPickupView",
-    "logicName" : "im_chatuser实体数据多项选择视图",
-    "modelTag" : "MPICKUPVIEW",
-    "name" : "im_chatuser实体数据多项选择视图",
-    "realModelSubType" : "DEMPICKUPVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "PickupGridView",
-    "logicName" : "im_chatuser实体选择表格视图（部件视图）",
-    "name" : "im_chatuser实体选择表格视图（部件视图）",
-    "realModelSubType" : "DEPICKUPGRIDVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
-    "codeName" : "EditView",
-    "logicName" : "im_chatuser实体编辑视图",
-    "modelTag" : "EDITVIEW",
-    "name" : "im_chatuser实体编辑视图",
-    "realModelSubType" : "DEEDITVIEW",
-    "realModelType" : "PSDEVIEWBASE"
-  }, {
     "codeName" : "PickupView",
     "logicName" : "im_chatuser实体数据选择视图",
     "modelTag" : "PICKUPVIEW",
@@ -1549,19 +1522,46 @@
     "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
-    "codeName" : "Main",
-    "logicName" : "主编辑表单",
-    "modelTag2" : "0",
-    "name" : "主编辑表单",
-    "realModelSubType" : "EDITFORM",
-    "realModelType" : "PSDEFORM"
-  }, {
     "codeName" : "GridView",
     "logicName" : "im_chatuser实体表格视图",
     "modelTag" : "MDATAVIEW",
     "name" : "im_chatuser实体表格视图",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "im_chatuser实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "im_chatuser实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "im_chatuser实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "im_chatuser实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "im_chatuser实体选择表格视图（部件视图）",
+    "name" : "im_chatuser实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "im_chatuser实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "im_chatuser实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
   } ],
   "codeName" : "ImChatuser",
   "dEType" : 1,
@@ -1592,7 +1592,7 @@
   "name" : "ZT_IM_CHATUSER",
   "getPSSysDBScheme" : {
     "modelref" : true,
-    "path" : "PSSYSDBSCHEMES/Auto1.json"
+    "path" : "PSSYSDBSCHEMES/DEFAULT.json"
   },
   "getPSSystemModule" : {
     "modelref" : true,

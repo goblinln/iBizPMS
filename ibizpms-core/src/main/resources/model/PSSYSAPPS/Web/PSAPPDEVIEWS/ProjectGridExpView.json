@@ -45,7 +45,7 @@
   "getPSControls" : [ {
     "codeName" : "GridExpViewgridexpbar",
     "controlType" : "GRIDEXPBAR",
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD", "ACTIVATED" ],
     "name" : "gridexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -269,11 +269,11 @@
           "codeName" : "Id"
         }
       }, {
-        "dataType" : 1,
-        "name" : "projectsn",
+        "dataType" : 25,
+        "name" : "name",
         "getPSAppDEField" : {
-          "name" : "PROJECTSN",
-          "codeName" : "Projectsn"
+          "name" : "NAME",
+          "codeName" : "Name"
         }
       }, {
         "dataType" : 25,
@@ -283,28 +283,18 @@
           "codeName" : "Status"
         }
       }, {
-        "dataType" : 25,
-        "name" : "name",
+        "dataType" : 1,
+        "name" : "projectsn",
         "getPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
+          "name" : "PROJECTSN",
+          "codeName" : "Projectsn"
         }
       }, {
         "dataType" : 1,
-        "name" : "parent",
+        "name" : "srfkey",
         "getPSAppDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
-        }
-      }, {
-        "dataType" : 25,
-        "name" : "srfmstag"
-      }, {
-        "dataType" : 25,
-        "name" : "srfmajortext",
-        "getPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
+          "name" : "ID",
+          "codeName" : "Id"
         }
       }, {
         "dataType" : 1,
@@ -316,11 +306,21 @@
         "dataAccessAction" : true
       }, {
         "dataType" : 1,
-        "name" : "srfkey",
+        "name" : "parent",
         "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
+          "name" : "PARENT",
+          "codeName" : "Parent"
         }
+      }, {
+        "dataType" : 25,
+        "name" : "srfmajortext",
+        "getPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        }
+      }, {
+        "dataType" : 25,
+        "name" : "srfmstag"
       } ],
       "getPSDEGridEditItems" : [ {
         "caption" : "项目编号",

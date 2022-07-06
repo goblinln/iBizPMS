@@ -35,13 +35,44 @@
     "codeName" : "CancelTestTop",
     "methodType" : "DEACTION",
     "name" : "CancelProductTop",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/canceltesttop",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -49,6 +80,20 @@
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CloseInput",
+      "name" : "CloseInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CloseResult",
+      "name" : "CloseResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -57,6 +102,21 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateInput",
+      "name" : "CreateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateResult",
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "create",
     "builtinMethod" : true
@@ -65,13 +125,51 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftInput",
+      "name" : "GetDraftInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftResult",
+      "name" : "GetDraftResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
@@ -80,6 +178,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "remove",
     "builtinMethod" : true,
@@ -90,19 +202,64 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "TestTop",
     "methodType" : "DEACTION",
     "name" : "ProductTop",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/testtop",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateInput",
+      "name" : "UpdateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateResult",
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "update",
     "builtinMethod" : true
@@ -112,6 +269,20 @@
     "codeName" : "WizardCreate",
     "methodType" : "DEACTION",
     "name" : "WizardCreate",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "WizardCreateInput",
+      "name" : "WizardCreateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "WizardCreateResult",
+      "name" : "WizardCreateResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
@@ -119,35 +290,148 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Account",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "AccountInput",
+      "name" : "AccountInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "AccountResult",
+      "name" : "AccountResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAllList",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AllList",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "AllListInput",
+      "name" : "AllListInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "AllListResult",
+      "name" : "AllListResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "NOTEQ",
+          "condType" : "SINGLE",
+          "condValue" : "closed",
+          "fieldName" : "STATUS",
+          "name" : "STATUS 不等于(<>) (closed)"
+        }, {
+          "condType" : "CUSTOM",
+          "condition" : "(#{srf.datacontext.products} is not null and t1.id = #{srf.datacontext.products})",
+          "name" : "自定义条件"
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAllProduct",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AllProduct",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "AllProductInput",
+      "name" : "AllProductInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "AllProductResult",
+      "name" : "AllProductResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCheckNameOrCode",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CheckNameOrCode",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckNameOrCodeInput",
+      "name" : "CheckNameOrCodeInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckNameOrCodeResult",
+      "name" : "CheckNameOrCodeResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDefault",
     "methodType" : "FETCH",
     "name" : "FetchCurDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchcurdefault",
     "builtinMethod" : false
   }, {
     "getADPSDEDQConditions" : [ {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "srfparentkey",
+      "fieldName" : "PROJECT",
       "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
@@ -155,66 +439,347 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CURPROJECT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurProjectInput",
+      "name" : "CurProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurProjectResult",
+      "name" : "CurProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUer",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUer",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurUerInput",
+      "name" : "CurUerInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurUerResult",
+      "name" : "CurUerResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "open",
+          "fieldName" : "ACL",
+          "name" : "ACL 等于(=) (open)"
+        }, {
+          "condType" : "CUSTOM",
+          "condition" : "t1.id in (select t.product from zt_projectproduct t where t.project in (select t3.root from zt_team t3 where t3.account = ${srfwebcontext('srfloginname','{\"defname\":\"PO\",\"dename\":\"ZT_PRODUCT\"}')} and t3.type = 'project'))",
+          "name" : "自定义条件"
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDeveloperQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DeveloperQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DeveloperQueryInput",
+      "name" : "DeveloperQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DeveloperQueryResult",
+      "name" : "DeveloperQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condType" : "CUSTOM",
+        "condition" : "t1.id IN (\nSELECT t.root from zt_team t\nWHERE\n\tt.account =  #{srf.sessioncontext.srfloginname} \n\tAND t.type = 'product' \n\t \n\t)",
+        "name" : "?"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ESBulkInput",
+      "name" : "ESBulkInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ESBulkResult",
+      "name" : "ESBulkResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "My",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyInput",
+      "name" : "MyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyResult",
+      "name" : "MyResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "OpenQueryInput",
+      "name" : "OpenQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "OpenQueryResult",
+      "name" : "OpenQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "open",
+        "fieldName" : "ACL",
+        "name" : "ACL 等于(=) (open)"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductManagerQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductManagerQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProductManagerQueryInput",
+      "name" : "ProductManagerQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProductManagerQueryResult",
+      "name" : "ProductManagerQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "AND",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "private",
+          "fieldName" : "ACL",
+          "name" : "ACL 等于(=) (private)"
+        }, {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "fieldName" : "UPDATEBY",
+            "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT"
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "fieldName" : "CREATEDBY",
+            "name" : "CREATEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT"
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "fieldName" : "QD",
+            "name" : "QD 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT"
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "fieldName" : "RD",
+            "name" : "RD 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT"
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "fieldName" : "PO",
+            "name" : "PO 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT"
+          } ]
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductPM",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductPM",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProductPMInput",
+      "name" : "ProductPMInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProductPMResult",
+      "name" : "ProductPMResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductTeam",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductTeam",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProductTeamInput",
+      "name" : "ProductTeamInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProductTeamResult",
+      "name" : "ProductTeamResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "getADPSDEDQConditions" : [ {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "project",
+      "fieldName" : "PROJECT",
       "name" : "PROJECT 等于(=) 数据上下文(project)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
@@ -222,6 +787,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryCURPROJECT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "StoryCurProjectInput",
+      "name" : "StoryCurProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "StoryCurProjectResult",
+      "name" : "StoryCurProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -736,18 +1319,895 @@
     "enableBackend" : true,
     "enableFront" : true
   } ],
+  "getAllPSAppDEMethodDTOs" : [ {
+    "codeName" : "ProductDTO",
+    "name" : "ProductDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "Acl",
+      "logicName" : "访问控制",
+      "name" : "Acl",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ActiveBugCnt",
+      "logicName" : "未解决Bug数",
+      "name" : "ActiveBugCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACTIVEBUGCNT",
+        "codeName" : "ActiveBugCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ActiveStoryCnt",
+      "logicName" : "激活需求数",
+      "name" : "ActiveStoryCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ACTIVESTORYCNT",
+        "codeName" : "ActiveStoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Buildcnt",
+      "logicName" : "BUILD数",
+      "name" : "Buildcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "BUILDCNT",
+        "codeName" : "Buildcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Casecnt",
+      "logicName" : "用例数",
+      "name" : "Casecnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CASECNT",
+        "codeName" : "Casecnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Changedstorycnt",
+      "logicName" : "已变更需求",
+      "name" : "Changedstorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CHANGEDSTORYCNT",
+        "codeName" : "Changedstorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ClosedStoryCnt",
+      "logicName" : "已关闭需求",
+      "name" : "ClosedStoryCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CLOSEDSTORYCNT",
+        "codeName" : "ClosedStoryCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Code",
+      "logicName" : "产品代号",
+      "name" : "Code",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CODE",
+        "codeName" : "Code"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Comment",
+      "logicName" : "备注",
+      "name" : "Comment",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreateMan",
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "CreatedBy",
+      "logicName" : "由谁创建",
+      "name" : "CreatedBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEDBY",
+        "codeName" : "CreatedBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreatedDate",
+      "logicName" : "创建日期",
+      "name" : "CreatedDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEDDATE",
+        "codeName" : "CreatedDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "CreatedVersion",
+      "logicName" : "当前系统版本",
+      "name" : "CreatedVersion",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "CREATEDVERSION",
+        "codeName" : "CreatedVersion"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Desc",
+      "logicName" : "产品描述\t",
+      "name" : "Desc",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Doccnt",
+      "logicName" : "文档数",
+      "name" : "Doccnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DOCCNT",
+        "codeName" : "Doccnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Draftstorycnt",
+      "logicName" : "草稿需求",
+      "name" : "Draftstorycnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "DRAFTSTORYCNT",
+        "codeName" : "Draftstorycnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "IBIZ_ID",
+      "logicName" : "IBIZ标识",
+      "name" : "IBIZ_ID",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "IBIZ_ID",
+        "codeName" : "IBIZ_ID"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Id",
+      "logicName" : "编号",
+      "name" : "Id",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Istop",
+      "logicName" : "是否置顶",
+      "name" : "Istop",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ISTOP",
+        "codeName" : "Istop"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Line",
+      "logicName" : "id",
+      "name" : "Line",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "LINE",
+        "codeName" : "Line"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "LineName",
+      "logicName" : "产品线",
+      "name" : "LineName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "LINENAME",
+        "codeName" : "LineName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "MdeptId",
+      "logicName" : "部门标识",
+      "name" : "MdeptId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MDEPTID",
+        "codeName" : "MdeptId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "MdeptName",
+      "logicName" : "归属部门名",
+      "name" : "MdeptName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MDEPTNAME",
+        "codeName" : "MdeptName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Mobimage",
+      "logicName" : "移动端图片",
+      "name" : "Mobimage",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "MOBIMAGE",
+        "codeName" : "Mobimage"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Name",
+      "logicName" : "产品名称",
+      "name" : "Name",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "NotClosedBugCnt",
+      "logicName" : "未关闭Bug数",
+      "name" : "NotClosedBugCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "NOTCLOSEDBUGCNT",
+        "codeName" : "NotClosedBugCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Noticeusers",
+      "logicName" : "消息通知用户",
+      "name" : "Noticeusers",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "NOTICEUSERS",
+        "codeName" : "Noticeusers"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Order",
+      "logicName" : "排序",
+      "name" : "Order",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORDER",
+        "codeName" : "Order"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Order1",
+      "logicName" : "排序",
+      "name" : "Order1",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORDER1",
+        "codeName" : "Order1"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OrgId",
+      "logicName" : "组织标识",
+      "name" : "OrgId",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "OrgName",
+      "logicName" : "归属组织名",
+      "name" : "OrgName",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "PO",
+      "logicName" : "产品负责人",
+      "name" : "PO",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PO",
+        "codeName" : "PO"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Popk",
+      "logicName" : "产品负责人（选择）",
+      "name" : "Popk",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "POPK",
+        "codeName" : "Popk"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ProductPlanCnt",
+      "logicName" : "计划总数",
+      "name" : "ProductPlanCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTPLANCNT",
+        "codeName" : "ProductPlanCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Productclass",
+      "logicName" : "产品分类",
+      "name" : "Productclass",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTCLASS",
+        "codeName" : "Productclass"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Productsn",
+      "logicName" : "产品编号",
+      "name" : "Productsn",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTSN",
+        "codeName" : "Productsn"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "QD",
+      "logicName" : "测试负责人",
+      "name" : "QD",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "QD",
+        "codeName" : "QD"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Qdpk",
+      "logicName" : "测试负责人（选择）",
+      "name" : "Qdpk",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "QDPK",
+        "codeName" : "Qdpk"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "RD",
+      "logicName" : "发布负责人",
+      "name" : "RD",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "RD",
+        "codeName" : "RD"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Rdpk",
+      "logicName" : "发布负责人（选择）",
+      "name" : "Rdpk",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "RDPK",
+        "codeName" : "Rdpk"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "RelatedBUGCNT",
+      "logicName" : "相关Bug数",
+      "name" : "RelatedBUGCNT",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "RELATEDBUGCNT",
+        "codeName" : "RelatedBUGCNT"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Relatedprojects",
+      "logicName" : "关联项目数",
+      "name" : "Relatedprojects",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "RELATEDPROJECTS",
+        "codeName" : "Relatedprojects"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "ReleaseCnt",
+      "logicName" : "发布总数",
+      "name" : "ReleaseCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "RELEASECNT",
+        "codeName" : "ReleaseCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Srfcount",
+      "logicName" : "属性",
+      "name" : "Srfcount",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SRFCOUNT",
+        "codeName" : "Srfcount"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Status",
+      "logicName" : "状态",
+      "name" : "Status",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "SubStatus",
+      "logicName" : "子状态",
+      "name" : "SubStatus",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Supproreport",
+      "logicName" : "支持产品汇报",
+      "name" : "Supproreport",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "SUPPROREPORT",
+        "codeName" : "Supproreport"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Testsuitecnt",
+      "logicName" : "套件数",
+      "name" : "Testsuitecnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TESTSUITECNT",
+        "codeName" : "Testsuitecnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Testtaskcnt",
+      "logicName" : "测试单数",
+      "name" : "Testtaskcnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TESTTASKCNT",
+        "codeName" : "Testtaskcnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "Type",
+      "logicName" : "产品类型",
+      "name" : "Type",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UnconfirmBugCnt",
+      "logicName" : "未确认Bug数",
+      "name" : "UnconfirmBugCnt",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UNCONFIRMBUGCNT",
+        "codeName" : "UnconfirmBugCnt"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateBy",
+      "logicName" : "由谁更新",
+      "name" : "UpdateBy",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEBY",
+        "codeName" : "UpdateBy"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "UpdateDate",
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "UpdateMan",
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "codeName" : "Whitelist",
+      "logicName" : "分组白名单",
+      "name" : "Whitelist",
+      "orderValue" : 1000,
+      "getPSAppDEField" : {
+        "name" : "WHITELIST",
+        "codeName" : "Whitelist"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  }, {
+    "codeName" : "ProductFilterDTO",
+    "name" : "ProductFilterDTO",
+    "getPSAppDEMethodDTOFields" : [ {
+      "codeName" : "N_ACL_EQ",
+      "logicName" : "访问控制",
+      "name" : "N_ACL_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ID_EQ",
+      "logicName" : "编号",
+      "name" : "N_ID_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ID_IN",
+      "logicName" : "编号",
+      "name" : "N_ID_IN",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_ISTOP_EQ",
+      "logicName" : "是否置顶",
+      "name" : "N_ISTOP_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "ISTOP",
+        "codeName" : "Istop"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_LINENAME_EQ",
+      "logicName" : "产品线",
+      "name" : "N_LINENAME_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "LINENAME",
+        "codeName" : "LineName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_LINENAME_LIKE",
+      "logicName" : "产品线",
+      "name" : "N_LINENAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "LINENAME",
+        "codeName" : "LineName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_LINE_EQ",
+      "logicName" : "id",
+      "name" : "N_LINE_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "LINE",
+        "codeName" : "Line"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 1,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_NAME_EQ",
+      "logicName" : "产品名称",
+      "name" : "N_NAME_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_NAME_LIKE",
+      "logicName" : "产品名称",
+      "name" : "N_NAME_LIKE",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_PRODUCTCLASS_EQ",
+      "logicName" : "产品分类",
+      "name" : "N_PRODUCTCLASS_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTCLASS",
+        "codeName" : "Productclass"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_STATUS_EQ",
+      "logicName" : "状态",
+      "name" : "N_STATUS_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_STATUS_ISNOTNULL",
+      "logicName" : "状态",
+      "name" : "N_STATUS_ISNOTNULL",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_SUPPROREPORT_EQ",
+      "logicName" : "支持产品汇报",
+      "name" : "N_SUPPROREPORT_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "SUPPROREPORT",
+        "codeName" : "Supproreport"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    }, {
+      "codeName" : "N_TYPE_EQ",
+      "logicName" : "产品类型",
+      "name" : "N_TYPE_EQ",
+      "orderValue" : 99999,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER"
+  } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CUSTOM",
     "codeName" : "CancelTestTop",
     "methodType" : "DEACTION",
     "name" : "CancelProductTop",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/canceltesttop",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckKeyInput",
+      "name" : "CheckKeyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckKeyResult",
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -755,6 +2215,20 @@
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CloseInput",
+      "name" : "CloseInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CloseResult",
+      "name" : "CloseResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -763,6 +2237,21 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CreateInput",
+      "name" : "CreateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CreateResult",
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "create",
     "builtinMethod" : true
@@ -771,13 +2260,51 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "requestField" : "ID",
+    "requestMethod" : "GET",
+    "requestParamType" : "FIELD",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "GETDRAFT",
     "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "GetDraftInput",
+      "name" : "GetDraftInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "GetDraftResult",
+      "name" : "GetDraftResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
@@ -786,6 +2313,20 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "RemoveInput",
+      "getKeyPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "RemoveResult",
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "remove",
     "builtinMethod" : true,
@@ -796,19 +2337,64 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "SaveInput",
+      "name" : "SaveInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "SaveResult",
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "TestTop",
     "methodType" : "DEACTION",
     "name" : "ProductTop",
-    "builtinMethod" : false
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/testtop",
+    "builtinMethod" : false,
+    "needResourceKey" : true
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "UpdateInput",
+      "name" : "UpdateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "UpdateResult",
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
     "userTag4" : "update",
     "builtinMethod" : true
@@ -818,41 +2404,168 @@
     "codeName" : "WizardCreate",
     "methodType" : "DEACTION",
     "name" : "WizardCreate",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "WizardCreateInput",
+      "name" : "WizardCreateInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "WizardCreateResult",
+      "name" : "WizardCreateResult",
+      "type" : "VOID"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAccount",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Account",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "AccountInput",
+      "name" : "AccountInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "AccountResult",
+      "name" : "AccountResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAllList",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AllList",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "AllListInput",
+      "name" : "AllListInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "AllListResult",
+      "name" : "AllListResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "NOTEQ",
+          "condType" : "SINGLE",
+          "condValue" : "closed",
+          "fieldName" : "STATUS",
+          "name" : "STATUS 不等于(<>) (closed)"
+        }, {
+          "condType" : "CUSTOM",
+          "condition" : "(#{srf.datacontext.products} is not null and t1.id = #{srf.datacontext.products})",
+          "name" : "自定义条件"
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAllProduct",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AllProduct",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "AllProductInput",
+      "name" : "AllProductInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "AllProductResult",
+      "name" : "AllProductResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCheckNameOrCode",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CheckNameOrCode",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CheckNameOrCodeInput",
+      "name" : "CheckNameOrCodeInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CheckNameOrCodeResult",
+      "name" : "CheckNameOrCodeResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDefault",
     "methodType" : "FETCH",
     "name" : "FetchCurDefault",
+    "getPSAppDEMethodInput" : {
+      "name" : "输入对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "name" : "返回对象",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "requestMethod" : "POST",
+    "requestParamType" : "ENTITY",
+    "requestPath" : "/fetchcurdefault",
     "builtinMethod" : false
   }, {
     "getADPSDEDQConditions" : [ {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "srfparentkey",
+      "fieldName" : "PROJECT",
       "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
@@ -860,66 +2573,347 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CURPROJECT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurProjectInput",
+      "name" : "CurProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurProjectResult",
+      "name" : "CurProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUer",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUer",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "CurUerInput",
+      "name" : "CurUerInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "CurUerResult",
+      "name" : "CurUerResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "OR",
+        "condType" : "GROUP",
+        "name" : "OR",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "open",
+          "fieldName" : "ACL",
+          "name" : "ACL 等于(=) (open)"
+        }, {
+          "condType" : "CUSTOM",
+          "condition" : "t1.id in (select t.product from zt_projectproduct t where t.project in (select t3.root from zt_team t3 where t3.account = ${srfwebcontext('srfloginname','{\"defname\":\"PO\",\"dename\":\"ZT_PRODUCT\"}')} and t3.type = 'project'))",
+          "name" : "自定义条件"
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DefaultInput",
+      "name" : "DefaultInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DefaultResult",
+      "name" : "DefaultResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDeveloperQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DeveloperQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "DeveloperQueryInput",
+      "name" : "DeveloperQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "DeveloperQueryResult",
+      "name" : "DeveloperQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condType" : "CUSTOM",
+        "condition" : "t1.id IN (\nSELECT t.root from zt_team t\nWHERE\n\tt.account =  #{srf.sessioncontext.srfloginname} \n\tAND t.type = 'product' \n\t \n\t)",
+        "name" : "?"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ESBulkInput",
+      "name" : "ESBulkInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ESBulkResult",
+      "name" : "ESBulkResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "My",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "MyInput",
+      "name" : "MyInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "MyResult",
+      "name" : "MyResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "OpenQueryInput",
+      "name" : "OpenQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "OpenQueryResult",
+      "name" : "OpenQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "EQ",
+        "condType" : "SINGLE",
+        "condValue" : "open",
+        "fieldName" : "ACL",
+        "name" : "ACL 等于(=) (open)"
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductManagerQuery",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductManagerQuery",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProductManagerQueryInput",
+      "name" : "ProductManagerQueryInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProductManagerQueryResult",
+      "name" : "ProductManagerQueryResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "getPSDEDQGroupConditions" : [ {
+      "condOp" : "AND",
+      "condType" : "GROUP",
+      "name" : "连接条件",
+      "getPSDEDQConditions" : [ {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "AND",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "private",
+          "fieldName" : "ACL",
+          "name" : "ACL 等于(=) (private)"
+        }, {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "fieldName" : "UPDATEBY",
+            "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT"
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "fieldName" : "CREATEDBY",
+            "name" : "CREATEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT"
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "fieldName" : "QD",
+            "name" : "QD 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT"
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "fieldName" : "RD",
+            "name" : "RD 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT"
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "fieldName" : "PO",
+            "name" : "PO 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT"
+          } ]
+        } ]
+      } ]
+    } ],
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductPM",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductPM",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProductPMInput",
+      "name" : "ProductPMInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProductPMResult",
+      "name" : "ProductPMResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductTeam",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductTeam",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "ProductTeamInput",
+      "name" : "ProductTeamInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "ProductTeamResult",
+      "name" : "ProductTeamResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "getADPSDEDQConditions" : [ {
       "condOp" : "EQ",
       "condType" : "SINGLE",
       "condValue" : "project",
+      "fieldName" : "PROJECT",
       "name" : "PROJECT 等于(=) 数据上下文(project)",
       "getPSVARTypeId" : "DATACONTEXT"
     } ],
@@ -927,6 +2921,24 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryCURPROJECT",
+    "getPSAppDEMethodInput" : {
+      "codeName" : "StoryCurProjectInput",
+      "name" : "StoryCurProjectInput",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSAppDEMethodReturn" : {
+      "codeName" : "StoryCurProjectResult",
+      "name" : "StoryCurProjectResult",
+      "getPSAppDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -966,38 +2978,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "caption" : "置顶",
-    "codeName" : "ProductTop",
-    "dataAccessAction" : "NOTOP",
-    "fullCodeName" : "Product_ProductTop",
-    "name" : "置顶",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "TestTop"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NOTOP"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf0a6@FontAwesome",
-      "cssClass" : "fa fa-hand-o-up"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "ProductTop",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "globalUIAction" : true,
-    "reloadData" : true,
-    "id" : "ProductTop@Product"
-  }, {
-    "actionTarget" : "SINGLEKEY",
     "caption" : "取消置顶",
     "codeName" : "CancelProductTop",
     "dataAccessAction" : "TOP",
@@ -1028,6 +3008,38 @@
     "globalUIAction" : true,
     "reloadData" : true,
     "id" : "CancelProductTop@Product"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "置顶",
+    "codeName" : "ProductTop",
+    "dataAccessAction" : "NOTOP",
+    "fullCodeName" : "Product_ProductTop",
+    "name" : "置顶",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "TestTop"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NOTOP"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf0a6@FontAwesome",
+      "cssClass" : "fa fa-hand-o-up"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "ProductTop",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "globalUIAction" : true,
+    "reloadData" : true,
+    "id" : "ProductTop@Product"
   }, {
     "actionTarget" : "NONE",
     "caption" : "管理",
@@ -1211,6 +3223,10 @@
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json",
   "enableUIActions" : 15,
+  "getKeyPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "logicName" : "测试",
   "getMainStatePSAppDEFields" : [ {
     "name" : "STATUS",
@@ -1219,6 +3235,10 @@
     "name" : "ISTOP",
     "codeName" : "Istop"
   } ],
+  "getMajorPSAppDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
+  },
   "name" : "IBZ_API__TEST",
   "getOrgIdPSAppDEField" : {
     "name" : "ORGID",

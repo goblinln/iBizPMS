@@ -9,7 +9,7 @@
     "id" : "fetch"
   },
   "groupMode" : "NONE",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "hookEventNames" : [ "ROWDBLCLICK", "SELECTIONCHANGE", "REMOVE", "LOAD", "BEFORELOAD" ],
   "logicName" : "项目bug类型统计",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -231,11 +231,25 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 9,
-    "name" : "install",
+    "dataType" : 25,
+    "name" : "name",
     "getPSAppDEField" : {
-      "name" : "INSTALL",
-      "codeName" : "Install"
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "codeerror",
+    "getPSAppDEField" : {
+      "name" : "CODEERROR",
+      "codeName" : "Codeerror"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "config",
+    "getPSAppDEField" : {
+      "name" : "CONFIG",
+      "codeName" : "Config"
     }
   }, {
     "dataType" : 9,
@@ -246,10 +260,24 @@
     }
   }, {
     "dataType" : 9,
-    "name" : "others",
+    "name" : "install",
     "getPSAppDEField" : {
-      "name" : "OTHERS",
-      "codeName" : "Others"
+      "name" : "INSTALL",
+      "codeName" : "Install"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "performance",
+    "getPSAppDEField" : {
+      "name" : "PERFORMANCE",
+      "codeName" : "Performance"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "security",
+    "getPSAppDEField" : {
+      "name" : "SECURITY",
+      "codeName" : "Security"
     }
   }, {
     "dataType" : 9,
@@ -267,17 +295,31 @@
     }
   }, {
     "dataType" : 9,
-    "name" : "security",
+    "name" : "others",
     "getPSAppDEField" : {
-      "name" : "SECURITY",
-      "codeName" : "Security"
+      "name" : "OTHERS",
+      "codeName" : "Others"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 9,
+    "name" : "bugcnt",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "BUGCNT",
+      "codeName" : "BugCnt"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -288,53 +330,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "codeerror",
-    "getPSAppDEField" : {
-      "name" : "CODEERROR",
-      "codeName" : "Codeerror"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "bugcnt",
-    "getPSAppDEField" : {
-      "name" : "BUGCNT",
-      "codeName" : "BugCnt"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "performance",
-    "getPSAppDEField" : {
-      "name" : "PERFORMANCE",
-      "codeName" : "Performance"
-    }
-  }, {
     "dataType" : 25,
-    "name" : "name",
+    "name" : "srfmajortext",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "config",
-    "getPSAppDEField" : {
-      "name" : "CONFIG",
-      "codeName" : "Config"
     }
   } ],
   "getPSDEGridEditItems" : [ {
